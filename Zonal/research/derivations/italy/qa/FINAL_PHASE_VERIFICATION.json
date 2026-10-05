@@ -1,0 +1,126 @@
+{
+  "generated_at_utc": "2026-09-01T07:34:47.395Z",
+  "overall_status": "PASS",
+  "checks": [
+    {
+      "check": "Controlling v2.9 workbook SHA-256",
+      "observed": "4a59c80bdf4da33d825ff94ea5617c03c325ca6fbc26233e7ed633ed6f910640",
+      "expected": "4a59c80bdf4da33d825ff94ea5617c03c325ca6fbc26233e7ed633ed6f910640",
+      "status": "PASS"
+    },
+    {
+      "check": "Canonical capacity rows",
+      "observed": 578,
+      "expected": 578,
+      "status": "PASS"
+    },
+    {
+      "check": "Canonical capacity unique grain",
+      "observed": 578,
+      "expected": 578,
+      "status": "PASS"
+    },
+    {
+      "check": "Canonical capacity total MW",
+      "observed": 60331.82926999995,
+      "expected": 60331.82927,
+      "tolerance": 1e-8,
+      "status": "PASS"
+    },
+    {
+      "check": "Canonical production rows",
+      "observed": 587,
+      "expected": 587,
+      "status": "PASS"
+    },
+    {
+      "check": "Canonical production unique grain",
+      "observed": 587,
+      "expected": 587,
+      "status": "PASS"
+    },
+    {
+      "check": "Production Lorda below Netta rows",
+      "observed": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Production ambiguous/equal rows",
+      "observed": 96,
+      "expected": 96,
+      "status": "PASS"
+    },
+    {
+      "check": "Production Netta total GWh",
+      "observed": 146360.808172,
+      "expected": 146360.808172,
+      "tolerance": 1e-8,
+      "status": "PASS"
+    },
+    {
+      "check": "Crosswalk rows",
+      "observed": 107,
+      "expected": 107,
+      "status": "PASS"
+    },
+    {
+      "check": "Crosswalk unique province codes",
+      "observed": 107,
+      "expected": 107,
+      "status": "PASS"
+    },
+    {
+      "check": "Crosswalk zone set",
+      "observed": "CALA|CNOR|CSUD|NORD|SARD|SICI|SUD",
+      "expected": "CALA|CNOR|CSUD|NORD|SARD|SICI|SUD",
+      "status": "PASS"
+    },
+    {
+      "check": "Matrix rows",
+      "observed": 98,
+      "expected": 98,
+      "status": "PASS"
+    },
+    {
+      "check": "Matrix total MW",
+      "observed": 60331.82927000001,
+      "expected": 60331.82927,
+      "tolerance": 1e-8,
+      "status": "PASS"
+    },
+    {
+      "check": "CF output rows",
+      "observed": 157,
+      "expected": 157,
+      "status": "PASS"
+    },
+    {
+      "check": "Calculated CF above 1",
+      "observed": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Required phase governance artifacts present",
+      "observed": 0,
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "No premature v2.9.1 workbook",
+      "observed": 0,
+      "expected": 0,
+      "status": "PASS"
+    }
+  ],
+  "missing_docs": [],
+  "v2_9_1_workbooks": [],
+  "output_hashes": {
+    "normalized\\Terna_Thermoelectric_Capacity_2024_Canonical.csv": "82d5823e74b1fda54003555472b758e70e0e68ef131d9e51bc5fa230c1f60e72",
+    "normalized\\Terna_Thermoelectric_Production_2024_Canonical.csv": "48d26c298388e9df12de127a4e5de5f9a5a8ca0a457a0272e0f0deeba676396a",
+    "normalized\\MEM_Province_Region_MarketZone_Crosswalk.csv": "33b7a5b1013091ba9261db15777488ad8e5b1219aef16305a74bfb0abb8333f4",
+    "analysis\\Terna_Thermoelectric_Capacity_2024_Zone_Technology_CHP_Matrix.csv": "272c8fc146b088c8b31cabf200fd8e3c21c8bc23825795186d9c51d7d5ad51c7",
+    "analysis\\Terna_Thermoelectric_2024_Observed_Capacity_Factors.csv": "6ce378a00bf856f3c01227248d5f5bd8c0676ba568eca8c2adcc839784767e38"
+  }
+}

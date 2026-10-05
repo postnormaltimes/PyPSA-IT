@@ -1,0 +1,35 @@
+schema_version: MEM_STAGE_B_ZONAL_VRE_V1
+phase: PREPARATION_QA_ONLY
+weather_year: 2019
+snapshots: 8760
+timezone: UTC
+calibrated_parent_revision: CONTROLLED_ETA_15_50_35_V2
+model_construction_authorized: false
+optimization_authorized: false
+weather_download_authorized: false
+zone_order: [NORD, CNOR, CSUD, SUD, CALA, SICI, SARD]
+profile_directory: runtime_inputs/stage_b_zonal_vre_v1
+network_directory: networks/unsolved/uc2a_zonal_vre_v1
+qa_directory: qa/stage_b/zonal_vre_v1
+parent_receipt: qa/stage_b/uc2a_heterogeneous_v1/MEM_UC2A_PREPARATION_RECEIPT.json
+accepted_recovery_receipt: qa/stage_b/zonal_vre_v1/MEM_STAGE_B_ZONAL_VRE_RECOVERY_DECISION.json
+spatial_authority:
+  mapping: VALIDATED_MEM_PROVINCE_REGION_MARKET_ZONE_CROSSWALK
+  official_control: TERNA_A24_REV06_2025_PAGE_5_VALID_FROM_2021_01_01
+  onshore: OFFICIAL_REGION_ZONE_POLYGONS_INTERSECT_EXISTING_SOURCE_FOOTPRINT
+  offshore: ORIGINAL_SUBSTATION_OFF_ELECTRICAL_ATTACHMENTS_STRICT_OFFICIAL_REGION_CONTAINMENT
+  nearest_bus_assignment: false
+  proxy_crosswalk_adopted: false
+eligibility: EXISTING_SOURCE_EXCLUSION_RASTERS_AND_FROZEN_SOURCE_PARAMETERS
+weighting: MEAN_2019_CELL_RESOURCE_CF_TIMES_ELIGIBLE_CELL_AREA_TIMES_EXISTING_DENSITY
+conversion_authority: config/stage_a_temporal_2019.yaml
+conversion_implementation: mem_model.stage_a.temporal_2019._compute_profile_from_availability
+scenario_specific_weather: false
+solar_mapping: SAME_ZONAL_SOLAR_PV_PROFILE_FOR_ROOFTOP_AND_UTILITY
+national_reconciliation:
+  force_hourly_equality: false
+  note: Official zonal partition, resource-layout weights and installed zonal capacities differ from the national B3 IT2/IT4 aggregation. Report differences without normalization.
+next_phase: NETWORK_V2B_PREPARATION_REQUIRED
+hydro_review: HYDRO_METHODOLOGY_REVIEW_REQUIRED
+future_production_candidate: ZONAL_VRE_PLUS_CALIBRATED_UC_V2A_PLUS_NETWORK_V2B
+separate_v1_v2a_or_v1_v2b_full_year_benchmarks_required: false

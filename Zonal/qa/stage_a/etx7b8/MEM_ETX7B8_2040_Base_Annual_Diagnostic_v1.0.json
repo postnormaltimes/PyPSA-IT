@@ -1,0 +1,89 @@
+{
+  "schema_version": "MEM_ETX7B8_2040_BASE_ANNUAL_DIAGNOSTIC_V1_0",
+  "status": "PASS",
+  "baseline_identity": "IMMUTABLE_BOUNDED_TEN_MARKET_ANNUAL_BASELINE",
+  "source_receipt": "qa/stage_a/etx7b8/MEM_ETX7B8_Run_Receipt_v1.0.json",
+  "source_receipt_sha256": "2A6919E7A31D42100D0CE64069CAF926686BE93E032DD7A5BF8D8D18B9F19F93",
+  "source_result_manifest": "stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_Result_Manifest_v1.0.csv",
+  "source_result_manifest_sha256": "EF52C6A6EDC79FE7939DA267C22B10CDB858ACDD6422A2B82EF99AD369B30338",
+  "source_manifest_members_verified": 9,
+  "source_output_hashes": {
+    "stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_SOLVED.nc": "5568219A43A67C90D5F8F2DF9130A4F53CA4F980335961650E5B06EB234F07C0",
+    "stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_Market_Prices.parquet": "AAF5FDA66A5CAE3BA0F2356C2FCCA405C6DD51CF362B99EFA75B828AAECD833A",
+    "stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_Load_Shedding.parquet": "5E559BB837B4EC1871C848E9D31B9D91A8CC5716BCA42E65234E73DDBDAB405B",
+    "stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_Link_Flows.parquet": "B63699E95B3388F0736E12F7AB4388AE5758109A1ED9DC95A1F5F0EA858FC0AF",
+    "stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_Hydro_Spill.parquet": "4092E523DD00228F7E0CFB865DF0AB8C538D315127952F30E26B2FFB00E5086A",
+    "stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_VRE_Curtailment.parquet": "6BFAF38333407AF53420FB3FF9C7911F9C42CCB05656066CEDFDE0914C8BE2FE"
+  },
+  "optimization_rerun": false,
+  "system": {
+    "total_system_load_MWh": 1448141533.3333333,
+    "total_system_load_shedding_MWh": 1823459.4540542054,
+    "load_shedding_percent_of_total_load": 0.12591721265372213,
+    "system_hours_with_any_shedding_above_1e_6_MW": 519,
+    "system_hours_with_shedding_above_1_MW": 518,
+    "maximum_simultaneous_system_shedding_MW": 25199.225303080686,
+    "price_min_EUR_per_MWh": 0.0,
+    "price_mean_EUR_per_MWh": 239.4434084643542,
+    "price_median_EUR_per_MWh": 99.52887466666667,
+    "price_P95_EUR_per_MWh": 110.58763851851857,
+    "price_P99_EUR_per_MWh": 13499.999999999998,
+    "price_max_EUR_per_MWh": 15000.0,
+    "total_market_hours_at_VOLL": 849,
+    "total_market_hours_above_500_EUR_per_MWh": 970,
+    "total_market_hours_above_1000_EUR_per_MWh": 970,
+    "total_market_hours_above_5000_EUR_per_MWh": 970,
+    "VRE_curtailment_MWh": 8064125.344283314,
+    "hydro_spill_MWh_water": 114821.76666520826,
+    "storage_state_count": 33,
+    "water_state_bus_count": 18,
+    "cyclic_state_count": 33,
+    "ANNUAL_STATES_CYCLIC_OVER_8760H": true
+  },
+  "affected_market_interface_saturation": [
+    {
+      "market": "FR",
+      "retained_inbound_interface_count": 2,
+      "shedding_hours": 241,
+      "shedding_MWh": 1644149.2187479027,
+      "all_inbound_saturated_hours": 241,
+      "share_shedding_hours_all_inbound_saturated": 1.0,
+      "shedding_MWh_all_inbound_saturated": 1644149.2187479027,
+      "share_shedding_MWh_all_inbound_saturated": 1.0
+    },
+    {
+      "market": "TN",
+      "retained_inbound_interface_count": 1,
+      "shedding_hours": 243,
+      "shedding_MWh": 117298.06706522292,
+      "all_inbound_saturated_hours": 243,
+      "share_shedding_hours_all_inbound_saturated": 1.0,
+      "shedding_MWh_all_inbound_saturated": 117298.06706522292,
+      "share_shedding_MWh_all_inbound_saturated": 1.0
+    },
+    {
+      "market": "GR",
+      "retained_inbound_interface_count": 1,
+      "shedding_hours": 34,
+      "shedding_MWh": 61424.93245752393,
+      "all_inbound_saturated_hours": 34,
+      "share_shedding_hours_all_inbound_saturated": 1.0,
+      "shedding_MWh_all_inbound_saturated": 61424.93245752393,
+      "share_shedding_MWh_all_inbound_saturated": 1.0
+    }
+  ],
+  "thresholds": {
+    "shedding_tolerance_MW": 1e-06,
+    "interface_limit_tolerance_MW": 1e-06,
+    "VOLL_EUR_per_MWh": 15000.0,
+    "VOLL_tolerance_EUR_per_MWh": 1e-06
+  },
+  "interpretation_boundary": {
+    "B8": "IMMUTABLE_BOUNDED_TEN_MARKET_ANNUAL_BASELINE",
+    "computational_acceptance_distinct_from_economic_boundary_methodology_acceptance": true,
+    "scarcity_may_reflect_domestic_capacity_and_truncated_external_perimeter": true,
+    "assumptions_changed_by_diagnostic": false,
+    "S2_production_methodology_decided_by_diagnostic": false,
+    "adequacy_conclusion_automatically_drawn": false
+  }
+}

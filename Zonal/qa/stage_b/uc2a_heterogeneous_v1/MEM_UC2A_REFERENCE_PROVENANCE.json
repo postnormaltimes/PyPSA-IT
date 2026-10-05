@@ -1,0 +1,199 @@
+{
+  "source": {
+    "path": "source://pypsa-eur/data/powerplants/archive/0.8.1/powerplants.csv",
+    "sha256": "0bb395b298bdcbcb29526df20f2a97f3c3dde0768af6f754ff66ed26ad8ed703",
+    "version": "POWERPLANTMATCHING_0.8.1_RAW_MATCHED_ARCHIVE",
+    "efficiency_policy": "GEO_SOURCE_REPORTED_NO_OPSD_ESTIMATES_NO_GENERIC_FILL",
+    "efficiency_caveat": "SOURCE_REPORTED_SUBSEQUENTLY_PLANT_AGGREGATED_NOT_INDEPENDENT_MEASURED_PERFORMANCE",
+    "uncertain_aggregate_archive_ids": [
+      1884,
+      1892
+    ],
+    "uncertainty": "PPM_CAPACITY_WEIGHTED_AGGREGATION_CAN_DILUTE_MISSING_CONSTITUENT_EFFICIENCY_RAW_CONSTITUENTS_UNAVAILABLE",
+    "europe": [
+      "Albania",
+      "Austria",
+      "Belgium",
+      "Bosnia and Herzegovina",
+      "Bulgaria",
+      "Croatia",
+      "Czechia",
+      "Denmark",
+      "Estonia",
+      "Finland",
+      "France",
+      "Germany",
+      "Greece",
+      "Hungary",
+      "Ireland",
+      "Italy",
+      "Kosovo",
+      "Latvia",
+      "Lithuania",
+      "Luxembourg",
+      "Moldova",
+      "Montenegro",
+      "Netherlands",
+      "North Macedonia",
+      "Norway",
+      "Poland",
+      "Portugal",
+      "Romania",
+      "Serbia",
+      "Slovakia",
+      "Slovenia",
+      "Spain",
+      "Sweden",
+      "Switzerland",
+      "Ukraine",
+      "United Kingdom"
+    ],
+    "lineage_root": "source://software/powerplantmatching",
+    "lineage_hashes": {
+      "data.py": "8d295c51f737cfdad99add9d6f64133702b9d43a878eca9defb30d11ce3e25e1",
+      "cleaning.py": "3d6f91c05b3aeeaf855ed15a52951f262303b16e135af3c22f86d6367130d343",
+      "matching.py": "332db5e035de9c39e39fdea6b65300f87106d30b910e6e17749f57a2ef942243",
+      "package_data/config.yaml": "d37ca6abeb22d68ff4727a2fca6a7815a1407a23a4a3c07039d3bf8c2347bffa"
+    }
+  },
+  "classes": {
+    "CCGT": {
+      "mode": "INDEPENDENT_SIZE_CONTROLLED_EFFICIENCY",
+      "reason": "MEM_CALIBRATION_DELTA",
+      "size_geography": "ITALY",
+      "capacity_rows": 95,
+      "diagnostics": [
+        {
+          "geography": "ITALY",
+          "capacity_rows": 95,
+          "distinct_capacities": 82
+        }
+      ],
+      "size_boundaries_MW": [
+        123.0,
+        754.3333333333333
+      ],
+      "size_representatives_MW": [
+        62.5,
+        380.0,
+        842.1
+      ],
+      "size_denominator_unit_mean_MW": 468.5621052631579,
+      "size_multipliers": [
+        0.13338680037921166,
+        0.8109917463056069,
+        1.7972003935893461
+      ],
+      "size_shares": [
+        0.3368421052631579,
+        0.3263157894736842,
+        0.3368421052631579
+      ],
+      "efficiency_provenance": "CONTROLLED_MEM_RELATIVE_EFFICIENCY_ASSUMPTION",
+      "empirical_efficiency_used": false
+    },
+    "OCGT": {
+      "mode": "INDEPENDENT_SIZE_CONTROLLED_EFFICIENCY",
+      "reason": "MEM_CALIBRATION_DELTA",
+      "size_geography": "EUROPE",
+      "capacity_rows": 130,
+      "diagnostics": [
+        {
+          "geography": "ITALY",
+          "capacity_rows": 0,
+          "distinct_capacities": 0
+        },
+        {
+          "geography": "EUROPE",
+          "capacity_rows": 130,
+          "distinct_capacities": 69
+        }
+      ],
+      "size_boundaries_MW": [
+        0.19,
+        0.28
+      ],
+      "size_representatives_MW": [
+        0.135,
+        0.2,
+        0.995
+      ],
+      "size_denominator_unit_mean_MW": 13.751807230769229,
+      "size_multipliers": [
+        0.009816891535386115,
+        0.014543543015386837,
+        0.0723541265015495
+      ],
+      "size_shares": [
+        0.4076923076923077,
+        0.26153846153846155,
+        0.33076923076923076
+      ],
+      "efficiency_provenance": "CONTROLLED_MEM_RELATIVE_EFFICIENCY_ASSUMPTION",
+      "empirical_efficiency_used": false
+    },
+    "BIOMASS_STEAM": {
+      "mode": "HOMOGENEOUS_FALLBACK",
+      "reason": "BIOMASS_UNCHANGED_CALIBRATION_DELTA"
+    }
+  },
+  "class_boundaries": [
+    0.3333333333333333,
+    0.6666666666666666
+  ],
+  "cell_order": [
+    [
+      "ETA_LOW",
+      "SZ_SMALL"
+    ],
+    [
+      "ETA_LOW",
+      "SZ_MEDIUM"
+    ],
+    [
+      "ETA_LOW",
+      "SZ_LARGE"
+    ],
+    [
+      "ETA_MID",
+      "SZ_SMALL"
+    ],
+    [
+      "ETA_MID",
+      "SZ_MEDIUM"
+    ],
+    [
+      "ETA_MID",
+      "SZ_LARGE"
+    ],
+    [
+      "ETA_HIGH",
+      "SZ_SMALL"
+    ],
+    [
+      "ETA_HIGH",
+      "SZ_MEDIUM"
+    ],
+    [
+      "ETA_HIGH",
+      "SZ_LARGE"
+    ]
+  ],
+  "size_denominator": "REFERENCE_UNIT_MEAN_CAPACITY",
+  "calibration_revision": "CONTROLLED_ETA_15_50_35_V2",
+  "efficiency_multipliers": [
+    0.9,
+    1.0,
+    1.05
+  ],
+  "efficiency_capacity_shares": [
+    0.15,
+    0.5,
+    0.35
+  ],
+  "efficiency_provenance": "CONTROLLED_MEM_RELATIVE_EFFICIENCY_ASSUMPTION",
+  "historical_efficiency_use": "DIAGNOSTIC_ONLY",
+  "empirical_efficiency_used": false,
+  "empirical_joint_allocation_used": false,
+  "HR_recentering_applied": false
+}

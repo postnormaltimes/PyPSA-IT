@@ -1,0 +1,50 @@
+[
+  {
+    "source_id": "ISTAT_DEMOGRAPHIC_BALANCE_2024_ADMIN_GEOGRAPHY",
+    "url": "https://demo.istat.it/app/?a=2024&i=P02&l=en",
+    "filename": "ISTAT_Demographic_Balance_2024_Admin_Geography.html",
+    "retrieval_timestamp_utc": "2026-09-01T06:53:26.232Z",
+    "final_url": "https://demo.istat.it/app/?a=2024&i=P02&l=en",
+    "http_status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 73760,
+    "sha256": "ee33418d07e37181c507a768ff4ad27483ca195a27c96cf49a77d285c73030e2",
+    "local_file": "ISTAT_Demographic_Balance_2024_Admin_Geography.html"
+  },
+  {
+    "source_id": "TERNA_ZONAL_CONFIGURATION_ALTERNATIVA_BASE",
+    "url": "https://download.terna.it/terna/0000/1033/91.PDF",
+    "filename": "Terna_Revisione_Configurazione_Zonale_Alternativa_Base.pdf",
+    "retrieval_timestamp_utc": "2026-09-01T06:53:26.232Z",
+    "final_url": "https://download.terna.it/terna/0000/1033/91.PDF",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "bytes": 3871524,
+    "sha256": "ce4d516b60f628990ab4e416b0029b2fe46296b75708e24c40542a8a11444657",
+    "local_file": "Terna_Revisione_Configurazione_Zonale_Alternativa_Base.pdf"
+  },
+  {
+    "source_id": "TERNA_GRID_CODE_ANNEX_A24_REV06_2025",
+    "url": "https://download.terna.it/terna/Allegato_A.24_8dd0fd080a2324d.pdf",
+    "filename": "Terna_Allegato_A24_Rev06_2025.pdf",
+    "retrieval_timestamp_utc": "2026-09-01T06:53:26.232Z",
+    "final_url": "https://download.terna.it/terna/Allegato_A.24_8dd0fd080a2324d.pdf",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "bytes": 365540,
+    "sha256": "01e586851b4e8567f6c73ee5e42e1c514264339e08c5ba0955de1395907bc305",
+    "local_file": "Terna_Allegato_A24_Rev06_2025.pdf"
+  },
+  {
+    "source_id": "GME_CURRENT_ZONE_GLOSSARY",
+    "url": "https://www.mercatoelettrico.org/Home/Glossario",
+    "filename": "GME_Current_Zone_Glossary.html",
+    "retrieval_timestamp_utc": "2026-09-01T06:53:26.232Z",
+    "final_url": "https://www.mercatoelettrico.org/Home/Glossario",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 333720,
+    "sha256": "516593bcb50bcf264fd7ee6029000a7ffec4e79dcebb0965980e3f6e2905ecd6",
+    "local_file": "GME_Current_Zone_Glossary.html"
+  }
+]

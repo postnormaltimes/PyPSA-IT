@@ -1,0 +1,46 @@
+{
+  "role": "LOCAL_2050_REFERENCE_ECONOMICS_DIAGNOSTIC_ONLY_NOT_ADOPTED_FOR_2040",
+  "source": "source://pypsa-eur/resources/eu_context_2013_1w_country_lowres/costs_2050_processed.csv",
+  "source_sha256": "992032ce0ebaeae9a1d54be53a854b165bcdc36ac25a36890b3889796578ee6d",
+  "nyears": 1,
+  "processed_168_HOURS_capital_cost_not_used_directly": true,
+  "length_factor": 1.25,
+  "landfall_km": 20,
+  "coefficient_rows": [
+    {
+      "technology": "offwind",
+      "source_investment": 1916091.3,
+      "lifetime_years": 30.0,
+      "discount_rate": 0.07,
+      "FOM_percent": 2.1655,
+      "native_full_year_annualized_cost": 195903.8637674296
+    },
+    {
+      "technology": "offwind-ac-station",
+      "source_investment": 710000.0,
+      "lifetime_years": 40.0,
+      "discount_rate": 0.07,
+      "FOM_percent": 1.5,
+      "native_full_year_annualized_cost": 63906.48860026332
+    },
+    {
+      "technology": "offwind-ac-connection-submarine",
+      "source_investment": 3750.0,
+      "lifetime_years": 40.0,
+      "discount_rate": 0.07,
+      "FOM_percent": 2.5,
+      "native_full_year_annualized_cost": 375.0342707760387
+    },
+    {
+      "technology": "offwind-ac-connection-underground",
+      "source_investment": 3750.0,
+      "lifetime_years": 40.0,
+      "discount_rate": 0.07,
+      "FOM_percent": 2.5,
+      "native_full_year_annualized_cost": 375.0342707760387
+    }
+  ],
+  "cost_intercept_EUR_per_MW_year": 269186.20913709386,
+  "distance_slope_EUR_per_MW_km_year": 468.79283847004837,
+  "no_MEM_generator_cost_changed": true
+}

@@ -1,0 +1,154 @@
+{
+  "phase": "ETX-7B6",
+  "gate": "ETX7B6_STAGE_A_SOLVER_READY",
+  "status": "PASS",
+  "timestamp": "2026-09-19T14:19:32.734609Z",
+  "python_version": "3.11.15",
+  "pypsa_version": "1.2.3",
+  "linopy_version": "0.7.0",
+  "solver_version": "13.0.3",
+  "solver": "gurobi",
+  "input_manifests": [
+    {
+      "input_id": "b1",
+      "path": "stage_a_inputs/etx7a_v1_0/static/MEM_ETX7A_Static_Output_Manifest_v1.0.csv",
+      "expected_sha256": "4E5DC493BDCB7713B6E1147FD4F1AC1953A196565ED95ECB9B5A1F8BA31C4BCE",
+      "observed_sha256": "4E5DC493BDCB7713B6E1147FD4F1AC1953A196565ED95ECB9B5A1F8BA31C4BCE",
+      "member_count": 7,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b2",
+      "path": "stage_a_inputs/italy_base_v1_0/static/MEM_ETX7B2_IT_Static_Output_Manifest_v1.0.csv",
+      "expected_sha256": "D7E5CA7B7E71E83B2DF79DAE690E0CA51E7DB8F873B6A74641F3F1726FE775BD",
+      "observed_sha256": "D7E5CA7B7E71E83B2DF79DAE690E0CA51E7DB8F873B6A74641F3F1726FE775BD",
+      "member_count": 5,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b3",
+      "path": "stage_a_inputs/temporal_2019_v1_0/MEM_ETX7B3_Temporal_Output_Manifest_v1.0.csv",
+      "expected_sha256": "B2C2AECB964A23BED776D43D91D0F7ADCEE38587BB0DB2CEE8E8AB6D8F8B05BC",
+      "observed_sha256": "B2C2AECB964A23BED776D43D91D0F7ADCEE38587BB0DB2CEE8E8AB6D8F8B05BC",
+      "member_count": 10,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b4",
+      "path": "stage_a_inputs/operating_base_v1_0/MEM_ETX7B4_Output_Manifest_v1.0.csv",
+      "expected_sha256": "442C215CB26658860F6B9BCF3620A2A7EABAAFED68A736DAC192E9099BA53998",
+      "observed_sha256": "442C215CB26658860F6B9BCF3620A2A7EABAAFED68A736DAC192E9099BA53998",
+      "member_count": 11,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b4_verification",
+      "path": "qa/stage_a/etx7b4/MEM_ETX7B4_Final_Verification_v1.0.json",
+      "expected_sha256": "F0A58C5268596F75726A8B6A027F203FC73998187DD46C6026D7A3143F8217F3",
+      "observed_sha256": "F0A58C5268596F75726A8B6A027F203FC73998187DD46C6026D7A3143F8217F3",
+      "member_count": 0,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b5",
+      "path": "stage_a_inputs/topology_v1_0/MEM_ETX7B5_Topology_Output_Manifest_v1.0.csv",
+      "expected_sha256": "78DB32E772D9990F691FA019DEDFC3999B174D2DACABDEF9608BAEDB5CE01C68",
+      "observed_sha256": "78DB32E772D9990F691FA019DEDFC3999B174D2DACABDEF9608BAEDB5CE01C68",
+      "member_count": 10,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b5_verification",
+      "path": "qa/stage_a/etx7b5/MEM_ETX7B5_Final_Verification_v1.0.json",
+      "expected_sha256": "E1E64F09101E75B0B9AE6D7015C3D174F2C5AD9EAB4A4ACC389E81EA02DCD37A",
+      "observed_sha256": "E1E64F09101E75B0B9AE6D7015C3D174F2C5AD9EAB4A4ACC389E81EA02DCD37A",
+      "member_count": 0,
+      "member_failures": 0,
+      "status": "PASS"
+    }
+  ],
+  "command": "'source://mem-model/.venv/Scripts/python.exe' b6 --execute",
+  "outputs": {
+    "networks": {
+      "2040": "stage_a_networks/2040/MEM_ETX7B6_2040_BASE_8760h_UNSOLVED.nc",
+      "2050": "stage_a_networks/2050/MEM_ETX7B6_2050_BASE_8760h_UNSOLVED.nc"
+    },
+    "manifest": "qa/stage_a/etx7b6/MEM_ETX7B6_Output_Manifest_v1.0.csv",
+    "manifest_sha256": "67902C9B13B4D52D36EC8BB795CC1FB287B51F97FC0DEE849BB000C19AE86842",
+    "raw_log": "qa/stage_a/etx7b6/logs/MEM_ETX7B6_raw.log",
+    "network_built_and_validated": true,
+    "market_solve_executed": false
+  },
+  "qa": {
+    "gurobi_preflight": {
+      "windows_user": "Research contributor",
+      "gurobipy_version": "13.0.3",
+      "linopy_gurobi_visible": true,
+      "licence_visible": true,
+      "tiny_lp_status": "OPTIMAL",
+      "tiny_lp_objective": 12.0,
+      "tiny_lp_x": 4.0,
+      "tiny_lp_y": 0.0
+    },
+    "horizons": {
+      "2040": {
+        "horizon": 2040,
+        "snapshots": 8760,
+        "market_buses": 10,
+        "auxiliary_state_buses": 33,
+        "loads": 10,
+        "conventional_and_vre_generators": 73,
+        "bess_states": 15,
+        "hydro_and_phs_slices": 28,
+        "physical_interconnectors": 12,
+        "load_shedding_generators": 10,
+        "production_solve_run": false,
+        "qa_checks": 26,
+        "qa_failures": 0,
+        "ordinary_generator_contract_rows": 73,
+        "vre_profile_joins": 26,
+        "technical_availability_joins": 47,
+        "phs_states": 9,
+        "linopy_model_assembled": true,
+        "linopy_variables": 2172480,
+        "linopy_constraints": 4432560,
+        "market_solve_executed": false,
+        "network": "stage_a_networks/2040/MEM_ETX7B6_2040_BASE_8760h_UNSOLVED.nc",
+        "network_sha256": "5AE2024102CBD540F1285BD44CD14C98DA583DF66699E15589F5173309671A42"
+      },
+      "2050": {
+        "horizon": 2050,
+        "snapshots": 8760,
+        "market_buses": 10,
+        "auxiliary_state_buses": 30,
+        "loads": 10,
+        "conventional_and_vre_generators": 64,
+        "bess_states": 12,
+        "hydro_and_phs_slices": 28,
+        "physical_interconnectors": 12,
+        "load_shedding_generators": 10,
+        "production_solve_run": false,
+        "qa_checks": 26,
+        "qa_failures": 0,
+        "ordinary_generator_contract_rows": 64,
+        "vre_profile_joins": 26,
+        "technical_availability_joins": 38,
+        "phs_states": 9,
+        "linopy_model_assembled": true,
+        "linopy_variables": 1988520,
+        "linopy_constraints": 4064640,
+        "market_solve_executed": false,
+        "network": "stage_a_networks/2050/MEM_ETX7B6_2050_BASE_8760h_UNSOLVED.nc",
+        "network_sha256": "06CC25DB50AD717AE27332A57168CB4DBFF38765703022CB05D3E5BA9943E4DE"
+      }
+    }
+  },
+  "next_gate": "ETX-7B7",
+  "runtime_seconds": 35.05351040000096
+}

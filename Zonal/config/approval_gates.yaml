@@ -1,0 +1,337 @@
+project_plan:
+  status: V2_2_ADOPTED
+  approved_id: MEM_REMAINING_EXECUTION_PLAN_V2_2
+  path: docs/project_plan/MEM_Remaining_Execution_Plan_v2.2.md
+  sha256: 7F858DEB139F46E2ECE26EA8D82FA972A6D304B01D44300EF31FE79D8AB11EA6
+  data_status: SOLE_ACTIVE_REMAINING_EXECUTION_PLAN_FROM_ETX7B4; B1_B2_B3_B4_B5_ACCEPTED; ETX7B6_B7_B8_B9A_B9B_PASS; B8D_R10_2040_ACCEPTED_LOCKED; B9C_R10_2050_FROZEN_DIAGNOSTIC_ONLY; B9D_R5_2050_FROZEN_DIAGNOSTIC_ONLY; B9E_COMPLETED; B9F_IMMUTABLE_DIAGNOSTIC_PREDECESSOR; B9H_PEER_PASS_IMPORTED; B9G_COMPLETED_PARENT_PACKAGE_MISSING_IN_MASTER
+  promotion_rule: v2.2 governs from ETX-7B4 onward. Frozen methodology, controls and completed predecessor receipts remain accepted. Each formal phase requires acceptance before its successor.
+
+execution_mode:
+  status: MANUAL_POWERSHELL_GATE_EXECUTION_READY
+  promotion_rule: The operator may run only the exact deterministic PowerShell command in the current gate runbook. Research and assumptions remain locked; The model operator reviews each machine-readable receipt before the successor gate may run. No speculative parallel phases or gate bypasses.
+
+chronology:
+  status: METHOD_SELECTED
+  approved_id: C2019_PREFERRED_NEWER
+  year: 2019
+  data_status: CUTOUT_ACQUIRED_AND_VALIDATED_8760; ETX7B3_FIXED_TEN_MARKET_LOAD_VRE_HYDRO_TEMPORAL_PACKAGE_COMPLETE
+  promotion_rule: Selection resolves the year choice only. Accepted hourly inputs require one complete 8760-hour UTC 2019 chronology and passing real-data QA.
+
+external_prices:
+  status: 2040_R10_AND_2050_B9H_PRODUCTION_SOURCES_ACCEPTED
+  approved_id: E1_EXISTING_MEM_PYPSA_EUR_BOUNDARY_WORKFLOW
+  data_status: B8_AND_B9B_BOUNDED_BASELINES_IMMUTABLE; S2_MAX_CLOSURE_DIAGNOSTIC_IMMUTABLE; B8D_2040_ACCEPTED_AND_HASH_FROZEN; B10_2040_COMPLETE; STAGE_B_2040_RUNTIME_1_PASS; B9C_2050_R10_IMMUTABLE_DIAGNOSTIC; B9D_2050_R5_IMMUTABLE_DIAGNOSTIC; B9E_COMPLETED; B9F_IMMUTABLE_DIAGNOSTIC_PREDECESSOR; B9H_IMMUTABLE_ACCEPTED_2050_PRICE_SOURCE; B9G_STANDALONE_PACKAGE_NON_BLOCKING_PROVENANCE_GAP; B10_2050_PASS_IMMUTABLE; STAGE_B_2050_PREPARATION_PASS
+  promotion_rule: The fixed ten-market Stage-A model supplies Stage B only through explicitly accepted horizon-specific production sources. The 2040 B8D and 2050 B9H sources and their B10 handoffs are accepted and locked. The absent standalone B9G completed package is a non-blocking historical provenance gap, not a B10 runtime dependency. All three 2050 Stage-B networks are prepared unsolved; production optimization remains locked pending execution authorization for that legacy model family. CORS has no Stage-A price.
+
+stage_a_static_inputs:
+  status: ETX7B1_STATIC_ADAPTER_COMPLETE
+  approved_id: ETX7A_V1_0
+  data_status: FROZEN_SOURCES_ARCHIVED_AND_HASHED; 207_CANONICAL_AND_161_RUNTIME_ROWS_INGESTED; DETERMINISTIC_STATIC_TABLES_EMITTED; 20_OF_20_STATIC_QA_PASS; 25_OF_25_REPOSITORY_TESTS_PASS; STAGE_B_HASHES_UNCHANGED
+  promotion_rule: ETX-7B1 is complete. ETX-7B2 Italy Base aggregation is also complete and accepted; retain both static packages and their existing receipts. No coupled network is authorized by this gate.
+
+stage_a_italy_static:
+  status: ETX7B2_ITALY_ONE_NODE_STATIC_AGGREGATION_COMPLETE
+  approved_id: ETX7B2_IT_STATIC_V1_0
+  data_status: 9_OF_9_STAGE_B_HASH_RECEIPTS_PASS; 7_OF_7_ETX7B1_HASH_RECEIPTS_PASS; 25_OF_25_ETX7B2_QA_PASS; 33_OF_33_REPOSITORY_TESTS_PASS; 2040_2050_BASE_ONLY; NO_HOURLY_NETWORK_OR_SOLVER_WORK
+  promotion_rule: ETX-7B2 is complete. ETX-7B3 may implement only the v2.1 fixed-10-market 2019 temporal realization and bounded MT/TN exception closure. This gate does not authorize topology, Stage-A network construction or optimization.
+
+stage_a_temporal:
+  status: ETX7B3_2019_TEMPORAL_INPUTS_COMPLETE
+  approved_id: ETX7B3_TEMPORAL_2019_V1_0
+  data_status: FIXED_10_MARKETS; 8760_UTC; 20_LOAD_REALIZATIONS; 30_VRE_PROFILES; 14_HYDRO_PROFILES; 100_OF_100_REQUIRED_COVERAGE_COMPLETE; 28_OF_28_QA_PASS; 8_OF_8_B3_TESTS_PASS; STAGE_B_B1_B2_HASH_REGRESSION_PASS
+  promotion_rule: ETX-7B3 is complete. ETX-7B4 may assign only the horizon-specific Base operating assumptions and hydro/storage state mappings to the frozen B1/B2 systems and accepted 2019 temporal package. Topology, network construction and optimization remain locked.
+
+stage_a_operating_base:
+  status: ETX7B4_BASE_RUNTIME_PARAMETER_LAYER_COMPLETE
+  approved_id: ETX7B4_OPERATING_BASE_V1_0
+  data_status: 165_GENERATORS; 43_STORAGE_RECORDS; 8760_HOURLY_TECHNICAL_AVAILABILITY; ITALY_METHOD_C_PURE_MIXED_PHS_COMPLETE; HYDRO_ANNUAL_STATE_MAPPING_COMPLETE; PREDECESSOR_REGRESSION_PASS
+  promotion_rule: ETX-7B4 is complete. ETX-7B5 may build only the frozen ten-market topology and horizon-specific NTC layer. No optimization is unlocked by this gate.
+
+stage_a_topology:
+  status: ETX7B5_FIXED_STAGE_A_TOPOLOGY_COMPLETE
+  approved_id: ETX7B5_TOPOLOGY_V1_0
+  data_status: EXACT_10_MARKETS; 12_PHYSICAL_CONNECTIONS; 24_DIRECTED_ROWS_PER_HORIZON; 5_ASYMMETRIC_CONNECTIONS; 8_EXPLICIT_2040_TO_2050_CARRY_FORWARD_ROWS; 38_OF_38_QA_PASS; PREDECESSOR_REGRESSION_PASS
+  promotion_rule: ETX-7B5 is complete and remains frozen. Its contract was consumed unchanged by accepted ETX-7B6 and ETX-7B7 execution; subsequent gates may not reopen topology.
+
+runtime_assumptions:
+  status: ETX7B5_BASE_RUNTIME_FIXED_TOPOLOGY_AND_B9G_BOUNDED_RESIDUAL_CONTRACT_IMPLEMENTED
+  # This ID records the selected first-run conventions, not approval of the old
+  # candidate bundle or acceptance of unresolved runtime parameters.
+  approved_id: FIRST_RUN_CONVENTIONS_2019_2040_BASE
+  data_status: GENERATOR_ECONOMICS_AVAILABILITY_BESS_PHS_HYDRO_SOFT_CONTROLS_AND_FIXED_DIRECTIONAL_TOPOLOGY_IMPLEMENTED; ETX7B6_NETWORK_ACCEPTED; B8_AND_B9B_BOUNDED_ANNUAL_BASELINES_PASS; B8D_2040_R10_ACCEPTED; B9C_B9D_B9E_COMPLETED; B9F_IMMUTABLE_DIAGNOSTIC; B9G_PREPARED_NOT_EXECUTED
+  promotion_rule: Accepted B4 operating assumptions and the B5 topology contract remain frozen. The isolated B9G diagnostic reconstructs B6, recreates the exact five B9F proxies and adds only three ME/MT/TN residual R10 generators. No other model component or assumption may change.
+
+stage_a_manual_gates:
+  current_gate: ETX7B9H_2050_FINAL_RESIDUAL_MT_TN_CLOSURE_COMPLETE
+  b6_status: PASS
+  b7_status: PASS
+  b8_status: PASS
+  b9a_status: PASS
+  b9b_status: PASS
+  auxiliary_status: B8D_2040_ACCEPTED_LOCKED_B9C_B9D_B9E_COMPLETED_B9F_IMMUTABLE_DIAGNOSTIC_B9H_ACCEPTED_IMMUTABLE_B9G_HISTORICAL_PACKAGE_GAP_NON_BLOCKING
+  authorized_next_gate: STAGE_B_2050_SLOW_BASE_HIGH_MANUAL_PRODUCTION
+  required_predecessor_gate: ETX7B9H_2050_FINAL_RESIDUAL_MT_TN_CLOSURE_COMPLETE
+  required_predecessor_receipt: qa/stage_a/etx7b9h/MEM_ETX7B9H_Run_Receipt_v1.0.json
+  b9_authorized: false
+  b8d_authorized: false
+  b9c_authorized: false
+  b9d_authorized: false
+  b9e_authorized: false
+  b9f_authorized: false
+  b9g_authorized: false
+  b10_2040_authorized: false
+  b10_2040_status: ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE
+  b10_2040_authorized_command: null
+  b10_2050_authorized: false
+  b10_2050_status: ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE
+  b10_2050_authorized_command: null
+  stage_b_2040_authorized: false
+  stage_b_2040_authorized_scenarios: []
+  stage_b_2040_unauthorized_scenarios: [Slow, Base, High]
+  stage_b_2040_status: STAGE_B_2040_THREE_SCENARIO_PRODUCTION_COMPLETE
+  stage_b_2040_base_status: ACCEPTED_CANONICAL_PRODUCTION_RUN_IMMUTABLE
+  stage_b_2040_base_acceptance: results/MEM_2040_BASE_CANONICAL/MEM_STAGE_B_2040_BASE_ACCEPTANCE_v1.0.json
+  stage_b_2040_runtime_manifest: runtime_inputs/accepted/MEM_STAGE_B_2040_ACCEPTED_RUNTIME_MANIFEST_v1.0.csv
+  stage_b_2040_runtime_manifest_sha256: 5BAAE9BC065221463A422C2835A09DBFB4BC7B1E8B97902F34502D4D7EA9A63B
+  stage_b_2040_authorized_commands: {}
+  stage_b_2050_authorized: false
+  stage_b_2050_preparation_status: STAGE_B_2050_PREPARATION_PASS
+  stage_b_2050_scenarios: {Slow: PRE_P2X_FLEX_DIAGNOSTIC_BASELINE, Base: PRE_P2X_FLEX_DIAGNOSTIC_BASELINE, High: PRE_P2X_FLEX_DIAGNOSTIC_BASELINE}
+  b10_authorized: false
+  stage_b_authorized: false
+  promotion_rule: B9H and both B10 handoffs remain immutable. Existing 2040 and 2050 solved Stage-B results are retained as PRE_P2X_FLEX_DIAGNOSTIC_BASELINE and cannot be overwritten. Only the separate P2X_FLEX_V1 gate may authorize corrected manual production execution. Generic B10 and Stage-A solver gates remain locked.
+
+stage_b_2040_production:
+  status: STAGE_B_2040_THREE_SCENARIO_PRODUCTION_COMPLETE
+  execution_enabled: false
+  authorized_year: 2040
+  authorized_mode: FULL_YEAR_CANONICAL
+  scenario_authorization:
+    Slow: false
+    Base: false
+    High: false
+  accepted_scenarios: [Slow, Base, High]
+  accepted_base_receipt: results/MEM_2040_BASE_CANONICAL/MEM_STAGE_B_2040_BASE_ACCEPTANCE_v1.0.json
+  accepted_base_receipt_sha256: 712320BCF64F9E9A06D5F0A8676DEC0BB1B54B879EF7BF002259F3E13CA6F39C
+  accepted_base_solved_network_sha256: F10CBC2EBBD5DC4574BD788814E44FB81C257B653936FF2EC7BEDC4168999733
+  accepted_base_reporting_manifest_sha256: D70A6CF5CCCF68B09A059A525DBA5846B0BCECE81066F42BBB82B457E973AA78
+  accepted_slow_receipt: results/MEM_2040_SLOW_CANONICAL/MEM_STAGE_B_2040_SLOW_ACCEPTANCE_v1.0.json
+  accepted_slow_receipt_sha256: D1B4192DA6BB8F907BC3AC8F5243BAFCEB45862DBC224141BB024AF9CDF3025E
+  accepted_high_receipt: results/MEM_2040_HIGH_CANONICAL/MEM_STAGE_B_2040_HIGH_ACCEPTANCE_v1.0.json
+  accepted_high_receipt_sha256: A44B54F62F2D163ED89CE5D27CB01B3257BA65BD727C4C82826E8419E44FEE08
+  authorized_commands: {}
+  required_b10_gate: ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE
+  required_runtime_gate: STAGE_B_2040_RUNTIME_1_PASS
+  required_runtime_manifest: runtime_inputs/accepted/MEM_STAGE_B_2040_ACCEPTED_RUNTIME_MANIFEST_v1.0.csv
+  required_runtime_manifest_sha256: 5BAAE9BC065221463A422C2835A09DBFB4BC7B1E8B97902F34502D4D7EA9A63B
+  chronology: C2019_PREFERRED_NEWER_2019_UTC_8760
+  solver:
+    name: gurobi
+    required_gurobipy_version: 13.0.3
+    options:
+      Threads: 1
+      Seed: 0
+    include_objective_constant: false
+    log_to_console: true
+    licence_execution_identity: NORMAL_WINDOWS_USER
+  production_optimization_executed: true
+  base_production_acceptance: ACCEPTED_IMMUTABLE
+  stage_b_2050_authorized: false
+  silent_runtime_fallback_allowed: false
+  baseline_classification: PRE_P2X_FLEX_DIAGNOSTIC_BASELINE
+  promotion_rule: All Slow/Base/High 2040 production runs are accepted immutable. This gate refuses every 2040 rerun before network construction. The accepted Runtime-1 bundle and all solved networks are unchanged; the topology figure/reporting manifests were amended for an exact schematic edge-set correction only. Stage-B 2050 remains governed separately and locked.
+
+stage_b_2050_production:
+  status: PRE_P2X_FLEX_DIAGNOSTIC_BASELINE
+  execution_enabled: false
+  authorized_executor: MANUAL_POWERSHELL_OPERATOR_ONLY
+  automated_production_solver_execution: PROHIBITED
+  authorized_year: 2050
+  authorized_mode: FULL_YEAR_CANONICAL
+  scenario_authorization: {Slow: false, Base: false, High: false}
+  scenario_preparation: {Slow: PRE_P2X_FLEX_DIAGNOSTIC_BASELINE, Base: PRE_P2X_FLEX_DIAGNOSTIC_BASELINE, High: PRE_P2X_FLEX_DIAGNOSTIC_BASELINE}
+  required_source: ETX-7B9H
+  required_b10_gate: ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE
+  required_b10_manifest_sha256: AC3F242338A289DA740801A6B16F924E3FECF45ED17FE4F55487D356B8852FA5
+  required_runtime_manifest: runtime_inputs/accepted_2050/MEM_STAGE_B_2050_ACCEPTED_RUNTIME_MANIFEST_v1.0.csv
+  required_runtime_manifest_sha256: E7F224D4D33FE8B7262E3974DB1CB85D250279FEBCCBC689A13D16ACF472A993
+  future_manual_commands: {}
+  solver:
+    name: gurobi
+    required_gurobipy_version: 13.0.3
+    options: {Threads: 1, Seed: 0}
+    include_objective_constant: false
+    log_to_console: true
+    licence_execution_identity: NORMAL_WINDOWS_USER
+  production_optimization_executed: true
+  promotion_rule: The pre-P2X 2050 solved results remain immutable diagnostic baselines. This old entrypoint refuses all reruns. B9H/B10-2050 input authority remains unchanged; corrected production is governed only by stage_b_p2x_flex_v1.
+
+stage_b_p2x_flex_v1:
+  status: READY_FOR_MANUAL_EXECUTION
+  execution_enabled: true
+  authorized_executor: MANUAL_POWERSHELL_OPERATOR_ONLY
+  automated_production_solver_execution: PROHIBITED
+  authorized_years: [2040, 2050]
+  scenario_authorization:
+    2040: {Slow: true, Base: true, High: true}
+    2050: {Slow: true, Base: true, High: true}
+  required_qa_state: qa/stage_b/p2x_flex_v1/MEM_STAGE_B_P2X_FLEX_V1_STATE.json
+  required_qa_state_sha256: D3F02855E500DE7453235021C0E5AAFD5C5A507B3C6A0B665CDD0AB9AA7E0D26
+  required_runtime_manifest_sha256:
+    2040: 7E7360E58B751C9B5F9E6D182CE32DBDCE94D92B2BB856C69E99669127F3566E
+    2050: 435ed2558154037ff29d35bfb45aefbf2c6363e61a180ccebcbfeb9b0b4e83e0
+  baseline_classification: PRE_P2X_FLEX_DIAGNOSTIC_BASELINE
+  output_version: P2X_FLEX_V1
+  solver: {name: gurobi, required_gurobipy_version: 13.0.3, options: {Threads: 1, Seed: 0}, include_objective_constant: false}
+  production_optimization_executed: false
+
+full_year_solver:
+  status: FINAL_RESIDUAL_ME_MT_TN_2050_ISOLATED_FULL_YEAR_DIAGNOSTIC_PREPARED
+  # Keep the legacy generic Stage-A full-year entrypoint locked. The separately
+  # governed Stage-B 2040 production path does not consume this token.
+  execution_enabled: false
+  unlock_token: null
+  etx7b8_execution_authorized: false
+  authorized_gate: null
+  authorized_horizon: null
+  authorized_scenario: null
+  authorized_mode: null
+  authorized_command: null
+  required_predecessor_gate: null
+  required_predecessor_receipt: null
+  successor_gates_authorized: false
+  r10_experiment_execution_enabled: false
+  r5_diagnostic_execution_enabled: false
+  placement_diagnostic_execution_enabled: false
+  residual_me_mt_tn_diagnostic_execution_enabled: false
+  authorized_experiment_commands: []
+  production_source_promotion_automatic: false
+  promotion_rule: Generic Stage-A full-year execution remains locked. No Stage-A diagnostic rerun is authorized. B10-2050 waits for completed B9G parent-package integrity verification; the distinct Stage-B 2040 production gate is unaffected.
+
+auxiliary_experiments:
+  etx7b8c_s2:
+    status: PASS_IMMUTABLE
+    formal_gate: false
+    methodological_role: ACCEPTED_DIAGNOSTIC_MAX_CLOSURE_EXPERIMENT
+    production_price_source: false
+    execution_authorized_command: null
+    required_baseline_gate: ETX7B8_2040_BASE_FULL_YEAR_COMPLETE
+    required_baseline_receipt: qa/stage_a/etx7b8/MEM_ETX7B8_Run_Receipt_v1.0.json
+    result_namespace: stage_a_results/2040_perimeter_closure_s2
+    result_gate: ETX7B8C_S2_EXPERIMENT_COMPLETE
+    immutable_receipt: qa/stage_a/etx7b8c/MEM_ETX7B8C_S2_Run_Receipt_v1.0.json
+    stage_b_authorized: false
+    promotion_rule: Historical upper-bound diagnostic only. Preserve its receipt, results and comparisons; never select it silently as a production-price source.
+  etx7b8d_r10:
+    status: PASS_IMMUTABLE_ACCEPTED_2040_PRODUCTION_PRICE_SOURCE
+    formal_gate: false
+    method: PERIMETER_CLOSURE_METHOD_V2_0
+    execution_authorized_command: null
+    required_baseline_gate: ETX7B8_2040_BASE_FULL_YEAR_COMPLETE
+    required_baseline_receipt: qa/stage_a/etx7b8/MEM_ETX7B8_Run_Receipt_v1.0.json
+    result_namespace: stage_a_results/2040_perimeter_closure_r10
+    immutable_receipt: qa/stage_a/etx7b8d/MEM_ETX7B8D_Run_Receipt_v1.0.json
+    receipt_sha256: C69ACBF941261BD37426EDCEDB1C14482977C2059427FEA1968008492E05F8C0
+    result_manifest_sha256: 88C259493E5D5B8E4B4B2B3C535BCDB623924474FB23DD860D2B8673FE08DA2D
+    production_price_source: true
+  etx7b9c_r10:
+    status: PASS_IMMUTABLE_DIAGNOSTIC_ONLY
+    formal_gate: false
+    method: PERIMETER_CLOSURE_METHOD_V2_0
+    execution_authorized_command: null
+    required_baseline_gate: ETX7B9_2050_BASE_FULL_YEAR_COMPLETE
+    required_baseline_receipt: qa/stage_a/etx7b9/MEM_ETX7B9_Run_Receipt_v1.0.json
+    result_namespace: stage_a_results/2050_perimeter_closure_r10
+    immutable_receipt: qa/stage_a/etx7b9c/MEM_ETX7B9C_Run_Receipt_v1.0.json
+    receipt_sha256: 1D741BD14C15E19443C04CABBC9E1A151771D0A84EEAE225F75B8A1247E758D1
+    result_manifest_sha256: 040272788BBC3CA4F880B50A58B6181CB970CA1F5C4B486D366B98D373922A4F
+    production_price_source: false
+  etx7b9d_r5:
+    status: PASS_IMMUTABLE_DIAGNOSTIC_ONLY
+    formal_gate: false
+    method: PERIMETER_CLOSURE_METHOD_V2_0
+    residual_energy_share: 0.05
+    execution_authorized_command: null
+    required_baseline_gate: ETX7B9_2050_BASE_FULL_YEAR_COMPLETE
+    required_baseline_receipt: qa/stage_a/etx7b9/MEM_ETX7B9_Run_Receipt_v1.0.json
+    required_comparison_receipt: qa/stage_a/etx7b9c/MEM_ETX7B9C_Run_Receipt_v1.0.json
+    result_namespace: stage_a_results/2050_perimeter_closure_r5
+    immutable_receipt: qa/stage_a/etx7b9d/MEM_ETX7B9D_Run_Receipt_v1.0.json
+    receipt_sha256: E032C63879BF294C99759C8097A7AA7BADB9F5477CA20E8992B07012C266B2E4
+    result_manifest_sha256: B025D54E3E68E8EE23C613A0B8CED4F4CA6EBDD441F115B2D97D0FF90AD79D9B
+    production_price_source: false
+  etx7b9e_placement:
+    status: PASS_IMMUTABLE_COMPARISON_CASE
+    formal_gate: false
+    method: PERIMETER_CLOSURE_METHOD_V2_0
+    classification: NEAR_CONSTANT_TOTAL_CAPACITY_PLACEMENT_TEST
+    execution_authorized_command: null
+    required_baseline_gate: ETX7B9_2050_BASE_FULL_YEAR_COMPLETE
+    required_R10_receipt: qa/stage_a/etx7b9c/MEM_ETX7B9C_Run_Receipt_v1.0.json
+    required_R5_receipt: qa/stage_a/etx7b9d/MEM_ETX7B9D_Run_Receipt_v1.0.json
+    result_namespace: stage_a_results/2050_perimeter_closure_placement
+    automatic_production_acceptance: false
+  etx7b9f_fr_r5_hybrid:
+    status: PASS_IMMUTABLE_DIAGNOSTIC_PREDECESSOR
+    formal_gate: false
+    method: PERIMETER_CLOSURE_METHOD_V2_0
+    execution_authorized_command: null
+    required_baseline_gate: ETX7B9_2050_BASE_FULL_YEAR_COMPLETE
+    immutable_receipt: qa/stage_a/etx7b9f/MEM_ETX7B9F_Run_Receipt_v1.0.json
+    receipt_sha256: 501A717D61D1E07AF811E46BBF1E9894C3712D508AE262853509F934B1A93412
+    result_namespace: stage_a_results/2050_perimeter_closure_fr_r5_hybrid
+    result_manifest_sha256: DB802FBDB02B6DB69701A605FD5CA03F078161BCEFFF3B707B011FEC78AD79B0
+    production_price_source: false
+  etx7b9g_residual_me_mt_tn:
+    status: PEER_COMPLETED_PARENT_PACKAGE_PENDING_MASTER_INTEGRATION
+    formal_gate: false
+    method: PERIMETER_CLOSURE_METHOD_V2_0
+    classification: FINAL_RESIDUAL_ME_MT_TN_R10_CLOSURE_DIAGNOSTIC
+    execution_authorized_command: null
+    required_predecessor_gate: ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_COMPLETE
+    required_predecessor_receipt: qa/stage_a/etx7b9f/MEM_ETX7B9F_Run_Receipt_v1.0.json
+    result_namespace: stage_a_results/2050_perimeter_closure_residual_me_mt_tn
+    automatic_production_acceptance: false
+    B10_2050_authorized: false
+    Stage_B_2050_authorized: false
+  etx7b9h_final_mt_tn:
+    status: PASS_ACCEPTED_IMMUTABLE_2050_PRODUCTION_PRICE_SOURCE
+    formal_gate: false
+    execution_authorized_command: null
+    immutable_receipt: qa/stage_a/etx7b9h/MEM_ETX7B9H_Run_Receipt_v1.0.json
+    receipt_sha256: B95CB4B4FB59530872EF706185A09840B5EAB4C40AD565F1C6B31BA341E8906D
+    result_manifest_sha256: 07D33D8A9EEA044FF09AD8D9802716730F79EB5887BC0330BC35A937E6A10FB8
+    market_prices_sha256: 57A4D5AFFA906B14FA7245D28972F9C53DEDA51E5D66CDA2782723419B33DED7
+    B9G_completed_standalone_package: NOT_AVAILABLE_IN_CONSOLIDATED_MASTER
+    B9G_provenance_disposition: NON_BLOCKING_HISTORICAL_PROVENANCE_GAP
+    B9I_authorized: false
+    B10_2050_authorized: true
+    Stage_B_2050_authorized: false
+
+perimeter_closure_method:
+  status: V2_ACTIVE_2040_R10_ACCEPTED_2050_B9G_FINAL_RESIDUAL_DIAGNOSTIC_PREPARED
+  approved_id: PERIMETER_CLOSURE_METHOD_V2_0
+  authority: config/stage_a_perimeter_closure_method_v2_0.yaml
+  residual_energy_share: 0.10
+  2050_diagnostic_residual_energy_share: 0.05
+  2050_placement_sizing_residual_energy_share: 0.10
+  2050_B9G_residual_sizing_share: 0.10
+  2050_B9G_residual_markets: [ME, MT, TN]
+  candidate_markets: [FR, GR, TN]
+  v1_status: SUPERSEDED_UNACCEPTED_DRAFT
+
+production_price_sources:
+  status: BOTH_B10_HANDOFFS_COMPLETE_2050_STAGE_B_MANUAL_PRODUCTION_AUTHORIZED
+  authority: config/stage_a_production_price_sources.yaml
+  2040: ETX7B8D_R10_ACCEPTED_LOCKED
+  2050: ETX7B9H_ACCEPTED_IMMUTABLE_PRICE_SOURCE
+  b10_authorized: false
+  stage_b_authorized: false
+  b10_2040_status: COMPLETE
+  stage_b_2040_authorized_scenarios: [Slow, High]
+  stage_b_2040_unauthorized_scenarios: [Base]
+  stage_b_2040_base_status: ACCEPTED_CANONICAL_PRODUCTION_RUN_IMMUTABLE
+  b10_2050_authorized: false
+  b10_2050_status: ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE
+  stage_b_2050_preparation_status: STAGE_B_2050_PREPARATION_PASS
+  stage_b_2050_authorized: true

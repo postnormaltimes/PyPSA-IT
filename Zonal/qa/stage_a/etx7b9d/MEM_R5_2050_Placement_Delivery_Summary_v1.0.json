@@ -1,0 +1,169 @@
+{
+  "schema_version": "MEM_R5_2050_PLACEMENT_DELIVERY_SUMMARY_V1_0",
+  "status": "FACTUAL_DIAGNOSTIC_NO_AUTOMATIC_A_TO_D_CLASSIFICATION",
+  "targets": {
+    "AT": {
+      "residual_scarcity_hours": 146,
+      "residual_shedding_MWh": 480903.3634382703,
+      "hours_all_proxy_capacity_near_saturated": 0,
+      "hours_any_proxy_headroom_above_1_MW": 146,
+      "hours_any_proxy_directional_residual_path": 3,
+      "hours_any_proxy_simultaneous_headroom_and_path": 0,
+      "hours_headroom_without_any_directional_residual_path": 143,
+      "source_simultaneous_counts": {
+        "FR": {
+          "headroom_hours": 81,
+          "path_hours": 3,
+          "headroom_and_path_hours": 0
+        },
+        "GR": {
+          "headroom_hours": 131,
+          "path_hours": 0,
+          "headroom_and_path_hours": 0
+        },
+        "TN": {
+          "headroom_hours": 146,
+          "path_hours": 0,
+          "headroom_and_path_hours": 0
+        }
+      },
+      "binding_direction_counts_during_target_scarcity": {
+        "EXT_AT_CH:CH->AT": 146,
+        "EXT_AT_SI:SI->AT": 127,
+        "EXT_CH_FR:CH->FR": 52,
+        "IT_AT:IT->AT": 125,
+        "IT_CH:CH->IT": 135,
+        "IT_FR:IT->FR": 22,
+        "IT_GR:GR->IT": 142,
+        "IT_ME:ME->IT": 106,
+        "IT_MT:MT->IT": 100,
+        "IT_SI:IT->SI": 110,
+        "IT_TN:TN->IT": 145,
+        "EXT_HR_SI:HR->SI": 9,
+        "EXT_AT_SI:AT->SI": 7,
+        "IT_FR:FR->IT": 114,
+        "EXT_CH_FR:FR->CH": 77,
+        "IT_SI:SI->IT": 23,
+        "IT_AT:AT->IT": 21,
+        "EXT_HR_SI:SI->HR": 5,
+        "IT_CH:IT->CH": 4,
+        "IT_GR:IT->GR": 4
+      },
+      "non_decision_evidence": {
+        "A_insufficient_proxy_quantity_indicator": "hours_all_proxy_capacity_near_saturated",
+        "B_placement_delivery_indicator": "hours_headroom_without_any_directional_residual_path",
+        "C_broader_internal_adequacy_indicator": "hours_any_proxy_simultaneous_headroom_and_path_with_residual_scarcity",
+        "D_acceptable_residual_scarcity": "METHOD_REVIEW_ONLY_NO_AUTOMATIC_THRESHOLD"
+      }
+    },
+    "SI": {
+      "residual_scarcity_hours": 139,
+      "residual_shedding_MWh": 254963.30399189016,
+      "hours_all_proxy_capacity_near_saturated": 0,
+      "hours_any_proxy_headroom_above_1_MW": 139,
+      "hours_any_proxy_directional_residual_path": 9,
+      "hours_any_proxy_simultaneous_headroom_and_path": 0,
+      "hours_headroom_without_any_directional_residual_path": 130,
+      "source_simultaneous_counts": {
+        "FR": {
+          "headroom_hours": 73,
+          "path_hours": 9,
+          "headroom_and_path_hours": 0
+        },
+        "GR": {
+          "headroom_hours": 120,
+          "path_hours": 0,
+          "headroom_and_path_hours": 0
+        },
+        "TN": {
+          "headroom_hours": 139,
+          "path_hours": 0,
+          "headroom_and_path_hours": 0
+        }
+      },
+      "binding_direction_counts_during_target_scarcity": {
+        "EXT_AT_CH:CH->AT": 139,
+        "EXT_AT_SI:AT->SI": 12,
+        "EXT_CH_FR:FR->CH": 62,
+        "IT_AT:AT->IT": 23,
+        "IT_CH:CH->IT": 131,
+        "IT_FR:FR->IT": 107,
+        "IT_GR:GR->IT": 139,
+        "IT_ME:ME->IT": 98,
+        "IT_SI:SI->IT": 24,
+        "IT_TN:TN->IT": 139,
+        "IT_MT:MT->IT": 91,
+        "IT_SI:IT->SI": 103,
+        "EXT_CH_FR:CH->FR": 59,
+        "IT_AT:IT->AT": 116,
+        "IT_FR:IT->FR": 24,
+        "EXT_AT_SI:SI->AT": 112,
+        "EXT_HR_SI:HR->SI": 6,
+        "EXT_HR_SI:SI->HR": 5
+      },
+      "non_decision_evidence": {
+        "A_insufficient_proxy_quantity_indicator": "hours_all_proxy_capacity_near_saturated",
+        "B_placement_delivery_indicator": "hours_headroom_without_any_directional_residual_path",
+        "C_broader_internal_adequacy_indicator": "hours_any_proxy_simultaneous_headroom_and_path_with_residual_scarcity",
+        "D_acceptable_residual_scarcity": "METHOD_REVIEW_ONLY_NO_AUTOMATIC_THRESHOLD"
+      }
+    },
+    "IT": {
+      "residual_scarcity_hours": 61,
+      "residual_shedding_MWh": 795047.3738285388,
+      "hours_all_proxy_capacity_near_saturated": 0,
+      "hours_any_proxy_headroom_above_1_MW": 61,
+      "hours_any_proxy_directional_residual_path": 7,
+      "hours_any_proxy_simultaneous_headroom_and_path": 0,
+      "hours_headroom_without_any_directional_residual_path": 54,
+      "source_simultaneous_counts": {
+        "FR": {
+          "headroom_hours": 44,
+          "path_hours": 6,
+          "headroom_and_path_hours": 0
+        },
+        "GR": {
+          "headroom_hours": 51,
+          "path_hours": 0,
+          "headroom_and_path_hours": 0
+        },
+        "TN": {
+          "headroom_hours": 44,
+          "path_hours": 1,
+          "headroom_and_path_hours": 0
+        }
+      },
+      "binding_direction_counts_during_target_scarcity": {
+        "EXT_AT_CH:CH->AT": 59,
+        "EXT_AT_SI:AT->SI": 38,
+        "EXT_CH_FR:FR->CH": 26,
+        "IT_AT:AT->IT": 51,
+        "IT_CH:CH->IT": 61,
+        "IT_FR:FR->IT": 55,
+        "IT_GR:GR->IT": 61,
+        "IT_ME:ME->IT": 60,
+        "IT_SI:SI->IT": 51,
+        "IT_TN:TN->IT": 60,
+        "IT_MT:MT->IT": 57,
+        "EXT_CH_FR:CH->FR": 22,
+        "IT_FR:IT->FR": 3,
+        "EXT_AT_SI:SI->AT": 18,
+        "IT_AT:IT->AT": 10,
+        "IT_SI:IT->SI": 4,
+        "EXT_HR_SI:HR->SI": 2,
+        "EXT_AT_CH:AT->CH": 2,
+        "EXT_HR_SI:SI->HR": 1
+      },
+      "non_decision_evidence": {
+        "A_insufficient_proxy_quantity_indicator": "hours_all_proxy_capacity_near_saturated",
+        "B_placement_delivery_indicator": "hours_headroom_without_any_directional_residual_path",
+        "C_broader_internal_adequacy_indicator": "hours_any_proxy_simultaneous_headroom_and_path_with_residual_scarcity",
+        "D_acceptable_residual_scarcity": "METHOD_REVIEW_ONLY_NO_AUTOMATIC_THRESHOLD"
+      }
+    }
+  },
+  "simultaneous_evidence_rule": "HEADROOM_AND_INTERFACE_STATE_ARE_MEASURED_AT_THE_SAME_R5_RESIDUAL_SCARCITY_TIMESTAMP",
+  "annual_unused_capacity_used_as_delivery_evidence": false,
+  "automatic_classification": false,
+  "production_price_acceptance": "PENDING_METHOD_REVIEW"
+}

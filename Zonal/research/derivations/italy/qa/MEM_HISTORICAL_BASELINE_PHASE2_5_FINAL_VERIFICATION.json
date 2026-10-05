@@ -1,0 +1,264 @@
+{
+  "generated_at": "2026-09-01T19:03:46.046478+00:00",
+  "verification_status": "PASS_WITH_EXTERNAL_GATES",
+  "hard_failure_count": 0,
+  "gate_failure_count": 0,
+  "checks": [
+    {
+      "check": "capacity_row_count",
+      "passed": true,
+      "actual": 758,
+      "expected": 758,
+      "severity": "HARD"
+    },
+    {
+      "check": "generation_row_count",
+      "passed": true,
+      "actual": 881,
+      "expected": 881,
+      "severity": "HARD"
+    },
+    {
+      "check": "storage_row_count",
+      "passed": true,
+      "actual": 19,
+      "expected": 19,
+      "severity": "HARD"
+    },
+    {
+      "check": "taxonomy_row_count",
+      "passed": true,
+      "actual": 40,
+      "expected": 40,
+      "severity": "HARD"
+    },
+    {
+      "check": "taxonomy_integrity_group_count",
+      "passed": true,
+      "actual": 47,
+      "expected": 47,
+      "severity": "HARD"
+    },
+    {
+      "check": "taxonomy_integrity_zero_failures",
+      "passed": true,
+      "actual": 0,
+      "expected": 0,
+      "severity": "HARD"
+    },
+    {
+      "check": "hydro_physical_inventory_row_count",
+      "passed": true,
+      "actual": 196,
+      "expected": 196,
+      "severity": "HARD"
+    },
+    {
+      "check": "hydro_class_counts",
+      "passed": true,
+      "actual": {
+        "HPHS": 23,
+        "HDAM": 173
+      },
+      "expected": {
+        "HDAM": 173,
+        "HPHS": 23
+      },
+      "severity": "HARD"
+    },
+    {
+      "check": "HPHS_charge_power_MW",
+      "passed": true,
+      "actual": 6809.3,
+      "expected": 6809.3,
+      "severity": "HARD"
+    },
+    {
+      "check": "HPHS_physical_inventory_energy_MWh",
+      "passed": true,
+      "actual": 626262.056948,
+      "expected": 626262.056948,
+      "severity": "HARD"
+    },
+    {
+      "check": "HDAM_physical_inventory_energy_MWh",
+      "passed": true,
+      "actual": 5748189.091752,
+      "expected": 5748189.091752,
+      "severity": "HARD"
+    },
+    {
+      "check": "canonical_2024_PHS_discharge_MW",
+      "passed": true,
+      "actual": 7252.299999999999,
+      "expected": 7252.3,
+      "severity": "HARD"
+    },
+    {
+      "check": "canonical_2024_PHS_charge_MW",
+      "passed": true,
+      "actual": 6809.3,
+      "expected": 6809.3,
+      "severity": "HARD"
+    },
+    {
+      "check": "canonical_2024_PHS_energy_MWh",
+      "passed": true,
+      "actual": 53000.0,
+      "expected": 53000.0,
+      "severity": "HARD"
+    },
+    {
+      "check": "PHS_roundtrip_efficiency_not_invented",
+      "passed": true,
+      "actual": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "expected": "all blank",
+      "severity": "HARD"
+    },
+    {
+      "check": "matrix_thermoelectric_total_GW",
+      "passed": true,
+      "actual": 60.33037427,
+      "expected": 60.33037427,
+      "severity": "HARD"
+    },
+    {
+      "check": "matrix_geothermal_GW",
+      "passed": true,
+      "actual": 0.77179,
+      "expected": 0.77179,
+      "severity": "HARD"
+    },
+    {
+      "check": "DDS_comparable_thermal_plus_geothermal_GW",
+      "passed": true,
+      "actual": 61.10216427,
+      "expected": 61.10216427,
+      "severity": "HARD"
+    },
+    {
+      "check": "matrix_total_hydro_control_GW",
+      "passed": true,
+      "actual": 23.294000001,
+      "expected": 23.294,
+      "severity": "HARD"
+    },
+    {
+      "check": "matrix_bioenergy_cross_classification_GW",
+      "passed": true,
+      "actual": 3.8000923,
+      "expected": 3.8000923,
+      "severity": "HARD"
+    },
+    {
+      "check": "matrix_bioenergy_non_additive",
+      "passed": true,
+      "actual": "CROSS_CLASSIFICATION_NON_ADDITIVE",
+      "expected": "CROSS_CLASSIFICATION_NON_ADDITIVE",
+      "severity": "HARD"
+    },
+    {
+      "check": "analytical_workbook_sheet_names",
+      "passed": true,
+      "actual": [
+        "2024 Capacity by Zone",
+        "2024 Capacity Reconciliation"
+      ],
+      "expected": [
+        "2024 Capacity by Zone",
+        "2024 Capacity Reconciliation"
+      ],
+      "severity": "HARD"
+    },
+    {
+      "check": "analytical_workbook_formulas_present",
+      "passed": true,
+      "actual": 45,
+      "expected": ">0",
+      "severity": "HARD"
+    },
+    {
+      "check": "analytical_workbook_zero_formula_errors",
+      "passed": true,
+      "actual": [],
+      "expected": [],
+      "severity": "HARD"
+    },
+    {
+      "check": "v2.9_expected_binary_absent",
+      "passed": true,
+      "actual": false,
+      "expected": false,
+      "severity": "HARD"
+    },
+    {
+      "check": "v2.9_table_values_match_prechange_evidence",
+      "passed": true,
+      "actual": 0,
+      "expected": 0,
+      "severity": "HARD"
+    },
+    {
+      "check": "v2.9_formula_anchors_match_prechange_evidence",
+      "passed": true,
+      "actual": 0,
+      "expected": 0,
+      "severity": "HARD"
+    },
+    {
+      "check": "v2.9_formatting_differences_detected",
+      "passed": true,
+      "actual": 264,
+      "expected": 264,
+      "severity": "HARD"
+    },
+    {
+      "check": "no_premature_v2.9.1_workbook",
+      "passed": true,
+      "actual": [],
+      "expected": [],
+      "severity": "HARD"
+    },
+    {
+      "check": "complete_GEM_Aug2026_workbook_absent",
+      "passed": true,
+      "actual": [],
+      "expected": [],
+      "severity": "GATE"
+    }
+  ],
+  "key_results": {
+    "thermoelectric_NET_MW": 60330.37427,
+    "DDS_comparable_thermal_plus_geothermal_MW": 61102.16427,
+    "total_hydro_NET_MW": 23294.0,
+    "pure_pump_MW": 3969.57561,
+    "mixed_pump_MW": 3282.72439,
+    "pumped_discharge_MW": 7252.299999999999,
+    "HPHS_charge_MW": 6809.3,
+    "HPHS_physical_inventory_energy_MWh": 626262.056948,
+    "canonical_Terna_PHS_energy_MWh_approx": 53000.0,
+    "bioenergy_renewable_source_MW": 3800.0923,
+    "bioenergy_thermoelectric_fuel_MW": 3586.0,
+    "capacity_rows": 758,
+    "generation_rows": 881,
+    "storage_rows": 19,
+    "taxonomy_integrity_groups": 47,
+    "taxonomy_failures": 0,
+    "analytical_workbook_sha256": "5c41f3c89ba225abe07d884f26e3b3271dff4f063d996a105ed2a9f51adf2d8c"
+  },
+  "gates": {
+    "HISTORICAL_EMPIRICAL_BASELINE_STATUS": "INCOMPLETE",
+    "CURRENT_2026_PHYSICAL_FLEET_STATUS": "BLOCKED",
+    "WORKBOOK_PROMOTION_STATUS": "BLOCKED",
+    "GEM_STATUS": "GEM_AUG2026_REQUIRES_USER_DOWNLOAD",
+    "v2.9_provenance": "BINARY_AND_SEMANTIC_EVIDENCE_MISMATCH; DO_NOT_PROMOTE"
+  }
+}

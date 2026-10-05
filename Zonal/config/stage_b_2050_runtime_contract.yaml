@@ -1,0 +1,83 @@
+schema_version: MEM_STAGE_B_2050_RUNTIME_CONTRACT_v1.0
+status: ACCEPTED_RUNTIME_CONTRACT
+horizon: 2050
+chronology:
+  weather_year: 2019
+  timezone: UTC
+  first_snapshot: "2019-01-01 00:00:00+00:00"
+  last_snapshot: "2019-12-31 23:00:00+00:00"
+  snapshots: 8760
+  snapshot_weight_hours: 1.0
+scenarios: [Slow, Base, High]
+zones: [CALA, CNOR, CSUD, NORD, SARD, SICI, SUD]
+price_markets: [FR, CH, AT, SI, ME, GR, MT, TN]
+external_market_zone_mapping:
+  FR: NORD
+  CH: NORD
+  AT: NORD
+  SI: NORD
+  ME: CSUD
+  GR: SUD
+  MT: SICI
+  TN: SICI
+corsica:
+  market: CORS
+  treatment: ZERO_INJECTION_NO_PRICE_HUB
+runtime_members:
+  - load_hourly.parquet
+  - generator_availability_hourly.parquet
+  - hydro_inflow_hourly.parquet
+  - hydro_runtime_parameters.csv
+  - external_prices_hourly.parquet
+authorities:
+  load_shape: stage_a_inputs/temporal_2019_v1_0/MEM_ETX7B3_Load_Hourly_v1.0.parquet
+  zonal_demand: pre_pypsa_inputs/MEM_Annual_Zonal_Demand_Contract.csv
+  vre_profiles: stage_a_inputs/temporal_2019_v1_0/MEM_ETX7B3_VRE_Availability_Hourly_v1.0.parquet
+  generator_static: pre_pypsa_inputs/MEM_generators_static_final.csv
+  storage_static: pre_pypsa_inputs/MEM_storage_static_final.csv
+  hydro_static_mapping: pre_pypsa_inputs/MEM_Hydro_Static_Component_Mapping.csv
+  phs_static_runtime: pre_pypsa_inputs/MEM_PHS_Static_Runtime_Contract.csv
+  phs_energy_method_c: pre_pypsa_inputs/MEM_PHS_Operational_Energy_Allocation_MethodC.csv
+  phs_pump_allocation: pre_pypsa_inputs/MEM_PHS_Pump_Power_Allocation.csv
+  hydro_annual_scaling: stage_a_inputs/operating_base_v1_0/MEM_ETX7B4_Hydro_Annual_Scaling_and_State_v1.0.csv
+  hydro_inflow_mapping: stage_a_inputs/operating_base_v1_0/MEM_ETX7B4_Hydro_Runtime_Inflow_Mapping_v1.0.csv
+  hydro_temporal: stage_a_inputs/temporal_2019_v1_0/MEM_ETX7B3_Hydro_Temporal_Hourly_v1.0.parquet
+  external_prices: stage_a_results/price_handoff/2050/external_prices_hourly.parquet
+  internal_topology: pre_pypsa_inputs/MEM_Interzonal_Static_Contract.csv
+  external_interfaces: pre_pypsa_inputs/MEM_External_Interface_Static_Contract.csv
+accepted_rules:
+  load: NATIONAL_ITALY_2019_NORMALIZED_SHAPE_SCALED_TO_EACH_FROZEN_ZONAL_ANNUAL_CONTROL
+  conventional_availability: BLK_005_STATIC_TECHNICAL_AVAILABILITY_EQUIVALENT
+  geothermal_availability: 0.90
+  bess_roundtrip_efficiency: 0.90
+  bess_terminal_state: CYCLIC_ANNUAL
+  phs_roundtrip_efficiency: 0.75
+  phs_terminal_state: CYCLIC_ANNUAL
+  conventional_hydro_turbine_efficiency: 0.90
+  phs_method: METHOD_C_PURE_MIXED_SHARED_STATE
+  load_shedding_VOLL_EUR_per_MWh: 15000.0
+  load_shedding_hourly_cap: LOCAL_HOURLY_DEMAND
+  internal_link_efficiency: 1.0
+  external_link_efficiency: 1.0
+  external_transaction_cost_EUR_per_MWh: 0.0
+controls:
+  annual_national_demand_TWh:
+    Slow: 583.1
+    Base: 583.1
+    High: 641.41
+  conventional_hydro_and_phs_turbine_MW_NET: 23294.0
+  conventional_hydro_turbine_MW_NET: 16041.7
+  phs_discharge_MW_NET: 7252.3
+  phs_pump_MW: 6400.0
+  phs_operational_energy_MWh: 53000.0
+  conventional_hydro_operational_energy_MWh: 7900000.0
+  annual_natural_hydro_electrical_reference_MWh: 52391704.319
+  annual_natural_hydro_inflow_MWh_water: 58600951.03661068
+governance:
+  candidate_assumptions_remaining: 0
+  stage_a_production_price_source: ETX-7B9H
+  required_b10_gate: ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE
+  production_optimization_executed: false
+  production_optimization_authorized: false
+  authorized_scenarios: []
+  stage_b_2040: PRESERVE_ACCEPTED_STATE

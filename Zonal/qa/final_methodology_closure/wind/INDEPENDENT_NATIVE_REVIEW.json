@@ -1,0 +1,21 @@
+{
+  "scope": "NATIVE_DISTANCE_SEMANTICS_AND_OFFSHORE_ECONOMIC_DECISION",
+  "reviewer": "wind_native_method independent bounded verifier",
+  "native_geometry_comparisons": 7,
+  "native_geometry_exact_match": true,
+  "offshore_class_distances_recomputed": 91,
+  "distance_max_abs_difference_native_vs_CSV_km": 7.1054273576e-15,
+  "distance_max_abs_difference_CSV_vs_NetCDF_km": 3.5527136788e-15,
+  "distance_acceptance": "PASS",
+  "native_function_source": "source://pypsa-eur/scripts/build_shapes.py:_simplify_polys",
+  "tradeoff_pairs": 134,
+  "tradeoff_pairs_with_crossing_hourly_profiles": 134,
+  "CF_vs_cost_priority_different_allocations": 84,
+  "accepted_standalone_fixed_MW_offshore_objective_recovered": false,
+  "judgement": "PHASE_W_REQUIRES_OFFSHORE_PREPROCESSING_ECONOMIC_CRITERION_AND_INPUT_BASIS_DECISION",
+  "original_requirement": "docs/final_methodology_closure/MEM_FINAL_PREPRODUCTION_METHODOLOGY_CLOSURE_MASTER.md:W4",
+  "weather_reconversion": false,
+  "optimization_model_constructed": false,
+  "solver_invocations": 0,
+  "reviewer_edits": 0
+}

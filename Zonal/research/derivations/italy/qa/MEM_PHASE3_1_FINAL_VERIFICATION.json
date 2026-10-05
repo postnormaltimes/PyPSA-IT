@@ -1,0 +1,160 @@
+{
+  "phase": "PHASE3_1_CONSISTENCY_AND_HYDRO_PARAMETER_CLOSURE",
+  "generated_at": "2026-09-02T08:26:55.956Z",
+  "qa_checks": 17,
+  "qa_pass": 17,
+  "qa_fail": 0,
+  "historical_rows": {
+    "capacity": 758,
+    "generation": 881,
+    "storage": 19
+  },
+  "zonal_canonical_operational_phs_e_nom_rows": 0,
+  "national_operational_phs_energy_control_MWh": 53000,
+  "energy_allocation_candidate_totals_MWh": {
+    "METHOD_A_TERNA_ZONAL_DISCHARGE_POWER_SHARE": 53000,
+    "METHOD_B_OPEN_HPHS_PHYSICAL_ENERGY_SHARE_SENSITIVITY": 53000,
+    "METHOD_C_TERNA_75PCT_FOUR_PRINCIPAL_PURE_PHS": 53000
+  },
+  "charge_power_allocation_candidate_totals_MW": {
+    "PHS_CHARGE_ALLOC_TERNA_DISCHARGE_SHARE": 6400,
+    "PHS_CHARGE_ALLOC_OPEN_PUMP_SHARE": 6400
+  },
+  "hydro_model_parameter_status_counts": {
+    "CANONICAL_CONTROL": 21,
+    "MODEL_READY": 3,
+    "MODEL_CANDIDATE": 23,
+    "PHYSICAL_EVIDENCE_ONLY": 417,
+    "PROJECT_ASSUMPTION_REQUIRED": 20,
+    "REQUIRES_FURTHER_VALIDATION": 189
+  },
+  "model_ready_candidate_ids": [
+    "TERNA_HYDRO_2024_NORD_ROR_NET",
+    "TERNA_HYDRO_2024_NORD_BASIN_NET",
+    "TERNA_HYDRO_2024_NORD_RESERVOIR_NONPUMPED_NET"
+  ],
+  "historical_technology_baseline_status": "FROZEN",
+  "hydro_model_parameter_status": "PARTIAL",
+  "thermal_fuel_plant_attribution_status": "INCOMPLETE",
+  "current_2026_physical_fleet_status": "BLOCKED",
+  "tracker_search": {
+    "searched_once_on": "2026-09-02",
+    "GOGPT_August_2026_complete_workbook_found": false,
+    "GCPT_July_2026_complete_workbook_found": false,
+    "qualifying_files_found": 0,
+    "result": "GEM_AUG2026_AND_GCPT_JUL2026_REQUIRE_USER_DOWNLOAD"
+  },
+  "workbook_promotion_status": "BLOCKED",
+  "national_five_class_hydro_power_bridge_MW": 23294,
+  "nord_hydro_type_bridge_MW": 17108.7,
+  "documents": {
+    "hydro_component_specification": {
+      "file": "docs/MEM_Hydro_PyPSA_Component_Specification.md",
+      "sha256": "43199ef45ad37764b3a107b1599e5cd86c97d5e9413dc122a933640d9bd1723e"
+    },
+    "methodology": {
+      "file": "docs/MEM_HISTORICAL_BASELINE_METHOD_AND_RESULTS.md",
+      "sha256": "3ed555ed097f0b3dcf8920a4a6415c573f3cc3249f60ccc1206430bfb48fbf28"
+    },
+    "qa_report": {
+      "file": "qa/MEM_HISTORICAL_BASELINE_QA_REPORT.md",
+      "sha256": "586a1bf882e7401198368af81631474da4cfdfca64f968dc639f3938fb2d818b"
+    },
+    "tracker_acquisition_requirement": {
+      "file": "docs/GEM_GOGPT_GCPT_2026_ACQUISITION_REQUIREMENT.md",
+      "sha256": "f275f15e422df8e7400e633ee232c11181229f52ea7dd34d71f2ea3461ead295"
+    }
+  },
+  "output_artifacts": [
+    {
+      "file": "historical_baseline/analysis/MEM_Hydro_Pumping_Perimeter_Reconciliation.csv",
+      "rows": 13,
+      "columns": 43,
+      "sha256": "8a64d21ee21e6382a3a495457b3d6ace7718f3797d637b6bc6bbc31799a501a5"
+    },
+    {
+      "file": "historical_baseline/normalized/MEM_Historical_Storage_By_Zone_Technology.csv",
+      "rows": 19,
+      "columns": 45,
+      "sha256": "04b9b5fda0df82e13649a2386d45fc215fa1cf9661929b1060fe5a175349a441"
+    },
+    {
+      "file": "historical_baseline/analysis/MEM_Historical_to_Model_Technology_Crosswalk.csv",
+      "rows": 31,
+      "columns": 22,
+      "sha256": "557bb2af85ae8336fc923d90e0042e8b76c1e5a6c6c3cdf88497501f7e498cd3"
+    },
+    {
+      "file": "docs/MEM_v2.9_EMPIRICAL_GAP_AND_ACQUISITION_REGISTER_HISTORICAL_BASELINE_UPDATED_20260901.csv",
+      "rows": 33,
+      "columns": 10,
+      "sha256": "da384d3ccc79ff182159ba74676e2e19a82cd912917ecc9a79242e23c69d12ac"
+    },
+    {
+      "file": "docs/MEM_v2.9_HISTORICAL_BASELINE_DECISION_REGISTER_20260901.csv",
+      "rows": 37,
+      "columns": 7,
+      "sha256": "3dc870f6727b8d50aad3e002a3fb7e8ad534cabbcdadae742fce05ad9081defb"
+    },
+    {
+      "file": "historical_baseline/analysis/MEM_Hydro_Energy_Capacity_Definition_Reconciliation.csv",
+      "rows": 11,
+      "columns": 26,
+      "sha256": "5e501488e0fe6c45ad94ccc9086a8930c2f4517a5b9116c2990433f798fee5cc"
+    },
+    {
+      "file": "historical_baseline/analysis/MEM_Hydro_Model_Parameter_Candidates.csv",
+      "rows": 673,
+      "columns": 20,
+      "sha256": "13e49a9e016d45ec26dca097ca74053dc1e1abe267a3babd3466a453f70a1e7f"
+    },
+    {
+      "file": "historical_baseline/analysis/MEM_PHS_Operational_Energy_Allocation_Candidates.csv",
+      "rows": 25,
+      "columns": 18,
+      "sha256": "8a161b5b03d4b5f648aff1ad0d3749488fb19934eb9d44f266238c63f9ed6e9e"
+    },
+    {
+      "file": "historical_baseline/analysis/MEM_Hydro_Physical_Inventory_National_Reconciliation.csv",
+      "rows": 15,
+      "columns": 23,
+      "sha256": "ec31ddd9f3f8f5a8e9bc72dc2a78fd38e2aaec675e99088574072402efe5a645"
+    },
+    {
+      "file": "historical_baseline/analysis/MEM_Hydro_Physical_Inventory_Type_Audit.csv",
+      "rows": 196,
+      "columns": 53,
+      "sha256": "aefc24f10e8fb0d86202ca38c9c2fa953de5e207071b2d1acd69a3c55a30bf03"
+    },
+    {
+      "file": "historical_baseline/analysis/MEM_Hydro_Physical_Inventory_Zone_Summary.csv",
+      "rows": 12,
+      "columns": 23,
+      "sha256": "168681222245c393d810f5e61d1074f3b48ab29c654c481539f2e5eae0cddc4d"
+    },
+    {
+      "file": "historical_baseline/analysis/MEM_PHASE3_GATE_STATUS.csv",
+      "rows": 6,
+      "columns": 5,
+      "sha256": "06df742f7a1229812f41252295cc5ed586b8b0ff627ee405013371f2c0ba1ce6"
+    },
+    {
+      "file": "historical_baseline/manifests/MEM_HISTORICAL_BASELINE_SOURCE_MANIFEST.csv",
+      "rows": 66,
+      "columns": 14,
+      "sha256": "de9d1e9bb7b5146189def3dee4b35a366d3877df242c5b9386b81d62f711cb93"
+    },
+    {
+      "file": "historical_baseline/manifests/MEM_HISTORICAL_BASELINE_DERIVATION_MANIFEST.csv",
+      "rows": 30,
+      "columns": 7,
+      "sha256": "10dd5f8ea25fae076e46169079df25527ff49297aea8a8be9a5b8f0cc3fed3ec"
+    },
+    {
+      "file": "historical_baseline/analysis/MEM_PHASE3_1_CROSS_ARTIFACT_CONSISTENCY_QA.csv",
+      "rows": 17,
+      "columns": 7,
+      "sha256": "d8cb48f5b9aeec7a59fd000305bef0aa94e643d18446d1504ec2dd3a44a401cf"
+    }
+  ]
+}

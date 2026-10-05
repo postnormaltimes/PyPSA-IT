@@ -1,0 +1,116 @@
+zone,display_technology,installed_capacity_GW
+CALA,Solar PV - rooftop,1.1
+CALA,Solar PV - utility,2.5
+CALA,Onshore wind,3.3
+CALA,Offshore wind,0.6
+CALA,Hydro - run of river,0.106743829899
+CALA,Hydro - basin/pondage,0.417949832196
+CALA,Hydro - reservoir,0.308670337905
+CALA,BESS,1.46666666667
+CALA,Gas - CCGT,3.2358808354
+CALA,Gas - OCGT,0.216218464413
+CALA,Gas - internal combustion,0.00312012368645
+CALA,Gas - steam thermal,0.0118175195538
+CALA,Bioenergy - internal combustion,0.0350868350456
+CALA,Bioenergy - steam thermal,0.132891962274
+CNOR,Solar PV - rooftop,3.3
+CNOR,Solar PV - utility,6.3
+CNOR,Onshore wind,0.4
+CNOR,Offshore wind,0.8
+CNOR,Hydro - run of river,0.209314034422
+CNOR,Hydro - basin/pondage,0.238064607896
+CNOR,Hydro - reservoir,0.175818907682
+CNOR,BESS,1.13333333333
+CNOR,Gas - CCGT,1.59901366995
+CNOR,Gas - OCGT,0.479435139888
+CNOR,Gas - internal combustion,0.247226066675
+CNOR,Gas - steam thermal,0.0322944465339
+CNOR,Gas - other thermal,0.0218846409542
+CNOR,Bioenergy - internal combustion,0.140831081799
+CNOR,Bioenergy - steam thermal,0.0183963685651
+CNOR,Bioenergy - other thermal,0.0124664753268
+CNOR,Geothermal,0.783053667913
+CSUD,Solar PV - rooftop,5.5
+CSUD,Solar PV - utility,14.6
+CSUD,Onshore wind,6.8
+CSUD,Offshore wind,1.6
+CSUD,Hydro - run of river,0.579820027388
+CSUD,Hydro - basin/pondage,0.582887284562
+CSUD,Hydro - reservoir,0.430482324018
+CSUD,PHS,1.73286541385
+CSUD,BESS,4.22083333333
+CSUD,Gas - CCGT,6.33305142292
+CSUD,Gas - OCGT,0.769197041167
+CSUD,Gas - internal combustion,0.444059801918
+CSUD,Gas - steam thermal,0.101841978733
+CSUD,Gas - other thermal,0.0176764936261
+CSUD,Bioenergy - internal combustion,0.336343884682
+CSUD,Bioenergy - steam thermal,0.07713809402
+CSUD,Bioenergy - other thermal,0.0133886933879
+NORD,Solar PV - rooftop,25.1
+NORD,Solar PV - utility,17.3
+NORD,Onshore wind,0.6
+NORD,Offshore wind,1.5
+NORD,Hydro - run of river,5.2282108663
+NORD,Hydro - basin/pondage,3.51220883385
+NORD,Hydro - reservoir,3.66931817547
+NORD,PHS,4.69862978896
+NORD,BESS,5.525
+NORD,Gas - CCGT,23.0855420392
+NORD,Gas - OCGT,0.842144489518
+NORD,Gas - internal combustion,1.91596160811
+NORD,Gas - steam thermal,0.880345331388
+NORD,Gas - other thermal,0.0294625184551
+NORD,Bioenergy - internal combustion,1.54048810077
+NORD,Bioenergy - steam thermal,0.707822903044
+NORD,Bioenergy - other thermal,0.0236887101009
+SARD,Solar PV - rooftop,1.7
+SARD,Solar PV - utility,7.7
+SARD,Onshore wind,3.5
+SARD,Offshore wind,3
+SARD,Hydro - run of river,0.037947515755
+SARD,Hydro - basin/pondage,0.106492727593
+SARD,Hydro - reservoir,0.07864854506
+SARD,PHS,0.240330211592
+SARD,BESS,3.5875
+SARD,Gas - CCGT,0.636150571763
+SARD,Gas - OCGT,0.139028766432
+SARD,Gas - internal combustion,0.0143631802043
+SARD,Gas - steam thermal,0.158644603256
+SARD,Gas - other thermal,0.0183229501441
+SARD,Bioenergy - internal combustion,0.00797410826968
+SARD,Bioenergy - steam thermal,0.088075845653
+SARD,Bioenergy - other thermal,0.0101724817339
+SICI,Solar PV - rooftop,3.3
+SICI,Solar PV - utility,11.5
+SICI,Onshore wind,6.3
+SICI,Offshore wind,3
+SICI,Hydro - run of river,0.031552391362
+SICI,Hydro - basin/pondage,0.058808504061
+SICI,Hydro - reservoir,0.043432104578
+SICI,PHS,0.580474585597
+SICI,BESS,4.97083333333
+SICI,Gas - CCGT,3.03347030443
+SICI,Gas - OCGT,0.652525027236
+SICI,Gas - internal combustion,0.169637000329
+SICI,Gas - steam thermal,0.117057134659
+SICI,Gas - other thermal,0.0182937208629
+SICI,Bioenergy - internal combustion,0.036978561814
+SICI,Bioenergy - steam thermal,0.0255168653146
+SICI,Bioenergy - other thermal,0.00398778265606
+SUD,Solar PV - rooftop,1.7
+SUD,Solar PV - utility,19.3
+SUD,Onshore wind,13.2
+SUD,Offshore wind,4.7
+SUD,Hydro - run of river,0.045411334869
+SUD,Hydro - basin/pondage,0.103488209848
+SUD,Hydro - reservoir,0.076429605283
+SUD,BESS,6.3625
+SUD,Gas - CCGT,4.42515976364
+SUD,Gas - OCGT,0.256102110068
+SUD,Gas - internal combustion,0.267958710837
+SUD,Gas - steam thermal,0.332141079958
+SUD,Gas - other thermal,0.0735829272035
+SUD,Bioenergy - internal combustion,0.169874387842
+SUD,Bioenergy - steam thermal,0.210563270957
+SUD,Bioenergy - other thermal,0.0466484357805

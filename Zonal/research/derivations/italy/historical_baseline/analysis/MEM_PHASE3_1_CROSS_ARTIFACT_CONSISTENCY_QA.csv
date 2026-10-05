@@ -1,0 +1,18 @@
+check_id,category,test,observed,expected,status,evidence_artifact
+P31-QA-001,PHS_OPERATIONAL_ENERGY,Zero canonical zonal PHS operational e_nom values in pumping bridge,0,0,PASS,MEM_Hydro_Pumping_Perimeter_Reconciliation.csv
+P31-QA-002,PHS_OPERATIONAL_ENERGY,Zero canonical zonal PHS operational e_nom values in storage table,0,0,PASS,MEM_Historical_Storage_By_Zone_Technology.csv
+P31-QA-003,PHS_OPERATIONAL_ENERGY,National Terna operational PHS energy control preserved,53000 MWh,one 53000 MWh national control,PASS,MEM_Hydro_Pumping_Perimeter_Reconciliation.csv
+P31-QA-004,GATE_LINEAGE,No active historical gap says tracker absence blocks frozen technology baseline,0,0,PASS,MEM_v2.9_EMPIRICAL_GAP_AND_ACQUISITION_REGISTER_HISTORICAL_BASELINE_UPDATED_20260901.csv
+P31-QA-005,CROSSWALK,No NONE_QA_CONTROL row claims a generator/store/link/capacity is instantiated,0,0,PASS,MEM_Historical_to_Model_Technology_Crosswalk.csv
+P31-QA-006,HISTORICAL_INTEGRITY,Historical capacity row count unchanged,758,758,PASS,MEM_Historical_Capacity_By_Zone_Technology.csv
+P31-QA-007,HISTORICAL_INTEGRITY,Historical generation row count unchanged,881,881,PASS,MEM_Historical_Generation_By_Zone_Technology.csv
+P31-QA-008,HISTORICAL_INTEGRITY,Historical storage row count unchanged,19,19,PASS,MEM_Historical_Storage_By_Zone_Technology.csv
+P31-QA-009,GATE_STATUS,Historical technology baseline remains frozen,FROZEN,FROZEN,PASS,MEM_PHASE3_GATE_STATUS.csv
+P31-QA-010,PHS_OPERATIONAL_ENERGY,Every PHS operational-energy allocation candidate reconciles to the national control,"{""METHOD_A_TERNA_ZONAL_DISCHARGE_POWER_SHARE"":53000,""METHOD_B_OPEN_HPHS_PHYSICAL_ENERGY_SHARE_SENSITIVITY"":53000,""METHOD_C_TERNA_75PCT_FOUR_PRINCIPAL_PURE_PHS"":53000}",each method = 53000 MWh,PASS,MEM_PHS_Operational_Energy_Allocation_Candidates.csv
+P31-QA-011,PHS_CHARGE_POWER,Both zonal PHS charge-power allocation candidates reconcile to Terna national control,"{""PHS_CHARGE_ALLOC_TERNA_DISCHARGE_SHARE"":6400,""PHS_CHARGE_ALLOC_OPEN_PUMP_SHARE"":6400}",each method = 6400 MW,PASS,MEM_Hydro_Model_Parameter_Candidates.csv
+P31-QA-012,HYDRO_CLASS_POWER,National five-class hydro power bridge reconciles to Terna total,23294,23294,PASS,MEM_Hydro_Model_Parameter_Candidates.csv
+P31-QA-013,HYDRO_CLASS_POWER,NORD Terna class bridge reconciles at published 0.1-MW grain,17108.7,17108.7,PASS,MEM_Hydro_Model_Parameter_Candidates.csv
+P31-QA-014,PARAMETER_STATUS,Model-parameter status vocabulary is restricted to the approved six values,0,0,PASS,MEM_Hydro_Model_Parameter_Candidates.csv
+P31-QA-015,PARAMETER_PROMOTION,Only direct/same-table NORD turbine-power parameters are MODEL_READY,TERNA_HYDRO_2024_NORD_ROR_NET|TERNA_HYDRO_2024_NORD_BASIN_NET|TERNA_HYDRO_2024_NORD_RESERVOIR_NONPUMPED_NET,three NORD hydro-class p_nom rows,PASS,MEM_Hydro_Model_Parameter_Candidates.csv
+P31-QA-016,PHS_CHARGE_POWER,Zero canonical zonal PHS pump-power values in pumping bridge,0,0,PASS,MEM_Hydro_Pumping_Perimeter_Reconciliation.csv
+P31-QA-017,PHS_CHARGE_POWER,Zero canonical zonal PHS pump-power values in storage table,0,0,PASS,MEM_Historical_Storage_By_Zone_Technology.csv

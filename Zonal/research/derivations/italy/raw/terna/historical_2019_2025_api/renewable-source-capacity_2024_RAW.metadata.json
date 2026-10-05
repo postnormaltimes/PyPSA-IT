@@ -1,0 +1,31 @@
+{
+  "source_id": "TERNA_API_RENEWABLE_SOURCE_CAPACITY_2024",
+  "publisher": "Terna S.p.A.",
+  "endpoint": "renewable-source-capacity",
+  "request_url": "https://api.terna.it/generation/v2.0/renewable-source-capacity?year=2024",
+  "request_parameters": {
+    "year": "2024"
+  },
+  "authorization_method": "OAuth 2.0 client credentials; token not persisted",
+  "retrieval_timestamp_utc": "2026-09-01T12:20:33.440Z",
+  "http_status": 200,
+  "content_type": "application/json",
+  "response_date": "Tue, 01 Sep 2026 12:18:28 GMT",
+  "etag": null,
+  "last_modified": null,
+  "raw_file": "renewable-source-capacity_2024_RAW.json",
+  "raw_bytes": 139143,
+  "raw_sha256": "9683984158ddfab3256554a9f400a13fa69287efab44995fb689994b8315b08f",
+  "result_status": "Completed",
+  "result_message": "Operation completed for the following input. year: 2024",
+  "array_key": "renewable_sources",
+  "record_count": 1070,
+  "properties": [
+    "capacity_type",
+    "efficient_power_MW",
+    "province",
+    "region",
+    "source",
+    "year"
+  ]
+}

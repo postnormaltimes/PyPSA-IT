@@ -1,0 +1,6009 @@
+{
+  "generated_at": "2026-09-01T18:54:24.006596+00:00",
+  "current_path": "source://project-evidence/outputs/01a0595d-8cf1-7202-8ca1-1d3ab732e98e/Fase_5_PyPSA_Eur_Italia_2040_2050_Model_Ready_v2.9_MEM_ARCHITECTURE_REFINED.xlsx",
+  "current_bytes": 107622,
+  "current_sha256": "c4caab305b3269c7b318025e715b4d1b4108cdcac023a27209d3808e2bc8490a",
+  "accepted_sha256": "4a59c80bdf4da33d825ff94ea5617c03c325ca6fbc26233e7ed633ed6f910640",
+  "binary_match": false,
+  "current_mtime_utc": "2026-09-01T15:04:03+00:00",
+  "accepted_evidence_path": "source://project-evidence/outputs/01a0595d-8cf1-7202-8ca1-1d3ab732e98e/Fase_5_PyPSA_Eur_Italia_2040_2050_Model_Ready_v2.9_MEM_ARCHITECTURE_REFINED.xlsx.inspect.ndjson",
+  "accepted_evidence_mtime_utc": "2026-08-31T20:28:27.646181+00:00",
+  "accepted_evidence_counts": {
+    "workbook": 1,
+    "sheet": 14,
+    "table": 14,
+    "region": 53,
+    "computedStyle": 6164,
+    "formula": 611,
+    "conditionalFormatting": 3,
+    "thread": 4
+  },
+  "sheet_topology_difference_count": 1,
+  "sheet_topology_difference_sample": [
+    {
+      "accepted": {
+        "kind": "sheet",
+        "id": "ws/ohlfq3",
+        "name": "10_NUCLEAR",
+        "index": 10,
+        "range": "A1:J22",
+        "address": "A1:J22",
+        "tables": 1,
+        "formulas": 5
+      },
+      "current": {
+        "name": "10_NUCLEAR",
+        "state": "visible",
+        "dimension": "A1:L43",
+        "formula_cells": 15,
+        "merged_ranges": [
+          "A13:J13",
+          "A1:J1",
+          "A20:J22",
+          "A2:J2"
+        ],
+        "hidden_rows": [],
+        "hidden_columns": [],
+        "hyperlinks": [],
+        "data_validations": [],
+        "comments": [],
+        "conditional_formatting": [],
+        "tables": [],
+        "freeze_panes": null
+      }
+    }
+  ],
+  "accepted_formula_record_count": 611,
+  "current_physical_formula_cell_count": 1031,
+  "accepted_formula_difference_count": 0,
+  "accepted_formula_differences": [],
+  "formula_difference_interpretation": "NO_ACCEPTED_FORMULA_DIFFERENCES",
+  "workbook_semantics": {
+    "sheet_order": [
+      "00_README",
+      "01_SOURCES",
+      "02_SCENARIOS",
+      "03_ZONE_MAP",
+      "04_GENERATION_BY_ZONE",
+      "05_STORAGE_BY_ZONE",
+      "06_DEMAND_BY_ZONE",
+      "07_INTERZONAL_BY_ZONE",
+      "08_FOREIGN_BY_ZONE",
+      "09_TECH_COSTS",
+      "10_NUCLEAR",
+      "11_PYPSA_IMPLEMENTATION",
+      "12_ASSUMPTIONS_QA",
+      "13_CHANGELOG"
+    ],
+    "sheets": [
+      {
+        "name": "00_README",
+        "state": "visible",
+        "dimension": "A1:J16",
+        "formula_cells": 0,
+        "merged_ranges": [
+          "A16:J16",
+          "A1:J1",
+          "A2:J2"
+        ],
+        "hidden_rows": [],
+        "hidden_columns": [],
+        "hyperlinks": [],
+        "data_validations": [],
+        "comments": [],
+        "conditional_formatting": [],
+        "tables": [],
+        "freeze_panes": null
+      },
+      {
+        "name": "01_SOURCES",
+        "state": "visible",
+        "dimension": "A1:P50",
+        "formula_cells": 0,
+        "merged_ranges": [
+          "A1:P1",
+          "A2:P2"
+        ],
+        "hidden_rows": [],
+        "hidden_columns": [],
+        "hyperlinks": [],
+        "data_validations": [],
+        "comments": [],
+        "conditional_formatting": [],
+        "tables": [
+          "TblSourcesV27"
+        ],
+        "freeze_panes": null
+      },
+      {
+        "name": "02_SCENARIOS",
+        "state": "visible",
+        "dimension": "A1:P38",
+        "formula_cells": 56,
+        "merged_ranges": [
+          "A13:C13",
+          "A1:P1",
+          "A2:P2",
+          "A31:P31",
+          "E13:P13"
+        ],
+        "hidden_rows": [],
+        "hidden_columns": [],
+        "hyperlinks": [],
+        "data_validations": [],
+        "comments": [],
+        "conditional_formatting": [],
+        "tables": [],
+        "freeze_panes": null
+      },
+      {
+        "name": "03_ZONE_MAP",
+        "state": "visible",
+        "dimension": "A1:N34",
+        "formula_cells": 0,
+        "merged_ranges": [
+          "A1:N1",
+          "A2:N2"
+        ],
+        "hidden_rows": [],
+        "hidden_columns": [],
+        "hyperlinks": [],
+        "data_validations": [],
+        "comments": [],
+        "conditional_formatting": [],
+        "tables": [
+          "TblZoneMapV27"
+        ],
+        "freeze_panes": null
+      },
+      {
+        "name": "04_GENERATION_BY_ZONE",
+        "state": "visible",
+        "dimension": "A1:K74",
+        "formula_cells": 158,
+        "merged_ranges": [
+          "A1:K1",
+          "A2:K2",
+          "A45:K45",
+          "A54:K54",
+          "A62:K62"
+        ],
+        "hidden_rows": [],
+        "hidden_columns": [],
+        "hyperlinks": [],
+        "data_validations": [],
+        "comments": [],
+        "conditional_formatting": [],
+        "tables": [],
+        "freeze_panes": null
+      },
+      {
+        "name": "05_STORAGE_BY_ZONE",
+        "state": "visible",
+        "dimension": "A1:P48",
+        "formula_cells": 272,
+        "merged_ranges": [
+          "A1:P1",
+          "A2:P2",
+          "A36:P36",
+          "A3:P3"
+        ],
+        "hidden_rows": [],
+        "hidden_columns": [],
+        "hyperlinks": [],
+        "data_validations": [],
+        "comments": [],
+        "conditional_formatting": [],
+        "tables": [],
+        "freeze_panes": null
+      },
+      {
+        "name": "06_DEMAND_BY_ZONE",
+        "state": "visible",
+        "dimension": "A1:N29",
+        "formula_cells": 148,
+        "merged_ranges": [
+          "A16:N16",
+          "A1:N1",
+          "A28:N29",
+          "A2:N2",
+          "A3:N3"
+        ],
+        "hidden_rows": [],
+        "hidden_columns": [],
+        "hyperlinks": [],
+        "data_validations": [],
+        "comments": [],
+        "conditional_formatting": [],
+        "tables": [],
+        "freeze_panes": null
+      },
+      {
+        "name": "07_INTERZONAL_BY_ZONE",
+        "state": "visible",
+        "dimension": "A1:L83",
+        "formula_cells": 193,
+        "merged_ranges": [
+          "A1:L1",
+          "A2:L2",
+          "A31:K31"
+        ],
+        "hidden_rows": [],
+        "hidden_columns": [],
+        "hyperlinks": [],
+        "data_validations": [],
+        "comments": [],
+        "conditional_formatting": [
+          {
+            "range": "<ConditionalFormatting A35:K83>",
+            "rules": [
+              {
+                "type": "expression",
+                "priority": 1,
+                "operator": null,
+                "text": null,
+                "formula": [
+                  "$I35>0"
+                ],
+                "dxf_id": 36
+              }
+            ]
+          }
+        ],
+        "tables": [],
+        "freeze_panes": null
+      },
+      {
+        "name": "08_FOREIGN_BY_ZONE",
+        "state": "visible",
+        "dimension": "A1:Q41",
+        "formula_cells": 80,
+        "merged_ranges": [
+          "A1:Q1",
+          "A24:Q24",
+          "A2:Q2",
+          "A39:Q41"
+        ],
+        "hidden_rows": [],
+        "hidden_columns": [],
+        "hyperlinks": [],
+        "data_validations": [],
+        "comments": [],
+        "conditional_formatting": [],
+        "tables": [],
+        "freeze_panes": null
+      },
+      {
+        "name": "09_TECH_COSTS",
+        "state": "visible",
+        "dimension": "A1:J70",
+        "formula_cells": 21,
+        "merged_ranges": [
+          "A18:J18",
+          "A1:J1",
+          "A27:J27",
+          "A2:J2",
+          "A35:J35",
+          "A46:J49",
+          "A4:J4",
+          "A51:H51",
+          "A60:H60",
+          "A62:H62",
+          "A70:H70"
+        ],
+        "hidden_rows": [],
+        "hidden_columns": [],
+        "hyperlinks": [],
+        "data_validations": [],
+        "comments": [
+          {
+            "cell": "D54",
+            "text": "[Threaded comment]\n\nYour version of Excel allows you to read this threaded comment; however, any edits to it will get removed if the file is opened in a newer version of Excel. Learn more: https://go.microsoft.com/fwlink/?linkid=870924\n\nComment:\n    User-approved bioenergy CF = 0.47, based on the selected observed 2025 average and held constant for this diagnostic conversion.",
+            "author": "tc={2970B65A-A200-4306-B7BF-DB8F6CA4E144}"
+          },
+          {
+            "cell": "D56",
+            "text": "[Threaded comment]\n\nYour version of Excel allows you to read this threaded comment; however, any edits to it will get removed if the file is opened in a newer version of Excel. Learn more: https://go.microsoft.com/fwlink/?linkid=870924\n\nComment:\n    Interim gas+CCS conversion CF = 0.20. This converts annual energy to a diagnostic capacity tranche; it is not a realized fleet-wide PyPSA capacity factor.",
+            "author": "tc={F208B2A2-9A48-42CE-8AD8-B4DC67422CBA}"
+          },
+          {
+            "cell": "E58",
+            "text": "[Threaded comment]\n\nYour version of Excel allows you to read this threaded comment; however, any edits to it will get removed if the file is opened in a newer version of Excel. Learn more: https://go.microsoft.com/fwlink/?linkid=870924\n\nComment:\n    Energy-implied capacity diagnostic only. It is not an installed-capacity target, adequacy target, complete fleet total or direct p_nom total.",
+            "author": "tc={EDFACA24-FBAE-4BAF-97F0-C68AB3ECE916}"
+          },
+          {
+            "cell": "G68",
+            "text": "[Threaded comment]\n\nYour version of Excel allows you to read this threaded comment; however, any edits to it will get removed if the file is opened in a newer version of Excel. Learn more: https://go.microsoft.com/fwlink/?linkid=870924\n\nComment:\n    External Slow adequacy benchmark. Compare with the model-derived Slow capacity delta after runtime stress tests; do not impose it as an equality constraint.",
+            "author": "tc={9F03E884-877A-4539-853D-FEED431458FD}"
+          }
+        ],
+        "conditional_formatting": [],
+        "tables": [
+          "TblCO2CasesV27",
+          "TblFuelCostsV27",
+          "TblTechCoreV27",
+          "TblThermalAvailV27"
+        ],
+        "freeze_panes": null
+      },
+      {
+        "name": "10_NUCLEAR",
+        "state": "visible",
+        "dimension": "A1:L43",
+        "formula_cells": 15,
+        "merged_ranges": [
+          "A13:J13",
+          "A1:J1",
+          "A20:J22",
+          "A2:J2"
+        ],
+        "hidden_rows": [],
+        "hidden_columns": [],
+        "hyperlinks": [],
+        "data_validations": [],
+        "comments": [],
+        "conditional_formatting": [],
+        "tables": [],
+        "freeze_panes": null
+      },
+      {
+        "name": "11_PYPSA_IMPLEMENTATION",
+        "state": "visible",
+        "dimension": "A1:L53",
+        "formula_cells": 0,
+        "merged_ranges": [
+          "A1:L1",
+          "A25:L27",
+          "A29:L29",
+          "A2:L2",
+          "A42:L42"
+        ],
+        "hidden_rows": [],
+        "hidden_columns": [],
+        "hyperlinks": [],
+        "data_validations": [],
+        "comments": [],
+        "conditional_formatting": [],
+        "tables": [],
+        "freeze_panes": null
+      },
+      {
+        "name": "12_ASSUMPTIONS_QA",
+        "state": "visible",
+        "dimension": "A1:J78",
+        "formula_cells": 88,
+        "merged_ranges": [
+          "A1:J1",
+          "A2:J2",
+          "A37:H37",
+          "A45:H45",
+          "A64:H64"
+        ],
+        "hidden_rows": [],
+        "hidden_columns": [],
+        "hyperlinks": [],
+        "data_validations": [],
+        "comments": [],
+        "conditional_formatting": [
+          {
+            "range": "<ConditionalFormatting F5:F33>",
+            "rules": [
+              {
+                "type": "containsText",
+                "priority": 1,
+                "operator": "containsText",
+                "text": "PASS",
+                "formula": [],
+                "dxf_id": 35
+              },
+              {
+                "type": "containsText",
+                "priority": 2,
+                "operator": "containsText",
+                "text": "FAIL",
+                "formula": [],
+                "dxf_id": 34
+              }
+            ]
+          }
+        ],
+        "tables": [],
+        "freeze_panes": null
+      },
+      {
+        "name": "13_CHANGELOG",
+        "state": "visible",
+        "dimension": "A1:H30",
+        "formula_cells": 0,
+        "merged_ranges": [
+          "A17:H17",
+          "A1:H1",
+          "A2:H2"
+        ],
+        "hidden_rows": [],
+        "hidden_columns": [],
+        "hyperlinks": [],
+        "data_validations": [],
+        "comments": [],
+        "conditional_formatting": [],
+        "tables": [],
+        "freeze_panes": null
+      }
+    ],
+    "formula_cell_count": 1031,
+    "formula_cells": [
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "D5",
+        "formula": "=$B$18"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "E5",
+        "formula": "=$B$20"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "F5",
+        "formula": "=$B$19"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "G5",
+        "formula": "=$B$16"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "H5",
+        "formula": "=$B$15"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "I5",
+        "formula": "=$B$15"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "M5",
+        "formula": "=0"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "N5",
+        "formula": "=$B$28"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "D6",
+        "formula": "=$B$18"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "E6",
+        "formula": "=$B$20"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "F6",
+        "formula": "=$B$19"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "G6",
+        "formula": "=$B$16"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "H6",
+        "formula": "=$B$16"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "I6",
+        "formula": "=$B$16"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "M6",
+        "formula": "=0"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "N6",
+        "formula": "=$B$28"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "D7",
+        "formula": "=$B$18*$B$17"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "E7",
+        "formula": "=$B$20*$B$17"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "F7",
+        "formula": "=$B$19*$B$17"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "G7",
+        "formula": "=$B$17"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "H7",
+        "formula": "=$B$17"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "I7",
+        "formula": "=$B$17"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "M7",
+        "formula": "=0"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "N7",
+        "formula": "=$B$28"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "D8",
+        "formula": "=$B$22"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "E8",
+        "formula": "=$B$24"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "F8",
+        "formula": "=$B$23"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "G8",
+        "formula": "=$B$16"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "H8",
+        "formula": "=$B$15"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "I8",
+        "formula": "=$B$15"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "M8",
+        "formula": "=$B$27"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "N8",
+        "formula": "=$B$29"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "D9",
+        "formula": "=$B$22"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "E9",
+        "formula": "=$B$24"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "F9",
+        "formula": "=$B$23"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "G9",
+        "formula": "=$B$16"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "H9",
+        "formula": "=$B$16"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "I9",
+        "formula": "=$B$16"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "M9",
+        "formula": "=$B$27"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "N9",
+        "formula": "=$B$29"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "D10",
+        "formula": "=$B$22*$B$17"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "E10",
+        "formula": "=$B$24*$B$17"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "F10",
+        "formula": "=$B$23*$B$17"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "G10",
+        "formula": "=$B$17"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "H10",
+        "formula": "=$B$17"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "I10",
+        "formula": "=$B$17"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "M10",
+        "formula": "=$B$27"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "N10",
+        "formula": "=$B$29"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "B20",
+        "formula": "=B18-B19"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "B24",
+        "formula": "=B22-B23"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "B33",
+        "formula": "=$B$25"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "B34",
+        "formula": "='09_TECH_COSTS'!$E$58"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "B35",
+        "formula": "=$B$26"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "B36",
+        "formula": "='09_TECH_COSTS'!$G$67"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "B37",
+        "formula": "='09_TECH_COSTS'!$G$68"
+      },
+      {
+        "sheet": "02_SCENARIOS",
+        "cell": "B38",
+        "formula": "='09_TECH_COSTS'!$G$69"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C5",
+        "formula": "=D5*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E5",
+        "formula": "=D5*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F5",
+        "formula": "=G5*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H5",
+        "formula": "=G5*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C6",
+        "formula": "=D6*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E6",
+        "formula": "=D6*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F6",
+        "formula": "=G6*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H6",
+        "formula": "=G6*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C7",
+        "formula": "=D7*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E7",
+        "formula": "=D7*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F7",
+        "formula": "=G7*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H7",
+        "formula": "=G7*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C8",
+        "formula": "=D8*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E8",
+        "formula": "=D8*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F8",
+        "formula": "=G8*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H8",
+        "formula": "=G8*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C9",
+        "formula": "=D9"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E9",
+        "formula": "=D9"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F9",
+        "formula": "=G9"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H9",
+        "formula": "=G9"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C10",
+        "formula": "=D10*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E10",
+        "formula": "=D10*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F10",
+        "formula": "=G10*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H10",
+        "formula": "=G10*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C11",
+        "formula": "=D11*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E11",
+        "formula": "=D11*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F11",
+        "formula": "=G11*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H11",
+        "formula": "=G11*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C12",
+        "formula": "=D12*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E12",
+        "formula": "=D12*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F12",
+        "formula": "=G12*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H12",
+        "formula": "=G12*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C13",
+        "formula": "=D13*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E13",
+        "formula": "=D13*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F13",
+        "formula": "=G13*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H13",
+        "formula": "=G13*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C14",
+        "formula": "=D14"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E14",
+        "formula": "=D14"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F14",
+        "formula": "=G14"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H14",
+        "formula": "=G14"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C15",
+        "formula": "=D15*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E15",
+        "formula": "=D15*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F15",
+        "formula": "=G15*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H15",
+        "formula": "=G15*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C16",
+        "formula": "=D16*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E16",
+        "formula": "=D16*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F16",
+        "formula": "=G16*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H16",
+        "formula": "=G16*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C17",
+        "formula": "=D17*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E17",
+        "formula": "=D17*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F17",
+        "formula": "=G17*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H17",
+        "formula": "=G17*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C18",
+        "formula": "=D18*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E18",
+        "formula": "=D18*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F18",
+        "formula": "=G18*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H18",
+        "formula": "=G18*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C19",
+        "formula": "=D19"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E19",
+        "formula": "=D19"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F19",
+        "formula": "=G19"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H19",
+        "formula": "=G19"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C20",
+        "formula": "=D20*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E20",
+        "formula": "=D20*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F20",
+        "formula": "=G20*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H20",
+        "formula": "=G20*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C21",
+        "formula": "=D21*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E21",
+        "formula": "=D21*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F21",
+        "formula": "=G21*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H21",
+        "formula": "=G21*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C22",
+        "formula": "=D22*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E22",
+        "formula": "=D22*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F22",
+        "formula": "=G22*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H22",
+        "formula": "=G22*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C23",
+        "formula": "=D23*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E23",
+        "formula": "=D23*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F23",
+        "formula": "=G23*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H23",
+        "formula": "=G23*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C24",
+        "formula": "=D24"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E24",
+        "formula": "=D24"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F24",
+        "formula": "=G24"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H24",
+        "formula": "=G24"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C25",
+        "formula": "=D25*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E25",
+        "formula": "=D25*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F25",
+        "formula": "=G25*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H25",
+        "formula": "=G25*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C26",
+        "formula": "=D26*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E26",
+        "formula": "=D26*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F26",
+        "formula": "=G26*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H26",
+        "formula": "=G26*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C27",
+        "formula": "=D27*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E27",
+        "formula": "=D27*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F27",
+        "formula": "=G27*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H27",
+        "formula": "=G27*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C28",
+        "formula": "=D28*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E28",
+        "formula": "=D28*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F28",
+        "formula": "=G28*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H28",
+        "formula": "=G28*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C29",
+        "formula": "=D29"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E29",
+        "formula": "=D29"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F29",
+        "formula": "=G29"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H29",
+        "formula": "=G29"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C30",
+        "formula": "=D30*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E30",
+        "formula": "=D30*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F30",
+        "formula": "=G30*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H30",
+        "formula": "=G30*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C31",
+        "formula": "=D31*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E31",
+        "formula": "=D31*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F31",
+        "formula": "=G31*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H31",
+        "formula": "=G31*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C32",
+        "formula": "=D32*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E32",
+        "formula": "=D32*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F32",
+        "formula": "=G32*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H32",
+        "formula": "=G32*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C33",
+        "formula": "=D33*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E33",
+        "formula": "=D33*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F33",
+        "formula": "=G33*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H33",
+        "formula": "=G33*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C34",
+        "formula": "=D34"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E34",
+        "formula": "=D34"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F34",
+        "formula": "=G34"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H34",
+        "formula": "=G34"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C35",
+        "formula": "=D35*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E35",
+        "formula": "=D35*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F35",
+        "formula": "=G35*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H35",
+        "formula": "=G35*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C36",
+        "formula": "=D36*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E36",
+        "formula": "=D36*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F36",
+        "formula": "=G36*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H36",
+        "formula": "=G36*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C37",
+        "formula": "=D37*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E37",
+        "formula": "=D37*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F37",
+        "formula": "=G37*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H37",
+        "formula": "=G37*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C38",
+        "formula": "=D38*'02_SCENARIOS'!$H$5"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E38",
+        "formula": "=D38*'02_SCENARIOS'!$H$7"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F38",
+        "formula": "=G38*'02_SCENARIOS'!$H$8"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H38",
+        "formula": "=G38*'02_SCENARIOS'!$H$10"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C39",
+        "formula": "=D39"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E39",
+        "formula": "=D39"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F39",
+        "formula": "=G39"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H39",
+        "formula": "=G39"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C41",
+        "formula": "=SUM(C5,C6,C7,C8,C10,C11,C12,C13,C15,C16,C17,C18,C20,C21,C22,C23,C25,C26,C27,C28,C30,C31,C32,C33,C35,C36,C37,C38)"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "D41",
+        "formula": "=SUM(D5,D6,D7,D8,D10,D11,D12,D13,D15,D16,D17,D18,D20,D21,D22,D23,D25,D26,D27,D28,D30,D31,D32,D33,D35,D36,D37,D38)"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E41",
+        "formula": "=SUM(E5,E6,E7,E8,E10,E11,E12,E13,E15,E16,E17,E18,E20,E21,E22,E23,E25,E26,E27,E28,E30,E31,E32,E33,E35,E36,E37,E38)"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F41",
+        "formula": "=SUM(F5,F6,F7,F8,F10,F11,F12,F13,F15,F16,F17,F18,F20,F21,F22,F23,F25,F26,F27,F28,F30,F31,F32,F33,F35,F36,F37,F38)"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "G41",
+        "formula": "=SUM(G5,G6,G7,G8,G10,G11,G12,G13,G15,G16,G17,G18,G20,G21,G22,G23,G25,G26,G27,G28,G30,G31,G32,G33,G35,G36,G37,G38)"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H41",
+        "formula": "=SUM(H5,H6,H7,H8,H10,H11,H12,H13,H15,H16,H17,H18,H20,H21,H22,H23,H25,H26,H27,H28,H30,H31,H32,H33,H35,H36,H37,H38)"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C42",
+        "formula": "=SUM(C9,C14,C19,C24,C29,C34,C39)"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "D42",
+        "formula": "=SUM(D9,D14,D19,D24,D29,D34,D39)"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E42",
+        "formula": "=SUM(E9,E14,E19,E24,E29,E34,E39)"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F42",
+        "formula": "=SUM(F9,F14,F19,F24,F29,F34,F39)"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "G42",
+        "formula": "=SUM(G9,G14,G19,G24,G29,G34,G39)"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H42",
+        "formula": "=SUM(H9,H14,H19,H24,H29,H34,H39)"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "C43",
+        "formula": "=C41+C42"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "D43",
+        "formula": "=D41+D42"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "E43",
+        "formula": "=E41+E42"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "F43",
+        "formula": "=F41+F42"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "G43",
+        "formula": "=G41+G42"
+      },
+      {
+        "sheet": "04_GENERATION_BY_ZONE",
+        "cell": "H43",
+        "formula": "=H41+H42"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C5",
+        "formula": "=F5*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D5",
+        "formula": "=G5*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E5",
+        "formula": "=H5*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I5",
+        "formula": "=F5*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J5",
+        "formula": "=G5*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K5",
+        "formula": "=H5*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O5",
+        "formula": "=M5*N5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C6",
+        "formula": "=F6*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D6",
+        "formula": "=G6*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E6",
+        "formula": "=H6*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I6",
+        "formula": "=F6*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J6",
+        "formula": "=G6*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K6",
+        "formula": "=H6*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O6",
+        "formula": "=M6*N6"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C7",
+        "formula": "=F7*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D7",
+        "formula": "=G7*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E7",
+        "formula": "=H7*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I7",
+        "formula": "=F7*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J7",
+        "formula": "=G7*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K7",
+        "formula": "=H7*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O7",
+        "formula": "=M7*N7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C8",
+        "formula": "=F8*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D8",
+        "formula": "=G8*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E8",
+        "formula": "=H8*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I8",
+        "formula": "=F8*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J8",
+        "formula": "=G8*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K8",
+        "formula": "=H8*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O8",
+        "formula": "=M8*N8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C9",
+        "formula": "=F9*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D9",
+        "formula": "=G9*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E9",
+        "formula": "=H9*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I9",
+        "formula": "=F9*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J9",
+        "formula": "=G9*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K9",
+        "formula": "=H9*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O9",
+        "formula": "=M9*N9"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C10",
+        "formula": "=F10*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D10",
+        "formula": "=G10*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E10",
+        "formula": "=H10*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I10",
+        "formula": "=F10*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J10",
+        "formula": "=G10*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K10",
+        "formula": "=H10*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O10",
+        "formula": "=M10*N10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C11",
+        "formula": "=F11*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D11",
+        "formula": "=G11*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E11",
+        "formula": "=H11*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I11",
+        "formula": "=F11*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J11",
+        "formula": "=G11*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K11",
+        "formula": "=H11*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O11",
+        "formula": "=M11*N11"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C12",
+        "formula": "=F12*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D12",
+        "formula": "=G12*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E12",
+        "formula": "=H12*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I12",
+        "formula": "=F12*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J12",
+        "formula": "=G12*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K12",
+        "formula": "=H12*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O12",
+        "formula": "=M12*N12"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C13",
+        "formula": "=F13*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D13",
+        "formula": "=G13*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E13",
+        "formula": "=H13*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I13",
+        "formula": "=F13*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J13",
+        "formula": "=G13*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K13",
+        "formula": "=H13*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O13",
+        "formula": "=M13*N13"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C14",
+        "formula": "=F14*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D14",
+        "formula": "=G14*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E14",
+        "formula": "=H14*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I14",
+        "formula": "=F14*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J14",
+        "formula": "=G14*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K14",
+        "formula": "=H14*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O14",
+        "formula": "=M14*N14"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C15",
+        "formula": "=F15*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D15",
+        "formula": "=G15*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E15",
+        "formula": "=H15*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I15",
+        "formula": "=F15*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J15",
+        "formula": "=G15*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K15",
+        "formula": "=H15*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O15",
+        "formula": "=M15*N15"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C16",
+        "formula": "=F16*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D16",
+        "formula": "=G16*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E16",
+        "formula": "=H16*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I16",
+        "formula": "=F16*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J16",
+        "formula": "=G16*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K16",
+        "formula": "=H16*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O16",
+        "formula": "=M16*N16"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C17",
+        "formula": "=F17*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D17",
+        "formula": "=G17*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E17",
+        "formula": "=H17*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I17",
+        "formula": "=F17*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J17",
+        "formula": "=G17*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K17",
+        "formula": "=H17*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O17",
+        "formula": "=M17*N17"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C18",
+        "formula": "=F18*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D18",
+        "formula": "=G18*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E18",
+        "formula": "=H18*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I18",
+        "formula": "=F18*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J18",
+        "formula": "=G18*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K18",
+        "formula": "=H18*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O18",
+        "formula": "=M18*N18"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C19",
+        "formula": "=F19*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D19",
+        "formula": "=G19*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E19",
+        "formula": "=H19*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I19",
+        "formula": "=F19*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J19",
+        "formula": "=G19*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K19",
+        "formula": "=H19*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O19",
+        "formula": "=M19*N19"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C20",
+        "formula": "=F20*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D20",
+        "formula": "=G20*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E20",
+        "formula": "=H20*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I20",
+        "formula": "=F20*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J20",
+        "formula": "=G20*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K20",
+        "formula": "=H20*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O20",
+        "formula": "=M20*N20"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C21",
+        "formula": "=F21*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D21",
+        "formula": "=G21*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E21",
+        "formula": "=H21*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I21",
+        "formula": "=F21*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J21",
+        "formula": "=G21*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K21",
+        "formula": "=H21*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O21",
+        "formula": "=M21*N21"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C22",
+        "formula": "=F22*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D22",
+        "formula": "=G22*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E22",
+        "formula": "=H22*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I22",
+        "formula": "=F22*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J22",
+        "formula": "=G22*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K22",
+        "formula": "=H22*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O22",
+        "formula": "=M22*N22"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C23",
+        "formula": "=F23*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D23",
+        "formula": "=G23*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E23",
+        "formula": "=H23*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I23",
+        "formula": "=F23*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J23",
+        "formula": "=G23*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K23",
+        "formula": "=H23*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O23",
+        "formula": "=M23*N23"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C24",
+        "formula": "=F24*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D24",
+        "formula": "=G24*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E24",
+        "formula": "=H24*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I24",
+        "formula": "=F24*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J24",
+        "formula": "=G24*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K24",
+        "formula": "=H24*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O24",
+        "formula": "=M24*N24"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C25",
+        "formula": "=F25*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D25",
+        "formula": "=G25*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E25",
+        "formula": "=H25*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I25",
+        "formula": "=F25*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J25",
+        "formula": "=G25*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K25",
+        "formula": "=H25*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O25",
+        "formula": "=M25*N25"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C26",
+        "formula": "=F26*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D26",
+        "formula": "=G26*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E26",
+        "formula": "=H26*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I26",
+        "formula": "=F26*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J26",
+        "formula": "=G26*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K26",
+        "formula": "=H26*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O26",
+        "formula": "=M26*N26"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C27",
+        "formula": "=F27*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D27",
+        "formula": "=G27*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E27",
+        "formula": "=H27*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I27",
+        "formula": "=F27*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J27",
+        "formula": "=G27*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K27",
+        "formula": "=H27*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O27",
+        "formula": "=M27*N27"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C28",
+        "formula": "=F28*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D28",
+        "formula": "=G28*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E28",
+        "formula": "=H28*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I28",
+        "formula": "=F28*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J28",
+        "formula": "=G28*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K28",
+        "formula": "=H28*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O28",
+        "formula": "=M28*N28"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C29",
+        "formula": "=F29*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D29",
+        "formula": "=G29*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E29",
+        "formula": "=H29*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I29",
+        "formula": "=F29*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J29",
+        "formula": "=G29*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K29",
+        "formula": "=H29*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O29",
+        "formula": "=M29*N29"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C30",
+        "formula": "=F30*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D30",
+        "formula": "=G30*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E30",
+        "formula": "=H30*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I30",
+        "formula": "=F30*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J30",
+        "formula": "=G30*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K30",
+        "formula": "=H30*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O30",
+        "formula": "=M30*N30"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C31",
+        "formula": "=F31*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D31",
+        "formula": "=G31*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E31",
+        "formula": "=H31*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I31",
+        "formula": "=F31*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J31",
+        "formula": "=G31*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K31",
+        "formula": "=H31*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O31",
+        "formula": "=M31*N31"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C32",
+        "formula": "=F32*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D32",
+        "formula": "=G32*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E32",
+        "formula": "=H32*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I32",
+        "formula": "=F32*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J32",
+        "formula": "=G32*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K32",
+        "formula": "=H32*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O32",
+        "formula": "=M32*N32"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C33",
+        "formula": "=SUM(C5:C32)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D33",
+        "formula": "=SUM(D5:D32)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E33",
+        "formula": "=SUM(E5:E32)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "F33",
+        "formula": "=SUM(F5:F32)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "G33",
+        "formula": "=SUM(G5:G32)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "H33",
+        "formula": "=SUM(H5:H32)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I33",
+        "formula": "=SUM(I5:I32)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J33",
+        "formula": "=SUM(J5:J32)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K33",
+        "formula": "=SUM(K5:K32)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O33",
+        "formula": "=M33*N33"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C38",
+        "formula": "=F38*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D38",
+        "formula": "=G38*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E38",
+        "formula": "=H38*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I38",
+        "formula": "=F38*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J38",
+        "formula": "=G38*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K38",
+        "formula": "=H38*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O38",
+        "formula": "=M38*N38"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C39",
+        "formula": "=F39*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D39",
+        "formula": "=G39*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E39",
+        "formula": "=H39*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I39",
+        "formula": "=F39*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J39",
+        "formula": "=G39*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K39",
+        "formula": "=H39*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O39",
+        "formula": "=M39*N39"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C40",
+        "formula": "=F40*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D40",
+        "formula": "=G40*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E40",
+        "formula": "=H40*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I40",
+        "formula": "=F40*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J40",
+        "formula": "=G40*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K40",
+        "formula": "=H40*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O40",
+        "formula": "=M40*N40"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C41",
+        "formula": "=F41*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D41",
+        "formula": "=G41*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E41",
+        "formula": "=H41*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I41",
+        "formula": "=F41*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J41",
+        "formula": "=G41*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K41",
+        "formula": "=H41*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O41",
+        "formula": "=M41*N41"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C42",
+        "formula": "=F42*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D42",
+        "formula": "=G42*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E42",
+        "formula": "=H42*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I42",
+        "formula": "=F42*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J42",
+        "formula": "=G42*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K42",
+        "formula": "=H42*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O42",
+        "formula": "=M42*N42"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C43",
+        "formula": "=F43*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D43",
+        "formula": "=G43*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E43",
+        "formula": "=H43*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I43",
+        "formula": "=F43*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J43",
+        "formula": "=G43*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K43",
+        "formula": "=H43*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O43",
+        "formula": "=M43*N43"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C44",
+        "formula": "=F44*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D44",
+        "formula": "=G44*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E44",
+        "formula": "=H44*'02_SCENARIOS'!$I$8"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I44",
+        "formula": "=F44*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J44",
+        "formula": "=G44*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K44",
+        "formula": "=H44*'02_SCENARIOS'!$I$10"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O44",
+        "formula": "=M44*N44"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C45",
+        "formula": "=SUM(C38:C44)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D45",
+        "formula": "=SUM(D38:D44)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E45",
+        "formula": "=SUM(E38:E44)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "F45",
+        "formula": "=SUM(F38:F44)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "G45",
+        "formula": "=SUM(G38:G44)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "H45",
+        "formula": "=SUM(H38:H44)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I45",
+        "formula": "=SUM(I38:I44)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J45",
+        "formula": "=SUM(J38:J44)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K45",
+        "formula": "=SUM(K38:K44)"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O45",
+        "formula": "=M45*N45"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "C48",
+        "formula": "=F48*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "D48",
+        "formula": "=G48*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "E48",
+        "formula": "=H48*'02_SCENARIOS'!$I$5"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "I48",
+        "formula": "=F48*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "J48",
+        "formula": "=G48*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "K48",
+        "formula": "=H48*'02_SCENARIOS'!$I$7"
+      },
+      {
+        "sheet": "05_STORAGE_BY_ZONE",
+        "cell": "O48",
+        "formula": "=M48*N48"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "E5",
+        "formula": "=F5+G5"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "F5",
+        "formula": "='02_SCENARIOS'!$E$5*$D5"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "G5",
+        "formula": "='02_SCENARIOS'!$F$5*$D5"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "H5",
+        "formula": "=I5+J5"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "I5",
+        "formula": "='02_SCENARIOS'!$E$6*$D5"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "J5",
+        "formula": "='02_SCENARIOS'!$F$6*$D5"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "K5",
+        "formula": "=L5+M5"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "L5",
+        "formula": "='02_SCENARIOS'!$E$7*$D5"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "M5",
+        "formula": "='02_SCENARIOS'!$F$7*$D5"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "E6",
+        "formula": "=F6+G6"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "F6",
+        "formula": "='02_SCENARIOS'!$E$5*$D6"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "G6",
+        "formula": "='02_SCENARIOS'!$F$5*$D6"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "H6",
+        "formula": "=I6+J6"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "I6",
+        "formula": "='02_SCENARIOS'!$E$6*$D6"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "J6",
+        "formula": "='02_SCENARIOS'!$F$6*$D6"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "K6",
+        "formula": "=L6+M6"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "L6",
+        "formula": "='02_SCENARIOS'!$E$7*$D6"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "M6",
+        "formula": "='02_SCENARIOS'!$F$7*$D6"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "E7",
+        "formula": "=F7+G7"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "F7",
+        "formula": "='02_SCENARIOS'!$E$5*$D7"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "G7",
+        "formula": "='02_SCENARIOS'!$F$5*$D7"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "H7",
+        "formula": "=I7+J7"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "I7",
+        "formula": "='02_SCENARIOS'!$E$6*$D7"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "J7",
+        "formula": "='02_SCENARIOS'!$F$6*$D7"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "K7",
+        "formula": "=L7+M7"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "L7",
+        "formula": "='02_SCENARIOS'!$E$7*$D7"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "M7",
+        "formula": "='02_SCENARIOS'!$F$7*$D7"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "E8",
+        "formula": "=F8+G8"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "F8",
+        "formula": "='02_SCENARIOS'!$E$5*$D8"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "G8",
+        "formula": "='02_SCENARIOS'!$F$5*$D8"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "H8",
+        "formula": "=I8+J8"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "I8",
+        "formula": "='02_SCENARIOS'!$E$6*$D8"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "J8",
+        "formula": "='02_SCENARIOS'!$F$6*$D8"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "K8",
+        "formula": "=L8+M8"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "L8",
+        "formula": "='02_SCENARIOS'!$E$7*$D8"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "M8",
+        "formula": "='02_SCENARIOS'!$F$7*$D8"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "E9",
+        "formula": "=F9+G9"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "F9",
+        "formula": "='02_SCENARIOS'!$E$5*$D9"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "G9",
+        "formula": "='02_SCENARIOS'!$F$5*$D9"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "H9",
+        "formula": "=I9+J9"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "I9",
+        "formula": "='02_SCENARIOS'!$E$6*$D9"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "J9",
+        "formula": "='02_SCENARIOS'!$F$6*$D9"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "K9",
+        "formula": "=L9+M9"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "L9",
+        "formula": "='02_SCENARIOS'!$E$7*$D9"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "M9",
+        "formula": "='02_SCENARIOS'!$F$7*$D9"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "E10",
+        "formula": "=F10+G10"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "F10",
+        "formula": "='02_SCENARIOS'!$E$5*$D10"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "G10",
+        "formula": "='02_SCENARIOS'!$F$5*$D10"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "H10",
+        "formula": "=I10+J10"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "I10",
+        "formula": "='02_SCENARIOS'!$E$6*$D10"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "J10",
+        "formula": "='02_SCENARIOS'!$F$6*$D10"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "K10",
+        "formula": "=L10+M10"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "L10",
+        "formula": "='02_SCENARIOS'!$E$7*$D10"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "M10",
+        "formula": "='02_SCENARIOS'!$F$7*$D10"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "E11",
+        "formula": "=F11+G11"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "F11",
+        "formula": "='02_SCENARIOS'!$E$5*$D11"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "G11",
+        "formula": "='02_SCENARIOS'!$F$5*$D11"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "H11",
+        "formula": "=I11+J11"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "I11",
+        "formula": "='02_SCENARIOS'!$E$6*$D11"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "J11",
+        "formula": "='02_SCENARIOS'!$F$6*$D11"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "K11",
+        "formula": "=L11+M11"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "L11",
+        "formula": "='02_SCENARIOS'!$E$7*$D11"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "M11",
+        "formula": "='02_SCENARIOS'!$F$7*$D11"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "C12",
+        "formula": "=SUM(C5:C11)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "D12",
+        "formula": "=SUM(D5:D11)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "E12",
+        "formula": "=SUM(E5:E11)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "F12",
+        "formula": "=SUM(F5:F11)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "G12",
+        "formula": "=SUM(G5:G11)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "H12",
+        "formula": "=SUM(H5:H11)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "I12",
+        "formula": "=SUM(I5:I11)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "J12",
+        "formula": "=SUM(J5:J11)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "K12",
+        "formula": "=SUM(K5:K11)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "L12",
+        "formula": "=SUM(L5:L11)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "M12",
+        "formula": "=SUM(M5:M11)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "E18",
+        "formula": "=F18+G18"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "F18",
+        "formula": "='02_SCENARIOS'!$E$8*$D18"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "G18",
+        "formula": "='02_SCENARIOS'!$F$8*$D18"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "H18",
+        "formula": "=I18+J18"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "I18",
+        "formula": "='02_SCENARIOS'!$E$9*$D18"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "J18",
+        "formula": "='02_SCENARIOS'!$F$9*$D18"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "K18",
+        "formula": "=L18+M18"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "L18",
+        "formula": "='02_SCENARIOS'!$E$10*$D18"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "M18",
+        "formula": "='02_SCENARIOS'!$F$10*$D18"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "E19",
+        "formula": "=F19+G19"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "F19",
+        "formula": "='02_SCENARIOS'!$E$8*$D19"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "G19",
+        "formula": "='02_SCENARIOS'!$F$8*$D19"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "H19",
+        "formula": "=I19+J19"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "I19",
+        "formula": "='02_SCENARIOS'!$E$9*$D19"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "J19",
+        "formula": "='02_SCENARIOS'!$F$9*$D19"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "K19",
+        "formula": "=L19+M19"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "L19",
+        "formula": "='02_SCENARIOS'!$E$10*$D19"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "M19",
+        "formula": "='02_SCENARIOS'!$F$10*$D19"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "E20",
+        "formula": "=F20+G20"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "F20",
+        "formula": "='02_SCENARIOS'!$E$8*$D20"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "G20",
+        "formula": "='02_SCENARIOS'!$F$8*$D20"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "H20",
+        "formula": "=I20+J20"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "I20",
+        "formula": "='02_SCENARIOS'!$E$9*$D20"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "J20",
+        "formula": "='02_SCENARIOS'!$F$9*$D20"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "K20",
+        "formula": "=L20+M20"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "L20",
+        "formula": "='02_SCENARIOS'!$E$10*$D20"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "M20",
+        "formula": "='02_SCENARIOS'!$F$10*$D20"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "E21",
+        "formula": "=F21+G21"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "F21",
+        "formula": "='02_SCENARIOS'!$E$8*$D21"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "G21",
+        "formula": "='02_SCENARIOS'!$F$8*$D21"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "H21",
+        "formula": "=I21+J21"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "I21",
+        "formula": "='02_SCENARIOS'!$E$9*$D21"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "J21",
+        "formula": "='02_SCENARIOS'!$F$9*$D21"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "K21",
+        "formula": "=L21+M21"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "L21",
+        "formula": "='02_SCENARIOS'!$E$10*$D21"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "M21",
+        "formula": "='02_SCENARIOS'!$F$10*$D21"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "E22",
+        "formula": "=F22+G22"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "F22",
+        "formula": "='02_SCENARIOS'!$E$8*$D22"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "G22",
+        "formula": "='02_SCENARIOS'!$F$8*$D22"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "H22",
+        "formula": "=I22+J22"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "I22",
+        "formula": "='02_SCENARIOS'!$E$9*$D22"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "J22",
+        "formula": "='02_SCENARIOS'!$F$9*$D22"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "K22",
+        "formula": "=L22+M22"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "L22",
+        "formula": "='02_SCENARIOS'!$E$10*$D22"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "M22",
+        "formula": "='02_SCENARIOS'!$F$10*$D22"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "E23",
+        "formula": "=F23+G23"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "F23",
+        "formula": "='02_SCENARIOS'!$E$8*$D23"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "G23",
+        "formula": "='02_SCENARIOS'!$F$8*$D23"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "H23",
+        "formula": "=I23+J23"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "I23",
+        "formula": "='02_SCENARIOS'!$E$9*$D23"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "J23",
+        "formula": "='02_SCENARIOS'!$F$9*$D23"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "K23",
+        "formula": "=L23+M23"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "L23",
+        "formula": "='02_SCENARIOS'!$E$10*$D23"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "M23",
+        "formula": "='02_SCENARIOS'!$F$10*$D23"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "E24",
+        "formula": "=F24+G24"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "F24",
+        "formula": "='02_SCENARIOS'!$E$8*$D24"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "G24",
+        "formula": "='02_SCENARIOS'!$F$8*$D24"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "H24",
+        "formula": "=I24+J24"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "I24",
+        "formula": "='02_SCENARIOS'!$E$9*$D24"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "J24",
+        "formula": "='02_SCENARIOS'!$F$9*$D24"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "K24",
+        "formula": "=L24+M24"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "L24",
+        "formula": "='02_SCENARIOS'!$E$10*$D24"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "M24",
+        "formula": "='02_SCENARIOS'!$F$10*$D24"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "C25",
+        "formula": "=SUM(C18:C24)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "D25",
+        "formula": "=SUM(D18:D24)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "E25",
+        "formula": "=SUM(E18:E24)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "F25",
+        "formula": "=SUM(F18:F24)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "G25",
+        "formula": "=SUM(G18:G24)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "H25",
+        "formula": "=SUM(H18:H24)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "I25",
+        "formula": "=SUM(I18:I24)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "J25",
+        "formula": "=SUM(J18:J24)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "K25",
+        "formula": "=SUM(K18:K24)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "L25",
+        "formula": "=SUM(L18:L24)"
+      },
+      {
+        "sheet": "06_DEMAND_BY_ZONE",
+        "cell": "M25",
+        "formula": "=SUM(M18:M24)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C5",
+        "formula": "=D5-SUMIF($C$35:$C$83,A5&\"->\"&B5,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E5",
+        "formula": "=D5"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F5",
+        "formula": "=C5"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G5",
+        "formula": "=D5"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H5",
+        "formula": "=G5"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I5",
+        "formula": "=C5-D5"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C6",
+        "formula": "=D6-SUMIF($C$35:$C$83,A6&\"->\"&B6,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E6",
+        "formula": "=D6"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F6",
+        "formula": "=C6"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G6",
+        "formula": "=D6"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H6",
+        "formula": "=G6"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I6",
+        "formula": "=C6-D6"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C7",
+        "formula": "=D7-SUMIF($C$35:$C$83,A7&\"->\"&B7,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E7",
+        "formula": "=D7"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F7",
+        "formula": "=C7"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G7",
+        "formula": "=D7"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H7",
+        "formula": "=G7"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I7",
+        "formula": "=C7-D7"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C8",
+        "formula": "=D8-SUMIF($C$35:$C$83,A8&\"->\"&B8,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E8",
+        "formula": "=D8"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F8",
+        "formula": "=C8"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G8",
+        "formula": "=D8"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H8",
+        "formula": "=G8"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I8",
+        "formula": "=C8-D8"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C9",
+        "formula": "=D9-SUMIF($C$35:$C$83,A9&\"->\"&B9,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E9",
+        "formula": "=D9"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F9",
+        "formula": "=C9"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G9",
+        "formula": "=D9"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H9",
+        "formula": "=G9"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I9",
+        "formula": "=C9-D9"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C10",
+        "formula": "=D10-SUMIF($C$35:$C$83,A10&\"->\"&B10,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E10",
+        "formula": "=D10"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F10",
+        "formula": "=C10"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G10",
+        "formula": "=D10"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H10",
+        "formula": "=G10"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I10",
+        "formula": "=C10-D10"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C11",
+        "formula": "=D11-SUMIF($C$35:$C$83,A11&\"->\"&B11,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E11",
+        "formula": "=D11"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F11",
+        "formula": "=C11"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G11",
+        "formula": "=D11"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H11",
+        "formula": "=G11"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I11",
+        "formula": "=C11-D11"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C12",
+        "formula": "=D12-SUMIF($C$35:$C$83,A12&\"->\"&B12,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E12",
+        "formula": "=D12"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F12",
+        "formula": "=C12"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G12",
+        "formula": "=D12"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H12",
+        "formula": "=G12"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I12",
+        "formula": "=C12-D12"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C13",
+        "formula": "=D13-SUMIF($C$35:$C$83,A13&\"->\"&B13,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E13",
+        "formula": "=D13"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F13",
+        "formula": "=C13"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G13",
+        "formula": "=D13"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H13",
+        "formula": "=G13"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I13",
+        "formula": "=C13-D13"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C14",
+        "formula": "=D14-SUMIF($C$35:$C$83,A14&\"->\"&B14,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E14",
+        "formula": "=D14"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F14",
+        "formula": "=C14"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G14",
+        "formula": "=D14"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H14",
+        "formula": "=G14"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I14",
+        "formula": "=C14-D14"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C15",
+        "formula": "=D15-SUMIF($C$35:$C$83,A15&\"->\"&B15,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E15",
+        "formula": "=D15"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F15",
+        "formula": "=C15"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G15",
+        "formula": "=D15"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H15",
+        "formula": "=G15"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I15",
+        "formula": "=C15-D15"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C16",
+        "formula": "=D16-SUMIF($C$35:$C$83,A16&\"->\"&B16,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E16",
+        "formula": "=D16"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F16",
+        "formula": "=C16"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G16",
+        "formula": "=D16"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H16",
+        "formula": "=G16"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I16",
+        "formula": "=C16-D16"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C17",
+        "formula": "=D17-SUMIF($C$35:$C$83,A17&\"->\"&B17,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E17",
+        "formula": "=D17"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F17",
+        "formula": "=C17"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G17",
+        "formula": "=D17"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H17",
+        "formula": "=G17"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I17",
+        "formula": "=C17-D17"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C18",
+        "formula": "=D18-SUMIF($C$35:$C$83,A18&\"->\"&B18,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E18",
+        "formula": "=D18"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F18",
+        "formula": "=C18"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G18",
+        "formula": "=D18"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H18",
+        "formula": "=G18"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I18",
+        "formula": "=C18-D18"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C19",
+        "formula": "=D19-SUMIF($C$35:$C$83,A19&\"->\"&B19,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E19",
+        "formula": "=D19"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F19",
+        "formula": "=C19"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G19",
+        "formula": "=D19"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H19",
+        "formula": "=G19"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I19",
+        "formula": "=C19-D19"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C20",
+        "formula": "=D20-SUMIF($C$35:$C$83,A20&\"->\"&B20,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E20",
+        "formula": "=D20"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F20",
+        "formula": "=C20"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G20",
+        "formula": "=D20"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H20",
+        "formula": "=G20"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I20",
+        "formula": "=C20-D20"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C21",
+        "formula": "=D21-SUMIF($C$35:$C$83,A21&\"->\"&B21,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E21",
+        "formula": "=D21"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F21",
+        "formula": "=C21"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G21",
+        "formula": "=D21"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H21",
+        "formula": "=G21"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I21",
+        "formula": "=C21-D21"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C22",
+        "formula": "=D22-SUMIF($C$35:$C$83,A22&\"->\"&B22,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E22",
+        "formula": "=D22"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F22",
+        "formula": "=C22"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G22",
+        "formula": "=D22"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H22",
+        "formula": "=G22"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I22",
+        "formula": "=C22-D22"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C23",
+        "formula": "=D23-SUMIF($C$35:$C$83,A23&\"->\"&B23,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E23",
+        "formula": "=D23"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F23",
+        "formula": "=C23"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G23",
+        "formula": "=D23"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H23",
+        "formula": "=G23"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I23",
+        "formula": "=C23-D23"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C24",
+        "formula": "=D24-SUMIF($C$35:$C$83,A24&\"->\"&B24,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E24",
+        "formula": "=D24"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F24",
+        "formula": "=C24"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G24",
+        "formula": "=D24"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H24",
+        "formula": "=G24"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I24",
+        "formula": "=C24-D24"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C25",
+        "formula": "=D25-SUMIF($C$35:$C$83,A25&\"->\"&B25,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E25",
+        "formula": "=D25"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F25",
+        "formula": "=C25"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G25",
+        "formula": "=D25"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H25",
+        "formula": "=G25"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I25",
+        "formula": "=C25-D25"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C26",
+        "formula": "=D26-SUMIF($C$35:$C$83,A26&\"->\"&B26,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E26",
+        "formula": "=D26"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F26",
+        "formula": "=C26"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G26",
+        "formula": "=D26"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H26",
+        "formula": "=G26"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I26",
+        "formula": "=C26-D26"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C27",
+        "formula": "=D27-SUMIF($C$35:$C$83,A27&\"->\"&B27,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E27",
+        "formula": "=D27"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F27",
+        "formula": "=C27"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G27",
+        "formula": "=D27"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H27",
+        "formula": "=G27"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I27",
+        "formula": "=C27-D27"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "C28",
+        "formula": "=D28-SUMIF($C$35:$C$83,A28&\"->\"&B28,$I$35:$I$83)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "E28",
+        "formula": "=D28"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "F28",
+        "formula": "=C28"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "G28",
+        "formula": "=D28"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "H28",
+        "formula": "=G28"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I28",
+        "formula": "=C28-D28"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I35",
+        "formula": "=IF(AND(G35=1,H35=0),D35,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I36",
+        "formula": "=IF(AND(G36=1,H36=0),D36,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I37",
+        "formula": "=IF(AND(G37=1,H37=0),D37,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I38",
+        "formula": "=IF(AND(G38=1,H38=0),D38,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I39",
+        "formula": "=IF(AND(G39=1,H39=0),D39,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I40",
+        "formula": "=IF(AND(G40=1,H40=0),D40,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I41",
+        "formula": "=IF(AND(G41=1,H41=0),D41,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I42",
+        "formula": "=IF(AND(G42=1,H42=0),D42,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I43",
+        "formula": "=IF(AND(G43=1,H43=0),D43,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I44",
+        "formula": "=IF(AND(G44=1,H44=0),D44,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I45",
+        "formula": "=IF(AND(G45=1,H45=0),D45,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I46",
+        "formula": "=IF(AND(G46=1,H46=0),D46,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I47",
+        "formula": "=IF(AND(G47=1,H47=0),D47,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I48",
+        "formula": "=IF(AND(G48=1,H48=0),D48,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I49",
+        "formula": "=IF(AND(G49=1,H49=0),D49,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I50",
+        "formula": "=IF(AND(G50=1,H50=0),D50,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I51",
+        "formula": "=IF(AND(G51=1,H51=0),D51,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I52",
+        "formula": "=IF(AND(G52=1,H52=0),D52,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I53",
+        "formula": "=IF(AND(G53=1,H53=0),D53,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I54",
+        "formula": "=IF(AND(G54=1,H54=0),D54,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I55",
+        "formula": "=IF(AND(G55=1,H55=0),D55,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I56",
+        "formula": "=IF(AND(G56=1,H56=0),D56,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I57",
+        "formula": "=IF(AND(G57=1,H57=0),D57,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I58",
+        "formula": "=IF(AND(G58=1,H58=0),D58,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I59",
+        "formula": "=IF(AND(G59=1,H59=0),D59,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I60",
+        "formula": "=IF(AND(G60=1,H60=0),D60,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I61",
+        "formula": "=IF(AND(G61=1,H61=0),D61,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I62",
+        "formula": "=IF(AND(G62=1,H62=0),D62,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I63",
+        "formula": "=IF(AND(G63=1,H63=0),D63,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I64",
+        "formula": "=IF(AND(G64=1,H64=0),D64,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I65",
+        "formula": "=IF(AND(G65=1,H65=0),D65,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I66",
+        "formula": "=IF(AND(G66=1,H66=0),D66,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I67",
+        "formula": "=IF(AND(G67=1,H67=0),D67,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I68",
+        "formula": "=IF(AND(G68=1,H68=0),D68,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I69",
+        "formula": "=IF(AND(G69=1,H69=0),D69,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I70",
+        "formula": "=IF(AND(G70=1,H70=0),D70,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I71",
+        "formula": "=IF(AND(G71=1,H71=0),D71,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I72",
+        "formula": "=IF(AND(G72=1,H72=0),D72,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I73",
+        "formula": "=IF(AND(G73=1,H73=0),D73,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I74",
+        "formula": "=IF(AND(G74=1,H74=0),D74,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I75",
+        "formula": "=IF(AND(G75=1,H75=0),D75,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I76",
+        "formula": "=IF(AND(G76=1,H76=0),D76,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I77",
+        "formula": "=IF(AND(G77=1,H77=0),D77,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I78",
+        "formula": "=IF(AND(G78=1,H78=0),D78,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I79",
+        "formula": "=IF(AND(G79=1,H79=0),D79,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I80",
+        "formula": "=IF(AND(G80=1,H80=0),D80,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I81",
+        "formula": "=IF(AND(G81=1,H81=0),D81,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I82",
+        "formula": "=IF(AND(G82=1,H82=0),D82,0)"
+      },
+      {
+        "sheet": "07_INTERZONAL_BY_ZONE",
+        "cell": "I83",
+        "formula": "=IF(AND(G83=1,H83=0),D83,0)"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "C5",
+        "formula": "=D5"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "E5",
+        "formula": "=D5"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "F5",
+        "formula": "=C5"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "G5",
+        "formula": "=D5"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "H5",
+        "formula": "=G5"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "C6",
+        "formula": "=D6"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "E6",
+        "formula": "=D6"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "F6",
+        "formula": "=C6"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "G6",
+        "formula": "=D6"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "H6",
+        "formula": "=G6"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "C7",
+        "formula": "=D7"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "E7",
+        "formula": "=D7"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "F7",
+        "formula": "=C7"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "G7",
+        "formula": "=D7"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "H7",
+        "formula": "=G7"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "C8",
+        "formula": "=D8"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "E8",
+        "formula": "=D8"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "F8",
+        "formula": "=C8"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "G8",
+        "formula": "=D8"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "H8",
+        "formula": "=G8"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "C9",
+        "formula": "=D9"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "E9",
+        "formula": "=D9"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "F9",
+        "formula": "=C9"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "G9",
+        "formula": "=D9"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "H9",
+        "formula": "=G9"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "C10",
+        "formula": "=D10"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "E10",
+        "formula": "=D10"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "F10",
+        "formula": "=C10"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "G10",
+        "formula": "=D10"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "H10",
+        "formula": "=G10"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "C11",
+        "formula": "=D11"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "E11",
+        "formula": "=D11"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "F11",
+        "formula": "=C11"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "G11",
+        "formula": "=D11"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "H11",
+        "formula": "=G11"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "C12",
+        "formula": "=D12"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "E12",
+        "formula": "=D12"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "F12",
+        "formula": "=C12"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "G12",
+        "formula": "=D12"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "H12",
+        "formula": "=G12"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "C13",
+        "formula": "=D13"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "E13",
+        "formula": "=D13"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "F13",
+        "formula": "=C13"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "G13",
+        "formula": "=D13"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "H13",
+        "formula": "=G13"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "C14",
+        "formula": "=D14"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "E14",
+        "formula": "=D14"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "F14",
+        "formula": "=C14"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "G14",
+        "formula": "=D14"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "H14",
+        "formula": "=G14"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "C15",
+        "formula": "=D15"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "E15",
+        "formula": "=D15"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "F15",
+        "formula": "=C15"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "G15",
+        "formula": "=D15"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "H15",
+        "formula": "=G15"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "C16",
+        "formula": "=D16"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "E16",
+        "formula": "=D16"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "F16",
+        "formula": "=C16"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "G16",
+        "formula": "=D16"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "H16",
+        "formula": "=G16"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "C17",
+        "formula": "=D17"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "E17",
+        "formula": "=D17"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "F17",
+        "formula": "=C17"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "G17",
+        "formula": "=D17"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "H17",
+        "formula": "=G17"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "C18",
+        "formula": "=D18"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "E18",
+        "formula": "=D18"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "F18",
+        "formula": "=C18"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "G18",
+        "formula": "=D18"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "H18",
+        "formula": "=G18"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "C19",
+        "formula": "=D19"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "E19",
+        "formula": "=D19"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "F19",
+        "formula": "=C19"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "G19",
+        "formula": "=D19"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "H19",
+        "formula": "=G19"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "C20",
+        "formula": "=D20"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "E20",
+        "formula": "=D20"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "F20",
+        "formula": "=C20"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "G20",
+        "formula": "=D20"
+      },
+      {
+        "sheet": "08_FOREIGN_BY_ZONE",
+        "cell": "H20",
+        "formula": "=G20"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "D53",
+        "formula": "=B53/(E53*8.76)"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "E53",
+        "formula": "='02_SCENARIOS'!$B$27"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "E54",
+        "formula": "=B54/(8.76*D54)"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "E55",
+        "formula": "=B55/(8.76*D55)"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "E56",
+        "formula": "=B56/(8.76*D56)"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "E57",
+        "formula": "=B57/(8.76*D57)"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "B58",
+        "formula": "=SUM(B53:B57)"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "E58",
+        "formula": "=SUM(E53:E57)"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "E59",
+        "formula": "='02_SCENARIOS'!$B$26"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "B64",
+        "formula": "=SUM('04_GENERATION_BY_ZONE'!$G$5,'04_GENERATION_BY_ZONE'!$G$6,'04_GENERATION_BY_ZONE'!$G$10,'04_GENERATION_BY_ZONE'!$G$11,'04_GENERATION_BY_ZONE'!$G$15,'04_GENERATION_BY_ZONE'!$G$16,'04_GENERATION_BY_ZONE'!$G$20,'04_GENERATION_BY_ZONE'!$G$21,'04_GENERATION_BY_ZONE'!$G$25,'04_GENERATION_BY_ZONE'!$G$26,'04_GENERATION_BY_ZONE'!$G$30,'04_GENERATION_BY_ZONE'!$G$31,'04_GENERATION_BY_ZONE'!$G$35,'04_GENERATION_BY_ZONE'!$G$36)"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "E64",
+        "formula": "=C64/D64"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "G64",
+        "formula": "=B64*E64*F64"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "B65",
+        "formula": "='04_GENERATION_BY_ZONE'!$G$41-B64"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "E65",
+        "formula": "=C65/D65"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "G65",
+        "formula": "=B65*E65*F65"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "B66",
+        "formula": "='05_STORAGE_BY_ZONE'!$G$45"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "E66",
+        "formula": "=C66/D66"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "G66",
+        "formula": "=B66*E66*F66"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "G67",
+        "formula": "=SUM(G64:G66)"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "G68",
+        "formula": "=G67/D68"
+      },
+      {
+        "sheet": "09_TECH_COSTS",
+        "cell": "G69",
+        "formula": "='02_SCENARIOS'!$B$26+G68"
+      },
+      {
+        "sheet": "10_NUCLEAR",
+        "cell": "C5",
+        "formula": "=D5+E5"
+      },
+      {
+        "sheet": "10_NUCLEAR",
+        "cell": "G5",
+        "formula": "=C5*8760*F5/1000"
+      },
+      {
+        "sheet": "10_NUCLEAR",
+        "cell": "C6",
+        "formula": "=D6+E6"
+      },
+      {
+        "sheet": "10_NUCLEAR",
+        "cell": "G6",
+        "formula": "=C6*8760*F6/1000"
+      },
+      {
+        "sheet": "10_NUCLEAR",
+        "cell": "C7",
+        "formula": "=D7+E7"
+      },
+      {
+        "sheet": "10_NUCLEAR",
+        "cell": "G7",
+        "formula": "=C7*8760*F7/1000"
+      },
+      {
+        "sheet": "10_NUCLEAR",
+        "cell": "C8",
+        "formula": "=D8+E8"
+      },
+      {
+        "sheet": "10_NUCLEAR",
+        "cell": "G8",
+        "formula": "=C8*8760*F8/1000"
+      },
+      {
+        "sheet": "10_NUCLEAR",
+        "cell": "C9",
+        "formula": "=D9+E9"
+      },
+      {
+        "sheet": "10_NUCLEAR",
+        "cell": "G9",
+        "formula": "=C9*8760*F9/1000"
+      },
+      {
+        "sheet": "10_NUCLEAR",
+        "cell": "C10",
+        "formula": "=D10+E10"
+      },
+      {
+        "sheet": "10_NUCLEAR",
+        "cell": "G10",
+        "formula": "=C10*8760*F10/1000"
+      },
+      {
+        "sheet": "10_NUCLEAR",
+        "cell": "C15",
+        "formula": "=8*8760*B15/1000"
+      },
+      {
+        "sheet": "10_NUCLEAR",
+        "cell": "C16",
+        "formula": "=8*8760*B16/1000"
+      },
+      {
+        "sheet": "10_NUCLEAR",
+        "cell": "C17",
+        "formula": "=8*8760*B17/1000"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D5",
+        "formula": "=COUNTA('02_SCENARIOS'!A5:A10)"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F5",
+        "formula": "=IF(ABS(D5-E5)<=G5,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D6",
+        "formula": "=SUM('06_DEMAND_BY_ZONE'!D5:D11)"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F6",
+        "formula": "=IF(ABS(D6-E6)<=G6,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D7",
+        "formula": "=SUM('06_DEMAND_BY_ZONE'!D18:D24)"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F7",
+        "formula": "=IF(ABS(D7-E7)<=G7,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D8",
+        "formula": "='06_DEMAND_BY_ZONE'!E12"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F8",
+        "formula": "=IF(ABS(D8-E8)<=G8,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D9",
+        "formula": "='06_DEMAND_BY_ZONE'!H12"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F9",
+        "formula": "=IF(ABS(D9-E9)<=G9,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D10",
+        "formula": "='06_DEMAND_BY_ZONE'!K12"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F10",
+        "formula": "=IF(ABS(D10-E10)<=G10,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D11",
+        "formula": "='06_DEMAND_BY_ZONE'!E25"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F11",
+        "formula": "=IF(ABS(D11-E11)<=G11,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D12",
+        "formula": "='06_DEMAND_BY_ZONE'!H25"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F12",
+        "formula": "=IF(ABS(D12-E12)<=G12,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D13",
+        "formula": "='06_DEMAND_BY_ZONE'!K25"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F13",
+        "formula": "=IF(ABS(D13-E13)<=G13,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D14",
+        "formula": "='06_DEMAND_BY_ZONE'!F12+'06_DEMAND_BY_ZONE'!G12-'06_DEMAND_BY_ZONE'!E12"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F14",
+        "formula": "=IF(ABS(D14-E14)<=G14,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D15",
+        "formula": "='06_DEMAND_BY_ZONE'!F25+'06_DEMAND_BY_ZONE'!G25-'06_DEMAND_BY_ZONE'!E25"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F15",
+        "formula": "=IF(ABS(D15-E15)<=G15,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D16",
+        "formula": "='04_GENERATION_BY_ZONE'!C41/'04_GENERATION_BY_ZONE'!D41"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F16",
+        "formula": "=IF(ABS(D16-E16)<=G16,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D17",
+        "formula": "='04_GENERATION_BY_ZONE'!E41/'04_GENERATION_BY_ZONE'!D41"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F17",
+        "formula": "=IF(ABS(D17-E17)<=G17,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D18",
+        "formula": "='04_GENERATION_BY_ZONE'!F41/'04_GENERATION_BY_ZONE'!G41"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F18",
+        "formula": "=IF(ABS(D18-E18)<=G18,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D19",
+        "formula": "='04_GENERATION_BY_ZONE'!H41/'04_GENERATION_BY_ZONE'!G41"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F19",
+        "formula": "=IF(ABS(D19-E19)<=G19,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D20",
+        "formula": "='04_GENERATION_BY_ZONE'!G42"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F20",
+        "formula": "=IF(ABS(D20-E20)<=G20,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D21",
+        "formula": "='04_GENERATION_BY_ZONE'!D56"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F21",
+        "formula": "=IF(ABS(D21-E21)<=G21,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D22",
+        "formula": "='04_GENERATION_BY_ZONE'!G57"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F22",
+        "formula": "=IF(ABS(D22-E22)<=G22,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D23",
+        "formula": "='05_STORAGE_BY_ZONE'!E33/'05_STORAGE_BY_ZONE'!H33"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F23",
+        "formula": "=IF(ABS(D23-E23)<=G23,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D24",
+        "formula": "='05_STORAGE_BY_ZONE'!K33/'05_STORAGE_BY_ZONE'!H33"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F24",
+        "formula": "=IF(ABS(D24-E24)<=G24,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D25",
+        "formula": "='05_STORAGE_BY_ZONE'!E45/'05_STORAGE_BY_ZONE'!H45"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F25",
+        "formula": "=IF(ABS(D25-E25)<=G25,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D26",
+        "formula": "='05_STORAGE_BY_ZONE'!K45/'05_STORAGE_BY_ZONE'!H45"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F26",
+        "formula": "=IF(ABS(D26-E26)<=G26,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D27",
+        "formula": "='05_STORAGE_BY_ZONE'!H33"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F27",
+        "formula": "=IF(ABS(D27-E27)<=G27,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D28",
+        "formula": "='05_STORAGE_BY_ZONE'!H45"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F28",
+        "formula": "=IF(ABS(D28-E28)<=G28,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D29",
+        "formula": "=SUMPRODUCT(('07_INTERZONAL_BY_ZONE'!E5:E28-'07_INTERZONAL_BY_ZONE'!D5:D28)*('07_INTERZONAL_BY_ZONE'!E5:E28-'07_INTERZONAL_BY_ZONE'!D5:D28))"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F29",
+        "formula": "=IF(ABS(D29-E29)<=G29,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D30",
+        "formula": "=SUMPRODUCT(('07_INTERZONAL_BY_ZONE'!F5:F28-'07_INTERZONAL_BY_ZONE'!C5:C28)*('07_INTERZONAL_BY_ZONE'!F5:F28-'07_INTERZONAL_BY_ZONE'!C5:C28))"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F30",
+        "formula": "=IF(ABS(D30-E30)<=G30,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D31",
+        "formula": "=SUM('07_INTERZONAL_BY_ZONE'!I5:I28)"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F31",
+        "formula": "=IF(ABS(D31-E31)<=G31,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D32",
+        "formula": "=SUMPRODUCT(('08_FOREIGN_BY_ZONE'!E5:E20-'08_FOREIGN_BY_ZONE'!D5:D20)*('08_FOREIGN_BY_ZONE'!E5:E20-'08_FOREIGN_BY_ZONE'!D5:D20))"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F32",
+        "formula": "=IF(ABS(D32-E32)<=G32,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D33",
+        "formula": "=SUMPRODUCT(('08_FOREIGN_BY_ZONE'!C5:C20-'08_FOREIGN_BY_ZONE'!D5:D20)*('08_FOREIGN_BY_ZONE'!C5:C20-'08_FOREIGN_BY_ZONE'!D5:D20))"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F33",
+        "formula": "=IF(ABS(D33-E33)<=G33,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D47",
+        "formula": "='09_TECH_COSTS'!$E$54"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F47",
+        "formula": "=IF(ABS(D47-E47)<=G47,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D48",
+        "formula": "='09_TECH_COSTS'!$E$55"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F48",
+        "formula": "=IF(ABS(D48-E48)<=G48,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D49",
+        "formula": "='09_TECH_COSTS'!$E$56"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F49",
+        "formula": "=IF(ABS(D49-E49)<=G49,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D50",
+        "formula": "='09_TECH_COSTS'!$E$57"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F50",
+        "formula": "=IF(ABS(D50-E50)<=G50,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D51",
+        "formula": "='09_TECH_COSTS'!$E$58"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F51",
+        "formula": "=IF(ABS(D51-E51)<=G51,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D52",
+        "formula": "=COUNTIF('02_SCENARIOS'!$B$33:$B$38,14.4864)+COUNTIF('04_GENERATION_BY_ZONE'!$C$46:$H$60,14.4864)+COUNTIF('09_TECH_COSTS'!$E$53:$E$59,14.4864)+COUNTIF('09_TECH_COSTS'!$G$64:$G$69,14.4864)"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F52",
+        "formula": "=IF(ABS(D52-E52)<=G52,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D53",
+        "formula": "=COUNT('04_GENERATION_BY_ZONE'!$C$56:$H$56)"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F53",
+        "formula": "=IF(ABS(D53-E53)<=G53,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D54",
+        "formula": "=COUNT('04_GENERATION_BY_ZONE'!$C$57:$H$57)"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F54",
+        "formula": "=IF(ABS(D54-E54)<=G54,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D55",
+        "formula": "='09_TECH_COSTS'!$G$67"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F55",
+        "formula": "=IF(ABS(D55-E55)<=G55,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D56",
+        "formula": "='09_TECH_COSTS'!$G$68"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F56",
+        "formula": "=IF(ABS(D56-E56)<=G56,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D57",
+        "formula": "='09_TECH_COSTS'!$G$69"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F57",
+        "formula": "=IF(ABS(D57-E57)<=G57,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D58",
+        "formula": "=COUNTIF('04_GENERATION_BY_ZONE'!$J$64:$J$74,\"PYPSA IMPLEMENTATION MAPPING\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F58",
+        "formula": "=IF(ABS(D58-E58)<=G58,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D59",
+        "formula": "=--(COUNTIF('03_ZONE_MAP'!$E$5:$E$24,\"NORD\")>0)+--(COUNTIF('03_ZONE_MAP'!$E$5:$E$24,\"CNOR\")>0)+--(COUNTIF('03_ZONE_MAP'!$E$5:$E$24,\"CSUD\")>0)+--(COUNTIF('03_ZONE_MAP'!$E$5:$E$24,\"SUD\")>0)+--(COUNTIF('03_ZONE_MAP'!$E$5:$E$24,\"CALA\")>0)+--(COUNTIF('03_ZONE_MAP'!$E$5:$E$24,\"SICI\")>0)+--(COUNTIF('03_ZONE_MAP'!$E$5:$E$24,\"SARD\")>0)"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F59",
+        "formula": "=IF(ABS(D59-E59)<=G59,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D60",
+        "formula": "=--ISNUMBER(SEARCH(\"baseline\",'11_PYPSA_IMPLEMENTATION'!$H$20))"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F60",
+        "formula": "=IF(ABS(D60-E60)<=G60,\"PASS\",\"FAIL\")"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "D61",
+        "formula": "=COUNT('02_SCENARIOS'!$D$5:$N$10)"
+      },
+      {
+        "sheet": "12_ASSUMPTIONS_QA",
+        "cell": "F61",
+        "formula": "=IF(ABS(D61-E61)<=G61,\"PASS\",\"FAIL\")"
+      }
+    ],
+    "defined_names": [],
+    "calculation": {
+      "calc_mode": null,
+      "full_calc_on_load": true,
+      "force_full_calc": null,
+      "calc_id": 191029
+    },
+    "style_table_counts": {
+      "cell_styles": 112,
+      "named_styles": 1,
+      "fonts": 31,
+      "fills": 21,
+      "borders": 6,
+      "number_formats": 7
+    },
+    "properties": {
+      "creator": "openpyxl",
+      "last_modified_by": "Research contributor",
+      "created": "2026-09-01T18:54:23.804956",
+      "modified": "2026-09-01T15:04:03",
+      "title": null,
+      "subject": null,
+      "description": null
+    },
+    "data_only_companion_loaded": true
+  },
+  "package_inventory": {
+    "entry_count": 38,
+    "zip_timestamp_distribution": {
+      "1980-01-01T00:00:00": 38
+    },
+    "entries": [
+      {
+        "name": "[Content_Types].xml",
+        "bytes": 4400,
+        "compressed_bytes": 545,
+        "crc": "4779d110",
+        "sha256": "a419530debb902e0591fa740f19102062e94d5bcc0ab6a774eb1072771d7484b",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "_rels/.rels",
+        "bytes": 588,
+        "compressed_bytes": 244,
+        "crc": "233055b5",
+        "sha256": "73e5a29f48d5ab979eeda062493bc7e679265c1344ef936978b8becec5549497",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/workbook.xml",
+        "bytes": 2897,
+        "compressed_bytes": 1137,
+        "crc": "1e7d33ef",
+        "sha256": "a90291d23d41986abdfead3ae34e30f1aa6b7588304e4e62b70aebbeb8080433",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/_rels/workbook.xml.rels",
+        "bytes": 2804,
+        "compressed_bytes": 383,
+        "crc": "cc52d39b",
+        "sha256": "3237c1e49bee7d8b36cc1ec587900e3bb7a0cc30fb2a6205407d05f49eb9f0fa",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/worksheets/sheet1.xml",
+        "bytes": 4801,
+        "compressed_bytes": 1096,
+        "crc": "17de01c7",
+        "sha256": "fb4065d160138f85314bc0aa411af69b1e2e722321e300377458c62a77b3419d",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/worksheets/sheet2.xml",
+        "bytes": 32890,
+        "compressed_bytes": 4685,
+        "crc": "b42cd71e",
+        "sha256": "78e5f14dcc6de167fdc916a8e5b6272bf6e600c87ecc8481b260b9474f7be3bc",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/worksheets/sheet3.xml",
+        "bytes": 15705,
+        "compressed_bytes": 2852,
+        "crc": "a5b3dd53",
+        "sha256": "2611896276df48354dee3982eb6550d19dbd5650bf8bfb67fc0f75074b923aaa",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/worksheets/sheet4.xml",
+        "bytes": 20433,
+        "compressed_bytes": 2821,
+        "crc": "b86fe54c",
+        "sha256": "4a1a2cc90c385015e68e52409e38a4eb4163d5e9ed7ab95b6e108b1f48c4f022",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/worksheets/sheet5.xml",
+        "bytes": 37511,
+        "compressed_bytes": 6286,
+        "crc": "06eb8206",
+        "sha256": "50676d86cceb60f709268c0d04d14746255550d727dd6fc7110098e27b91d24f",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/worksheets/sheet6.xml",
+        "bytes": 43495,
+        "compressed_bytes": 6495,
+        "crc": "0fc6e36b",
+        "sha256": "27aa4c18d2a156526a36f5458e905f05604aaf9386f16e0a38dc95eb27c615b3",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/worksheets/sheet7.xml",
+        "bytes": 23497,
+        "compressed_bytes": 4067,
+        "crc": "bc7bc1e8",
+        "sha256": "e6333feb280616ef5d38b7724dba1bd5c99e7ade3bf8d4871d36b2d36419f7f7",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/worksheets/sheet8.xml",
+        "bytes": 41833,
+        "compressed_bytes": 5885,
+        "crc": "71f30aba",
+        "sha256": "4836f16657bbd7708713ce1f25ace90fd828c071be5667823e08fdd9d0539289",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/worksheets/sheet9.xml",
+        "bytes": 23458,
+        "compressed_bytes": 3560,
+        "crc": "ab029e3e",
+        "sha256": "c2add7a26e8b8786dba550e0f6b36de52813e54b50f3dd350675d7a7d8f8ac0a",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/worksheets/sheet10.xml",
+        "bytes": 21058,
+        "compressed_bytes": 4267,
+        "crc": "67c8f3c9",
+        "sha256": "b45c1697a20b61c9a5ce58aef85e2d0d5e8df9287be326698000418f92f2f7e6",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/worksheets/sheet11.xml",
+        "bytes": 10120,
+        "compressed_bytes": 1909,
+        "crc": "a49d3393",
+        "sha256": "3ea208d4006a50c4393de59943d7343e00b73491160e3ff8f62cc7e188c22e0b",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/worksheets/sheet12.xml",
+        "bytes": 21253,
+        "compressed_bytes": 3129,
+        "crc": "8e4897b2",
+        "sha256": "cc594fa4ffa98f2d71f3fae51dc0b9861a6f43f09180519249a1725d5e7ed9df",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/worksheets/sheet13.xml",
+        "bytes": 31882,
+        "compressed_bytes": 5232,
+        "crc": "aace15d8",
+        "sha256": "f054cded810e43f11a96d95ee24d219c68643f1fe08ab03465dc4fb853e6891c",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/worksheets/sheet14.xml",
+        "bytes": 11772,
+        "compressed_bytes": 1998,
+        "crc": "618b1bc7",
+        "sha256": "ba0f32b729c6dac1b5555b64ef2d87d3e1bec59e7c667f6fe44f5b9756685411",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/theme/theme1.xml",
+        "bytes": 3544,
+        "compressed_bytes": 919,
+        "crc": "1a2d6a42",
+        "sha256": "6467cd8adf5c5cdb4f1ed32e23259c168ea23e45b75e2e0f57635b80952d664c",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/styles.xml",
+        "bytes": 34159,
+        "compressed_bytes": 2466,
+        "crc": "1472a35a",
+        "sha256": "6f7bbad777ea7fa66b412bb767ef640fbd6793b87dbb36088cb032c7f9949221",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/drawings/drawing1.xml",
+        "bytes": 1250,
+        "compressed_bytes": 628,
+        "crc": "37427fd5",
+        "sha256": "fd72990fdb2c40292d586fdee73a1ac19c4b8a023905a7ac3b72a423b1eb6c8a",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/drawings/vmlDrawing1.vml",
+        "bytes": 3462,
+        "compressed_bytes": 772,
+        "crc": "e318a245",
+        "sha256": "90cbb3ac886211b7c2f38b05ffc47faef5af2c231fbe6d443d6ee16238257274",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/sharedStrings.xml",
+        "bytes": 94497,
+        "compressed_bytes": 29253,
+        "crc": "b19fb679",
+        "sha256": "81a2934731ec49a65ab797b32833112933a427e78ca62053b5b48c3278132949",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/worksheets/_rels/sheet2.xml.rels",
+        "bytes": 293,
+        "compressed_bytes": 188,
+        "crc": "00f59ca8",
+        "sha256": "ac2075ad5ad18eaee04da95ec4b12db9c771cc7cef61bcf1376be2026715d327",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/worksheets/_rels/sheet4.xml.rels",
+        "bytes": 293,
+        "compressed_bytes": 188,
+        "crc": "58eb3580",
+        "sha256": "8b5a4cfd1d724c1f89e4d8e3161b2105fc89bd7d5e3ee66bb88fd51d254d869e",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/worksheets/_rels/sheet10.xml.rels",
+        "bytes": 1282,
+        "compressed_bytes": 310,
+        "crc": "ca1114c4",
+        "sha256": "91b90337b0dd0d2fbb90a4b4eecd06977256beaf9641abbc1008cd3c46484c86",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/comments1.xml",
+        "bytes": 2673,
+        "compressed_bytes": 955,
+        "crc": "c8181520",
+        "sha256": "296daa3cf7363ae305a0467f99ba3212626d726620226e26592eb8c1e2154be7",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/threadedComments/threadedComment1.xml",
+        "bytes": 1541,
+        "compressed_bytes": 738,
+        "crc": "92a9909d",
+        "sha256": "4960314e98d2fa39378cce262a32de44df55255348a59689365b9bd61dad0cae",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/persons/person.xml",
+        "bytes": 336,
+        "compressed_bytes": 249,
+        "crc": "4450fbbe",
+        "sha256": "b6c48a15507f6fd90358865243633d194c69c448f539dacf52bf99c2ec2abf31",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/calcChain.xml",
+        "bytes": 19735,
+        "compressed_bytes": 3561,
+        "crc": "0ef6f4fd",
+        "sha256": "8bbdb596f226885029a04b5272f586ccd8ae0716ff7a6738e950bd9b44db7609",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "docProps/core.xml",
+        "bytes": 501,
+        "compressed_bytes": 297,
+        "crc": "4c8d4a6d",
+        "sha256": "5da663cbf570a2d7494b2da3f52efd62bf9fe108b653e9d67aa5bf1e0800dc38",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "docProps/app.xml",
+        "bytes": 1247,
+        "compressed_bytes": 554,
+        "crc": "62bc44f9",
+        "sha256": "aaec2536609f20e2a163c4f978b510592f90552cf60598250da1b19af6fee020",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/tables/table3.xml",
+        "bytes": 1226,
+        "compressed_bytes": 496,
+        "crc": "6450eadb",
+        "sha256": "5a6c3d50b195cf502a2e89fc4e5fd0d8612f35c865ba751d611dd391b15f57ca",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/tables/table2.xml",
+        "bytes": 2135,
+        "compressed_bytes": 651,
+        "crc": "84ebf03b",
+        "sha256": "114d5a47313dbe6f7c421e4a0c65f92095fca348c539f92491ad2bbb0870ecd6",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/tables/table4.xml",
+        "bytes": 1766,
+        "compressed_bytes": 606,
+        "crc": "46118e24",
+        "sha256": "da4570c8c6d798c43d2f0f9dc5b92db34b261d2e737ff8d9f8549a6aefd01b86",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/tables/table5.xml",
+        "bytes": 1116,
+        "compressed_bytes": 482,
+        "crc": "051fba0f",
+        "sha256": "ebb5e8a7c4a1954fc421160ad349747cc5cca34332ee7bf74d8380be0c252b79",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/tables/table6.xml",
+        "bytes": 1491,
+        "compressed_bytes": 553,
+        "crc": "1cca9df2",
+        "sha256": "08ed8c8a5417fe22cb40e088e8582dc874d3b970dad60de068fcd5b49a225a5c",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      },
+      {
+        "name": "xl/tables/table1.xml",
+        "bytes": 2351,
+        "compressed_bytes": 689,
+        "crc": "fa876150",
+        "sha256": "754472659fe17104dd53689bcd921b82fc2e102c56be4d26d8f87e4b33440b72",
+        "zip_timestamp": "1980-01-01T00:00:00",
+        "compression": 8
+      }
+    ],
+    "selected_package_parts": {
+      "[Content_Types].xml": {
+        "sha256": "a419530debb902e0591fa740f19102062e94d5bcc0ab6a774eb1072771d7484b",
+        "bytes": 4400,
+        "xml_preview": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\r\n<Types xmlns=\"http://schemas.openxmlformats.org/package/2006/content-types\"><Default Extension=\"rels\" ContentType=\"application/vnd.openxmlformats-package.relationships+xml\"/><Default Extension=\"vml\" ContentType=\"application/vnd.openxmlformats-officedocument.vmlDrawing\"/><Default Extension=\"xml\" ContentType=\"application/xml\"/><Override PartName=\"/xl/workbook.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml\"/><Override PartName=\"/xl/worksheets/sheet1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/worksheets/sheet2.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/worksheets/sheet3.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/worksheets/sheet4.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/worksheets/sheet5.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/worksheets/sheet6.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/worksheets/sheet7.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/worksheets/sheet8.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/worksheets/sheet9.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/worksheets/sheet10.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/worksheets/sheet11.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksh"
+      },
+      "_rels/.rels": {
+        "sha256": "73e5a29f48d5ab979eeda062493bc7e679265c1344ef936978b8becec5549497",
+        "bytes": 588,
+        "xml_preview": null
+      },
+      "docProps/core.xml": {
+        "sha256": "5da663cbf570a2d7494b2da3f52efd62bf9fe108b653e9d67aa5bf1e0800dc38",
+        "bytes": 501,
+        "xml_preview": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\r\n<cp:coreProperties xmlns:cp=\"http://schemas.openxmlformats.org/package/2006/metadata/core-properties\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:dcterms=\"http://purl.org/dc/terms/\" xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><cp:lastModifiedBy>Research contributor</cp:lastModifiedBy><dcterms:modified xsi:type=\"dcterms:W3CDTF\">2026-09-01T15:04:03Z</dcterms:modified></cp:coreProperties>"
+      },
+      "docProps/app.xml": {
+        "sha256": "aaec2536609f20e2a163c4f978b510592f90552cf60598250da1b19af6fee020",
+        "bytes": 1247,
+        "xml_preview": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\r\n<Properties xmlns=\"http://schemas.openxmlformats.org/officeDocument/2006/extended-properties\" xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"><Application>Microsoft Excel</Application><DocSecurity>0</DocSecurity><ScaleCrop>false</ScaleCrop><HeadingPairs><vt:vector size=\"2\" baseType=\"variant\"><vt:variant><vt:lpstr>Worksheets</vt:lpstr></vt:variant><vt:variant><vt:i4>14</vt:i4></vt:variant></vt:vector></HeadingPairs><TitlesOfParts><vt:vector size=\"14\" baseType=\"lpstr\"><vt:lpstr>00_README</vt:lpstr><vt:lpstr>01_SOURCES</vt:lpstr><vt:lpstr>02_SCENARIOS</vt:lpstr><vt:lpstr>03_ZONE_MAP</vt:lpstr><vt:lpstr>04_GENERATION_BY_ZONE</vt:lpstr><vt:lpstr>05_STORAGE_BY_ZONE</vt:lpstr><vt:lpstr>06_DEMAND_BY_ZONE</vt:lpstr><vt:lpstr>07_INTERZONAL_BY_ZONE</vt:lpstr><vt:lpstr>08_FOREIGN_BY_ZONE</vt:lpstr><vt:lpstr>09_TECH_COSTS</vt:lpstr><vt:lpstr>10_NUCLEAR</vt:lpstr><vt:lpstr>11_PYPSA_IMPLEMENTATION</vt:lpstr><vt:lpstr>12_ASSUMPTIONS_QA</vt:lpstr><vt:lpstr>13_CHANGELOG</vt:lpstr></vt:vector></TitlesOfParts><LinksUpToDate>false</LinksUpToDate><SharedDoc>false</SharedDoc><HyperlinksChanged>false</HyperlinksChanged><AppVersion>16.0300</AppVersion></Properties>"
+      },
+      "xl/workbook.xml": {
+        "sha256": "a90291d23d41986abdfead3ae34e30f1aa6b7588304e4e62b70aebbeb8080433",
+        "bytes": 2897,
+        "xml_preview": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\r\n<workbook xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\" mc:Ignorable=\"x15 xr xr6 xr10 xr2\" xmlns:x15=\"http://schemas.microsoft.com/office/spreadsheetml/2010/11/main\" xmlns:xr=\"http://schemas.microsoft.com/office/spreadsheetml/2014/revision\" xmlns:xr6=\"http://schemas.microsoft.com/office/spreadsheetml/2016/revision6\" xmlns:xr10=\"http://schemas.microsoft.com/office/spreadsheetml/2016/revision10\" xmlns:xr2=\"http://schemas.microsoft.com/office/spreadsheetml/2015/revision2\"><fileVersion appName=\"xl\" lastEdited=\"7\" lowestEdited=\"7\" rupBuild=\"30326\"/><workbookPr/><mc:AlternateContent xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\"><mc:Choice Requires=\"x15\"><x15ac:absPath url=\"source://workbook-origin\" xmlns:x15ac=\"http://schemas.microsoft.com/office/spreadsheetml/2010/11/ac\"/></mc:Choice></mc:AlternateContent><xr:revisionPtr revIDLastSave=\"4\" documentId=\"11_10FBD6056D358EA4479FE15AC30BBB925AA89AC1\" xr6:coauthVersionLast=\"47\" xr6:coauthVersionMax=\"47\" xr10:uidLastSave=\"{733704BB-679E-41B0-9C32-D7E3CDA7684D}\"/><bookViews><workbookView xWindow=\"-108\" yWindow=\"-108\" windowWidth=\"23256\" windowHeight=\"12456\" xr2:uid=\"{00000000-000D-0000-FFFF-FFFF00000000}\"/></bookViews><sheets><sheet name=\"00_README\" sheetId=\"1\" r:id=\"rId1\"/><sheet name=\"01_SOURCES\" sheetId=\"2\" r:id=\"rId2\"/><sheet name=\"02_SCENARIOS\" sheetId=\"3\" r:id=\"rId3\"/><sheet name=\"03_ZONE_MAP\" sheetId=\"4\" r:id=\"rId4\"/><sheet name=\"04_GENERATION_BY_ZONE\" sheetId=\"5\" r:id=\"rId5\"/><sheet name=\"05_STORAGE_BY_ZONE\" sheetId=\"6\" r:id=\"rId6\"/><sheet name=\"06_DEMAND_BY_ZONE\" sheetId=\"7\" r:id=\"rId7\"/><sheet name=\"07_INTERZONAL_BY_ZONE\" sheetId=\"8\" r:id=\"rId8\"/><shee"
+      },
+      "xl/_rels/workbook.xml.rels": {
+        "sha256": "3237c1e49bee7d8b36cc1ec587900e3bb7a0cc30fb2a6205407d05f49eb9f0fa",
+        "bytes": 2804,
+        "xml_preview": null
+      },
+      "xl/styles.xml": {
+        "sha256": "6f7bbad777ea7fa66b412bb767ef640fbd6793b87dbb36088cb032c7f9949221",
+        "bytes": 34159,
+        "xml_preview": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\r\n<styleSheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\" xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\" mc:Ignorable=\"x14ac x16r2 xr\" xmlns:x14ac=\"http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac\" xmlns:x16r2=\"http://schemas.microsoft.com/office/spreadsheetml/2015/02/main\" xmlns:xr=\"http://schemas.microsoft.com/office/spreadsheetml/2014/revision\"><numFmts count=\"7\"><numFmt numFmtId=\"164\" formatCode=\"0.000\"/><numFmt numFmtId=\"165\" formatCode=\"0.0\"/><numFmt numFmtId=\"166\" formatCode=\"0.0000\"/><numFmt numFmtId=\"167\" formatCode=\"0.000000\"/><numFmt numFmtId=\"168\" formatCode=\"0.0\\x\"/><numFmt numFmtId=\"169\" formatCode=\"0.000%\"/><numFmt numFmtId=\"170\" formatCode=\"0.000000%\"/></numFmts><fonts count=\"31\"><font><sz val=\"11\"/><name val=\"Carlito\"/></font><font><b/><sz val=\"16\"/><color rgb=\"FFFFFFFF\"/><name val=\"Aptos\"/></font><font><sz val=\"11\"/><name val=\"Aptos\"/></font><font><i/><sz val=\"10\"/><color rgb=\"FF17324D\"/><name val=\"Aptos\"/></font><font><b/><sz val=\"10\"/><color rgb=\"FFFFFFFF\"/><name val=\"Aptos\"/></font><font><sz val=\"9\"/><color rgb=\"FF1F2933\"/><name val=\"Aptos\"/></font><font><b/><sz val=\"11\"/><color rgb=\"FF17324D\"/><name val=\"Aptos\"/></font><font><b/><sz val=\"18\"/><color rgb=\"FFFFFFFF\"/><name val=\"Aptos\"/></font><font><i/><sz val=\"10\"/><color rgb=\"FF24313A\"/><name val=\"Aptos\"/></font><font><b/><sz val=\"9\"/><color rgb=\"FFFFFFFF\"/><name val=\"Aptos\"/></font><font><sz val=\"9\"/><color rgb=\"FF24313A\"/><name val=\"Aptos\"/></font><font><b/><sz val=\"9\"/><color rgb=\"FF0F5C5E\"/><name val=\"Aptos\"/></font><font><b/><sz val=\"11\"/><color rgb=\"FFFFFFFF\"/><name val=\"Aptos\"/></font><font><sz val=\"8\"/><color rgb=\"FF1F2933\"/><name val=\"Aptos\"/></font><font><b/><sz val=\"11\"/><color rgb=\"FF163A5F\"/><name val=\"Aptos\"/></font><font><sz val=\"11\"/><color rgb=\"FF1F2933\"/><name val=\"Carlito\"/></font><font><b/><sz val=\"11\"/><color rgb=\"FFFFFFFF\"/><name val=\"Carlito\"/></font><font><b/><"
+      },
+      "xl/calcChain.xml": {
+        "sha256": "8bbdb596f226885029a04b5272f586ccd8ae0716ff7a6738e950bd9b44db7609",
+        "bytes": 19735,
+        "xml_preview": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\r\n<calcChain xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><c r=\"D60\" i=\"13\" l=\"1\"/><c r=\"F60\" i=\"13\" s=\"1\"/><c r=\"D59\" i=\"13\"/><c r=\"F59\" i=\"13\" s=\"1\"/><c r=\"D58\" i=\"13\"/><c r=\"F58\" i=\"13\" s=\"1\"/><c r=\"D54\" i=\"13\"/><c r=\"F54\" i=\"13\" s=\"1\"/><c r=\"D53\" i=\"13\"/><c r=\"F53\" i=\"13\" s=\"1\"/><c r=\"D50\" i=\"13\"/><c r=\"F50\" i=\"13\" s=\"1\"/><c r=\"D49\" i=\"13\"/><c r=\"F49\" i=\"13\" s=\"1\"/><c r=\"D48\" i=\"13\"/><c r=\"F48\" i=\"13\" s=\"1\"/><c r=\"D47\" i=\"13\"/><c r=\"F47\" i=\"13\" s=\"1\"/><c r=\"D33\" i=\"13\"/><c r=\"F33\" i=\"13\" s=\"1\"/><c r=\"D28\" i=\"13\"/><c r=\"F28\" i=\"13\" s=\"1\"/><c r=\"D22\" i=\"13\"/><c r=\"F22\" i=\"13\" s=\"1\"/><c r=\"D21\" i=\"13\"/><c r=\"F21\" i=\"13\" s=\"1\"/><c r=\"D20\" i=\"13\"/><c r=\"F20\" i=\"13\" s=\"1\"/><c r=\"D7\" i=\"13\"/><c r=\"F7\" i=\"13\" s=\"1\"/><c r=\"D6\" i=\"13\"/><c r=\"F6\" i=\"13\" s=\"1\"/><c r=\"D5\" i=\"13\"/><c r=\"F5\" i=\"13\" s=\"1\"/><c r=\"C17\" i=\"11\"/><c r=\"C16\" i=\"11\"/><c r=\"C15\" i=\"11\"/><c r=\"G10\" i=\"11\"/><c r=\"C10\" i=\"11\"/><c r=\"G9\" i=\"11\"/><c r=\"C9\" i=\"11\"/><c r=\"G8\" i=\"11\"/><c r=\"C8\" i=\"11\"/><c r=\"G7\" i=\"11\"/><c r=\"C7\" i=\"11\"/><c r=\"G6\" i=\"11\"/><c r=\"C6\" i=\"11\"/><c r=\"G5\" i=\"11\"/><c r=\"C5\" i=\"11\"/><c r=\"E66\" i=\"10\"/><c r=\"E65\" i=\"10\"/><c r=\"B65\" i=\"10\"/><c r=\"G65\" i=\"10\" s=\"1\"/><c r=\"E64\" i=\"10\"/><c r=\"B64\" i=\"10\"/><c r=\"G64\" i=\"10\" s=\"1\"/><c r=\"E59\" i=\"10\"/><c r=\"B58\" i=\"10\"/><c r=\"E57\" i=\"10\"/><c r=\"E56\" i=\"10\"/><c r=\"E55\" i=\"10\"/><c r=\"E54\" i=\"10\"/><c r=\"E58\" i=\"10\" s=\"1\"/><c r=\"D51\" i=\"13\" s=\"1\"/><c r=\"F51\" i=\"13\" s=\"1\"/><c r=\"E53\" i=\"10\"/><c r=\"D53\" i=\"10\"/><c r=\"G20\" i=\"9\"/><c r=\"H20\" i=\"9\" s=\"1\"/><c r=\"F20\" i=\"9\"/><c r=\"E20\" i=\"9\"/><c r=\"C20\" i=\"9\"/><c r=\"H19\" i=\"9\"/><c r=\"G19\" i=\"9\"/><c r=\"E19\" i=\"9\"/><c r=\"C19\" i=\"9\"/><c r=\"F19\" i=\"9\" s=\"1\"/><c r=\"G18\" i=\"9\"/><c r=\"H18\" i=\"9\" s=\"1\"/><c r=\"E18\" i=\"9\"/><c r=\"C18\" i=\"9\"/><c r=\"F18\" i=\"9\" s=\"1\"/><c r=\"H17\" i=\"9\"/><c r=\"G17\" i=\"9\"/><c r=\"F17\" i=\"9\"/><c r=\"E17\" i=\"9\"/><c r=\"C17\" i=\"9\"/><c r=\"G16\" i=\"9\"/><c r=\"H16\" i=\"9\" s=\"1\"/><c r=\"E16\" i=\"9\"/><c r=\"C16\" i=\"9\"/><c r=\"F16"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "source": "IMMUTABLE_ETX7B9_B_2050_BOUNDED_BASELINE_ONLY",
+  "definition": "B9B_TOTAL_TEN_MARKET_SHEDDING_LE_1E_6_MW_AND_B9B_ALL_TEN_MARKET_PRICES_LE_500_EUR_PER_MWH",
+  "system_shedding_tolerance_MW": 1e-06,
+  "extreme_price_threshold_EUR_per_MWh": 500.0,
+  "total_hours": 8760,
+  "ordinary_hours": 3020,
+  "excluded_hours": 5740,
+  "mask_boolean_sha256": "B40ECF9B25D95A2E55A86E61A14EF78CF6FC62F455B8CEF9DA367BF733321F70",
+  "reused_unchanged_for_B9B_R10_R5": true,
+  "outcome_dependent_redefinition": false
+}

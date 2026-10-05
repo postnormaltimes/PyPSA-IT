@@ -1,0 +1,436 @@
+{
+  "phase": "ETX-7B8C-S2-AUXILIARY",
+  "gate": "ETX7B8C_S2_EXPERIMENT_COMPLETE",
+  "status": "PASS",
+  "timestamp": "2026-09-19T16:17:04.143240Z",
+  "python_version": "3.11.15",
+  "pypsa_version": "1.2.3",
+  "linopy_version": "0.7.0",
+  "solver_version": "13.0.3",
+  "solver": "gurobi",
+  "input_manifests": [
+    {
+      "input_id": "b1",
+      "path": "stage_a_inputs/etx7a_v1_0/static/MEM_ETX7A_Static_Output_Manifest_v1.0.csv",
+      "expected_sha256": "4E5DC493BDCB7713B6E1147FD4F1AC1953A196565ED95ECB9B5A1F8BA31C4BCE",
+      "observed_sha256": "4E5DC493BDCB7713B6E1147FD4F1AC1953A196565ED95ECB9B5A1F8BA31C4BCE",
+      "member_count": 7,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b2",
+      "path": "stage_a_inputs/italy_base_v1_0/static/MEM_ETX7B2_IT_Static_Output_Manifest_v1.0.csv",
+      "expected_sha256": "D7E5CA7B7E71E83B2DF79DAE690E0CA51E7DB8F873B6A74641F3F1726FE775BD",
+      "observed_sha256": "D7E5CA7B7E71E83B2DF79DAE690E0CA51E7DB8F873B6A74641F3F1726FE775BD",
+      "member_count": 5,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b3",
+      "path": "stage_a_inputs/temporal_2019_v1_0/MEM_ETX7B3_Temporal_Output_Manifest_v1.0.csv",
+      "expected_sha256": "B2C2AECB964A23BED776D43D91D0F7ADCEE38587BB0DB2CEE8E8AB6D8F8B05BC",
+      "observed_sha256": "B2C2AECB964A23BED776D43D91D0F7ADCEE38587BB0DB2CEE8E8AB6D8F8B05BC",
+      "member_count": 10,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b4",
+      "path": "stage_a_inputs/operating_base_v1_0/MEM_ETX7B4_Output_Manifest_v1.0.csv",
+      "expected_sha256": "442C215CB26658860F6B9BCF3620A2A7EABAAFED68A736DAC192E9099BA53998",
+      "observed_sha256": "442C215CB26658860F6B9BCF3620A2A7EABAAFED68A736DAC192E9099BA53998",
+      "member_count": 11,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b4_verification",
+      "path": "qa/stage_a/etx7b4/MEM_ETX7B4_Final_Verification_v1.0.json",
+      "expected_sha256": "F0A58C5268596F75726A8B6A027F203FC73998187DD46C6026D7A3143F8217F3",
+      "observed_sha256": "F0A58C5268596F75726A8B6A027F203FC73998187DD46C6026D7A3143F8217F3",
+      "member_count": 0,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b5",
+      "path": "stage_a_inputs/topology_v1_0/MEM_ETX7B5_Topology_Output_Manifest_v1.0.csv",
+      "expected_sha256": "78DB32E772D9990F691FA019DEDFC3999B174D2DACABDEF9608BAEDB5CE01C68",
+      "observed_sha256": "78DB32E772D9990F691FA019DEDFC3999B174D2DACABDEF9608BAEDB5CE01C68",
+      "member_count": 10,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b5_verification",
+      "path": "qa/stage_a/etx7b5/MEM_ETX7B5_Final_Verification_v1.0.json",
+      "expected_sha256": "E1E64F09101E75B0B9AE6D7015C3D174F2C5AD9EAB4A4ACC389E81EA02DCD37A",
+      "observed_sha256": "E1E64F09101E75B0B9AE6D7015C3D174F2C5AD9EAB4A4ACC389E81EA02DCD37A",
+      "member_count": 0,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "path": "qa/stage_a/etx7b6/MEM_ETX7B6_Run_Receipt_v1.0.json",
+      "sha256": "FF6572D7A975E3AD1C37E51599EBE9CC0786424E788A741C94A7D44840DA31A7",
+      "status": "PASS"
+    },
+    {
+      "path": "stage_a_networks/2040/MEM_ETX7B6_2040_BASE_8760h_UNSOLVED.nc",
+      "sha256": "5AE2024102CBD540F1285BD44CD14C98DA583DF66699E15589F5173309671A42",
+      "status": "PASS"
+    },
+    {
+      "path": "qa/stage_a/etx7b7/MEM_ETX7B7_Run_Receipt_v1.0.json",
+      "sha256": "E7C731344FEF2DC905EDBA216F56D7639956FF6DD1D7A5650BDDD6E1E29EBA70",
+      "status": "PASS"
+    },
+    {
+      "path": "qa/stage_a/etx7b8/MEM_ETX7B8_Run_Receipt_v1.0.json",
+      "sha256": "2A6919E7A31D42100D0CE64069CAF926686BE93E032DD7A5BF8D8D18B9F19F93",
+      "status": "PASS"
+    },
+    {
+      "path": "stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_Result_Manifest_v1.0.csv",
+      "sha256": "EF52C6A6EDC79FE7939DA267C22B10CDB858ACDD6422A2B82EF99AD369B30338",
+      "member_count": 9,
+      "status": "PASS"
+    }
+  ],
+  "command": "'source://mem-model/.venv/Scripts/python.exe' -m mem_model.stage_a.perimeter_closure s2 --execute",
+  "outputs": {
+    "MEM_ETX7B8C_S2_2040_BASE_SOLVED": "stage_a_results/2040_perimeter_closure_s2/MEM_ETX7B8C_S2_2040_BASE_SOLVED.nc",
+    "MEM_ETX7B8C_S2_2040_BASE_Market_Prices": "stage_a_results/2040_perimeter_closure_s2/MEM_ETX7B8C_S2_2040_BASE_Market_Prices.parquet",
+    "MEM_ETX7B8C_S2_2040_BASE_Generator_Dispatch": "stage_a_results/2040_perimeter_closure_s2/MEM_ETX7B8C_S2_2040_BASE_Generator_Dispatch.parquet",
+    "MEM_ETX7B8C_S2_2040_BASE_Store_State": "stage_a_results/2040_perimeter_closure_s2/MEM_ETX7B8C_S2_2040_BASE_Store_State.parquet",
+    "MEM_ETX7B8C_S2_2040_BASE_Link_Flows": "stage_a_results/2040_perimeter_closure_s2/MEM_ETX7B8C_S2_2040_BASE_Link_Flows.parquet",
+    "MEM_ETX7B8C_S2_2040_BASE_Load_Shedding": "stage_a_results/2040_perimeter_closure_s2/MEM_ETX7B8C_S2_2040_BASE_Load_Shedding.parquet",
+    "MEM_ETX7B8C_S2_2040_BASE_Hydro_Spill": "stage_a_results/2040_perimeter_closure_s2/MEM_ETX7B8C_S2_2040_BASE_Hydro_Spill.parquet",
+    "MEM_ETX7B8C_S2_2040_BASE_VRE_Curtailment": "stage_a_results/2040_perimeter_closure_s2/MEM_ETX7B8C_S2_2040_BASE_VRE_Curtailment.parquet",
+    "manifest": "stage_a_results/2040_perimeter_closure_s2/MEM_ETX7B8C_S2_2040_BASE_Result_Manifest_v1.0.csv",
+    "manifest_sha256": "5D6D401423B04BAB72160E28237882A4322153EBA527CA5CFCFBD7255E57A702",
+    "raw_log": "qa/stage_a/etx7b8c/logs/MEM_ETX7B8C_S2_raw.log",
+    "virtual_supply_contract": "qa/stage_a/etx7b8c/MEM_ETX7B8C_S2_Virtual_Supply_Contract_v1.0.csv",
+    "cost_provenance": "qa/stage_a/etx7b8c/MEM_ETX7B8C_S2_Cost_Provenance_v1.0.json",
+    "comparisons": {
+      "MEM_ETX7B8C_B8_vs_S2_System_Comparison_v1.0": "qa/stage_a/etx7b8c/MEM_ETX7B8C_B8_vs_S2_System_Comparison_v1.0.csv",
+      "MEM_ETX7B8C_B8_vs_S2_Market_Comparison_v1.0": "qa/stage_a/etx7b8c/MEM_ETX7B8C_B8_vs_S2_Market_Comparison_v1.0.csv",
+      "MEM_ETX7B8C_S2_Virtual_Supply_Utilization_v1.0": "qa/stage_a/etx7b8c/MEM_ETX7B8C_S2_Virtual_Supply_Utilization_v1.0.csv",
+      "MEM_ETX7B8C_B8_vs_S2_Flow_Comparison_v1.0": "qa/stage_a/etx7b8c/MEM_ETX7B8C_B8_vs_S2_Flow_Comparison_v1.0.csv",
+      "MEM_ETX7B8C_B8_vs_S2_Comparison_v1.0": "qa/stage_a/etx7b8c/MEM_ETX7B8C_B8_vs_S2_Comparison_v1.0.json"
+    }
+  },
+  "qa": {
+    "preflight": {
+      "windows_user": "Research contributor",
+      "gurobipy_version": "13.0.3",
+      "linopy_gurobi_visible": true,
+      "licence_visible": true,
+      "tiny_lp_status": "OPTIMAL",
+      "tiny_lp_objective": 12.0,
+      "tiny_lp_x": 4.0,
+      "tiny_lp_y": 0.0
+    },
+    "structural_delta": {
+      "status": "PASS",
+      "baseline_counts": {
+        "snapshots": 8760,
+        "carriers": 50,
+        "buses": 43,
+        "loads": 10,
+        "generators": 113,
+        "links": 69,
+        "stores": 33,
+        "market_buses": 10,
+        "interconnectors": 12,
+        "load_shedding_generators": 10,
+        "storage_states": 33,
+        "water_state_buses": 18
+      },
+      "s2_counts": {
+        "snapshots": 8760,
+        "carriers": 51,
+        "buses": 43,
+        "loads": 10,
+        "generators": 116,
+        "links": 69,
+        "stores": 33,
+        "market_buses": 10,
+        "interconnectors": 12,
+        "load_shedding_generators": 10,
+        "storage_states": 33,
+        "water_state_buses": 18
+      },
+      "allowed_delta": {
+        "carriers": 1,
+        "generators": 3
+      },
+      "unchanged_baseline_components": true,
+      "new_carrier": "EXTERNAL_VIRTUAL_SUPPLY",
+      "new_generators": [
+        "EXTERNAL_VIRTUAL_SUPPLY_FR",
+        "EXTERNAL_VIRTUAL_SUPPLY_TN",
+        "EXTERNAL_VIRTUAL_SUPPLY_GR"
+      ],
+      "new_virtual_generator_markets": [
+        "FR",
+        "TN",
+        "GR"
+      ],
+      "MT_virtual_supply": "NONE"
+    },
+    "LP_assertions": {
+      "status": "PASS",
+      "all_generators_committable_false": true,
+      "all_links_committable_false": true,
+      "all_generator_p_nom_extendable_false": true,
+      "all_link_p_nom_extendable_false": true,
+      "all_store_e_nom_extendable_false": true,
+      "capacity_expansion": false,
+      "unit_commitment": false,
+      "linopy_model_assembled": true,
+      "linopy_variables": 2198760,
+      "linopy_constraints": 4485120,
+      "integer_variables": 0,
+      "binary_variables": 0,
+      "continuous_linear_program_only": true,
+      "NumVars": 2198760,
+      "NumConstrs": 4485120,
+      "NumBinVars": 0,
+      "NumIntVars": 0
+    },
+    "post_solve": {
+      "solver_status": "ok",
+      "termination_condition": "optimal",
+      "snapshots": 8760,
+      "objective": 23390649227.42799,
+      "runtime_seconds": 292.70047160005197,
+      "balance": {
+        "max_abs_residual_MW": 3.319655661471188e-11
+      },
+      "load_shedding": {
+        "total_MWh": 587.2357835560143,
+        "max_MW": 63.4863343982024,
+        "max_local_load_cap_violation_MW": 0.0,
+        "max_negative_dispatch_violation_MW": 0.0
+      },
+      "price_statistics": {
+        "finite": true,
+        "min_EUR_per_MWh": 0.0,
+        "max_EUR_per_MWh": 15000.0,
+        "mean_EUR_per_MWh": 87.26080339793343
+      },
+      "storage_phs_checks": {
+        "state_min_violation_MWh": 1.9473422972372102e-13,
+        "state_max_violation_MWh": 0.0,
+        "cyclic_states": 33
+      },
+      "hydro_checks": {
+        "water_state_buses": 18,
+        "max_water_bus_balance_residual_MW": 3.637978807091713e-12,
+        "fixed_natural_inflow_generators": 10,
+        "fixed_inflow_dispatch_deviation_MW": 0.0,
+        "fixed_inflow_expected_MWh_water": 105857678.6127498,
+        "fixed_inflow_dispatched_MWh_water": 105857678.6127498,
+        "inflow_limited_generators": 10,
+        "inflow_limited_cap_violation_MW": 0.0
+      },
+      "interconnector_flow_limit_checks": {
+        "physical_links": 12,
+        "max_limit_violation_MW": 0.0
+      },
+      "accepted": true,
+      "LP_assertions": {
+        "linopy_integer_variables": 0,
+        "linopy_binary_variables": 0,
+        "Gurobi_NumIntVars": 0,
+        "Gurobi_NumBinVars": 0
+      }
+    },
+    "comparison": {
+      "B8": {
+        "total_load_MWh": 1448141533.3333333,
+        "total_shedding_MWh": 1823459.4540542054,
+        "shedding_percent_of_load": 0.12591721265372213,
+        "shedding_hours": 519,
+        "objective_EUR2025": 50468664339.51324,
+        "price_mean_EUR_per_MWh": 239.4434084643542,
+        "price_median_EUR_per_MWh": 99.52887466666667,
+        "price_P95_EUR_per_MWh": 110.58763851851857,
+        "price_P99_EUR_per_MWh": 13499.999999999998,
+        "price_max_EUR_per_MWh": 15000.0,
+        "market_hours_at_VOLL": 849,
+        "market_hours_above_500_EUR_per_MWh": 970,
+        "market_hours_above_1000_EUR_per_MWh": 970,
+        "market_hours_above_5000_EUR_per_MWh": 970,
+        "VRE_curtailment_MWh": 8064125.344283314,
+        "hydro_spill_MWh_water": 114821.76666520826
+      },
+      "S2": {
+        "total_load_MWh": 1448141533.3333333,
+        "total_shedding_MWh": 587.2357835560143,
+        "shedding_percent_of_load": 4.055099381096505e-05,
+        "shedding_hours": 23,
+        "objective_EUR2025": 23390649227.42799,
+        "price_mean_EUR_per_MWh": 87.26080339793343,
+        "price_median_EUR_per_MWh": 99.52887466666667,
+        "price_P95_EUR_per_MWh": 109.432119285714,
+        "price_P99_EUR_per_MWh": 172.3998765714286,
+        "price_max_EUR_per_MWh": 15000.0,
+        "market_hours_at_VOLL": 47,
+        "market_hours_above_500_EUR_per_MWh": 47,
+        "market_hours_above_1000_EUR_per_MWh": 47,
+        "market_hours_above_5000_EUR_per_MWh": 47,
+        "VRE_curtailment_MWh": 8083304.635015397,
+        "hydro_spill_MWh_water": 117279.54458468169
+      },
+      "scarcity_movement": {
+        "schema_version": "MEM_ETX7B8C_B8_VS_S2_COMPARISON_V1_0",
+        "status": "FACTUAL_COMPARISON_COMPLETE_NO_AUTOMATIC_ACCEPTANCE_DECISION",
+        "B8": "IMMUTABLE_BOUNDED_PERIMETER_BASELINE",
+        "S2": "EXPERIMENTAL_BOUNDED_PERIMETER_CLOSURE_SENSITIVITY",
+        "FR_TN_GR_shedding_declines": {
+          "FR": true,
+          "TN": true,
+          "GR": true
+        },
+        "markets_newly_shedding": [],
+        "market_shedding_MWh_changes": {
+          "AT": 0.0,
+          "CH": 0.0,
+          "FR": -1644149.218747903,
+          "GR": -61424.93245752394,
+          "HR": 0.0,
+          "IT": 0.0,
+          "ME": 0.0,
+          "MT": 0.0,
+          "SI": 0.0,
+          "TN": -117298.06706522292
+        },
+        "market_VOLL_hour_changes": {
+          "AT": 0,
+          "CH": 0,
+          "FR": -305,
+          "GR": -192,
+          "HR": 0,
+          "IT": 0,
+          "ME": 0,
+          "MT": 0,
+          "SI": 0,
+          "TN": -305
+        },
+        "IT_CH_AT_SI_mean_price_changes_EUR_per_MWh": {
+          "IT": -0.0030807958200682606,
+          "CH": -0.0013326418835788445,
+          "AT": 0.0,
+          "SI": -0.0013326418835788445
+        },
+        "interface_congestion_hour_changes": {
+          "EXT_AT_CH": {
+            "a_to_b": -3,
+            "b_to_a": 3
+          },
+          "EXT_AT_SI": {
+            "a_to_b": -17,
+            "b_to_a": 3
+          },
+          "EXT_CH_FR": {
+            "a_to_b": 3,
+            "b_to_a": -26
+          },
+          "EXT_HR_SI": {
+            "a_to_b": 4,
+            "b_to_a": 10
+          },
+          "IT_AT": {
+            "a_to_b": -2,
+            "b_to_a": -21
+          },
+          "IT_CH": {
+            "a_to_b": -4,
+            "b_to_a": 13
+          },
+          "IT_FR": {
+            "a_to_b": -1,
+            "b_to_a": -3
+          },
+          "IT_GR": {
+            "a_to_b": 3,
+            "b_to_a": -12
+          },
+          "IT_ME": {
+            "a_to_b": 0,
+            "b_to_a": 17
+          },
+          "IT_MT": {
+            "a_to_b": -6,
+            "b_to_a": 2
+          },
+          "IT_SI": {
+            "a_to_b": 15,
+            "b_to_a": 15
+          },
+          "IT_TN": {
+            "a_to_b": 6,
+            "b_to_a": -17
+          }
+        },
+        "automatic_acceptance_or_rejection": false,
+        "formal_B9_authorized": false,
+        "stage_B_authorized": false
+      }
+    },
+    "B8_immutable_after_run": true,
+    "formal_B9_authorized": false,
+    "stage_B_authorized": false
+  },
+  "next_gate": "METHOD_REVIEW_REQUIRED_ETX_7B9_REMAINS_LOCKED",
+  "runtime_seconds": 292.70047160005197,
+  "solver_status": "ok",
+  "termination_condition": "optimal",
+  "snapshots": 8760,
+  "objective": 23390649227.42799,
+  "balance": {
+    "max_abs_residual_MW": 3.319655661471188e-11
+  },
+  "load_shedding": {
+    "total_MWh": 587.2357835560143,
+    "max_MW": 63.4863343982024,
+    "max_local_load_cap_violation_MW": 0.0,
+    "max_negative_dispatch_violation_MW": 0.0
+  },
+  "price_statistics": {
+    "finite": true,
+    "min_EUR_per_MWh": 0.0,
+    "max_EUR_per_MWh": 15000.0,
+    "mean_EUR_per_MWh": 87.26080339793343
+  },
+  "storage_phs_checks": {
+    "state_min_violation_MWh": 1.9473422972372102e-13,
+    "state_max_violation_MWh": 0.0,
+    "cyclic_states": 33
+  },
+  "hydro_checks": {
+    "water_state_buses": 18,
+    "max_water_bus_balance_residual_MW": 3.637978807091713e-12,
+    "fixed_natural_inflow_generators": 10,
+    "fixed_inflow_dispatch_deviation_MW": 0.0,
+    "fixed_inflow_expected_MWh_water": 105857678.6127498,
+    "fixed_inflow_dispatched_MWh_water": 105857678.6127498,
+    "inflow_limited_generators": 10,
+    "inflow_limited_cap_violation_MW": 0.0
+  },
+  "interconnector_flow_limit_checks": {
+    "physical_links": 12,
+    "max_limit_violation_MW": 0.0
+  },
+  "accepted": true,
+  "LP_assertions": {
+    "linopy_integer_variables": 0,
+    "linopy_binary_variables": 0,
+    "Gurobi_NumIntVars": 0,
+    "Gurobi_NumBinVars": 0
+  }
+}

@@ -1,0 +1,124 @@
+contract_version: ETX7A_V1_0
+italy_contract_version: ETX7B2_IT_STATIC_V1_0
+phase: ETX_7B5_FIXED_STAGE_A_TOPOLOGY_COMPLETE
+
+project_plan:
+  version: "2.2"
+  path: docs/project_plan/MEM_Remaining_Execution_Plan_v2.2.md
+  sha256: 7F858DEB139F46E2ECE26EA8D82FA972A6D304B01D44300EF31FE79D8AB11EA6
+  authority: AUTHORITATIVE_FROM_ETX7B4_ONWARD
+
+source:
+  workbook: runtime_sources/etx7a/frozen/MEM_ETX7A_External_Country_Harmonised_Freeze_v1.0.xlsx
+  state_of_record: runtime_sources/etx7a/frozen/MEM_ETX7A_External_Country_Harmonised_Freeze_State_of_Record_v1.0.md
+  manifest: runtime_sources/etx7a/frozen/MEM_ETX7A_FROZEN_SOURCE_MANIFEST.csv
+  role: FROZEN_STATIC_AUTHORITY
+
+worksheets:
+  country_register: 01_COUNTRY_REGISTER
+  canonical_evidence: 02_CANONICAL_STACK
+  runtime_inputs: 03_RUNTIME_INPUTS
+  cross_country_rules: 06_CROSS_COUNTRY_RULES
+  pypsa_contract: 07_PYPSA_CONTRACT
+  freeze_qa: 08_QA_FREEZE
+  header_row: 4
+
+runtime_roles:
+  - IMPLEMENT
+  - IMPLEMENT_TOTAL
+  - IMPLEMENT_STORAGE_PAIR
+  - IMPLEMENT_CARRIER_SPLIT
+
+non_runtime_roles:
+  - DERIVATION_DETAIL_ONLY
+  - QA_CONTROL_ONLY
+
+countries:
+  - FR
+  - CH
+  - AT
+  - SI
+  - HR
+  - ME
+  - GR
+  - MT
+  - TN
+
+horizons:
+  - 2040
+  - 2050
+
+output_directory: stage_a_inputs/etx7a_v1_0/static
+
+italy_base_static:
+  status: ETX7B2_ITALY_ONE_NODE_STATIC_AGGREGATION_COMPLETE
+  horizons:
+    - 2040
+    - 2050
+  scenario: Base
+  node: IT
+  output_directory: stage_a_inputs/italy_base_v1_0/static
+  source_authority: FROZEN_STAGE_B_CONTRACTS
+  source_hash_manifest: qa/interim/MEM_FROZEN_STATIC_HASH_MANIFEST.csv
+  aggregation_rule: DETERMINISTIC_SPATIAL_SUM_WITH_RUNTIME_CLASSES_RETAINED
+  phs_rule: STORAGE_ONLY_WITH_PURE_MIXED_DISCHARGE_SUBSET_GOVERNANCE
+
+temporal_2019:
+  status: ETX7B3_2019_TEMPORAL_INPUTS_COMPLETE
+  contract_version: ETX7B3_TEMPORAL_2019_V1_0
+  output_directory: stage_a_inputs/temporal_2019_v1_0
+  qa_directory: qa/stage_a/etx7b3
+  markets: [IT, FR, CH, AT, SI, HR, ME, GR, MT, TN]
+  snapshots: 8760
+  timezone: UTC
+  cutout_sha256: E6CF2B4C9D463D64B4DFB3A613EF20C3C69E99624DAADEEE6EE9C76CF74E9D1F
+  required_profile_coverage: 100_OF_100_COMPLETE
+  operating_parameters: ETX7B4_COMPLETE
+
+operating_base:
+  status: ETX7B4_BASE_RUNTIME_PARAMETER_LAYER_COMPLETE
+  contract_version: ETX7B4_OPERATING_BASE_V1_0
+  output_directory: stage_a_inputs/operating_base_v1_0
+  qa_directory: qa/stage_a/etx7b4
+  config: config/stage_a_operating_base.yaml
+  markets: [IT, FR, CH, AT, SI, HR, ME, GR, MT, TN]
+  horizons: [2040, 2050]
+  scenario: Base
+  topology: ETX7B5_FIXED_INPUT_CONTRACT_COMPLETE
+  optimization: NOT_RUN
+
+topology:
+  status: ETX7B5_FIXED_STAGE_A_TOPOLOGY_COMPLETE
+  contract_version: ETX7B5_TOPOLOGY_V1_0
+  config: config/stage_a_topology.yaml
+  output_directory: stage_a_inputs/topology_v1_0
+  qa_directory: qa/stage_a/etx7b5
+  markets: [AT, CH, FR, GR, HR, IT, ME, MT, SI, TN]
+  horizons: [2040, 2050]
+  physical_connections: 12
+  directed_rows_per_horizon: 24
+  fixed_non_extendable: true
+  production_network: NOT_CONSTRUCTED
+  optimization: NOT_RUN
+
+approved_architecture:
+  stage_a_stage_b_separation: true
+  stage_a_nodes: [IT, FR, CH, AT, SI, HR, ME, GR, MT, TN]
+  production_perimeter: FIXED_10_MARKETS
+  connected_mediterranean_context: false
+  isolate_tunisia_to_italy_only: true
+  krško_physical_country: SI
+  croatia_nuclear_entitlement_role: QA_CONTROL_ONLY
+
+pending_runtime_items:
+  - PRE_B6_BOUNDED_HARNESS_AND_GUROBI_PREPARATION_PENDING
+  - ETX7B6_STRUCTURAL_AND_SOLVER_READINESS_PENDING
+  - STAGE_A_SMOKE_AND_ANNUAL_SOLVES_PENDING
+
+scope_excluded:
+  - ITALY_SLOW_HIGH_OR_STAGE_B_REINTERPRETATION
+  - PRODUCTION_NETWORK_CONSTRUCTION
+  - PYPSA_NETWORK_CONSTRUCTION
+  - TECHNICAL_COST_ASSIGNMENT
+  - STORAGE_SOC_CONFIGURATION
+  - OPTIMIZATION

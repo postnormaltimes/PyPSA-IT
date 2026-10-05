@@ -1,0 +1,118 @@
+{
+  "phase": "ETX-7B3",
+  "status": "ETX7B3_2019_TEMPORAL_INPUTS_COMPLETE",
+  "schema_version": "ETX7B3_TEMPORAL_2019_V1_0",
+  "fixed_market_scope": [
+    "IT",
+    "FR",
+    "CH",
+    "AT",
+    "SI",
+    "HR",
+    "ME",
+    "GR",
+    "MT",
+    "TN"
+  ],
+  "chronology": {
+    "year": 2019,
+    "timezone": "UTC",
+    "hours": 8760,
+    "start": "2019-01-01 00:00:00+00:00",
+    "end": "2019-12-31 23:00:00+00:00"
+  },
+  "counts": {
+    "snapshot_rows": 8760,
+    "load_rows": 175200,
+    "load_realizations": 20,
+    "vre_rows": 262800,
+    "vre_profiles": 30,
+    "hydro_rows": 122640,
+    "hydro_profiles": 14,
+    "coverage_rows": 340,
+    "required_profiles": 100,
+    "provenance_rows": 54,
+    "qa_checks": 28,
+    "qa_failures": 0
+  },
+  "frozen_regression": {
+    "stage_b": "PASS",
+    "etx7b1": "PASS",
+    "etx7b2": "PASS"
+  },
+  "explicit_adapter_profiles": [
+    {
+      "profile_id": "ETX7B3_DEMAND_SHAPE_FR_2019",
+      "country_code": "FR",
+      "profile_family": "DEMAND",
+      "source_year": "2019",
+      "transformation": "ENTSOE_PRIMARY_OPSD_SECONDARY_PYPSA_EUR_LINEAR_INTERPOLATION_LIMIT_6"
+    },
+    {
+      "profile_id": "ETX7B3_DEMAND_SHAPE_MT_2019",
+      "country_code": "MT",
+      "profile_family": "DEMAND",
+      "source_year": "2016",
+      "transformation": "MONTH_WEEKDAY_HOUR_CALENDAR_MAPPING_FROM_CLOSEST_AVAILABLE_OFFICIAL_TYNDP_CLIMATE_COLUMN_2016_ON_2018_TEMPLATE_TO_2019"
+    },
+    {
+      "profile_id": "ETX7B3_DEMAND_SHAPE_TN_2019",
+      "country_code": "TN",
+      "profile_family": "DEMAND",
+      "source_year": "2018",
+      "transformation": "MONTH_WEEKDAY_HOUR_CALENDAR_MAPPING_FROM_OFFICIAL_2018_TO_2019"
+    },
+    {
+      "profile_id": "ETX7B3_TN_HYDRO_NON_PHS_UNSPLIT_2019",
+      "country_code": "TN",
+      "profile_family": "HYDRO_NON_PHS_UNSPLIT",
+      "source_year": "2019",
+      "transformation": "SMOOTH_AND_LOWER_THRESHOLD_QUANTILE_THEN_NORMALIZE_TO_UNIT_ANNUAL_INFLOW_SHAPE"
+    },
+    {
+      "profile_id": "ETX7B3_TN_SOLAR_PV_2019",
+      "country_code": "TN",
+      "profile_family": "SOLAR_PV",
+      "source_year": "2018",
+      "transformation": "OFFICIAL_2018_NON_LEAP_CLIMATE_SEQUENCE_MAPPED_MONTH_DAY_HOUR_TO_2019"
+    },
+    {
+      "profile_id": "ETX7B3_MT_WIND_OFFSHORE_2019",
+      "country_code": "MT",
+      "profile_family": "WIND_OFFSHORE",
+      "source_year": "2019",
+      "transformation": "STANDARD_OFFWIND_RESOURCE_CONVERSION_WITH_NO_CAPACITY_OVERRIDE"
+    },
+    {
+      "profile_id": "ETX7B3_TN_WIND_OFFSHORE_2019",
+      "country_code": "TN",
+      "profile_family": "WIND_OFFSHORE",
+      "source_year": "2019",
+      "transformation": "STANDARD_OFFWIND_RESOURCE_CONVERSION_WITH_NO_CAPACITY_OVERRIDE"
+    },
+    {
+      "profile_id": "ETX7B3_TN_WIND_ONSHORE_2019",
+      "country_code": "TN",
+      "profile_family": "WIND_ONSHORE",
+      "source_year": "2018",
+      "transformation": "OFFICIAL_2018_NON_LEAP_CLIMATE_SEQUENCE_MAPPED_MONTH_DAY_HOUR_TO_2019"
+    }
+  ],
+  "scope_confirmation": {
+    "context_markets": "NOT_IN_SCOPE_FIXED_TEN_MARKET_REVISION",
+    "operating_parameters": "DEFER_ETX7B4",
+    "topology": "NOT_BUILT",
+    "pypsa_network": "NOT_INSTANTIATED",
+    "optimization": "NOT_RUN",
+    "solver_configuration": "UNCHANGED_AND_DISABLED"
+  },
+  "repository_test_receipt": {
+    "tests": 8,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "status": "PASS",
+    "path": "qa/stage_a/etx7b3/MEM_ETX7B3_Pytest_JUnit_v1.0.xml"
+  },
+  "next_gate": "ETX-7B4_STAGE_A_BASE_OPERATING_PARAMETER_LAYER"
+}

@@ -1,0 +1,122 @@
+schema_version: MEM_STAGE_B_CANONICAL_REPORTING_v1.0
+status: PRODUCTION_REPORTING_ACTIVE_2040
+zone_order: [CALA, CNOR, CSUD, NORD, SARD, SICI, SUD]
+scenario_order: [Slow, Base, High]
+canonical_price_metric: load_weighted_mean_EUR_per_MWh
+require_full_chronology_hours: 8760
+balance_tolerance_TWh: 0.000001
+electrical_balance_identity: PRIMARY_GENERATION_PLUS_BESS_DISCHARGE_PLUS_PHS_DISCHARGE_PLUS_NET_IMPORTS_PLUS_LOAD_SHEDDING_MINUS_RIGID_END_USE_DEMAND_MINUS_P2X_ELECTRICAL_CONSUMPTION_MINUS_BESS_CHARGING_MINUS_PHS_CHARGING
+link_flow_accounting:
+  discharge: DELIVERED_AT_BUS1_AS_MINUS_P1
+  charging: WITHDRAWN_AT_BUS0_AS_P0
+  imports: NET_BUS_INJECTION_FROM_INTERFACE_P0_P1
+  mixed_phs: REPORTED_AS_PHS_DISCHARGE_NOT_PRIMARY_GENERATION
+font_preference: [Aptos, DejaVu Sans]
+technology_order:
+  - Solar PV - rooftop
+  - Solar PV - utility
+  - Onshore wind
+  - Offshore wind
+  - Hydro - run of river
+  - Hydro - basin/pondage
+  - Hydro - reservoir
+  - PHS
+  - BESS
+  - Nuclear
+  - Gas - CCGT
+  - Gas - OCGT
+  - Gas - internal combustion
+  - Gas - steam thermal
+  - Gas - other thermal
+  - Gas + CCS
+  - Hydrogen - OCGT
+  - Bioenergy
+  - Bioenergy - internal combustion
+  - Bioenergy - steam thermal
+  - Bioenergy - other thermal
+  - Bioenergy + CCS
+  - Geothermal
+carrier_to_display_technology:
+  solar_pv_rooftop: Solar PV - rooftop
+  solar_pv_utility: Solar PV - utility
+  wind_onshore: Onshore wind
+  wind_offshore: Offshore wind
+  hydro_run_of_river: Hydro - run of river
+  nuclear: Nuclear
+  methane_ccgt: Gas - CCGT
+  methane_gt_ocgt: Gas - OCGT
+  methane_internal_combustion: Gas - internal combustion
+  methane_steam_other_surviving: Gas - steam thermal
+  methane_other_surviving_thermal: Gas - other thermal
+  methane_ccs: Gas + CCS
+  hydrogen_gt_ocgt: Hydrogen - OCGT
+  bioenergy: Bioenergy
+  bioenergy_internal_combustion: Bioenergy - internal combustion
+  bioenergy_steam_other_surviving: Bioenergy - steam thermal
+  bioenergy_other_surviving_thermal: Bioenergy - other thermal
+  bioenergy_ccs: Bioenergy + CCS
+  geothermal: Geothermal
+link_name_to_display_technology:
+  BESS_DISCHARGE_: BESS
+  TURBINE_: HYDRO_CLASS_FROM_NAME
+hydro_class_to_display_technology:
+  RUN_OF_RIVER: Hydro - run of river
+  BASIN_PONDAGE: Hydro - basin/pondage
+  RESERVOIR: Hydro - reservoir
+  PURE_PHS: PHS
+  MIXED_PHS: PHS
+technology_colors:
+  Solar PV - rooftop: "#F5C04A"
+  Solar PV - utility: "#E6A700"
+  Onshore wind: "#5AA6D1"
+  Offshore wind: "#1F78B4"
+  Hydro - run of river: "#69B3E7"
+  Hydro - basin/pondage: "#367FA9"
+  Hydro - reservoir: "#1D5D7A"
+  PHS: "#6A51A3"
+  BESS: "#9E77ED"
+  Nuclear: "#D95F8D"
+  Gas - CCGT: "#8C564B"
+  Gas - OCGT: "#B07C6C"
+  Gas - internal combustion: "#C49A8A"
+  Gas - steam thermal: "#6F4E45"
+  Gas - other thermal: "#A67C73"
+  Gas + CCS: "#4D342F"
+  Hydrogen - OCGT: "#42B7B0"
+  Bioenergy: "#4E9A51"
+  Bioenergy - internal combustion: "#72AD66"
+  Bioenergy - steam thermal: "#2E7D32"
+  Bioenergy - other thermal: "#86B978"
+  Bioenergy + CCS: "#1B5E20"
+  Geothermal: "#C65D21"
+schematic_coordinates:
+  NORD: [5.4, 7.0]
+  CNOR: [4.8, 5.8]
+  CSUD: [5.2, 4.5]
+  SUD: [6.0, 3.2]
+  CALA: [6.4, 1.8]
+  SICI: [5.4, 0.6]
+  SARD: [2.6, 2.5]
+  CORS: [2.4, 5.3]
+  EXT_FR: [1.5, 7.7]
+  EXT_CH: [3.6, 8.0]
+  EXT_AT: [6.8, 8.0]
+  EXT_SI: [8.7, 7.4]
+  EXT_ME: [9.3, 4.7]
+  EXT_GR: [9.2, 2.7]
+  EXT_MT: [7.8, 0.4]
+  EXT_TN: [3.3, -0.4]
+schematic_edge_curvature:
+  NORD|SUD: -0.18
+  CSUD|SICI: 0.14
+  SARD|SICI: -0.14
+schematic_semantics: STRUCTURAL_MODELED_CORRIDORS_EXACT_DIRECTIONAL_BOUNDS_NO_FLOW_ARROWS
+outputs:
+  save_png: true
+  save_svg: true
+  png_dpi: 180
+  white_background: true
+governance:
+  reporting_solves_network: false
+  production_figures_generated: true
+  production_execution_requires_solved_accepted_network: true

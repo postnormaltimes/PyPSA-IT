@@ -1,0 +1,32 @@
+{
+  "source_id": "TERNA_API_THERMOELECTRIC_CAPACITY_2019",
+  "publisher": "Terna S.p.A.",
+  "endpoint": "thermoelectric-capacity",
+  "request_url": "https://api.terna.it/generation/v2.0/thermoelectric-capacity?year=2019",
+  "request_parameters": {
+    "year": "2019"
+  },
+  "authorization_method": "OAuth 2.0 client credentials; token not persisted",
+  "retrieval_timestamp_utc": "2026-09-01T12:19:59.917Z",
+  "http_status": 200,
+  "content_type": "application/json",
+  "response_date": "Tue, 01 Sep 2026 12:18:19 GMT",
+  "etag": null,
+  "last_modified": null,
+  "raw_file": "thermoelectric-capacity_2019_RAW.json",
+  "raw_bytes": 218009,
+  "raw_sha256": "14b77a38c428aa6f1bf88fcf4809b640fca6ee9fb65ea9895ba1a9b2300f5b10",
+  "result_status": "Completed",
+  "result_message": "Operation completed for the following input. year: 2019",
+  "array_key": "thermoelectric",
+  "record_count": 1216,
+  "properties": [
+    "capacity_type",
+    "category",
+    "efficient_power_MW",
+    "province",
+    "region",
+    "subcategory",
+    "year"
+  ]
+}

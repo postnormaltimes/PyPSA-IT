@@ -1,0 +1,31 @@
+{
+  "source_id": "TERNA_API_THERMOELECTRIC_PRODUCTION_2022",
+  "publisher": "Terna S.p.A.",
+  "endpoint": "thermoelectric-production",
+  "request_url": "https://api.terna.it/generation/v2.0/thermoelectric-production?year=2022",
+  "request_parameters": {
+    "year": "2022"
+  },
+  "authorization_method": "OAuth 2.0 client credentials; token not persisted",
+  "retrieval_timestamp_utc": "2026-09-01T12:20:19.833Z",
+  "http_status": 200,
+  "content_type": "application/json",
+  "response_date": "Tue, 01 Sep 2026 12:20:20 GMT",
+  "etag": null,
+  "last_modified": null,
+  "raw_file": "thermoelectric-production_2022_RAW.json",
+  "raw_bytes": 182210,
+  "raw_sha256": "655ca4259ebd63986c6709919963c314b192bd83d93d9ccb5f087a3cb765c091",
+  "result_status": "Completed",
+  "result_message": "Operation completed for the following input. year: 2022",
+  "array_key": "thermoelectric",
+  "record_count": 1180,
+  "properties": [
+    "category",
+    "production_GWh",
+    "province",
+    "region",
+    "subcategory",
+    "year"
+  ]
+}

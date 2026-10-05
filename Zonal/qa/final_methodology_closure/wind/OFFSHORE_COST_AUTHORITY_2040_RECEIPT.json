@@ -1,0 +1,432 @@
+{
+  "state": "DIRECT_2040_COST_AUTHORITY_PASS",
+  "technology_data_version": "v0.14.0",
+  "commit": "efb1c45dee0b26e402fec66ce209c89474bc2d1f",
+  "exact_2040_source": "runtime_sources\\costs\\technology_data_v0.14.0\\costs_2040.csv",
+  "2040_sha256": "d1bd7ac0e1e0a59c21ea955375e4d19d31383a1095d3c9014c6de2c11bbb5b2c",
+  "official_output_url": "https://raw.githubusercontent.com/PyPSA/technology-data/refs/tags/v0.14.0/outputs/costs_2040.csv",
+  "compile_method": "RECOVER_OFFICIAL_PUBLISHED_NATIVE_COMPILER_OUTPUT_AT_SAME_PINNED_TAG",
+  "compiler_executed_locally": false,
+  "manual_interpolation_used": false,
+  "interpolation_used_YN": true,
+  "interpolation_scope": "Native DEA compiler applies numpy.interp over source year columns for config.years, including 2040; no MEM interpolation. A source year may itself be an interpolation anchor.",
+  "compiler_interpolation_lines": [
+    996,
+    1007
+  ],
+  "compiler_inflation_and_export_lines": [
+    4250,
+    4263
+  ],
+  "source_hashes": [
+    {
+      "path": "runtime_sources\\costs\\technology_data_v0.14.0\\costs_2040.csv",
+      "sha256": "d1bd7ac0e1e0a59c21ea955375e4d19d31383a1095d3c9014c6de2c11bbb5b2c"
+    },
+    {
+      "path": "runtime_sources\\costs\\technology_data_v0.14.0\\config.yaml",
+      "sha256": "c7a14f597cdeb6aabddc7773e1fec83bbd7c8a8d853503aa11a305ad4cc92280"
+    },
+    {
+      "path": "runtime_sources\\costs\\technology_data_v0.14.0\\compile_cost_assumptions.py",
+      "sha256": "8697e3dc0d4295819c0e2a5a06491ba42a87e771e77e8e04635e80ff33524fd2"
+    },
+    {
+      "path": "runtime_sources\\costs\\technology_data_v0.14.0\\tag_ref.json",
+      "sha256": "957bb0731aaccfd5266b97593457004256392e72d8ecab46b1a0850734923452"
+    }
+  ],
+  "2050_authority_unchanged": {
+    "path": "source://pypsa-eur/data/costs/archive/v0.14.0/costs_2050.csv",
+    "sha256": "8fde1021aed881bedd6f7f89cbc3614e662d74bb8758cfe9ad0feae5410abae8"
+  },
+  "relevant_2040_parameters": [
+    {
+      "technology": "onwind",
+      "investment_source_value": 1305.8347,
+      "investment_source_unit": "EUR/kW",
+      "investment_EUR_per_MW_or_MW_km": 1305834.7000000002,
+      "lifetime_years": 30.0,
+      "FOM_percent": 1.1858,
+      "discount_rate": 0.07,
+      "annualized_cost": 120717.10992561084,
+      "original_source_currency_year_annotations": [
+        2015.0
+      ],
+      "source": "Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx"
+    },
+    {
+      "technology": "offwind",
+      "investment_source_value": 1964.4169,
+      "investment_source_unit": "EUR/kW_e, 2020",
+      "investment_EUR_per_MW_or_MW_km": 1964416.9,
+      "lifetime_years": 30.0,
+      "FOM_percent": 2.1762,
+      "discount_rate": 0.07,
+      "annualized_cost": 201054.93354524614,
+      "original_source_currency_year_annotations": [
+        2020.0,
+        2015.0
+      ],
+      "source": "Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx"
+    },
+    {
+      "technology": "offwind-ac-station",
+      "investment_source_value": 780.0,
+      "investment_source_unit": "EUR/kWel",
+      "investment_EUR_per_MW_or_MW_km": 780000.0,
+      "lifetime_years": 40.0,
+      "FOM_percent": 1.5,
+      "discount_rate": 0.07,
+      "annualized_cost": 70207.12832141604,
+      "original_source_currency_year_annotations": [
+        2025.0
+      ],
+      "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.8 el substations. Including onshore and offshore substation."
+    },
+    {
+      "technology": "offwind-ac-connection-submarine",
+      "investment_source_value": 4130.0,
+      "investment_source_unit": "EUR/MW/km",
+      "investment_EUR_per_MW_or_MW_km": 4130.0,
+      "lifetime_years": 40.0,
+      "FOM_percent": 2.5,
+      "discount_rate": 0.07,
+      "annualized_cost": 413.0377435480106,
+      "original_source_currency_year_annotations": [
+        2025.0
+      ],
+      "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.7 el trans AC&DC cables."
+    },
+    {
+      "technology": "offwind-ac-connection-underground",
+      "investment_source_value": 4130.0,
+      "investment_source_unit": "EUR/MW/km",
+      "investment_EUR_per_MW_or_MW_km": 4130.0,
+      "lifetime_years": 40.0,
+      "FOM_percent": 2.5,
+      "discount_rate": 0.07,
+      "annualized_cost": 413.0377435480106,
+      "original_source_currency_year_annotations": [
+        2025.0
+      ],
+      "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.7 el trans AC&DC cables."
+    },
+    {
+      "technology": "offwind-dc-station",
+      "investment_source_value": 980.0,
+      "investment_source_unit": "EUR/kWel",
+      "investment_EUR_per_MW_or_MW_km": 980000.0,
+      "lifetime_years": 40.0,
+      "FOM_percent": 1.5,
+      "discount_rate": 0.07,
+      "annualized_cost": 88208.9560961381,
+      "original_source_currency_year_annotations": [
+        2025.0
+      ],
+      "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.8 el substations. Including onshore and offshore substation."
+    },
+    {
+      "technology": "offwind-dc-connection-submarine",
+      "investment_source_value": 2950.0,
+      "investment_source_unit": "EUR/MW/km",
+      "investment_EUR_per_MW_or_MW_km": 2950.0,
+      "lifetime_years": 40.0,
+      "FOM_percent": 2.5,
+      "discount_rate": 0.07,
+      "annualized_cost": 295.02695967715044,
+      "original_source_currency_year_annotations": [
+        2025.0
+      ],
+      "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.7 el trans AC&DC cables."
+    },
+    {
+      "technology": "offwind-dc-connection-underground",
+      "investment_source_value": 3740.0,
+      "investment_source_unit": "EUR/MW/km",
+      "investment_EUR_per_MW_or_MW_km": 3740.0,
+      "lifetime_years": 40.0,
+      "FOM_percent": 2.5,
+      "discount_rate": 0.07,
+      "annualized_cost": 374.0341793873026,
+      "original_source_currency_year_annotations": [
+        2025.0
+      ],
+      "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.7 el trans AC&DC cables."
+    }
+  ],
+  "comparison_to_2050_parameters": [
+    {
+      "technology": "onwind",
+      "2040": {
+        "technology": "onwind",
+        "investment_source_value": 1305.8347,
+        "investment_source_unit": "EUR/kW",
+        "investment_EUR_per_MW_or_MW_km": 1305834.7000000002,
+        "lifetime_years": 30.0,
+        "FOM_percent": 1.1858,
+        "discount_rate": 0.07,
+        "annualized_cost": 120717.10992561084,
+        "original_source_currency_year_annotations": [
+          2015.0
+        ],
+        "source": "Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx"
+      },
+      "2050": {
+        "technology": "onwind",
+        "investment_source_value": 1286.4669,
+        "investment_source_unit": "EUR/kW",
+        "investment_EUR_per_MW_or_MW_km": 1286466.9,
+        "lifetime_years": 30.0,
+        "FOM_percent": 1.1775,
+        "discount_rate": 0.07,
+        "annualized_cost": 118819.88845458832,
+        "original_source_currency_year_annotations": [
+          2015.0
+        ],
+        "source": "Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx"
+      },
+      "annualized_difference": 1897.2214710225235
+    },
+    {
+      "technology": "offwind",
+      "2040": {
+        "technology": "offwind",
+        "investment_source_value": 1964.4169,
+        "investment_source_unit": "EUR/kW_e, 2020",
+        "investment_EUR_per_MW_or_MW_km": 1964416.9,
+        "lifetime_years": 30.0,
+        "FOM_percent": 2.1762,
+        "discount_rate": 0.07,
+        "annualized_cost": 201054.93354524614,
+        "original_source_currency_year_annotations": [
+          2020.0,
+          2015.0
+        ],
+        "source": "Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx"
+      },
+      "2050": {
+        "technology": "offwind",
+        "investment_source_value": 1916.0913,
+        "investment_source_unit": "EUR/kW_e, 2020",
+        "investment_EUR_per_MW_or_MW_km": 1916091.3,
+        "lifetime_years": 30.0,
+        "FOM_percent": 2.1655,
+        "discount_rate": 0.07,
+        "annualized_cost": 195903.8637674296,
+        "original_source_currency_year_annotations": [
+          2020.0,
+          2015.0
+        ],
+        "source": "Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx"
+      },
+      "annualized_difference": 5151.069777816534
+    },
+    {
+      "technology": "offwind-ac-station",
+      "2040": {
+        "technology": "offwind-ac-station",
+        "investment_source_value": 780.0,
+        "investment_source_unit": "EUR/kWel",
+        "investment_EUR_per_MW_or_MW_km": 780000.0,
+        "lifetime_years": 40.0,
+        "FOM_percent": 1.5,
+        "discount_rate": 0.07,
+        "annualized_cost": 70207.12832141604,
+        "original_source_currency_year_annotations": [
+          2025.0
+        ],
+        "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.8 el substations. Including onshore and offshore substation."
+      },
+      "2050": {
+        "technology": "offwind-ac-station",
+        "investment_source_value": 710.0,
+        "investment_source_unit": "EUR/kWel",
+        "investment_EUR_per_MW_or_MW_km": 710000.0,
+        "lifetime_years": 40.0,
+        "FOM_percent": 1.5,
+        "discount_rate": 0.07,
+        "annualized_cost": 63906.48860026332,
+        "original_source_currency_year_annotations": [
+          2025.0
+        ],
+        "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.8 el substations. Including onshore and offshore substation."
+      },
+      "annualized_difference": 6300.639721152715
+    },
+    {
+      "technology": "offwind-ac-connection-submarine",
+      "2040": {
+        "technology": "offwind-ac-connection-submarine",
+        "investment_source_value": 4130.0,
+        "investment_source_unit": "EUR/MW/km",
+        "investment_EUR_per_MW_or_MW_km": 4130.0,
+        "lifetime_years": 40.0,
+        "FOM_percent": 2.5,
+        "discount_rate": 0.07,
+        "annualized_cost": 413.0377435480106,
+        "original_source_currency_year_annotations": [
+          2025.0
+        ],
+        "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.7 el trans AC&DC cables."
+      },
+      "2050": {
+        "technology": "offwind-ac-connection-submarine",
+        "investment_source_value": 3750.0,
+        "investment_source_unit": "EUR/MW/km",
+        "investment_EUR_per_MW_or_MW_km": 3750.0,
+        "lifetime_years": 40.0,
+        "FOM_percent": 2.5,
+        "discount_rate": 0.07,
+        "annualized_cost": 375.0342707760387,
+        "original_source_currency_year_annotations": [
+          2025.0
+        ],
+        "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.7 el trans AC&DC cables."
+      },
+      "annualized_difference": 38.00347277197193
+    },
+    {
+      "technology": "offwind-ac-connection-underground",
+      "2040": {
+        "technology": "offwind-ac-connection-underground",
+        "investment_source_value": 4130.0,
+        "investment_source_unit": "EUR/MW/km",
+        "investment_EUR_per_MW_or_MW_km": 4130.0,
+        "lifetime_years": 40.0,
+        "FOM_percent": 2.5,
+        "discount_rate": 0.07,
+        "annualized_cost": 413.0377435480106,
+        "original_source_currency_year_annotations": [
+          2025.0
+        ],
+        "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.7 el trans AC&DC cables."
+      },
+      "2050": {
+        "technology": "offwind-ac-connection-underground",
+        "investment_source_value": 3750.0,
+        "investment_source_unit": "EUR/MW/km",
+        "investment_EUR_per_MW_or_MW_km": 3750.0,
+        "lifetime_years": 40.0,
+        "FOM_percent": 2.5,
+        "discount_rate": 0.07,
+        "annualized_cost": 375.0342707760387,
+        "original_source_currency_year_annotations": [
+          2025.0
+        ],
+        "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.7 el trans AC&DC cables."
+      },
+      "annualized_difference": 38.00347277197193
+    },
+    {
+      "technology": "offwind-dc-station",
+      "2040": {
+        "technology": "offwind-dc-station",
+        "investment_source_value": 980.0,
+        "investment_source_unit": "EUR/kWel",
+        "investment_EUR_per_MW_or_MW_km": 980000.0,
+        "lifetime_years": 40.0,
+        "FOM_percent": 1.5,
+        "discount_rate": 0.07,
+        "annualized_cost": 88208.9560961381,
+        "original_source_currency_year_annotations": [
+          2025.0
+        ],
+        "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.8 el substations. Including onshore and offshore substation."
+      },
+      "2050": {
+        "technology": "offwind-dc-station",
+        "investment_source_value": 900.0,
+        "investment_source_unit": "EUR/kWel",
+        "investment_EUR_per_MW_or_MW_km": 900000.0,
+        "lifetime_years": 40.0,
+        "FOM_percent": 1.5,
+        "discount_rate": 0.07,
+        "annualized_cost": 81008.22498624928,
+        "original_source_currency_year_annotations": [
+          2025.0
+        ],
+        "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.8 el substations. Including onshore and offshore substation."
+      },
+      "annualized_difference": 7200.731109888831
+    },
+    {
+      "technology": "offwind-dc-connection-submarine",
+      "2040": {
+        "technology": "offwind-dc-connection-submarine",
+        "investment_source_value": 2950.0,
+        "investment_source_unit": "EUR/MW/km",
+        "investment_EUR_per_MW_or_MW_km": 2950.0,
+        "lifetime_years": 40.0,
+        "FOM_percent": 2.5,
+        "discount_rate": 0.07,
+        "annualized_cost": 295.02695967715044,
+        "original_source_currency_year_annotations": [
+          2025.0
+        ],
+        "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.7 el trans AC&DC cables."
+      },
+      "2050": {
+        "technology": "offwind-dc-connection-submarine",
+        "investment_source_value": 2680.0,
+        "investment_source_unit": "EUR/MW/km",
+        "investment_EUR_per_MW_or_MW_km": 2680.0,
+        "lifetime_years": 40.0,
+        "FOM_percent": 2.5,
+        "discount_rate": 0.07,
+        "annualized_cost": 268.02449218127566,
+        "original_source_currency_year_annotations": [
+          2025.0
+        ],
+        "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.7 el trans AC&DC cables."
+      },
+      "annualized_difference": 27.002467495874782
+    },
+    {
+      "technology": "offwind-dc-connection-underground",
+      "2040": {
+        "technology": "offwind-dc-connection-underground",
+        "investment_source_value": 3740.0,
+        "investment_source_unit": "EUR/MW/km",
+        "investment_EUR_per_MW_or_MW_km": 3740.0,
+        "lifetime_years": 40.0,
+        "FOM_percent": 2.5,
+        "discount_rate": 0.07,
+        "annualized_cost": 374.0341793873026,
+        "original_source_currency_year_annotations": [
+          2025.0
+        ],
+        "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.7 el trans AC&DC cables."
+      },
+      "2050": {
+        "technology": "offwind-dc-connection-underground",
+        "investment_source_value": 3400.0,
+        "investment_source_unit": "EUR/MW/km",
+        "investment_EUR_per_MW_or_MW_km": 3400.0,
+        "lifetime_years": 40.0,
+        "FOM_percent": 2.5,
+        "discount_rate": 0.07,
+        "annualized_cost": 340.0310721702751,
+        "original_source_currency_year_annotations": [
+          2025.0
+        ],
+        "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.7 el trans AC&DC cables."
+      },
+      "annualized_difference": 34.00310721702749
+    }
+  ],
+  "annualization_basis": {
+    "formula": "(annuity(0.07,lifetime)+FOM/100)*investment_EUR_per_MW",
+    "discount_rate_source": "Accepted local PyPSA-Eur technology discount-rate default; not social discount rate",
+    "nyears": 1,
+    "annualized_once": true,
+    "published_effective_EUR_basis": 2025,
+    "original_source_year_annotations_retained": true,
+    "additional_MEM_inflation_applied": false
+  },
+  "native_site_formula": "annual_generation + annual_AC_station + 1.25*(distance_km*annual_submarine + 20*annual_underground)",
+  "DC_parameters_recovered_but_accepted_AC_resource_scope_unchanged": true,
+  "FINAL_2040_SITING_USES_DIRECT_OR_NATIVE_COMPILED_2040_AUTHORITY": true,
+  "cost_sensitivity_is_diagnostic_not_authority_gate": true,
+  "MEM_dispatch_or_CAPEX_changed": false
+}

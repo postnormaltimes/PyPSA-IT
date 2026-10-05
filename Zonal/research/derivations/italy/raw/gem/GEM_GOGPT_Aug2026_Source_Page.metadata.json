@@ -1,0 +1,23 @@
+{
+  "source_id": "GEM_GOGPT_AUG2026_OFFICIAL_TRACKER_PAGE",
+  "source_url": "https://globalenergymonitor.org/projects/global-oil-gas-plant-tracker",
+  "final_url": "https://globalenergymonitor.org/projects/global-oil-gas-plant-tracker",
+  "retrieval_timestamp_utc": "2026-09-01T06:56:12.154Z",
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 123095,
+  "sha256": "bb9cc9ecf8b76ed722c247d5e4f2aacecc373d047c7ead9c97577a589db3da0f",
+  "local_file": "GEM_GOGPT_Aug2026_Source_Page.html",
+  "release_text_present": true,
+  "sub_threshold_text_present": true,
+  "forms": [
+    "<form id=\"search-form\" name=\"search-form\" action=\"/search\" method=\"get\" class=\"form\" aria-label=\"Search Form\">"
+  ],
+  "iframes": [],
+  "download_urls": [],
+  "embedded_form_signals": [
+    "    Download data",
+    "              <div>Download data</div>",
+    "                  <a href=\"#download\" class=\"button orange-b w-button\">Download data</a>"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "status": "HETEROGENEOUS_UC_V2A_TECHNICALLY_PREPARED",
+  "calibration_revision": "CONTROLLED_ETA_15_50_35_V2",
+  "manual_benchmark_status": "MANUAL_BENCHMARK_REQUIRED",
+  "production_status": "PRODUCTION_NOT_EXECUTED",
+  "verification": {
+    "status": "PASS",
+    "networks_verified": 6,
+    "solver_invocations": 0,
+    "protected_artifacts_unchanged": 28
+  },
+  "tests": {
+    "tests": 35,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 35,
+    "junit_path": "qa\\stage_b\\uc2a_heterogeneous_v1\\MEM_UC2A_NON_SOLVING_TEST_RESULTS.xml",
+    "junit_sha256": "3f83bcf09c874ef18f089a229964ce2bd7cd397f39024d95a9ae01d9f0d43e07"
+  },
+  "solver_invocations": 0,
+  "optimization_model_constructed": false,
+  "controlled_efficiency_multipliers_only": true,
+  "empirical_efficiency_used": false,
+  "HR_recentering_applied": false,
+  "efficiency_MW_envelopes": "PASS",
+  "mid_only_fallback": "N_LESS_THAN_3_ONLY",
+  "no_2040_CCGT_efficiency_above_0p80": true,
+  "protected_artifacts_unchanged": 28,
+  "crosswalk_sha256": "6158444d74f2943923d16fec0ddfd90babfb5f32ef37006e3f83e470cb26aa0f",
+  "max_parent_capacity_difference_MW": 7.275957614183426e-12,
+  "max_parent_weighted_HR_difference": 1.1102230246251565e-15,
+  "max_parent_weighted_MC_difference_EUR_MWh": 5.684341886080802e-14,
+  "new_v1_solve_prepared": false,
+  "benchmark_executed": false,
+  "benchmark_result_directory_exists": false,
+  "before_after_zone_technology_records": 111,
+  "receipt_path": "qa\\stage_b\\uc2a_heterogeneous_v1\\MEM_UC2A_PREPARATION_RECEIPT.json",
+  "manifest_path": "qa\\stage_b\\uc2a_heterogeneous_v1\\MEM_UC2A_ARTIFACT_MANIFEST.csv",
+  "handoff_path": "docs/MEM_UC_V2A_PREPARATION_HANDOFF.md"
+}

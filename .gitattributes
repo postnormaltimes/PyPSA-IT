@@ -1,0 +1,7 @@
+# Preserve exact pinned bytes, including immutable original receipt line endings.
+# Hash verification must behave identically after a clean clone on Windows.
+* -text
+*.parquet binary
+*.xlsx binary
+*.xls binary
+*.docx binary

@@ -1,0 +1,27 @@
+schema_version: MEM_FINAL_HYDRO_SPATIAL_V1
+decision_authority: docs/final_methodology_closure/PHASE_H_ZONAL_RUNOFF_RESOLUTION.md
+parent_namespace: networks/unsolved/final_wind_native_v1
+output_namespace: networks/unsolved/final_wind_hydro_v1
+spatial_adapter: ATLITE_RUNOFF_OVER_ACCEPTED_MARKET_ZONE_POLYGONS
+plant_catchment_routing_required: false
+geometry: runtime_inputs/stage_b_zonal_vre_v1/official_market_zone_land_polygons.geojson
+cutout: runtime_sources/weather/PyPSA_cutout_v1.0/europe-2019-sarah3-era5.nc
+runoff:
+  weight_with_height: true
+  smooth: true
+  native_smoothing_hours: 168
+  lower_threshold_quantile: true
+  native_threshold_quantile: 0.005
+  aggregate_time: null
+  normalize_using_yearly: null
+within_zone_natural_hydro_classes_share_driver: true
+NORD_mixed_PHS_temporal_source: NORD_AGGREGATE_ZONAL_RUNOFF_SHAPE
+annual_water_tolerance_MWh: 0.000001
+spill_cap_role: NON_BINDING_FORCED_INFLOW_SAFETY_BOUND
+spill_cap_includes_pump_power: false
+water_value_method: NATIVE_STORE_ENERGY_BALANCE_DUAL_FIXED_COMMITMENT_LP
+water_value_unit: EUR/MWh_water
+divide_water_value_by_objective_weight: false
+cyclic_annual_state_retained: true
+production_optimization_authorized: false
+optimization_model_construction_authorized: false

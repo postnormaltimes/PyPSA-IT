@@ -1,0 +1,21 @@
+{
+  "archetype_counts": {
+    "BIOMASS_STEAM": 14,
+    "CCGT": 99,
+    "OCGT": 17
+  },
+  "availability_compatibility": "PASS",
+  "capacity_conservation_MW": 0.0,
+  "derivative": "networks\\unsolved\\uc1_common_v1\\MEM_2040_SLOW_UC1_COMMON_V1_8760h_UNSOLVED.nc",
+  "derivative_sha256": "d499e3e21255b4e043a36f46a2c323cd2a8b3238917a5ff7b64fc7a5187d2b2a",
+  "eligible_parents": 40,
+  "full_year_solved": false,
+  "p2x_equalities": 7,
+  "parent": "networks\\unsolved\\p2x_flex_v1\\MEM_2040_SLOW_P2X_FLEX_V1_8760h_UNSOLVED.nc",
+  "parent_sha256": "622f40ec2ee710894c37d0c1d8c3c4660a4fc2dd6614a13819a19b94f453df15",
+  "scenario": "Slow",
+  "snapshots": 8760,
+  "status": "PASS",
+  "synthetic_units": 130,
+  "year": 2040
+}

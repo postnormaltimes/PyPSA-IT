@@ -1,0 +1,21 @@
+check_id,description,observed,expected,difference,status,notes
+ETX7B1-QA-01,Archived ETX-7A source hashes and byte counts match the frozen manifest,2,2,,PASS,
+ETX7B1-QA-02,Canonical evidence rows read,207,207,,PASS,
+ETX7B1-QA-03,Runtime-authoritative rows read,161,161,,PASS,
+ETX7B1-QA-04,Runtime-role counts match the ETX-7A freeze,"{""IMPLEMENT"": 98, ""IMPLEMENT_CARRIER_SPLIT"": 12, ""IMPLEMENT_STORAGE_PAIR"": 48, ""IMPLEMENT_TOTAL"": 3}","{""IMPLEMENT"": 98, ""IMPLEMENT_CARRIER_SPLIT"": 12, ""IMPLEMENT_STORAGE_PAIR"": 48, ""IMPLEMENT_TOTAL"": 3}",,PASS,
+ETX7B1-QA-05,All nine external countries are present,"AT,CH,FR,GR,HR,ME,MT,SI,TN","AT,CH,FR,GR,HR,ME,MT,SI,TN",,PASS,
+ETX7B1-QA-06,Exactly the 2040 and 2050 horizons are emitted,"[2040, 2050]","[2040, 2050]",,PASS,
+ETX7B1-QA-07,Every country has one accepted annual-demand control per horizon,rows=18; max_per_key=1,18 rows; exactly one per country/year,,PASS,
+ETX7B1-QA-08,No QA or derivation role leaks into runtime capacity,"IMPLEMENT,IMPLEMENT_CARRIER_SPLIT,IMPLEMENT_STORAGE_PAIR,IMPLEMENT_TOTAL","IMPLEMENT,IMPLEMENT_TOTAL,IMPLEMENT_STORAGE_PAIR,IMPLEMENT_CARRIER_SPLIT",,PASS,
+ETX7B1-QA-09,All emitted generators have strictly positive fixed capacity,min=20.0; extendable=0,p_nom_MW > 0; all non-extendable,,PASS,
+ETX7B1-QA-10,Explicit zero controls are retained separately without component emission,98,98,,PASS,
+ETX7B1-QA-11,No Croatian nuclear generator is emitted,0,0,,PASS,Croatia's Krško entitlement remains QA/provenance only.
+ETX7B1-QA-12,Slovenia retains the physical Krško nuclear treatment,"records=2; years=[2040, 2050]",At least one positive Slovenia nuclear record; no Croatia duplicate,,PASS,
+ETX7B1-QA-13,"Logical storage assets contain one complete, unique charge/discharge/energy pair",records=36; max_per_key=1,one row per country/year/class; all three dimensions positive,,PASS,
+ETX7B1-QA-14,France and Greece PHS symmetry mappings are explicit and traceable,FR=['TECHNICAL_SYMMETRIC_MAPPING_FROM_FROZEN_PHS_POWER']; GR=['ETX7A_APPROVED_TECHNICAL_SYMMETRIC_MAPPING_FROM_OFFICIAL_PHS_POWER'],FR=TECHNICAL_SYMMETRIC_MAPPING_FROM_FROZEN_PHS_POWER; GR=ETX7A_APPROVED_TECHNICAL_SYMMETRIC_MAPPING_FROM_OFFICIAL_PHS_POWER,,PASS,
+ETX7B1-QA-15,Only explicit ETX-7A unit conversions are applied,conversion receipt evaluated for every provenance row,TWh->MWh x1e6; GW->MW x1e3; GWh->MWh x1e3,,PASS,
+ETX7B1-QA-16,All deterministic IDs are unique within their contract tables,True,True,,PASS,
+ETX7B1-QA-17,Deterministic byte-identical rebuild is covered by an automated test,tests/test_stage_a_static_contract.py::test_adapter_is_byte_deterministic,PASS in pytest,,PASS,This static check is converted to a hard assertion by the test suite.
+ETX7B1-QA-18,Existing Stage-B frozen files retain their accepted hashes and row counts,9,9,,PASS,
+ETX7B1-QA-19,Runtime rows preserve source grain without duplicated total/split emission,True,True,,PASS,IMPLEMENT_TOTAL and IMPLEMENT_CARRIER_SPLIT are emitted only from the frozen runtime sheet; QA totals never emit.
+ETX7B1-QA-20,Distributed BESS remains distinct from grid BESS and PHS,"DISTRIBUTED_SMALL_SCALE,GRID_SCALE,PUMPED_HYDRO","DISTRIBUTED_SMALL_SCALE,GRID_SCALE,PUMPED_HYDRO",,PASS,

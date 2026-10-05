@@ -1,0 +1,17 @@
+{
+  "horizon": 2040,
+  "snapshots": 8760,
+  "market_buses": 10,
+  "auxiliary_state_buses": 33,
+  "loads": 10,
+  "conventional_and_vre_generators": 73,
+  "bess_states": 15,
+  "hydro_and_phs_slices": 28,
+  "physical_interconnectors": 12,
+  "load_shedding_generators": 10,
+  "production_solve_run": false,
+  "linopy_model_assembled": true,
+  "linopy_variables": 2172480,
+  "linopy_constraints": 4432560,
+  "market_solve_executed": false
+}

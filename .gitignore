@@ -1,0 +1,34 @@
+# Local environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pytest_tmp/
+.uv-cache/
+*.egg-info/
+node_modules/
+build/
+dist/
+outputs/
+results/
+downloads/
+.data-packages/
+
+# Credentials and local solver licensing must never be tracked
+.env
+.env.*
+*.lic
+*.pem
+*.key
+*.pfx
+credentials
+
+# External data packages
+*.zip
+*.nc
+*.npz
+
+# Local administration
+_administration/
+scripts/gh[0-9]_*.ps1

@@ -1,0 +1,31 @@
+{
+  "schema_version": "MEM_PLACEMENT_2050_PREPARATION_FINAL_VERIFICATION_V1_0",
+  "status": "PASS",
+  "preparation_manifest": "qa/stage_a/etx7b9e/MEM_Placement_2050_Preparation_Manifest_v1.0.csv",
+  "preparation_manifest_sha256": "25540E066BACF9E6A80E2E2469267392747ABCA2B190F4CAD53B3E011E0DEBFD",
+  "preparation_manifest_members": 8,
+  "B8D_2040_receipt_sha256": "C69ACBF941261BD37426EDCEDB1C14482977C2059427FEA1968008492E05F8C0",
+  "B9B_2050_receipt_sha256": "0A8E80FD1A46F5F63E4E8D41C0C3DAEE05F70A529ADC7EE69842FFE434FC9D36",
+  "B9C_R10_receipt_sha256": "1D741BD14C15E19443C04CABBC9E1A151771D0A84EEAE225F75B8A1247E758D1",
+  "B9D_R5_receipt_sha256": "E032C63879BF294C99759C8097A7AA7BADB9F5477CA20E8992B07012C266B2E4",
+  "B6_2050_network_sha256": "06CC25DB50AD717AE27332A57168CB4DBFF38765703022CB05D3E5BA9943E4DE",
+  "capacities_MW": {
+    "FR": 34350.14308951057,
+    "GR": 6905.030474826701,
+    "TN": 2433.2947267101813,
+    "AT": 5506.614447347679,
+    "SI": 3017.094676349047
+  },
+  "capacity_control": {
+    "classification": "NEAR_CONSTANT_TOTAL_CAPACITY_PLACEMENT_TEST",
+    "placement_total_virtual_capacity_MW": 52212.17741474419,
+    "R5_total_virtual_capacity_MW": 51912.004881670524,
+    "absolute_difference_MW": 300.1725330736663,
+    "percentage_difference": 0.5782333657848253,
+    "exact_total_rescaling_applied": false
+  },
+  "production_optimization_executed": false,
+  "production_price_acceptance": "PENDING_METHOD_REVIEW",
+  "B10_authorized": false,
+  "Stage_B_authorized": false
+}

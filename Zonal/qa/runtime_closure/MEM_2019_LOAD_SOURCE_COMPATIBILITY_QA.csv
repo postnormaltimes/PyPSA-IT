@@ -1,0 +1,6 @@
+﻿check_id,subject,observed,expected,status,notes
+LOAD-COMP-001,Timestamp basis compatibility,"ENTSO-E UTC-aware; OPSD utc_timestamp Z; 8,758 overlapping 2019 values",Same hourly UTC basis,PASS,Both series parse to one unique UTC timestamp index.
+LOAD-COMP-002,Unit compatibility,Both source workflows expose Italy load as MW,MW,PASS,Overlap means differ by only 10.646 MW; no scale conversion is indicated.
+LOAD-COMP-003,Overlap correlation,0.999973767345,>=0.999,PASS,MAE=12.274264 MW; RMSE=57.305416 MW.
+LOAD-COMP-004,ENTSO-E missing observation,2019-01-01T00:00:00+00:00,2019-01-01T00:00:00+00:00 only,PASS,No other ENTSO-E 2019 gap exists.
+LOAD-COMP-005,OPSD direct recovery value,22850.0 MW,22850.0 MW,PASS,Direct source recovery; no interpolation and no blending at other hours.

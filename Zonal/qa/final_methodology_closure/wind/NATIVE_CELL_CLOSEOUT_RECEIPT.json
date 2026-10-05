@@ -1,0 +1,86 @@
+{
+  "state": "WIND_RESOURCE_SITING_BLOCKED",
+  "current_residual": [
+    {
+      "state": "2040_OFFSHORE_COST_AUTHORITY_REQUIRED",
+      "gate": "W_RESOLUTION_6",
+      "scope": "2040_CNOR_WIND_OFFSHORE_BASE_HIGH",
+      "decision_required": "Provide/approve a controlling 2040 offshore siting-cost basis, or explicitly authorize the pinned local 2050 reference for 2040 despite the documented CNOR hourly-profile sensitivity.",
+      "evidence": "qa/final_methodology_closure/wind/OFFSHORE_COST_RANKING_ROBUSTNESS.csv",
+      "failed_2040_cases": [
+        {
+          "year": 2040,
+          "scenario": "Base",
+          "zone": "CNOR",
+          "common_generation_cost_scale": 1.25,
+          "selected_MW_changed": 103.6380021890667,
+          "annual_CF_absolute": 0.0017163023312506,
+          "hourly_MAE": 0.0282287981930286,
+          "hourly_max_absolute": 0.1147143136730232,
+          "status": "NOT_CONVERGED",
+          "connection_cost_differentials_unchanged": true,
+          "cost_reference": "PINNED_V0P14P0_2050"
+        },
+        {
+          "year": 2040,
+          "scenario": "High",
+          "zone": "CNOR",
+          "common_generation_cost_scale": 1.25,
+          "selected_MW_changed": 23.638002189066697,
+          "annual_CF_absolute": 0.0003558712003343,
+          "hourly_MAE": 0.0058531740673151,
+          "hourly_max_absolute": 0.0237857397027484,
+          "status": "NOT_CONVERGED",
+          "connection_cost_differentials_unchanged": true,
+          "cost_reference": "PINNED_V0P14P0_2050"
+        }
+      ],
+      "direct_2050_horizon_authority_exists": true,
+      "old_4_vs_8_failures_are_not_current_blockers": true
+    }
+  ],
+  "physical_and_cached_output_QA": "PASS",
+  "native_cell_cases_PASS": 84,
+  "independent_cases_PASS": 84,
+  "focused_tests": {
+    "status": "PASS",
+    "command": ".\\.venv\\Scripts\\python.exe -m pytest tests\\test_final_wind_cells.py tests\\test_final_wind_cell_verification.py tests\\test_final_wind_resource.py tests\\test_final_wind_verification.py tests\\test_final_methodology_closure.py -o addopts= -q --basetemp .pytest_tmp\\final_native_wind_checkpoint",
+    "observed_terminal_result": "48 passed in 21.34s",
+    "tests_collected": 48,
+    "tests_passed": 48,
+    "tests_failed": 0,
+    "elapsed_seconds": 21.34,
+    "no_models_or_solves_guard_enabled": true,
+    "optimization_model_constructed": false,
+    "solver_invocations": 0,
+    "prior_accepted_21_test_receipt_reused_not_overwritten": true,
+    "coverage": [
+      "common native-cell lowest-site-LCOE allocation",
+      "onshore common-cost CF-priority equivalence",
+      "offshore connection-cost ranking and cost-array identity",
+      "partial marginal cell and physical upper bounds",
+      "stable cell-ID tie break",
+      "pinned raw cost annualization once",
+      "wind-only network preservation without model construction",
+      "seven-zone/six-scenario/two-family case grain",
+      "selected-cell identity and no cross-zone allocation",
+      "8760-hour chronology and effective-profile reconstruction",
+      "fail-closed blocked promotion",
+      "unrelaxed materiality limits",
+      "retained cached class and sequential-phase gates",
+      "fail-closed final checkpoint and independent-verification preconditions"
+    ]
+  },
+  "manifest": "qa\\final_methodology_closure\\wind\\NATIVE_CELL_WIND_OUTPUT_MANIFEST.csv",
+  "manifest_sha256": "46ab5d8df4b94cd568fb95a97034d06146c122416cd4b28aa0bec9692137b4c6",
+  "manifest_members": 55,
+  "parent_hash_changes": 0,
+  "W_successors_created": 0,
+  "handoff": "docs\\final_methodology_closure\\MEM_FINAL_METHODOLOGY_PHASE_W_NATIVE_CELL_HANDOFF.md",
+  "handoff_sha256": "ea4eab57a0d2df921cd7bfa1a5059f08c5096e396a234e04362cb2c0361a071c",
+  "optimization_model_constructed": false,
+  "production_optimization_executed": false,
+  "production_solver_invocations": 0,
+  "production_results_modified": 0,
+  "production_state": "PRODUCTION_NOT_EXECUTED"
+}

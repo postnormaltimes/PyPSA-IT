@@ -1,0 +1,690 @@
+{
+  "schema": "MEM_2040_BASE_FINAL_V1_REGRESSION_V1",
+  "status": "TECHNICALLY_VERIFIED_REFERENCE",
+  "analytical_acceptance": "ORIGINAL_MANUAL_REVIEW_STATUS_PRESERVED",
+  "case": "2040_Base_final_v1",
+  "verifications": {
+    "VERIFY_REFERENCE": {
+      "job_id": "FINAL_V1_UC2_2040_BASE_8760H_POST_P2X_CONTINUOUS_REFERENCE",
+      "load_shedding_MWh": 0.0,
+      "maximum_absolute_balance_residual_TWh": 1.2434497875801753e-14,
+      "objective_EUR": 11610561336.546299,
+      "p2x_by_zone_MWh": {
+        "CALA": 959905.6603774126,
+        "CNOR": 2611635.220125569,
+        "CSUD": 3709905.660377557,
+        "NORD": 14986635.220126677,
+        "SARD": 691823.8993710903,
+        "SICI": 1928459.1194967022,
+        "SUD": 2611635.220125569
+      },
+      "scenario": "Base",
+      "solved_sha256": "f60ee7ed3477acbd33760df1a4ba024f791168703b1e0d1630ba17f84b99685f",
+      "status": "PASS",
+      "year": 2040
+    },
+    "VERIFY_UC": {
+      "job_id": "FINAL_V1_UC2_2040_BASE_8760H_UC_MILP",
+      "load_shedding_MWh": 0.0,
+      "maximum_absolute_balance_residual_TWh": 1.5987211554602254e-14,
+      "mip_gap": 6.774362377333754e-05,
+      "objective_EUR": 11762343757.281279,
+      "p2x_by_zone_MWh": {
+        "CALA": 959905.6603774126,
+        "CNOR": 2611635.220125569,
+        "CSUD": 3709905.6603775574,
+        "NORD": 14986635.220126681,
+        "SARD": 691823.8993710903,
+        "SICI": 1928459.1194967022,
+        "SUD": 2611635.220125569
+      },
+      "price_recovery_authorized": true,
+      "scenario": "Base",
+      "solved_sha256": "828bf1eb7353d5e9652e2ccc5d5dbd0451067ef16ea144fb504008f86d40e103",
+      "status": "PASS",
+      "synthetic_units": 108,
+      "year": 2040
+    },
+    "VERIFY_PRICE": {
+      "absolute_objective_difference_EUR": 0.010736465454101562,
+      "actual_transition_trajectories_equal": true,
+      "binary_variables": 0,
+      "fixed_commitment_lp_objective_EUR": 11762343757.292015,
+      "integer_variables": 0,
+      "job_id": "FINAL_V1_UC2_2040_BASE_8760H_FIXED_COMMITMENT_PRICE_LP",
+      "max_raw_commitment_difference": {
+        "shut_down": 0.0,
+        "start_up": 0.0,
+        "status": 0.0
+      },
+      "milp_objective_EUR": 11762343757.281279,
+      "milp_solved_sha256": "828bf1eb7353d5e9652e2ccc5d5dbd0451067ef16ea144fb504008f86d40e103",
+      "price_label": "FIXED_COMMITMENT_MARGINAL_PRICE",
+      "price_zone_hours": 61320,
+      "relative_objective_difference": 9.12782832711834e-13,
+      "scenario": "Base",
+      "solved_sha256": "cd313232c713bb864c78d98a7c06b748bac34d54d8ccca79fc889ba203016574",
+      "status": "PASS",
+      "water_value_completeness": {
+        "UC_MILP_solved_sha256": "828bf1eb7353d5e9652e2ccc5d5dbd0451067ef16ea144fb504008f86d40e103",
+        "active_raw_constraint_coverage_verified": true,
+        "assigned_values_equal_raw_duals": true,
+        "assignment_flag": "assign_all_duals=true",
+        "cyclic_predecessor": "Final output state precedes first snapshot; first and last output states need not equal.",
+        "finite_count": 175200,
+        "fixed_commitment_LP_solved_sha256": "cd313232c713bb864c78d98a7c06b748bac34d54d8ccca79fc889ba203016574",
+        "missing_values_filled": false,
+        "objective_snapshot_weight_division": false,
+        "optimization_model_constructed": false,
+        "physical_operation_authority": "UC_MILP",
+        "production_optimization_executed": false,
+        "production_solver_invocations": 0,
+        "raw_constraint": "Store-energy_balance",
+        "raw_coverage_sha256": "17bf935525aa0de8e709c542b97b20e9a9f6ad0b58a8320d16b6cff55fdbd6c2",
+        "schema_version": "MEM_NATIVE_HYDRO_WATER_VALUES_V1",
+        "sign_convention": "RAW_NATIVE_STORE_ENERGY_BALANCE_DUAL_SIGN_PRESERVED",
+        "snapshot_count": 8760,
+        "source_api": "n.stores_t.mu_energy_balance",
+        "status": "PASS",
+        "stores_count": 20,
+        "units": "EUR/MWh_water",
+        "water_value_authority": "FIXED_COMMITMENT_PRICE_LP"
+      },
+      "year": 2040
+    }
+  },
+  "tables": [
+    {
+      "path": "CANONICAL/statistics/annual_electrical_balance_by_zone.csv",
+      "sha256": "8d08aab8a19d3669331f2176deea3f0bf105356b041dd1706ddbc54421860c19",
+      "keys": [
+        "zone"
+      ],
+      "rows": [
+        {
+          "zone": "CALA",
+          "primary_generation_TWh": "15.7128684428",
+          "bess_discharge_TWh": "2.55339486574",
+          "phs_discharge_TWh": "0",
+          "storage_phs_discharge_TWh": "2.55339486574",
+          "net_imports_TWh": "-0.105572996503",
+          "load_shedding_TWh": "0",
+          "rigid_end_use_demand_TWh": "14.3636792453",
+          "p2x_electrical_consumption_TWh": "0.959905660377",
+          "gross_end_use_demand_TWh": "15.3235849057",
+          "bess_charging_TWh": "2.83710540638",
+          "phs_charging_TWh": "0",
+          "storage_phs_charging_TWh": "2.83710540638",
+          "balance_residual_TWh": "-2.6645352591e-15",
+          "balance_tolerance_TWh": "1e-06",
+          "balance_check_status": "PASS",
+          "link_efficiency_convention": "DISCHARGE_DELIVERED_AT_BUS1_MINUS_P1|CHARGING_WITHDRAWAL_AT_BUS0_P0"
+        },
+        {
+          "zone": "CNOR",
+          "primary_generation_TWh": "23.1861313143",
+          "bess_discharge_TWh": "1.30274851227",
+          "phs_discharge_TWh": "0",
+          "storage_phs_discharge_TWh": "1.30274851227",
+          "net_imports_TWh": "18.649813489",
+          "load_shedding_TWh": "0",
+          "rigid_end_use_demand_TWh": "39.0795597484",
+          "p2x_electrical_consumption_TWh": "2.61163522013",
+          "gross_end_use_demand_TWh": "41.6911949686",
+          "bess_charging_TWh": "1.44749834696",
+          "phs_charging_TWh": "0",
+          "storage_phs_charging_TWh": "1.44749834696",
+          "balance_residual_TWh": "-1.59872115546e-14",
+          "balance_tolerance_TWh": "1e-06",
+          "balance_check_status": "PASS",
+          "link_efficiency_convention": "DISCHARGE_DELIVERED_AT_BUS1_MINUS_P1|CHARGING_WITHDRAWAL_AT_BUS0_P0"
+        },
+        {
+          "zone": "CSUD",
+          "primary_generation_TWh": "48.6198462045",
+          "bess_discharge_TWh": "6.44195100745",
+          "phs_discharge_TWh": "3.14897055013",
+          "storage_phs_discharge_TWh": "9.59092155758",
+          "net_imports_TWh": "9.94500615918",
+          "load_shedding_TWh": "0",
+          "rigid_end_use_demand_TWh": "55.5136792453",
+          "p2x_electrical_consumption_TWh": "3.70990566038",
+          "gross_end_use_demand_TWh": "59.2235849057",
+          "bess_charging_TWh": "7.15772334161",
+          "phs_charging_TWh": "1.77446567402",
+          "storage_phs_charging_TWh": "8.93218901563",
+          "balance_residual_TWh": "2.44249065418e-15",
+          "balance_tolerance_TWh": "1e-06",
+          "balance_check_status": "PASS",
+          "link_efficiency_convention": "DISCHARGE_DELIVERED_AT_BUS1_MINUS_P1|CHARGING_WITHDRAWAL_AT_BUS0_P0"
+        },
+        {
+          "zone": "NORD",
+          "primary_generation_TWh": "134.006820684",
+          "bess_discharge_TWh": "4.23946607027",
+          "phs_discharge_TWh": "9.74197359929",
+          "storage_phs_discharge_TWh": "13.9814396696",
+          "net_imports_TWh": "100.730766727",
+          "load_shedding_TWh": "0",
+          "rigid_end_use_demand_TWh": "224.254559748",
+          "p2x_electrical_consumption_TWh": "14.9866352201",
+          "gross_end_use_demand_TWh": "239.241194969",
+          "bess_charging_TWh": "4.71051785585",
+          "phs_charging_TWh": "4.76731425631",
+          "storage_phs_charging_TWh": "9.47783211216",
+          "balance_residual_TWh": "-1.06581410364e-14",
+          "balance_tolerance_TWh": "1e-06",
+          "balance_check_status": "PASS",
+          "link_efficiency_convention": "DISCHARGE_DELIVERED_AT_BUS1_MINUS_P1|CHARGING_WITHDRAWAL_AT_BUS0_P0"
+        },
+        {
+          "zone": "SARD",
+          "primary_generation_TWh": "27.7799077998",
+          "bess_discharge_TWh": "5.51223098085",
+          "phs_discharge_TWh": "0.57512455666",
+          "storage_phs_discharge_TWh": "6.08735553751",
+          "net_imports_TWh": "-16.5389798555",
+          "load_shedding_TWh": "0",
+          "rigid_end_use_demand_TWh": "10.3522012579",
+          "p2x_electrical_consumption_TWh": "0.691823899371",
+          "gross_end_use_demand_TWh": "11.0440251572",
+          "bess_charging_TWh": "6.12470108984",
+          "phs_charging_TWh": "0.159557234742",
+          "storage_phs_charging_TWh": "6.28425832458",
+          "balance_residual_TWh": "-6.02295990859e-15",
+          "balance_tolerance_TWh": "1e-06",
+          "balance_check_status": "PASS",
+          "link_efficiency_convention": "DISCHARGE_DELIVERED_AT_BUS1_MINUS_P1|CHARGING_WITHDRAWAL_AT_BUS0_P0"
+        },
+        {
+          "zone": "SICI",
+          "primary_generation_TWh": "44.2129188541",
+          "bess_discharge_TWh": "8.59865995104",
+          "phs_discharge_TWh": "0.416008484779",
+          "storage_phs_discharge_TWh": "9.01466843582",
+          "net_imports_TWh": "-12.3335747405",
+          "load_shedding_TWh": "0",
+          "rigid_end_use_demand_TWh": "28.8567610063",
+          "p2x_electrical_consumption_TWh": "1.9284591195",
+          "gross_end_use_demand_TWh": "30.7852201258",
+          "bess_charging_TWh": "9.55406661227",
+          "phs_charging_TWh": "0.554725811328",
+          "storage_phs_charging_TWh": "10.1087924236",
+          "balance_residual_TWh": "7.77156117238e-16",
+          "balance_tolerance_TWh": "1e-06",
+          "balance_check_status": "PASS",
+          "link_efficiency_convention": "DISCHARGE_DELIVERED_AT_BUS1_MINUS_P1|CHARGING_WITHDRAWAL_AT_BUS0_P0"
+        },
+        {
+          "zone": "SUD",
+          "primary_generation_TWh": "77.4163373067",
+          "bess_discharge_TWh": "11.0003984251",
+          "phs_discharge_TWh": "0",
+          "storage_phs_discharge_TWh": "11.0003984251",
+          "net_imports_TWh": "-34.5028758464",
+          "load_shedding_TWh": "0",
+          "rigid_end_use_demand_TWh": "39.0795597484",
+          "p2x_electrical_consumption_TWh": "2.61163522013",
+          "gross_end_use_demand_TWh": "41.6911949686",
+          "bess_charging_TWh": "12.2226649168",
+          "phs_charging_TWh": "0",
+          "storage_phs_charging_TWh": "12.2226649168",
+          "balance_residual_TWh": "1.7763568394e-15",
+          "balance_tolerance_TWh": "1e-06",
+          "balance_check_status": "PASS",
+          "link_efficiency_convention": "DISCHARGE_DELIVERED_AT_BUS1_MINUS_P1|CHARGING_WITHDRAWAL_AT_BUS0_P0"
+        }
+      ]
+    },
+    {
+      "path": "CANONICAL/statistics/annual_electricity_supply_national.csv",
+      "sha256": "15acf126ba341421d5048f591ccb2c3aac866e599a776ab48c59ea2fda9c109d",
+      "keys": [
+        "display_technology",
+        "supply_role"
+      ],
+      "rows": [
+        {
+          "display_technology": "Solar PV - rooftop",
+          "supply_role": "PRIMARY_GENERATION",
+          "annual_electricity_supply_TWh": "54.8726100782"
+        },
+        {
+          "display_technology": "Solar PV - utility",
+          "supply_role": "PRIMARY_GENERATION",
+          "annual_electricity_supply_TWh": "108.591022577"
+        },
+        {
+          "display_technology": "Onshore wind",
+          "supply_role": "PRIMARY_GENERATION",
+          "annual_electricity_supply_TWh": "64.354659391"
+        },
+        {
+          "display_technology": "Offshore wind",
+          "supply_role": "PRIMARY_GENERATION",
+          "annual_electricity_supply_TWh": "36.3394943775"
+        },
+        {
+          "display_technology": "Hydro - run of river",
+          "supply_role": "PRIMARY_GENERATION",
+          "annual_electricity_supply_TWh": "16.4955687172"
+        },
+        {
+          "display_technology": "Hydro - basin/pondage",
+          "supply_role": "PRIMARY_GENERATION",
+          "annual_electricity_supply_TWh": "13.6097775128"
+        },
+        {
+          "display_technology": "Hydro - reservoir",
+          "supply_role": "PRIMARY_GENERATION",
+          "annual_electricity_supply_TWh": "12.9669602758"
+        },
+        {
+          "display_technology": "PHS",
+          "supply_role": "PHS_DISCHARGE",
+          "annual_electricity_supply_TWh": "13.8820771909"
+        },
+        {
+          "display_technology": "BESS",
+          "supply_role": "BESS_DISCHARGE",
+          "annual_electricity_supply_TWh": "39.6488498128"
+        },
+        {
+          "display_technology": "Gas - CCGT",
+          "supply_role": "PRIMARY_GENERATION",
+          "annual_electricity_supply_TWh": "39.5917708433"
+        },
+        {
+          "display_technology": "Gas - internal combustion",
+          "supply_role": "PRIMARY_GENERATION",
+          "annual_electricity_supply_TWh": "0.0103370236547"
+        },
+        {
+          "display_technology": "Bioenergy - internal combustion",
+          "supply_role": "PRIMARY_GENERATION",
+          "annual_electricity_supply_TWh": "11.346854373"
+        },
+        {
+          "display_technology": "Bioenergy - steam thermal",
+          "supply_role": "PRIMARY_GENERATION",
+          "annual_electricity_supply_TWh": "6.47776909465"
+        },
+        {
+          "display_technology": "Bioenergy - other thermal",
+          "supply_role": "PRIMARY_GENERATION",
+          "annual_electricity_supply_TWh": "0.522733282876"
+        },
+        {
+          "display_technology": "Geothermal",
+          "supply_role": "PRIMARY_GENERATION",
+          "annual_electricity_supply_TWh": "5.75527305946"
+        }
+      ]
+    },
+    {
+      "path": "CANONICAL/statistics/annual_storage_phs_charging_by_zone.csv",
+      "sha256": "a987052aeefd146a40a5ac80f39ce54b025e2ac5c5b3c66a75d1ff61b955447f",
+      "keys": [
+        "zone"
+      ],
+      "rows": [
+        {
+          "zone": "CALA",
+          "charging_role": "BESS_CHARGING",
+          "component": "Link charging withdrawal at bus0 (p0)",
+          "annual_charging_TWh": "2.83710540638"
+        },
+        {
+          "zone": "CNOR",
+          "charging_role": "BESS_CHARGING",
+          "component": "Link charging withdrawal at bus0 (p0)",
+          "annual_charging_TWh": "1.44749834696"
+        },
+        {
+          "zone": "CSUD",
+          "charging_role": "BESS_CHARGING",
+          "component": "Link charging withdrawal at bus0 (p0)",
+          "annual_charging_TWh": "7.15772334161"
+        },
+        {
+          "zone": "CSUD",
+          "charging_role": "PHS_CHARGING",
+          "component": "Link charging withdrawal at bus0 (p0)",
+          "annual_charging_TWh": "1.77446567402"
+        },
+        {
+          "zone": "NORD",
+          "charging_role": "BESS_CHARGING",
+          "component": "Link charging withdrawal at bus0 (p0)",
+          "annual_charging_TWh": "4.71051785585"
+        },
+        {
+          "zone": "NORD",
+          "charging_role": "PHS_CHARGING",
+          "component": "Link charging withdrawal at bus0 (p0)",
+          "annual_charging_TWh": "4.76731425631"
+        },
+        {
+          "zone": "SARD",
+          "charging_role": "BESS_CHARGING",
+          "component": "Link charging withdrawal at bus0 (p0)",
+          "annual_charging_TWh": "6.12470108984"
+        },
+        {
+          "zone": "SARD",
+          "charging_role": "PHS_CHARGING",
+          "component": "Link charging withdrawal at bus0 (p0)",
+          "annual_charging_TWh": "0.159557234742"
+        },
+        {
+          "zone": "SICI",
+          "charging_role": "BESS_CHARGING",
+          "component": "Link charging withdrawal at bus0 (p0)",
+          "annual_charging_TWh": "9.55406661227"
+        },
+        {
+          "zone": "SICI",
+          "charging_role": "PHS_CHARGING",
+          "component": "Link charging withdrawal at bus0 (p0)",
+          "annual_charging_TWh": "0.554725811328"
+        },
+        {
+          "zone": "SUD",
+          "charging_role": "BESS_CHARGING",
+          "component": "Link charging withdrawal at bus0 (p0)",
+          "annual_charging_TWh": "12.2226649168"
+        }
+      ]
+    },
+    {
+      "path": "p2x_annual_by_zone.csv",
+      "sha256": "7a6d86ebcb79d9cdc011e4f0474f908a1b4bb5b599120ab2fc01e45418b17876",
+      "keys": [
+        "zone"
+      ],
+      "rows": [
+        {
+          "zone": "CALA",
+          "consumption_MWh": "959905.6603774126",
+          "power_cap_MW": "258.301886792452"
+        },
+        {
+          "zone": "CNOR",
+          "consumption_MWh": "2611635.220125569",
+          "power_cap_MW": "702.767295597484"
+        },
+        {
+          "zone": "CSUD",
+          "consumption_MWh": "3709905.6603775574",
+          "power_cap_MW": "998.301886792453"
+        },
+        {
+          "zone": "NORD",
+          "consumption_MWh": "14986635.220126681",
+          "power_cap_MW": "4032.76729559748"
+        },
+        {
+          "zone": "SARD",
+          "consumption_MWh": "691823.8993710903",
+          "power_cap_MW": "186.163522012579"
+        },
+        {
+          "zone": "SICI",
+          "consumption_MWh": "1928459.1194967022",
+          "power_cap_MW": "518.930817610063"
+        },
+        {
+          "zone": "SUD",
+          "consumption_MWh": "2611635.220125569",
+          "power_cap_MW": "702.767295597484"
+        }
+      ]
+    },
+    {
+      "path": "commitment_events_by_technology.csv",
+      "sha256": "ad80106ac4e05eff6b832ba2f337390aacb7496f9ce49e994a727af68acb971f",
+      "keys": [
+        "carrier"
+      ],
+      "rows": [
+        {
+          "carrier": "bioenergy_steam_other_surviving",
+          "actual_starts": "259",
+          "actual_shutdowns": "259",
+          "raw_starts": "259.0",
+          "raw_shutdowns": "259.0"
+        },
+        {
+          "carrier": "methane_ccgt",
+          "actual_starts": "1213",
+          "actual_shutdowns": "1291",
+          "raw_starts": "1213.0",
+          "raw_shutdowns": "1487.0"
+        },
+        {
+          "carrier": "methane_gt_ocgt",
+          "actual_starts": "0",
+          "actual_shutdowns": "16",
+          "raw_starts": "0.0",
+          "raw_shutdowns": "140160.0"
+        }
+      ]
+    },
+    {
+      "path": "zonal_price_statistics.csv",
+      "sha256": "bde5d9526597f9370d838bd535fa47b2c7d27b00def4cc722dccbc58a47132b6",
+      "keys": [
+        "zone"
+      ],
+      "rows": [
+        {
+          "zone": "CALA",
+          "arithmetic_mean_EUR_MWh": "79.01139970435463",
+          "rigid_load_weighted_mean_EUR_MWh": "79.62976365439671",
+          "median_EUR_MWh": "100.32316771590001",
+          "p5_EUR_MWh": "0.0",
+          "p95_EUR_MWh": "110.58763851851853",
+          "p99_EUR_MWh": "111.47018635100002",
+          "minimum_EUR_MWh": "0.0",
+          "maximum_EUR_MWh": "140.039374545455",
+          "zero_price_hours": "1523",
+          "negative_price_hours": "0",
+          "hours_above_500_EUR_MWh": "0"
+        },
+        {
+          "zone": "CNOR",
+          "arithmetic_mean_EUR_MWh": "89.97738912687622",
+          "rigid_load_weighted_mean_EUR_MWh": "90.31566641663974",
+          "median_EUR_MWh": "105.065486101695",
+          "p5_EUR_MWh": "0.0",
+          "p95_EUR_MWh": "110.58763851851853",
+          "p99_EUR_MWh": "116.73942900188335",
+          "minimum_EUR_MWh": "0.0",
+          "maximum_EUR_MWh": "140.039374545455",
+          "zero_price_hours": "559",
+          "negative_price_hours": "0",
+          "hours_above_500_EUR_MWh": "0"
+        },
+        {
+          "zone": "CSUD",
+          "arithmetic_mean_EUR_MWh": "80.10824421508441",
+          "rigid_load_weighted_mean_EUR_MWh": "80.77004532588211",
+          "median_EUR_MWh": "100.32316771590001",
+          "p5_EUR_MWh": "0.0",
+          "p95_EUR_MWh": "110.58763851851853",
+          "p99_EUR_MWh": "111.47018635100002",
+          "minimum_EUR_MWh": "0.0",
+          "maximum_EUR_MWh": "140.039374545455",
+          "zero_price_hours": "1435",
+          "negative_price_hours": "0",
+          "hours_above_500_EUR_MWh": "0"
+        },
+        {
+          "zone": "NORD",
+          "arithmetic_mean_EUR_MWh": "91.73242036523644",
+          "rigid_load_weighted_mean_EUR_MWh": "92.21358062913603",
+          "median_EUR_MWh": "105.065486101695",
+          "p5_EUR_MWh": "25.163444444444444",
+          "p95_EUR_MWh": "110.58763851851853",
+          "p99_EUR_MWh": "116.73942900188335",
+          "minimum_EUR_MWh": "0.0",
+          "maximum_EUR_MWh": "140.039374545455",
+          "zero_price_hours": "307",
+          "negative_price_hours": "0",
+          "hours_above_500_EUR_MWh": "0"
+        },
+        {
+          "zone": "SARD",
+          "arithmetic_mean_EUR_MWh": "61.75681257283159",
+          "rigid_load_weighted_mean_EUR_MWh": "62.232276714416926",
+          "median_EUR_MWh": "94.55893749152548",
+          "p5_EUR_MWh": "0.0",
+          "p95_EUR_MWh": "110.58763851851853",
+          "p99_EUR_MWh": "111.47018635100002",
+          "minimum_EUR_MWh": "0.0",
+          "maximum_EUR_MWh": "140.039374545455",
+          "zero_price_hours": "3113",
+          "negative_price_hours": "0",
+          "hours_above_500_EUR_MWh": "0"
+        },
+        {
+          "zone": "SICI",
+          "arithmetic_mean_EUR_MWh": "77.28866361385515",
+          "rigid_load_weighted_mean_EUR_MWh": "77.9527225163594",
+          "median_EUR_MWh": "99.52887466666671",
+          "p5_EUR_MWh": "0.0",
+          "p95_EUR_MWh": "110.58763851851853",
+          "p99_EUR_MWh": "111.47018635100002",
+          "minimum_EUR_MWh": "0.0",
+          "maximum_EUR_MWh": "140.039374545455",
+          "zero_price_hours": "1700",
+          "negative_price_hours": "0",
+          "hours_above_500_EUR_MWh": "0"
+        },
+        {
+          "zone": "SUD",
+          "arithmetic_mean_EUR_MWh": "79.00861424970628",
+          "rigid_load_weighted_mean_EUR_MWh": "79.62820253254138",
+          "median_EUR_MWh": "100.32316771590001",
+          "p5_EUR_MWh": "0.0",
+          "p95_EUR_MWh": "110.58763851851853",
+          "p99_EUR_MWh": "111.47018635100002",
+          "minimum_EUR_MWh": "0.0",
+          "maximum_EUR_MWh": "140.039374545455",
+          "zero_price_hours": "1523",
+          "negative_price_hours": "0",
+          "hours_above_500_EUR_MWh": "0"
+        }
+      ]
+    },
+    {
+      "path": "ROR_WATER_BYPASS_AND_ELECTRICAL_GENERATION_ANNUAL.csv",
+      "sha256": "0884346912f47d53e44931bd3a93fe592c699fd784f80f9c332e80b1dded0ed2",
+      "keys": [
+        "year",
+        "scenario",
+        "zone"
+      ],
+      "rows": [
+        {
+          "year": "2040",
+          "scenario": "Base",
+          "hydro_id": "2040_BASE_CALA_HYDRO_RUN_OF_RIVER",
+          "zone": "CALA",
+          "RAW_ROR_WATER_INFLOW_MWh_water": "321555.71398945164",
+          "TURBINE_CONVERTIBLE_ROR_WATER_MWh_water": "315257.29658530233",
+          "ROR_BYPASS_MWh_water": "6298.417404149379",
+          "ROR_ELECTRICAL_POTENTIAL_MWh": "283731.56692677207",
+          "ROR_ELECTRICAL_GENERATION_MWh": "247356.80550160434",
+          "ROR_ELECTRICAL_CURTAILMENT_MWh": "36374.761425167744"
+        },
+        {
+          "year": "2040",
+          "scenario": "Base",
+          "hydro_id": "2040_BASE_CNOR_HYDRO_RUN_OF_RIVER",
+          "zone": "CNOR",
+          "RAW_ROR_WATER_INFLOW_MWh_water": "630538.7754052228",
+          "TURBINE_CONVERTIBLE_ROR_WATER_MWh_water": "606817.4672124942",
+          "ROR_BYPASS_MWh_water": "23721.30819272851",
+          "ROR_ELECTRICAL_POTENTIAL_MWh": "546135.7204912449",
+          "ROR_ELECTRICAL_GENERATION_MWh": "522584.40148429404",
+          "ROR_ELECTRICAL_CURTAILMENT_MWh": "23551.319006950893"
+        },
+        {
+          "year": "2040",
+          "scenario": "Base",
+          "hydro_id": "2040_BASE_CSUD_HYDRO_RUN_OF_RIVER",
+          "zone": "CSUD",
+          "RAW_ROR_WATER_INFLOW_MWh_water": "1746653.113988356",
+          "TURBINE_CONVERTIBLE_ROR_WATER_MWh_water": "1705559.5154569019",
+          "ROR_BYPASS_MWh_water": "41093.59853145406",
+          "ROR_ELECTRICAL_POTENTIAL_MWh": "1535003.563911212",
+          "ROR_ELECTRICAL_GENERATION_MWh": "1393341.0987975425",
+          "ROR_ELECTRICAL_CURTAILMENT_MWh": "141662.46511366963"
+        },
+        {
+          "year": "2040",
+          "scenario": "Base",
+          "hydro_id": "2040_BASE_NORD_HYDRO_RUN_OF_RIVER",
+          "zone": "NORD",
+          "RAW_ROR_WATER_INFLOW_MWh_water": "15749491.840350984",
+          "TURBINE_CONVERTIBLE_ROR_WATER_MWh_water": "15749491.840350984",
+          "ROR_BYPASS_MWh_water": "0.0",
+          "ROR_ELECTRICAL_POTENTIAL_MWh": "14174542.656315885",
+          "ROR_ELECTRICAL_GENERATION_MWh": "14079631.17889056",
+          "ROR_ELECTRICAL_CURTAILMENT_MWh": "94911.47742532635"
+        },
+        {
+          "year": "2040",
+          "scenario": "Base",
+          "hydro_id": "2040_BASE_SARD_HYDRO_RUN_OF_RIVER",
+          "zone": "SARD",
+          "RAW_ROR_WATER_INFLOW_MWh_water": "114313.31004584182",
+          "TURBINE_CONVERTIBLE_ROR_WATER_MWh_water": "98773.57176625416",
+          "ROR_BYPASS_MWh_water": "15539.738279587662",
+          "ROR_ELECTRICAL_POTENTIAL_MWh": "88896.21458962874",
+          "ROR_ELECTRICAL_GENERATION_MWh": "66381.6105796835",
+          "ROR_ELECTRICAL_CURTAILMENT_MWh": "22514.604009945284"
+        },
+        {
+          "year": "2040",
+          "scenario": "Base",
+          "hydro_id": "2040_BASE_SICI_HYDRO_RUN_OF_RIVER",
+          "zone": "SICI",
+          "RAW_ROR_WATER_INFLOW_MWh_water": "95048.60132976704",
+          "TURBINE_CONVERTIBLE_ROR_WATER_MWh_water": "82600.70606243402",
+          "ROR_BYPASS_MWh_water": "12447.895267333031",
+          "ROR_ELECTRICAL_POTENTIAL_MWh": "74340.63545619062",
+          "ROR_ELECTRICAL_GENERATION_MWh": "68590.956268755",
+          "ROR_ELECTRICAL_CURTAILMENT_MWh": "5749.679187435739"
+        },
+        {
+          "year": "2040",
+          "scenario": "Base",
+          "hydro_id": "2040_BASE_SUD_HYDRO_RUN_OF_RIVER",
+          "zone": "SUD",
+          "RAW_ROR_WATER_INFLOW_MWh_water": "136797.36075454578",
+          "TURBINE_CONVERTIBLE_ROR_WATER_MWh_water": "132989.0002768858",
+          "ROR_BYPASS_MWh_water": "3808.3604776599714",
+          "ROR_ELECTRICAL_POTENTIAL_MWh": "119690.10024919722",
+          "ROR_ELECTRICAL_GENERATION_MWh": "117682.66564797032",
+          "ROR_ELECTRICAL_CURTAILMENT_MWh": "2007.4346012270412"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "inputs/reference_results/final_v1/2040/Base/QA/VERIFY_REFERENCE.json",
+      "sha256": "8b6b8d0d77b9eb7c866bc4b4e55c143708c09501c143696d3cffc91ad9eb9be2"
+    },
+    {
+      "path": "inputs/reference_results/final_v1/2040/Base/QA/VERIFY_UC.json",
+      "sha256": "92fc714a4fc066057d0f932cd8caaffc4fa02ff0e61f47c83bc7d261a30b723e"
+    },
+    {
+      "path": "inputs/reference_results/final_v1/2040/Base/QA/VERIFY_PRICE.json",
+      "sha256": "c5acb9e48898e1e820e991426631c514b846555c3eaeeef542168b8a2cfd17ce"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+model:
+  name: MEM Italy seven-zone fixed-capacity economic dispatch
+  architecture: independent_transport_model
+  timezone: UTC
+  zones: [NORD, CNOR, CSUD, SUD, CALA, SICI, SARD]
+  scenarios:
+    - {year: 2040, scenario: Slow}
+    - {year: 2040, scenario: Base}
+    - {year: 2040, scenario: High}
+    - {year: 2050, scenario: Slow}
+    - {year: 2050, scenario: Base}
+    - {year: 2050, scenario: High}
+  forbidden_features:
+    - capacity_expansion
+    - physical_italian_ac_lines
+    - unit_commitment
+    - redispatch
+    - reserve_cooptimization
+    - stage_1_stage_2_logic
+
+annual_demand_TWh:
+  2040_Slow: 439.0
+  2040_Base: 439.0
+  2040_High: 482.9
+  2050_Slow: 583.1
+  2050_Base: 583.1
+  2050_High: 641.41
+
+static_controls:
+  generator_rows: 723
+  carrier_rows: 19
+  storage_rows: 105
+  phs_energy_MWh: 53000.0
+  phs_pump_MW: 6400.0
+  phs_discharge_MW: 7252.3
+  phs_roundtrip_efficiency: 0.75
+  hydro_installed_MW: 23294.0
+

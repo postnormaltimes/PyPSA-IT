@@ -1,0 +1,323 @@
+{
+  "phase": "ETX-7B9F",
+  "gate": "ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_COMPLETE",
+  "status": "PASS",
+  "timestamp": "2026-09-20T14:28:05.572212Z",
+  "python_version": "3.11.15",
+  "pypsa_version": "1.2.3",
+  "linopy_version": "0.7.0",
+  "solver_version": "13.0.3",
+  "solver": "gurobi",
+  "input_manifests": [
+    {
+      "input_id": "b8d_2040_production_source",
+      "path": "qa/stage_a/etx7b8d/MEM_ETX7B8D_Run_Receipt_v1.0.json",
+      "observed_sha256": "C69ACBF941261BD37426EDCEDB1C14482977C2059427FEA1968008492E05F8C0",
+      "status": "PASS"
+    },
+    {
+      "input_id": "b9c_2050_R10_diagnostic",
+      "path": "qa/stage_a/etx7b9c/MEM_ETX7B9C_Run_Receipt_v1.0.json",
+      "observed_sha256": "1D741BD14C15E19443C04CABBC9E1A151771D0A84EEAE225F75B8A1247E758D1",
+      "status": "PASS"
+    },
+    {
+      "input_id": "b9d_2050_R5_diagnostic",
+      "path": "qa/stage_a/etx7b9d/MEM_ETX7B9D_Run_Receipt_v1.0.json",
+      "observed_sha256": "E032C63879BF294C99759C8097A7AA7BADB9F5477CA20E8992B07012C266B2E4",
+      "status": "PASS"
+    },
+    {
+      "input_id": "b9e_2050_placement_diagnostic",
+      "path": "qa/stage_a/etx7b9e/MEM_ETX7B9E_Run_Receipt_v1.0.json",
+      "observed_sha256": "98AE0FA50CF9E61C2F9EDA7018DEA434BD87DE547D7B8898FD5345D1B6D032C0",
+      "status": "PASS"
+    },
+    {
+      "input_id": "B9B_2050_BOUNDED_BASELINE",
+      "path": "qa/stage_a/etx7b9/MEM_ETX7B9_Run_Receipt_v1.0.json",
+      "observed_sha256": "0A8E80FD1A46F5F63E4E8D41C0C3DAEE05F70A529ADC7EE69842FFE434FC9D36",
+      "status": "PASS"
+    },
+    {
+      "input_id": "B6_2050_UNSOLVED_NETWORK",
+      "path": "stage_a_networks/2050/MEM_ETX7B6_2050_BASE_8760h_UNSOLVED.nc",
+      "observed_sha256": "06CC25DB50AD717AE27332A57168CB4DBFF38765703022CB05D3E5BA9943E4DE",
+      "status": "PASS"
+    }
+  ],
+  "command": "'source://mem-model/.venv/Scripts/python.exe' -m mem_model.stage_a.perimeter_closure_fr_r5_hybrid b9f --execute",
+  "outputs": {
+    "MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_SOLVED": "stage_a_results/2050_perimeter_closure_fr_r5_hybrid/MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_SOLVED.nc",
+    "MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_Market_Prices": "stage_a_results/2050_perimeter_closure_fr_r5_hybrid/MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_Market_Prices.parquet",
+    "MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_Generator_Dispatch": "stage_a_results/2050_perimeter_closure_fr_r5_hybrid/MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_Generator_Dispatch.parquet",
+    "MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_Store_State": "stage_a_results/2050_perimeter_closure_fr_r5_hybrid/MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_Store_State.parquet",
+    "MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_Link_Flows": "stage_a_results/2050_perimeter_closure_fr_r5_hybrid/MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_Link_Flows.parquet",
+    "MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_Load_Shedding": "stage_a_results/2050_perimeter_closure_fr_r5_hybrid/MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_Load_Shedding.parquet",
+    "MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_Hydro_Spill": "stage_a_results/2050_perimeter_closure_fr_r5_hybrid/MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_Hydro_Spill.parquet",
+    "MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_VRE_Curtailment": "stage_a_results/2050_perimeter_closure_fr_r5_hybrid/MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_VRE_Curtailment.parquet",
+    "manifest": "stage_a_results/2050_perimeter_closure_fr_r5_hybrid/MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_Result_Manifest_v1.0.csv",
+    "manifest_sha256": "DB802FBDB02B6DB69701A605FD5CA03F078161BCEFFF3B707B011FEC78AD79B0",
+    "raw_log": "qa/stage_a/etx7b9f/logs/MEM_ETX7B9F_raw.log",
+    "preparation_artifacts": [
+      "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_Virtual_Supply_Contract_v1.0.csv",
+      "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_FR_Percentile_Benchmarks_v1.0.csv",
+      "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_Preparation_QA_v1.0.json",
+      "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_Preparation_Manifest_v1.0.csv",
+      "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_Preparation_Final_Verification_v1.0.json"
+    ],
+    "diagnostics": {
+      "MEM_FR_R5_Hybrid_2050_Five_Way_System_Comparison_v1.0": "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_Five_Way_System_Comparison_v1.0.csv",
+      "MEM_FR_R5_Hybrid_2050_Exported_Market_Five_Way_Comparison_v1.0": "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_Exported_Market_Five_Way_Comparison_v1.0.csv",
+      "MEM_FR_R5_Hybrid_2050_Exported_Market_Aggregates_v1.0": "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_Exported_Market_Aggregates_v1.0.csv",
+      "MEM_FR_R5_Hybrid_2050_Exported_Market_Unique_Hours_v1.0": "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_Exported_Market_Unique_Hours_v1.0.csv",
+      "MEM_FR_R5_Hybrid_2050_Ordinary_Hour_Mask_Reuse_v1.0": "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_Ordinary_Hour_Mask_Reuse_v1.0.json",
+      "MEM_FR_R5_Hybrid_2050_Ordinary_Hour_Direct_Comparison_v1.0": "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_Ordinary_Hour_Direct_Comparison_v1.0.csv",
+      "MEM_FR_R5_Hybrid_2050_FR_Utilization_v1.0": "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_FR_Utilization_v1.0.csv",
+      "MEM_FR_R5_Hybrid_2050_FR_Utilization_Comparison_v1.0": "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_FR_Utilization_Comparison_v1.0.csv",
+      "MEM_FR_R5_Hybrid_2050_IT_Diagnostic_v1.0": "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_IT_Diagnostic_v1.0.csv",
+      "MEM_FR_R5_Hybrid_2050_Other_Market_Effects_v1.0": "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_Other_Market_Effects_v1.0.csv",
+      "MEM_FR_R5_Hybrid_2050_Residual_Scarcity_Headroom_v1.0": "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_Residual_Scarcity_Headroom_v1.0.csv",
+      "MEM_FR_R5_Hybrid_2050_Residual_Scarcity_Interface_States_v1.0": "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_Residual_Scarcity_Interface_States_v1.0.csv",
+      "MEM_FR_R5_Hybrid_2050_Delivery_Summary_v1.0": "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_Delivery_Summary_v1.0.json",
+      "MEM_FR_R5_Hybrid_2050_Interpretation_Control_v1.0": "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_Interpretation_Control_v1.0.json"
+    }
+  },
+  "qa": {
+    "preflight": {
+      "windows_user": "Research contributor",
+      "gurobipy_version": "13.0.3",
+      "linopy_gurobi_visible": true,
+      "licence_visible": true,
+      "tiny_lp_status": "OPTIMAL",
+      "tiny_lp_objective": 12.0,
+      "tiny_lp_x": 4.0,
+      "tiny_lp_y": 0.0
+    },
+    "structural_delta": {
+      "status": "PASS",
+      "year": 2050,
+      "baseline_counts": {
+        "snapshots": 8760,
+        "carriers": 46,
+        "buses": 40,
+        "loads": 10,
+        "generators": 104,
+        "links": 63,
+        "stores": 30,
+        "market_buses": 10,
+        "interconnectors": 12,
+        "load_shedding_generators": 10,
+        "storage_states": 30,
+        "water_state_buses": 18
+      },
+      "placement_counts": {
+        "snapshots": 8760,
+        "carriers": 47,
+        "buses": 40,
+        "loads": 10,
+        "generators": 109,
+        "links": 63,
+        "stores": 30,
+        "market_buses": 10,
+        "interconnectors": 12,
+        "load_shedding_generators": 10,
+        "storage_states": 30,
+        "water_state_buses": 18
+      },
+      "allowed_delta": {
+        "carriers": 1,
+        "generators": 5
+      },
+      "new_generators": [
+        "EXTERNAL_VIRTUAL_SUPPLY_FR_R10_2050",
+        "EXTERNAL_VIRTUAL_SUPPLY_GR_R10_2050",
+        "EXTERNAL_VIRTUAL_SUPPLY_TN_R10_2050",
+        "EXTERNAL_VIRTUAL_SUPPLY_AT_PLACEMENT_R10_2050",
+        "EXTERNAL_VIRTUAL_SUPPLY_SI_PLACEMENT_R10_2050"
+      ],
+      "proxy_markets": [
+        "FR",
+        "GR",
+        "TN",
+        "AT",
+        "SI"
+      ],
+      "excluded_market_virtual_supply_count": 0,
+      "baseline_component_preservation": "EXACT",
+      "diagnostic": "ETX-7B9F_FRANCE_ONLY_R5_HYBRID",
+      "B6_vs_B9F_component_delta": {
+        "carriers": 1,
+        "generators": 5
+      },
+      "B9E_vs_B9F_virtual_parameter_delta": {
+        "market": "FR",
+        "parameter": "p_nom_MW",
+        "delta_MW": 6266.118785757979
+      },
+      "all_other_B9E_virtual_parameters_preserved": true
+    },
+    "capacity_control": {
+      "classification": "FRANCE_ONLY_R5_HYBRID_PLACEMENT_DIAGNOSTIC",
+      "B9E_total_virtual_capacity_MW": 52212.17741474419,
+      "B9F_total_virtual_capacity_MW": 58478.29620050217,
+      "B9E_FR_capacity_MW": 34350.14308951057,
+      "B9F_FR_capacity_MW": 40616.26187526855,
+      "FR_delta_vs_B9E_MW": 6266.118785757979,
+      "changed_network_parameter_count": 1,
+      "changed_market": "FR",
+      "changed_parameter": "p_nom_MW",
+      "near_constant_capacity_test": false
+    },
+    "LP_assertions": {
+      "status": "PASS",
+      "all_generators_committable_false": true,
+      "all_links_committable_false": true,
+      "all_generator_p_nom_extendable_false": true,
+      "all_link_p_nom_extendable_false": true,
+      "all_store_e_nom_extendable_false": true,
+      "capacity_expansion": false,
+      "unit_commitment": false,
+      "linopy_model_assembled": true,
+      "linopy_variables": 2032320,
+      "linopy_constraints": 4152240,
+      "integer_variables": 0,
+      "binary_variables": 0,
+      "continuous_linear_program_only": true,
+      "NumVars": 2032320,
+      "NumConstrs": 4152240,
+      "NumBinVars": 0,
+      "NumIntVars": 0
+    },
+    "post_solve": {
+      "solver_status": "ok",
+      "termination_condition": "optimal",
+      "snapshots": 8760,
+      "objective": 49710575943.666214,
+      "runtime_seconds": 233.80344489996787,
+      "balance": {
+        "max_abs_residual_MW": 6.275513442233205e-11
+      },
+      "load_shedding": {
+        "total_MWh": 814101.6048785178,
+        "max_MW": 30000.75146022287,
+        "max_local_load_cap_violation_MW": 0.0,
+        "max_negative_dispatch_violation_MW": 0.0
+      },
+      "price_statistics": {
+        "finite": true,
+        "min_EUR_per_MWh": 0.0,
+        "max_EUR_per_MWh": 15000.0,
+        "mean_EUR_per_MWh": 334.82476883424323
+      },
+      "storage_phs_checks": {
+        "state_min_violation_MWh": 0.0,
+        "state_max_violation_MWh": 0.0,
+        "cyclic_states": 30
+      },
+      "hydro_checks": {
+        "water_state_buses": 18,
+        "max_water_bus_balance_residual_MW": 1.8189894035458565e-12,
+        "fixed_natural_inflow_generators": 10,
+        "fixed_inflow_dispatch_deviation_MW": 0.0,
+        "fixed_inflow_expected_MWh_water": 104901748.09915464,
+        "fixed_inflow_dispatched_MWh_water": 104901748.09915464,
+        "inflow_limited_generators": 10,
+        "inflow_limited_cap_violation_MW": 0.0
+      },
+      "interconnector_flow_limit_checks": {
+        "physical_links": 12,
+        "max_limit_violation_MW": 0.0
+      },
+      "accepted": true,
+      "LP_assertions": {
+        "linopy_integer_variables": 0,
+        "linopy_binary_variables": 0,
+        "Gurobi_NumIntVars": 0,
+        "Gurobi_NumBinVars": 0
+      }
+    },
+    "comparisons": {
+      "comparison_cases": [
+        "B9B",
+        "R10",
+        "R5",
+        "B9E",
+        "B9F"
+      ],
+      "system_rows": 5,
+      "exported_market_rows": 40,
+      "ordinary_hour_mask": {
+        "status": "PASS_REUSED_WITHOUT_REGENERATION",
+        "definition": "B9B_TOTAL_TEN_MARKET_SHEDDING_LE_1E_6_MW_AND_B9B_ALL_TEN_MARKET_PRICES_LE_500_EUR_PER_MWH",
+        "ordinary_hours": 3020,
+        "mask_boolean_sha256": "B40ECF9B25D95A2E55A86E61A14EF78CF6FC62F455B8CEF9DA367BF733321F70",
+        "applied_unchanged_to": [
+          "B9B",
+          "R10",
+          "R5",
+          "B9E",
+          "B9F"
+        ],
+        "B9F_outcome_used_to_define_mask": false
+      },
+      "France_utilization_rows": 4,
+      "IT_diagnostic_rows": 5,
+      "automatic_economic_acceptance": false,
+      "production_price_acceptance": "PENDING_METHOD_REVIEW"
+    },
+    "technical_diagnostic_status": "TECHNICAL_FR_R5_HYBRID_DIAGNOSTIC_PASS",
+    "economic_methodological_acceptance": "PENDING_METHOD_REVIEW",
+    "production_price_source": false,
+    "automatic_successor_experiment": false,
+    "B10_2050_authorized": false,
+    "Stage_B_2050_authorized": false
+  },
+  "next_gate": "METHOD_REVIEW_REQUIRED_NO_AUTOMATIC_PRODUCTION_PROMOTION",
+  "runtime_seconds": 233.80344489996787,
+  "solver_status": "ok",
+  "termination_condition": "optimal",
+  "snapshots": 8760,
+  "objective": 49710575943.666214,
+  "balance": {
+    "max_abs_residual_MW": 6.275513442233205e-11
+  },
+  "load_shedding": {
+    "total_MWh": 814101.6048785178,
+    "max_MW": 30000.75146022287,
+    "max_local_load_cap_violation_MW": 0.0,
+    "max_negative_dispatch_violation_MW": 0.0
+  },
+  "price_statistics": {
+    "finite": true,
+    "min_EUR_per_MWh": 0.0,
+    "max_EUR_per_MWh": 15000.0,
+    "mean_EUR_per_MWh": 334.82476883424323
+  },
+  "storage_phs_checks": {
+    "state_min_violation_MWh": 0.0,
+    "state_max_violation_MWh": 0.0,
+    "cyclic_states": 30
+  },
+  "hydro_checks": {
+    "water_state_buses": 18,
+    "max_water_bus_balance_residual_MW": 1.8189894035458565e-12,
+    "fixed_natural_inflow_generators": 10,
+    "fixed_inflow_dispatch_deviation_MW": 0.0,
+    "fixed_inflow_expected_MWh_water": 104901748.09915464,
+    "fixed_inflow_dispatched_MWh_water": 104901748.09915464,
+    "inflow_limited_generators": 10,
+    "inflow_limited_cap_violation_MW": 0.0
+  },
+  "interconnector_flow_limit_checks": {
+    "physical_links": 12,
+    "max_limit_violation_MW": 0.0
+  },
+  "accepted": true,
+  "LP_assertions": {
+    "linopy_integer_variables": 0,
+    "linopy_binary_variables": 0,
+    "Gurobi_NumIntVars": 0,
+    "Gurobi_NumBinVars": 0
+  }
+}

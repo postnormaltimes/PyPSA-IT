@@ -1,0 +1,29 @@
+schema_version: MEM_FINAL_METHODOLOGY_EXECUTION_V1
+variant: final_v1
+result_root: results/final_methodology_v1
+network_receipt: qa/final_methodology_closure/final/FINAL_NETWORK_PREPARATION_RECEIPT.json
+final_verification: qa/final_methodology_closure/final/FINAL_VERIFICATION.json
+water_mapping: qa/final_methodology_closure/hydro/WATER_VALUE_STATE_MAPPING.csv
+manual_authorization:
+  2040_Slow: true
+  2040_Base: true
+  2040_High: true
+  2050_Slow: true
+  2050_Base: true
+  2050_High: true
+authorization_required: EXPLICIT_CASE_MANUAL_AUTHORIZATION
+solver_inherited_from: config/stage_b_uc2_execution.yaml
+solver:
+  name: gurobi
+  required_version: 13.0.3
+  options: {Threads: 1, Seed: 0}
+  include_objective_constant: false
+  adaptive_tuning: false
+  MIPGap_override: null
+no_automatic_execution: true
+water_values:
+  source: FIXED_COMMITMENT_PRICE_LP
+  assign_all_duals: true
+  raw_coverage_required: true
+  units: EUR/MWh_water
+  divide_by_objective_weight: false

@@ -1,0 +1,20 @@
+grain_key,source_row_count,source_row_numbers,values_MW,exact_duplicate_values,aggregated_MW,single_row_MW,duplicate_excess_sensitivity_MW
+2024 | Trentino-Alto Adige | Trento | Non cogenerative | Celle combustibili,2,103|114,0.038|0.038,true,0.076,0.038,0.038
+2024 | Trentino-Alto Adige | Trento | Cogenerative | Celle combustibili con cogenerazione,2,104|115,0.034|0.034,true,0.068,0.034,0.034
+2024 | Veneto | Padova | Cogenerative | Celle combustibili con cogenerazione,2,172|219,0.002|0.002,true,0.004,0.002,0.002
+2024 | Veneto | Treviso | Cogenerative | Celle combustibili con cogenerazione,2,238|245,0.002|0.002,true,0.004,0.002,0.002
+2024 | Emilia-Romagna | Bologna | Cogenerative | Celle combustibili con cogenerazione,2,352|361,0.32|0.32,true,0.64,0.32,0.32
+2024 | Emilia-Romagna | Modena | Cogenerative | Celle combustibili con cogenerazione,2,397|405,0.001|0.001,true,0.002,0.001,0.001
+2024 | Emilia-Romagna | Modena | Non cogenerative | Celle combustibili,2,398|406,1|1,true,2,1,1
+2024 | Friuli-Venezia Giulia | Udine | Non cogenerative | Celle combustibili,2,518|527,0.002|0.002,true,0.004,0.002,0.002
+2024 | Lombardia | Brescia | Cogenerative | Celle combustibili con cogenerazione,2,630|638,0.006|0.006,true,0.012,0.006,0.006
+2024 | Lombardia | Mantova | Cogenerative | Celle combustibili con cogenerazione,2,685|695,0.001|0.001,true,0.002,0.001,0.001
+2024 | Lombardia | Milano | Cogenerative | Celle combustibili con cogenerazione,2,711|720,0.016|0.016,true,0.032,0.016,0.016
+2024 | Lombardia | Milano | Non cogenerative | Celle combustibili,2,712|721,0.004|0.004,true,0.008,0.004,0.004
+2024 | Lombardia | Varese | Cogenerative | Celle combustibili con cogenerazione,2,766|783,0.007|0.007,true,0.014,0.007,0.007
+2024 | Marche | Ancona | Non cogenerative | Celle combustibili,2,789|792,0.009|0.009,true,0.018,0.009,0.009
+2024 | Marche | Macerata | Cogenerative | Celle combustibili con cogenerazione,2,845|851,0.001|0.001,true,0.002,0.001,0.001
+2024 | Piemonte | Cuneo | Cogenerative | Celle combustibili con cogenerazione,2,904|922,0.004|0.004,true,0.008,0.004,0.004
+2024 | Piemonte | Torino | Cogenerative | Celle combustibili con cogenerazione,2,937|949,0.004|0.004,true,0.008,0.004,0.004
+2024 | Puglia | Taranto | Cogenerative | Celle combustibili con cogenerazione,2,1039|1048,0.002|0.002,true,0.004,0.002,0.002
+2024 | Puglia | Taranto | Non cogenerative | Celle combustibili,2,1040|1049,0.002|0.002,true,0.004,0.002,0.002

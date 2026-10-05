@@ -1,0 +1,53 @@
+{
+  "pypsa_version": "1.2.3",
+  "native_sources": [
+    {
+      "module": "pypsa.optimization.constraints",
+      "path": "source://mem-model/.venv/Lib/site-packages/pypsa/optimization/constraints.py",
+      "sha256": "a0ac91b8ae8ca441a1fda48d64beb2d61b3b57f5fdead8d6009c85dd9cce5d48"
+    },
+    {
+      "module": "pypsa.optimization.global_constraints",
+      "path": "source://mem-model/.venv/Lib/site-packages/pypsa/optimization/global_constraints.py",
+      "sha256": "adff72edb9fd6ee6c8e691bf9765dfe8bc491ac8e3a07d3d814b7d621daed927"
+    },
+    {
+      "module": "pypsa.optimization.optimize",
+      "path": "source://mem-model/.venv/Lib/site-packages/pypsa/optimization/optimize.py",
+      "sha256": "48ed419e2403eba25cc79686c956bff03639786bd5f17c7e690d56f08865e64c"
+    },
+    {
+      "module": "pypsa.optimization.variables",
+      "path": "source://mem-model/.venv/Lib/site-packages/pypsa/optimization/variables.py",
+      "sha256": "507364a0489c68e0a958bf376228a703f2a3f53c462b8f19195ebd9adc86a3ea"
+    }
+  ],
+  "local_PyPSA_Eur_sources": [
+    {
+      "path": "source://pypsa-eur/data/powerplants/archive/0.8.1/powerplants.csv",
+      "sha256": "0bb395b298bdcbcb29526df20f2a97f3c3dde0768af6f754ff66ed26ad8ed703",
+      "authority": "ACCEPTED_H_LOCAL_SOURCE"
+    },
+    {
+      "path": "source://pypsa-eur/scripts/build_hydro_profile.py",
+      "sha256": "27d2ed07dd0e75f33f42e4854b30b8326dd3582d214a1ae053f4d10e59445976",
+      "authority": "ACCEPTED_H_LOCAL_SOURCE"
+    },
+    {
+      "path": "source://pypsa-eur/scripts/add_electricity.py",
+      "sha256": "026ea8b636e400e3ff706e53599ed6f5a810a1cf07dd0c0126202ae8da99280d",
+      "authority": "ACCEPTED_H_LOCAL_SOURCE"
+    }
+  ],
+  "MEM_manual_execution_source": {
+    "path": "src\\mem_model\\stage_b_uc2.py",
+    "sha256": "122c0f7e5b28295a963578e4a33a92d0901308cf4bf2928ed3c3941fdda344c2"
+  },
+  "API_checked_without_model_construction": true,
+  "future_fixed_price_path_inspected_not_executed": true,
+  "native_Store_balance": "e_t=(1-standing_loss)^w*e_previous-w*Store_p",
+  "Bus_dual_scaling": "post_processing divides Bus marginal_price by objective weights",
+  "Store_dual_scaling": "assign_duals copies raw Store-energy_balance dual; no Bus weight division",
+  "optimization_model_constructed": false,
+  "production_solver_invocations": 0
+}

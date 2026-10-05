@@ -1,0 +1,11 @@
+{
+  "pypsa_version": "1.2.3",
+  "negative_Link_p_min_pu_supported": true,
+  "schema_path": "source://mem-model/.venv/Lib/site-packages/pypsa/data/component_attrs/links.csv",
+  "schema_sha256": "fd4a6eac1a2615a2eea017fb1357a4a80e46bef5e09482bd5b4560942e6d5299",
+  "operational_constraints_path": "source://mem-model/.venv/Lib/site-packages/pypsa/optimization/constraints.py",
+  "operational_constraints_sha256": "a0ac91b8ae8ca441a1fda48d64beb2d61b3b57f5fdead8d6009c85dd9cce5d48",
+  "constraint_semantics": "p_nom * p_min_pu <= Link-p <= p_nom * p_max_pu",
+  "optimization_model_constructed": false,
+  "production_solver_invocations": 0
+}

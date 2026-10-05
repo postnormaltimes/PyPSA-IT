@@ -1,0 +1,1298 @@
+{
+  "schema_version": "MEM_FINAL_METHODOLOGY_CLOSURE_V1",
+  "state": "FINAL_CANONICAL_NETWORKS_PREPARED",
+  "controlling_spec": "docs\\final_methodology_closure\\MEM_FINAL_PREPRODUCTION_METHODOLOGY_CLOSURE_MASTER.md",
+  "controlling_spec_sha256": "5571714ef41bd9e385b99d44e188ccf6881a217e31d703f263774344f752e390",
+  "upstream_receipt": "qa\\stage_b\\zonal_vre_v1\\MEM_STAGE_B_ZONAL_VRE_PREPARATION_RECEIPT.json",
+  "upstream_receipt_sha256": "7381052ca83b211fc7a5758b6b0ff7fec356f2164a2acb3579e13b9613e6a90a",
+  "upstream_final_verification_sha256": "153793cca1522c42531f21961fb82986582fea5d8923fe61545d00dcbcb5e035",
+  "controlling_parents": [
+    {
+      "year": 2040,
+      "scenario": "Slow",
+      "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2040_SLOW_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+      "sha256": "a0c17596083c88c00967231ecd106b3ccf5558428bf70fa20053e2647731acb8"
+    },
+    {
+      "year": 2040,
+      "scenario": "Base",
+      "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2040_BASE_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+      "sha256": "611468aa6d8e8b0bfe50b8f17a3d80dcfcad71e82ef83ebee99d01dc617a4e7c"
+    },
+    {
+      "year": 2040,
+      "scenario": "High",
+      "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2040_HIGH_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+      "sha256": "b0dddf32d60477b11bdf9b3bfa37feabe8dd7e3b5c88e3254550e9dbf116d6d3"
+    },
+    {
+      "year": 2050,
+      "scenario": "Slow",
+      "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2050_SLOW_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+      "sha256": "e34aa5fbe8b293ace66f4aeef5c4826816410da111400fee42b14d1bcb04f396"
+    },
+    {
+      "year": 2050,
+      "scenario": "Base",
+      "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2050_BASE_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+      "sha256": "94b9685685e1c807cdf7079b7ee3cd19f1a4a4ec90d634bdf4f2d2dd80fb1f2d"
+    },
+    {
+      "year": 2050,
+      "scenario": "High",
+      "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2050_HIGH_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+      "sha256": "60a9f7f0a74b94657181e92b76ddc61ea7c5ca54d5fb2b28b0bb008ddf79ee60"
+    }
+  ],
+  "next_phase": null,
+  "phases": {
+    "W": {
+      "status": "PASS",
+      "controlling_parent_hashes": [
+        {
+          "year": 2040,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2040_SLOW_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+          "sha256": "a0c17596083c88c00967231ecd106b3ccf5558428bf70fa20053e2647731acb8"
+        },
+        {
+          "year": 2040,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2040_BASE_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+          "sha256": "611468aa6d8e8b0bfe50b8f17a3d80dcfcad71e82ef83ebee99d01dc617a4e7c"
+        },
+        {
+          "year": 2040,
+          "scenario": "High",
+          "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2040_HIGH_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+          "sha256": "b0dddf32d60477b11bdf9b3bfa37feabe8dd7e3b5c88e3254550e9dbf116d6d3"
+        },
+        {
+          "year": 2050,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2050_SLOW_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+          "sha256": "e34aa5fbe8b293ace66f4aeef5c4826816410da111400fee42b14d1bcb04f396"
+        },
+        {
+          "year": 2050,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2050_BASE_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+          "sha256": "94b9685685e1c807cdf7079b7ee3cd19f1a4a4ec90d634bdf4f2d2dd80fb1f2d"
+        },
+        {
+          "year": 2050,
+          "scenario": "High",
+          "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2050_HIGH_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+          "sha256": "60a9f7f0a74b94657181e92b76ddc61ea7c5ca54d5fb2b28b0bb008ddf79ee60"
+        }
+      ],
+      "created_artifacts": [
+        {
+          "path": "config\\final_methodology_closure.yaml",
+          "sha256": "43f53e21a59fa7e7743b15f8b5197d47292d723c13d774fec2e31ba44d214c64"
+        },
+        {
+          "path": "docs\\final_methodology_closure\\MEM_FINAL_METHODOLOGY_PHASE_W_HORIZON_COST_HANDOFF.md",
+          "sha256": "67e43d1031f88ddd71f9aa1d426fc150fe2db123b1daa54cf908eb131209c594"
+        },
+        {
+          "path": "docs\\final_methodology_closure\\MEM_FINAL_PREPRODUCTION_METHODOLOGY_CLOSURE_MASTER.md",
+          "sha256": "5571714ef41bd9e385b99d44e188ccf6881a217e31d703f263774344f752e390"
+        },
+        {
+          "path": "docs\\final_methodology_closure\\PHASE_W_HORIZON_COST_RESOLUTION.md",
+          "sha256": "c40b4e8b4b9d9e040061582acdb7c478f9a3b5613e4f2b4bd2cc529e21e8288d"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2040_BASE_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "33af192ec8ff6a15df30d9255a3fbfe9a3ad02cc61c8ac8cfed136b1270bc25f"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2040_HIGH_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "d6777f67ac578e73d6425199c8ba796d9272c1b1f67b3918c17d2df068a3d539"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2040_SLOW_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "8326cdcae22f87b8d4b41c012134a687dae1be64f7421ed4378201e26d9ded0e"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2050_BASE_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "de9946237582a0d33a037be33b76a8ff3773518c31e4038d66dc4962bc864540"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2050_HIGH_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "f1b400d13d9e1d20b5fd0affee3d2cab4336aaefa51d52c4f450249ceebc61dd"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2050_SLOW_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "d40ebe9ab0c71fa0acc0289aa19e4d6c449e4b29a5e5b505224457fb7a20e532"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\wind\\HORIZON_2040_AFFECTED_OUTPUT_INDEPENDENT_REVIEW.json",
+          "sha256": "084f940810b71d4755c917ff5aa18cb51d387928ca4b0999293055a856ebac0d"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\wind\\HORIZON_SPECIFIC_FINAL_WIND_PROFILE_QA.csv",
+          "sha256": "29c275ea0f76787066adca7b89907e9c90764072daefe113e3d261c1a95ec799"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\wind\\HORIZON_SPECIFIC_FINAL_WIND_VERIFICATION.json",
+          "sha256": "9b33d28329f22d2372fb538275d35889fd4ec74d81e42ca75f4512ba24ccc973"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\wind\\HORIZON_SPECIFIC_NATIVE_CELL_SITING_ALLOCATION.csv",
+          "sha256": "65493375562dae349a28e7b6485158ca9226aa9594a3d4b19c5e713abe1acf0f"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\wind\\HORIZON_SPECIFIC_WIND_SITING_RECEIPT.json",
+          "sha256": "c809c408173388f345784abd4f0b410eea9cd062c15b00c661eebe83dff15ebe"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\wind\\OFFSHORE_2040_AUTHORITY_VS_2050_PROXY.csv",
+          "sha256": "2d97ce1115fa263d6d6b24a7d29db161cba9c16148c803f14e640c4b92b4d38a"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\wind\\OFFSHORE_COST_AUTHORITY_2040_INDEPENDENT_REVIEW.json",
+          "sha256": "b298fc07748f856d82a97b572c63fd1ce3220cb44f7aa7c26500d557a6ba1ce9"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\wind\\OFFSHORE_COST_AUTHORITY_2040_RECEIPT.json",
+          "sha256": "754a2f9d9b18eef12524e400d1768ad1f1203ca6a3421a7f8fb3f7e2dd385297"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\wind\\OFFSHORE_COST_RANKING_ROBUSTNESS.csv",
+          "sha256": "0c03af1620ae2453d9a18ae7b9750150b7df151d6195723d27ca9802fb9a2bd1"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\wind\\WIND_SUCCESSOR_STRUCTURAL_QA.json",
+          "sha256": "dd76adeed8eb6797210ca3879dc1db77b9bd49d2fa581d0e4335fcec52c4c04c"
+        },
+        {
+          "path": "runtime_inputs\\final_methodology_closure\\wind\\horizon_cost_v1\\HORIZON_SPECIFIC_NATIVE_CELL_EFFECTIVE_WIND_2019.parquet",
+          "sha256": "9fd5704dbab52731e11c258048975a22f60be81813af00e26a2f87466f25a92a"
+        },
+        {
+          "path": "runtime_inputs\\final_methodology_closure\\wind\\horizon_cost_v1\\WIND_OFFSHORE_2040_SELECTED_NATIVE_CELL_PROFILES_2019.nc",
+          "sha256": "b2243932ebd0a35a855c79070a7efd625e3ad3d872e68e42e39bac435b5d91f6"
+        },
+        {
+          "path": "runtime_sources\\costs\\technology_data_v0.14.0\\compile_cost_assumptions.py",
+          "sha256": "8697e3dc0d4295819c0e2a5a06491ba42a87e771e77e8e04635e80ff33524fd2"
+        },
+        {
+          "path": "runtime_sources\\costs\\technology_data_v0.14.0\\config.yaml",
+          "sha256": "c7a14f597cdeb6aabddc7773e1fec83bbd7c8a8d853503aa11a305ad4cc92280"
+        },
+        {
+          "path": "runtime_sources\\costs\\technology_data_v0.14.0\\costs_2040.csv",
+          "sha256": "d1bd7ac0e1e0a59c21ea955375e4d19d31383a1095d3c9014c6de2c11bbb5b2c"
+        },
+        {
+          "path": "runtime_sources\\costs\\technology_data_v0.14.0\\tag_ref.json",
+          "sha256": "957bb0731aaccfd5266b97593457004256392e72d8ecab46b1a0850734923452"
+        },
+        {
+          "path": "src\\mem_model\\final_wind_cells.py",
+          "sha256": "85deb563afe85f76af82154ec28cc356fbee6153ed4f4be4e9162ea6ab752d98"
+        },
+        {
+          "path": "src\\mem_model\\final_wind_horizon_cost.py",
+          "sha256": "bf810405b5843389cc1b1114a90a611dc8401fb763f113a1a41258811dab63be"
+        },
+        {
+          "path": "tests\\test_final_wind_horizon_cost.py",
+          "sha256": "17613c169f998f43fb56eb2feca7c89056adcba6bb9b904ef81fc1084b5fb8bc"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\wind\\HORIZON_SPECIFIC_WIND_OUTPUT_MANIFEST.csv",
+          "sha256": "8b0ed4590e5a027e7c27d7eea4ad289c3ad992e63e09bc6e159eea3c6a5eaf27"
+        }
+      ],
+      "accepted_methodological_decisions": [
+        "DIRECT_PINNED_TECHNOLOGY_DATA_V0P14P0_2040_AND_2050_AUTHORITY",
+        "COMMON_NATIVE_CELL_FIXED_CAPACITY_SITE_LCOE",
+        "ALL_ONSHORE_AND_2050_PROFILES_UNCHANGED",
+        "RESOURCE_CLASSES_AND_COST_STRESS_RETAINED_AS_DIAGNOSTICS_NOT_GATES",
+        "WIND_ONLY_SCOPE_EXACT_AFTER_EXPORT_RELOAD"
+      ],
+      "tests": {
+        "passed": 36,
+        "failed": 0,
+        "observed_result": "36 passed in 11.95s"
+      },
+      "unresolved_items": [],
+      "updated_UTC": "2026-10-01T06:48:32.807554+00:00",
+      "production_optimization_executed": false,
+      "production_solver_invocations": 0,
+      "phase_result": "WIND_RESOURCE_SITING_PASS",
+      "successor_parents": [
+        {
+          "year": 2040,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2040_SLOW_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "8326cdcae22f87b8d4b41c012134a687dae1be64f7421ed4378201e26d9ded0e"
+        },
+        {
+          "year": 2040,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2040_BASE_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "33af192ec8ff6a15df30d9255a3fbfe9a3ad02cc61c8ac8cfed136b1270bc25f"
+        },
+        {
+          "year": 2040,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2040_HIGH_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "d6777f67ac578e73d6425199c8ba796d9272c1b1f67b3918c17d2df068a3d539"
+        },
+        {
+          "year": 2050,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2050_SLOW_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "d40ebe9ab0c71fa0acc0289aa19e4d6c449e4b29a5e5b505224457fb7a20e532"
+        },
+        {
+          "year": 2050,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2050_BASE_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "de9946237582a0d33a037be33b76a8ff3773518c31e4038d66dc4962bc864540"
+        },
+        {
+          "year": 2050,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2050_HIGH_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "f1b400d13d9e1d20b5fd0affee3d2cab4336aaefa51d52c4f450249ceebc61dd"
+        }
+      ],
+      "current_handoff": "docs\\final_methodology_closure\\MEM_FINAL_METHODOLOGY_PHASE_W_HORIZON_COST_HANDOFF.md",
+      "manifest": "qa\\final_methodology_closure\\wind\\HORIZON_SPECIFIC_WIND_OUTPUT_MANIFEST.csv",
+      "latest_combined_affected_tests": {
+        "passed": 45,
+        "failed": 0,
+        "observed_result": "45 passed in 9.12s",
+        "scope": "combined affected W horizon-cost/native-cell and H read-only shape/water tests",
+        "test_files": [
+          "test_final_hydro_audit.py",
+          "test_final_wind_horizon_cost.py",
+          "test_final_wind_cells.py",
+          "test_final_wind_cell_verification.py",
+          "test_final_methodology_closure.py"
+        ],
+        "optimization_model_constructed": false,
+        "solver_invocations": 0
+      }
+    },
+    "H": {
+      "status": "PASS",
+      "controlling_parent_hashes": [
+        {
+          "year": 2040,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2040_SLOW_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "8326cdcae22f87b8d4b41c012134a687dae1be64f7421ed4378201e26d9ded0e"
+        },
+        {
+          "year": 2040,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2040_BASE_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "33af192ec8ff6a15df30d9255a3fbfe9a3ad02cc61c8ac8cfed136b1270bc25f"
+        },
+        {
+          "year": 2040,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2040_HIGH_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "d6777f67ac578e73d6425199c8ba796d9272c1b1f67b3918c17d2df068a3d539"
+        },
+        {
+          "year": 2050,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2050_SLOW_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "d40ebe9ab0c71fa0acc0289aa19e4d6c449e4b29a5e5b505224457fb7a20e532"
+        },
+        {
+          "year": 2050,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2050_BASE_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "de9946237582a0d33a037be33b76a8ff3773518c31e4038d66dc4962bc864540"
+        },
+        {
+          "year": 2050,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2050_HIGH_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+          "sha256": "f1b400d13d9e1d20b5fd0affee3d2cab4336aaefa51d52c4f450249ceebc61dd"
+        }
+      ],
+      "created_artifacts": [
+        {
+          "path": "config\\final_hydro_spatial_v1.yaml",
+          "sha256": "3c41463ea408a038da21c66565db3fd193ee1a516f1a1067bc64a28124bca04f"
+        },
+        {
+          "path": "docs\\final_methodology_closure\\PHASE_H_ZONAL_RUNOFF_RESOLUTION.md",
+          "sha256": "4d4b39f079ea0ad000f8a785cfec5a7e3bc32149ad96fc1809a5de3b2925c994"
+        },
+        {
+          "path": "docs\\final_methodology_closure\\MEM_FINAL_METHODOLOGY_PHASE_H_ZONAL_RUNOFF_HANDOFF.md",
+          "sha256": "03c08c08ec0ed40b415316f28c933819f7768f57f809651c5e8fcdf98f706937"
+        },
+        {
+          "path": "src\\mem_model\\final_hydro_spatial.py",
+          "sha256": "9c5e606acfa7234f7a15f6dccd83d3c9e17fb047300f9ccc098d180058c2f570"
+        },
+        {
+          "path": "src\\mem_model\\reporting\\water_values.py",
+          "sha256": "694678fe9389bbba08cde148fa3d6a314aeca590afc9fb5b9ba62115bb4906a6"
+        },
+        {
+          "path": "tests\\test_final_hydro_spatial.py",
+          "sha256": "71d3cca7a42e75e645fa81d85f17c8f668a47c7d6c0a6e78e49bfdd2dee0dedc"
+        },
+        {
+          "path": "tests\\test_water_values.py",
+          "sha256": "9c58e60d7e33febd60af5edee45828ae2a8c0af4cc111c6d54c030e4f8a51baa"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\hydro\\HYDRO_FINAL_VERIFICATION.json",
+          "sha256": "2113c06efaac086f430ea957390d5f8cb59870236e7a4f7238cae0774e95f282"
+        },
+        {
+          "path": "runtime_inputs\\final_methodology_closure\\hydro\\zonal_runoff_v1\\ROR_ACCESSIBLE_AND_BYPASS_2019.parquet",
+          "sha256": "30467c1d0a14540bec4e4781a81b8ba8d21911e6f596f26f7d8fd900a50fb27a"
+        },
+        {
+          "path": "runtime_inputs\\final_methodology_closure\\hydro\\zonal_runoff_v1\\ZONAL_NATURAL_INFLOW_CANDIDATE_2019.parquet",
+          "sha256": "21c349e061b3e33b12aacf6114a1ab456c3211826626a5eea30b9e3f22dd263b"
+        },
+        {
+          "path": "runtime_inputs\\final_methodology_closure\\hydro\\zonal_runoff_v1\\ZONAL_RUNOFF_2019.parquet",
+          "sha256": "72ad8d87c372af50b1fd26b4e5215ef22787f0bdf6b2738f377350df72f6fdda"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\hydro\\ZONAL_RUNOFF_CONVERSION_RECEIPT.json",
+          "sha256": "43b1d567f2caaae20274ddfeb6a83424f7ab0de1eb761da71315cf88fb6c6063"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\hydro\\ZONAL_RUNOFF_TEMPORAL_QA.csv",
+          "sha256": "4f0d63ddc0840e54dec3495e089468726072814efd3b576385e8d028bbceed8e"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\hydro\\ZONAL_RUNOFF_PAIRWISE_QA.csv",
+          "sha256": "51100067d1ab47553b332b18c78e2f7f95b5b60b06d93fe9b350cd3ccdeacfb9"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\hydro\\ZONAL_RUNOFF_VS_IT2_IT4.csv",
+          "sha256": "4607909665c2f6cefe86cfd6f5a5c5efd8a92ab67730f1d5b772e5596d91856c"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\hydro\\ZONAL_HYDRO_ANNUAL_WATER_AND_POWER_QA.csv",
+          "sha256": "cd73afc3d1d91598865370d218a2a67228b0230bbbdb226139f69d79db419431"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\hydro\\ZONAL_ROR_POWER_COMPATIBILITY_CONFLICTS.csv",
+          "sha256": "3e76dd001ff6af53834b8950ff0491390cc38a248bc8e4baf3e717fc7381e37b"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\hydro\\ZONAL_HYDRO_CANDIDATE_WATER_QA_RECEIPT.json",
+          "sha256": "b6328c3cffdbc534d7f05eadc52088d1de24fbbdc8a5663e532aecdd45bd0730"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\hydro\\ROR_TURBINE_SATURATION_AUTHORITY_REVIEW.json",
+          "sha256": "a9ae5c220e821aa67c6095af465691cefb4cc0bd8a7f65735bc48eedbbefdf1b"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\hydro\\SPILL_SAFETY_CAP_CORRECTIONS.csv",
+          "sha256": "2990125a0e0c06e4ad650516e8fcb72aa377aac4711d0bc052923ff9ae56ab16"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\hydro\\EXPORTED_ANNUAL_WATER_RECONCILIATION.csv",
+          "sha256": "b16ebafae4b8c150a634428a624224ffb3993338a7c72b87cb47217945025f99"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\hydro\\ROR_TURBINE_ACCESSIBLE_AND_BYPASS_QA.csv",
+          "sha256": "36d0315e19e97379076453cc54a1e806f220067800195e0b9479a51ba78fec8d"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\hydro\\WATER_VALUE_STATE_MAPPING.csv",
+          "sha256": "f39bd0917b0ab22ac0ba77c7eed14dbca6dea8a64571451ad65ef738c123a423"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\hydro\\HYDRO_SUCCESSOR_STRUCTURAL_QA.json",
+          "sha256": "7feb1cce986728929c00356a6c324a4ba2a57025940ad851623468df749b18bd"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2040_SLOW_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "cd1d10aba554a878c2c05257ab3aa308504f6709e27f479cf89dccdfe360946b"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2040_BASE_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "b99d066cf1e9bb6e6b96aa4e505e8870fd4dcbb34cd7c0872bfabacc417195fd"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2040_HIGH_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "b9f337c4e3f04451bfc234e6542e0b1da8a6ad99b43ac78fc65060b32faa76b7"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2050_SLOW_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "c57073abdf6a0cf41e236f5b81f3a6ef8b3f9fb28a1008d8f198dd1580b6ea13"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2050_BASE_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "606b9bf3351cf7307b4fb2e9eb781dcb57377ecd3c1fc84fe3c62e15990fff16"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2050_HIGH_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "6fc9193fabb8987d12a099e890ec238582b2c3690f22809537db8e83cf2412ba"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\hydro\\HYDRO_FINAL_OUTPUT_MANIFEST.csv",
+          "sha256": "23420d6c77363817cf8742ca49c2a2cf1cfb734b548ea9a8f783704a44804e4a"
+        }
+      ],
+      "accepted_methodological_decisions": [
+        "SEVEN_ZONE_NATIVE_ATLITE_RUNOFF_ADAPTER",
+        "EXACT_ANNUAL_NATURAL_WATER_CONTROLS",
+        "NATIVE_FIXED_ROR_TURBINE_SATURATION_EXPLICIT_BYPASS",
+        "NONBINDING_FORCED_INFLOW_SPILL_SAFETY_CAP_NO_PUMP_ALLOWANCE",
+        "NATIVE_STORE_WATER_VALUE_DUAL_FIXED_COMMITMENT_LP",
+        "CYCLIC_ANNUAL_SOC_RETAINED_AS_NEUTRAL_NO_NET_WATER_CONDITION"
+      ],
+      "tests": {
+        "passed": 47,
+        "failed": 0,
+        "observed_result": "47 passed in 51.95s",
+        "optimization_model_constructed": false,
+        "solver_invocations": 0
+      },
+      "unresolved_items": [],
+      "updated_UTC": "2026-10-01T08:01:37.023572+00:00",
+      "production_optimization_executed": false,
+      "production_solver_invocations": 0,
+      "phase_result": "HYDRO_SPATIAL_AND_WATER_VALUE_PASS",
+      "successor_parents": [
+        {
+          "year": 2040,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2040_SLOW_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "cd1d10aba554a878c2c05257ab3aa308504f6709e27f479cf89dccdfe360946b"
+        },
+        {
+          "year": 2040,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2040_BASE_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "b99d066cf1e9bb6e6b96aa4e505e8870fd4dcbb34cd7c0872bfabacc417195fd"
+        },
+        {
+          "year": 2040,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2040_HIGH_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "b9f337c4e3f04451bfc234e6542e0b1da8a6ad99b43ac78fc65060b32faa76b7"
+        },
+        {
+          "year": 2050,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2050_SLOW_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "c57073abdf6a0cf41e236f5b81f3a6ef8b3f9fb28a1008d8f198dd1580b6ea13"
+        },
+        {
+          "year": 2050,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2050_BASE_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "606b9bf3351cf7307b4fb2e9eb781dcb57377ecd3c1fc84fe3c62e15990fff16"
+        },
+        {
+          "year": 2050,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2050_HIGH_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "6fc9193fabb8987d12a099e890ec238582b2c3690f22809537db8e83cf2412ba"
+        }
+      ],
+      "manifest": "qa\\final_methodology_closure\\hydro\\HYDRO_FINAL_OUTPUT_MANIFEST.csv",
+      "receipt": "qa\\final_methodology_closure\\hydro\\HYDRO_FINAL_VERIFICATION.json",
+      "current_handoff": "docs\\final_methodology_closure\\MEM_FINAL_METHODOLOGY_PHASE_H_ZONAL_RUNOFF_HANDOFF.md"
+    },
+    "N": {
+      "status": "PASS",
+      "controlling_parent_hashes": [
+        {
+          "year": 2040,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2040_SLOW_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "cd1d10aba554a878c2c05257ab3aa308504f6709e27f479cf89dccdfe360946b"
+        },
+        {
+          "year": 2040,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2040_BASE_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "b99d066cf1e9bb6e6b96aa4e505e8870fd4dcbb34cd7c0872bfabacc417195fd"
+        },
+        {
+          "year": 2040,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2040_HIGH_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "b9f337c4e3f04451bfc234e6542e0b1da8a6ad99b43ac78fc65060b32faa76b7"
+        },
+        {
+          "year": 2050,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2050_SLOW_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "c57073abdf6a0cf41e236f5b81f3a6ef8b3f9fb28a1008d8f198dd1580b6ea13"
+        },
+        {
+          "year": 2050,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2050_BASE_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "606b9bf3351cf7307b4fb2e9eb781dcb57377ecd3c1fc84fe3c62e15990fff16"
+        },
+        {
+          "year": 2050,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2050_HIGH_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+          "sha256": "6fc9193fabb8987d12a099e890ec238582b2c3690f22809537db8e83cf2412ba"
+        }
+      ],
+      "created_artifacts": [
+        {
+          "path": "qa\\final_methodology_closure\\network_v2b\\SIGNED_INTERFACE_ELIGIBILITY_AND_EQUIVALENCE.csv",
+          "sha256": "f033410db6024c599022e32c6e672fe4db8eb942e1f1d9f1f7a8d37563a9f79c"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\network_v2b\\NATIVE_SIGNED_LINK_API_RECEIPT.json",
+          "sha256": "62742afc26da957705a8ab8d328ce47c69eeac060b02049b22abad161c8d9980"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\network_v2b\\NETWORK_V2B_FINAL_VERIFICATION.json",
+          "sha256": "d249f6d3d914e99f407399d9e5f68ae2cc369e458cc269fdcec16b9894319da2"
+        },
+        {
+          "path": "src\\mem_model\\final_network_signed.py",
+          "sha256": "c7a38a004c736d35d6e7d20c8f8a32b300b588b9b45e252567769ee39c2e99c8"
+        },
+        {
+          "path": "tests\\test_final_network_signed.py",
+          "sha256": "fbb4e27d6dc188b06dfb5fe03d9131f31202e887b93be99d7dd3244228e102e6"
+        },
+        {
+          "path": "src\\mem_model\\reporting\\topology.py",
+          "sha256": "db37d95f060d124dbb10d88649bcac4fc4d683ad28cd33cefc15320ae74e4174"
+        },
+        {
+          "path": "src\\mem_model\\reporting\\canonical_results.py",
+          "sha256": "df5cd4fa229e2e6bdc36f9a06273fa7a312309714557b5fda3198b8b063a7ab5"
+        },
+        {
+          "path": "docs\\final_methodology_closure\\PHASE_N_SIGNED_INTERFACE_HANDOFF.md",
+          "sha256": "a4d16064077c76d1f15fe0453b575794ed2374d9296cfe565a792748b5427fa7"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_BASE_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "05da8f0e635f2991a7b16666e80e69be4cda3d2f68ec64bacf9de2e99566c318"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_HIGH_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "997525cc1773d99fb493202bc6e3a15b51210a28b0c2a1d6784a2abd9c88dd1d"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_SLOW_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "3488c7da1dac765a35c34f0e4623330f0d1a5717a61c275614125568ecec5535"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_BASE_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "8a61a0e3c2c87738f38a22ee7e642daa5f229791fffd83b92185e727907fee8f"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_HIGH_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "c8ca3ea220287e298447381299c4fdd93554d15782915e847f1076c815e92c6c"
+        },
+        {
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_SLOW_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "cf3485c1f943c753b7ff582b792bcacdb261651cde0e5cb36d9d470078e7794f"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\network_v2b\\NETWORK_V2B_OUTPUT_MANIFEST.csv",
+          "sha256": "4b8a24c03701b8787864a2a0378cf072e57fc6d0d7a7563aeeff57a4fcb9f513"
+        }
+      ],
+      "accepted_methodological_decisions": [
+        "NATIVE_SIGNED_LOSSLESS_ZERO_COST_INTERVAL_PROJECTION",
+        "ASYMMETRIC_MW_AND_CORS_TOPOLOGY_EXACT",
+        "COMMON_NET_FLOW_A_TO_B_MW"
+      ],
+      "tests": {
+        "command": "pytest tests/test_final_network_signed.py tests/test_stage_b_2040_topology.py -o addopts= -q",
+        "passed": 35,
+        "new_N_tests": 29,
+        "legacy_topology_tests": 6,
+        "optimizer_invocations": 0,
+        "optimization_models_constructed": 0
+      },
+      "unresolved_items": [],
+      "updated_UTC": "2026-10-01T11:35:32.117514+00:00",
+      "production_optimization_executed": false,
+      "production_solver_invocations": 0,
+      "phase_result": "NETWORK_V2B_PASS",
+      "successor_parents": [
+        {
+          "year": 2040,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_BASE_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "05da8f0e635f2991a7b16666e80e69be4cda3d2f68ec64bacf9de2e99566c318"
+        },
+        {
+          "year": 2040,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_HIGH_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "997525cc1773d99fb493202bc6e3a15b51210a28b0c2a1d6784a2abd9c88dd1d"
+        },
+        {
+          "year": 2040,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_SLOW_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "3488c7da1dac765a35c34f0e4623330f0d1a5717a61c275614125568ecec5535"
+        },
+        {
+          "year": 2050,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_BASE_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "8a61a0e3c2c87738f38a22ee7e642daa5f229791fffd83b92185e727907fee8f"
+        },
+        {
+          "year": 2050,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_HIGH_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "c8ca3ea220287e298447381299c4fdd93554d15782915e847f1076c815e92c6c"
+        },
+        {
+          "year": 2050,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_SLOW_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "cf3485c1f943c753b7ff582b792bcacdb261651cde0e5cb36d9d470078e7794f"
+        }
+      ],
+      "receipt": "qa\\final_methodology_closure\\network_v2b\\NETWORK_V2B_FINAL_VERIFICATION.json",
+      "manifest": "qa\\final_methodology_closure\\network_v2b\\NETWORK_V2B_OUTPUT_MANIFEST.csv",
+      "current_handoff": "docs\\final_methodology_closure\\PHASE_N_SIGNED_INTERFACE_HANDOFF.md"
+    },
+    "C": {
+      "status": "PASS",
+      "controlling_parent_hashes": [
+        {
+          "year": 2040,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_BASE_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "05da8f0e635f2991a7b16666e80e69be4cda3d2f68ec64bacf9de2e99566c318"
+        },
+        {
+          "year": 2040,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_HIGH_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "997525cc1773d99fb493202bc6e3a15b51210a28b0c2a1d6784a2abd9c88dd1d"
+        },
+        {
+          "year": 2040,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_SLOW_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "3488c7da1dac765a35c34f0e4623330f0d1a5717a61c275614125568ecec5535"
+        },
+        {
+          "year": 2050,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_BASE_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "8a61a0e3c2c87738f38a22ee7e642daa5f229791fffd83b92185e727907fee8f"
+        },
+        {
+          "year": 2050,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_HIGH_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "c8ca3ea220287e298447381299c4fdd93554d15782915e847f1076c815e92c6c"
+        },
+        {
+          "year": 2050,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_SLOW_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "cf3485c1f943c753b7ff582b792bcacdb261651cde0e5cb36d9d470078e7794f"
+        }
+      ],
+      "created_artifacts": [
+        {
+          "path": "qa\\final_methodology_closure\\network_contract\\DIRECTIONAL_AUTHORITY_STATIC_RECONCILIATION.csv",
+          "sha256": "ebd1a90882d770810a960560fb033f16374532dac094015464d540b6cacfac80"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\network_contract\\HYPERGRID_TYRRHENIAN_PROJECT_CLOSURE.csv",
+          "sha256": "607109c185f7550958f5405aa9e165454fbfc6a88d033c627d173ee80f763994"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\network_contract\\NETWORK_PROJECT_BY_PROJECT_LEDGER.csv",
+          "sha256": "f8555606e75a868a87b402e2e423a1cd17a950dd45f6a6f0de889e8f85d1f44f"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\network_contract\\SIGNED_NETWORK_DIRECTIONAL_AUTHORITY_RECONCILIATION.csv",
+          "sha256": "2284259dcce15a2c57298591a0d111e09bdc9e17e249fa31f7da596462dfdf1f"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\network_contract\\NETWORK_CONTRACT_FINAL_VERIFICATION.json",
+          "sha256": "d2c9d845e0fbe491cf6edffff6e2004ad4394bfda9462ce348bf4a88703a8c91"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\network_contract\\NETWORK_CONTRACT_SOURCE_AUTHORITY_RECEIPT.json",
+          "sha256": "7bd858b556256b6c139d95def986bd9488fbf87f771f9a3ef48648c6921661a4"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\network_contract\\NETWORK_CONTRACT_OUTPUT_MANIFEST.csv",
+          "sha256": "57649ed0fe472ff997583a79f2c3fa805a1c21176ecda1bda9516322c6f64a73"
+        }
+      ],
+      "accepted_methodological_decisions": [
+        "FROZEN_REGISTER_NATIVE_WORKBOOK_FORMULAS_AND_TERNA_EVIDENCE",
+        "PROJECT_PLUS_TWO_YEAR_SLOW_DELAY",
+        "EMBEDDED_PROJECT_CONTRIBUTIONS_NOT_ADDED_TWICE",
+        "TYRRHENIAN_HYPERGRID_FOREIGN_CORS_CONTRACT_RECONCILED_NO_MW_CORRECTION"
+      ],
+      "tests": {
+        "passed": 7,
+        "failed": 0,
+        "observed_result": "7 passed in 36.88s",
+        "optimization_model_constructed": false,
+        "solver_invocations": 0
+      },
+      "unresolved_items": [],
+      "updated_UTC": "2026-10-01T11:49:44.248013+00:00",
+      "production_optimization_executed": false,
+      "production_solver_invocations": 0,
+      "phase_result": "NETWORK_CONTRACT_RECONCILIATION_PASS",
+      "successor_parents": [
+        {
+          "year": 2040,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_BASE_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "05da8f0e635f2991a7b16666e80e69be4cda3d2f68ec64bacf9de2e99566c318"
+        },
+        {
+          "year": 2040,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_HIGH_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "997525cc1773d99fb493202bc6e3a15b51210a28b0c2a1d6784a2abd9c88dd1d"
+        },
+        {
+          "year": 2040,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_SLOW_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "3488c7da1dac765a35c34f0e4623330f0d1a5717a61c275614125568ecec5535"
+        },
+        {
+          "year": 2050,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_BASE_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "8a61a0e3c2c87738f38a22ee7e642daa5f229791fffd83b92185e727907fee8f"
+        },
+        {
+          "year": 2050,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_HIGH_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "c8ca3ea220287e298447381299c4fdd93554d15782915e847f1076c815e92c6c"
+        },
+        {
+          "year": 2050,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_SLOW_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "cf3485c1f943c753b7ff582b792bcacdb261651cde0e5cb36d9d470078e7794f"
+        }
+      ],
+      "receipt": "qa\\final_methodology_closure\\network_contract\\NETWORK_CONTRACT_FINAL_VERIFICATION.json",
+      "manifest": "qa\\final_methodology_closure\\network_contract\\NETWORK_CONTRACT_OUTPUT_MANIFEST.csv"
+    },
+    "F": {
+      "status": "PASS",
+      "controlling_parent_hashes": [
+        {
+          "year": 2040,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_BASE_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "05da8f0e635f2991a7b16666e80e69be4cda3d2f68ec64bacf9de2e99566c318"
+        },
+        {
+          "year": 2040,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_HIGH_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "997525cc1773d99fb493202bc6e3a15b51210a28b0c2a1d6784a2abd9c88dd1d"
+        },
+        {
+          "year": 2040,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_SLOW_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "3488c7da1dac765a35c34f0e4623330f0d1a5717a61c275614125568ecec5535"
+        },
+        {
+          "year": 2050,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_BASE_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "8a61a0e3c2c87738f38a22ee7e642daa5f229791fffd83b92185e727907fee8f"
+        },
+        {
+          "year": 2050,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_HIGH_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "c8ca3ea220287e298447381299c4fdd93554d15782915e847f1076c815e92c6c"
+        },
+        {
+          "year": 2050,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_SLOW_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+          "sha256": "cf3485c1f943c753b7ff582b792bcacdb261651cde0e5cb36d9d470078e7794f"
+        }
+      ],
+      "created_artifacts": [
+        {
+          "path": "config\\final_methodology_execution_v1.yaml",
+          "sha256": "a51fd39cd153b9fd45791f85ce68eb464d7cf15f8b9d15d12d300cf6ff87dbdc"
+        },
+        {
+          "path": "src\\mem_model\\final_methodology_networks.py",
+          "sha256": "3367b72ba08f14fdd9309bd74e03ffe94422b59414fc78941dae72971adee8e6"
+        },
+        {
+          "path": "src\\mem_model\\stage_b_uc2.py",
+          "sha256": "c4f2ea41fa80f46775ecc32acfe790fdada1b2d3d71b6e6140a15327f6df331b"
+        },
+        {
+          "path": "src\\mem_model\\reporting\\uc2_postprocess.py",
+          "sha256": "8116583949675506f316ce280056f36eb077190c93853afa5c8d91d7ca99c076"
+        },
+        {
+          "path": "tests\\test_final_methodology_networks.py",
+          "sha256": "a90d70b57c15d3b6fb3d12ee1b90b36e868e11d351d364f51612702b48e3dc1e"
+        },
+        {
+          "path": "docs\\final_methodology_closure\\MEM_FINAL_CANONICAL_NETWORKS_HANDOFF.md",
+          "sha256": "7d6270eb57c95d1f44d6e3869d40bff627767fbfee830206f3ece86f068950a2"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\final\\FINAL_NETWORK_PREPARATION_RECEIPT.json",
+          "sha256": "0b647faf6dacb583a73096e2ab9077227963efdc2c96c120b445801bffe348b1"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\final\\EXACT_PRESERVATION_MATRIX.csv",
+          "sha256": "97d7951cd95c004f3666a9054b61d8ad1eabff6f06e72c01adc9acd7b4024b5a"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\final\\FINAL_NETWORK_LINEAGE_AND_HASHES.csv",
+          "sha256": "9510b17f99bc5239e78ee489981d94a83d156ac9a7178c0f7eadb2cbae766488"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\final\\APPROVED_MODEL_OBJECT_CHANGE_INVENTORY.csv",
+          "sha256": "98e8c9e49ff326c998f3f82385d07c6eca32df85705004765116cc20338142bf"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\final\\FINAL_MANUAL_JOB_REGISTRY.csv",
+          "sha256": "ed9d368dad52d98ec389d85f2c276b3ebb61386e3ac3886c968e4bd3a64fd973"
+        },
+        {
+          "path": "docs\\final_methodology_closure\\MEM_FINAL_CANONICAL_NETWORKS_POWERSHELL_RUNBOOK.md",
+          "sha256": "f2adb24e6450991632345260ae7ce57e7246d96b99f261c2f3c9b448e4250911"
+        },
+        {
+          "path": "src\\mem_model\\final_methodology_checkpoints.py",
+          "sha256": "aaa5eaa0438966a80c3e205f0b438a17f23d4f933414c25cc8c919d1c1e62c36"
+        },
+        {
+          "path": "src\\mem_model\\final_network_contract.py",
+          "sha256": "f78a6d5b0a1bbd701a08e181297f8d704067844b5b9f8096171d7abc901369cd"
+        },
+        {
+          "path": "tests\\test_final_network_contract.py",
+          "sha256": "66a87cc9ad60d45c417d3be8dfc0332ac672f34e6dda51632bf913a04341b475"
+        },
+        {
+          "path": "src\\mem_model\\reporting\\uc2_diagnostics.py",
+          "sha256": "1159a816244d8e175ceac437daf627eb48180b7e021cfdb8ee1399e7ef2c9e82"
+        },
+        {
+          "path": "src\\mem_model\\reporting\\plots.py",
+          "sha256": "c8cbbef9e61bec3c3747ea1d4aed9a2498825dfcce134718e8a027ed4f858708"
+        },
+        {
+          "path": "src\\mem_model\\reporting\\ror_water.py",
+          "sha256": "dea3cc29a8d57431f79164770c59dc8bd18509ae1d40aa93ff84f1921cb08149"
+        },
+        {
+          "path": "tests\\test_ror_water_reporting.py",
+          "sha256": "20d0f8713c0ad0a1e47262dd4f8e1901060d39227e5414b5f98b7439ead8cf6e"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\final\\AFFECTED_NON_SOLVING_TEST_RESULTS.xml",
+          "sha256": "21786227a721a24095459be3ab9a7a5a0c568d721bf154be9bd41e93983769cc"
+        },
+        {
+          "path": "config\\stage_b_reporting.yaml",
+          "sha256": "78f260af3e36d91b640111a7dcfbd96eb1dc24c96828aa49e9407dc01ebac622"
+        },
+        {
+          "path": "tests\\test_uc2_diagnostics.py",
+          "sha256": "556b756d5152f9a46035b1da3baf2d939bf6fd50c3d868ee38250844a6ac75ce"
+        },
+        {
+          "path": "src\\mem_model\\visualization\\uc2_vis_x1.py",
+          "sha256": "1eb7bf78788b5fc9bdfcb3b29dc90aa57af93114a44260b9010f2f4185d47e05"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\final\\FREEZE_INTEGRITY_TEST_RESULTS.xml",
+          "sha256": "458539dfac93ede4ca40a1fcd47892c447d37293ae7b25838586b6a70de328c5"
+        },
+        {
+          "path": "qa\\stage_b\\uc2a_heterogeneous_v1\\MEM_UC2A_CHILD_CROSSWALK.csv",
+          "sha256": "6914d6c2adb486e5a5ce6aedb36bf40d570eb65490310b32daed6dee1e4205bc"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\semantic_parity\\NATIVE_SEMANTIC_PARITY_MATRIX.csv",
+          "sha256": "823363609c6f2033822c8a0270d005c09f5d5f42ddfe1f3702e73b6b562e1eab"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\semantic_parity\\NATIVE_SEMANTIC_SOURCE_RECEIPT.json",
+          "sha256": "b86d1fb0b5f56cab7b71668a350c8f076efdc630a9d3cc21b85d310bf0c231c5"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\semantic_parity\\NATIVE_SEMANTIC_PARITY_VERIFICATION.json",
+          "sha256": "079542203e06cb16010ed8d30c7671a2c7a6277d8d2db8b4678b7252f03fd16d"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\semantic_parity\\MEM_FINAL_METHODOLOGY_NATIVE_SEMANTIC_PARITY_HANDOFF.md",
+          "sha256": "30bc1e3e54efbf7fbc735231c45868d125561e22fe157c86c496724173227f46"
+        },
+        {
+          "path": "src\\mem_model\\final_semantic_parity.py",
+          "sha256": "befc90bd89a679687680294310fc977dbc882f4263ffd79525709b192ef17029"
+        },
+        {
+          "path": "tests\\test_final_semantic_parity.py",
+          "sha256": "4d025d0102a0db2e210f8c8e329e86f91eb4ff61918d9fce47199ce70af278dd"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\wind\\HORIZON_SPECIFIC_WIND_OUTPUT_MANIFEST.csv",
+          "sha256": "8b0ed4590e5a027e7c27d7eea4ad289c3ad992e63e09bc6e159eea3c6a5eaf27"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\hydro\\HYDRO_FINAL_VERIFICATION.json",
+          "sha256": "2113c06efaac086f430ea957390d5f8cb59870236e7a4f7238cae0774e95f282"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\hydro\\HYDRO_FINAL_OUTPUT_MANIFEST.csv",
+          "sha256": "23420d6c77363817cf8742ca49c2a2cf1cfb734b548ea9a8f783704a44804e4a"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\network_v2b\\NETWORK_V2B_FINAL_VERIFICATION.json",
+          "sha256": "d249f6d3d914e99f407399d9e5f68ae2cc369e458cc269fdcec16b9894319da2"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\network_v2b\\NETWORK_V2B_OUTPUT_MANIFEST.csv",
+          "sha256": "4b8a24c03701b8787864a2a0378cf072e57fc6d0d7a7563aeeff57a4fcb9f513"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\network_contract\\NETWORK_CONTRACT_FINAL_VERIFICATION.json",
+          "sha256": "d2c9d845e0fbe491cf6edffff6e2004ad4394bfda9462ce348bf4a88703a8c91"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\network_contract\\NETWORK_CONTRACT_OUTPUT_MANIFEST.csv",
+          "sha256": "57649ed0fe472ff997583a79f2c3fa805a1c21176ecda1bda9516322c6f64a73"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\wind\\HORIZON_SPECIFIC_FINAL_WIND_VERIFICATION.json",
+          "sha256": "aebcc43c0819dcdae9aba25868d4017fe5ea35c09478b1d17a99a0f025d541ac"
+        },
+        {
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2040_BASE_FINAL_METHODOLOGY_V1_8760h_UNSOLVED.nc",
+          "sha256": "478c1189d25d2b34c84c45e94a2f884337721038e9387cdfb0a59b886eef1e0c"
+        },
+        {
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2040_BASE_FINAL_METHODOLOGY_V1_CONTINUOUS_REFERENCE_8760h_UNSOLVED.nc",
+          "sha256": "d4606e756b16c6bf62f357631861c79acd96c71506b7cb37df1d4a0a53f503b5"
+        },
+        {
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2040_HIGH_FINAL_METHODOLOGY_V1_8760h_UNSOLVED.nc",
+          "sha256": "b7d40915d186a8ee71e902c3233c0b4f46eb42f700f93752048a0ab3cd7ca468"
+        },
+        {
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2040_HIGH_FINAL_METHODOLOGY_V1_CONTINUOUS_REFERENCE_8760h_UNSOLVED.nc",
+          "sha256": "2cee77b7596f04075993708f23627dacb90b1c760eb151ad9e57c35251134936"
+        },
+        {
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2040_SLOW_FINAL_METHODOLOGY_V1_8760h_UNSOLVED.nc",
+          "sha256": "a27421e9131dcaa2ef7d8f1a90f32c6c3c680537b6b21971c1c4710896835df1"
+        },
+        {
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2040_SLOW_FINAL_METHODOLOGY_V1_CONTINUOUS_REFERENCE_8760h_UNSOLVED.nc",
+          "sha256": "790093d7b1b95b709336be8b620783d978ead393cba2d621277a46d820582d8b"
+        },
+        {
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2050_BASE_FINAL_METHODOLOGY_V1_8760h_UNSOLVED.nc",
+          "sha256": "8c1a41e15a4228566b83322574df08bb58cba971c35765a6b88e54b163502736"
+        },
+        {
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2050_BASE_FINAL_METHODOLOGY_V1_CONTINUOUS_REFERENCE_8760h_UNSOLVED.nc",
+          "sha256": "5ceb0f82368ef2c2083670665fffad60320877b1080f90abcd9679ae44348c50"
+        },
+        {
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2050_HIGH_FINAL_METHODOLOGY_V1_8760h_UNSOLVED.nc",
+          "sha256": "2a0a68835f3e693342fbebd61c2bcd0e95b9d72cd84a4b7a08fa4926cc05b893"
+        },
+        {
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2050_HIGH_FINAL_METHODOLOGY_V1_CONTINUOUS_REFERENCE_8760h_UNSOLVED.nc",
+          "sha256": "e6d7aa522013652c1377742c406b53f4e0186d8e573b84439977ec1fed7b7ab0"
+        },
+        {
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2050_SLOW_FINAL_METHODOLOGY_V1_8760h_UNSOLVED.nc",
+          "sha256": "b687ecd28c6397f65cf5626aebe3425300cb65cbdcee971f78243e1a4fe717c6"
+        },
+        {
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2050_SLOW_FINAL_METHODOLOGY_V1_CONTINUOUS_REFERENCE_8760h_UNSOLVED.nc",
+          "sha256": "820c6270be1e0ff46691c033d1e5e05802b241a2408e6705b4d78268e07587fb"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\final\\FINAL_ARTIFACT_MANIFEST.csv",
+          "sha256": "436221d1fbae67c38405048a1d6666482a40bb1e1fd5281e38495330b0175b50"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\final\\FINAL_VERIFICATION.json",
+          "sha256": "75403344a5f6d18ea12b8b62bb87aea81bba818b9cad7fca7281d801c8161c36"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\final\\FINAL_V1_2040_MANUAL_AUTHORIZATION_PATCH.json",
+          "sha256": "04b1104920cfde027fbd952e0c61f5fb200544a60ec414d21b32fa2afe57d853"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\final\\FINAL_V1_2040_AUTHORIZATION_TEST_RESULTS.xml",
+          "sha256": "4e1061c798b58d866121ff6f761b9d327124705a804adcf4a6c9046ebb60fef4"
+        },
+        {
+          "path": "tests\\test_final_v1_reporting_variant.py",
+          "sha256": "678942f8636415301b442bc22baa84105835b4125dcf24dec7a9f6fdeac78156"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\final\\FINAL_V1_REPORTING_VARIANT_TEST_RESULTS.xml",
+          "sha256": "61f95a499ebed0d8f221743ac4ab726e26b17abd8ebb618783bc7c18510ead7e"
+        },
+        {
+          "path": "qa\\final_methodology_closure\\final\\FINAL_V1_REPORTING_VARIANT_PATCH.json",
+          "sha256": "382286949f13800052f3e8452a09de2f452e127d90d80995b7d8fee9d8f36101"
+        }
+      ],
+      "accepted_methodological_decisions": [
+        "FINAL_SIX_UNSOLVED_FAMILY_WITH_SAME_SYSTEM_CONTINUOUS_COUNTERFACTUALS",
+        "EXISTING_UC2_PATH_FINAL_V1_VARIANT_NO_SOLVER_OR_MODEL_CALL",
+        "FUTURE_NATIVE_WATER_DUAL_COMPLETENESS_GATE",
+        "EXPLICIT_FINAL_V1_2040_MANUAL_AUTHORIZATION__2050_LOCKED"
+      ],
+      "tests": {
+        "combined_affected_suite": {
+          "passed": 127,
+          "failed": 0,
+          "deselected": 1,
+          "seconds": 112.23,
+          "deselection_reason": "guard test calls Linopy Model constructor; excluded under no-model-construction rule"
+        },
+        "final_freeze_gate_suite": {
+          "passed": 19,
+          "failed": 0,
+          "seconds": 16.75
+        },
+        "optimization_model_constructed": false,
+        "production_solver_invocations": 0,
+        "governance_authorization_patch": {
+          "passed": 25,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 16.767,
+          "scope": "tests/test_final_methodology_networks.py",
+          "model_and_solver_calls_prohibited_by_autouse_guard": true,
+          "optimization_model_constructed": false,
+          "production_solver_invocations": 0
+        },
+        "reporting_variant_patch": {
+          "passed": 36,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 9.666,
+          "deselected": 1,
+          "deselection_reason": "Legacy guard test deliberately constructs Linopy Model; excluded under no-model boundary.",
+          "test_files": [
+            "tests/test_final_v1_reporting_variant.py",
+            "tests/test_uc2_reporting_integration.py",
+            "tests/test_final_methodology_networks.py"
+          ],
+          "optimization_model_constructed": false,
+          "production_solver_invocations": 0
+        }
+      },
+      "unresolved_items": [],
+      "updated_UTC": "2026-10-01T12:22:01.526535+00:00",
+      "production_optimization_executed": false,
+      "production_solver_invocations": 0,
+      "phase_result": "FINAL_CANONICAL_NETWORKS_PREPARED",
+      "successor_parents": [
+        {
+          "year": 2040,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2040_BASE_FINAL_METHODOLOGY_V1_8760h_UNSOLVED.nc",
+          "sha256": "478c1189d25d2b34c84c45e94a2f884337721038e9387cdfb0a59b886eef1e0c"
+        },
+        {
+          "year": 2040,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2040_HIGH_FINAL_METHODOLOGY_V1_8760h_UNSOLVED.nc",
+          "sha256": "b7d40915d186a8ee71e902c3233c0b4f46eb42f700f93752048a0ab3cd7ca468"
+        },
+        {
+          "year": 2040,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2040_SLOW_FINAL_METHODOLOGY_V1_8760h_UNSOLVED.nc",
+          "sha256": "a27421e9131dcaa2ef7d8f1a90f32c6c3c680537b6b21971c1c4710896835df1"
+        },
+        {
+          "year": 2050,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2050_BASE_FINAL_METHODOLOGY_V1_8760h_UNSOLVED.nc",
+          "sha256": "8c1a41e15a4228566b83322574df08bb58cba971c35765a6b88e54b163502736"
+        },
+        {
+          "year": 2050,
+          "scenario": "High",
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2050_HIGH_FINAL_METHODOLOGY_V1_8760h_UNSOLVED.nc",
+          "sha256": "2a0a68835f3e693342fbebd61c2bcd0e95b9d72cd84a4b7a08fa4926cc05b893"
+        },
+        {
+          "year": 2050,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\final_methodology_v1\\MEM_2050_SLOW_FINAL_METHODOLOGY_V1_8760h_UNSOLVED.nc",
+          "sha256": "b687ecd28c6397f65cf5626aebe3425300cb65cbdcee971f78243e1a4fe717c6"
+        }
+      ],
+      "manifest": "qa\\final_methodology_closure\\final\\FINAL_ARTIFACT_MANIFEST.csv",
+      "receipt": "qa\\final_methodology_closure\\final\\FINAL_VERIFICATION.json",
+      "current_handoff": "docs\\final_methodology_closure\\MEM_FINAL_CANONICAL_NETWORKS_HANDOFF.md",
+      "execution_governance_amendment": {
+        "path": "qa\\final_methodology_closure\\final\\FINAL_V1_2040_MANUAL_AUTHORIZATION_PATCH.json",
+        "sha256": "c71f35a79fcbc3e41e05fc19c9d5aeb76eeef308dfbe8c0fa400e7cbfc7d23e1",
+        "bytes": 8368,
+        "updated_UTC": "2026-10-01T13:17:19.9396765Z",
+        "authority": "EXPLICIT_USER_DECISION__2040_ONLY_MANUAL_AUTHORIZATION",
+        "methodology_freeze_not_rerun": true,
+        "network_hash_changes": 0,
+        "automatic_execution": false
+      },
+      "reporting_variant_patch": {
+        "path": "qa\\final_methodology_closure\\final\\FINAL_V1_REPORTING_VARIANT_PATCH.json",
+        "sha256": "3295d6964ace40b6efb8e86547c1626e4e7eabf363a3b7e040dc65919d2bea1b",
+        "status": "PASS",
+        "scope": "REPORTING_CLI_VARIANT_ROUTING_ONLY",
+        "base_report_status": "PASS",
+        "original_solved_and_verification_artifacts_unchanged": true,
+        "all_77_routing_calls_final_v1": true,
+        "final_qa_executed": false,
+        "optimization_model_constructed": false,
+        "production_solver_invocations": 0
+      },
+      "all_case_execution_authorization_amendment": {
+        "authority": "EXPLICIT_CASE_MANUAL_EXECUTION_DECISION",
+        "date": "2026-10-04",
+        "cases": {
+          "2040_Slow": true,
+          "2040_Base": true,
+          "2040_High": true,
+          "2050_Slow": true,
+          "2050_Base": true,
+          "2050_High": true
+        },
+        "analytical_review_status_unchanged": true,
+        "automatic_execution": false,
+        "methodology_freeze_not_rerun": true,
+        "network_hash_changes": 0,
+        "production_solver_invocations": 0
+      }
+    }
+  },
+  "accepted_upstream_audits_reused": true,
+  "production_optimization_executed": false,
+  "production_solver_invocations": 0,
+  "new_weather_downloads": 0,
+  "stage_a_reruns": 0,
+  "historical_reruns": 0,
+  "wind_resolution_authority": {
+    "path": "docs\\final_methodology_closure\\PHASE_W_NATIVE_CELL_RESOLUTION.md",
+    "sha256": "b13a98eaf92bd46b9346cf7bd56752b56ac96df3590fc9e0885a753d43617046",
+    "accepted_by": "EXPLICIT_USER_PROJECT_DECISION"
+  },
+  "production_state": "PRODUCTION_NOT_EXECUTED",
+  "wind_horizon_cost_resolution": {
+    "path": "docs/final_methodology_closure/PHASE_W_HORIZON_COST_RESOLUTION.md",
+    "accepted_by": "EXPLICIT_USER_PROJECT_DECISION",
+    "source_2040_sha256": "d1bd7ac0e1e0a59c21ea955375e4d19d31383a1095d3c9014c6de2c11bbb5b2c"
+  },
+  "hydro_zonal_resolution": {
+    "path": "docs\\final_methodology_closure\\PHASE_H_ZONAL_RUNOFF_RESOLUTION.md",
+    "sha256": "4d4b39f079ea0ad000f8a785cfec5a7e3bc32149ad96fc1809a5de3b2925c994",
+    "accepted_by": "EXPLICIT_USER_PROJECT_DECISION"
+  },
+  "optimization_model_constructed": false,
+  "semantic_parity": {
+    "status": "PASS",
+    "phase_result": "NATIVE_PYPSA_SEMANTIC_PARITY_AUDIT_PASS",
+    "artifacts": [
+      {
+        "path": "qa\\final_methodology_closure\\semantic_parity\\NATIVE_SEMANTIC_PARITY_MATRIX.csv",
+        "sha256": "823363609c6f2033822c8a0270d005c09f5d5f42ddfe1f3702e73b6b562e1eab"
+      },
+      {
+        "path": "qa\\final_methodology_closure\\semantic_parity\\NATIVE_SEMANTIC_SOURCE_RECEIPT.json",
+        "sha256": "297b411342eededef5481f3bb8a7c8a4c1aa79d32b531e66c0a31df6b979e8d5"
+      },
+      {
+        "path": "qa\\final_methodology_closure\\semantic_parity\\NATIVE_SEMANTIC_PARITY_VERIFICATION.json",
+        "sha256": "079542203e06cb16010ed8d30c7671a2c7a6277d8d2db8b4678b7252f03fd16d"
+      },
+      {
+        "path": "qa\\final_methodology_closure\\semantic_parity\\MEM_FINAL_METHODOLOGY_NATIVE_SEMANTIC_PARITY_HANDOFF.md",
+        "sha256": "30bc1e3e54efbf7fbc735231c45868d125561e22fe157c86c496724173227f46"
+      },
+      {
+        "path": "src\\mem_model\\final_semantic_parity.py",
+        "sha256": "befc90bd89a679687680294310fc977dbc882f4263ffd79525709b192ef17029"
+      },
+      {
+        "path": "tests\\test_final_semantic_parity.py",
+        "sha256": "4d025d0102a0db2e210f8c8e329e86f91eb4ff61918d9fce47199ce70af278dd"
+      }
+    ],
+    "tests": {
+      "passed": 6,
+      "failed": 0,
+      "observed_result": "6 parity tests PASS within 13-test parity/RoR suite, 12.32s",
+      "optimization_model_constructed": false,
+      "solver_invocations": 0
+    },
+    "model_critical_UNRESOLVED": 0,
+    "production_solver_invocations": 0
+  },
+  "final_v1_execution_governance": {
+    "manual_authorization": {
+      "2040_Slow": true,
+      "2040_Base": true,
+      "2040_High": true,
+      "2050_Slow": false,
+      "2050_Base": false,
+      "2050_High": false
+    },
+    "FINAL_V1_2040_MANUAL_EXECUTION_AUTHORIZED": true,
+    "FINAL_V1_2050_MANUAL_EXECUTION_AUTHORIZED": false,
+    "decision_receipt": "qa\\final_methodology_closure\\final\\FINAL_V1_2040_MANUAL_AUTHORIZATION_PATCH.json",
+    "decision_receipt_sha256": "c71f35a79fcbc3e41e05fc19c9d5aeb76eeef308dfbe8c0fa400e7cbfc7d23e1",
+    "updated_UTC": "2026-10-01T13:17:19.9396765Z",
+    "authorization_is_not_analytical_acceptance": true,
+    "recommended_review_sequence_unchanged": true,
+    "within_case_dependencies_unchanged": true,
+    "automatic_execution": false,
+    "automatic_successor": false,
+    "optimization_model_constructed": false,
+    "production_optimization_executed": false,
+    "production_solver_invocations": 0
+  }
+}

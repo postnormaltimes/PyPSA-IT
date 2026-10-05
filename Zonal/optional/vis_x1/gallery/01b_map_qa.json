@@ -1,0 +1,22 @@
+{
+  "buses_in_network": 42,
+  "buses_plotted": 42,
+  "buses_with_coordinates": 42,
+  "market_groups": {
+    "NORD": 16,
+    "SUD": 6,
+    "CSUD": 6,
+    "CNOR": 5,
+    "SICI": 4,
+    "SARD": 3,
+    "CALA": 2
+  },
+  "lines_in_network": 178,
+  "lines_plotted": 178,
+  "links_in_network": 1,
+  "links_plotted": 1,
+  "transformers_in_network": 0,
+  "transformers_plotted": 0,
+  "congestion_metric_branches": 179,
+  "selected_hour_flow_branches": 179
+}

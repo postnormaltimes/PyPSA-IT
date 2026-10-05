@@ -1,0 +1,10 @@
+artifact,status,role,blocking_issue
+MEM_Historical_Capacity_By_Zone_Technology.csv,VALIDATED_PHASE2,Canonical 2019-2024 zonal NET capacity with wind components and source controls,Material thermal fuel attribution awaits GEM
+MEM_Historical_Generation_By_Zone_Technology.csv,VALIDATED_PHASE2,Canonical 2019-2024 zonal NET generation with CHP/hydro/wind controls,No material numerical blocker; SUD offshore energy is a controlled non-material residual
+MEM_Historical_Storage_By_Zone_Technology.csv,VALIDATED_WITH_SOURCE_LIMITATIONS,Separate PHS/BESS historical capacity layer,Historical zonal BESS and early BESS energy remain unavailable; future model inputs require scenario values
+MEM_HISTORICAL_TECHNOLOGY_TAXONOMY.csv,VALIDATED_V2026_3,Hard technology/fuel invariants,None
+MEM_HISTORICAL_TAXONOMY_INTEGRITY_QA.csv,PASS,Every final canonical row audited,Zero failures
+GEM_GOGPT_Aug2026_complete_release,REQUIRES_USER_DOWNLOAD_SINGLE_MATERIAL_GATE,Thermal plant/unit/fuel/status reconciliation,Complete official workbook absent
+MEM_Current_Thermal_Stack_2026.csv,NOT_CREATED_REQUIRES_GEM,Current physical hybrid unit/residual stack,GEM absent; gross/net/status bridge not defensible
+HISTORICAL_BASELINE_FREEZE_GATE,HISTORICAL BASELINE INCOMPLETE,Authorization for canonical workbook promotion,Criterion H material thermal fuel attribution
+Fase_5_PyPSA_Eur_Italia_2040_2050_Model_Ready_v2.9.1_HISTORICAL_BASELINE_INTEGRATED.xlsx,NOT_CREATED_BY_DESIGN,Future controlled workbook successor,Freeze gate has not passed

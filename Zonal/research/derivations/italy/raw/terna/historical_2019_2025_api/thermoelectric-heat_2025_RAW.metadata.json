@@ -1,0 +1,24 @@
+{
+  "source_id": "TERNA_API_THERMOELECTRIC_HEAT_2025",
+  "publisher": "Terna S.p.A.",
+  "endpoint": "thermoelectric-heat",
+  "request_url": "https://api.terna.it/generation/v2.0/thermoelectric-heat?year=2025",
+  "request_parameters": {
+    "year": "2025"
+  },
+  "authorization_method": "OAuth 2.0 client credentials; token not persisted",
+  "retrieval_timestamp_utc": "2026-09-01T12:21:06.005Z",
+  "http_status": 200,
+  "content_type": "application/json",
+  "response_date": "Tue, 01 Sep 2026 12:21:06 GMT",
+  "etag": null,
+  "last_modified": null,
+  "raw_file": "thermoelectric-heat_2025_RAW.json",
+  "raw_bytes": 98,
+  "raw_sha256": "abd06857e3528b8f1a76d449678bfcfb4d650705d51519f541defff070fbd303",
+  "result_status": "Completed",
+  "result_message": "No results found for the following input. year: 2025",
+  "array_key": "thermoelectric_heat",
+  "record_count": 0,
+  "properties": []
+}

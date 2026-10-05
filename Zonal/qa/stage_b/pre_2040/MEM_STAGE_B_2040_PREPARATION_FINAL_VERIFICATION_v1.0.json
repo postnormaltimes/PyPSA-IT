@@ -1,0 +1,29 @@
+{
+  "accepted_2040_hashes": {
+    "market_prices_sha256": "595D6719DD6BB8EC16F665D67C5344C7B3E1279B0445CEF6AFFBD71D97A514A4",
+    "receipt_sha256": "C69ACBF941261BD37426EDCEDB1C14482977C2059427FEA1968008492E05F8C0",
+    "result_manifest_sha256": "88C259493E5D5B8E4B4B2B3C535BCDB623924474FB23DD860D2B8673FE08DA2D"
+  },
+  "accepted_2040_source": "ETX-7B8D",
+  "b10_2040_ready_to_execute": true,
+  "b10_2050_locked": true,
+  "files": {
+    "preparation_qa": "qa/stage_b/pre_2040/MEM_STAGE_B_2040_PREPARATION_QA_v1.0.json",
+    "preparation_qa_sha256": "A0FD813E1CF9BC9F5E4F43D620363841F23837E1BDECAAFB7BA0B3EB78FF370A",
+    "scenario_reconciliation": "qa/stage_b/pre_2040/MEM_STAGE_B_2040_SCENARIO_INPUT_RECONCILIATION_v1.0.csv",
+    "scenario_reconciliation_sha256": "57A39A6E15F872D9A1F1919CB6F64AC573277D416579DCC0A0D1E5FB82355581",
+    "source_verification": "qa/stage_b/pre_2040/MEM_STAGE_B_2040_PRICE_SOURCE_VERIFICATION_v1.0.json",
+    "source_verification_sha256": "FF3ACD6947DEFD2C1CB990CD723698CAD8DCBEED7E67630BC0CF1679D66396E3"
+  },
+  "inputs_unchanged": true,
+  "marker": "STAGE_B_2040_PRODUCTION_PREPARED_AWAITING_METHOD_REVIEW",
+  "production_optimization_executed": false,
+  "scenario_reconciliation_pass": true,
+  "scenario_reconciliation_rows": 3,
+  "stage_b_2040_blockers": [
+    "STAGE_B_2040_PRODUCTION_AUTHORIZATION_PENDING_METHOD_REVIEW"
+  ],
+  "stage_b_2040_ready_to_run": false,
+  "stage_b_2050_locked": true,
+  "status": "PASS"
+}

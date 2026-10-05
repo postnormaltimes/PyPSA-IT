@@ -1,0 +1,74 @@
+schema_version: MEM_UC1_COMMON_V1
+status: UC1_COMMON_ARCHITECTURE_PASS__2040_BASE_SMOKE_PASS__FULL_YEAR_NOT_AUTHORIZED
+upstream: P2X_FLEX_V1_READY_FOR_MANUAL_EXECUTION
+parent_directory: networks/unsolved/p2x_flex_v1
+output_directory: networks/unsolved/uc1_common_v1
+qa_directory: qa/stage_b/uc1_common_v1
+smoke_results_directory: results/UC1_2040_BASE_168H
+full_year_optimization_authorized: false
+smoke:
+  year: 2040
+  scenario: Base
+  snapshots: 168
+  p2x_energy_rule: SMOKE_HORIZON_PRORATED_P2X_ENERGY_ONLY
+solver:
+  name: gurobi
+  required_version: 13.0.3
+  options: {Threads: 1, Seed: 0}
+  include_objective_constant: false
+archetypes:
+  CCGT:
+    target_block_MW: 550
+    p_min_pu: 0.45
+    ramp_limit_up: 1.0
+    ramp_limit_down: 1.0
+    ramp_limit_start_up: 0.50
+    ramp_limit_shut_down: 0.50
+    min_up_time: 4
+    min_down_time: 2
+    startup_EUR2025_per_MW_start: 60.0
+    startup_provenance: PYPSA_EUR_BASELINE_ASSUMPTION
+  OCGT:
+    target_block_MW: 350
+    p_min_pu: 0.20
+    ramp_limit_up: 1.0
+    ramp_limit_down: 1.0
+    ramp_limit_start_up: 0.80
+    ramp_limit_shut_down: 0.80
+    min_up_time: 0
+    min_down_time: 0
+    startup_EUR2025_per_MW_start: 24.0
+    startup_provenance: PYPSA_EUR_BASELINE_ASSUMPTION
+  BIOMASS_STEAM:
+    target_block_MW: 200
+    p_min_pu: 0.35
+    ramp_limit_up: 1.0
+    ramp_limit_down: 1.0
+    ramp_limit_start_up: 0.35
+    ramp_limit_shut_down: 0.35
+    min_up_time: 4
+    min_down_time: 6
+    source_startup_EUR2020_per_MW_start: 102.4
+    normalization_factor_2020_to_2025: 1.19360954008345
+    startup_EUR2025_per_MW_start: 122.225616904545
+    startup_provenance: SOURCE_VALUE_102P4_EUR2020_PER_MW_START|NORMALIZED_WITH_ISTAT_NIC_ALL_ITEMS_2021_2025|TARGET_BASIS_EUR2025
+    normalization: ACCOUNTING_CONVERSION_ONLY
+    annual_ISTAT_NIC_all_items: {2021: 0.019, 2022: 0.081, 2023: 0.057, 2024: 0.010, 2025: 0.015}
+  NUCLEAR_MODULAR:
+    target_block_MW: 300
+    archetype_provenance: PROJECT_UC_DISCRETIZATION_ASSUMPTION_INFORMED_BY_DDS2024_TERNA2050
+    physical_reactor_size_claim: false
+    p_min_pu: 0.50
+    ramp_limit_up: 0.25
+    ramp_limit_down: 0.25
+    ramp_limit_start_up: 0.50
+    ramp_limit_shut_down: 0.50
+    min_up_time: 8
+    min_down_time: 24
+    startup_EUR2025_per_MW_start: 250.0
+    startup_provenance: PYPSA_EUR_BASELINE_ASSUMPTION
+    custom_3h_dwell: false
+    normal_ramp_provenance: JENKINS_NUCLEAR_FLEXIBILITY_LITERATURE
+    minimum_output_provenance: JENKINS_FRENCH_REDUCED_FORM
+    minimum_time_provenance: LITERATURE_SUPPORTED_REDUCED_FORM_UC
+    start_stop_ramp_provenance: UC_DISCRETIZATION_PROXY_NOT_PHYSICAL_COLD_START

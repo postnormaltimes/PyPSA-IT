@@ -1,0 +1,40 @@
+candidate_bundle_id: RUNTIME_ASSUMPTIONS_V1_CANDIDATE
+status: REQUIRES_USER_APPROVAL_BEFORE_ACCEPTED_ANNUAL_BUILD
+
+storage:
+  bess_cyclic_state_of_charge: true
+  phs_cyclic_state_of_charge: true
+  conventional_hydro_terminal_rule: CYCLIC_CANDIDATE
+
+phs:
+  operational_energy_MWh: 53000.0
+  pump_power_MW: 6400.0
+  discharge_power_MW: 7252.3
+  roundtrip_efficiency: 0.75
+  one_way_efficiency: 0.8660254037844386
+  allocation_method: METHOD_C_TERNA_75_25
+  state_topology: SEPARATE_PURE_PHS_AND_MIXED_PHS_STATES
+  within_zone_pure_mixed_split_candidate: PROPORTIONAL_TO_FROZEN_PURE_AND_MIXED_DISCHARGE_POWER
+  physical_HPHS_energy_MWh_excluded: 626262.056948
+
+hydro:
+  turbine_efficiency_candidate: 0.90
+  conventional_energy_proxy: SCREEN_EXISTING_PYPSA_EUR_MAX_HOURS_THEN_RECONCILE
+  physical_HDAM_energy_MWh_excluded: 5748189.091752
+  spillage: allowed
+
+feasibility:
+  load_shedding_VOLL_EUR_per_MWh_candidate: 15000.0
+  load_shedding_power_multiplier_of_zonal_peak_candidate: 1.25
+
+external_markets:
+  transaction_cost_EUR_per_MWh_candidate: 0.001
+  internal_link_efficiency: 1.0
+  external_link_efficiency_candidate: 1.0
+  auxiliary_baseline_rule: fixed_load_equals_export_capacity_generator_capacity_equals_import_plus_export
+
+maintenance:
+  rule: DETERMINISTIC_STABLE_HASH_STAGGERED_BY_GENERATOR
+  source: PHASE4B_BLK_005
+  historical_CF_used: false
+  slow_CDP_0p85_used: false

@@ -1,0 +1,294 @@
+{
+  "status": "BLOCKED",
+  "controlling_parent_hashes": [
+    {
+      "year": 2040,
+      "scenario": "Slow",
+      "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2040_SLOW_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+      "sha256": "a0c17596083c88c00967231ecd106b3ccf5558428bf70fa20053e2647731acb8"
+    },
+    {
+      "year": 2040,
+      "scenario": "Base",
+      "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2040_BASE_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+      "sha256": "611468aa6d8e8b0bfe50b8f17a3d80dcfcad71e82ef83ebee99d01dc617a4e7c"
+    },
+    {
+      "year": 2040,
+      "scenario": "High",
+      "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2040_HIGH_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+      "sha256": "b0dddf32d60477b11bdf9b3bfa37feabe8dd7e3b5c88e3254550e9dbf116d6d3"
+    },
+    {
+      "year": 2050,
+      "scenario": "Slow",
+      "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2050_SLOW_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+      "sha256": "e34aa5fbe8b293ace66f4aeef5c4826816410da111400fee42b14d1bcb04f396"
+    },
+    {
+      "year": 2050,
+      "scenario": "Base",
+      "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2050_BASE_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+      "sha256": "94b9685685e1c807cdf7079b7ee3cd19f1a4a4ec90d634bdf4f2d2dd80fb1f2d"
+    },
+    {
+      "year": 2050,
+      "scenario": "High",
+      "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2050_HIGH_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+      "sha256": "60a9f7f0a74b94657181e92b76ddc61ea7c5ca54d5fb2b28b0bb008ddf79ee60"
+    }
+  ],
+  "created_artifacts": [
+    {
+      "path": "config\\final_methodology_closure.yaml",
+      "sha256": "112d8e5c29a566a949d12e2f73a176e983a573d63ebfb7ff7fdc790a2f8ccf19"
+    },
+    {
+      "path": "docs\\final_methodology_closure\\MEM_FINAL_METHODOLOGY_PHASE_W_HANDOFF.md",
+      "sha256": "061dbd83d72e536c29eabadbba733425d99000571a7c57450c694e34c2696a3a"
+    },
+    {
+      "path": "docs\\final_methodology_closure\\MEM_FINAL_PREPRODUCTION_METHODOLOGY_CLOSURE_MASTER.md",
+      "sha256": "5571714ef41bd9e385b99d44e188ccf6881a217e31d703f263774344f752e390"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\ALLOCATION_DIAGNOSTICS_NOT_FINAL.csv",
+      "sha256": "fd9a72345a07d058154ded5e840d422034b086446ae4fd6459f3930637364001"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\CACHED_RESOURCE_VERIFICATION.json",
+      "sha256": "9c94a6e88e66df2de1e38f7d4bbe194eb4317846dc702e75668509b64463ea63"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\CONVERGENCE_DIAGNOSTIC_RECEIPT.json",
+      "sha256": "5abbaf50cacf49a65a41491cbd39ec98c870bc5984248db9abc69900571dd714"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\FOCUSED_TEST_RESULTS.json",
+      "sha256": "4700c7d8cfb471aebac211c9662e0fdf3cd248203050518fb2534bac857c88e6"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\FOUR_VS_EIGHT_CLASS_CONVERGENCE.csv",
+      "sha256": "6fe5d3801f5297889ad98f2435d95de39ef5fe0970a0ef8ac00a61e55a3676e1"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\INDEPENDENT_NATIVE_REVIEW.json",
+      "sha256": "ed2ff340eb7fb52bbdda5b00be86d907fbea83d3df000c3965716820224b85ba"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\LOCAL_NATIVE_METHOD_RECEIPT.json",
+      "sha256": "420a46ccc20bcb2b21f1ffafbcf32329d1b560ac6d844639358ca0f5121a1f82"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\OFFSHORE_ECONOMIC_TRADEOFFS.csv",
+      "sha256": "47765fdafe1a98634e80ee8ec17b04844ff6140674aaf542f015d672d33a55a0"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\OFFSHORE_NATIVE_COST_REFERENCE.json",
+      "sha256": "35e64affaeaa09a9179233674f012d82c7bc41bc5d50e8c6666131a0deb9a280"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\ONE_CLASS_REFERENCE_RECONCILIATION.csv",
+      "sha256": "7eefbde83459e908e1c66819ae8a237b1de52f81efad16971b846a40bcea5fca"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\PHYSICAL_POTENTIAL_HEADROOM.csv",
+      "sha256": "4b5b6fbb5769be371bb98bace57e6337c8d732b78a86f73ff94ae0a07a3878e4"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\RESOURCE_CLASS_CONVERSION_RECEIPT.json",
+      "sha256": "3a6b91c64ec9348085474cc0f9f998b8f2d73d98d11f444b7d1573fdafafa6e3"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\SITING_CRITERION_COMPARISON.csv",
+      "sha256": "9eec051310b5e5e40fe83565b15a4f93c49dad2c6b652e0cf155b70e1675936a"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\TERNA_2019_WIND_PLAUSIBILITY.csv",
+      "sha256": "e8bfbc12850d04c007a1e5b16af403ab390bebe26e1fbc8edfad5190147233e5"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\TERNA_2019_WIND_SOURCE_QA.json",
+      "sha256": "b91609cfe8bc6bf1c5a07f82eb87858f225e0c29958ee9c1bf702eca14a0b48f"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\WIND_OFFSHORE_RESOURCE_CLASSES.csv",
+      "sha256": "8bccf47ce3b273c88ef99fecb2472399fbf82b43df54645f855e4fe5978a8c28"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\WIND_ONSHORE_RESOURCE_CLASSES.csv",
+      "sha256": "437dc94e32b194b82e23ed2164fa7db631e236e44dfd2392b90bb6b3d6f04cab"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\WIND_RESOURCE_SITING_GATE_RECEIPT.json",
+      "sha256": "03173c7ffc00dfa16ef97417e2f55094ee4cfb2b3e7476f63c23f94d0913ebf4"
+    },
+    {
+      "path": "runtime_inputs\\final_methodology_closure\\wind\\WIND_OFFSHORE_RESOURCE_CLASS_GEOMETRY.geojson",
+      "sha256": "8c90d91869cf749e32a211a973908cf89b3fd5900992cc0c741df4fa735f392e"
+    },
+    {
+      "path": "runtime_inputs\\final_methodology_closure\\wind\\WIND_OFFSHORE_RESOURCE_CLASSES_2019.nc",
+      "sha256": "e2522f91e428949544243d3676b94eceec81c583a58eead8a0a6cb88c47d02ca"
+    },
+    {
+      "path": "runtime_inputs\\final_methodology_closure\\wind\\WIND_ONSHORE_RESOURCE_CLASS_GEOMETRY.geojson",
+      "sha256": "a3cc1ff795dfd95ee535772a6b107e5d2c4c428cb2b43014da4953d46623334c"
+    },
+    {
+      "path": "runtime_inputs\\final_methodology_closure\\wind\\WIND_ONSHORE_RESOURCE_CLASSES_2019.nc",
+      "sha256": "e5544ea65f550a5621c69d22ece69d25e8ed737426cfec57eee95f06273aa51b"
+    },
+    {
+      "path": "src\\mem_model\\final_methodology_closure.py",
+      "sha256": "c4206c9597241d2d33fb8feedef1fba13e27ac8362f47c558b670b08c7786559"
+    },
+    {
+      "path": "src\\mem_model\\final_wind_diagnostics.py",
+      "sha256": "9d35d25682959e3c4996dc7861de71c5f66739894e26e8b16199424aae3d1c98"
+    },
+    {
+      "path": "src\\mem_model\\final_wind_resource.py",
+      "sha256": "24a68f027fd080047f5ff46a762b7cacaee5221416a2c44a1fd47bedb09b8cac"
+    },
+    {
+      "path": "src\\mem_model\\final_wind_verification.py",
+      "sha256": "31d041d1ea5d0207a4745206b73db02d593cfc562b83be5a5ee3ee77250fcc12"
+    },
+    {
+      "path": "tests\\test_final_methodology_closure.py",
+      "sha256": "66e507c0ecb0eedba1bc515b3a6730b54a5c70a80491bba6b29772c511abfa1b"
+    },
+    {
+      "path": "tests\\test_final_wind_resource.py",
+      "sha256": "f3a5edb5b860a243c3b69c080ba1bceb6cd789804a0f947591322056ed6ef455"
+    },
+    {
+      "path": "tests\\test_final_wind_verification.py",
+      "sha256": "2a1396baefbb4c1cb257a97a8d50c1a7bc194e2b91db33b19ee0a8a89d86b1e9"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\WIND_RESOURCE_OUTPUT_MANIFEST.csv",
+      "sha256": "d2182db863b3df67b45f1c8884a1ff1cf981be20900b6c9877b57a80ae65e649"
+    }
+  ],
+  "accepted_methodological_decisions": [
+    "REUSE_CLOSED_ZONE_GEOGRAPHY_AND_EXISTING_2019_WEATHER",
+    "RETAIN_NATIVE_PHYSICAL_POTENTIAL_CORRECTION_AND_CLIPPING_RULES",
+    "NO_OFFSHORE_CRITERION_OR_EIGHT_CLASS_CONVERGENCE_SILENTLY_ASSUMED"
+  ],
+  "tests": {
+    "focused_non_solving": {
+      "status": "PASS",
+      "command": ".\\.venv\\Scripts\\python.exe -m pytest tests\\test_final_wind_resource.py tests\\test_final_methodology_closure.py tests\\test_final_wind_verification.py -o addopts= -q --basetemp .pytest_tmp\\final_closure_w_checkpoint",
+      "observed_result": "21 passed in 33.49s",
+      "tests_passed": 21,
+      "tests_failed": 0,
+      "optimization_constructors_and_solver_entrypoints_prohibited_by_autouse_fixtures": true,
+      "optimization_model_constructed": false,
+      "solver_invocations": 0
+    },
+    "cached_resource_checks": {
+      "status": "CACHED_RESOURCE_EVIDENCE_PASS_NOT_PHASE_W_PASS",
+      "parent_hash_verification": [
+        {
+          "year": 2040,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2040_SLOW_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+          "sha256": "a0c17596083c88c00967231ecd106b3ccf5558428bf70fa20053e2647731acb8",
+          "unchanged": true
+        },
+        {
+          "year": 2040,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2040_BASE_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+          "sha256": "611468aa6d8e8b0bfe50b8f17a3d80dcfcad71e82ef83ebee99d01dc617a4e7c",
+          "unchanged": true
+        },
+        {
+          "year": 2040,
+          "scenario": "High",
+          "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2040_HIGH_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+          "sha256": "b0dddf32d60477b11bdf9b3bfa37feabe8dd7e3b5c88e3254550e9dbf116d6d3",
+          "unchanged": true
+        },
+        {
+          "year": 2050,
+          "scenario": "Slow",
+          "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2050_SLOW_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+          "sha256": "e34aa5fbe8b293ace66f4aeef5c4826816410da111400fee42b14d1bcb04f396",
+          "unchanged": true
+        },
+        {
+          "year": 2050,
+          "scenario": "Base",
+          "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2050_BASE_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+          "sha256": "94b9685685e1c807cdf7079b7ee3cd19f1a4a4ec90d634bdf4f2d2dd80fb1f2d",
+          "unchanged": true
+        },
+        {
+          "year": 2050,
+          "scenario": "High",
+          "path": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2050_HIGH_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+          "sha256": "60a9f7f0a74b94657181e92b76ddc61ea7c5ca54d5fb2b28b0bb008ddf79ee60",
+          "unchanged": true
+        }
+      ],
+      "parent_hash_changes": 0,
+      "upstream_direct_dependency_hash_checks": 14,
+      "prior_protected_artifact_audit_reused": true,
+      "dataset_checks": [
+        {
+          "technology": "WIND_ONSHORE",
+          "snapshots": 8760,
+          "class_records": 91,
+          "min_profile": 0.0,
+          "max_profile": 1.0000000000000002,
+          "profile_values_changed_or_clipped_by_verification": 0,
+          "chronology_crosswalk_masks_and_potential": "PASS"
+        },
+        {
+          "technology": "WIND_OFFSHORE",
+          "snapshots": 8760,
+          "class_records": 91,
+          "min_profile": 0.0,
+          "max_profile": 0.8855000000000005,
+          "profile_values_changed_or_clipped_by_verification": 0,
+          "chronology_crosswalk_masks_and_potential": "PASS"
+        }
+      ],
+      "resource_class_records": 182,
+      "one_class_exact_reference_checks": 14,
+      "physical_capacity_headroom_checks": 252,
+      "offshore_siting_approval": false,
+      "final_class_count_selected": false,
+      "optimization_model_constructed": false,
+      "solver_invocations": 0,
+      "production_inputs_modified": 0,
+      "solved_networks_modified": 0,
+      "new_weather_downloads": 0,
+      "stage_a_reruns": 0,
+      "historical_reruns": 0
+    },
+    "independent_review": "qa/final_methodology_closure/wind/INDEPENDENT_NATIVE_REVIEW.json"
+  },
+  "unresolved_items": [
+    {
+      "gate": "W4",
+      "state": "OFFSHORE_FIXED_MW_ECONOMIC_CRITERION_REQUIRED",
+      "decision_required": "Approve the offshore preprocessing economic criterion and cost/output-value basis; native dispatch-dependent investment economics do not define a unique standalone fixed-MW rank.",
+      "evidence": "qa/final_methodology_closure/wind/OFFSHORE_ECONOMIC_TRADEOFFS.csv",
+      "no_silent_CF_LCOE_or_boundary_price_choice": true
+    },
+    {
+      "gate": "W5",
+      "state": "FOUR_VS_EIGHT_CLASS_STABILITY_NOT_PASS",
+      "decision_required": "Authorize a bounded finer-resolution convergence test, or explicitly approve another discretization acceptance rule; do not silently relax predeclared tolerances or declare eight classes converged.",
+      "evidence": "qa/final_methodology_closure/wind/FOUR_VS_EIGHT_CLASS_CONVERGENCE.csv",
+      "not_converged_onshore_cases": 38
+    }
+  ],
+  "updated_UTC": "2026-09-30T20:49:33.568480+00:00",
+  "production_optimization_executed": false,
+  "production_solver_invocations": 0
+}

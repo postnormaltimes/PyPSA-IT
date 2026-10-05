@@ -1,0 +1,147 @@
+{
+  "status": "MARGINAL_REGIME_CANONICAL_INTEGRATION_COMPLETE",
+  "methodology": "LEXICOGRAPHIC_REGIME_V1",
+  "checks": [
+    {
+      "check": "protected_artifacts_stable_or_authorized_catalog_originals_preserved_exactly",
+      "passed": true
+    },
+    {
+      "check": "Slow_normal_reporting_calls_canonical_producer_without_network_or_solver",
+      "passed": true
+    },
+    {
+      "check": "Slow_approved_data_exact_complete_canonical_source_paths",
+      "passed": true
+    },
+    {
+      "check": "Base_normal_reporting_calls_canonical_producer_without_network_or_solver",
+      "passed": true
+    },
+    {
+      "check": "Base_approved_data_exact_complete_canonical_source_paths",
+      "passed": true
+    },
+    {
+      "check": "High_normal_reporting_calls_canonical_producer_without_network_or_solver",
+      "passed": true
+    },
+    {
+      "check": "High_approved_data_exact_complete_canonical_source_paths",
+      "passed": true
+    },
+    {
+      "check": "year_2050_parameterized_missing_evidence_fails_closed_no_artifacts",
+      "passed": true
+    },
+    {
+      "check": "zero_network_opens_zero_solver_calls",
+      "passed": true
+    },
+    {
+      "check": "comparison_approved_shares_exact_and_all_three_scenarios",
+      "passed": true
+    },
+    {
+      "check": "four_canonical_png_svg_pairs_same_approved_geometry_palette_and_values",
+      "passed": true
+    },
+    {
+      "check": "only_approved_family_added_all_prior_inventory_and_selection_rows_preserved",
+      "passed": true
+    },
+    {
+      "check": "protected_hashes_still_stable_after_normal_reporting_and_catalog_delta",
+      "passed": true
+    }
+  ],
+  "checks_passed": 13,
+  "scenarios": [
+    "Slow",
+    "Base",
+    "High"
+  ],
+  "rows_per_scenario": 61320,
+  "solver_invocations": 0,
+  "network_opens": 0,
+  "canonical_model_price_or_existing_numerical_modifications": 0,
+  "existing_visualization_modifications": 0,
+  "prior_artifacts_hash_stable": 1542,
+  "authorized_catalog_versions_preserved": 5,
+  "approved_catalog_delta": {
+    "source://mem-model/outputs/visualization_review/20261002/COMPARISON_REVIEW.csv": {
+      "previous_sha256": "9a4afb8d917e519596c3dc739d81cea889032e130b05dc156130c2517b6e95c0",
+      "current_sha256": "6a6b899bff4b0d503e027fe492b9bea1f8f87916cc82e58bc9507d55a5711d9c",
+      "previous_version": "source://mem-model/qa/marginal_regime/canonical_integration/PRE_ACTIVATION_CATALOG/COMPARISON_REVIEW.csv"
+    },
+    "source://mem-model/outputs/visualization_review/20261002/FINAL_2040_VISUALIZATION_SET.md": {
+      "previous_sha256": "51fc46af1f0d525edb0d543fbf06aaf1db8cccf0708cc1223cce097589a79248",
+      "current_sha256": "755362b2d4995829b168a3419f135c0f9c5a820d9f8e1138268f95c4bfa7299d",
+      "previous_version": "source://mem-model/qa/marginal_regime/canonical_integration/PRE_ACTIVATION_CATALOG/FINAL_2040_VISUALIZATION_SET.md"
+    },
+    "source://mem-model/outputs/visualization_review/20261002/FINAL_VISUALIZATION_INVENTORY.csv": {
+      "previous_sha256": "2faae0023401c717ccf6995747d287c2c764476ea78c198d7eac8496bdd0def3",
+      "current_sha256": "c29e4beb2d4dd86eb8931b8b5c47bbb91c1ae04822a625ec33a191c3d759fdfe",
+      "previous_version": "source://mem-model/qa/marginal_regime/canonical_integration/PRE_ACTIVATION_CATALOG/FINAL_VISUALIZATION_INVENTORY.csv"
+    },
+    "source://mem-model/outputs/visualization_review/20261002/ROUTINE_VISUALIZATION_SHORTLIST.csv": {
+      "previous_sha256": "e7ce53359c06a0b46dfee35fb0a19cedb8ac2fa4d7f030257ad0fc823e538756",
+      "current_sha256": "05455fd003824fe05735e7104d2cd817269d9e6363b02bd88026611951c498c8",
+      "previous_version": "source://mem-model/qa/marginal_regime/canonical_integration/PRE_ACTIVATION_CATALOG/ROUTINE_VISUALIZATION_SHORTLIST.csv"
+    },
+    "source://mem-model/outputs/visualization_review/20261002/VISUALIZATION_FINALIZATION_RECEIPT.json": {
+      "previous_sha256": "804ba85756ac96ab9140c955dfd5024a8ff0bc32652b8abc7f1832354ac82714",
+      "current_sha256": "d16da886aab7c4f768ec46e8ee9cd3c490e53bbd5ffe15a575e0dfae4082c6a2",
+      "previous_version": "source://mem-model/qa/marginal_regime/canonical_integration/PRE_ACTIVATION_CATALOG/VISUALIZATION_FINALIZATION_RECEIPT.json"
+    }
+  },
+  "routine_families": 10,
+  "comparison_presentation_views": 18,
+  "approved_data_csv_parquet_byte_identical": true,
+  "approved_figures_geometry_palette_and_values_preserved": true,
+  "canonical_annotation_change_only": true,
+  "prior_catalog_versions": "source://mem-model/qa/marginal_regime/canonical_integration/PRE_ACTIVATION_CATALOG",
+  "canonical_outputs": [
+    "source://mem-model/results/uc2_full_year/2040/Slow/REPORTING/VIS_X1/marginal_regime/lexicographic_regime_shares_2040_Slow.png",
+    "source://mem-model/results/uc2_full_year/2040/Base/REPORTING/VIS_X1/marginal_regime/lexicographic_regime_shares_2040_Base.png",
+    "source://mem-model/results/uc2_full_year/2040/High/REPORTING/VIS_X1/marginal_regime/lexicographic_regime_shares_2040_High.png",
+    "source://mem-model/results/uc2_full_year/2040/COMPARISONS_VIS_X1/marginal_regime/figures/lexicographic_regime_comparison_2040.png"
+  ],
+  "canonical_receipt_hashes": {
+    "source://mem-model/results/uc2_full_year/2040/Slow/REPORTING/MEM_MARGINAL_REGIME_RECEIPT.json": "f5963e6d731ee56827b1d4226de9620fd3e05325ac08bf0c8f4cef51375e335c",
+    "source://mem-model/results/uc2_full_year/2040/Base/REPORTING/MEM_MARGINAL_REGIME_RECEIPT.json": "4bba43a7278b685ab43da98db93be763a748f2f3abd8b7fb887c4554ecda9506",
+    "source://mem-model/results/uc2_full_year/2040/High/REPORTING/MEM_MARGINAL_REGIME_RECEIPT.json": "86adb166cd2b3b9539899f23fef0f2b9e711467e4d07e7773a2a46d02dd12c62",
+    "source://mem-model/results/uc2_full_year/2040/COMPARISONS_VIS_X1/marginal_regime/MEM_MARGINAL_REGIME_COMPARISON_RECEIPT.json": "0226ed1462ef88787f0f43bdda613f60a75157bef1362631e944c6d2ebc57051"
+  },
+  "inventory_hashes": {
+    "source://mem-model/outputs/visualization_review/20261002/COMPARISON_REVIEW.csv": "6a6b899bff4b0d503e027fe492b9bea1f8f87916cc82e58bc9507d55a5711d9c",
+    "source://mem-model/outputs/visualization_review/20261002/FINAL_VISUALIZATION_INVENTORY.csv": "c29e4beb2d4dd86eb8931b8b5c47bbb91c1ae04822a625ec33a191c3d759fdfe",
+    "source://mem-model/outputs/visualization_review/20261002/ROUTINE_VISUALIZATION_SHORTLIST.csv": "05455fd003824fe05735e7104d2cd817269d9e6363b02bd88026611951c498c8",
+    "source://mem-model/outputs/visualization_review/20261002/VISUALIZATION_FINALIZATION_RECEIPT.json": "d16da886aab7c4f768ec46e8ee9cd3c490e53bbd5ffe15a575e0dfae4082c6a2",
+    "source://mem-model/outputs/visualization_review/20261002/FINAL_2040_VISUALIZATION_SET.md": "755362b2d4995829b168a3419f135c0f9c5a820d9f8e1138268f95c4bfa7299d"
+  },
+  "files_changed": [
+    "src/mem_model/stage_b_uc2.py",
+    "src/mem_model/reporting/marginal_regime.py",
+    "src/mem_model/visualization/marginal_setter_lexicographic.py",
+    "config/marginal_regime.yaml",
+    "docs/MEM_UC3_MARGINAL_REGIME_CANONICAL_HANDOFF_20261003.md",
+    "docs/MEM_UC2_VIS_REPORTING_R1_HANDOFF_20260930.md",
+    "outputs/visualization_review/20261002/COMPARISON_REVIEW.csv",
+    "outputs/visualization_review/20261002/FINAL_VISUALIZATION_INVENTORY.csv",
+    "outputs/visualization_review/20261002/ROUTINE_VISUALIZATION_SHORTLIST.csv",
+    "outputs/visualization_review/20261002/VISUALIZATION_FINALIZATION_RECEIPT.json",
+    "outputs/visualization_review/20261002/FINAL_2040_VISUALIZATION_SET.md"
+  ],
+  "code_and_handoff_hashes": {
+    "src/mem_model/stage_b_uc2.py": "33332314d57d922ebe738c770d3416f7300b4a446e08f4a8d952eca2bf5a9580",
+    "src/mem_model/reporting/marginal_regime.py": "56cd4c5b1ba70b1ad7ea99a81d5cecfacd8bf850f31ad446ed2c0e08916e5148",
+    "src/mem_model/visualization/marginal_setter_lexicographic.py": "bbb784571f3cc9ceb253f742761e7086d0bc95fc93368393e2aa37de30d0ebe3",
+    "config/marginal_regime.yaml": "789a920f2c20b6f62e8cf3c8d296b8984cc7df58cdcb5e5a5fac1a1dba1793c1",
+    "docs/MEM_UC3_MARGINAL_REGIME_CANONICAL_HANDOFF_20261003.md": "5e80f35d470fe25e64df123b3d7da80630c9b30812e5b6598b3958b21a6b82a1",
+    "docs/MEM_UC2_VIS_REPORTING_R1_HANDOFF_20260930.md": "50ecb6b2dc9d7ddb56dc5273694b960d6e4d6188970e62c0ef35476c387e223b"
+  },
+  "canonical_figures_visual_inspection": "Base zonal chart and national comparison inspected; approved alignment, values, geometry and palette retained; only canonical authority wording changed.",
+  "approved_classification_source_hash_unchanged": true,
+  "canonical_producer_and_config_no_2040_dependency": true
+}

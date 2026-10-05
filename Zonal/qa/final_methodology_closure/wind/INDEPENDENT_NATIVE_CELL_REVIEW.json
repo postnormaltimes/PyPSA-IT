@@ -1,0 +1,191 @@
+{
+  "schema_version": "MEM_INDEPENDENT_NATIVE_CELL_REVIEW_V1",
+  "review_date": "2026-10-01",
+  "state": "INDEPENDENT_NATIVE_CELL_PHYSICAL_ALLOCATION_AND_PROFILE_PASS_2040_COST_REUSE_RESIDUAL",
+  "scope": "Bounded independent source and persisted-output review; no weather reconversion, optimization model or solver.",
+  "original_requirements": [
+    "docs/final_methodology_closure/MEM_FINAL_PREPRODUCTION_METHODOLOGY_CLOSURE_MASTER.md",
+    "docs/final_methodology_closure/PHASE_W_NATIVE_CELL_RESOLUTION.md",
+    "User Phase-W native-cell common fixed-capacity site-LCOE resolution and execution boundary"
+  ],
+  "evidence": [
+    {
+      "path": "src/mem_model/final_wind_cells.py",
+      "sha256": "84fad5eb9b8ace6b8de997ee34dc253a2219fa3274ebdef33f8b36af211b234d"
+    },
+    {
+      "path": "qa/final_methodology_closure/wind/NATIVE_CELL_RESOURCE_TABLE.csv",
+      "sha256": "bbaef089de7e964568573f6eb70a71ff07653f95ba38682cbb812fca901765d5"
+    },
+    {
+      "path": "qa/final_methodology_closure/wind/NATIVE_CELL_SITING_ALLOCATION.csv",
+      "sha256": "78ce57cfd5b03dbd2f7acf51bacea4b97323d1fc3f7be7aaba411259f8707854"
+    },
+    {
+      "path": "qa/final_methodology_closure/wind/FINAL_WIND_PROFILE_QA.csv",
+      "sha256": "7914f46dc74705a6df8fcdb9ecb88f6574ce75f6a9672db18137c94a69810fed"
+    },
+    {
+      "path": "qa/final_methodology_closure/wind/OFFSHORE_COST_RANKING_ROBUSTNESS.csv",
+      "sha256": "0c03af1620ae2453d9a18ae7b9750150b7df151d6195723d27ca9802fb9a2bd1"
+    },
+    {
+      "path": "runtime_inputs/final_methodology_closure/wind/WIND_ONSHORE_SELECTED_NATIVE_CELL_PROFILES_2019.nc",
+      "sha256": "a0c764625dbc37678c519293b4af5b6ac622c7f887da9faa709ac5d6028063ef"
+    },
+    {
+      "path": "runtime_inputs/final_methodology_closure/wind/WIND_OFFSHORE_SELECTED_NATIVE_CELL_PROFILES_2019.nc",
+      "sha256": "a241496ab3e1db9e63bb98bd5c00fb371905969467c178e8257d471633b0bb10"
+    },
+    {
+      "path": "runtime_inputs/final_methodology_closure/wind/NATIVE_CELL_EFFECTIVE_WIND_2019.parquet",
+      "sha256": "f873ab54914fbf39828a389b7ae299d6f1d64684b64c069a3d71bdf9dd8f3fa3"
+    },
+    {
+      "path": "qa/final_methodology_closure/wind/LOCAL_PINNED_SITE_COST_AUTHORITY.json",
+      "sha256": "0dfd51d669d1a6ac86aab0a088c4003c3c3b5dc095389ca6d6937f7493874d39"
+    },
+    {
+      "path": "qa/final_methodology_closure/wind/RESOURCE_CLASS_TO_NATIVE_REFERENCE_QA.csv",
+      "sha256": "f76234d96acee3ff1c51ac99817fa0af9e62cb6c747f89ab1ea26db755ca7438",
+      "evidence_role": "Bounded selected technical potential reporting delta independently checked"
+    },
+    {
+      "path": "qa/final_methodology_closure/wind/FINAL_WIND_VERIFICATION.json",
+      "sha256": "b06927f27fab2e566df25c388b442422ab6557e0b6efcf471478d23db14b2e7f",
+      "evidence_role": "Supporting lead verification receipt; independent original conclusions retained"
+    },
+    {
+      "path": "qa/final_methodology_closure/wind/NATIVE_CELL_CASE_RECONSTRUCTION_QA.json",
+      "sha256": "facce67dbf3c42c2fe454d1cb2762af45a6f13acc4e03fed58327f862ada1015",
+      "evidence_role": "Supporting lead case reconstruction receipt; independent original 84/126 review retained"
+    }
+  ],
+  "implementation_findings": {
+    "material_implementation_defects_identified": [],
+    "common_fixed_capacity_site_LCOE_framework": true,
+    "frozen_capacity_scope_exact": true,
+    "no_cross_zone_capacity_transfer": true,
+    "eligible_fraction_area_density_formula": "PASS",
+    "cell_potential_sum_vs_accepted_one_class": {
+      "cases": 14,
+      "max_absolute_difference_MW": 2.9103830456733704e-11,
+      "status": "PASS"
+    },
+    "onshore_common_positive_cost_over_8760_CF_equivalent_to_descending_CF": true,
+    "offshore_generation_station_landfall_and_distance_cost_included": true,
+    "pinned_raw_costs_annualized_once": true,
+    "site_ranking_independently_recomputed": "Lowest annualized site cost / (8760 * CF), then stable ascending site_id",
+    "partial_marginal_cell_allocation_permitted_and_physical_caps_verified": true,
+    "no_output_price_assumption_or_dispatch_price_feedback": true,
+    "effective_profiles_8760_UTC_finite_and_in_unit_interval_with_numerical_tolerance": "PASS",
+    "accepted_lower_threshold": 0.01,
+    "selected_NetCDF_trace_lower_threshold_violations": {
+      "WIND_ONSHORE": 0,
+      "WIND_OFFSHORE": 0
+    },
+    "promotion_source_review": "Source targets exactly the existing 14 wind Generator p_max_pu columns and compares all original static/dynamic model fields before and after serialization. Promotion itself not executed/reviewed because the residual cost gate remains unresolved."
+  },
+  "independent_verification": {
+    "method": "Read persisted CSV/Parquet/selected-cell NetCDF objects. Independent vector cumulative-cap allocation reproduces the deterministic ranking. Reconstruct each final effective profile from its selected cell traces and selected MW. Recompute all three offshore stress allocations and their profiles using only persisted traces. No producer allocation/helper/model routine invoked.",
+    "resource_rows": 819,
+    "physical_formula_max_absolute_error_MW": 4.547473508864641e-13,
+    "allocation_groups": 84,
+    "allocation_rows": 1103,
+    "extra_or_missing_allocation_cases": 0,
+    "selected_technical_potential_reporting_delta": {
+      "native_cases_checked": 84,
+      "class_cases_checked": 252,
+      "native_field_max_absolute_error_MW": 3.637978807091713e-12,
+      "class_field_max_absolute_error_MW": 3.637978807091713e-12,
+      "definition": "Sum of physical p_nom_max_MW over occupied resource units; native fields equal grouped occupied cell p_nom_max, and class fields equal independently allocated occupied class p_nom_max",
+      "status": "PASS",
+      "scope": "Bounded reporting delta only; no weather/profile reconstruction rerun"
+    },
+    "frozen_cases_checked": 84,
+    "max_absolute_errors": {
+      "profile_reconstruction": 4.440892098500626e-16,
+      "allocation_ranking_MW": 2.7284841053187847e-12,
+      "frozen_capacity_residual_MW": 3.637978807091713e-12,
+      "selected_trace_CF": 8.326672684688674e-17
+    },
+    "selected_hourly_resource_units": {
+      "WIND_ONSHORE": 88,
+      "WIND_OFFSHORE": 107
+    },
+    "effective_parquet_rows": 735840,
+    "independent_offshore_stress_reconstructions": 126,
+    "missing_stress_traces": [],
+    "comparison_tolerances": {
+      "annual_CF_absolute": 0.002,
+      "hourly_MAE": 0.005,
+      "hourly_max_absolute": 0.05
+    },
+    "producer_reported_cost_stress_failures_independently_confirmed": [
+      {
+        "year": 2040,
+        "scenario": "Base",
+        "zone": "CNOR",
+        "scale": 1.25,
+        "status": "NOT_CONVERGED",
+        "annual_CF_absolute": 0.0017163023312506964,
+        "hourly_MAE": 0.02822879819302866,
+        "hourly_max_absolute": 0.11471431367302326,
+        "selected_MW_changed": 103.63800218906664
+      },
+      {
+        "year": 2040,
+        "scenario": "High",
+        "zone": "CNOR",
+        "scale": 1.25,
+        "status": "NOT_CONVERGED",
+        "annual_CF_absolute": 0.0003558712003343123,
+        "hourly_MAE": 0.00585317406731513,
+        "hourly_max_absolute": 0.023785739702748443,
+        "selected_MW_changed": 23.63800218906664
+      },
+      {
+        "year": 2050,
+        "scenario": "Base",
+        "zone": "CNOR",
+        "scale": 1.25,
+        "status": "NOT_CONVERGED",
+        "annual_CF_absolute": 0.0019158322304427267,
+        "hourly_MAE": 0.03151055639798367,
+        "hourly_max_absolute": 0.12805050452138877,
+        "selected_MW_changed": 114.16431797806666
+      },
+      {
+        "year": 2050,
+        "scenario": "High",
+        "zone": "CNOR",
+        "scale": 1.25,
+        "status": "NOT_CONVERGED",
+        "annual_CF_absolute": 0.0005372620177832577,
+        "hourly_MAE": 0.008836590617300315,
+        "hourly_max_absolute": 0.03590954956500492,
+        "selected_MW_changed": 35.21694955706658
+      }
+    ]
+  },
+  "residual_authority_framing": {
+    "available_local_raw_cost_horizon": 2050,
+    "raw_2050_is_direct_horizon_authority_for_2050": true,
+    "no_claim_that_2050_lacks_horizon_cost_authority": true,
+    "two_2050_CNOR_stress_failures_interpretation": "Sensitivity diagnostics around an existing direct 2050 authority; they do not establish absence of 2050 horizon authority.",
+    "production_residual": "Reusing the sole pinned raw 2050 cost authority for 2040 is conditional on robustness under the user resolution. 2040 CNOR Base and High fail the high common-generation stress. No local 2040 input was recovered; resolve only this cross-horizon cost reuse decision before all-six W promotion.",
+    "four_failed_comparisons_remain_visible": true,
+    "resource_class_4_vs_8_failures_remain_visible_and_are_not_final_spatial_authority": true,
+    "no_diagnostic_stress_vintage_promoted_as_empirical_cost_authority": true
+  },
+  "boundaries": {
+    "new_weather_conversion": false,
+    "optimizer_model_constructed": false,
+    "production_optimization_executed": false,
+    "production_solver_invocations": 0,
+    "parent_network_edits": 0,
+    "edits_by_this_review": [
+      "qa/final_methodology_closure/wind/INDEPENDENT_NATIVE_CELL_REVIEW.json"
+    ]
+  }
+}

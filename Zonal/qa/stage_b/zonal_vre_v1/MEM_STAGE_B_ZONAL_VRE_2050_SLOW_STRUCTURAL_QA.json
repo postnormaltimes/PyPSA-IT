@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "snapshots": 8760,
+  "changed_VRE_columns": 28,
+  "all_static_components_exact": true,
+  "non_VRE_dynamic_components_exact": true,
+  "capacity_change_MW": 0.0,
+  "P2X_load_storage_hydro_UC_prices_topology_unchanged": true,
+  "target_profile_timestamp_equality": true,
+  "scenario_specific_weather": false,
+  "year": 2050,
+  "scenario": "Slow",
+  "parent": "networks\\unsolved\\uc2a_heterogeneous_v1\\MEM_2050_SLOW_UC2A_HETEROGENEOUS_V1_8760h_UNSOLVED.nc",
+  "parent_sha256": "354d8b7e55b0a688b4debb2a7e1a7ba6a706870a70bd7e5eeac725939cfd7632",
+  "output": "networks\\unsolved\\uc2a_zonal_vre_v1\\MEM_2050_SLOW_UC2A_ZONAL_VRE_V1_8760h_UNSOLVED.nc",
+  "output_sha256": "e34aa5fbe8b293ace66f4aeef5c4826816410da111400fee42b14d1bcb04f396",
+  "serialization_reimport": "PASS"
+}

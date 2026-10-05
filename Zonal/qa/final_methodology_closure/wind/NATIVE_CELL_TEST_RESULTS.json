@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "command": ".\\.venv\\Scripts\\python.exe -m pytest tests\\test_final_wind_cells.py tests\\test_final_wind_cell_verification.py tests\\test_final_wind_resource.py tests\\test_final_wind_verification.py tests\\test_final_methodology_closure.py -o addopts= -q --basetemp .pytest_tmp\\final_native_wind_checkpoint",
+  "observed_terminal_result": "48 passed in 21.34s",
+  "tests_collected": 48,
+  "tests_passed": 48,
+  "tests_failed": 0,
+  "elapsed_seconds": 21.34,
+  "no_models_or_solves_guard_enabled": true,
+  "optimization_model_constructed": false,
+  "solver_invocations": 0,
+  "prior_accepted_21_test_receipt_reused_not_overwritten": true,
+  "coverage": [
+    "common native-cell lowest-site-LCOE allocation",
+    "onshore common-cost CF-priority equivalence",
+    "offshore connection-cost ranking and cost-array identity",
+    "partial marginal cell and physical upper bounds",
+    "stable cell-ID tie break",
+    "pinned raw cost annualization once",
+    "wind-only network preservation without model construction",
+    "seven-zone/six-scenario/two-family case grain",
+    "selected-cell identity and no cross-zone allocation",
+    "8760-hour chronology and effective-profile reconstruction",
+    "fail-closed blocked promotion",
+    "unrelaxed materiality limits",
+    "retained cached class and sequential-phase gates",
+    "fail-closed final checkpoint and independent-verification preconditions"
+  ]
+}

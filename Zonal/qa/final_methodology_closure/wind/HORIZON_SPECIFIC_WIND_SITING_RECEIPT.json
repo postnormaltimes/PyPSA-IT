@@ -1,0 +1,23 @@
+{
+  "state": "NATIVE_CELL_SITING_QA_PASS_PENDING_PROMOTION",
+  "affected_2040_offshore_cases": 21,
+  "profile_path": "runtime_inputs\\final_methodology_closure\\wind\\horizon_cost_v1\\HORIZON_SPECIFIC_NATIVE_CELL_EFFECTIVE_WIND_2019.parquet",
+  "profile_sha256": "9fd5704dbab52731e11c258048975a22f60be81813af00e26a2f87466f25a92a",
+  "allocation_path": "qa\\final_methodology_closure\\wind\\HORIZON_SPECIFIC_NATIVE_CELL_SITING_ALLOCATION.csv",
+  "allocation_sha256": "65493375562dae349a28e7b6485158ca9226aa9594a3d4b19c5e713abe1acf0f",
+  "OFFSHORE_COST_AUTHORITY_2040": "runtime_sources\\costs\\technology_data_v0.14.0\\costs_2040.csv",
+  "OFFSHORE_COST_AUTHORITY_2050": "source://pypsa-eur/data/costs/archive/v0.14.0/costs_2050.csv",
+  "ONSHORE_FINAL_ALLOCATION_UNCHANGED": true,
+  "ALL_2050_FINAL_PROFILES_UNCHANGED": true,
+  "ONSHORE_AND_OFFSHORE_USE_COMMON_FIXED_CAPACITY_SITE_LCOE_FRAMEWORK": true,
+  "RESOURCE_CLASS_DISCRETIZATION_NOT_USED_AS_FINAL_SITING_AUTHORITY": true,
+  "FINAL_2040_SITING_USES_DIRECT_OR_NATIVE_COMPILED_2040_AUTHORITY": true,
+  "prior_48_tests_and_84_physical_cases_reused": true,
+  "cost_sensitivity_is_diagnostic_not_authority_gate": true,
+  "historical_CF_calibration": false,
+  "zonal_capacity_changed": false,
+  "weather_changed": false,
+  "optimization_model_constructed": false,
+  "production_solver_invocations": 0,
+  "production_results_modified": 0
+}

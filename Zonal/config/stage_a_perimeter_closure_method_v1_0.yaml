@@ -1,0 +1,108 @@
+schema_version: MEM_STAGE_A_PERIMETER_CLOSURE_METHOD_V1_0
+method_id: PERIMETER_CLOSURE_METHOD_V1_0
+status: SUPERSEDED_UNACCEPTED_DRAFT
+canonical_authority: config/stage_a_perimeter_closure_method_v1_0.yaml
+research_status: CLOSED
+superseded_by: config/stage_a_perimeter_closure_method_v2_0.yaml
+supersession_reason: MAXIMUM_HOURLY_SHEDDING_CAPACITY_RULE_WAS_NOT_ACCEPTED_FOR_PRODUCTION
+authoritative_for_execution: false
+
+methodology_distinction:
+  bounded_baseline:
+    identity: IMMUTABLE_BOUNDED_PERIMETER_BASELINE
+    purpose: COUNTERFACTUAL_AND_DIAGNOSTIC_TRUNCATED_TEN_MARKET_PERIMETER
+    accepted_and_immutable: true
+    production_price_source: false
+  closure_solution:
+    identity: ACCEPTED_2040_PRODUCTION_PERIMETER_CLOSURE
+    purpose: PRODUCTION_STAGE_A_BOUNDARY_PRICE_SOLUTION
+    accepted_for_2040: true
+
+production_price_sources:
+  2040:
+    bounded_baseline_gate: ETX7B8_2040_BASE_FULL_YEAR_COMPLETE
+    bounded_baseline_result_manifest: stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_Result_Manifest_v1.0.csv
+    bounded_baseline_price_path: stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_Market_Prices.parquet
+    production_gate: ETX7B8C_S2_EXPERIMENT_COMPLETE
+    production_identity: ETX7B8C_S2_2040_BASE
+    production_result_manifest: stage_a_results/2040_perimeter_closure_s2/MEM_ETX7B8C_S2_2040_BASE_Result_Manifest_v1.0.csv
+    production_price_path: stage_a_results/2040_perimeter_closure_s2/MEM_ETX7B8C_S2_2040_BASE_Market_Prices.parquet
+  2050:
+    bounded_baseline_gate: ETX7B9_2050_BASE_FULL_YEAR_COMPLETE
+    bounded_baseline_first: true
+    production_gate: PENDING_ETX7B9C_SOL_ACCEPTANCE
+    production_identity: null
+    production_result_manifest: null
+    production_price_path: null
+
+accepted_2040_contract:
+  interpretation: RESIDUAL_FIRM_EXTERNAL_SUPPLY_FROM_OMITTED_SYSTEMS
+  candidate_markets: [FR, TN, GR]
+  MT_virtual_supply: NONE
+  common_marginal_cost_EUR2025_per_MWh_el: 145.909492380952
+  virtual_generators:
+    FR:
+      generator_id: EXTERNAL_VIRTUAL_SUPPLY_FR
+      p_nom_MW: 25199.225303080686
+    TN:
+      generator_id: EXTERNAL_VIRTUAL_SUPPLY_TN
+      p_nom_MW: 1643.2154545427973
+    GR:
+      generator_id: EXTERNAL_VIRTUAL_SUPPLY_GR
+      p_nom_MW: 3624.529283896116
+  derivation_status: HISTORICAL_S2_DERIVATION_FROZEN_UNCHANGED
+
+horizon_rule:
+  candidate_markets: [FR, TN, GR]
+  MT_default_status: EXCLUDED_UNLESS_EXPLICIT_LATER_SOL_DECISION
+  steps:
+    A: RUN_ACCEPTED_BOUNDED_TEN_MARKET_ANNUAL_BASE_MODEL_WITHOUT_VIRTUAL_CLOSURE
+    B: PERFORM_IMMUTABLE_ANNUAL_SCARCITY_AND_INTERFACE_DIAGNOSTIC
+    C: LIMIT_DEFAULT_VIRTUAL_SUPPLY_CANDIDATES_TO_FR_TN_GR
+    D: SET_EACH_VIRTUAL_P_NOM_TO_EXACT_HORIZON_BASELINE_MAXIMUM_HOURLY_LOCAL_SHEDDING_MW
+    E: RECOVER_HORIZON_SPECIFIC_FROZEN_NON_CHP_METHANE_OCGT_PROXY_FROM_ACCEPTED_B4_AUTHORITY
+    F: RUN_ONE_COMBINED_FIXED_CAPACITY_CONTINUOUS_LP_CLOSURE_WITH_NO_BASELINE_COMPONENT_CHANGE
+    G: COMPARE_BASELINE_AND_CLOSURE_AND_REQUIRE_EXPLICIT_SOL_ACCEPTANCE_BEFORE_PRODUCTION_PROMOTION
+  sizing_controls:
+    reserve_margin: false
+    rounding: false
+    headroom: false
+    capacity_optimization: false
+    automatic_iterative_sizing: false
+  formulation_controls:
+    continuous_LP_only: true
+    fixed_capacity: true
+    unit_commitment: false
+    capacity_expansion: false
+    integer_variables: false
+    binary_variables: false
+    baseline_component_changes: false
+  promotion:
+    automatic: false
+    explicit_method_review_required: true
+
+inheritance_to_2050:
+  inherit_method_rule: true
+  inherit_2040_virtual_capacities: false
+  virtual_capacities_MW:
+    FR: null
+    TN: null
+    GR: null
+  capacity_derivation_authority: FUTURE_IMMUTABLE_ETX7B9B_2050_BOUNDED_ANNUAL_BASELINE
+  inherit_2040_marginal_cost: false
+  marginal_cost_EUR2025_per_MWh_el: null
+  marginal_cost_authority: FUTURE_RECOVERY_FROM_ACCEPTED_2050_B4_OPERATING_PARAMETERS
+  web_research_allowed: false
+
+execution_sequence_2050:
+  ETX-7B9A: BOUNDED_2050_BASE_SMOKE_WITHOUT_VIRTUAL_SUPPLY
+  ETX-7B9B: BOUNDED_2050_BASE_FULL_8760_WITHOUT_VIRTUAL_SUPPLY
+  ETX-7B9C: FUTURE_AUXILIARY_2050_DIAGNOSTIC_AND_COMBINED_CLOSURE_AFTER_ACCEPTED_B9B
+  ETX-7B9C_implemented_now: false
+  ETX-7B9C_authorized_now: false
+
+B10_price_contract:
+  2040: ACCEPTED_ETX7B8C_S2_PRODUCTION_PRICES
+  2050: ACCEPTED_ETX7B9C_PRODUCTION_CLOSURE_PRICES_IF_AND_ONLY_IF_ACCEPTED
+  raw_bounded_prices_permitted_when_accepted_closure_exists: false
+  current_status: LOCKED_IMPLEMENTATION_RECONCILIATION_REQUIRED_BEFORE_AUTHORIZATION

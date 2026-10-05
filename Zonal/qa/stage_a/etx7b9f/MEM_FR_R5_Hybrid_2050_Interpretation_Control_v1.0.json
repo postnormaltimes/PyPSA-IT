@@ -1,0 +1,11 @@
+{
+  "schema_version": "MEM_FR_R5_HYBRID_2050_INTERPRETATION_CONTROL_V1_0",
+  "status": "EVIDENCE_ONLY_PENDING_METHOD_REVIEW",
+  "question": "Whether restoring only France to the existing R5 quantity preserves B9E placement improvements and removes the main remaining external-price distortion",
+  "practical_100_to_200_EUR_per_MWh_band_is_diagnostic_only": true,
+  "automatic_economic_acceptance": false,
+  "automatic_successor_experiment": false,
+  "production_price_acceptance": "PENDING_METHOD_REVIEW",
+  "B10_2050_authorized": false,
+  "Stage_B_2050_authorized": false
+}

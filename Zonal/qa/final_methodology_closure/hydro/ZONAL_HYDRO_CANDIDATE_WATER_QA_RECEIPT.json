@@ -1,0 +1,11 @@
+{
+  "state": "HYDRO_ROR_TURBINE_COMPATIBILITY_FAIL",
+  "natural_inflow_cases": 144,
+  "annual_water_controls_PASS": 144,
+  "ROR_incompatible_hours": 12702,
+  "ROR_incompatible_cases": 36,
+  "spill_caps_requiring_safety_update": 96,
+  "network_exports": 0,
+  "optimization_model_constructed": false,
+  "production_solver_invocations": 0
+}

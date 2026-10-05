@@ -1,0 +1,211 @@
+{
+  "source": {
+    "path": "source://pypsa-eur/data/powerplants/archive/0.8.1/powerplants.csv",
+    "sha256": "0bb395b298bdcbcb29526df20f2a97f3c3dde0768af6f754ff66ed26ad8ed703",
+    "version": "POWERPLANTMATCHING_0.8.1_RAW_MATCHED_ARCHIVE",
+    "efficiency_policy": "GEO_SOURCE_REPORTED_NO_OPSD_ESTIMATES_NO_GENERIC_FILL",
+    "efficiency_caveat": "SOURCE_REPORTED_SUBSEQUENTLY_PLANT_AGGREGATED_NOT_INDEPENDENT_MEASURED_PERFORMANCE",
+    "uncertain_aggregate_archive_ids": [
+      1884,
+      1892
+    ],
+    "uncertainty": "PPM_CAPACITY_WEIGHTED_AGGREGATION_CAN_DILUTE_MISSING_CONSTITUENT_EFFICIENCY_RAW_CONSTITUENTS_UNAVAILABLE",
+    "europe": [
+      "Albania",
+      "Austria",
+      "Belgium",
+      "Bosnia and Herzegovina",
+      "Bulgaria",
+      "Croatia",
+      "Czechia",
+      "Denmark",
+      "Estonia",
+      "Finland",
+      "France",
+      "Germany",
+      "Greece",
+      "Hungary",
+      "Ireland",
+      "Italy",
+      "Kosovo",
+      "Latvia",
+      "Lithuania",
+      "Luxembourg",
+      "Moldova",
+      "Montenegro",
+      "Netherlands",
+      "North Macedonia",
+      "Norway",
+      "Poland",
+      "Portugal",
+      "Romania",
+      "Serbia",
+      "Slovakia",
+      "Slovenia",
+      "Spain",
+      "Sweden",
+      "Switzerland",
+      "Ukraine",
+      "United Kingdom"
+    ],
+    "lineage_root": "source://software/powerplantmatching",
+    "lineage_hashes": {
+      "data.py": "8d295c51f737cfdad99add9d6f64133702b9d43a878eca9defb30d11ce3e25e1",
+      "cleaning.py": "3d6f91c05b3aeeaf855ed15a52951f262303b16e135af3c22f86d6367130d343",
+      "matching.py": "332db5e035de9c39e39fdea6b65300f87106d30b910e6e17749f57a2ef942243",
+      "package_data/config.yaml": "d37ca6abeb22d68ff4727a2fca6a7815a1407a23a4a3c07039d3bf8c2347bffa"
+    }
+  },
+  "classes": {
+    "CCGT": {
+      "mode": "OBSERVED_JOINT_DISTRIBUTION",
+      "reason": "EMPIRICAL_RELATIVE_CLASSES",
+      "size_geography": "ITALY",
+      "hr_geography": "ITALY",
+      "capacity_rows": 13,
+      "heat_rate_rows": 13,
+      "joint_rows": 13,
+      "diagnostics": [
+        {
+          "geography": "ITALY",
+          "capacity_rows": 95,
+          "heat_rate_rows": 13,
+          "joint_rows": 13,
+          "distinct_capacities": 82,
+          "distinct_heat_rates": 10
+        }
+      ],
+      "size_boundaries_MW": [
+        718.0,
+        800.0
+      ],
+      "heat_rate_boundaries": [
+        1.7857142857142856,
+        1.9492025989367985
+      ],
+      "size_representatives_MW": [
+        400.0,
+        780.0,
+        840.0
+      ],
+      "hr_representatives": [
+        1.7700501253132832,
+        1.8083182640144668,
+        3.6855648194972117
+      ],
+      "size_denominator_unit_mean_MW": 678.4615384615385,
+      "hr_denominator_unit_mean": 2.3753990537872682,
+      "size_multipliers": [
+        0.5895691609977325,
+        1.1496598639455782,
+        1.2380952380952381
+      ],
+      "hr_multipliers": [
+        0.7451590596919562,
+        0.7612692533203362,
+        1.551556069545895
+      ],
+      "cell_shares": [
+        0.15384615384615385,
+        0.15384615384615385,
+        0.07692307692307693,
+        0.23076923076923078,
+        0.0,
+        0.15384615384615385,
+        0.07692307692307693,
+        0.07692307692307693,
+        0.07692307692307693
+      ]
+    },
+    "OCGT": {
+      "technology": "OCGT",
+      "mode": "HOMOGENEOUS_FALLBACK",
+      "reason": "HETEROGENEITY_NOT_APPLIED_INSUFFICIENT_REFERENCE_SAMPLE",
+      "diagnostics": [
+        {
+          "geography": "ITALY",
+          "capacity_rows": 0,
+          "heat_rate_rows": 0,
+          "joint_rows": 0,
+          "distinct_capacities": 0,
+          "distinct_heat_rates": 0
+        },
+        {
+          "geography": "EUROPE",
+          "capacity_rows": 130,
+          "heat_rate_rows": 0,
+          "joint_rows": 0,
+          "distinct_capacities": 69,
+          "distinct_heat_rates": 0
+        }
+      ]
+    },
+    "BIOMASS_STEAM": {
+      "technology": "BIOMASS_STEAM",
+      "mode": "HOMOGENEOUS_FALLBACK",
+      "reason": "BIOMASS_HETEROGENEITY_NOT_APPLIED_INSUFFICIENT_REFERENCE_SAMPLE",
+      "diagnostics": [
+        {
+          "geography": "ITALY",
+          "capacity_rows": 0,
+          "heat_rate_rows": 0,
+          "joint_rows": 0,
+          "distinct_capacities": 0,
+          "distinct_heat_rates": 0
+        },
+        {
+          "geography": "EUROPE",
+          "capacity_rows": 103,
+          "heat_rate_rows": 0,
+          "joint_rows": 0,
+          "distinct_capacities": 85,
+          "distinct_heat_rates": 0
+        }
+      ]
+    }
+  },
+  "class_boundaries": [
+    0.3333333333333333,
+    0.6666666666666666
+  ],
+  "cell_order": [
+    [
+      "SZ_SMALL",
+      "HR_EFFICIENT"
+    ],
+    [
+      "SZ_SMALL",
+      "HR_MID"
+    ],
+    [
+      "SZ_SMALL",
+      "HR_INEFFICIENT"
+    ],
+    [
+      "SZ_MEDIUM",
+      "HR_EFFICIENT"
+    ],
+    [
+      "SZ_MEDIUM",
+      "HR_MID"
+    ],
+    [
+      "SZ_MEDIUM",
+      "HR_INEFFICIENT"
+    ],
+    [
+      "SZ_LARGE",
+      "HR_EFFICIENT"
+    ],
+    [
+      "SZ_LARGE",
+      "HR_MID"
+    ],
+    [
+      "SZ_LARGE",
+      "HR_INEFFICIENT"
+    ]
+  ],
+  "size_denominator": "REFERENCE_UNIT_MEAN_CAPACITY",
+  "heat_rate_denominator": "REFERENCE_UNIT_MEAN_HEAT_RATE"
+}

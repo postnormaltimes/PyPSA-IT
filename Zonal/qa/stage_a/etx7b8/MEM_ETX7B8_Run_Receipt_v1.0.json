@@ -1,0 +1,175 @@
+{
+  "phase": "ETX-7B8",
+  "gate": "ETX7B8_2040_BASE_FULL_YEAR_COMPLETE",
+  "status": "PASS",
+  "timestamp": "2026-09-19T14:39:11.010955Z",
+  "python_version": "3.11.15",
+  "pypsa_version": "1.2.3",
+  "linopy_version": "0.7.0",
+  "solver_version": "13.0.3",
+  "solver": "gurobi",
+  "input_manifests": [
+    {
+      "input_id": "b1",
+      "path": "stage_a_inputs/etx7a_v1_0/static/MEM_ETX7A_Static_Output_Manifest_v1.0.csv",
+      "expected_sha256": "4E5DC493BDCB7713B6E1147FD4F1AC1953A196565ED95ECB9B5A1F8BA31C4BCE",
+      "observed_sha256": "4E5DC493BDCB7713B6E1147FD4F1AC1953A196565ED95ECB9B5A1F8BA31C4BCE",
+      "member_count": 7,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b2",
+      "path": "stage_a_inputs/italy_base_v1_0/static/MEM_ETX7B2_IT_Static_Output_Manifest_v1.0.csv",
+      "expected_sha256": "D7E5CA7B7E71E83B2DF79DAE690E0CA51E7DB8F873B6A74641F3F1726FE775BD",
+      "observed_sha256": "D7E5CA7B7E71E83B2DF79DAE690E0CA51E7DB8F873B6A74641F3F1726FE775BD",
+      "member_count": 5,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b3",
+      "path": "stage_a_inputs/temporal_2019_v1_0/MEM_ETX7B3_Temporal_Output_Manifest_v1.0.csv",
+      "expected_sha256": "B2C2AECB964A23BED776D43D91D0F7ADCEE38587BB0DB2CEE8E8AB6D8F8B05BC",
+      "observed_sha256": "B2C2AECB964A23BED776D43D91D0F7ADCEE38587BB0DB2CEE8E8AB6D8F8B05BC",
+      "member_count": 10,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b4",
+      "path": "stage_a_inputs/operating_base_v1_0/MEM_ETX7B4_Output_Manifest_v1.0.csv",
+      "expected_sha256": "442C215CB26658860F6B9BCF3620A2A7EABAAFED68A736DAC192E9099BA53998",
+      "observed_sha256": "442C215CB26658860F6B9BCF3620A2A7EABAAFED68A736DAC192E9099BA53998",
+      "member_count": 11,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b4_verification",
+      "path": "qa/stage_a/etx7b4/MEM_ETX7B4_Final_Verification_v1.0.json",
+      "expected_sha256": "F0A58C5268596F75726A8B6A027F203FC73998187DD46C6026D7A3143F8217F3",
+      "observed_sha256": "F0A58C5268596F75726A8B6A027F203FC73998187DD46C6026D7A3143F8217F3",
+      "member_count": 0,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b5",
+      "path": "stage_a_inputs/topology_v1_0/MEM_ETX7B5_Topology_Output_Manifest_v1.0.csv",
+      "expected_sha256": "78DB32E772D9990F691FA019DEDFC3999B174D2DACABDEF9608BAEDB5CE01C68",
+      "observed_sha256": "78DB32E772D9990F691FA019DEDFC3999B174D2DACABDEF9608BAEDB5CE01C68",
+      "member_count": 10,
+      "member_failures": 0,
+      "status": "PASS"
+    },
+    {
+      "input_id": "b5_verification",
+      "path": "qa/stage_a/etx7b5/MEM_ETX7B5_Final_Verification_v1.0.json",
+      "expected_sha256": "E1E64F09101E75B0B9AE6D7015C3D174F2C5AD9EAB4A4ACC389E81EA02DCD37A",
+      "observed_sha256": "E1E64F09101E75B0B9AE6D7015C3D174F2C5AD9EAB4A4ACC389E81EA02DCD37A",
+      "member_count": 0,
+      "member_failures": 0,
+      "status": "PASS"
+    }
+  ],
+  "command": "'source://mem-model/.venv/Scripts/python.exe' -m mem_model.stage_a.execution b8 --execute",
+  "outputs": {
+    "MEM_ETX7B8_2040_BASE_FULL_SOLVED": "stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_SOLVED.nc",
+    "MEM_ETX7B8_2040_BASE_FULL_Market_Prices": "stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_Market_Prices.parquet",
+    "MEM_ETX7B8_2040_BASE_FULL_Generator_Dispatch": "stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_Generator_Dispatch.parquet",
+    "MEM_ETX7B8_2040_BASE_FULL_Store_State": "stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_Store_State.parquet",
+    "MEM_ETX7B8_2040_BASE_FULL_Link_Flows": "stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_Link_Flows.parquet",
+    "MEM_ETX7B8_2040_BASE_FULL_Load_Shedding": "stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_Load_Shedding.parquet",
+    "MEM_ETX7B8_2040_BASE_FULL_Hydro_Spill": "stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_Hydro_Spill.parquet",
+    "MEM_ETX7B8_2040_BASE_FULL_VRE_Curtailment": "stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_VRE_Curtailment.parquet",
+    "manifest": "stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_Result_Manifest_v1.0.csv",
+    "manifest_sha256": "EF52C6A6EDC79FE7939DA267C22B10CDB858ACDD6422A2B82EF99AD369B30338",
+    "raw_log": "qa/stage_a/etx7b8/logs/MEM_ETX7B8_raw.log"
+  },
+  "qa": {
+    "post_solve": {
+      "solver_status": "ok",
+      "termination_condition": "optimal",
+      "snapshots": 8760,
+      "objective": 50468664339.51324,
+      "runtime_seconds": 134.43822820007335,
+      "balance": {
+        "max_abs_residual_MW": 3.319655661471188e-11
+      },
+      "load_shedding": {
+        "total_MWh": 1823459.4540542054,
+        "max_MW": 25199.225303080686,
+        "max_local_load_cap_violation_MW": 0.0,
+        "max_negative_dispatch_violation_MW": 0.0
+      },
+      "price_statistics": {
+        "finite": true,
+        "min_EUR_per_MWh": 0.0,
+        "max_EUR_per_MWh": 15000.0,
+        "mean_EUR_per_MWh": 239.4434084643542
+      },
+      "storage_phs_checks": {
+        "state_min_violation_MWh": 0.0,
+        "state_max_violation_MWh": 0.0,
+        "cyclic_states": 33
+      },
+      "hydro_checks": {
+        "water_state_buses": 18,
+        "max_water_bus_balance_residual_MW": 8.565592679588008e-12,
+        "fixed_natural_inflow_generators": 10,
+        "fixed_inflow_dispatch_deviation_MW": 0.0,
+        "fixed_inflow_expected_MWh_water": 105857678.6127498,
+        "fixed_inflow_dispatched_MWh_water": 105857678.6127498,
+        "inflow_limited_generators": 10,
+        "inflow_limited_cap_violation_MW": 0.0
+      },
+      "interconnector_flow_limit_checks": {
+        "physical_links": 12,
+        "max_limit_violation_MW": 0.0
+      },
+      "accepted": true
+    }
+  },
+  "next_gate": "ETX-7B9-A",
+  "runtime_seconds": 134.43822820007335,
+  "solver_status": "ok",
+  "termination_condition": "optimal",
+  "snapshots": 8760,
+  "objective": 50468664339.51324,
+  "balance": {
+    "max_abs_residual_MW": 3.319655661471188e-11
+  },
+  "load_shedding": {
+    "total_MWh": 1823459.4540542054,
+    "max_MW": 25199.225303080686,
+    "max_local_load_cap_violation_MW": 0.0,
+    "max_negative_dispatch_violation_MW": 0.0
+  },
+  "price_statistics": {
+    "finite": true,
+    "min_EUR_per_MWh": 0.0,
+    "max_EUR_per_MWh": 15000.0,
+    "mean_EUR_per_MWh": 239.4434084643542
+  },
+  "storage_phs_checks": {
+    "state_min_violation_MWh": 0.0,
+    "state_max_violation_MWh": 0.0,
+    "cyclic_states": 33
+  },
+  "hydro_checks": {
+    "water_state_buses": 18,
+    "max_water_bus_balance_residual_MW": 8.565592679588008e-12,
+    "fixed_natural_inflow_generators": 10,
+    "fixed_inflow_dispatch_deviation_MW": 0.0,
+    "fixed_inflow_expected_MWh_water": 105857678.6127498,
+    "fixed_inflow_dispatched_MWh_water": 105857678.6127498,
+    "inflow_limited_generators": 10,
+    "inflow_limited_cap_violation_MW": 0.0
+  },
+  "interconnector_flow_limit_checks": {
+    "physical_links": 12,
+    "max_limit_violation_MW": 0.0
+  },
+  "accepted": true
+}

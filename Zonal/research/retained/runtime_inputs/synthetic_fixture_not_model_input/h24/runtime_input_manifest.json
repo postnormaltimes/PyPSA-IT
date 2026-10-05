@@ -1,0 +1,35 @@
+{
+  "status": "SYNTHETIC_FIXTURE_NOT_MODEL_INPUT",
+  "generated_utc": "2026-09-20T17:15:11.353937+00:00",
+  "snapshots": 24,
+  "timezone": "UTC",
+  "chronology_gate_bypassed_for_testing": true,
+  "external_price_gate_bypassed_for_testing": true,
+  "files": [
+    {
+      "file": "external_prices_hourly.parquet",
+      "bytes": 5208,
+      "sha256": "23ec9f29da3039f8b012aab8dd76a52e4fa863946fb46ed6cb3608a197333497"
+    },
+    {
+      "file": "generator_availability_hourly.parquet",
+      "bytes": 12657,
+      "sha256": "39717c7baf92839d741f983cdd7c64bd36b4343d8c9c24707bcdc517c57af7cc"
+    },
+    {
+      "file": "hydro_inflow_hourly.parquet",
+      "bytes": 9685,
+      "sha256": "d9d7ff903e2100f26d8233dd726fe3893e0be710fe21c64d6c23684fd6bc3d29"
+    },
+    {
+      "file": "hydro_runtime_parameters.csv",
+      "bytes": 19898,
+      "sha256": "79cdd058d8371dd2a4a1c5a7dbaf0fae6014fed75c04fd2f0a36baa338ab71b1"
+    },
+    {
+      "file": "load_hourly.parquet",
+      "bytes": 9926,
+      "sha256": "8ec731a9fb728e7546cd67b40101e63fc9d57d365335f8c46af19cfd152e364a"
+    }
+  ]
+}

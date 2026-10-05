@@ -1,0 +1,32 @@
+﻿schema_version: MEM_UC2_MANUAL_EXECUTION_V1
+status: UC2_ALL_SCENARIOS_PREPARED__MANUAL_EXECUTION_ENABLED__REVIEWS_PENDING
+uc1_structural_receipt: qa/stage_b/uc1_common_v1/MEM_UC1_DETERMINISTIC_BUILD_RECEIPT.json
+uc1_final_verification: qa/stage_b/uc1_common_v1/MEM_UC1_FINAL_VERIFICATION.json
+p2x_final_verification: qa/stage_b/p2x_flex_v1/MEM_STAGE_B_P2X_FLEX_V1_FINAL_VERIFICATION.json
+result_root: results/uc2_full_year
+qa_root: qa/stage_b/uc2_preparation
+chronology_hours: 8760
+zones: [CALA, CNOR, CSUD, NORD, SARD, SICI, SUD]
+solver:
+  name: gurobi
+  required_version: 13.0.3
+  options: {Threads: 1, Seed: 0}
+  include_objective_constant: false
+  adaptive_tuning: false
+validation:
+  objective_absolute_tolerance_EUR: 0.0001
+  objective_relative_tolerance: 1.0e-9
+  dispatch_balance_tolerance_MWh: 0.0001
+  p2x_energy_tolerance_MWh: 0.0001
+  commitment_tolerance: 1.0e-7
+  high_price_threshold_EUR_per_MWh: 500.0
+governance:
+  2040_base_manual_sequence_enabled: true
+  2040_base_method_review_accepted: false
+  2040_slow_high_manual_enabled: true
+  2050_base_nuclear_smoke_accepted: false
+  2050_base_manual_enabled: true
+  2050_base_method_review_accepted: false
+  2050_slow_high_manual_enabled: true
+  no_automatic_next_job: true
+

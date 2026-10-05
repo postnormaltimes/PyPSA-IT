@@ -1,0 +1,71 @@
+{
+  "status": "UC2_VIS_AND_REPORTING_INTEGRATION_PASS",
+  "year": 2040,
+  "cases": [
+    {
+      "scenario": "Slow",
+      "receipt": "results\\uc2_full_year\\2040\\Slow\\REPORTING\\MEM_UC2_VIS_REPORTING_R1_RECEIPT.json",
+      "receipt_sha256": "ac8777856daa4fc6c3c673f37f9ac06fa41239e42a50b1a35e26e527a04d3828",
+      "figures": 38,
+      "diagnostic_checks": 14,
+      "map_checks": 16,
+      "original_artifacts_unchanged": 64,
+      "protected_artifacts_unchanged": 11,
+      "registered_artifacts_valid": 187,
+      "interfaces": {
+        "ITALIAN_INTERZONAL": 10,
+        "EXTERNAL_MARKET_INTERFACE": 8,
+        "PHYSICAL_OR_HVDC_INTERFACE": 2
+      },
+      "price_markets": 15,
+      "stress_snapshot": "2019-01-11 11:00:00",
+      "map_correction_status": "UC2_VIS_R1_STAGE_B_MAP_CORRECTION_PASS"
+    },
+    {
+      "scenario": "Base",
+      "receipt": "results\\uc2_full_year\\2040\\Base\\REPORTING\\MEM_UC2_VIS_REPORTING_R1_RECEIPT.json",
+      "receipt_sha256": "16285302c416dab165bcb53b75d93494c3864e1eac7b769a7a6ec1ca6bd9ca94",
+      "figures": 38,
+      "diagnostic_checks": 14,
+      "map_checks": 16,
+      "original_artifacts_unchanged": 64,
+      "protected_artifacts_unchanged": 11,
+      "registered_artifacts_valid": 187,
+      "interfaces": {
+        "ITALIAN_INTERZONAL": 10,
+        "EXTERNAL_MARKET_INTERFACE": 8,
+        "PHYSICAL_OR_HVDC_INTERFACE": 2
+      },
+      "price_markets": 15,
+      "stress_snapshot": "2019-12-22 13:00:00",
+      "map_correction_status": "UC2_VIS_R1_STAGE_B_MAP_CORRECTION_PASS"
+    },
+    {
+      "scenario": "High",
+      "receipt": "results\\uc2_full_year\\2040\\High\\REPORTING\\MEM_UC2_VIS_REPORTING_R1_RECEIPT.json",
+      "receipt_sha256": "1537373e79791045f8c5e8ecf09161396c47b7d1fed272abd3c4ad53d4f1a7ea",
+      "figures": 38,
+      "diagnostic_checks": 14,
+      "map_checks": 16,
+      "original_artifacts_unchanged": 64,
+      "protected_artifacts_unchanged": 11,
+      "registered_artifacts_valid": 187,
+      "interfaces": {
+        "ITALIAN_INTERZONAL": 10,
+        "EXTERNAL_MARKET_INTERFACE": 8,
+        "PHYSICAL_OR_HVDC_INTERFACE": 2
+      },
+      "price_markets": 15,
+      "stress_snapshot": "2019-12-30 21:00:00",
+      "map_correction_status": "UC2_VIS_R1_STAGE_B_MAP_CORRECTION_PASS"
+    }
+  ],
+  "solver_invocations": 0,
+  "production_networks_modified": 0,
+  "original_reporting_artifacts_modified": 0,
+  "comparison_figures": 33,
+  "comparison_tables": 10,
+  "comparison_registered_artifacts_valid": 77,
+  "comparison_receipt_sha256": "1789826ad9cad5f132401c34d8f12348849c8c968fabe408a65b1b320fe05364",
+  "map_correction_status": "UC2_VIS_R1_STAGE_B_MAP_CORRECTION_PASS"
+}

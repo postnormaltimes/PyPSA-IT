@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "command": ".\\.venv\\Scripts\\python.exe -m pytest tests\\test_final_wind_resource.py tests\\test_final_methodology_closure.py tests\\test_final_wind_verification.py -o addopts= -q --basetemp .pytest_tmp\\final_closure_w_checkpoint",
+  "observed_result": "21 passed in 33.49s",
+  "tests_passed": 21,
+  "tests_failed": 0,
+  "optimization_constructors_and_solver_entrypoints_prohibited_by_autouse_fixtures": true,
+  "optimization_model_constructed": false,
+  "solver_invocations": 0
+}

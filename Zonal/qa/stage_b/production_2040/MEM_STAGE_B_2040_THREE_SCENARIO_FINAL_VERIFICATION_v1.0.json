@@ -1,0 +1,47 @@
+{
+  "schema_version": "MEM_STAGE_B_2040_THREE_SCENARIO_FINAL_VERIFICATION_v1.0",
+  "status": "PASS",
+  "marker": "STAGE_B_2040_THREE_SCENARIO_PRODUCTION_COMPLETE",
+  "b10_2040": "COMPLETE_IMMUTABLE",
+  "runtime_1": "PASS_IMMUTABLE",
+  "runtime_manifest_sha256": "5baae9bc065221463a422c2835a09dbfb4bc7b1e8b97902f34502d4d7ea9a63b",
+  "runtime_member_hashes": {
+    "load_hourly.parquet": "b8e8d1c3b1b961737c281a6eceac2436676484785760681def9d0af7773cde25",
+    "generator_availability_hourly.parquet": "00592a83cefa254784e14ac3ecc550302d2e5b3f3f0be89c1d05471475dd816c",
+    "hydro_inflow_hourly.parquet": "1666c14d3910b9a5e3a694a04d2493c312c43e0346a2cfab4fc98f7fd6774c57",
+    "hydro_runtime_parameters.csv": "3ed06811f88073889920815a5a21ae11cdfb52e1c229902f797b3d9db4602d2f",
+    "external_prices_hourly.parquet": "9a1811793adbf0e0e91de062b99d7a2d83e72c4d2e294b8f591ad2f19949993a"
+  },
+  "topology_edgeset_validation": "PASS",
+  "topology_visual_inspection": "PASS_2026_09_27_NORMAL_REPORT_SIZE",
+  "topology_png_sha256": "02e815370a70ad5e822271ce62de481416931af45cba8b4c0b1953b50298b1bc",
+  "topology_svg_sha256": "7c3410e690af0db3ab007c60e9ebb826e5d7cbf47642ec1d05db37c536c278a9",
+  "scenario_solved_network_sha256": {
+    "Slow": "27b61bc12a90ef4fe4c8f03b465ba0983d29ea73b6b834cce1152d95545995c8",
+    "Base": "f10cbc2ebbd5dc4574bd788814e44fb81c257b653936ff2ec7bedc4168999733",
+    "High": "c40b30ca4b0b3235e131f16832013175c3fd37833990682e3d8857f01fb911fe"
+  },
+  "scenario_reporting_manifest_sha256": {
+    "Slow": "d21ad4ddef65a79fd13605a79656dc52d5859617777c8ee05e5b881ea763d6f4",
+    "Base": "d70a6cf5cccf68b09a059a525dba5846b0bcece81066f42bbb82b457e973aa78",
+    "High": "197053dd6afe521e80be5d457922c9becd0b18e01e7e3a90879f73ebd521510e"
+  },
+  "scenario_acceptance_receipt_sha256": {
+    "Slow": "d1b4192da6bb8f907bc3ac8f5243bafceb45862dbc224141bb024af9cdf3025e",
+    "Base": "712320bcf64f9e9a06d5f0a8676dec0bb1b54b879ef7bf002259f3e13ca6f39c",
+    "High": "a44b54f62f2d163ed89ce5d27cb01b3257ba65bd727c4c82826e8419e44fee08"
+  },
+  "comparison_manifest_sha256": "7888bc1319586108e7c844978912a34c56610b8f66c460df05af2d760271f6ab",
+  "comparison_receipt_sha256": "7694bca20eabfe50566f60b53802ca66ff22bf30460929f654fcfaf40ec1c76c",
+  "comparison_table_count": 8,
+  "comparison_figure_file_count": 16,
+  "2040_rerun_authorized_scenarios": [],
+  "2050_production_execution_enabled": false,
+  "focused_tests_observed": {
+    "closure_reporting_preparation": "35_OF_35_PASS",
+    "runtime_regression": "20_OF_20_PASS"
+  },
+  "runtime_verify": "PASS",
+  "preparation_verify": "PASS",
+  "production_solver_invocations_by_this_closure": 0
+}

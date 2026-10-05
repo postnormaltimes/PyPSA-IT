@@ -1,0 +1,111 @@
+{
+  "schema_version": "MEM_PLACEMENT_2050_PREPARATION_QA_V1_0",
+  "status": "PASS",
+  "phase": "ETX-7B9E",
+  "gate": "ETX7B9E_2050_PLACEMENT_PERIMETER_CLOSURE_COMPLETE",
+  "classification": "NEAR_CONSTANT_TOTAL_CAPACITY_PLACEMENT_TEST",
+  "capacities_MW": {
+    "FR": 34350.14308951057,
+    "GR": 6905.030474826701,
+    "TN": 2433.2947267101813,
+    "AT": 5506.614447347679,
+    "SI": 3017.094676349047
+  },
+  "capacity_control": {
+    "classification": "NEAR_CONSTANT_TOTAL_CAPACITY_PLACEMENT_TEST",
+    "placement_total_virtual_capacity_MW": 52212.17741474419,
+    "R5_total_virtual_capacity_MW": 51912.004881670524,
+    "absolute_difference_MW": 300.1725330736663,
+    "percentage_difference": 0.5782333657848253,
+    "exact_total_rescaling_applied": false
+  },
+  "marginal_cost_EUR2025_per_MWh_el": 243.122262790698,
+  "structural_delta": {
+    "status": "PASS",
+    "year": 2050,
+    "baseline_counts": {
+      "snapshots": 8760,
+      "carriers": 46,
+      "buses": 40,
+      "loads": 10,
+      "generators": 104,
+      "links": 63,
+      "stores": 30,
+      "market_buses": 10,
+      "interconnectors": 12,
+      "load_shedding_generators": 10,
+      "storage_states": 30,
+      "water_state_buses": 18
+    },
+    "placement_counts": {
+      "snapshots": 8760,
+      "carriers": 47,
+      "buses": 40,
+      "loads": 10,
+      "generators": 109,
+      "links": 63,
+      "stores": 30,
+      "market_buses": 10,
+      "interconnectors": 12,
+      "load_shedding_generators": 10,
+      "storage_states": 30,
+      "water_state_buses": 18
+    },
+    "allowed_delta": {
+      "carriers": 1,
+      "generators": 5
+    },
+    "new_generators": [
+      "EXTERNAL_VIRTUAL_SUPPLY_FR_R10_2050",
+      "EXTERNAL_VIRTUAL_SUPPLY_GR_R10_2050",
+      "EXTERNAL_VIRTUAL_SUPPLY_TN_R10_2050",
+      "EXTERNAL_VIRTUAL_SUPPLY_AT_PLACEMENT_R10_2050",
+      "EXTERNAL_VIRTUAL_SUPPLY_SI_PLACEMENT_R10_2050"
+    ],
+    "proxy_markets": [
+      "FR",
+      "GR",
+      "TN",
+      "AT",
+      "SI"
+    ],
+    "excluded_market_virtual_supply_count": 0,
+    "baseline_component_preservation": "EXACT"
+  },
+  "static_LP": {
+    "status": "PASS",
+    "all_generators_committable_false": true,
+    "all_links_committable_false": true,
+    "all_generator_p_nom_extendable_false": true,
+    "all_link_p_nom_extendable_false": true,
+    "all_store_e_nom_extendable_false": true,
+    "capacity_expansion": false,
+    "unit_commitment": false
+  },
+  "short_unsolved_LP_fixture": {
+    "snapshots": 6,
+    "status": "PASS",
+    "all_generators_committable_false": true,
+    "all_links_committable_false": true,
+    "all_generator_p_nom_extendable_false": true,
+    "all_link_p_nom_extendable_false": true,
+    "all_store_e_nom_extendable_false": true,
+    "capacity_expansion": false,
+    "unit_commitment": false,
+    "linopy_model_assembled": true,
+    "linopy_variables": 1392,
+    "linopy_constraints": 2844,
+    "integer_variables": 0,
+    "binary_variables": 0,
+    "continuous_linear_program_only": true
+  },
+  "immutable_B8D_2040_verified": true,
+  "immutable_B9B_2050_verified": true,
+  "immutable_B9C_R10_verified": true,
+  "immutable_B9D_R5_verified": true,
+  "production_optimization_executed": false,
+  "technical_diagnostic_status": "PREPARED_NOT_EXECUTED",
+  "production_price_acceptance": "PENDING_METHOD_REVIEW",
+  "B10_authorized": false,
+  "Stage_B_authorized": false
+}

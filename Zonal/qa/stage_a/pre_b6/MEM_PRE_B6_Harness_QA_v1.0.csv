@@ -1,0 +1,16 @@
+check_id,description,status,observed,expected
+PREB6-001,Plan v2.2 controls execution,PASS,2.2,2.2
+PREB6-002,Harness readiness marker is set,PASS,PRE_B6_MANUAL_EXECUTION_HARNESS_READY,PRE_B6_MANUAL_EXECUTION_HARNESS_READY
+PREB6-003,Gurobi is the configured solver,PASS,gurobi,gurobi
+PREB6-004,Runtime versions remain bounded,PASS,"{""gurobipy"": ""13.0.3"", ""linopy"": ""0.7.0"", ""numpy"": ""2.4.6"", ""pypsa"": ""1.2.3"", ""python"": ""3.11.15""}",accepted pinned versions
+PREB6-005,Lock versions remain bounded,PASS,"{""gurobipy"": ""13.0.3"", ""linopy"": ""0.7.0"", ""numpy"": ""2.4.6"", ""pypsa"": ""1.2.3""}",accepted pinned versions
+PREB6-006,Linopy exposes Gurobi,PASS,"[""gurobi"", ""highs""]",contains gurobi
+PREB6-007,All accepted B1-B5 locks and members pass,PASS,"{""failures"": 0, ""locks"": 7, ""members"": 43}","{""failures"": 0, ""locks"": 7, ""members"": 43}"
+PREB6-008,Both horizon fixtures pass structural QA,PASS,"{""2040"": {""checks"": 25, ""failures"": 0, ""status"": ""PASS""}, ""2050"": {""checks"": 25, ""failures"": 0, ""status"": ""PASS""}}",25/25 per horizon
+PREB6-009,Focused harness tests pass,PASS,"{""errors"": 0, ""failures"": 0, ""passed"": 19, ""path"": ""qa/stage_a/pre_b6/pytest_pre_b6_focused.xml"", ""sha256"": ""B65CE0913FAC79CCD324F4E1C7E430C831D7453A625ECF327BF6DDAE867E29E4"", ""skipped"": 0, ""status"": ""PASS"", ""tests"": 19}",PASS
+PREB6-010,Gate and predecessor regression tests pass,PASS,"{""errors"": 0, ""failures"": 0, ""passed"": 12, ""path"": ""qa/stage_a/pre_b6/pytest_pre_b6_gate_and_predecessor.xml"", ""sha256"": ""EC342BA4BB927055573F17D837B8A08FDA0C36DBE0CEE65FB3B1359A9999195B"", ""skipped"": 0, ""status"": ""PASS"", ""tests"": 12}",PASS
+PREB6-011,Full repository tests pass,PASS,"{""errors"": 0, ""failures"": 0, ""passed"": 78, ""path"": ""qa/stage_a/pre_b6/pytest_full_repository.xml"", ""sha256"": ""CE9C6C8C4804FD5282AC1ECCAC83B7CDD8683088CDDA06DFBBEBB3FB235211F0"", ""skipped"": 0, ""status"": ""PASS"", ""tests"": 78}",PASS
+PREB6-012,Five bounded runbooks exist,PASS,"[""docs/runbooks/ETX7B6_RUNBOOK.md"", ""docs/runbooks/ETX7B7_RUNBOOK.md"", ""docs/runbooks/ETX7B8_RUNBOOK.md"", ""docs/runbooks/ETX7B9_RUNBOOK.md"", ""docs/runbooks/ETX7B10_RUNBOOK.md""]",5
+PREB6-013,Manual execution mode is ready,PASS,MANUAL_POWERSHELL_GATE_EXECUTION_READY,MANUAL_POWERSHELL_GATE_EXECUTION_READY
+PREB6-014,Full-year execution remains locked,PASS,"{""execution_enabled"": false, ""promotion_rule"": ""Full-year execution remains disabled under v2.2 until ETX-7B6 structural/solver readiness and the applicable smoke gate pass. Annual price bundles and Stage-B solves retain their formal milestone sequence."", ""status"": ""BLOCKED_BY_PROJECT_PLAN_SEQUENCE_B6_AND_SMOKE_GATES"", ""unlock_token"": null}",execution_enabled=false; unlock_token=null
+PREB6-015,No formal B6-B10 receipt was produced,PASS,[],[]

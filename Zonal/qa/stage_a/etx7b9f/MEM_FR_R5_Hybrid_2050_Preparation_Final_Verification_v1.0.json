@@ -1,0 +1,36 @@
+{
+  "schema_version": "MEM_FR_R5_HYBRID_2050_PREPARATION_FINAL_VERIFICATION_V1_0",
+  "status": "PASS",
+  "preparation_manifest": "qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_Preparation_Manifest_v1.0.csv",
+  "preparation_manifest_sha256": "C5A46F8BEB625000FED46F47E2BA403C7ACF8A632AF76F7144ECEA722FC04A52",
+  "preparation_manifest_members": 7,
+  "B8D_receipt_sha256": "C69ACBF941261BD37426EDCEDB1C14482977C2059427FEA1968008492E05F8C0",
+  "B9B_receipt_sha256": "0A8E80FD1A46F5F63E4E8D41C0C3DAEE05F70A529ADC7EE69842FFE434FC9D36",
+  "B9C_receipt_sha256": "1D741BD14C15E19443C04CABBC9E1A151771D0A84EEAE225F75B8A1247E758D1",
+  "B9D_receipt_sha256": "E032C63879BF294C99759C8097A7AA7BADB9F5477CA20E8992B07012C266B2E4",
+  "B9E_receipt_sha256": "98AE0FA50CF9E61C2F9EDA7018DEA434BD87DE547D7B8898FD5345D1B6D032C0",
+  "B6_2050_network_sha256": "06CC25DB50AD717AE27332A57168CB4DBFF38765703022CB05D3E5BA9943E4DE",
+  "capacities_MW": {
+    "FR": 40616.26187526855,
+    "GR": 6905.030474826701,
+    "TN": 2433.2947267101813,
+    "AT": 5506.614447347679,
+    "SI": 3017.094676349047
+  },
+  "capacity_control": {
+    "classification": "FRANCE_ONLY_R5_HYBRID_PLACEMENT_DIAGNOSTIC",
+    "B9E_total_virtual_capacity_MW": 52212.17741474419,
+    "B9F_total_virtual_capacity_MW": 58478.29620050217,
+    "B9E_FR_capacity_MW": 34350.14308951057,
+    "B9F_FR_capacity_MW": 40616.26187526855,
+    "FR_delta_vs_B9E_MW": 6266.118785757979,
+    "changed_network_parameter_count": 1,
+    "changed_market": "FR",
+    "changed_parameter": "p_nom_MW",
+    "near_constant_capacity_test": false
+  },
+  "production_optimization_executed": false,
+  "production_price_acceptance": "PENDING_METHOD_REVIEW",
+  "B10_2050_authorized": false,
+  "Stage_B_2050_authorized": false
+}

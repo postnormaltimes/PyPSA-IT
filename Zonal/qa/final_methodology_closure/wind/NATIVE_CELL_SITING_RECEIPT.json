@@ -1,0 +1,62 @@
+{
+  "state": "WIND_SITE_COST_ROBUSTNESS_BLOCKED",
+  "resource_cells": 819,
+  "scenario_zone_wind_cases": 84,
+  "robustness_cases": 126,
+  "robustness_failed_cases": 4,
+  "ONSHORE_AND_OFFSHORE_USE_COMMON_FIXED_CAPACITY_SITE_LCOE_FRAMEWORK": true,
+  "resource_class_discretization_final_authority": false,
+  "old_4_8_failures_retained": true,
+  "native_cost_authority": "PINNED_LOCAL_WORKFLOW_V0P14P0_2050_RAW;SOLE_VINTAGE_WITH_STRESS_QA",
+  "optimization_model_constructed": false,
+  "production_solver_invocations": 0,
+  "production_optimization_executed": false,
+  "parent_networks_modified": 0,
+  "phase_result": "WIND_RESOURCE_SITING_BLOCKED",
+  "physical_allocation_profile_QA": "PASS",
+  "final_verification": "qa/final_methodology_closure/wind/FINAL_WIND_VERIFICATION.json",
+  "final_verification_sha256": "b06927f27fab2e566df25c388b442422ab6557e0b6efcf471478d23db14b2e7f",
+  "current_residual": [
+    {
+      "state": "2040_OFFSHORE_COST_AUTHORITY_REQUIRED",
+      "gate": "W_RESOLUTION_6",
+      "scope": "2040_CNOR_WIND_OFFSHORE_BASE_HIGH",
+      "decision_required": "Provide/approve a controlling 2040 offshore siting-cost basis, or explicitly authorize the pinned local 2050 reference for 2040 despite the documented CNOR hourly-profile sensitivity.",
+      "evidence": "qa/final_methodology_closure/wind/OFFSHORE_COST_RANKING_ROBUSTNESS.csv",
+      "failed_2040_cases": [
+        {
+          "year": 2040,
+          "scenario": "Base",
+          "zone": "CNOR",
+          "common_generation_cost_scale": 1.25,
+          "selected_MW_changed": 103.6380021890667,
+          "annual_CF_absolute": 0.0017163023312506,
+          "hourly_MAE": 0.0282287981930286,
+          "hourly_max_absolute": 0.1147143136730232,
+          "status": "NOT_CONVERGED",
+          "connection_cost_differentials_unchanged": true,
+          "cost_reference": "PINNED_V0P14P0_2050"
+        },
+        {
+          "year": 2040,
+          "scenario": "High",
+          "zone": "CNOR",
+          "common_generation_cost_scale": 1.25,
+          "selected_MW_changed": 23.638002189066697,
+          "annual_CF_absolute": 0.0003558712003343,
+          "hourly_MAE": 0.0058531740673151,
+          "hourly_max_absolute": 0.0237857397027484,
+          "status": "NOT_CONVERGED",
+          "connection_cost_differentials_unchanged": true,
+          "cost_reference": "PINNED_V0P14P0_2050"
+        }
+      ],
+      "direct_2050_horizon_authority_exists": true,
+      "old_4_vs_8_failures_are_not_current_blockers": true
+    }
+  ],
+  "tests_passed": 48,
+  "2050_cost_authority": "DIRECT_PINNED_LOCAL_2050_HORIZON_INPUT",
+  "2040_cost_authority": "UNRESOLVED_TRANSFER_OF_2050_REFERENCE",
+  "cost_stress_failures_not_resource_class_convergence": true
+}

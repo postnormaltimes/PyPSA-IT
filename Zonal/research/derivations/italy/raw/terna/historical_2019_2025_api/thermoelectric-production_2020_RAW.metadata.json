@@ -1,0 +1,31 @@
+{
+  "source_id": "TERNA_API_THERMOELECTRIC_PRODUCTION_2020",
+  "publisher": "Terna S.p.A.",
+  "endpoint": "thermoelectric-production",
+  "request_url": "https://api.terna.it/generation/v2.0/thermoelectric-production?year=2020",
+  "request_parameters": {
+    "year": "2020"
+  },
+  "authorization_method": "OAuth 2.0 client credentials; token not persisted",
+  "retrieval_timestamp_utc": "2026-09-01T12:20:16.718Z",
+  "http_status": 200,
+  "content_type": "application/json",
+  "response_date": "Tue, 01 Sep 2026 12:20:17 GMT",
+  "etag": null,
+  "last_modified": null,
+  "raw_file": "thermoelectric-production_2020_RAW.json",
+  "raw_bytes": 181797,
+  "raw_sha256": "ade93b41687c1790f5e1517ff551dbfab256180ccf7d0b7cdcf24037d5a9c4d4",
+  "result_status": "Completed",
+  "result_message": "Operation completed for the following input. year: 2020",
+  "array_key": "thermoelectric",
+  "record_count": 1178,
+  "properties": [
+    "category",
+    "production_GWh",
+    "province",
+    "region",
+    "subcategory",
+    "year"
+  ]
+}

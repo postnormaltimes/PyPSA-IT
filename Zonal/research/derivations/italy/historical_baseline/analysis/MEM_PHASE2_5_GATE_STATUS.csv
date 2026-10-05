@@ -1,0 +1,4 @@
+gate,status,controlling_reason,independent_of,next_action
+HISTORICAL_EMPIRICAL_BASELINE_STATUS,INCOMPLETE,Material thermal fuel/source attribution at zone x conversion-technology grain remains unresolved under the accepted historical contract.,Workbook binary provenance and 2026 plant-status bridge,Acquire complete official GEM GOGPT August-2026 release and reconcile fuel/plant evidence without replacing Terna NET controls.
+CURRENT_2026_PHYSICAL_FLEET_STATUS,BLOCKED,Complete official GEM GOGPT August-2026 workbook is absent.,2019-2024 Terna measurement validity,User download of complete release including Sub-threshold and IRP Units tabs where supplied.
+WORKBOOK_PROMOTION_STATUS,BLOCKED,Historical empirical gate is incomplete and accepted v2.9 binary hash is not locally present.,The current c4ca workbook's semantic checks,Resolve GEM/fuel gate and restore or explicitly approve a provenance baseline before promotion.

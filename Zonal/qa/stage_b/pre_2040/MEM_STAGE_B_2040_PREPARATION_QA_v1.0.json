@@ -1,0 +1,111 @@
+{
+  "governance": {
+    "b10_2040_authorized": true,
+    "b10_2050_authorized": false,
+    "global_b10_authorized": false,
+    "global_stage_b_authorized": false,
+    "horizon_scoping_pass": true,
+    "stage_b_2040_authorized": false,
+    "stage_b_2050_authorized": false
+  },
+  "price_source": {
+    "2050_source_read_or_resolved": false,
+    "chronology_contiguous_hourly": true,
+    "chronology_timezone": "UTC_NORMALIZED_FROM_ACCEPTED_SOURCE_TIMESTAMPS",
+    "chronology_unique_hours": 8760,
+    "corsica_has_no_price_series": true,
+    "duplicate_required_market_timestamp_keys": 0,
+    "finite_prices": true,
+    "hashes": {
+      "market_prices_sha256": "595D6719DD6BB8EC16F665D67C5344C7B3E1279B0445CEF6AFFBD71D97A514A4",
+      "receipt_sha256": "C69ACBF941261BD37426EDCEDB1C14482977C2059427FEA1968008492E05F8C0",
+      "result_manifest_sha256": "88C259493E5D5B8E4B4B2B3C535BCDB623924474FB23DD860D2B8673FE08DA2D"
+    },
+    "hourly_observations_per_market": 8760,
+    "market_to_zone_mapping": {
+      "AT": "NORD",
+      "CH": "NORD",
+      "FR": "NORD",
+      "GR": "SUD",
+      "ME": "CSUD",
+      "MT": "SICI",
+      "SI": "NORD",
+      "TN": "SICI"
+    },
+    "market_to_zone_mapping_exact": true,
+    "observed_source_markets": [
+      "AT",
+      "CH",
+      "FR",
+      "GR",
+      "HR",
+      "IT",
+      "ME",
+      "MT",
+      "SI",
+      "TN"
+    ],
+    "required_external_markets": [
+      "AT",
+      "CH",
+      "FR",
+      "GR",
+      "ME",
+      "MT",
+      "SI",
+      "TN"
+    ],
+    "required_market_coverage_exact": true,
+    "scenario_inheritance": [
+      "2040_Slow",
+      "2040_Base",
+      "2040_High"
+    ],
+    "scenario_inheritance_exact": true,
+    "source_gate": "ETX7B8D_2040_R10_PERIMETER_CLOSURE_COMPLETE",
+    "source_market_price_path": "stage_a_results/2040_perimeter_closure_r10/MEM_ETX7B8D_2040_R10_PERIMETER_CLOSURE_Market_Prices.parquet",
+    "source_phase": "ETX-7B8D",
+    "source_read_only": true,
+    "status": "PASS"
+  },
+  "production_optimization_executed": false,
+  "runtime_readiness": {
+    "accepted_runtime_bundle_complete": true,
+    "accepted_runtime_directory": "runtime_inputs/accepted",
+    "accepted_runtime_files_missing": [],
+    "accepted_runtime_files_required": [
+      "load_hourly.parquet",
+      "generator_availability_hourly.parquet",
+      "hydro_inflow_hourly.parquet",
+      "external_prices_hourly.parquet",
+      "hydro_runtime_parameters.csv"
+    ],
+    "accepted_runtime_manifest_error": "",
+    "accepted_runtime_manifest_hash_verified": true,
+    "b10_2040_ready_to_execute": true,
+    "b10_2040_receipt": "qa/stage_a/etx7b10_2040/MEM_ETX7B10_2040_Run_Receipt_v1.0.json",
+    "b10_2040_receipt_pass": true,
+    "candidate_assumptions_remaining": 0,
+    "candidate_runtime_assumptions_accepted_as_authority": false,
+    "candidate_runtime_assumptions_path": "config/runtime_assumptions_candidates.yaml",
+    "production_optimization_executed": false,
+    "stage_b_2040_blockers": [
+      "STAGE_B_2040_PRODUCTION_AUTHORIZATION_PENDING_METHOD_REVIEW"
+    ],
+    "stage_b_2040_ready_to_run": false,
+    "stage_b_2040_static_contracts_ready": true,
+    "stage_b_2040_unsolved_network_build_ready": true,
+    "stage_b_2050_authorized": false
+  },
+  "scope": "2040_ONLY_PREPARATION_NO_PRODUCTION_SOLVE",
+  "static_scenarios": {
+    "all_pass": true,
+    "rows": 3,
+    "scenarios": [
+      "Slow",
+      "Base",
+      "High"
+    ]
+  },
+  "status": "PASS"
+}

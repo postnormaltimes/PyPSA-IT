@@ -1,0 +1,74 @@
+{
+  "schema_version": "MEM_ETX7B8C_S2_STRUCTURAL_QA_V1_0",
+  "status": "PASS",
+  "preparation_status": "ETX7B8C_S2_MANUAL_EXECUTION_PREPARED",
+  "full_chronology_structural_delta": {
+    "status": "PASS",
+    "baseline_counts": {
+      "snapshots": 8760,
+      "carriers": 50,
+      "buses": 43,
+      "loads": 10,
+      "generators": 113,
+      "links": 69,
+      "stores": 33,
+      "market_buses": 10,
+      "interconnectors": 12,
+      "load_shedding_generators": 10,
+      "storage_states": 33,
+      "water_state_buses": 18
+    },
+    "s2_counts": {
+      "snapshots": 8760,
+      "carriers": 51,
+      "buses": 43,
+      "loads": 10,
+      "generators": 116,
+      "links": 69,
+      "stores": 33,
+      "market_buses": 10,
+      "interconnectors": 12,
+      "load_shedding_generators": 10,
+      "storage_states": 33,
+      "water_state_buses": 18
+    },
+    "allowed_delta": {
+      "carriers": 1,
+      "generators": 3
+    },
+    "unchanged_baseline_components": true,
+    "new_carrier": "EXTERNAL_VIRTUAL_SUPPLY",
+    "new_generators": [
+      "EXTERNAL_VIRTUAL_SUPPLY_FR",
+      "EXTERNAL_VIRTUAL_SUPPLY_TN",
+      "EXTERNAL_VIRTUAL_SUPPLY_GR"
+    ],
+    "new_virtual_generator_markets": [
+      "FR",
+      "TN",
+      "GR"
+    ],
+    "MT_virtual_supply": "NONE"
+  },
+  "short_unsolved_LP_fixture": {
+    "snapshots": 6,
+    "status": "PASS",
+    "all_generators_committable_false": true,
+    "all_links_committable_false": true,
+    "all_generator_p_nom_extendable_false": true,
+    "all_link_p_nom_extendable_false": true,
+    "all_store_e_nom_extendable_false": true,
+    "capacity_expansion": false,
+    "unit_commitment": false,
+    "linopy_model_assembled": true,
+    "linopy_variables": 1506,
+    "linopy_constraints": 3072,
+    "integer_variables": 0,
+    "binary_variables": 0,
+    "continuous_linear_program_only": true
+  },
+  "production_S2_solve_executed": false,
+  "b8_optimization_rerun": false,
+  "b9_authorized": false,
+  "stage_b_authorized": false
+}

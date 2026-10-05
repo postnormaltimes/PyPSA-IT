@@ -1,0 +1,22 @@
+gate,status,basis
+SCENARIO_CAPACITY_PACKAGE_STATUS,FROZEN_V2,Input workbook/CSV hashes pinned; parent p_nom untouched.
+2040_FOSSIL_FUEL_CONTRACT_STATUS,FROZEN_METHANE_ONLY,Bioenergy/geothermal remain separate; no coal/oil/hydrogen.
+2040_BIOENERGY_SUBALLOCATION_STATUS,RESOLVED_PROJECT_DERIVATION,3638.334849 MW inside compatible parent bands; fixed in Slow.
+FUTURE_CHP_DISPATCH_SUBBAND_STATUS,FROZEN_ELECTRICITY_ONLY_CHP_SPECIFIC_BANDS,No heat bus and no automatic must-run; heat-led sensitivity retained.
+2050_HYDROGEN_SPLIT_STATUS,FROZEN_50PCT_METHANE_50PCT_HYDROGEN,Substitution inside GAS_OTHER_FOSSIL; no added MW.
+THERMAL_EFFICIENCY_STATUS,RESOLVED_STATIC_WITH_DOCUMENTED_PROJECT_ASSUMPTIONS,All applicable generator bands have numerical efficiency.
+FUEL_PRICE_STATUS,RESOLVED_STATIC_WITH_H2_PROJECT_ANCHOR,EUR2025/MWh_th; H2 price sensitivity required later.
+CO2_PARAMETER_STATUS,RESOLVED_STATIC,Methane 0.198 t/MWh_th; physical/policy treatments separated.
+CCS_PARAMETER_STATUS,RESOLVED_STATIC_WITH_PROJECT_ASSUMPTIONS,Capture and efficiency penalty applied once; no BECCS negative credit.
+MARGINAL_COST_STATUS,RESOLVED_STATIC,Formula reconciled for every solver subtechnology.
+SOURCE_SCENARIO_SOFT_CONTROL_STATUS,FROZEN_SOFT_NO_HARD_CAPS,PNIEC/Terna TWh retained only for ex-post comparison.
+THERMAL_AVAILABILITY_STATUS,STATIC_CLASSES_READY_HOURLY_SCHEDULE_PENDING,BLK-005 classes resolved; no 0.85 use in p_max_pu.
+NUCLEAR_AVAILABILITY_STATUS,MODEL_READY_EXISTING_PROFILE,BLK-007 0.9245 central profile exists.
+BESS_STATIC_OPERATION_STATUS,MODEL_READY_TERMINAL_SOC_PENDING,Power/energy/duration/efficiency ready; terminal SOC Phase 4C.
+HYDRO_STATIC_OPERATION_STATUS,PARTIAL,p_nom frozen; operational e_nom/pump/inflow/SOC allocations unresolved.
+PETROLEUM_RESIDUAL_ALLOCATION_STATUS,ACCEPTED_BASELINE_PROJECT_ALLOCATION_WITH_BOUNDED_RUNTIME_SENSITIVITY,No further source research; one bounded runtime alternative retained.
+COAL_RESIDUAL_STATUS,ACCEPTED_NON_MATERIAL_CONTROL_RESIDUAL,158.78 MW control residual remains closed.
+STATIC_GENERATOR_INPUT_STATUS,READY_FOR_PHASE4C,All applicable static generator fields numerically complete or explicit N/A.
+HOURLY_INPUT_STATUS,NOT_STARTED_BY_DESIGN,No hourly load/VRE/thermal/hydro/external-price package created.
+FULL_SOLVER_INPUT_STATUS,PARTIAL_PHASE4C_REQUIRED,Static contract complete; hourly and hydro operational inputs remain.
+WORKBOOK_PROMOTION_STATUS,BLOCKED,Accepted canonical v2.9 binary provenance remains unresolved; no v2.9.1 created.

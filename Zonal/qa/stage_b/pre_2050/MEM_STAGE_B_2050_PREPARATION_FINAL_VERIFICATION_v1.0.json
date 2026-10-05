@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "gate": "STAGE_B_2050_PREPARATION_PASS",
+  "scenarios": {
+    "Slow": "READY_NOT_EXECUTED",
+    "Base": "READY_NOT_EXECUTED",
+    "High": "READY_NOT_EXECUTED"
+  },
+  "runtime_manifest_sha256": "e7f224d4d33fe8b7262e3974db1cb85d250279febccbc689a13d16acf472a993",
+  "b10_2050_manifest_sha256": "ac3f242338a289da740801a6b16f924e3fecf45ed17fe4f55487d356b8852fa5",
+  "integer_variables": 0,
+  "binary_variables": 0,
+  "production_optimization_executed": false,
+  "production_execution_authorized": false,
+  "cross_scenario_checks": 23,
+  "unexpected_implementation_drift": 0,
+  "scenario_receipt_sha256": {
+    "Slow": "bd7efdbeab3dd6d39aa6b7fd32c5edf0acb616984ed26fc9e7781f3303fba35a",
+    "Base": "f95244bf9b5b0d223c1278ea864521ff6d5b8904f2eac0595e5c369e41b9799c",
+    "High": "569ceeb8221faca4bf9f43556c602e749e30714c9f31ac8b17b786ce0130963c"
+  },
+  "b9h_immutable": {
+    "status": "PASS",
+    "source": "ETX-7B9H",
+    "manifest_members": 27,
+    "receipt_sha256": "B95CB4B4FB59530872EF706185A09840B5EAB4C40AD565F1C6B31BA341E8906D",
+    "result_manifest_sha256": "07D33D8A9EEA044FF09AD8D9802716730F79EB5887BC0330BC35A937E6A10FB8",
+    "market_prices_sha256": "57A4D5AFFA906B14FA7245D28972F9C53DEDA51E5D66CDA2782723419B33DED7",
+    "solved_network_sha256": "ADE607FB4D853A1DBD1CB8004B382927174ACE6507FB87129BD4ABA65000362C"
+  },
+  "b10_2050_immutable": {
+    "status": "PASS",
+    "receipt_sha256": "d57af4925972ef125e5a7b0de0d2de51f9c361a4a7f59bdf3608695618ff0604",
+    "manifest_sha256": "ac3f242338a289da740801a6b16f924e3fecf45ed17fe4f55487d356b8852fa5",
+    "manifest_members": 3,
+    "adapter_sha256": "ea452568013e6e1e5c8e98468b0b2eb2474b067051e1ac72bf776098e84c99f1",
+    "source": "ETX-7B9H",
+    "rows": 210240
+  },
+  "accepted_2040_runtime_immutable": {
+    "status": "PASS",
+    "state_sha256": "e25414d9f366d0d9ce8fd509c244d7f946f45c96e8c57ad42b29b0559940f7d8",
+    "manifest_sha256": "5baae9bc065221463a422c2835a09dbfb4bc7b1e8b97902f34502d4d7ea9a63b",
+    "members": {
+      "load_hourly.parquet": "b8e8d1c3b1b961737c281a6eceac2436676484785760681def9d0af7773cde25",
+      "generator_availability_hourly.parquet": "00592a83cefa254784e14ac3ecc550302d2e5b3f3f0be89c1d05471475dd816c",
+      "hydro_inflow_hourly.parquet": "1666c14d3910b9a5e3a694a04d2493c312c43e0346a2cfab4fc98f7fd6774c57",
+      "hydro_runtime_parameters.csv": "3ed06811f88073889920815a5a21ae11cdfb52e1c229902f797b3d9db4602d2f",
+      "external_prices_hourly.parquet": "9a1811793adbf0e0e91de062b99d7a2d83e72c4d2e294b8f591ad2f19949993a"
+    }
+  }
+}

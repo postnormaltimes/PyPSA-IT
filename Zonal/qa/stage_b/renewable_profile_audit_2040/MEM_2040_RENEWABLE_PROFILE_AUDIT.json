@@ -1,0 +1,5538 @@
+{
+  "schema_version": "MEM_2040_RENEWABLE_PROFILE_AUDIT_V1",
+  "overall_state": "RENEWABLE_PROFILE_AUDIT_PASS",
+  "audit_UTC": "2026-09-30T13:54:40.425340+00:00",
+  "scope": "CURRENT_POST_P2X_UC2_2040_SLOW_BASE_HIGH",
+  "realized_generation_authority": "SAVED_UC_MILP_DISPATCH_ONLY__NO_PRICE_LP_PRIMAL",
+  "optimization_model_constructed": false,
+  "solver_invocations": 0,
+  "production_inputs_modified": 0,
+  "solved_networks_modified": 0,
+  "analysis_method": "Direct read-only NetCDF arrays via xarray; no PyPSA network/model construction or solver import/call.",
+  "formulas": {
+    "potential_MWh": "sum_t(p_nom_MW * p_max_pu[t] * snapshots_generators[t])",
+    "availability_CF": "potential_MWh/(p_nom_MW*sum(snapshots_generators))",
+    "realized_MWh": "sum_t(saved_UC_MILP_generators_t_p[t]*snapshots_generators[t])",
+    "realized_CF": "realized_MWh/(p_nom_MW*sum(snapshots_generators))",
+    "curtailment_MWh": "potential_MWh-realized_MWh; never clipped or repaired",
+    "national_CF": "sum(generator energy)/(sum(generator p_nom)*8760)",
+    "distribution": "Per-unit availability; zone/national aggregate profiles MW-weighted. Solar total is explicitly non-additive to detailed solar rows."
+  },
+  "checks": [
+    {
+      "check": "B3_HASH_vre",
+      "status": "PASS",
+      "detail": "MEM_ETX7B3_VRE_Availability_Hourly_v1.0.parquet"
+    },
+    {
+      "check": "B3_HASH_cache_vre_bus",
+      "status": "PASS",
+      "detail": "cache/MEM_ETX7B3_PyPSA_Eur_Bus_VRE_2019_Cache_v1.0.parquet"
+    },
+    {
+      "check": "B3_HASH_provenance",
+      "status": "PASS",
+      "detail": "MEM_ETX7B3_Profile_Provenance_v1.0.csv"
+    },
+    {
+      "check": "B3_HASH_source_receipt",
+      "status": "PASS",
+      "detail": "MEM_ETX7B3_Source_and_Cutout_Receipt_v1.0.csv"
+    },
+    {
+      "check": "RUNTIME_HASH_runtime_inputs/accepted_load_hourly.parquet",
+      "status": "PASS",
+      "detail": "load_hourly.parquet"
+    },
+    {
+      "check": "RUNTIME_HASH_runtime_inputs/accepted_generator_availability_hourly.parquet",
+      "status": "PASS",
+      "detail": "generator_availability_hourly.parquet"
+    },
+    {
+      "check": "RUNTIME_HASH_runtime_inputs/accepted_hydro_inflow_hourly.parquet",
+      "status": "PASS",
+      "detail": "hydro_inflow_hourly.parquet"
+    },
+    {
+      "check": "RUNTIME_HASH_runtime_inputs/accepted_hydro_runtime_parameters.csv",
+      "status": "PASS",
+      "detail": "hydro_runtime_parameters.csv"
+    },
+    {
+      "check": "RUNTIME_HASH_runtime_inputs/accepted_external_prices_hourly.parquet",
+      "status": "PASS",
+      "detail": "external_prices_hourly.parquet"
+    },
+    {
+      "check": "RUNTIME_HASH_runtime_inputs/p2x_flex_v1/2040_load_hourly.parquet",
+      "status": "PASS",
+      "detail": "load_hourly.parquet"
+    },
+    {
+      "check": "RUNTIME_HASH_runtime_inputs/p2x_flex_v1/2040_p2x_contract.csv",
+      "status": "PASS",
+      "detail": "p2x_contract.csv"
+    },
+    {
+      "check": "RUNTIME_HASH_runtime_inputs/p2x_flex_v1/2040_generator_availability_hourly.parquet",
+      "status": "PASS",
+      "detail": "generator_availability_hourly.parquet"
+    },
+    {
+      "check": "RUNTIME_HASH_runtime_inputs/p2x_flex_v1/2040_hydro_inflow_hourly.parquet",
+      "status": "PASS",
+      "detail": "hydro_inflow_hourly.parquet"
+    },
+    {
+      "check": "RUNTIME_HASH_runtime_inputs/p2x_flex_v1/2040_hydro_runtime_parameters.csv",
+      "status": "PASS",
+      "detail": "hydro_runtime_parameters.csv"
+    },
+    {
+      "check": "RUNTIME_HASH_runtime_inputs/p2x_flex_v1/2040_external_prices_hourly.parquet",
+      "status": "PASS",
+      "detail": "external_prices_hourly.parquet"
+    },
+    {
+      "check": "RUNTIME_P2X_VRE_BYTE_IDENTITY",
+      "status": "PASS",
+      "detail": "Availability copied byte-for-byte; demand-only P2X correction"
+    },
+    {
+      "check": "STATIC_RENEWABLE_UNIQUE_IDS",
+      "status": "PASS",
+      "detail": "84 scenario-specific generator IDs"
+    },
+    {
+      "check": "RUNTIME_KEY_UNIQUENESS",
+      "status": "PASS",
+      "detail": "735840 VRE runtime rows"
+    },
+    {
+      "check": "RUNTIME_HORIZON_SCENARIOS",
+      "status": "PASS",
+      "detail": "Only 2040 Slow/Base/High selected"
+    },
+    {
+      "check": "SOURCE_CHRONOLOGY_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": "8,760 unique gap-free UTC hours"
+    },
+    {
+      "check": "SOURCE_DOMAIN_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "min": 0.0,
+        "mean": 0.1356239814187116,
+        "median": 0.086665775244655,
+        "p5": 0.001888630660922804,
+        "p25": 0.03438489602573626,
+        "p75": 0.18868003512255005,
+        "p95": 0.4253610416791244,
+        "max": 0.8265297188326264,
+        "zero_hours": 331,
+        "zero_share": 0.03778538812785388,
+        "full_hours": 0,
+        "full_share": 0.0,
+        "below_zero": 0,
+        "above_one": 0,
+        "nan_count": 0,
+        "inf_count": 0
+      }
+    },
+    {
+      "check": "CACHE_CHRONOLOGY_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": "IT2/IT4 2019 hourly resource cache"
+    },
+    {
+      "check": "CACHE_TO_B3_TRANSFORMATION_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "max_abs_difference": 0.0,
+        "mismatched_timestamps": 0
+      }
+    },
+    {
+      "check": "SOURCE_ZERO_PRESERVATION_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": "No introduced availability when both weighted upstream series are zero"
+    },
+    {
+      "check": "SOURCE_CHRONOLOGY_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": "8,760 unique gap-free UTC hours"
+    },
+    {
+      "check": "SOURCE_DOMAIN_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "min": 0.0,
+        "mean": 0.2420002559986438,
+        "median": 0.19163165364230728,
+        "p5": 0.025554439969846583,
+        "p25": 0.09045615389191575,
+        "p75": 0.3461567369014771,
+        "p95": 0.6325658985553738,
+        "max": 0.8695890172990303,
+        "zero_hours": 49,
+        "zero_share": 0.005593607305936073,
+        "full_hours": 0,
+        "full_share": 0.0,
+        "below_zero": 0,
+        "above_one": 0,
+        "nan_count": 0,
+        "inf_count": 0
+      }
+    },
+    {
+      "check": "CACHE_CHRONOLOGY_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": "IT2/IT4 2019 hourly resource cache"
+    },
+    {
+      "check": "CACHE_TO_B3_TRANSFORMATION_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "max_abs_difference": 0.0,
+        "mismatched_timestamps": 0
+      }
+    },
+    {
+      "check": "SOURCE_ZERO_PRESERVATION_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": "No introduced availability when both weighted upstream series are zero"
+    },
+    {
+      "check": "SOURCE_CHRONOLOGY_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "8,760 unique gap-free UTC hours"
+    },
+    {
+      "check": "SOURCE_DOMAIN_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "min": 0.0,
+        "mean": 0.16050217782859175,
+        "median": 0.0,
+        "p5": 0.0,
+        "p25": 0.0,
+        "p75": 0.32340469478371736,
+        "p95": 0.6215203637538026,
+        "max": 0.8184996502207553,
+        "zero_hours": 4679,
+        "zero_share": 0.5341324200913242,
+        "full_hours": 0,
+        "full_share": 0.0,
+        "below_zero": 0,
+        "above_one": 0,
+        "nan_count": 0,
+        "inf_count": 0
+      }
+    },
+    {
+      "check": "CACHE_CHRONOLOGY_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "IT2/IT4 2019 hourly resource cache"
+    },
+    {
+      "check": "CACHE_TO_B3_TRANSFORMATION_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "max_abs_difference": 0.0,
+        "mismatched_timestamps": 0
+      }
+    },
+    {
+      "check": "SOURCE_ZERO_PRESERVATION_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "No introduced availability when both weighted upstream series are zero"
+    },
+    {
+      "check": "SOURCE_CHRONOLOGY_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "8,760 unique gap-free UTC hours"
+    },
+    {
+      "check": "SOURCE_DOMAIN_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "min": 0.0,
+        "mean": 0.16110565987861145,
+        "median": 0.0,
+        "p5": 0.0,
+        "p25": 0.0,
+        "p75": 0.3266711140691261,
+        "p95": 0.6227923044500722,
+        "max": 0.8187476513628087,
+        "zero_hours": 4679,
+        "zero_share": 0.5341324200913242,
+        "full_hours": 0,
+        "full_share": 0.0,
+        "below_zero": 0,
+        "above_one": 0,
+        "nan_count": 0,
+        "inf_count": 0
+      }
+    },
+    {
+      "check": "CACHE_CHRONOLOGY_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "IT2/IT4 2019 hourly resource cache"
+    },
+    {
+      "check": "CACHE_TO_B3_TRANSFORMATION_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "max_abs_difference": 0.0,
+        "mismatched_timestamps": 0
+      }
+    },
+    {
+      "check": "SOURCE_ZERO_PRESERVATION_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "No introduced availability when both weighted upstream series are zero"
+    },
+    {
+      "check": "ACCEPTED_UC_MILP_Slow",
+      "status": "PASS",
+      "detail": "results\\uc2_full_year\\2040\\Slow\\UC_MILP\\UC2_2040_SLOW_8760H_UC_MILP_SOLVE_RECEIPT.json"
+    },
+    {
+      "check": "CANONICAL_UC_PATH_Slow",
+      "status": "PASS",
+      "detail": "results\\uc2_full_year\\2040\\Slow\\UC_MILP\\UC2_2040_SLOW_8760H_UC_MILP_SOLVED.nc"
+    },
+    {
+      "check": "NETWORK_HASH_Slow_parent",
+      "status": "PASS",
+      "detail": "networks\\unsolved\\p2x_flex_v1\\MEM_2040_SLOW_P2X_FLEX_V1_8760h_UNSOLVED.nc"
+    },
+    {
+      "check": "NETWORK_HASH_Slow_input",
+      "status": "PASS",
+      "detail": "networks\\unsolved\\uc1_common_v1\\MEM_2040_SLOW_UC1_COMMON_V1_8760h_UNSOLVED.nc"
+    },
+    {
+      "check": "NETWORK_HASH_Slow_solved",
+      "status": "PASS",
+      "detail": "results\\uc2_full_year\\2040\\Slow\\UC_MILP\\UC2_2040_SLOW_8760H_UC_MILP_SOLVED.nc"
+    },
+    {
+      "check": "NETWORK_CHRONOLOGY_Slow_P2X",
+      "status": "PASS",
+      "detail": "8,760 accepted 2019 UTC snapshots"
+    },
+    {
+      "check": "NETWORK_WEIGHTING_Slow_P2X",
+      "status": "PASS",
+      "detail": "Generator weights = 1 hour at every snapshot"
+    },
+    {
+      "check": "NETWORK_METADATA_Slow_P2X",
+      "status": "PASS",
+      "detail": "Correct horizon/scenario"
+    },
+    {
+      "check": "NETWORK_CHRONOLOGY_Slow_UC_INPUT",
+      "status": "PASS",
+      "detail": "8,760 accepted 2019 UTC snapshots"
+    },
+    {
+      "check": "NETWORK_WEIGHTING_Slow_UC_INPUT",
+      "status": "PASS",
+      "detail": "Generator weights = 1 hour at every snapshot"
+    },
+    {
+      "check": "NETWORK_METADATA_Slow_UC_INPUT",
+      "status": "PASS",
+      "detail": "Correct horizon/scenario"
+    },
+    {
+      "check": "NETWORK_CHRONOLOGY_Slow_UC_MILP",
+      "status": "PASS",
+      "detail": "8,760 accepted 2019 UTC snapshots"
+    },
+    {
+      "check": "NETWORK_WEIGHTING_Slow_UC_MILP",
+      "status": "PASS",
+      "detail": "Generator weights = 1 hour at every snapshot"
+    },
+    {
+      "check": "NETWORK_METADATA_Slow_UC_MILP",
+      "status": "PASS",
+      "detail": "Correct horizon/scenario"
+    },
+    {
+      "check": "GENERATOR_COVERAGE_Slow",
+      "status": "PASS",
+      "detail": "28 required VRE generators; no omissions/extras"
+    },
+    {
+      "check": "SEVEN_ZONES_Slow",
+      "status": "PASS",
+      "detail": "All seven Italian market zones"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_CALA_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "CALA",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_CALA_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_SLOW_CALA_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_CALA_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "CALA",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_CALA_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_SLOW_CALA_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_CALA_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "CALA",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_CALA_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_CALA_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "CALA",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_CALA_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_CNOR_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "CNOR",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_CNOR_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_SLOW_CNOR_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_CNOR_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "CNOR",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_CNOR_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_SLOW_CNOR_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_CNOR_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "CNOR",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_CNOR_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_CNOR_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "CNOR",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_CNOR_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_CSUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "CSUD",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_CSUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_SLOW_CSUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_CSUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "CSUD",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_CSUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_SLOW_CSUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_CSUD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "CSUD",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_CSUD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_CSUD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "CSUD",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_CSUD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_NORD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "NORD",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_NORD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_SLOW_NORD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_NORD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "NORD",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_NORD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_SLOW_NORD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_NORD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "NORD",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_NORD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_NORD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "NORD",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_NORD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_SARD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "SARD",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_SARD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_SLOW_SARD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_SARD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "SARD",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_SARD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_SLOW_SARD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_SARD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "SARD",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_SARD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_SARD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "SARD",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_SARD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_SICI_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "SICI",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_SICI_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_SLOW_SICI_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_SICI_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "SICI",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_SICI_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_SLOW_SICI_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_SICI_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "SICI",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_SICI_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_SICI_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "SICI",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_SICI_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_SUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "SUD",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_SUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_SLOW_SUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_SUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "SUD",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_SUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_SLOW_SUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_SUD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "SUD",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_SUD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_SLOW_SUD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "SUD",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_SLOW_SUD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "UC_DISPATCH_COMPLETE_Slow",
+      "status": "PASS",
+      "detail": "Complete 8760-hour UC MILP VRE dispatch; no LP primal used"
+    },
+    {
+      "check": "DISPATCH_AVAILABILITY_BOUND_Slow",
+      "status": "PASS",
+      "detail": {
+        "min_unused_potential_MW": -3.993477548647206e-09,
+        "min_dispatch_MW": 0.0,
+        "numerical_tolerance_MW": 1e-05
+      }
+    },
+    {
+      "check": "ACCEPTED_UC_MILP_Base",
+      "status": "PASS",
+      "detail": "results\\uc2_full_year\\2040\\Base\\UC_MILP\\UC2_2040_BASE_8760H_UC_MILP_SOLVE_RECEIPT.json"
+    },
+    {
+      "check": "CANONICAL_UC_PATH_Base",
+      "status": "PASS",
+      "detail": "results\\uc2_full_year\\2040\\Base\\UC_MILP\\UC2_2040_BASE_8760H_UC_MILP_SOLVED.nc"
+    },
+    {
+      "check": "NETWORK_HASH_Base_parent",
+      "status": "PASS",
+      "detail": "networks\\unsolved\\p2x_flex_v1\\MEM_2040_BASE_P2X_FLEX_V1_8760h_UNSOLVED.nc"
+    },
+    {
+      "check": "NETWORK_HASH_Base_input",
+      "status": "PASS",
+      "detail": "networks\\unsolved\\uc1_common_v1\\MEM_2040_BASE_UC1_COMMON_V1_8760h_UNSOLVED.nc"
+    },
+    {
+      "check": "NETWORK_HASH_Base_solved",
+      "status": "PASS",
+      "detail": "results\\uc2_full_year\\2040\\Base\\UC_MILP\\UC2_2040_BASE_8760H_UC_MILP_SOLVED.nc"
+    },
+    {
+      "check": "NETWORK_CHRONOLOGY_Base_P2X",
+      "status": "PASS",
+      "detail": "8,760 accepted 2019 UTC snapshots"
+    },
+    {
+      "check": "NETWORK_WEIGHTING_Base_P2X",
+      "status": "PASS",
+      "detail": "Generator weights = 1 hour at every snapshot"
+    },
+    {
+      "check": "NETWORK_METADATA_Base_P2X",
+      "status": "PASS",
+      "detail": "Correct horizon/scenario"
+    },
+    {
+      "check": "NETWORK_CHRONOLOGY_Base_UC_INPUT",
+      "status": "PASS",
+      "detail": "8,760 accepted 2019 UTC snapshots"
+    },
+    {
+      "check": "NETWORK_WEIGHTING_Base_UC_INPUT",
+      "status": "PASS",
+      "detail": "Generator weights = 1 hour at every snapshot"
+    },
+    {
+      "check": "NETWORK_METADATA_Base_UC_INPUT",
+      "status": "PASS",
+      "detail": "Correct horizon/scenario"
+    },
+    {
+      "check": "NETWORK_CHRONOLOGY_Base_UC_MILP",
+      "status": "PASS",
+      "detail": "8,760 accepted 2019 UTC snapshots"
+    },
+    {
+      "check": "NETWORK_WEIGHTING_Base_UC_MILP",
+      "status": "PASS",
+      "detail": "Generator weights = 1 hour at every snapshot"
+    },
+    {
+      "check": "NETWORK_METADATA_Base_UC_MILP",
+      "status": "PASS",
+      "detail": "Correct horizon/scenario"
+    },
+    {
+      "check": "GENERATOR_COVERAGE_Base",
+      "status": "PASS",
+      "detail": "28 required VRE generators; no omissions/extras"
+    },
+    {
+      "check": "SEVEN_ZONES_Base",
+      "status": "PASS",
+      "detail": "All seven Italian market zones"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_CALA_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "CALA",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_CALA_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_BASE_CALA_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_CALA_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "CALA",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_CALA_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_BASE_CALA_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_CALA_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "CALA",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_CALA_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_CALA_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "CALA",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_CALA_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_CNOR_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "CNOR",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_CNOR_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_BASE_CNOR_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_CNOR_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "CNOR",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_CNOR_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_BASE_CNOR_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_CNOR_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "CNOR",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_CNOR_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_CNOR_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "CNOR",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_CNOR_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_CSUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "CSUD",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_CSUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_BASE_CSUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_CSUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "CSUD",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_CSUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_BASE_CSUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_CSUD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "CSUD",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_CSUD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_CSUD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "CSUD",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_CSUD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_NORD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "NORD",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_NORD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_BASE_NORD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_NORD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "NORD",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_NORD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_BASE_NORD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_NORD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "NORD",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_NORD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_NORD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "NORD",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_NORD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_SARD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "SARD",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_SARD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_BASE_SARD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_SARD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "SARD",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_SARD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_BASE_SARD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_SARD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "SARD",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_SARD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_SARD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "SARD",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_SARD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_SICI_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "SICI",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_SICI_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_BASE_SICI_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_SICI_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "SICI",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_SICI_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_BASE_SICI_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_SICI_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "SICI",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_SICI_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_SICI_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "SICI",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_SICI_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_SUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "SUD",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_SUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_BASE_SUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_SUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "SUD",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_SUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_BASE_SUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_SUD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "SUD",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_SUD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_BASE_SUD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "SUD",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_BASE_SUD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "UC_DISPATCH_COMPLETE_Base",
+      "status": "PASS",
+      "detail": "Complete 8760-hour UC MILP VRE dispatch; no LP primal used"
+    },
+    {
+      "check": "DISPATCH_AVAILABILITY_BOUND_Base",
+      "status": "PASS",
+      "detail": {
+        "min_unused_potential_MW": -9.042366855283035e-09,
+        "min_dispatch_MW": 0.0,
+        "numerical_tolerance_MW": 1e-05
+      }
+    },
+    {
+      "check": "ACCEPTED_UC_MILP_High",
+      "status": "PASS",
+      "detail": "results\\uc2_full_year\\2040\\High\\UC_MILP\\UC2_2040_HIGH_8760H_UC_MILP_SOLVE_RECEIPT.json"
+    },
+    {
+      "check": "CANONICAL_UC_PATH_High",
+      "status": "PASS",
+      "detail": "results\\uc2_full_year\\2040\\High\\UC_MILP\\UC2_2040_HIGH_8760H_UC_MILP_SOLVED.nc"
+    },
+    {
+      "check": "NETWORK_HASH_High_parent",
+      "status": "PASS",
+      "detail": "networks\\unsolved\\p2x_flex_v1\\MEM_2040_HIGH_P2X_FLEX_V1_8760h_UNSOLVED.nc"
+    },
+    {
+      "check": "NETWORK_HASH_High_input",
+      "status": "PASS",
+      "detail": "networks\\unsolved\\uc1_common_v1\\MEM_2040_HIGH_UC1_COMMON_V1_8760h_UNSOLVED.nc"
+    },
+    {
+      "check": "NETWORK_HASH_High_solved",
+      "status": "PASS",
+      "detail": "results\\uc2_full_year\\2040\\High\\UC_MILP\\UC2_2040_HIGH_8760H_UC_MILP_SOLVED.nc"
+    },
+    {
+      "check": "NETWORK_CHRONOLOGY_High_P2X",
+      "status": "PASS",
+      "detail": "8,760 accepted 2019 UTC snapshots"
+    },
+    {
+      "check": "NETWORK_WEIGHTING_High_P2X",
+      "status": "PASS",
+      "detail": "Generator weights = 1 hour at every snapshot"
+    },
+    {
+      "check": "NETWORK_METADATA_High_P2X",
+      "status": "PASS",
+      "detail": "Correct horizon/scenario"
+    },
+    {
+      "check": "NETWORK_CHRONOLOGY_High_UC_INPUT",
+      "status": "PASS",
+      "detail": "8,760 accepted 2019 UTC snapshots"
+    },
+    {
+      "check": "NETWORK_WEIGHTING_High_UC_INPUT",
+      "status": "PASS",
+      "detail": "Generator weights = 1 hour at every snapshot"
+    },
+    {
+      "check": "NETWORK_METADATA_High_UC_INPUT",
+      "status": "PASS",
+      "detail": "Correct horizon/scenario"
+    },
+    {
+      "check": "NETWORK_CHRONOLOGY_High_UC_MILP",
+      "status": "PASS",
+      "detail": "8,760 accepted 2019 UTC snapshots"
+    },
+    {
+      "check": "NETWORK_WEIGHTING_High_UC_MILP",
+      "status": "PASS",
+      "detail": "Generator weights = 1 hour at every snapshot"
+    },
+    {
+      "check": "NETWORK_METADATA_High_UC_MILP",
+      "status": "PASS",
+      "detail": "Correct horizon/scenario"
+    },
+    {
+      "check": "GENERATOR_COVERAGE_High",
+      "status": "PASS",
+      "detail": "28 required VRE generators; no omissions/extras"
+    },
+    {
+      "check": "SEVEN_ZONES_High",
+      "status": "PASS",
+      "detail": "All seven Italian market zones"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_CALA_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "CALA",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_CALA_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_HIGH_CALA_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_CALA_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "CALA",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_CALA_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_HIGH_CALA_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_CALA_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "CALA",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_CALA_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_CALA_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "CALA",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_CALA_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_CNOR_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "CNOR",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_CNOR_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_HIGH_CNOR_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_CNOR_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "CNOR",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_CNOR_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_HIGH_CNOR_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_CNOR_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "CNOR",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_CNOR_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_CNOR_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "CNOR",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_CNOR_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_CSUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "CSUD",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_CSUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_HIGH_CSUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_CSUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "CSUD",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_CSUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_HIGH_CSUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_CSUD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "CSUD",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_CSUD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_CSUD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "CSUD",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_CSUD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_NORD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "NORD",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_NORD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_HIGH_NORD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_NORD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "NORD",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_NORD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_HIGH_NORD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_NORD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "NORD",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_NORD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_NORD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "NORD",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_NORD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_SARD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "SARD",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_SARD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_HIGH_SARD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_SARD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "SARD",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_SARD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_HIGH_SARD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_SARD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "SARD",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_SARD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_SARD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "SARD",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_SARD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_SICI_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "SICI",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_SICI_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_HIGH_SICI_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_SICI_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "SICI",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_SICI_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_HIGH_SICI_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_SICI_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "SICI",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_SICI_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_SICI_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "SICI",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_SICI_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_SUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_ROOFTOP",
+        "zone": "SUD",
+        "profile": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_SUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_HIGH_SUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_SUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "technology": "SOLAR_PV_UTILITY",
+        "zone": "SUD",
+        "profile": "ETX7B3_IT_SOLAR_PV_UTILITY_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_SUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "SOLAR_NIGHT_ZERO_2040_HIGH_SUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "MEM positive where corresponding upstream B3 solar = zero: 0"
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_SUD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_OFFSHORE",
+        "zone": "SUD",
+        "profile": "ETX7B3_IT_WIND_OFFSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_SUD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "RUNTIME_MAPPING_2040_HIGH_SUD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "technology": "WIND_ONSHORE",
+        "zone": "SUD",
+        "profile": "ETX7B3_IT_WIND_ONSHORE_2040"
+      }
+    },
+    {
+      "check": "SOURCE_RUNTIME_NETWORK_2040_HIGH_SUD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": {
+        "runtime": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "parent": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "input": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "MILP": {
+          "max_abs_difference": 0.0,
+          "mismatched_timestamps": 0
+        },
+        "mapping": true,
+        "chronology": true
+      }
+    },
+    {
+      "check": "UC_DISPATCH_COMPLETE_High",
+      "status": "PASS",
+      "detail": "Complete 8760-hour UC MILP VRE dispatch; no LP primal used"
+    },
+    {
+      "check": "DISPATCH_AVAILABILITY_BOUND_High",
+      "status": "PASS",
+      "detail": {
+        "min_unused_potential_MW": -5.4910174185351934e-09,
+        "min_dispatch_MW": 0.0,
+        "numerical_tolerance_MW": 1e-05
+      }
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_CALA_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_CNOR_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_CSUD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_NORD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_SARD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_SICI_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_SUD_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_CALA_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_CNOR_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_CSUD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_NORD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_SARD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_SICI_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_SUD_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_CALA_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_CNOR_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_CSUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_NORD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_SARD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_SICI_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_SUD_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_CALA_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_CNOR_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_CSUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_NORD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_SARD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_SICI_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "SCENARIO_PROFILE_EQUALITY_SUD_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "Identical normalized shapes; only installed capacities vary by scenario"
+    },
+    {
+      "check": "NO_CROSS_TECHNOLOGY_EXACT_DUPLICATES",
+      "status": "PASS",
+      "detail": "Four distinct national technology series"
+    },
+    {
+      "check": "NO_TILED_PROFILE_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": "No exact repetition of any proper divisor block or 24/168/720-hour block"
+    },
+    {
+      "check": "NO_WIND_FIXED_HOUR_SUPPRESSION_WIND_ONSHORE",
+      "status": "PASS",
+      "detail": "Wind has positive values in each UTC hour-of-day; no always-zero hour bin"
+    },
+    {
+      "check": "NO_TILED_PROFILE_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": "No exact repetition of any proper divisor block or 24/168/720-hour block"
+    },
+    {
+      "check": "NO_WIND_FIXED_HOUR_SUPPRESSION_WIND_OFFSHORE",
+      "status": "PASS",
+      "detail": "Wind has positive values in each UTC hour-of-day; no always-zero hour bin"
+    },
+    {
+      "check": "NO_TILED_PROFILE_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "No exact repetition of any proper divisor block or 24/168/720-hour block"
+    },
+    {
+      "check": "SOLAR_UPSTREAM_NIGHT_PRESERVED_SOLAR_PV_ROOFTOP",
+      "status": "PASS",
+      "detail": "No positive availability introduced during upstream-zero hours"
+    },
+    {
+      "check": "NO_TILED_PROFILE_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "No exact repetition of any proper divisor block or 24/168/720-hour block"
+    },
+    {
+      "check": "SOLAR_UPSTREAM_NIGHT_PRESERVED_SOLAR_PV_UTILITY",
+      "status": "PASS",
+      "detail": "No positive availability introduced during upstream-zero hours"
+    },
+    {
+      "check": "CUTOUT_TIME_COORDINATE",
+      "status": "PASS",
+      "detail": "Read time coordinate only; no weather/resource conversion or cutout re-hash"
+    },
+    {
+      "check": "READ_ONLY_IMMUTABILITY",
+      "status": "PASS",
+      "detail": {
+        "protected_files": 45,
+        "changed": []
+      }
+    }
+  ],
+  "check_counts": {
+    "PASS": 342
+  },
+  "national_summary": [
+    {
+      "year": 2040,
+      "scenario": "Slow",
+      "zone": "ITALY",
+      "technology": "WIND_ONSHORE",
+      "aggregation": "NATIONAL_CAPACITY_WEIGHTED",
+      "row_role": "TECHNOLOGY_DETAIL",
+      "generators": 7,
+      "p_nom_MW": 27280.0,
+      "snapshot_weight_hours": 8760.0,
+      "potential_TWh": 32.410442586777485,
+      "availability_CF": 0.1356239814187116,
+      "realized_UC_MILP_TWh": 32.21438452602756,
+      "realized_CF": 0.1348035614347221,
+      "curtailed_TWh": 0.19605806074992568,
+      "curtailment_pct": 0.6049225036806861,
+      "min": 0.0,
+      "mean": 0.1356239814187116,
+      "median": 0.08666577524465502,
+      "p5": 0.001888630660922804,
+      "p25": 0.03438489602573626,
+      "p75": 0.18868003512255005,
+      "p95": 0.4253610416791245,
+      "max": 0.8265297188326264,
+      "zero_hours": 331,
+      "zero_share": 0.03778538812785388,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    {
+      "year": 2040,
+      "scenario": "Slow",
+      "zone": "ITALY",
+      "technology": "WIND_OFFSHORE",
+      "aggregation": "NATIONAL_CAPACITY_WEIGHTED",
+      "row_role": "TECHNOLOGY_DETAIL",
+      "generators": 7,
+      "p_nom_MW": 12160.0,
+      "snapshot_weight_hours": 8760.0,
+      "potential_TWh": 25.77825446938514,
+      "availability_CF": 0.24200025599864383,
+      "realized_UC_MILP_TWh": 25.586697978969998,
+      "realized_CF": 0.24020196822963605,
+      "curtailed_TWh": 0.19155649041514097,
+      "curtailment_pct": 0.74309333334667,
+      "min": 0.0,
+      "mean": 0.2420002559986438,
+      "median": 0.19163165364230728,
+      "p5": 0.02555443996984658,
+      "p25": 0.09045615389191575,
+      "p75": 0.3461567369014771,
+      "p95": 0.6325658985553738,
+      "max": 0.8695890172990303,
+      "zero_hours": 49,
+      "zero_share": 0.005593607305936073,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    {
+      "year": 2040,
+      "scenario": "Slow",
+      "zone": "ITALY",
+      "technology": "SOLAR_PV_ROOFTOP",
+      "aggregation": "NATIONAL_CAPACITY_WEIGHTED",
+      "row_role": "TECHNOLOGY_DETAIL",
+      "generators": 7,
+      "p_nom_MW": 33360.0,
+      "snapshot_weight_hours": 8760.0,
+      "potential_TWh": 46.904129234689556,
+      "availability_CF": 0.16050217782859177,
+      "realized_UC_MILP_TWh": 46.51492725935719,
+      "realized_CF": 0.15917035980584432,
+      "curtailed_TWh": 0.3892019753323719,
+      "curtailment_pct": 0.8297819012585447,
+      "min": 0.0,
+      "mean": 0.16050217782859175,
+      "median": 0.0,
+      "p5": 0.0,
+      "p25": 0.0,
+      "p75": 0.32340469478371736,
+      "p95": 0.6215203637538027,
+      "max": 0.8184996502207552,
+      "zero_hours": 4679,
+      "zero_share": 0.5341324200913242,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    {
+      "year": 2040,
+      "scenario": "Slow",
+      "zone": "ITALY",
+      "technology": "SOLAR_PV_UTILITY",
+      "aggregation": "NATIONAL_CAPACITY_WEIGHTED",
+      "row_role": "TECHNOLOGY_DETAIL",
+      "generators": 7,
+      "p_nom_MW": 63360.0,
+      "snapshot_weight_hours": 8760.0,
+      "potential_TWh": 89.41905438280126,
+      "availability_CF": 0.16110565987861142,
+      "realized_UC_MILP_TWh": 88.89311348860373,
+      "realized_CF": 0.16015807599504558,
+      "curtailed_TWh": 0.5259408941975385,
+      "curtailment_pct": 0.5881754149915247,
+      "min": 0.0,
+      "mean": 0.16110565987861145,
+      "median": 0.0,
+      "p5": 0.0,
+      "p25": 0.0,
+      "p75": 0.3266711140691261,
+      "p95": 0.6227923044500722,
+      "max": 0.8187476513628087,
+      "zero_hours": 4679,
+      "zero_share": 0.5341324200913242,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    {
+      "year": 2040,
+      "scenario": "Slow",
+      "zone": "ITALY",
+      "technology": "SOLAR_PV_TOTAL",
+      "aggregation": "NATIONAL_CAPACITY_WEIGHTED",
+      "row_role": "NON_ADDITIVE_SOLAR_AGGREGATE",
+      "generators": 14,
+      "p_nom_MW": 96720.0,
+      "snapshot_weight_hours": 8760.0,
+      "potential_TWh": 136.32318361749083,
+      "availability_CF": 0.16089751098294708,
+      "realized_UC_MILP_TWh": 135.40804074796094,
+      "realized_CF": 0.15981739969157419,
+      "curtailed_TWh": 0.915142869529903,
+      "curtailment_pct": 0.6713039156257544,
+      "min": 0.0,
+      "mean": 0.1608975109829471,
+      "median": 0.0,
+      "p5": 0.0,
+      "p25": 0.0,
+      "p75": 0.32465171377691643,
+      "p95": 0.6226827842375172,
+      "max": 0.8186621125073609,
+      "zero_hours": 4679,
+      "zero_share": 0.5341324200913242,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    {
+      "year": 2040,
+      "scenario": "Base",
+      "zone": "ITALY",
+      "technology": "WIND_ONSHORE",
+      "aggregation": "NATIONAL_CAPACITY_WEIGHTED",
+      "row_role": "TECHNOLOGY_DETAIL",
+      "generators": 7,
+      "p_nom_MW": 34100.0,
+      "snapshot_weight_hours": 8760.0,
+      "potential_TWh": 40.51305323347186,
+      "availability_CF": 0.1356239814187116,
+      "realized_UC_MILP_TWh": 39.67552905668375,
+      "realized_CF": 0.1328202341243313,
+      "curtailed_TWh": 0.8375241767881065,
+      "curtailment_pct": 2.0672946370187293,
+      "min": 0.0,
+      "mean": 0.1356239814187116,
+      "median": 0.086665775244655,
+      "p5": 0.0018886306609228044,
+      "p25": 0.03438489602573626,
+      "p75": 0.18868003512255005,
+      "p95": 0.4253610416791244,
+      "max": 0.8265297188326264,
+      "zero_hours": 331,
+      "zero_share": 0.03778538812785388,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    {
+      "year": 2040,
+      "scenario": "Base",
+      "zone": "ITALY",
+      "technology": "WIND_OFFSHORE",
+      "aggregation": "NATIONAL_CAPACITY_WEIGHTED",
+      "row_role": "TECHNOLOGY_DETAIL",
+      "generators": 7,
+      "p_nom_MW": 15200.0,
+      "snapshot_weight_hours": 8760.0,
+      "potential_TWh": 32.22281808673142,
+      "availability_CF": 0.24200025599864383,
+      "realized_UC_MILP_TWh": 31.546284954472014,
+      "realized_CF": 0.2369193474711008,
+      "curtailed_TWh": 0.6765331322594099,
+      "curtailment_pct": 2.099546757327193,
+      "min": 0.0,
+      "mean": 0.2420002559986438,
+      "median": 0.19163165364230728,
+      "p5": 0.025554439969846587,
+      "p25": 0.09045615389191576,
+      "p75": 0.3461567369014771,
+      "p95": 0.6325658985553738,
+      "max": 0.8695890172990303,
+      "zero_hours": 49,
+      "zero_share": 0.005593607305936073,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    {
+      "year": 2040,
+      "scenario": "Base",
+      "zone": "ITALY",
+      "technology": "SOLAR_PV_ROOFTOP",
+      "aggregation": "NATIONAL_CAPACITY_WEIGHTED",
+      "row_role": "TECHNOLOGY_DETAIL",
+      "generators": 7,
+      "p_nom_MW": 41700.0,
+      "snapshot_weight_hours": 8760.0,
+      "potential_TWh": 58.630161543361936,
+      "availability_CF": 0.16050217782859175,
+      "realized_UC_MILP_TWh": 57.45282033349901,
+      "realized_CF": 0.15727916388395863,
+      "curtailed_TWh": 1.177341209862925,
+      "curtailment_pct": 2.0080811290144274,
+      "min": 0.0,
+      "mean": 0.16050217782859175,
+      "median": 0.0,
+      "p5": 0.0,
+      "p25": 0.0,
+      "p75": 0.32340469478371736,
+      "p95": 0.6215203637538026,
+      "max": 0.8184996502207552,
+      "zero_hours": 4679,
+      "zero_share": 0.5341324200913242,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    {
+      "year": 2040,
+      "scenario": "Base",
+      "zone": "ITALY",
+      "technology": "SOLAR_PV_UTILITY",
+      "aggregation": "NATIONAL_CAPACITY_WEIGHTED",
+      "row_role": "TECHNOLOGY_DETAIL",
+      "generators": 7,
+      "p_nom_MW": 79200.0,
+      "snapshot_weight_hours": 8760.0,
+      "potential_TWh": 111.77381797850158,
+      "availability_CF": 0.16110565987861145,
+      "realized_UC_MILP_TWh": 109.83010865750093,
+      "realized_CF": 0.15830408632198256,
+      "curtailed_TWh": 1.9437093210006655,
+      "curtailment_pct": 1.7389665631485502,
+      "min": 0.0,
+      "mean": 0.16110565987861145,
+      "median": 0.0,
+      "p5": 0.0,
+      "p25": 0.0,
+      "p75": 0.3266711140691261,
+      "p95": 0.6227923044500722,
+      "max": 0.8187476513628087,
+      "zero_hours": 4679,
+      "zero_share": 0.5341324200913242,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    {
+      "year": 2040,
+      "scenario": "Base",
+      "zone": "ITALY",
+      "technology": "SOLAR_PV_TOTAL",
+      "aggregation": "NATIONAL_CAPACITY_WEIGHTED",
+      "row_role": "NON_ADDITIVE_SOLAR_AGGREGATE",
+      "generators": 14,
+      "p_nom_MW": 120900.0,
+      "snapshot_weight_hours": 8760.0,
+      "potential_TWh": 170.40397952186353,
+      "availability_CF": 0.16089751098294708,
+      "realized_UC_MILP_TWh": 167.28292899099995,
+      "realized_CF": 0.15795057709397928,
+      "curtailed_TWh": 3.121050530863583,
+      "curtailment_pct": 1.83155964996882,
+      "min": 0.0,
+      "mean": 0.1608975109829471,
+      "median": 0.0,
+      "p5": 0.0,
+      "p25": 0.0,
+      "p75": 0.3246517137769164,
+      "p95": 0.6226827842375171,
+      "max": 0.8186621125073611,
+      "zero_hours": 4679,
+      "zero_share": 0.5341324200913242,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    {
+      "year": 2040,
+      "scenario": "High",
+      "zone": "ITALY",
+      "technology": "WIND_ONSHORE",
+      "aggregation": "NATIONAL_CAPACITY_WEIGHTED",
+      "row_role": "TECHNOLOGY_DETAIL",
+      "generators": 7,
+      "p_nom_MW": 37510.0,
+      "snapshot_weight_hours": 8760.0,
+      "potential_TWh": 44.56435855681904,
+      "availability_CF": 0.1356239814187116,
+      "realized_UC_MILP_TWh": 43.519930487024524,
+      "realized_CF": 0.1324454437325831,
+      "curtailed_TWh": 1.0444280697945132,
+      "curtailment_pct": 2.343639858437275,
+      "min": 0.0,
+      "mean": 0.13562398141871157,
+      "median": 0.08666577524465502,
+      "p5": 0.0018886306609228038,
+      "p25": 0.03438489602573625,
+      "p75": 0.18868003512255008,
+      "p95": 0.4253610416791244,
+      "max": 0.8265297188326264,
+      "zero_hours": 331,
+      "zero_share": 0.03778538812785388,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    {
+      "year": 2040,
+      "scenario": "High",
+      "zone": "ITALY",
+      "technology": "WIND_OFFSHORE",
+      "aggregation": "NATIONAL_CAPACITY_WEIGHTED",
+      "row_role": "TECHNOLOGY_DETAIL",
+      "generators": 7,
+      "p_nom_MW": 16720.0,
+      "snapshot_weight_hours": 8760.0,
+      "potential_TWh": 35.44509989540456,
+      "availability_CF": 0.2420002559986438,
+      "realized_UC_MILP_TWh": 34.59041191335426,
+      "realized_CF": 0.2361649018575781,
+      "curtailed_TWh": 0.8546879820502996,
+      "curtailment_pct": 2.4113008132926987,
+      "min": 0.0,
+      "mean": 0.2420002559986438,
+      "median": 0.19163165364230728,
+      "p5": 0.025554439969846583,
+      "p25": 0.09045615389191575,
+      "p75": 0.3461567369014771,
+      "p95": 0.6325658985553737,
+      "max": 0.8695890172990303,
+      "zero_hours": 49,
+      "zero_share": 0.005593607305936073,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    {
+      "year": 2040,
+      "scenario": "High",
+      "zone": "ITALY",
+      "technology": "SOLAR_PV_ROOFTOP",
+      "aggregation": "NATIONAL_CAPACITY_WEIGHTED",
+      "row_role": "TECHNOLOGY_DETAIL",
+      "generators": 7,
+      "p_nom_MW": 45870.0,
+      "snapshot_weight_hours": 8760.0,
+      "potential_TWh": 64.49317769769813,
+      "availability_CF": 0.16050217782859175,
+      "realized_UC_MILP_TWh": 63.13616694199148,
+      "realized_CF": 0.15712502710656254,
+      "curtailed_TWh": 1.3570107557066455,
+      "curtailment_pct": 2.104115201250317,
+      "min": 0.0,
+      "mean": 0.16050217782859175,
+      "median": 0.0,
+      "p5": 0.0,
+      "p25": 0.0,
+      "p75": 0.3234046947837174,
+      "p95": 0.6215203637538026,
+      "max": 0.8184996502207552,
+      "zero_hours": 4679,
+      "zero_share": 0.5341324200913242,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    {
+      "year": 2040,
+      "scenario": "High",
+      "zone": "ITALY",
+      "technology": "SOLAR_PV_UTILITY",
+      "aggregation": "NATIONAL_CAPACITY_WEIGHTED",
+      "row_role": "TECHNOLOGY_DETAIL",
+      "generators": 7,
+      "p_nom_MW": 87120.0,
+      "snapshot_weight_hours": 8760.0,
+      "potential_TWh": 122.95119977635174,
+      "availability_CF": 0.16110565987861145,
+      "realized_UC_MILP_TWh": 120.65926185808563,
+      "realized_CF": 0.15810248324109405,
+      "curtailed_TWh": 2.2919379182661177,
+      "curtailment_pct": 1.8641037439530097,
+      "min": 0.0,
+      "mean": 0.16110565987861145,
+      "median": 0.0,
+      "p5": 0.0,
+      "p25": 0.0,
+      "p75": 0.32667111406912613,
+      "p95": 0.622792304450072,
+      "max": 0.8187476513628088,
+      "zero_hours": 4679,
+      "zero_share": 0.5341324200913242,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    {
+      "year": 2040,
+      "scenario": "High",
+      "zone": "ITALY",
+      "technology": "SOLAR_PV_TOTAL",
+      "aggregation": "NATIONAL_CAPACITY_WEIGHTED",
+      "row_role": "NON_ADDITIVE_SOLAR_AGGREGATE",
+      "generators": 14,
+      "p_nom_MW": 132990.0,
+      "snapshot_weight_hours": 8760.0,
+      "potential_TWh": 187.44437747404987,
+      "availability_CF": 0.16089751098294708,
+      "realized_UC_MILP_TWh": 183.7954288000771,
+      "realized_CF": 0.15776534576541196,
+      "curtailed_TWh": 3.6489486739727557,
+      "curtailment_pct": 1.9466834498559034,
+      "min": 0.0,
+      "mean": 0.1608975109829471,
+      "median": 0.0,
+      "p5": 0.0,
+      "p25": 0.0,
+      "p75": 0.3246517137769165,
+      "p95": 0.6226827842375172,
+      "max": 0.8186621125073609,
+      "zero_hours": 4679,
+      "zero_share": 0.5341324200913242,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    }
+  ],
+  "source_profile_distribution": {
+    "ETX7B3_IT_WIND_ONSHORE_2040": {
+      "min": 0.0,
+      "mean": 0.1356239814187116,
+      "median": 0.086665775244655,
+      "p5": 0.001888630660922804,
+      "p25": 0.03438489602573626,
+      "p75": 0.18868003512255005,
+      "p95": 0.4253610416791244,
+      "max": 0.8265297188326264,
+      "zero_hours": 331,
+      "zero_share": 0.03778538812785388,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    "ETX7B3_IT_WIND_OFFSHORE_2040": {
+      "min": 0.0,
+      "mean": 0.2420002559986438,
+      "median": 0.19163165364230728,
+      "p5": 0.025554439969846583,
+      "p25": 0.09045615389191575,
+      "p75": 0.3461567369014771,
+      "p95": 0.6325658985553738,
+      "max": 0.8695890172990303,
+      "zero_hours": 49,
+      "zero_share": 0.005593607305936073,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040": {
+      "min": 0.0,
+      "mean": 0.16050217782859175,
+      "median": 0.0,
+      "p5": 0.0,
+      "p25": 0.0,
+      "p75": 0.32340469478371736,
+      "p95": 0.6215203637538026,
+      "max": 0.8184996502207553,
+      "zero_hours": 4679,
+      "zero_share": 0.5341324200913242,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    "ETX7B3_IT_SOLAR_PV_UTILITY_2040": {
+      "min": 0.0,
+      "mean": 0.16110565987861145,
+      "median": 0.0,
+      "p5": 0.0,
+      "p25": 0.0,
+      "p75": 0.3266711140691261,
+      "p95": 0.6227923044500722,
+      "max": 0.8187476513628087,
+      "zero_hours": 4679,
+      "zero_share": 0.5341324200913242,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0
+    }
+  },
+  "upstream_cache_distribution": {
+    "WIND_ONSHORE|IT2 0": {
+      "min": 0.0,
+      "mean": 0.12856695697451317,
+      "median": 0.07711578386752987,
+      "p5": 0.0,
+      "p25": 0.03135503908377868,
+      "p75": 0.17561964018469348,
+      "p95": 0.4234415993936472,
+      "max": 0.8069088896686588,
+      "zero_hours": 642,
+      "zero_share": 0.07328767123287672,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0,
+      "post_threshold_zero_hours": 642,
+      "positive_values_below_001": 0,
+      "threshold_modified_hours": null,
+      "threshold_modified_hours_limitation": "Pre-threshold values are not stored. Zero counts combine physical zero and below-0.01 clipping; exact modified count cannot be recovered without resource recomputation, which is excluded."
+    },
+    "WIND_ONSHORE|IT4 0": {
+      "min": 0.0,
+      "mean": 0.1973225379879893,
+      "median": 0.08622078377893178,
+      "p5": 0.0,
+      "p25": 0.021960875805930383,
+      "p75": 0.28722247420972546,
+      "p95": 0.7881707694346483,
+      "max": 1.0,
+      "zero_hours": 1393,
+      "zero_share": 0.15901826484018264,
+      "full_hours": 9,
+      "full_share": 0.0010273972602739725,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0,
+      "post_threshold_zero_hours": 1393,
+      "positive_values_below_001": 0,
+      "threshold_modified_hours": null,
+      "threshold_modified_hours_limitation": "Pre-threshold values are not stored. Zero counts combine physical zero and below-0.01 clipping; exact modified count cannot be recovered without resource recomputation, which is excluded."
+    },
+    "WIND_OFFSHORE|IT2 0": {
+      "min": 0.0,
+      "mean": 0.22868805696779332,
+      "median": 0.1673804189237673,
+      "p5": 0.018809760725417388,
+      "p25": 0.08110075334530034,
+      "p75": 0.33676687099333913,
+      "p95": 0.6290900262597562,
+      "max": 0.8656764805692837,
+      "zero_hours": 184,
+      "zero_share": 0.021004566210045664,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0,
+      "post_threshold_zero_hours": 184,
+      "positive_values_below_001": 0,
+      "threshold_modified_hours": null,
+      "threshold_modified_hours_limitation": "Pre-threshold values are not stored. Zero counts combine physical zero and below-0.01 clipping; exact modified count cannot be recovered without resource recomputation, which is excluded."
+    },
+    "WIND_OFFSHORE|IT4 0": {
+      "min": 0.0,
+      "mean": 0.2961365320574358,
+      "median": 0.19237784789591172,
+      "p5": 0.0,
+      "p25": 0.05993962601332031,
+      "p75": 0.4975203504704644,
+      "p95": 0.8589933814548693,
+      "max": 0.8854999999999995,
+      "zero_hours": 620,
+      "zero_share": 0.07077625570776255,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0,
+      "post_threshold_zero_hours": 620,
+      "positive_values_below_001": 0,
+      "threshold_modified_hours": null,
+      "threshold_modified_hours_limitation": "Pre-threshold values are not stored. Zero counts combine physical zero and below-0.01 clipping; exact modified count cannot be recovered without resource recomputation, which is excluded."
+    },
+    "SOLAR_PV|IT2 0": {
+      "min": 0.0,
+      "mean": 0.16006638902078993,
+      "median": 0.0,
+      "p5": 0.0,
+      "p25": 0.0,
+      "p75": 0.3219241858322338,
+      "p95": 0.621048910072995,
+      "max": 0.8183205626703876,
+      "zero_hours": 4746,
+      "zero_share": 0.5417808219178082,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0,
+      "post_threshold_zero_hours": 4746,
+      "positive_values_below_001": 0,
+      "threshold_modified_hours": null,
+      "threshold_modified_hours_limitation": "Pre-threshold values are not stored. Zero counts combine physical zero and below-0.01 clipping; exact modified count cannot be recovered without resource recomputation, which is excluded."
+    },
+    "SOLAR_PV|IT4 0": {
+      "min": 0.0,
+      "mean": 0.17075603212981108,
+      "median": 0.0,
+      "p5": 0.0,
+      "p25": 0.0,
+      "p75": 0.3407003041533653,
+      "p95": 0.6755749085324597,
+      "max": 0.8240087928242303,
+      "zero_hours": 4787,
+      "zero_share": 0.5464611872146119,
+      "full_hours": 0,
+      "full_share": 0.0,
+      "below_zero": 0,
+      "above_one": 0,
+      "nan_count": 0,
+      "inf_count": 0,
+      "post_threshold_zero_hours": 4787,
+      "positive_values_below_001": 0,
+      "threshold_modified_hours": null,
+      "threshold_modified_hours_limitation": "Pre-threshold values are not stored. Zero counts combine physical zero and below-0.01 clipping; exact modified count cannot be recovered without resource recomputation, which is excluded."
+    }
+  },
+  "construction_reconciliation": {
+    "WIND_ONSHORE": {
+      "source_profile_id": "ETX7B3_IT_WIND_ONSHORE_2040",
+      "weights": {
+        "IT2 0": 0.8973607038123167,
+        "IT4 0": 0.10263929618768329
+      },
+      "cache_to_B3": {
+        "max_abs_difference": 0.0,
+        "mismatched_timestamps": 0
+      },
+      "B3_upper_lower_bound_clip_changed_hours": 0,
+      "Stage_B_upper_lower_bound_clip_changed_hours": 0,
+      "upstream_both_zero_hours": 331,
+      "source_positive_when_both_upstream_zero_hours": 0,
+      "provenance": {
+        "profile_id": "ETX7B3_IT_WIND_ONSHORE_2040",
+        "profile_family": "WIND_ONSHORE",
+        "country_code": "IT",
+        "source": "PyPSA-Eur/AtLite 2019 renewable-profile workflow",
+        "source_file_or_dataset": "source://mem-model/runtime_sources/weather/PyPSA_cutout_v1.0/europe-2019-sarah3-era5.nc",
+        "source_year": 2019,
+        "weather_or_cutout_id": "PYPSA_CUTOUT_V1_EUROPE_2019_SARAH3_ERA5",
+        "original_timezone": "UTC_OR_SOURCE_CLIMATE_HOUR_SEQUENCE",
+        "transformation": "FROZEN_STAGE_B_SARDINIA_VERSUS_REST_CAPACITY_WEIGHTED_NATIONAL_PROFILE",
+        "normalization": "PER_UNIT_AVAILABILITY_ATTACHED_TO_FROZEN_MEM_CAPACITY_LATER",
+        "spatial_aggregation_method": "IT4_SARDINIA_AND_IT2_REMAINDER_WEIGHTED_BY_FROZEN_STAGE_B_CAPACITY",
+        "horizon_applicability": "2040",
+        "evidence_or_provenance_class": "PYPSA_EUR_SPATIAL_WEIGHTING_ONLY",
+        "status": "COMPLETE"
+      }
+    },
+    "WIND_OFFSHORE": {
+      "source_profile_id": "ETX7B3_IT_WIND_OFFSHORE_2040",
+      "weights": {
+        "IT2 0": 0.8026315789473685,
+        "IT4 0": 0.19736842105263158
+      },
+      "cache_to_B3": {
+        "max_abs_difference": 0.0,
+        "mismatched_timestamps": 0
+      },
+      "B3_upper_lower_bound_clip_changed_hours": 0,
+      "Stage_B_upper_lower_bound_clip_changed_hours": 0,
+      "upstream_both_zero_hours": 49,
+      "source_positive_when_both_upstream_zero_hours": 0,
+      "provenance": {
+        "profile_id": "ETX7B3_IT_WIND_OFFSHORE_2040",
+        "profile_family": "WIND_OFFSHORE",
+        "country_code": "IT",
+        "source": "PyPSA-Eur/AtLite 2019 renewable-profile workflow",
+        "source_file_or_dataset": "source://mem-model/runtime_sources/weather/PyPSA_cutout_v1.0/europe-2019-sarah3-era5.nc",
+        "source_year": 2019,
+        "weather_or_cutout_id": "PYPSA_CUTOUT_V1_EUROPE_2019_SARAH3_ERA5",
+        "original_timezone": "UTC_OR_SOURCE_CLIMATE_HOUR_SEQUENCE",
+        "transformation": "FROZEN_STAGE_B_SARDINIA_VERSUS_REST_CAPACITY_WEIGHTED_NATIONAL_PROFILE",
+        "normalization": "PER_UNIT_AVAILABILITY_ATTACHED_TO_FROZEN_MEM_CAPACITY_LATER",
+        "spatial_aggregation_method": "IT4_SARDINIA_AND_IT2_REMAINDER_WEIGHTED_BY_FROZEN_STAGE_B_CAPACITY",
+        "horizon_applicability": "2040",
+        "evidence_or_provenance_class": "PYPSA_EUR_SPATIAL_WEIGHTING_ONLY",
+        "status": "COMPLETE"
+      }
+    },
+    "SOLAR_PV_ROOFTOP": {
+      "source_profile_id": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040",
+      "weights": {
+        "IT2 0": 0.9592326139088729,
+        "IT4 0": 0.0407673860911271
+      },
+      "cache_to_B3": {
+        "max_abs_difference": 0.0,
+        "mismatched_timestamps": 0
+      },
+      "B3_upper_lower_bound_clip_changed_hours": 0,
+      "Stage_B_upper_lower_bound_clip_changed_hours": 0,
+      "upstream_both_zero_hours": 4679,
+      "source_positive_when_both_upstream_zero_hours": 0,
+      "provenance": {
+        "profile_id": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040",
+        "profile_family": "SOLAR_PV_ROOFTOP",
+        "country_code": "IT",
+        "source": "PyPSA-Eur/AtLite 2019 renewable-profile workflow",
+        "source_file_or_dataset": "source://mem-model/runtime_sources/weather/PyPSA_cutout_v1.0/europe-2019-sarah3-era5.nc",
+        "source_year": 2019,
+        "weather_or_cutout_id": "PYPSA_CUTOUT_V1_EUROPE_2019_SARAH3_ERA5",
+        "original_timezone": "UTC_OR_SOURCE_CLIMATE_HOUR_SEQUENCE",
+        "transformation": "FROZEN_STAGE_B_SARDINIA_VERSUS_REST_CAPACITY_WEIGHTED_NATIONAL_PROFILE",
+        "normalization": "PER_UNIT_AVAILABILITY_ATTACHED_TO_FROZEN_MEM_CAPACITY_LATER",
+        "spatial_aggregation_method": "IT4_SARDINIA_AND_IT2_REMAINDER_WEIGHTED_BY_FROZEN_STAGE_B_CAPACITY",
+        "horizon_applicability": "2040",
+        "evidence_or_provenance_class": "PYPSA_EUR_SPATIAL_WEIGHTING_ONLY",
+        "status": "COMPLETE"
+      }
+    },
+    "SOLAR_PV_UTILITY": {
+      "source_profile_id": "ETX7B3_IT_SOLAR_PV_UTILITY_2040",
+      "weights": {
+        "IT2 0": 0.9027777777777778,
+        "IT4 0": 0.09722222222222222
+      },
+      "cache_to_B3": {
+        "max_abs_difference": 0.0,
+        "mismatched_timestamps": 0
+      },
+      "B3_upper_lower_bound_clip_changed_hours": 0,
+      "Stage_B_upper_lower_bound_clip_changed_hours": 0,
+      "upstream_both_zero_hours": 4679,
+      "source_positive_when_both_upstream_zero_hours": 0,
+      "provenance": {
+        "profile_id": "ETX7B3_IT_SOLAR_PV_UTILITY_2040",
+        "profile_family": "SOLAR_PV_UTILITY",
+        "country_code": "IT",
+        "source": "PyPSA-Eur/AtLite 2019 renewable-profile workflow",
+        "source_file_or_dataset": "source://mem-model/runtime_sources/weather/PyPSA_cutout_v1.0/europe-2019-sarah3-era5.nc",
+        "source_year": 2019,
+        "weather_or_cutout_id": "PYPSA_CUTOUT_V1_EUROPE_2019_SARAH3_ERA5",
+        "original_timezone": "UTC_OR_SOURCE_CLIMATE_HOUR_SEQUENCE",
+        "transformation": "FROZEN_STAGE_B_SARDINIA_VERSUS_REST_CAPACITY_WEIGHTED_NATIONAL_PROFILE",
+        "normalization": "PER_UNIT_AVAILABILITY_ATTACHED_TO_FROZEN_MEM_CAPACITY_LATER",
+        "spatial_aggregation_method": "IT4_SARDINIA_AND_IT2_REMAINDER_WEIGHTED_BY_FROZEN_STAGE_B_CAPACITY",
+        "horizon_applicability": "2040",
+        "evidence_or_provenance_class": "PYPSA_EUR_SPATIAL_WEIGHTING_ONLY",
+        "status": "COMPLETE"
+      }
+    }
+  },
+  "mapping_coverage": [
+    {
+      "scenario": "Base",
+      "technology": "SOLAR_PV_ROOFTOP",
+      "source_profile_id": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040",
+      "generator_count": 7,
+      "p_nom_MW": 41700.0
+    },
+    {
+      "scenario": "Base",
+      "technology": "SOLAR_PV_UTILITY",
+      "source_profile_id": "ETX7B3_IT_SOLAR_PV_UTILITY_2040",
+      "generator_count": 7,
+      "p_nom_MW": 79200.0
+    },
+    {
+      "scenario": "Base",
+      "technology": "WIND_OFFSHORE",
+      "source_profile_id": "ETX7B3_IT_WIND_OFFSHORE_2040",
+      "generator_count": 7,
+      "p_nom_MW": 15200.0
+    },
+    {
+      "scenario": "Base",
+      "technology": "WIND_ONSHORE",
+      "source_profile_id": "ETX7B3_IT_WIND_ONSHORE_2040",
+      "generator_count": 7,
+      "p_nom_MW": 34100.0
+    },
+    {
+      "scenario": "High",
+      "technology": "SOLAR_PV_ROOFTOP",
+      "source_profile_id": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040",
+      "generator_count": 7,
+      "p_nom_MW": 45870.0
+    },
+    {
+      "scenario": "High",
+      "technology": "SOLAR_PV_UTILITY",
+      "source_profile_id": "ETX7B3_IT_SOLAR_PV_UTILITY_2040",
+      "generator_count": 7,
+      "p_nom_MW": 87120.0
+    },
+    {
+      "scenario": "High",
+      "technology": "WIND_OFFSHORE",
+      "source_profile_id": "ETX7B3_IT_WIND_OFFSHORE_2040",
+      "generator_count": 7,
+      "p_nom_MW": 16720.0
+    },
+    {
+      "scenario": "High",
+      "technology": "WIND_ONSHORE",
+      "source_profile_id": "ETX7B3_IT_WIND_ONSHORE_2040",
+      "generator_count": 7,
+      "p_nom_MW": 37510.0
+    },
+    {
+      "scenario": "Slow",
+      "technology": "SOLAR_PV_ROOFTOP",
+      "source_profile_id": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040",
+      "generator_count": 7,
+      "p_nom_MW": 33360.0
+    },
+    {
+      "scenario": "Slow",
+      "technology": "SOLAR_PV_UTILITY",
+      "source_profile_id": "ETX7B3_IT_SOLAR_PV_UTILITY_2040",
+      "generator_count": 7,
+      "p_nom_MW": 63360.0
+    },
+    {
+      "scenario": "Slow",
+      "technology": "WIND_OFFSHORE",
+      "source_profile_id": "ETX7B3_IT_WIND_OFFSHORE_2040",
+      "generator_count": 7,
+      "p_nom_MW": 12160.0
+    },
+    {
+      "scenario": "Slow",
+      "technology": "WIND_ONSHORE",
+      "source_profile_id": "ETX7B3_IT_WIND_ONSHORE_2040",
+      "generator_count": 7,
+      "p_nom_MW": 27280.0
+    }
+  ],
+  "exact_reuse": "Each profile intentionally covers seven zones and three scenarios; rooftop/utility share physical solar cache, but their frozen weights differ.",
+  "duplication_pair_checks": [
+    {
+      "profile1": "ETX7B3_IT_WIND_ONSHORE_2040",
+      "profile2": "ETX7B3_IT_WIND_OFFSHORE_2040",
+      "exact_duplicate": false,
+      "correlation": 0.948194734171352,
+      "max_abs_difference": 0.36062855705258523,
+      "interpretation": "DISTINCT_TECHNOLOGIES_ORDINARY_WEATHER_CORRELATION_NOT_ERROR"
+    },
+    {
+      "profile1": "ETX7B3_IT_WIND_ONSHORE_2040",
+      "profile2": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040",
+      "exact_duplicate": false,
+      "correlation": -0.09904277523049546,
+      "max_abs_difference": 0.7922219710915183,
+      "interpretation": "DISTINCT_TECHNOLOGIES_ORDINARY_WEATHER_CORRELATION_NOT_ERROR"
+    },
+    {
+      "profile1": "ETX7B3_IT_WIND_ONSHORE_2040",
+      "profile2": "ETX7B3_IT_SOLAR_PV_UTILITY_2040",
+      "exact_duplicate": false,
+      "correlation": -0.09771802907974649,
+      "max_abs_difference": 0.7928350881349849,
+      "interpretation": "DISTINCT_TECHNOLOGIES_ORDINARY_WEATHER_CORRELATION_NOT_ERROR"
+    },
+    {
+      "profile1": "ETX7B3_IT_WIND_OFFSHORE_2040",
+      "profile2": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040",
+      "exact_duplicate": false,
+      "correlation": -0.15678711752465044,
+      "max_abs_difference": 0.8695890172990303,
+      "interpretation": "DISTINCT_TECHNOLOGIES_ORDINARY_WEATHER_CORRELATION_NOT_ERROR"
+    },
+    {
+      "profile1": "ETX7B3_IT_WIND_OFFSHORE_2040",
+      "profile2": "ETX7B3_IT_SOLAR_PV_UTILITY_2040",
+      "exact_duplicate": false,
+      "correlation": -0.15574696473270205,
+      "max_abs_difference": 0.8695890172990303,
+      "interpretation": "DISTINCT_TECHNOLOGIES_ORDINARY_WEATHER_CORRELATION_NOT_ERROR"
+    },
+    {
+      "profile1": "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040",
+      "profile2": "ETX7B3_IT_SOLAR_PV_UTILITY_2040",
+      "exact_duplicate": false,
+      "correlation": 0.9998297314738238,
+      "max_abs_difference": 0.026424739277042975,
+      "interpretation": "LEGITIMATE_SHARED_SOLAR_RESOURCE_WITH_DIFFERENT_FROZEN_WEIGHTING"
+    }
+  ],
+  "profile_shape_checks": {
+    "ETX7B3_IT_WIND_ONSHORE_2040": {
+      "exact_periods_hours": [],
+      "hour_of_day": [
+        {
+          "UTC_hour": 0,
+          "mean": 0.12844946815341785,
+          "zero_hours": 19,
+          "zero_share": 0.052054794520547946,
+          "positive_hours": 346
+        },
+        {
+          "UTC_hour": 1,
+          "mean": 0.12838278871405326,
+          "zero_hours": 19,
+          "zero_share": 0.052054794520547946,
+          "positive_hours": 346
+        },
+        {
+          "UTC_hour": 2,
+          "mean": 0.12860691208486272,
+          "zero_hours": 16,
+          "zero_share": 0.043835616438356165,
+          "positive_hours": 349
+        },
+        {
+          "UTC_hour": 3,
+          "mean": 0.1286565174378522,
+          "zero_hours": 16,
+          "zero_share": 0.043835616438356165,
+          "positive_hours": 349
+        },
+        {
+          "UTC_hour": 4,
+          "mean": 0.12840569825549358,
+          "zero_hours": 19,
+          "zero_share": 0.052054794520547946,
+          "positive_hours": 346
+        },
+        {
+          "UTC_hour": 5,
+          "mean": 0.1266109794915105,
+          "zero_hours": 16,
+          "zero_share": 0.043835616438356165,
+          "positive_hours": 349
+        },
+        {
+          "UTC_hour": 6,
+          "mean": 0.12297747969387819,
+          "zero_hours": 20,
+          "zero_share": 0.0547945205479452,
+          "positive_hours": 345
+        },
+        {
+          "UTC_hour": 7,
+          "mean": 0.12131652930290002,
+          "zero_hours": 29,
+          "zero_share": 0.07945205479452055,
+          "positive_hours": 336
+        },
+        {
+          "UTC_hour": 8,
+          "mean": 0.12335543517105797,
+          "zero_hours": 29,
+          "zero_share": 0.07945205479452055,
+          "positive_hours": 336
+        },
+        {
+          "UTC_hour": 9,
+          "mean": 0.13084393974901826,
+          "zero_hours": 28,
+          "zero_share": 0.07671232876712329,
+          "positive_hours": 337
+        },
+        {
+          "UTC_hour": 10,
+          "mean": 0.13077893497225815,
+          "zero_hours": 16,
+          "zero_share": 0.043835616438356165,
+          "positive_hours": 349
+        },
+        {
+          "UTC_hour": 11,
+          "mean": 0.14223656655148498,
+          "zero_hours": 9,
+          "zero_share": 0.024657534246575342,
+          "positive_hours": 356
+        },
+        {
+          "UTC_hour": 12,
+          "mean": 0.15191289072212963,
+          "zero_hours": 6,
+          "zero_share": 0.01643835616438356,
+          "positive_hours": 359
+        },
+        {
+          "UTC_hour": 13,
+          "mean": 0.15825478197489004,
+          "zero_hours": 4,
+          "zero_share": 0.010958904109589041,
+          "positive_hours": 361
+        },
+        {
+          "UTC_hour": 14,
+          "mean": 0.1595037368294289,
+          "zero_hours": 1,
+          "zero_share": 0.0027397260273972603,
+          "positive_hours": 364
+        },
+        {
+          "UTC_hour": 15,
+          "mean": 0.15634867147518003,
+          "zero_hours": 3,
+          "zero_share": 0.00821917808219178,
+          "positive_hours": 362
+        },
+        {
+          "UTC_hour": 16,
+          "mean": 0.15026140002299035,
+          "zero_hours": 2,
+          "zero_share": 0.005479452054794521,
+          "positive_hours": 363
+        },
+        {
+          "UTC_hour": 17,
+          "mean": 0.14377926758619608,
+          "zero_hours": 3,
+          "zero_share": 0.00821917808219178,
+          "positive_hours": 362
+        },
+        {
+          "UTC_hour": 18,
+          "mean": 0.13906898413122024,
+          "zero_hours": 5,
+          "zero_share": 0.0136986301369863,
+          "positive_hours": 360
+        },
+        {
+          "UTC_hour": 19,
+          "mean": 0.13531471314377044,
+          "zero_hours": 9,
+          "zero_share": 0.024657534246575342,
+          "positive_hours": 356
+        },
+        {
+          "UTC_hour": 20,
+          "mean": 0.13215210024078605,
+          "zero_hours": 11,
+          "zero_share": 0.030136986301369864,
+          "positive_hours": 354
+        },
+        {
+          "UTC_hour": 21,
+          "mean": 0.1304267122618457,
+          "zero_hours": 13,
+          "zero_share": 0.03561643835616438,
+          "positive_hours": 352
+        },
+        {
+          "UTC_hour": 22,
+          "mean": 0.12877568110942617,
+          "zero_hours": 18,
+          "zero_share": 0.049315068493150684,
+          "positive_hours": 347
+        },
+        {
+          "UTC_hour": 23,
+          "mean": 0.12855536497342696,
+          "zero_hours": 20,
+          "zero_share": 0.0547945205479452,
+          "positive_hours": 345
+        }
+      ],
+      "max_value_hours": 1,
+      "source_hash": "e0e1e19af6965d0f4f67b4f8954410fc92d83f3494f37e4e752ee924b634a1bc"
+    },
+    "ETX7B3_IT_WIND_OFFSHORE_2040": {
+      "exact_periods_hours": [],
+      "hour_of_day": [
+        {
+          "UTC_hour": 0,
+          "mean": 0.2429581952371355,
+          "zero_hours": 4,
+          "zero_share": 0.010958904109589041,
+          "positive_hours": 361
+        },
+        {
+          "UTC_hour": 1,
+          "mean": 0.2432591455688921,
+          "zero_hours": 5,
+          "zero_share": 0.0136986301369863,
+          "positive_hours": 360
+        },
+        {
+          "UTC_hour": 2,
+          "mean": 0.241916429187686,
+          "zero_hours": 4,
+          "zero_share": 0.010958904109589041,
+          "positive_hours": 361
+        },
+        {
+          "UTC_hour": 3,
+          "mean": 0.24001049144027445,
+          "zero_hours": 3,
+          "zero_share": 0.00821917808219178,
+          "positive_hours": 362
+        },
+        {
+          "UTC_hour": 4,
+          "mean": 0.23830840094909103,
+          "zero_hours": 2,
+          "zero_share": 0.005479452054794521,
+          "positive_hours": 363
+        },
+        {
+          "UTC_hour": 5,
+          "mean": 0.23478240236494183,
+          "zero_hours": 4,
+          "zero_share": 0.010958904109589041,
+          "positive_hours": 361
+        },
+        {
+          "UTC_hour": 6,
+          "mean": 0.22963983295141357,
+          "zero_hours": 4,
+          "zero_share": 0.010958904109589041,
+          "positive_hours": 361
+        },
+        {
+          "UTC_hour": 7,
+          "mean": 0.225649764776982,
+          "zero_hours": 4,
+          "zero_share": 0.010958904109589041,
+          "positive_hours": 361
+        },
+        {
+          "UTC_hour": 8,
+          "mean": 0.2237611080121227,
+          "zero_hours": 4,
+          "zero_share": 0.010958904109589041,
+          "positive_hours": 361
+        },
+        {
+          "UTC_hour": 9,
+          "mean": 0.22483381639634265,
+          "zero_hours": 4,
+          "zero_share": 0.010958904109589041,
+          "positive_hours": 361
+        },
+        {
+          "UTC_hour": 10,
+          "mean": 0.21940437010285882,
+          "zero_hours": 3,
+          "zero_share": 0.00821917808219178,
+          "positive_hours": 362
+        },
+        {
+          "UTC_hour": 11,
+          "mean": 0.2299896235163351,
+          "zero_hours": 1,
+          "zero_share": 0.0027397260273972603,
+          "positive_hours": 364
+        },
+        {
+          "UTC_hour": 12,
+          "mean": 0.24203401263965246,
+          "zero_hours": 1,
+          "zero_share": 0.0027397260273972603,
+          "positive_hours": 364
+        },
+        {
+          "UTC_hour": 13,
+          "mean": 0.25350161766173096,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 14,
+          "mean": 0.2617379915224021,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 15,
+          "mean": 0.2636423485406658,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 16,
+          "mean": 0.26157677277805397,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 17,
+          "mean": 0.25750634420446394,
+          "zero_hours": 1,
+          "zero_share": 0.0027397260273972603,
+          "positive_hours": 364
+        },
+        {
+          "UTC_hour": 18,
+          "mean": 0.2533669126565089,
+          "zero_hours": 1,
+          "zero_share": 0.0027397260273972603,
+          "positive_hours": 364
+        },
+        {
+          "UTC_hour": 19,
+          "mean": 0.24919848184682442,
+          "zero_hours": 1,
+          "zero_share": 0.0027397260273972603,
+          "positive_hours": 364
+        },
+        {
+          "UTC_hour": 20,
+          "mean": 0.2454338230647967,
+          "zero_hours": 1,
+          "zero_share": 0.0027397260273972603,
+          "positive_hours": 364
+        },
+        {
+          "UTC_hour": 21,
+          "mean": 0.2431955260034515,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 22,
+          "mean": 0.24099483765142066,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 23,
+          "mean": 0.2413038948934044,
+          "zero_hours": 2,
+          "zero_share": 0.005479452054794521,
+          "positive_hours": 363
+        }
+      ],
+      "max_value_hours": 1,
+      "source_hash": "6876db5889c49a29a713e36fd39abdb6ee8a78a5599206a92e9d51e7387bb8d2"
+    },
+    "ETX7B3_IT_SOLAR_PV_ROOFTOP_2040": {
+      "exact_periods_hours": [],
+      "hour_of_day": [
+        {
+          "UTC_hour": 0,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 1,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 2,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 3,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 4,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 5,
+          "mean": 0.010505034992359852,
+          "zero_hours": 261,
+          "zero_share": 0.7150684931506849,
+          "positive_hours": 104
+        },
+        {
+          "UTC_hour": 6,
+          "mean": 0.10003612630557136,
+          "zero_hours": 103,
+          "zero_share": 0.2821917808219178,
+          "positive_hours": 262
+        },
+        {
+          "UTC_hour": 7,
+          "mean": 0.25674987264557764,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 8,
+          "mean": 0.4084135990133527,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 9,
+          "mean": 0.49376834104548506,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 10,
+          "mean": 0.53377595709702,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 11,
+          "mean": 0.5332850244106261,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 12,
+          "mean": 0.4935606969256414,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 13,
+          "mean": 0.42250236658248924,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 14,
+          "mean": 0.31707905331978337,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 15,
+          "mean": 0.18789894193483053,
+          "zero_hours": 1,
+          "zero_share": 0.0027397260273972603,
+          "positive_hours": 364
+        },
+        {
+          "UTC_hour": 16,
+          "mean": 0.07778644881362845,
+          "zero_hours": 98,
+          "zero_share": 0.2684931506849315,
+          "positive_hours": 267
+        },
+        {
+          "UTC_hour": 17,
+          "mean": 0.016689687113747416,
+          "zero_hours": 202,
+          "zero_share": 0.5534246575342465,
+          "positive_hours": 163
+        },
+        {
+          "UTC_hour": 18,
+          "mean": 1.1176860889846661e-06,
+          "zero_hours": 364,
+          "zero_share": 0.9972602739726028,
+          "positive_hours": 1
+        },
+        {
+          "UTC_hour": 19,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 20,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 21,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 22,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 23,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        }
+      ],
+      "max_value_hours": 1,
+      "source_hash": "b297d44cd03c959a76b43e4e49dd30524fd7f306667e349a60c0d7e8b1458e4d"
+    },
+    "ETX7B3_IT_SOLAR_PV_UTILITY_2040": {
+      "exact_periods_hours": [],
+      "hour_of_day": [
+        {
+          "UTC_hour": 0,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 1,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 2,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 3,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 4,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 5,
+          "mean": 0.010041041959483044,
+          "zero_hours": 261,
+          "zero_share": 0.7150684931506849,
+          "positive_hours": 104
+        },
+        {
+          "UTC_hour": 6,
+          "mean": 0.09804855442908371,
+          "zero_hours": 103,
+          "zero_share": 0.2821917808219178,
+          "positive_hours": 262
+        },
+        {
+          "UTC_hour": 7,
+          "mean": 0.255058626329947,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 8,
+          "mean": 0.40810912682549266,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 9,
+          "mean": 0.49436223476611885,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 10,
+          "mean": 0.5352605409639594,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 11,
+          "mean": 0.5354540588880731,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 12,
+          "mean": 0.49625145844598306,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 13,
+          "mean": 0.4255682019830406,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 14,
+          "mean": 0.32034946616591153,
+          "zero_hours": 0,
+          "zero_share": 0.0,
+          "positive_hours": 365
+        },
+        {
+          "UTC_hour": 15,
+          "mean": 0.19115323090438882,
+          "zero_hours": 1,
+          "zero_share": 0.0027397260273972603,
+          "positive_hours": 364
+        },
+        {
+          "UTC_hour": 16,
+          "mean": 0.07961332245076043,
+          "zero_hours": 98,
+          "zero_share": 0.2684931506849315,
+          "positive_hours": 267
+        },
+        {
+          "UTC_hour": 17,
+          "mean": 0.01726330751226425,
+          "zero_hours": 202,
+          "zero_share": 0.5534246575342465,
+          "positive_hours": 163
+        },
+        {
+          "UTC_hour": 18,
+          "mean": 2.6654621680933334e-06,
+          "zero_hours": 364,
+          "zero_share": 0.9972602739726028,
+          "positive_hours": 1
+        },
+        {
+          "UTC_hour": 19,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 20,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 21,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 22,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        },
+        {
+          "UTC_hour": 23,
+          "mean": 0.0,
+          "zero_hours": 365,
+          "zero_share": 1.0,
+          "positive_hours": 0
+        }
+      ],
+      "max_value_hours": 1,
+      "source_hash": "06617f75ea0d73c87918eec04da21a048733d0ca632cde6bffeb28a3859a04b5"
+    }
+  },
+  "scaling_clipping": {
+    "source_units": "AtLite per_unit=True; cached/B3/runtime p_max_pu dimensionless",
+    "AtLite_normalization": "convert.py:259-267 divides aggregated power by installed layout capacity; constant correction in layout cancels in this ratio, so it is not a second output correction.",
+    "installed_MEM_capacity_in_profile": false,
+    "annual_CF_or_energy_normalization": false,
+    "MW_scaling_applied_to_profile": false,
+    "empirical_resource_layout": "Mean resource CF * cell area * capacity density is spatial weighting only; no installed MEM capacity is transferred.",
+    "correction_factors": {
+      "solar": 1.0,
+      "onwind": 1.0,
+      "offwind": 0.8855
+    },
+    "lower_threshold": 0.01,
+    "lower_threshold_stage": "temporal_2019.py:575; per bus after resource correction, before national weighting",
+    "exact_lower_threshold_changed_counts": "UNKNOWN_PRE_THRESHOLD_VALUES_NOT_SAVED; post-threshold zero counts supplied per upstream bus",
+    "bounds_clipping_stage": "temporal_2019.py:872 then stage_b_2040_runtime.py:475",
+    "bounds_clipping_changed_hours": 0,
+    "missing_time_filling": "No VRE temporal interpolation/forward-fill. AtLite per-unit aggregation fillna(0) only for zero-capacity divisions; selected IT2/IT4 buses have positive layout capacity and complete finite cache profiles.",
+    "repeated_or_tiled_profiles": false,
+    "sub_one_maxima": "Solar maxima reflect fixed panel/orientation and spatial averaging. Offshore 0.8855 is an explicit resource correction, not a hidden post-hoc cap; national maxima are further reduced by IT2/IT4 averaging."
+  },
+  "code_provenance": [
+    "src/mem_model/stage_a/temporal_2019.py:504-579 (AtLite per-unit/resource correction/threshold)",
+    "src/mem_model/stage_a/temporal_2019.py:779-815 (spatial weighted aggregation and Base capacity weights)",
+    "src/mem_model/stage_a/temporal_2019.py:1003-1034 (Italy per-technology 2040 national profile)",
+    "src/mem_model/stage_b_2040_runtime.py:455-497 (B3 profile selection and reuse)",
+    "src/mem_model/network.py:102-142 (frozen p_nom and unscaled p_max_pu pivot)",
+    ".venv/Lib/site-packages/atlite/convert.py:259-267 (per-unit capacity divisor)",
+    "config/stage_a_temporal_2019.yaml:vre; stage_a_inputs/temporal_2019_v1_0/MEM_ETX7B3_Profile_Provenance_v1.0.csv"
+  ],
+  "cutout_recorded_receipt": {
+    "source_id": "CUTOUT_2019",
+    "role": "WEATHER_RUNOFF",
+    "path": "source://mem-model/runtime_sources/weather/PyPSA_cutout_v1.0/europe-2019-sarah3-era5.nc",
+    "bytes": 6568756802,
+    "sha256": "E6CF2B4C9D463D64B4DFB3A613EF20C3C69E99624DAADEEE6EE9C76CF74E9D1F",
+    "status": "VALIDATED_REUSED_SOURCE"
+  },
+  "cutout_hash_recomputed": false,
+  "protected_hashes_before": {
+    "config/stage_a_temporal_2019.yaml": "bc05b60643d5598dafafe65e08d07e01c39841a1425cce99221b55383549f91d",
+    "config/stage_b_2040_runtime_contract.yaml": "ed1dbff0d0aaf0f92f417d03b5134e76a998e574129c754a13ab72a1df94923c",
+    "config/stage_b_uc2_execution.yaml": "08b6a85809a56f5f3659eeef96ec6d8ed42e44a80331643d14ef71a24b5a50ca",
+    "networks/unsolved/p2x_flex_v1/MEM_2040_BASE_P2X_FLEX_V1_8760h_UNSOLVED.nc": "ca24c83717937a9a3343f4e79ad7cb185719a3deb47ddb0c4fbc7873e616d118",
+    "networks/unsolved/p2x_flex_v1/MEM_2040_HIGH_P2X_FLEX_V1_8760h_UNSOLVED.nc": "403bdefcc247c5f30e5011ed36d7314f12d9dfc1c6070e82269f91f158e4daf0",
+    "networks/unsolved/p2x_flex_v1/MEM_2040_SLOW_P2X_FLEX_V1_8760h_UNSOLVED.nc": "622f40ec2ee710894c37d0c1d8c3c4660a4fc2dd6614a13819a19b94f453df15",
+    "networks/unsolved/uc1_common_v1/MEM_2040_BASE_UC1_COMMON_V1_8760h_UNSOLVED.nc": "4166b3e22e3173bff771f054a2e4a3cb39946e36a28d3250b1d957905cbb7e29",
+    "networks/unsolved/uc1_common_v1/MEM_2040_HIGH_UC1_COMMON_V1_8760h_UNSOLVED.nc": "82d2d3315b3c125343437df0048f5713ea4273d0f8d3a931d9d1878cb319fbc2",
+    "networks/unsolved/uc1_common_v1/MEM_2040_SLOW_UC1_COMMON_V1_8760h_UNSOLVED.nc": "d499e3e21255b4e043a36f46a2c323cd2a8b3238917a5ff7b64fc7a5187d2b2a",
+    "pre_pypsa_inputs/MEM_generators_static_final.csv": "81dae9397f8b53b2b3e689644435ab5f36ccf3282599eada5bc3facff76b10e0",
+    "qa/stage_b/p2x_flex_v1/MEM_STAGE_B_P2X_FLEX_V1_FINAL_VERIFICATION.json": "5dd97e1d9f52a84f0097b012f381378340f76f01a1d50361c47aa06bd527686d",
+    "qa/stage_b/uc1_common_v1/MEM_UC1_DETERMINISTIC_BUILD_RECEIPT.json": "45da972a836fa5ebb58ad63f09a1c6a1c6e9883b793c59bd9aefff241e5fdd76",
+    "results/uc2_full_year/2040/Base/QA/VERIFY_UC.json": "d87a4b743fbc89c30b5f4b0300f83466db375718fdf1da162e9920b1e93528f1",
+    "results/uc2_full_year/2040/Base/UC_MILP/UC2_2040_BASE_8760H_UC_MILP_SOLVE_RECEIPT.json": "2c111aa34d29765ebcd2943802c47e108704a3281e8538adc5c68ae75eef73b9",
+    "results/uc2_full_year/2040/Base/UC_MILP/UC2_2040_BASE_8760H_UC_MILP_SOLVED.nc": "075b2b9b57c7a2e6ccf307881f029d269f1a6dbe8f8c58cde9d1e2d2ff510374",
+    "results/uc2_full_year/2040/High/QA/VERIFY_UC.json": "7ae5aa6128ca1375fe30861a860e062e07b3fbf45b42ee00e26a48dac89657d8",
+    "results/uc2_full_year/2040/High/UC_MILP/UC2_2040_HIGH_8760H_UC_MILP_SOLVE_RECEIPT.json": "8c7cb57d6c0ee0ccf55286a0a5d1bf2baef0b4201953f08979a5faf1748a9adb",
+    "results/uc2_full_year/2040/High/UC_MILP/UC2_2040_HIGH_8760H_UC_MILP_SOLVED.nc": "91d1569d7b7d35d1e2bd901f4733e8ecba8e19fed9e518aa70101cf1ccb7d943",
+    "results/uc2_full_year/2040/Slow/QA/VERIFY_UC.json": "bbf60084d9e2ebaae4e350afddba4dc3e93eedb401ad2967064a52a7503a3712",
+    "results/uc2_full_year/2040/Slow/UC_MILP/UC2_2040_SLOW_8760H_UC_MILP_SOLVE_RECEIPT.json": "c0a5aea1a454ade010c64c97a88421bdc125499b447a4ea9eb94a384bd537363",
+    "results/uc2_full_year/2040/Slow/UC_MILP/UC2_2040_SLOW_8760H_UC_MILP_SOLVED.nc": "d4509937378dad9faacdeac4aa6ef971baa14460c7f0a083066e1bad17a506bf",
+    "runtime_inputs/accepted/external_prices_hourly.parquet": "9a1811793adbf0e0e91de062b99d7a2d83e72c4d2e294b8f591ad2f19949993a",
+    "runtime_inputs/accepted/generator_availability_hourly.parquet": "00592a83cefa254784e14ac3ecc550302d2e5b3f3f0be89c1d05471475dd816c",
+    "runtime_inputs/accepted/hydro_inflow_hourly.parquet": "1666c14d3910b9a5e3a694a04d2493c312c43e0346a2cfab4fc98f7fd6774c57",
+    "runtime_inputs/accepted/hydro_runtime_parameters.csv": "3ed06811f88073889920815a5a21ae11cdfb52e1c229902f797b3d9db4602d2f",
+    "runtime_inputs/accepted/load_hourly.parquet": "b8e8d1c3b1b961737c281a6eceac2436676484785760681def9d0af7773cde25",
+    "runtime_inputs/accepted/MEM_STAGE_B_2040_ACCEPTED_RUNTIME_MANIFEST_v1.0.csv": "5baae9bc065221463a422c2835a09dbfb4bc7b1e8b97902f34502d4d7ea9a63b",
+    "runtime_inputs/accepted/MEM_STAGE_B_2040_ACCEPTED_RUNTIME_STATE_v1.0.json": "e25414d9f366d0d9ce8fd509c244d7f946f45c96e8c57ad42b29b0559940f7d8",
+    "runtime_inputs/p2x_flex_v1/2040/external_prices_hourly.parquet": "9a1811793adbf0e0e91de062b99d7a2d83e72c4d2e294b8f591ad2f19949993a",
+    "runtime_inputs/p2x_flex_v1/2040/generator_availability_hourly.parquet": "00592a83cefa254784e14ac3ecc550302d2e5b3f3f0be89c1d05471475dd816c",
+    "runtime_inputs/p2x_flex_v1/2040/hydro_inflow_hourly.parquet": "1666c14d3910b9a5e3a694a04d2493c312c43e0346a2cfab4fc98f7fd6774c57",
+    "runtime_inputs/p2x_flex_v1/2040/hydro_runtime_parameters.csv": "3ed06811f88073889920815a5a21ae11cdfb52e1c229902f797b3d9db4602d2f",
+    "runtime_inputs/p2x_flex_v1/2040/load_hourly.parquet": "9623c36cb6d19bd5eb326f54738f3e69b4b43d4cfc3c74a6cde72a41000c9697",
+    "runtime_inputs/p2x_flex_v1/2040/MEM_STAGE_B_P2X_FLEX_V1_RUNTIME_MANIFEST.csv": "7e7360e58b751c9b5f9e6d182ce32dbdce94d92b2bb856c69e99669127f3566e",
+    "runtime_inputs/p2x_flex_v1/2040/p2x_contract.csv": "ed6e7387c3c541bdf013d799bf9661087711e3874a544fc0e37931c1dbc0c921",
+    "src/mem_model/network.py": "bebab69931d3f9d8520a934f58f0c2891df5891d2c0f7a028a2f0e0407726cef",
+    "src/mem_model/stage_a/temporal_2019.py": "e3f9fcac4e71b6a689d0989dc0d20c5d99168fc38fc72fccfd96dfc32041f52a",
+    "src/mem_model/stage_b_2040_runtime.py": "0fffbe2180dbf9e06134e7c1b1df715225ed88a745b0560fa39b5d38d6fce011",
+    "src/mem_model/stage_b_p2x_flex.py": "a2c7bac4d6d2f41ae4701e1b382efe507e0dd2d346090c8da60def312397a167",
+    "src/mem_model/stage_b_uc1.py": "3e5e5e9be7ee24a9041f3db129f2bf6fdcec3a26634504c4cfb2c67d0a34a28f",
+    "stage_a_inputs/temporal_2019_v1_0/cache/MEM_ETX7B3_PyPSA_Eur_Bus_VRE_2019_Cache_v1.0.parquet": "6b9c49524d4cb1e4c929ccf428bc0c39e17dd487a68304a3071daeda8779b9cf",
+    "stage_a_inputs/temporal_2019_v1_0/MEM_ETX7B3_Profile_Provenance_v1.0.csv": "20f96a3162e121ff56b83fc033e58fb5ade3274fd32d4488102b3403c19d2aba",
+    "stage_a_inputs/temporal_2019_v1_0/MEM_ETX7B3_Source_and_Cutout_Receipt_v1.0.csv": "c46a1be2db7afbcb654dd06563db886cc1f8b1670893f98a1d6b1c2cdb9d596b",
+    "stage_a_inputs/temporal_2019_v1_0/MEM_ETX7B3_Temporal_Output_Manifest_v1.0.csv": "b2c2aecb964a23bed776d43d91d0f7adcee38587bb0db2cee8e8ab6d8f8b05bc",
+    "stage_a_inputs/temporal_2019_v1_0/MEM_ETX7B3_VRE_Availability_Hourly_v1.0.parquet": "0ff2a79cdffbe8c57f1a53d9646e5b9334892067971ad250fae9a328bc2df9a2"
+  },
+  "protected_hashes_after_equal": true,
+  "protected_file_count": 45,
+  "changed_protected_files": [],
+  "limitations": [
+    "No pre-threshold AtLite output was saved: the precise count of positive values clipped below 0.01 is not identifiable from post-threshold zeros. Post-threshold zero counts are disclosed; no recomputation was performed.",
+    "This audit verifies existing cache-to-source-to-runtime-to-network lineage, not independent weather or turbine validation. Existing 2019 weather and accepted spatial assumptions were not reopened.",
+    "Zonal resource diversity is not represented: all seven zones deliberately reuse the accepted national technology profile; this is existing architecture, not an accidental join or a new audit assumption.",
+    "Availability CF is specific to the accepted resource conversion, spatial weighting and correction/threshold choices as well as weather year; it is not a raw-wind-speed metric."
+  ],
+  "blocking_findings": [],
+  "output_rows": {
+    "summary": 120,
+    "reconciliation": 84
+  },
+  "output_sha256": {
+    "MEM_2040_RENEWABLE_PROFILE_AUDIT_SUMMARY.csv": "e596b267c96b522699fa372533f3b2e34108689114e300e72a1a21df7b6ab324",
+    "MEM_2040_RENEWABLE_PROFILE_RECONCILIATION.csv": "c0757fa8fee367c022fd9db34286b2b882810283bb2ce2347ab70b9f9e455f88",
+    "MEM_2040_RENEWABLE_PROFILE_AUDIT_HANDOFF.md": "7fbdcdd709a0c0764344586a6c1e5bffef18caf833547aa1a769a8b239d05a1e"
+  }
+}

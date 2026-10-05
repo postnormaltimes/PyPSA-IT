@@ -1,0 +1,113 @@
+schema_version: MEM_STAGE_A_EXECUTION_V1_0
+preparation_status: PRE_B6_MANUAL_EXECUTION_HARNESS_READY
+controlling_plan:
+  version: "2.2"
+  path: docs/project_plan/MEM_Remaining_Execution_Plan_v2.2.md
+  sha256: 7F858DEB139F46E2ECE26EA8D82FA972A6D304B01D44300EF31FE79D8AB11EA6
+
+scope:
+  scenario: Base
+  horizons: [2040, 2050]
+  chronology_hours: 8760
+  chronology_timezone: UTC
+  markets: [AT, CH, FR, GR, HR, IT, ME, MT, SI, TN]
+  capacity_expansion: false
+  unit_commitment: false
+  research_allowed: false
+  new_assumptions_allowed: false
+
+input_locks:
+  b1:
+    path: stage_a_inputs/etx7a_v1_0/static/MEM_ETX7A_Static_Output_Manifest_v1.0.csv
+    sha256: 4E5DC493BDCB7713B6E1147FD4F1AC1953A196565ED95ECB9B5A1F8BA31C4BCE
+  b2:
+    path: stage_a_inputs/italy_base_v1_0/static/MEM_ETX7B2_IT_Static_Output_Manifest_v1.0.csv
+    sha256: D7E5CA7B7E71E83B2DF79DAE690E0CA51E7DB8F873B6A74641F3F1726FE775BD
+  b3:
+    path: stage_a_inputs/temporal_2019_v1_0/MEM_ETX7B3_Temporal_Output_Manifest_v1.0.csv
+    sha256: B2C2AECB964A23BED776D43D91D0F7ADCEE38587BB0DB2CEE8E8AB6D8F8B05BC
+  b4:
+    path: stage_a_inputs/operating_base_v1_0/MEM_ETX7B4_Output_Manifest_v1.0.csv
+    sha256: 442C215CB26658860F6B9BCF3620A2A7EABAAFED68A736DAC192E9099BA53998
+  b4_verification:
+    path: qa/stage_a/etx7b4/MEM_ETX7B4_Final_Verification_v1.0.json
+    sha256: F0A58C5268596F75726A8B6A027F203FC73998187DD46C6026D7A3143F8217F3
+  b5:
+    path: stage_a_inputs/topology_v1_0/MEM_ETX7B5_Topology_Output_Manifest_v1.0.csv
+    sha256: 78DB32E772D9990F691FA019DEDFC3999B174D2DACABDEF9608BAEDB5CE01C68
+  b5_verification:
+    path: qa/stage_a/etx7b5/MEM_ETX7B5_Final_Verification_v1.0.json
+    sha256: E1E64F09101E75B0B9AE6D7015C3D174F2C5AD9EAB4A4ACC389E81EA02DCD37A
+
+assembly:
+  market_bus_carrier: AC_STAGE_A_MARKET
+  auxiliary_state_bus_carriers: [BATTERY_STATE, WATER_STATE]
+  generators:
+    committable: false
+    marginal_cost_source: B4_GENERATOR_OPERATING_PARAMETERS
+    technical_availability_source: B4_OR_B3_AS_ENCODED_BY_AVAILABILITY_MODE
+  storage:
+    representation: ONE_STORE_PLUS_SEPARATE_FIXED_CHARGE_AND_DISCHARGE_LINKS
+    cyclic_annual_state: true
+    standing_loss_source: B4_STORAGE_OPERATING_PARAMETERS
+  hydro:
+    state_representation: B4_COMPONENT_ARCHETYPE
+    inflow_source: B3_NORMALIZED_SHAPE_TIMES_B4_WATER_ENERGY_SCALING
+    conventional_grid_charging: false
+    spill_source: B4_SPILL_ALLOWED
+  interconnectors:
+    representation: ONE_SIGNED_PYPSA_LINK_PER_B5_PHYSICAL_INTERFACE
+    orientation: ENDPOINT_A_TO_ENDPOINT_B_IS_POSITIVE_P0
+    nominal_capacity_rule: MAX_OF_TWO_ACCEPTED_DIRECTIONAL_LIMITS
+    positive_bound_rule: A_TO_B_MW_DIVIDED_BY_P_NOM
+    negative_bound_rule: MINUS_B_TO_A_MW_DIVIDED_BY_P_NOM
+    efficiency: 1.0
+    marginal_cost_EUR_per_MWh: 0.0
+    numerical_epsilon_enabled: false
+    counterflow_control: SINGLE_SIGNED_FLOW_VARIABLE_PER_PHYSICAL_INTERFACE
+    authority: RA_013_RA_015_RA_016_B4_D08_AND_B5_RUNTIME_MAPPING
+  feasibility:
+    load_shedding_enabled: true
+    VOLL_EUR_per_MWh: 15000.0
+    capacity_rule: EACH_MARKET_HOURLY_SHEDDING_IS_BOUNDED_BY_ITS_OWN_LOAD
+
+solver:
+  name: gurobi
+  required_gurobipy_version: 13.0.3
+  preparation_verification:
+    package_and_lock: PASS
+    linopy_visibility: PASS
+    isolated_environment_licence_execution: BLOCKED_BY_NAMED_USER_MISMATCH
+    normal_user_licence_preflight: REQUIRED_AT_START_OF_ETX7B6
+  options:
+    Threads: 1
+    Seed: 0
+  log_to_console: false
+  capacity_expansion: false
+  unit_commitment: false
+
+modes:
+  structural:
+    snapshots: 8760
+    optimization: false
+  smoke:
+    snapshots: 168
+    selection: PEAK_RESIDUAL_LOAD_CONTIGUOUS_WINDOW
+  full:
+    snapshots: 8760
+
+artifacts:
+  networks_root: stage_a_networks
+  results_root: stage_a_results
+  qa_root: qa/stage_a
+  runbooks_root: docs/runbooks
+  scratch_root: scratch
+  network_format: netcdf
+  result_tables_format: parquet
+
+formal_gates:
+  b6: ETX7B6_STAGE_A_SOLVER_READY
+  b7: ETX7B7_2040_BASE_SMOKE_COMPLETE
+  b8: ETX7B8_2040_BASE_FULL_YEAR_COMPLETE
+  b9: ETX7B9_2050_BASE_FULL_YEAR_COMPLETE
+  b10: ETX7B10_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE

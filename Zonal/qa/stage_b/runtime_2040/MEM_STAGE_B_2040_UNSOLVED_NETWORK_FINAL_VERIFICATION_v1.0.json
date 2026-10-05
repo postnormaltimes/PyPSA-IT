@@ -1,0 +1,63 @@
+{
+  "generated_utc": "2026-09-20T17:10:33.314233+00:00",
+  "chronology_id": "C2019_PREFERRED_NEWER",
+  "runtime_manifest_sha256": "5baae9bc065221463a422c2835a09dbfb4bc7b1e8b97902f34502d4d7ea9a63b",
+  "annual_networks_built": 3,
+  "linopy_models_assembled": 0,
+  "solver_invocations": 0,
+  "production_optimization_executed": false,
+  "status": "PASS",
+  "scenario_summaries": [
+    {
+      "year": 2040,
+      "scenario": "Slow",
+      "snapshots": 8760,
+      "frozen_generator_rows": 135,
+      "frozen_generator_MW": 210612.32541097602,
+      "bess_rows": 28,
+      "bess_discharge_MW": 21813.333333333332,
+      "bess_energy_MWh": 133120.00000000003,
+      "internal_directional_links": 20,
+      "external_contract_rows": 20,
+      "external_auxiliary_objective_baseline_EUR": 5318901421.585986,
+      "linopy_model_assembled": false,
+      "solver_invoked": false,
+      "qa_checks": 49,
+      "qa_failures": 0
+    },
+    {
+      "year": 2040,
+      "scenario": "Base",
+      "snapshots": 8760,
+      "frozen_generator_rows": 135,
+      "frozen_generator_MW": 231439.00000000405,
+      "bess_rows": 28,
+      "bess_discharge_MW": 27266.666666666668,
+      "bess_energy_MWh": 166400.0,
+      "internal_directional_links": 20,
+      "external_contract_rows": 20,
+      "external_auxiliary_objective_baseline_EUR": 5318901421.585986,
+      "linopy_model_assembled": false,
+      "solver_invoked": false,
+      "qa_checks": 49,
+      "qa_failures": 0
+    },
+    {
+      "year": 2040,
+      "scenario": "High",
+      "snapshots": 8760,
+      "frozen_generator_rows": 135,
+      "frozen_generator_MW": 248459.00000000405,
+      "bess_rows": 28,
+      "bess_discharge_MW": 29993.333333333336,
+      "bess_energy_MWh": 183040.0,
+      "internal_directional_links": 20,
+      "external_contract_rows": 20,
+      "external_auxiliary_objective_baseline_EUR": 5318901421.585986,
+      "linopy_model_assembled": false,
+      "solver_invoked": false,
+      "qa_checks": 49,
+      "qa_failures": 0
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": "MEM_B9H_2050_PREPARATION_FINAL_VERIFICATION_V1_0",
+  "status": "PASS",
+  "preparation_manifest": "qa/stage_a/etx7b9h/MEM_B9H_2050_Preparation_Manifest_v1.0.csv",
+  "preparation_manifest_sha256": "7FB31B2EE8C0FFFFD41DA80BB9EF5A00013C8B7BB3D6B01DB316880351B379D0",
+  "preparation_manifest_members": 9,
+  "B9G_receipt_sha256": "384A79C03289E0D612FAE1568B3271D9BB15F00603F4719A4A2AA1C5337276CF",
+  "B9G_result_manifest_sha256": "FCBD33F69A716D34FE898EC3BB478B24E7AE3E67D19A333DD9F3EC4FEB91BB9C",
+  "B9G_result_manifest_members_verified": 25,
+  "B9G_result_manifest_member_failures": 0,
+  "B9G_solved_network_sha256": "C24AD78015BD203A1AE7C07DD6EDCA90321BCA73556193C83DC7371A6D6D2011",
+  "selected_increments_MW": {
+    "MT": 90.73324497366548,
+    "TN": 803.6744852849702
+  },
+  "capacity_control": {
+    "B9G_total_virtual_capacity_MW": 60077.33885051766,
+    "B9H_increment_total_MW": 894.4077302586356,
+    "B9H_total_virtual_capacity_MW": 60971.7465807763,
+    "B9G_virtual_generator_count": 8,
+    "B9H_increment_generator_count": 2,
+    "B9H_total_virtual_generator_count": 10,
+    "MT_B9G_existing_virtual_capacity_MW": 270.4231791609745,
+    "MT_B9H_increment_MW": 90.73324497366548,
+    "MT_B9H_final_virtual_capacity_MW": 361.15642413463996,
+    "TN_existing_original_proxy_MW": 2433.2947267101813,
+    "TN_B9G_residual_addition_MW": 1233.791813968554,
+    "TN_B9G_total_virtual_capacity_MW": 3667.086540678735,
+    "TN_B9H_increment_MW": 803.6744852849702,
+    "TN_B9H_final_virtual_capacity_MW": 4470.761025963706
+  },
+  "structural_QA_status": "PASS",
+  "zero_integer_variables": true,
+  "zero_binary_variables": true,
+  "production_optimization_executed": false,
+  "Gurobi_optimizer_invoked": false,
+  "B9H": "PREPARED_FOR_SINGLE_EXECUTION",
+  "B9I": "NOT_AUTHORIZED",
+  "B10_2050": "LOCKED",
+  "Stage_B_2050": "LOCKED"
+}

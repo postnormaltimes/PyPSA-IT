@@ -1,0 +1,3 @@
+market,physical_interface_count,B9G_local_shedding_MWh,B9G_local_scarcity_hours,B9G_local_scarcity_hours_any_incoming_interface_saturated,B9G_local_scarcity_hours_any_outgoing_interface_saturated,B9G_VOLL_hours,B9G_VOLL_hours_with_local_shedding,B9G_VOLL_hours_without_local_shedding,B9G_VOLL_hours_any_incoming_interface_saturated,B9G_VOLL_hours_any_outgoing_interface_saturated
+MT,1,1229.9312699569612,28,0,28,142,28,114,0,34
+TN,1,12665.831063532454,28,17,10,86,28,58,38,16

@@ -1,0 +1,88 @@
+{
+  "schema_version": "MEM_PHASE_H_ROR_TURBINE_SATURATION_AUTHORITY_REVIEW_V1",
+  "status": "NATIVE_PHYSICAL_MAPPING_ALREADY_AUTHORIZED",
+  "scope": "Independent bounded review of original controlling H decisions and actual local source before H network promotion; not acceptance of an unexported network.",
+  "new_user_modelling_decision_required": false,
+  "controlling_requirements": [
+    {
+      "source": "Latest user PHASE H FINAL RESOLUTION, H-DECISION 3",
+      "rule": "The same independent normalized zonal natural runoff driver applies to RoR and all other authorized natural-inflow classes. Distinct storage/turbine architecture, not manufactured temporal differences, distinguishes the classes."
+    },
+    {
+      "source": "Latest user PHASE H FINAL RESOLUTION, H-DECISION 6",
+      "rule": "Preserve every hydro_id annual natural inflow MWh_water to <=1e-6 MWh; no change to NET turbine MW, efficiencies, annual water controls or class allocations."
+    },
+    {
+      "source": "Latest user PHASE H FINAL RESOLUTION, H-DECISION 7",
+      "rule": "RoR p_max_pu is derived from zonal runoff with the same accepted annual-water/turbine-efficiency conversion. Fixed NET p_nom, no Store, no pump, dispatch curtailment allowed. Annual authority and installed MW must not change."
+    },
+    {
+      "source": "Latest user PHASE H FINAL RESOLUTION, H-DECISION 12",
+      "rule": "Preserve annual MWh_water and turbine MW/efficiency; electrical output equals turbine water consumption times accepted turbine efficiency, applied once. The explicit Store state equation applies to water states; RoR has no Store."
+    },
+    {
+      "source": "Latest user PHASE H FINAL RESOLUTION, H-DECISION 13",
+      "rule": "RoR p_max_pu is a permitted change only in versioned H successors. Everything outside permitted H transformations remains exact."
+    },
+    {
+      "source": "docs/final_methodology_closure/MEM_FINAL_PREPRODUCTION_METHODOLOGY_CLOSURE_MASTER.md:H2,H4,H5",
+      "rule": "Use native local PyPSA-Eur hydro handling, preserve annual WATER rather than forced generation, make spill interpretation explicit, and retain fixed NET RoR Generator with no storage/pumping."
+    }
+  ],
+  "implementation_evidence": [
+    {
+      "path": "source://pypsa-eur/scripts/add_electricity.py",
+      "lines": "795-810",
+      "rule": "Native RoR p_max_pu is inflow_t divided by installed RoR p_nom, with values above 1 replaced by 1.0. This is turbine saturation, not annual-profile renormalization."
+    },
+    {
+      "path": "src/mem_model/stage_b_2040_runtime.py",
+      "function": "_availability_chunks",
+      "rule": "Existing MEM conversion derives electrical = water * accepted turbine_efficiency, then divides by NET p_nom. It raises if >1+1e-10 before np.clip(0,1). The guard protected the formerly accepted temporal shape; it is not a separately sourced physical requirement that raw runoff can never exceed turbine throughput. This review does not authorize changing the frozen Runtime-1 files or historical outputs."
+    }
+  ],
+  "determination": {
+    "formula": "p_max_pu_t = min(raw_natural_inflow_MW_water_t * accepted_eta_turbine / frozen_NET_p_nom_MW, 1)",
+    "reason": "A fixed NET turbine cannot convert all natural water above its rated water throughput. Runoff peaks above that throughput are physically admissible and cannot be solved by increasing p_nom, adding a Store, changing annual water budget, or renormalizing the shape. Native turbine saturation plus explicit bypass is the exact component-level interpretation required by the accepted physical architecture.",
+    "annual_water_authority": "The full uncapped per-hydro_id natural-water series and its annual MWh_water remain the accepted authority. Capped turbine-accessible electrical potential is a distinct quantity and must not be represented as preserving annual potential-generation energy.",
+    "bypass_MW_water": "max(raw_natural_inflow_MW_water - frozen_NET_p_nom_MW / accepted_eta_turbine, 0)",
+    "turbine_accessible_MW_water": "min(raw_natural_inflow_MW_water, frozen_NET_p_nom_MW / accepted_eta_turbine)",
+    "water_partition": "raw_natural_inflow_MW_water = turbine_accessible_MW_water + unavoidable_bypass_MW_water",
+    "post_solve_water_partition": "raw_natural_inflow_MW_water = actual_electric_dispatch_MW / accepted_eta_turbine + unavoidable_bypass_MW_water + dispatch_curtailment_MW_water",
+    "dispatch_curtailment_MW_water": "(capped_electrical_potential_MW - actual_electric_dispatch_MW) / accepted_eta_turbine",
+    "preparation_only_label": "TURBINE_OVERFLOW_BYPASS_POTENTIAL; not solved dispatch curtailment",
+    "annual_generation_forcing_or_rescaling": false,
+    "new_store_or_pump": false,
+    "capacity_changed": false,
+    "efficiency_applied_twice": false
+  },
+  "reviewed_candidate_evidence": {
+    "path": "qa/final_methodology_closure/hydro/ZONAL_HYDRO_ANNUAL_WATER_AND_POWER_QA.csv",
+    "annual_water_cases": 144,
+    "maximum_absolute_annual_water_residual_MWh": 1.1641532182693479e-10,
+    "RoR_cases": 42,
+    "RoR_above_rated_cases": 36,
+    "maximum_uncapped_ratio_by_zone": {
+      "CALA": 1.3815124647116628,
+      "CNOR": 1.668929635520482,
+      "CSUD": 1.4697344517501845,
+      "NORD": 0.9298718808428568,
+      "SARD": 2.7797450958992638,
+      "SICI": 3.3713433717358274,
+      "SUD": 1.4891790449780258
+    }
+  },
+  "required_H_promotion_checks": [
+    "All uncapped per-hydro_id annual MWh_water controls still reconcile at accepted tolerance.",
+    "All RoR p_max_pu are finite, nonnegative and <=1, without a secondary annual normalization.",
+    "Export hourly and annual turbine-accessible water/electrical potential and unavoidable bypass, including changed-hour count and maximum uncapped ratio.",
+    "Prove uncapped natural water equals accessible water plus bypass at every snapshot and annually with the accepted weighting.",
+    "Preserve NET p_nom, accepted turbine efficiency, zero Store/pump architecture and all non-H objects.",
+    "Do not weaken or overwrite frozen Runtime-1 input files or historical networks; implement this native mapping only in versioned H successors."
+  ],
+  "optimization_model_constructed": false,
+  "production_optimization_executed": false,
+  "production_solver_invocations": 0,
+  "network_changes": 0,
+  "authority_changes": 0
+}

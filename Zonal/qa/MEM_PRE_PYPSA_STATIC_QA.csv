@@ -1,0 +1,47 @@
+﻿check_id,domain,description,expected,actual,tolerance,status,evidence_path
+PPY-001,STATIC,Generator file is an exact copy of frozen Phase 4B authority,81dae9397f8b53b2b3e689644435ab5f36ccf3282599eada5bc3facff76b10e0,81dae9397f8b53b2b3e689644435ab5f36ccf3282599eada5bc3facff76b10e0,,PASS,source://mem-model/pre_pypsa_inputs/MEM_generators_static_final.csv
+PPY-002,STATIC,Carrier file is an exact copy of frozen Phase 4B authority,87363dd6cc400bfd3e05f8eb824a832443f37549766ae231daae2e56813f65e0,87363dd6cc400bfd3e05f8eb824a832443f37549766ae231daae2e56813f65e0,,PASS,source://mem-model/pre_pypsa_inputs/MEM_carriers_static_final.csv
+PPY-003,STATIC,Storage file is an exact copy of frozen Phase 4B authority,5ccf5ae31a80db0f0162c0ea6ad2881f21805176ae8a00427573eec715474798,5ccf5ae31a80db0f0162c0ea6ad2881f21805176ae8a00427573eec715474798,,PASS,source://mem-model/pre_pypsa_inputs/MEM_storage_static_final.csv
+PPY-004,STATIC,Frozen generator row count,723,723,,PASS,source://mem-model/pre_pypsa_inputs/MEM_generators_static_final.csv
+PPY-005,STATIC,Frozen carrier row count,19,19,,PASS,source://mem-model/pre_pypsa_inputs/MEM_carriers_static_final.csv
+PPY-006,STATIC,Frozen BESS storage row count,105,105,,PASS,source://mem-model/pre_pypsa_inputs/MEM_storage_static_final.csv
+PPY-007,STATIC,All generator capacities remain non-extendable,723 false,723,,PASS,source://mem-model/pre_pypsa_inputs/MEM_generators_static_final.csv
+PPY-008,STATIC,All BESS power and energy capacities remain non-extendable,105 false/false,105,,PASS,source://mem-model/pre_pypsa_inputs/MEM_storage_static_final.csv
+PPY-009,STATIC,No forbidden coal/oil/unspecified fossil generator carrier survives,0,0,,PASS,source://mem-model/pre_pypsa_inputs/MEM_generators_static_final.csv
+PPY-010,STATIC,No hydrogen generator exists in 2040,0,0,,PASS,source://mem-model/pre_pypsa_inputs/MEM_generators_static_final.csv
+PPY-011,PHS,Method C national operational energy,53000 MWh,53000,,PASS,source://mem-model/pre_pypsa_inputs/MEM_PHS_Operational_Energy_Allocation_MethodC.csv
+PPY-012,PHS,Method C top-four block,39750 MWh,39750,,PASS,source://mem-model/pre_pypsa_inputs/MEM_PHS_Operational_Energy_Allocation_MethodC.csv
+PPY-013,PHS,Method C residual block,13250 MWh,13250,,PASS,source://mem-model/pre_pypsa_inputs/MEM_PHS_Operational_Energy_Allocation_MethodC.csv
+PPY-014,PHS,National pump power normalized to Terna control,6400 MW,6400,,PASS,source://mem-model/pre_pypsa_inputs/MEM_PHS_Pump_Power_Allocation.csv
+PPY-015,PHS,National NET discharge power retained,7252.3 MW,7252.3,,PASS,source://mem-model/pre_pypsa_inputs/MEM_PHS_Static_Runtime_Contract.csv
+PPY-016,PHS,PHS round-trip efficiency is the frozen static value,0.75,['0.75'],,PASS,source://mem-model/pre_pypsa_inputs/MEM_PHS_Static_Runtime_Contract.csv
+PPY-017,PHS,626.262 GWh physical HPHS evidence is not operational e_nom,not used; 53000 MWh control used,not present in operational allocation,,PASS,source://mem-model/pre_pypsa_inputs/MEM_PHS_Static_Runtime_Contract.csv
+PPY-018,PHS,Method C seven-zone summary contains all canonical zones,7 exact zones,NORD|CNOR|CSUD|SUD|CALA|SICI|SARD,,PASS,source://mem-model/pre_pypsa_inputs/MEM_PHS_Operational_Energy_Allocation_MethodC_Zone_Summary.csv
+PPY-019,HYDRO,Hydro static class mapping preserves 23.294 GW NET total,23294 MW,23294.000000002,1e-6 MW (source-row decimal rounding),PASS,source://mem-model/pre_pypsa_inputs/MEM_Hydro_Static_Component_Mapping.csv
+PPY-020,HYDRO,Hydro static mapping has five classes in every zone,35 rows,35,,PASS,source://mem-model/pre_pypsa_inputs/MEM_Hydro_Static_Component_Mapping.csv
+PPY-021,HYDRO,Conventional hydro cannot charge from the grid,0,0,,PASS,source://mem-model/pre_pypsa_inputs/MEM_Hydro_Static_Component_Mapping.csv
+PPY-022,HYDRO,Mixed PHS requires one shared water state,all mixed rows,7,,PASS,source://mem-model/pre_pypsa_inputs/MEM_Hydro_Static_Component_Mapping.csv
+PPY-023,NETWORK,Internal contract contains 20 directed interfaces for each of six cases,120,120,,PASS,source://mem-model/pre_pypsa_inputs/MEM_Interzonal_Static_Contract.csv
+PPY-024,NETWORK,All internal endpoints are canonical Italian zones,all,120,,PASS,source://mem-model/pre_pypsa_inputs/MEM_Interzonal_Static_Contract.csv
+PPY-025,NETWORK,Internal commercial transfers remain lossless,all 120,120,,PASS,source://mem-model/pre_pypsa_inputs/MEM_Interzonal_Static_Contract.csv
+PPY-026,NETWORK,Corsica is not duplicated in the Italian internal contract,0,0,,PASS,source://mem-model/pre_pypsa_inputs/MEM_Interzonal_Static_Contract.csv
+PPY-027,EXTERNAL,Corsica has exactly four 400-MW zero-injection hub legs and no price series,4,4,,PASS,source://mem-model/pre_pypsa_inputs/MEM_External_Interface_Static_Contract.csv
+PPY-028,EXTERNAL,Eight price-taking borders have import/export directions,16 rows,16,,PASS,source://mem-model/pre_pypsa_inputs/MEM_External_Interface_Static_Contract.csv
+PPY-029,EXTERNAL,No new external-price baseline is frozen,selection deferred,16,,PASS,source://mem-model/pre_pypsa_inputs/MEM_External_Interface_Static_Contract.csv
+PPY-030,DEMAND,Six annual zonal-demand cases contain seven zones,42,42,,PASS,source://mem-model/pre_pypsa_inputs/MEM_Annual_Zonal_Demand_Contract.csv
+PPY-031,DEMAND,Every zonal demand sum exactly equals its frozen national total,six exact reconciliations,2040-Slow:439000000|2040-Base:439000000|2040-High:482900000|2050-Slow:583100000|2050-Base:583100000|2050-High:641410000,,PASS,source://mem-model/pre_pypsa_inputs/MEM_Annual_Zonal_Demand_Contract.csv
+PPY-032,HOURLY_SPEC,All ten later hourly input classes have source/workflow specifications,10,10,,PASS,source://mem-model/pre_pypsa_inputs/MEM_Hourly_Input_Source_Specification.csv
+PPY-033,SCOPE,No chronology/weather year is selected in this package,deferred,10,,PASS,source://mem-model/pre_pypsa_inputs/MEM_Hourly_Input_Source_Specification.csv
+PPY-034,SCOPE,No accepted hourly Parquet input exists,0,0,,PASS,source://mem-model/pre_pypsa_inputs
+PPY-035,SCOPE,No PyPSA/atlite/network-build code is included in pre_pypsa_inputs,0,0,,PASS,source://mem-model/pre_pypsa_inputs
+PPY-036,SCOPE,Unapproved downstream attempt is isolated under scratch,exists outside accepted package,source://mem-model/scratch/SCRATCH_CANDIDATE_NOT_MODEL_INPUT_2013_RUNTIME_ATTEMPT,,PASS,source://mem-model/scratch/SCRATCH_CANDIDATE_NOT_MODEL_INPUT_2013_RUNTIME_ATTEMPT
+PPY-037,SCOPE,Hourly generation status is not started by instruction,10 deferred rows,10,,PASS,source://mem-model/pre_pypsa_inputs/MEM_Hourly_Input_Source_Specification.csv
+PPY-038,PHS,Method C uses exactly the four frozen principal plants,H10|H17|H15|H14,H10|H17|H15|H14,,PASS,source://mem-model/pre_pypsa_inputs/MEM_PHS_Operational_Energy_Allocation_MethodC.csv
+PPY-039,PHS,Top-four physical-energy weights sum to one,1,1,1e-12,PASS,source://mem-model/pre_pypsa_inputs/MEM_PHS_Operational_Energy_Allocation_MethodC.csv
+PPY-040,PHS,Residual PHS discharge geography closes,3189.3 MW and weight 1,3189.3 MW; 1,weight 1e-12,PASS,source://mem-model/pre_pypsa_inputs/MEM_PHS_Operational_Energy_Allocation_MethodC.csv
+PPY-041,PHS,Open physical pump-power evidence is retained only as the 6.8093-GW relative-weight denominator,6809.3 MW physical evidence,6809.3,,PASS,source://mem-model/pre_pypsa_inputs/MEM_PHS_Pump_Power_Allocation.csv
+PPY-042,STATIC,Frozen 2050 GAS_OTHER_FOSSIL capacity remains a 50/50 methane-hydrogen substitutional split,equal in each scenario,"Slow:M=5413.584114236351,H2=5413.584114236351|Base:M=1693.2473953445,H2=1693.2473953445|High:M=1693.2473953445,H2=1693.2473953445",,PASS,source://mem-model/pre_pypsa_inputs/MEM_generators_static_final.csv
+PPY-043,STATIC,All static generator IDs are unique,723,723,,PASS,source://mem-model/pre_pypsa_inputs/MEM_generators_static_final.csv
+PPY-044,DEMAND,Every demand case contains exactly the seven canonical zones,six complete zone sets,6,,PASS,source://mem-model/pre_pypsa_inputs/MEM_Annual_Zonal_Demand_Contract.csv
+PPY-045,NETWORK,Each scenario-year network case contains exactly 20 Italian-zone directional contracts,20 in each of six cases,2040-Slow:20|2040-Base:20|2040-High:20|2050-Slow:20|2050-Base:20|2050-High:20,,PASS,source://mem-model/pre_pypsa_inputs/MEM_Interzonal_Static_Contract.csv
+PPY-046,SCOPE,The accepted package contains no hourly Parquet or NetCDF series,0,0,,PASS,source://mem-model

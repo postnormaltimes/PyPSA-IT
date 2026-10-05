@@ -1,0 +1,12 @@
+gate,status,controlling_reason,next_action
+HISTORICAL_TECHNOLOGY_BASELINE_STATUS,FROZEN,Phase-3.1 historical Terna measurements and taxonomy remain unchanged.,Use as source anchor; do not reopen.
+THERMAL_GEOGRAPHY_ANCHOR_STATUS,FROZEN_WITH_CONTROLLED_RESIDUAL_BANDS,Coal direct attribution 4758.62 MW plus 158.78 MW residual; oil direct 886 MW plus 1089.9 MW dispersed residual; both national controls close exactly.,GEM/primary plant evidence may refine residual geography without changing national controls.
+2040_BASE_HIGH_CAPACITY_TABLE_STATUS,RESOLVED,Post-coal/oil anchor scaled to exactly 55 GW; Base and High share the same thermal portfolio.,Use fixed p_nom table in later solver-input construction.
+2040_SLOW_CDP_CAPACITY_STATUS,RESOLVED,Corrected Figure-55 CDP ratios and Figure-56 15% rating produce the installed Slow increment.,Use as fixed Slow p_nom; dispatch remains endogenous.
+2050_PROGRAMMABLE_PERIMETER_STATUS,RESOLVED_BY_EXPLICIT_PROJECT_PERIMETER_DECISION,Geothermal included inside the 30-GW efficient programmable benchmark; four PNIEC categories normalize to 21.22821 GW.,Retain as explicit project interpretation in model documentation.
+2050_BASE_HIGH_CAPACITY_TABLE_STATUS,RESOLVED,"30-GW programmable total with 8-GW nuclear, 0.77179-GW geothermal and normalized four-category portfolio.",Use fixed p_nom table.
+2050_SLOW_CDP_CAPACITY_STATUS,RESOLVED,Corrected CDP loss added proportionally to Base non-nuclear programmable mix; nuclear fixed.,Use fixed Slow p_nom; dispatch remains endogenous.
+HYDRO_CAPACITY_SCENARIO_STATUS,FROZEN_CURRENT_FLEET_ALL_SIX_SCENARIOS,"User-confirmed assumption; 23,294 MW current hydro class matrix copied identically.",No future hydro MW research required for scenario capacity.
+HYDRO_OPERATIONAL_PARAMETER_STATUS,PARTIAL,"PHS zonal e_nom/pump MW, efficiencies, inflows, active reservoir energy and SOC remain unresolved.",Resolve in solver-parameter phase; does not block p_nom tables.
+FULL_SOLVER_INPUT_STATUS,INCOMPLETE,"Hourly load/weather/VRE/hydro inflows, availability, external prices, storage/SOC and interzonal inputs remain outside this phase.",Proceed to solver-input construction only after selecting the next empirical parameter gates.
+WORKBOOK_PROMOTION_STATUS,BLOCKED,Accepted v2.9 binary provenance remains unresolved; standalone analyst workbook does not promote the canonical workbook.,Restore accepted 4a59... binary or approve the semantically verified local baseline.

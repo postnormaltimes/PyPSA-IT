@@ -1,0 +1,19 @@
+{
+  "schema_version": "MEM_PLACEMENT_2050_ORDINARY_HOUR_MASK_REUSE_V1_0",
+  "status": "PASS_REUSED_WITHOUT_REGENERATION",
+  "source_path": "qa/stage_a/etx7b9d/MEM_R5_2050_Ordinary_Hour_Mask_v1.0.csv",
+  "source_sha256": "1BFD37FF2480CCE575F245B23A192D3DB69166764FAE8AB5F888BDE9D8595DD3",
+  "source_metadata_path": "qa/stage_a/etx7b9d/MEM_R5_2050_Ordinary_Hour_Mask_Metadata_v1.0.json",
+  "source_metadata_sha256": "A913D91B1A2BCF7B6671346D81133B5CE055477449FDB34C0547D157B7514979",
+  "definition": "B9B_TOTAL_TEN_MARKET_SHEDDING_LE_1E_6_MW_AND_B9B_ALL_TEN_MARKET_PRICES_LE_500_EUR_PER_MWH",
+  "ordinary_hours": 3020,
+  "excluded_hours": 5740,
+  "mask_boolean_sha256": "B40ECF9B25D95A2E55A86E61A14EF78CF6FC62F455B8CEF9DA367BF733321F70",
+  "applied_unchanged_to": [
+    "B9B",
+    "R10",
+    "R5",
+    "PLACEMENT"
+  ],
+  "placement_outcome_used_to_define_mask": false
+}

@@ -1,0 +1,150 @@
+schema: PERIMETER_CLOSURE_2050_RESIDUAL_ME_MT_TN_DIAGNOSTIC_V1_0
+status: PREPARED_NOT_EXECUTED
+research_status: CLOSED
+
+method_authority:
+  id: PERIMETER_CLOSURE_METHOD_V2_0
+  path: config/stage_a_perimeter_closure_method_v2_0.yaml
+  sha256: AE5C4836CBD443372871DE97E7EF59A2F6A013436ACFDD9E78C4EA571C5AB315
+
+capacity_design:
+  classification: FINAL_RESIDUAL_ME_MT_TN_R10_CLOSURE_DIAGNOSTIC
+  predecessor_case: ETX-7B9F
+  retained_B9F_markets: [FR, GR, TN, AT, SI]
+  residual_increment_markets: [ME, MT, TN]
+  prohibited_additional_support_markets: [FR, CH, AT, SI, GR, IT, HR]
+  sizing_source: IMMUTABLE_ETX7B9F_LOCAL_HOURLY_LOAD_SHEDDING
+  sizing_rule: BASELINE_SHEDDING_ENERGY_EXCEEDANCE
+  residual_energy_share: 0.10
+  diagnostic_residual_energy_share_R5: 0.05
+  expected_QA_residual_increments_MW:
+    ME: 94.82765688597348
+    MT: 270.4231791609745
+    TN: 1233.791813968554
+  expected_values_are_sizing_authority: false
+  price_target_used_for_sizing: false
+  VOLL_hour_target_used_for_sizing: false
+  reserve_margin: false
+  rounding: false
+  headroom_adder: false
+  manual_tuning: false
+  automatic_capacity_iteration: false
+
+TN_capacity_binding_precondition:
+  existing_generator_id: EXTERNAL_VIRTUAL_SUPPLY_TN_R10_2050
+  existing_p_nom_MW: 2433.2947267101813
+  local_shedding_tolerance_MW: 0.000001
+  meaningful_headroom_tolerance_MW: 1.0
+  rule: NO_MATERIAL_TN_SHEDDING_HOUR_MAY_HAVE_MORE_THAN_1_MW_EXISTING_LOCAL_PROXY_HEADROOM
+  stop_code: TN_RESIDUAL_CAPACITY_NOT_JUSTIFIED_BY_LOCAL_CAPACITY_BINDING
+
+accepted_inputs:
+  b6_2050_unsolved_network:
+    role: IMMUTABLE_PHYSICAL_MODEL_STARTING_POINT
+    path: stage_a_networks/2050/MEM_ETX7B6_2050_BASE_8760h_UNSOLVED.nc
+    sha256: 06CC25DB50AD717AE27332A57168CB4DBFF38765703022CB05D3E5BA9943E4DE
+  b9b_2050_bounded_baseline:
+    role: IMMUTABLE_COMPARISON_CASE
+    receipt: qa/stage_a/etx7b9/MEM_ETX7B9_Run_Receipt_v1.0.json
+    receipt_sha256: 0A8E80FD1A46F5F63E4E8D41C0C3DAEE05F70A529ADC7EE69842FFE434FC9D36
+    required_gate: ETX7B9_2050_BASE_FULL_YEAR_COMPLETE
+    result_manifest: stage_a_results/2050_full/MEM_ETX7B9_2050_BASE_FULL_Result_Manifest_v1.0.csv
+    result_manifest_sha256: 1F62F96DB5A89016AFEFBC6210D9BAA37DA670754382A97F6595ADA1DAB3F991
+  b9c_2050_R10_diagnostic:
+    role: IMMUTABLE_COMPARISON_CASE
+    receipt: qa/stage_a/etx7b9c/MEM_ETX7B9C_Run_Receipt_v1.0.json
+    receipt_sha256: 1D741BD14C15E19443C04CABBC9E1A151771D0A84EEAE225F75B8A1247E758D1
+    required_gate: ETX7B9C_2050_R10_PERIMETER_CLOSURE_COMPLETE
+    result_manifest: stage_a_results/2050_perimeter_closure_r10/MEM_ETX7B9C_2050_R10_PERIMETER_CLOSURE_Result_Manifest_v1.0.csv
+    result_manifest_sha256: 040272788BBC3CA4F880B50A58B6181CB970CA1F5C4B486D366B98D373922A4F
+  b9d_2050_R5_diagnostic:
+    role: IMMUTABLE_COMPARISON_CASE
+    receipt: qa/stage_a/etx7b9d/MEM_ETX7B9D_Run_Receipt_v1.0.json
+    receipt_sha256: E032C63879BF294C99759C8097A7AA7BADB9F5477CA20E8992B07012C266B2E4
+    required_gate: ETX7B9D_2050_R5_PERIMETER_CLOSURE_COMPLETE
+    result_manifest: stage_a_results/2050_perimeter_closure_r5/MEM_ETX7B9D_2050_R5_PERIMETER_CLOSURE_Result_Manifest_v1.0.csv
+    result_manifest_sha256: B025D54E3E68E8EE23C613A0B8CED4F4CA6EBDD441F115B2D97D0FF90AD79D9B
+  b9e_2050_placement_diagnostic:
+    role: IMMUTABLE_COMPARISON_CASE
+    receipt: qa/stage_a/etx7b9e/MEM_ETX7B9E_Run_Receipt_v1.0.json
+    receipt_sha256: 98AE0FA50CF9E61C2F9EDA7018DEA434BD87DE547D7B8898FD5345D1B6D032C0
+    required_gate: ETX7B9E_2050_PLACEMENT_PERIMETER_CLOSURE_COMPLETE
+    result_manifest: stage_a_results/2050_perimeter_closure_placement/MEM_ETX7B9E_2050_PLACEMENT_PERIMETER_CLOSURE_Result_Manifest_v1.0.csv
+    result_manifest_sha256: 260116426C6AC664D895973C0385C105B419C1875824DDF7C480FD12E81919A0
+  b9f_2050_hybrid_diagnostic:
+    role: IMMUTABLE_DIAGNOSTIC_PREDECESSOR
+    receipt: qa/stage_a/etx7b9f/MEM_ETX7B9F_Run_Receipt_v1.0.json
+    receipt_sha256: 501A717D61D1E07AF811E46BBF1E9894C3712D508AE262853509F934B1A93412
+    required_gate: ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_COMPLETE
+    result_directory: stage_a_results/2050_perimeter_closure_fr_r5_hybrid
+    result_stem: MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE
+    result_manifest: stage_a_results/2050_perimeter_closure_fr_r5_hybrid/MEM_ETX7B9F_2050_FR_R5_HYBRID_PLACEMENT_CLOSURE_Result_Manifest_v1.0.csv
+    result_manifest_sha256: DB802FBDB02B6DB69701A605FD5CA03F078161BCEFFF3B707B011FEC78AD79B0
+    virtual_supply_contract: qa/stage_a/etx7b9f/MEM_FR_R5_Hybrid_2050_Virtual_Supply_Contract_v1.0.csv
+    virtual_supply_contract_sha256: 4A20AD4942900CFCE22DAF139CC8E42F69C52D22724DE1DD2BFA3E53DBBF1CD3
+  immutable_ordinary_hour_mask:
+    path: qa/stage_a/etx7b9d/MEM_R5_2050_Ordinary_Hour_Mask_v1.0.csv
+    sha256: 1BFD37FF2480CCE575F245B23A192D3DB69166764FAE8AB5F888BDE9D8595DD3
+    metadata_path: qa/stage_a/etx7b9d/MEM_R5_2050_Ordinary_Hour_Mask_Metadata_v1.0.json
+    metadata_sha256: A913D91B1A2BCF7B6671346D81133B5CE055477449FDB34C0547D157B7514979
+
+cost_proxy:
+  source_path: stage_a_inputs/operating_base_v1_0/MEM_ETX7B4_Generator_Operating_Parameters_v1.0.csv
+  source_sha256: 84E772011499A8A8594FC63C65812F211547E1C73E1BF1F1F874DA3CF9280DA4
+  source_asset_id: ETX7B2_IT_2050_METHANE_GT_OCGT_NON_CHP_0AA7D5D9AF
+  marginal_cost_EUR2025_per_MWh_el: 243.122262790698
+
+formulation:
+  carrier: EXTERNAL_VIRTUAL_SUPPLY
+  p_nom_extendable: false
+  committable: false
+  p_min_pu: 0.0
+  p_max_pu: 1.0
+  efficiency: 1.0
+  startup_cost: 0.0
+  ramp_constraints: false
+  minimum_load: false
+  unit_commitment: false
+  capacity_expansion: false
+  integer_variables: 0
+  binary_variables: 0
+
+diagnostics:
+  comparison_cases: [B9B, R10, R5, B9E, B9F, B9G]
+  exported_markets: [FR, CH, AT, SI, ME, GR, MT, TN]
+  residual_markets: [ME, MT, TN]
+  protected_B9F_markets: [FR, CH, AT, SI, GR]
+  VOLL_EUR_per_MWh: 15000.0
+  practical_annual_mean_reasonableness_EUR_per_MWh: 300.0
+  practical_reasonableness_used_for_sizing: false
+  ordinary_hour_mask:
+    source: IMMUTABLE_B9D_B9B_DERIVED_MASK
+    definition: B9B_TOTAL_TEN_MARKET_SHEDDING_LE_1E_6_MW_AND_B9B_ALL_TEN_MARKET_PRICES_LE_500_EUR_PER_MWH
+    reused_without_regeneration: true
+  automatic_economic_acceptance: false
+
+phase:
+  id: ETX-7B9G
+  gate: ETX7B9G_2050_FINAL_RESIDUAL_ME_MT_TN_R10_CLOSURE_COMPLETE
+  result_directory: stage_a_results/2050_perimeter_closure_residual_me_mt_tn
+  result_stem: MEM_ETX7B9G_2050_FINAL_RESIDUAL_ME_MT_TN_R10_CLOSURE
+  qa_directory: qa/stage_a/etx7b9g
+  receipt: qa/stage_a/etx7b9g/MEM_ETX7B9G_Run_Receipt_v1.0.json
+  command: .\.venv\Scripts\python.exe -m mem_model.stage_a.perimeter_closure_residual_me_mt_tn b9g --execute
+
+solver:
+  name: gurobi
+  options: {Threads: 1, Seed: 0}
+  log_to_console: false
+
+governance:
+  diagnostic_only_until_explicit_review: true
+  B9F_status: IMMUTABLE_DIAGNOSTIC_PREDECESSOR
+  B9G_status: FINAL_RESIDUAL_CLOSURE_PRODUCTION_CANDIDATE_PENDING_EXECUTION_AND_METHOD_REVIEW
+  technical_status: PREPARED_NOT_EXECUTED
+  production_price_acceptance: PENDING_EXECUTION_AND_METHOD_REVIEW
+  automatic_production_promotion: false
+  automatic_successor_experiment: false
+  fallback_allowed: false
+  B10_2050_authorized: false
+  Stage_B_2050_authorized: false

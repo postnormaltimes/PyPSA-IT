@@ -1,0 +1,122 @@
+schema_version: MEM_ETX7B8C_S2_PERIMETER_CLOSURE_V1_0
+status: EXPERIMENTAL_PREPARED_NOT_EXECUTED
+
+governance:
+  mode: IMPLEMENTATION_AND_EXISTING_RESULT_DIAGNOSTIC_ONLY
+  research_allowed: false
+  new_external_data_allowed: false
+  capacity_expansion: false
+  unit_commitment: false
+  formulation: CONTINUOUS_LINEAR_PROGRAM_ONLY
+  b8_identity: IMMUTABLE_BOUNDED_PERIMETER_BASELINE
+  s2_identity: EXPERIMENTAL_BOUNDED_PERIMETER_CLOSURE_SENSITIVITY
+  formal_successor_gate: ETX-7B9
+  formal_successor_gate_status: LOCKED_PENDING_S2_REVIEW_AND_SOL_DECISION
+  stage_b_status: LOCKED
+
+accepted_inputs:
+  b6_receipt:
+    path: qa/stage_a/etx7b6/MEM_ETX7B6_Run_Receipt_v1.0.json
+    sha256: FF6572D7A975E3AD1C37E51599EBE9CC0786424E788A741C94A7D44840DA31A7
+    required_gate: ETX7B6_STAGE_A_SOLVER_READY
+  b6_2040_unsolved_network:
+    path: stage_a_networks/2040/MEM_ETX7B6_2040_BASE_8760h_UNSOLVED.nc
+    sha256: 5AE2024102CBD540F1285BD44CD14C98DA583DF66699E15589F5173309671A42
+  b7_receipt:
+    path: qa/stage_a/etx7b7/MEM_ETX7B7_Run_Receipt_v1.0.json
+    sha256: E7C731344FEF2DC905EDBA216F56D7639956FF6DD1D7A5650BDDD6E1E29EBA70
+    required_gate: ETX7B7_2040_BASE_SMOKE_COMPLETE
+  b8_receipt:
+    path: qa/stage_a/etx7b8/MEM_ETX7B8_Run_Receipt_v1.0.json
+    sha256: 2A6919E7A31D42100D0CE64069CAF926686BE93E032DD7A5BF8D8D18B9F19F93
+    required_gate: ETX7B8_2040_BASE_FULL_YEAR_COMPLETE
+  b8_result_manifest:
+    path: stage_a_results/2040_full/MEM_ETX7B8_2040_BASE_FULL_Result_Manifest_v1.0.csv
+    sha256: EF52C6A6EDC79FE7939DA267C22B10CDB858ACDD6422A2B82EF99AD369B30338
+    required_members: 9
+  b8_annual_diagnostic:
+    path: qa/stage_a/etx7b8/MEM_ETX7B8_2040_Base_Annual_Diagnostic_v1.0.json
+
+cost_proxy:
+  common_marginal_cost_EUR2025_per_MWh_el: 145.909492380952
+  source_path: stage_a_inputs/operating_base_v1_0/MEM_ETX7B4_Generator_Operating_Parameters_v1.0.csv
+  source_sha256: 84E772011499A8A8594FC63C65812F211547E1C73E1BF1F1F874DA3CF9280DA4
+  source_asset_id: ETX7B2_IT_2040_METHANE_GT_OCGT_NON_CHP_5D69468168
+  source_csv_physical_line: 54
+  selection:
+    country_code: IT
+    year: 2040
+    scenario: Base
+    source_static_class: METHANE_GT_OCGT_NON_CHP
+    source_carrier: methane_gt_ocgt
+    CHP_flag: false
+  efficiency_el: 0.42
+  fuel_price_EUR2025_per_MWh_th: 38.0563456
+  CO2_price_EUR2025_per_t: 104.5504
+  chargeable_CO2_t_per_MWh_th: 0.198
+  residual_CO2_t_per_MWh_th: 0.198
+  VOM_EUR2025_per_MWh_el: 6.0111
+  fuel_component_EUR2025_per_MWh_el: 90.61034666666667
+  carbon_component_EUR2025_per_MWh_el: 49.288045714285715
+  derivation: FUEL_DIVIDED_BY_EFFICIENCY_PLUS_CHARGEABLE_CO2_TIMES_CO2_PRICE_DIVIDED_BY_EFFICIENCY_PLUS_VOM
+  parameter_authority: PHASE4B_FROZEN_BASE_CLASS_CAPACITY_WEIGHTED_TO_NATIONAL_IT
+  evidence_class: PYPSA TECHNOLOGY-DATA V0.15 / ACCEPTED MEM
+  quality: FROZEN_ACCEPTED
+  interpretation: COMMON_PRICE_FORMING_PROXY_FOR_RESIDUAL_FIRM_SUPPLY_FROM_OMITTED_SYSTEMS
+
+virtual_supply:
+  carrier: EXTERNAL_VIRTUAL_SUPPLY
+  common_parameters:
+    p_nom_extendable: false
+    committable: false
+    p_min_pu: 0.0
+    p_max_pu: 1.0
+    efficiency: 1.0
+    marginal_cost_EUR2025_per_MWh_el: 145.909492380952
+  generators:
+    - generator_id: EXTERNAL_VIRTUAL_SUPPLY_FR
+      bus: FR
+      p_nom_MW: 25199.225303080686
+      capacity_rule: EXACT_MAX_HOURLY_B8_LOAD_SHEDDING_MW
+    - generator_id: EXTERNAL_VIRTUAL_SUPPLY_TN
+      bus: TN
+      p_nom_MW: 1643.2154545427973
+      capacity_rule: EXACT_MAX_HOURLY_B8_LOAD_SHEDDING_MW
+    - generator_id: EXTERNAL_VIRTUAL_SUPPLY_GR
+      bus: GR
+      p_nom_MW: 3624.529283896116
+      capacity_rule: EXACT_MAX_HOURLY_B8_LOAD_SHEDDING_MW
+
+solver:
+  name: gurobi
+  required_gurobipy_version: 13.0.3
+  options:
+    Threads: 1
+    Seed: 0
+  log_to_console: false
+
+tolerances:
+  structure_numeric_absolute: 1.0e-12
+  solve_QA_absolute: 1.0e-5
+  shedding_MW: 1.0e-6
+  dispatch_MW: 1.0
+  price_EUR_per_MWh: 1.0e-6
+  interface_limit_MW: 1.0e-6
+
+artifacts:
+  result_directory: stage_a_results/2040_perimeter_closure_s2
+  result_stem: MEM_ETX7B8C_S2_2040_BASE
+  result_manifest: stage_a_results/2040_perimeter_closure_s2/MEM_ETX7B8C_S2_2040_BASE_Result_Manifest_v1.0.csv
+  qa_directory: qa/stage_a/etx7b8c
+  virtual_supply_contract: qa/stage_a/etx7b8c/MEM_ETX7B8C_S2_Virtual_Supply_Contract_v1.0.csv
+  cost_provenance: qa/stage_a/etx7b8c/MEM_ETX7B8C_S2_Cost_Provenance_v1.0.json
+  structural_QA: qa/stage_a/etx7b8c/MEM_ETX7B8C_S2_Structural_QA_v1.0.json
+  receipt: qa/stage_a/etx7b8c/MEM_ETX7B8C_S2_Run_Receipt_v1.0.json
+  raw_log: qa/stage_a/etx7b8c/logs/MEM_ETX7B8C_S2_raw.log
+  system_comparison: qa/stage_a/etx7b8c/MEM_ETX7B8C_B8_vs_S2_System_Comparison_v1.0.csv
+  market_comparison: qa/stage_a/etx7b8c/MEM_ETX7B8C_B8_vs_S2_Market_Comparison_v1.0.csv
+  virtual_supply_utilization: qa/stage_a/etx7b8c/MEM_ETX7B8C_S2_Virtual_Supply_Utilization_v1.0.csv
+  flow_comparison: qa/stage_a/etx7b8c/MEM_ETX7B8C_B8_vs_S2_Flow_Comparison_v1.0.csv
+  comparison_JSON: qa/stage_a/etx7b8c/MEM_ETX7B8C_B8_vs_S2_Comparison_v1.0.json
+
+manual_command: .\.venv\Scripts\python.exe -m mem_model.stage_a.perimeter_closure s2 --execute

@@ -1,0 +1,153 @@
+schema_version: ETX7B5_TOPOLOGY_V1_0
+phase: ETX_7B5_FIXED_STAGE_A_TOPOLOGY
+authority_status: LOCKED_IMPLEMENTATION_READY
+
+controlling_plan:
+  version: "2.2"
+  path: docs/project_plan/MEM_Remaining_Execution_Plan_v2.2.md
+  sha256: 7F858DEB139F46E2ECE26EA8D82FA972A6D304B01D44300EF31FE79D8AB11EA6
+
+scope:
+  markets: [AT, CH, FR, GR, HR, IT, ME, MT, SI, TN]
+  horizons: [2040, 2050]
+  scenario: Base
+  capacity_unit: MW
+  link_model: EXPLICIT_DIRECTED_FIXED_CAPACITY_ROWS
+  p_nom_extendable: false
+  no_link_rule: COMPLETE_UNORDERED_PAIR_COMPLEMENT_OF_PHYSICAL_CONNECTIONS
+  corsica: EXCLUDED_STAGE_A_STAGE_B_REGULATED_ZERO_INJECTION_ONLY
+  krsko_physical_host: SI
+  croatia_nuclear_entitlement: QA_ACCOUNTING_ONLY_NO_PHYSICAL_ASSET
+  production_network_construction: FORBIDDEN_IN_B5
+  optimization: FORBIDDEN_IN_B5
+
+excluded_markets:
+  - CORS
+  - DE-LU
+  - BE
+  - ES
+  - GB
+  - CZ
+  - SK
+  - HU
+  - BA
+  - RS
+  - AL
+  - MK
+  - BG
+  - TR
+  - DZ
+  - LY
+
+authorities:
+  mem_italy_interface:
+    source_id: MEM_STAGE_B_EXTERNAL_INTERFACE_STATIC_CONTRACT
+    path: pre_pypsa_inputs/MEM_External_Interface_Static_Contract.csv
+    sha256: D5E19A4036C7F462BEC07AC96109B885B1FFC0437DFC922FA47F3E21926770D2
+    role: FROZEN_MEM_ITALY_FACING_DIRECTIONAL_CAPACITY
+    applicable_horizons: [2040, 2050]
+  tyndp_reference_grid:
+    source_id: TYNDP24_REFERENCE_GRID_ELECTRICITY
+    path: runtime_sources/tyndp_2024/extracted/Line-data/Line data/ReferenceGrid_Electricity.xlsx
+    sha256: 8AD1AC615F1AE347A2CA4BF2526AFA5CF1C6B752665CB1D4A1D5B0270CFFBBD7
+    role: RETAINED_MARKET_ADJACENCY_AND_2030_BASELINE_ONLY
+    sheet: "2030"
+  tyndp_horizon_construction:
+    source_id: TYNDP24_REFERENCE_GRID_AND_INVESTMENT_CANDIDATES
+    path: runtime_sources/tyndp_2024/extracted/20231103-Electricity-and-Hydrogen-Reference-Grid-Investment-Candidates.xlsx/20231103 - Electricity and Hydrogen Reference Grid & Investment Candidates.xlsx
+    sha256: BD126A8F3207D0D338DA72BDDC849485C99A85ED8BF1AB3F6F7BAEF3A6A7C40C
+    raw_archive_path: runtime_sources/tyndp_2024/raw/20231103-Electricity-and-Hydrogen-Reference-Grid-Investment-Candidates.xlsx.zip
+    raw_archive_sha256: 533E3D6D61291D7FE0AFCDBB20948546DC81DC5BBD4431E1294C1D3FA9E310B2
+    role: ACCEPTED_2040_REFERENCE_GRID_PLUS_DATED_REAL_PROJECT_CONSTRUCTION
+    reference_sheet: 1. Elec Ref Grid
+    investment_sheet: 3. Elec Invest Candidates
+    accepted_project_class: Real
+    excluded_project_class: Concept
+    construction_rule: REFERENCE_GRID_BASELINE_PLUS_REAL_PROJECT_INCREMENTS_COMMISSIONED_BY_2040
+    forbidden_rule: NEVER_PROMOTE_A_2030_CELL_ALONE_OR_ADD_CONCEPT_CANDIDATES
+
+predecessor_locks:
+  stage_b_manifest:
+    path: qa/interim/MEM_FROZEN_STATIC_HASH_MANIFEST.csv
+    sha256: F17BFE5006BBE75F87BF564EC67034C73FD0A58AD063113F98FA74F29D0BDA79
+  etx7b1_manifest:
+    path: stage_a_inputs/etx7a_v1_0/static/MEM_ETX7A_Static_Output_Manifest_v1.0.csv
+    sha256: 4E5DC493BDCB7713B6E1147FD4F1AC1953A196565ED95ECB9B5A1F8BA31C4BCE
+  etx7b2_manifest:
+    path: stage_a_inputs/italy_base_v1_0/static/MEM_ETX7B2_IT_Static_Output_Manifest_v1.0.csv
+    sha256: D7E5CA7B7E71E83B2DF79DAE690E0CA51E7DB8F873B6A74641F3F1726FE775BD
+  etx7b3_manifest:
+    path: stage_a_inputs/temporal_2019_v1_0/MEM_ETX7B3_Temporal_Output_Manifest_v1.0.csv
+    sha256: B2C2AECB964A23BED776D43D91D0F7ADCEE38587BB0DB2CEE8E8AB6D8F8B05BC
+  etx7b4_manifest:
+    path: stage_a_inputs/operating_base_v1_0/MEM_ETX7B4_Output_Manifest_v1.0.csv
+    sha256: 442C215CB26658860F6B9BCF3620A2A7EABAAFED68A736DAC192E9099BA53998
+  etx7b4_verification:
+    path: qa/stage_a/etx7b4/MEM_ETX7B4_Final_Verification_v1.0.json
+    sha256: F0A58C5268596F75726A8B6A027F203FC73998187DD46C6026D7A3143F8217F3
+
+italy_interfaces:
+  - {physical_id: IT_FR, external_market: FR, stage_b_receiving_zone: NORD, external_to_it_MW: 4500, it_to_external_MW: 2200, source_rows: "2-3"}
+  - {physical_id: IT_CH, external_market: CH, stage_b_receiving_zone: NORD, external_to_it_MW: 4600, it_to_external_MW: 1900, source_rows: "4-5"}
+  - {physical_id: IT_AT, external_market: AT, stage_b_receiving_zone: NORD, external_to_it_MW: 700, it_to_external_MW: 300, source_rows: "6-7"}
+  - {physical_id: IT_SI, external_market: SI, stage_b_receiving_zone: NORD, external_to_it_MW: 1100, it_to_external_MW: 1200, source_rows: "8-9"}
+  - {physical_id: IT_ME, external_market: ME, stage_b_receiving_zone: CSUD, external_to_it_MW: 600, it_to_external_MW: 600, source_rows: "10-11"}
+  - {physical_id: IT_GR, external_market: GR, stage_b_receiving_zone: SUD, external_to_it_MW: 500, it_to_external_MW: 500, source_rows: "12-13"}
+  - {physical_id: IT_TN, external_market: TN, stage_b_receiving_zone: SICI, external_to_it_MW: 600, it_to_external_MW: 600, source_rows: "14-15"}
+  - {physical_id: IT_MT, external_market: MT, stage_b_receiving_zone: SICI, external_to_it_MW: 200, it_to_external_MW: 200, source_rows: "16-17"}
+
+external_connections:
+  - physical_id: EXT_CH_FR
+    endpoint_a: CH
+    endpoint_b: FR
+    source_border: CH00-FR00
+    reference_row: 28
+    reference_a_to_b_MW: 2200
+    reference_b_to_a_MW: 4500
+    accepted_real_increments_through_2040: []
+    capacity_2040_a_to_b_MW: 2200
+    capacity_2040_b_to_a_MW: 4500
+  - physical_id: EXT_AT_CH
+    endpoint_a: AT
+    endpoint_b: CH
+    source_border: AT00-CH00
+    reference_row: 6
+    reference_a_to_b_MW: 1200
+    reference_b_to_a_MW: 1200
+    accepted_real_increments_through_2040: []
+    capacity_2040_a_to_b_MW: 1200
+    capacity_2040_b_to_a_MW: 1200
+  - physical_id: EXT_AT_SI
+    endpoint_a: AT
+    endpoint_b: SI
+    source_border: AT00-SI00
+    reference_row: 11
+    reference_a_to_b_MW: 950
+    reference_b_to_a_MW: 950
+    accepted_real_increments_through_2040:
+      - {project: AT00-SI00 Real 1, investment_row: 4, commissioning_year: 2035, a_to_b_increment_MW: 500, b_to_a_increment_MW: 500}
+    capacity_2040_a_to_b_MW: 1450
+    capacity_2040_b_to_a_MW: 1450
+  - physical_id: EXT_HR_SI
+    endpoint_a: HR
+    endpoint_b: SI
+    source_border: HR00-SI00
+    reference_row: 82
+    reference_a_to_b_MW: 1500
+    reference_b_to_a_MW: 1500
+    accepted_real_increments_through_2040: []
+    capacity_2040_a_to_b_MW: 1500
+    capacity_2040_b_to_a_MW: 1500
+
+horizon_rules:
+  "2040":
+    external_external_status: DIRECT_ACCEPTED_HORIZON_VALUE
+    external_external_authority_horizon: TYNDP24_REFERENCE_GRID_PLUS_REAL_PROJECTS_THROUGH_2040
+    external_external_direct_vs_carry_forward: DIRECT_2040_CONSTRUCTION
+  "2050":
+    external_external_status: ACCEPTED_2040_CARRY_FORWARD_TO_2050
+    external_external_authority_horizon: 2040
+    external_external_direct_vs_carry_forward: CARRY_FORWARD_FROM_2040
+  italy_interface_status: FROZEN_MEM_ITALY_INTERFACE
+  italy_interface_authority_horizon: 2040|2050
+  italy_interface_direct_vs_carry_forward: DIRECT_FROZEN_BOTH_HORIZONS

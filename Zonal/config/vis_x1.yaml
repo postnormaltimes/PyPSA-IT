@@ -1,0 +1,46 @@
+schema_version: MEM_VIS_X1_ADAPTER_V1
+status: FIRST_CASE_DIAGNOSTIC_INTEGRATION
+# Optional presentation dependencies: project-relative or absolute paths.
+# Runtime overrides: MEM_VIS_X1_HANDOFF and MEM_VIS_X1_NUTS2.
+external_handoff: optional/vis_x1
+nuts2_geography: data/optional_visualization/NUTS_RG_01M_2021_4326_LEVL_2.geojson
+# This case block is the preserved historical first-case diagnostic adapter.
+# Current final_v1 reporting supplies its verified case, networks and prices.
+case:
+  year: 2040
+  scenario: Base
+  model_version: PRE_P2X_FLEX
+  result_status: PRE_P2X_DIAGNOSTIC_BASELINE
+  network: results/MEM_2040_BASE_CANONICAL/MEM_2040_BASE_8760h_SOLVED.nc
+  acceptance: results/MEM_2040_BASE_CANONICAL/MEM_STAGE_B_2040_BASE_ACCEPTANCE_v1.0.json
+  reporting_receipt: results/MEM_2040_BASE_CANONICAL/MEM_CANONICAL_REPORTING_RECEIPT.json
+  reporting_manifest: results/MEM_2040_BASE_CANONICAL/MEM_CANONICAL_REPORTING_MANIFEST.csv
+  canonical_statistics: results/MEM_2040_BASE_CANONICAL/statistics
+  sanity_review: qa/stage_b/production_2040/MEM_STAGE_B_2040_THREE_SCENARIO_SANITY_REVIEW_v1.0.json
+display_market_aliases:
+  NORD: NORD
+  CNOR: CNORD
+  CSUD: CSUD
+  SUD: SUD
+  CALA: CALA
+  SICI: SICI
+  SARD: SARD
+map:
+  coordinate_source: config/stage_b_reporting.yaml#schematic_coordinates
+  coordinate_semantics: SCHEMATIC_NOT_GEOGRAPHIC
+  physical_link_carriers: [internal_transfer, external_trade, corsica_hub]
+  internal_link_carriers: [internal_transfer]
+  boundary_link_carriers: [external_trade, corsica_hub]
+  geography: null
+ontology:
+  carrier_source: config/stage_b_reporting.yaml#carrier_to_display_technology
+  hydro_source: pre_pypsa_inputs/MEM_Hydro_Static_Component_Mapping.csv
+  physical_generator_carriers: [solar_pv_rooftop, solar_pv_utility, wind_onshore, wind_offshore, hydro_run_of_river, nuclear, methane_ccgt, methane_gt_ocgt, methane_internal_combustion, methane_steam_other_surviving, methane_other_surviving_thermal, methane_ccs, hydrogen_gt_ocgt, bioenergy, bioenergy_internal_combustion, bioenergy_steam_other_surviving, bioenergy_other_surviving_thermal, bioenergy_ccs, geothermal]
+  shedding_carriers: [load_shedding]
+  virtual_carriers: [external_market, EXTERNAL_VIRTUAL_SUPPLY]
+  residual_carriers: [EXTERNAL_VIRTUAL_SUPPLY]
+  auxiliary_carriers: [water_energy, spillage]
+  p2x_carrier_prefix: p2x_flexible_
+  p2x_sign: -1
+  store_carriers: {battery_energy: BESS, water_energy: HYDRO_OR_PHS_BY_ACCEPTED_CLASS}
+  link_roles: {internal_transfer: ITALIAN_INTERZONAL, external_trade: EXTERNAL_PRICE_TAKING, corsica_hub: CORSICA_BOUNDARY_HUB, battery_energy: BESS_CONVERSION, water_energy: HYDRO_PHS_CONVERSION}

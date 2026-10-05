@@ -1,0 +1,19 @@
+[console_scripts]
+mem-audit-sources = mem_model.audit_sources:main
+mem-build-all-networks = mem_model.build_all_networks:main
+mem-build-network = mem_model.build_network:main
+mem-build-profiles = mem_model.build_profiles:main
+mem-build-stage-a-operating = mem_model.stage_a.operating_base:main
+mem-build-stage-a-static = mem_model.stage_a.static_inputs:main
+mem-build-stage-a-temporal = mem_model.stage_a.temporal_2019:main
+mem-build-stage-a-topology = mem_model.stage_a.topology:main
+mem-build-stage-b-2040-runtime = mem_model.stage_b_2040_runtime:main
+mem-report-canonical = mem_model.reporting.canonical_results:main
+mem-solve-scenario = mem_model.solve_scenario:main
+mem-solve-smoke = mem_model.solve_smoke:main
+mem-stage-a-manual = mem_model.stage_a.execution:main
+mem-validate = mem_model.validate:main
+mem-validate-runtime = mem_model.validate_runtime:main
+mem-validate-stage-a-operating = mem_model.stage_a.operating_validation:main
+mem-validate-stage-a-temporal = mem_model.stage_a.temporal_validation:main
+mem-validate-stage-a-topology = mem_model.stage_a.topology_validation:main

@@ -1,0 +1,6 @@
+check_id,description,observed,expected,difference,status,notes
+ETX7B3-QA-12,"All VRE p_max_pu values are finite and bounded by [0,1]",min=0.0; max=0.9955357142857144; profiles=30,finite; -1e-10 <= value <= 1+1e-10,,PASS,
+ETX7B3-QA-13,No required VRE profile is unintentionally all zero,[],[],,PASS,
+ETX7B3-QA-15,"All required hydro temporal inputs are finite, non-negative and normalized",profiles=14; min_sum=0.9999999999999999; max_sum=1.0,each annual shape sum=1,,PASS,
+ETX7B3-QA-16,PHS receives no fictitious or duplicate natural inflow,"['HYDRO_BASIN_PONDAGE', 'HYDRO_NON_PHS_UNSPLIT', 'HYDRO_RESERVOIR', 'HYDRO_RUN_OF_RIVER', 'HYDRO_SMALL_UNSPLIT']",no PHS/pumped class,,PASS,
+ETX7B3-QA-17,"Italy run-of-river, basin/pondage and reservoir temporal classes remain distinct","['HYDRO_BASIN_PONDAGE', 'HYDRO_RESERVOIR', 'HYDRO_RUN_OF_RIVER']","['HYDRO_BASIN_PONDAGE', 'HYDRO_RESERVOIR', 'HYDRO_RUN_OF_RIVER']",,PASS,

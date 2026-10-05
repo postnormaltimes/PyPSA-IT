@@ -1,0 +1,25 @@
+schema_version: MEM_CANONICAL_MARGINAL_REGIME_V1
+methodology: LEXICOGRAPHIC_REGIME_V1
+status: CANONICAL_ROUTINE
+indicator: Model-implied marginal price-setting regime
+producer: mem_model.reporting.marginal_regime.produce
+root_input: CANONICAL/marginal_regime/validated_roots
+data_output: CANONICAL/marginal_regime/data
+figure_output: VIS_X1/marginal_regime
+comparison_output: COMPARISONS_VIS_X1/marginal_regime
+core_comparison_output: COMPARISONS_CORE/marginal_regime
+# Optional historical receipt path mapping. Destinations may be project-relative.
+# Preserved QA/receipt bodies keep their original provenance and hashes.
+# MEM_REPORTING_PATH_MAP can supply the same mapping as a JSON object at runtime.
+historical_root_map: {}
+missing_validated_roots: WAITING_FOR_VALIDATED_MARGINAL_ROOTS
+metric: represented_time_share
+heatmaps_routine: false
+# Approved aggregate palette; independent of any case's dispatch receipt.
+category_colors:
+  VRE: '#D4B23C'
+  Storage: '#9E77ED'
+  Thermal: '#8C564B'
+  Flexible demand: '#42B7B0'
+  External market: '#5A7D9A'
+  Market coupling / mixed: '#BDBDBD'

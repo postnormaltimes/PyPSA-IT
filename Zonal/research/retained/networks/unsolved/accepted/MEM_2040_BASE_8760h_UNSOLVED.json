@@ -1,0 +1,17 @@
+{
+  "year": 2040,
+  "scenario": "Base",
+  "snapshots": 8760,
+  "frozen_generator_rows": 135,
+  "frozen_generator_MW": 231439.00000000405,
+  "bess_rows": 28,
+  "bess_discharge_MW": 27266.666666666668,
+  "bess_energy_MWh": 166400.0,
+  "internal_directional_links": 20,
+  "external_contract_rows": 20,
+  "external_auxiliary_objective_baseline_EUR": 5318901421.585986,
+  "linopy_model_assembled": false,
+  "solver_invoked": false,
+  "qa_checks": 49,
+  "qa_failures": 0
+}

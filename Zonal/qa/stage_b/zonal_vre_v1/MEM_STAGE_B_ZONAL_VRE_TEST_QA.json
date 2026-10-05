@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "tests_passed": 45,
+  "tests_failed": 0,
+  "additional_capacity_summary_tests_passed": 5,
+  "additional_capacity_summary_tests_failed": 0,
+  "additional_command": ".\\.venv\\Scripts\\python.exe -m pytest tests\\test_stage_b_zonal_vre.py -k capacity_weather_summary -o addopts= -q --basetemp .pytest_tmp\\zonal_vre_capacity_summary",
+  "warnings": 1,
+  "warning": "Pre-existing NumPy/netCDF extension ndarray-size RuntimeWarning; geometry reads and export/reimport checks are separately validated.",
+  "command": ".\\.venv\\Scripts\\python.exe -m pytest tests\\test_stage_b_zonal_vre.py tests\\test_zonal_vre_spatial.py -o addopts= -q --basetemp .pytest_tmp\\zonal_vre_final_tests",
+  "scope": "Affected zonal VRE authority, geometry, profile, invariants and fail-closed tests only",
+  "optimization_model_constructed": false,
+  "solver_invocations": 0,
+  "weather_downloads": 0
+}

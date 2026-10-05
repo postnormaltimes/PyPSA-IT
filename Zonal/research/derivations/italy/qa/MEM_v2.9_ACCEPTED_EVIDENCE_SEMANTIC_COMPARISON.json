@@ -1,0 +1,3006 @@
+{
+  "generated_at": "2026-09-01T18:57:40.541Z",
+  "accepted_binary_sha256": "4a59c80bdf4da33d825ff94ea5617c03c325ca6fbc26233e7ed633ed6f910640",
+  "current_binary_path": "source://project-evidence/outputs/01a0595d-8cf1-7202-8ca1-1d3ab732e98e/Fase_5_PyPSA_Eur_Italia_2040_2050_Model_Ready_v2.9_MEM_ARCHITECTURE_REFINED.xlsx",
+  "current_binary_sha256": "c4caab305b3269c7b318025e715b4d1b4108cdcac023a27209d3808e2bc8490a",
+  "binary_match": false,
+  "evidence_path": "source://project-evidence/outputs/01a0595d-8cf1-7202-8ca1-1d3ab732e98e/Fase_5_PyPSA_Eur_Italia_2040_2050_Model_Ready_v2.9_MEM_ARCHITECTURE_REFINED.xlsx.inspect.ndjson",
+  "evidence_file_mtime_utc": "2026-08-31T20:28:27.646Z",
+  "current_binary_mtime_utc": "2026-09-01T15:04:03.000Z",
+  "accepted_evidence_counts": {
+    "sheets": 14,
+    "tables": 14,
+    "formulas": 611,
+    "computed_styles": 6164,
+    "threads": 4,
+    "conditional_formatting_rules": 3
+  },
+  "sheet_topology": {
+    "accepted_count": 14,
+    "current_count": 14,
+    "difference_count": 0,
+    "difference_sample": []
+  },
+  "table_values": {
+    "accepted_count": 14,
+    "difference_count": 0,
+    "difference_sample": []
+  },
+  "formulas_direct_ooxml_controlling": {
+    "accepted_anchor_count": 611,
+    "current_physical_formula_cell_count": 1031,
+    "difference_count": 0,
+    "difference_sample": [],
+    "interpretation": "Direct OOXML/openpyxl comparison is controlling. Artifact inspection can omit expanded/shared formula members and is retained only as a diagnostic."
+  },
+  "formulas_artifact_inspection_diagnostic_only": {
+    "accepted_count": 611,
+    "current_count": 597,
+    "difference_count": 14,
+    "difference_counts_by_sheet": {
+      "12_ASSUMPTIONS_QA": 14
+    },
+    "difference_property_counts": {
+      "<root>": 14
+    },
+    "difference_transition_counts": {
+      "<root>: {\"formula\":\"=IF(ABS(D48-E48)<=G48,\\\"PASS\\\",\\\"FAIL\\\")\"} -> null": 1,
+      "<root>: {\"formula\":\"=IF(ABS(D49-E49)<=G49,\\\"PASS\\\",\\\"FAIL\\\")\"} -> null": 1,
+      "<root>: {\"formula\":\"=IF(ABS(D50-E50)<=G50,\\\"PASS\\\",\\\"FAIL\\\")\"} -> null": 1,
+      "<root>: {\"formula\":\"=IF(ABS(D51-E51)<=G51,\\\"PASS\\\",\\\"FAIL\\\")\"} -> null": 1,
+      "<root>: {\"formula\":\"=IF(ABS(D52-E52)<=G52,\\\"PASS\\\",\\\"FAIL\\\")\"} -> null": 1,
+      "<root>: {\"formula\":\"=IF(ABS(D53-E53)<=G53,\\\"PASS\\\",\\\"FAIL\\\")\"} -> null": 1,
+      "<root>: {\"formula\":\"=IF(ABS(D54-E54)<=G54,\\\"PASS\\\",\\\"FAIL\\\")\"} -> null": 1,
+      "<root>: {\"formula\":\"=IF(ABS(D55-E55)<=G55,\\\"PASS\\\",\\\"FAIL\\\")\"} -> null": 1,
+      "<root>: {\"formula\":\"=IF(ABS(D56-E56)<=G56,\\\"PASS\\\",\\\"FAIL\\\")\"} -> null": 1,
+      "<root>: {\"formula\":\"=IF(ABS(D57-E57)<=G57,\\\"PASS\\\",\\\"FAIL\\\")\"} -> null": 1,
+      "<root>: {\"formula\":\"=IF(ABS(D58-E58)<=G58,\\\"PASS\\\",\\\"FAIL\\\")\"} -> null": 1,
+      "<root>: {\"formula\":\"=IF(ABS(D59-E59)<=G59,\\\"PASS\\\",\\\"FAIL\\\")\"} -> null": 1,
+      "<root>: {\"formula\":\"=IF(ABS(D60-E60)<=G60,\\\"PASS\\\",\\\"FAIL\\\")\"} -> null": 1,
+      "<root>: {\"formula\":\"=IF(ABS(D61-E61)<=G61,\\\"PASS\\\",\\\"FAIL\\\")\"} -> null": 1
+    },
+    "difference_sample": [
+      {
+        "key": "12_ASSUMPTIONS_QA|F48",
+        "accepted": {
+          "formula": "=IF(ABS(D48-E48)<=G48,\"PASS\",\"FAIL\")"
+        },
+        "current": null
+      },
+      {
+        "key": "12_ASSUMPTIONS_QA|F49",
+        "accepted": {
+          "formula": "=IF(ABS(D49-E49)<=G49,\"PASS\",\"FAIL\")"
+        },
+        "current": null
+      },
+      {
+        "key": "12_ASSUMPTIONS_QA|F50",
+        "accepted": {
+          "formula": "=IF(ABS(D50-E50)<=G50,\"PASS\",\"FAIL\")"
+        },
+        "current": null
+      },
+      {
+        "key": "12_ASSUMPTIONS_QA|F51",
+        "accepted": {
+          "formula": "=IF(ABS(D51-E51)<=G51,\"PASS\",\"FAIL\")"
+        },
+        "current": null
+      },
+      {
+        "key": "12_ASSUMPTIONS_QA|F52",
+        "accepted": {
+          "formula": "=IF(ABS(D52-E52)<=G52,\"PASS\",\"FAIL\")"
+        },
+        "current": null
+      },
+      {
+        "key": "12_ASSUMPTIONS_QA|F53",
+        "accepted": {
+          "formula": "=IF(ABS(D53-E53)<=G53,\"PASS\",\"FAIL\")"
+        },
+        "current": null
+      },
+      {
+        "key": "12_ASSUMPTIONS_QA|F54",
+        "accepted": {
+          "formula": "=IF(ABS(D54-E54)<=G54,\"PASS\",\"FAIL\")"
+        },
+        "current": null
+      },
+      {
+        "key": "12_ASSUMPTIONS_QA|F55",
+        "accepted": {
+          "formula": "=IF(ABS(D55-E55)<=G55,\"PASS\",\"FAIL\")"
+        },
+        "current": null
+      },
+      {
+        "key": "12_ASSUMPTIONS_QA|F56",
+        "accepted": {
+          "formula": "=IF(ABS(D56-E56)<=G56,\"PASS\",\"FAIL\")"
+        },
+        "current": null
+      },
+      {
+        "key": "12_ASSUMPTIONS_QA|F57",
+        "accepted": {
+          "formula": "=IF(ABS(D57-E57)<=G57,\"PASS\",\"FAIL\")"
+        },
+        "current": null
+      },
+      {
+        "key": "12_ASSUMPTIONS_QA|F58",
+        "accepted": {
+          "formula": "=IF(ABS(D58-E58)<=G58,\"PASS\",\"FAIL\")"
+        },
+        "current": null
+      },
+      {
+        "key": "12_ASSUMPTIONS_QA|F59",
+        "accepted": {
+          "formula": "=IF(ABS(D59-E59)<=G59,\"PASS\",\"FAIL\")"
+        },
+        "current": null
+      },
+      {
+        "key": "12_ASSUMPTIONS_QA|F60",
+        "accepted": {
+          "formula": "=IF(ABS(D60-E60)<=G60,\"PASS\",\"FAIL\")"
+        },
+        "current": null
+      },
+      {
+        "key": "12_ASSUMPTIONS_QA|F61",
+        "accepted": {
+          "formula": "=IF(ABS(D61-E61)<=G61,\"PASS\",\"FAIL\")"
+        },
+        "current": null
+      }
+    ]
+  },
+  "computed_styles_normalized_for_equivalent_solid_fill_serializations": {
+    "accepted_count": 6164,
+    "current_count": 6164,
+    "difference_count": 264,
+    "difference_counts_by_sheet": {
+      "02_SCENARIOS": 58,
+      "04_GENERATION_BY_ZONE": 71,
+      "09_TECH_COSTS": 135
+    },
+    "difference_property_counts": {
+      "font.fontSize": 55,
+      "font.typeface": 264,
+      "numberFormat": 5
+    },
+    "difference_transition_counts": {
+      "font.fontSize: 11 -> 9": 55,
+      "font.typeface: \"Carlito\" -> \"Aptos\"": 264,
+      "numberFormat: \"0.00%\" -> null": 5
+    },
+    "difference_sample": [
+      {
+        "key": "02_SCENARIOS|A31",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "E87500"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "bold": true,
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "FFFFFF"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "left",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "E87500"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "bold": true,
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "FFFFFF"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "left",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|A32",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "0F5C5E"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "bold": true,
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "FFFFFF"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "center",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "0F5C5E"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "bold": true,
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "FFFFFF"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "center",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|A33",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|A34",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|A35",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|A36",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|A37",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|A38",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|B31",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "E87500"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "bold": true,
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "FFFFFF"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "left",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "E87500"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "bold": true,
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "FFFFFF"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "left",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|B32",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "0F5C5E"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "bold": true,
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "FFFFFF"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "center",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "0F5C5E"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "bold": true,
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "FFFFFF"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "center",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|B33",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "numberFormat": "0.0000",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "numberFormat": "0.0000",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|B34",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "numberFormat": "0.0000",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "numberFormat": "0.0000",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|B35",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "numberFormat": "0.0000",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "numberFormat": "0.0000",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|B36",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "numberFormat": "0.0000",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "numberFormat": "0.0000",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|B37",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "numberFormat": "0.0000",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "numberFormat": "0.0000",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|B38",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "numberFormat": "0.0000",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "numberFormat": "0.0000",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|C31",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "E87500"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "bold": true,
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "FFFFFF"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "left",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "E87500"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "bold": true,
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "FFFFFF"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "left",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|C32",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "0F5C5E"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "bold": true,
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "FFFFFF"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "center",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "0F5C5E"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "bold": true,
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "FFFFFF"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "center",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|C33",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|C34",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|C35",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|C36",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|C37",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "FFFFFF"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|C38",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "D9EEF7"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "1F2933"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "general",
+          "wrapText": true
+        }
+      },
+      {
+        "key": "02_SCENARIOS|D31",
+        "accepted": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "E87500"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "bold": true,
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "FFFFFF"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Carlito"
+          },
+          "horizontalAlignment": "left",
+          "wrapText": true
+        },
+        "current": {
+          "border": {
+            "bottom": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "left": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "right": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            },
+            "top": {
+              "color": {
+                "type": 1,
+                "value": "C9D2DA"
+              },
+              "style": "thin"
+            }
+          },
+          "fill": {
+            "color": {
+              "type": 1,
+              "value": "E87500"
+            },
+            "gradientStops": [],
+            "pictureEffects": []
+          },
+          "font": {
+            "bold": true,
+            "fill": {
+              "color": {
+                "type": 1,
+                "value": "FFFFFF"
+              },
+              "gradientStops": [],
+              "pictureEffects": []
+            },
+            "fontSize": 11,
+            "typeface": "Aptos"
+          },
+          "horizontalAlignment": "left",
+          "wrapText": true
+        }
+      }
+    ]
+  },
+  "threads": {
+    "accepted_count": 4,
+    "current_count": 4,
+    "difference_count": 0,
+    "difference_counts_by_sheet": {},
+    "difference_property_counts": {},
+    "difference_transition_counts": {},
+    "difference_sample": []
+  },
+  "conditional_formatting": {
+    "accepted_count": 3,
+    "current_count": 3,
+    "difference_count": 0,
+    "difference_counts_by_sheet": {},
+    "difference_property_counts": {},
+    "difference_transition_counts": {},
+    "difference_sample": []
+  },
+  "all_available_pre_modification_semantic_evidence_matches": false,
+  "provenance_decision": "BINARY_AND_SEMANTIC_EVIDENCE_MISMATCH; DO_NOT_PROMOTE"
+}

@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mem-italy-market-model"
+version = "0.1.0"
+description = "Independent seven-zone fixed-capacity MEM market model"
+requires-python = "==3.11.*"
+dependencies = [
+  "pypsa==1.2.3",
+  "atlite==0.6.1",
+  "linopy==0.7.0",
+  "pandas==2.3.3",
+  "openpyxl==3.1.5",
+  "numpy==2.4.6",
+  "xarray==2025.6.1",
+  "pyarrow>=18",
+  "PyYAML>=6",
+  "highspy>=1.12",
+  "gurobipy==13.0.3",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+mem-audit-sources = "mem_model.audit_sources:main"
+mem-build-stage-a-static = "mem_model.stage_a.static_inputs:main"
+mem-build-stage-a-temporal = "mem_model.stage_a.temporal_2019:main"
+mem-validate-stage-a-temporal = "mem_model.stage_a.temporal_validation:main"
+mem-build-stage-a-operating = "mem_model.stage_a.operating_base:main"
+mem-validate-stage-a-operating = "mem_model.stage_a.operating_validation:main"
+mem-build-stage-a-topology = "mem_model.stage_a.topology:main"
+mem-validate-stage-a-topology = "mem_model.stage_a.topology_validation:main"
+mem-stage-a-manual = "mem_model.stage_a.execution:main"
+mem-build-profiles = "mem_model.build_profiles:main"
+mem-validate-runtime = "mem_model.validate_runtime:main"
+mem-build-network = "mem_model.build_network:main"
+mem-build-all-networks = "mem_model.build_all_networks:main"
+mem-build-stage-b-2040-runtime = "mem_model.stage_b_2040_runtime:main"
+mem-report-canonical = "mem_model.reporting.canonical_results:main"
+mem-validate = "mem_model.validate:main"
+mem-solve-smoke = "mem_model.solve_smoke:main"
+mem-solve-scenario = "mem_model.solve_scenario:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["src"]

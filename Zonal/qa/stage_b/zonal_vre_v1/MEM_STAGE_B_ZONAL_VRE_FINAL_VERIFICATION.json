@@ -1,0 +1,20 @@
+{
+  "state": "STAGE_B_ZONAL_VRE_CORRECTION_PASS",
+  "next_phase": "V2B_PREPARATION_REQUIRED",
+  "hydro_review": "HYDRO_METHODOLOGY_REVIEW_REQUIRED",
+  "production_state": "PRODUCTION_NOT_EXECUTED",
+  "manifest_sha256": "7a2a3e9d8f183a3b4abd014ce5a9f9e468189db9327d263e8fb151633ec64694",
+  "manifest_members_verified": 46,
+  "series_verified": 21,
+  "pairwise_comparisons": 63,
+  "unsolved_derivatives_verified": 6,
+  "runtime_network_reconciliations": 168,
+  "all_non_VRE_model_data_exact": true,
+  "scenario_zone_profile_QA_rows_verified": 126,
+  "accepted_recovery_audit_reused_not_repeated": true,
+  "parent_hashes_unchanged": true,
+  "optimization_model_constructed": false,
+  "solver_invocations": 0,
+  "production_results_modified": 0,
+  "weather_downloads": 0
+}

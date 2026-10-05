@@ -1,0 +1,160 @@
+{
+  "state": "NETWORK_V2B_PASS",
+  "packages": [
+    {
+      "year": 2040,
+      "scenario": "Base",
+      "parent": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2040_BASE_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+      "parent_sha256": "b99d066cf1e9bb6e6b96aa4e505e8870fd4dcbb34cd7c0872bfabacc417195fd",
+      "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_BASE_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+      "sha256": "05da8f0e635f2991a7b16666e80e69be4cda3d2f68ec64bacf9de2e99566c318",
+      "QA": {
+        "status": "PASS",
+        "converted_corridors": 20,
+        "retained_corridors": 0,
+        "legacy_links_removed": 40,
+        "signed_links_added": 20,
+        "non_target_model_objects": "EXACT_MATCH",
+        "interval_snapshots_checked": 175200,
+        "maximum_absolute_directional_MW_difference": 0.0,
+        "CORS_bus_and_attachments_preserved": true,
+        "gross_counterflow_degree_removed": true,
+        "optimization_model_constructed": false,
+        "production_optimization_executed": false,
+        "production_solver_invocations": 0
+      }
+    },
+    {
+      "year": 2040,
+      "scenario": "High",
+      "parent": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2040_HIGH_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+      "parent_sha256": "b9f337c4e3f04451bfc234e6542e0b1da8a6ad99b43ac78fc65060b32faa76b7",
+      "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_HIGH_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+      "sha256": "997525cc1773d99fb493202bc6e3a15b51210a28b0c2a1d6784a2abd9c88dd1d",
+      "QA": {
+        "status": "PASS",
+        "converted_corridors": 20,
+        "retained_corridors": 0,
+        "legacy_links_removed": 40,
+        "signed_links_added": 20,
+        "non_target_model_objects": "EXACT_MATCH",
+        "interval_snapshots_checked": 175200,
+        "maximum_absolute_directional_MW_difference": 0.0,
+        "CORS_bus_and_attachments_preserved": true,
+        "gross_counterflow_degree_removed": true,
+        "optimization_model_constructed": false,
+        "production_optimization_executed": false,
+        "production_solver_invocations": 0
+      }
+    },
+    {
+      "year": 2040,
+      "scenario": "Slow",
+      "parent": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2040_SLOW_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+      "parent_sha256": "cd1d10aba554a878c2c05257ab3aa308504f6709e27f479cf89dccdfe360946b",
+      "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2040_SLOW_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+      "sha256": "3488c7da1dac765a35c34f0e4623330f0d1a5717a61c275614125568ecec5535",
+      "QA": {
+        "status": "PASS",
+        "converted_corridors": 20,
+        "retained_corridors": 0,
+        "legacy_links_removed": 40,
+        "signed_links_added": 20,
+        "non_target_model_objects": "EXACT_MATCH",
+        "interval_snapshots_checked": 175200,
+        "maximum_absolute_directional_MW_difference": 0.0,
+        "CORS_bus_and_attachments_preserved": true,
+        "gross_counterflow_degree_removed": true,
+        "optimization_model_constructed": false,
+        "production_optimization_executed": false,
+        "production_solver_invocations": 0
+      }
+    },
+    {
+      "year": 2050,
+      "scenario": "Base",
+      "parent": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2050_BASE_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+      "parent_sha256": "606b9bf3351cf7307b4fb2e9eb781dcb57377ecd3c1fc84fe3c62e15990fff16",
+      "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_BASE_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+      "sha256": "8a61a0e3c2c87738f38a22ee7e642daa5f229791fffd83b92185e727907fee8f",
+      "QA": {
+        "status": "PASS",
+        "converted_corridors": 20,
+        "retained_corridors": 0,
+        "legacy_links_removed": 40,
+        "signed_links_added": 20,
+        "non_target_model_objects": "EXACT_MATCH",
+        "interval_snapshots_checked": 175200,
+        "maximum_absolute_directional_MW_difference": 0.0,
+        "CORS_bus_and_attachments_preserved": true,
+        "gross_counterflow_degree_removed": true,
+        "optimization_model_constructed": false,
+        "production_optimization_executed": false,
+        "production_solver_invocations": 0
+      }
+    },
+    {
+      "year": 2050,
+      "scenario": "High",
+      "parent": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2050_HIGH_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+      "parent_sha256": "6fc9193fabb8987d12a099e890ec238582b2c3690f22809537db8e83cf2412ba",
+      "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_HIGH_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+      "sha256": "c8ca3ea220287e298447381299c4fdd93554d15782915e847f1076c815e92c6c",
+      "QA": {
+        "status": "PASS",
+        "converted_corridors": 20,
+        "retained_corridors": 0,
+        "legacy_links_removed": 40,
+        "signed_links_added": 20,
+        "non_target_model_objects": "EXACT_MATCH",
+        "interval_snapshots_checked": 175200,
+        "maximum_absolute_directional_MW_difference": 0.0,
+        "CORS_bus_and_attachments_preserved": true,
+        "gross_counterflow_degree_removed": true,
+        "optimization_model_constructed": false,
+        "production_optimization_executed": false,
+        "production_solver_invocations": 0
+      }
+    },
+    {
+      "year": 2050,
+      "scenario": "Slow",
+      "parent": "networks\\unsolved\\final_wind_hydro_v1\\MEM_2050_SLOW_FINAL_WIND_HYDRO_V1_8760h_UNSOLVED.nc",
+      "parent_sha256": "c57073abdf6a0cf41e236f5b81f3a6ef8b3f9fb28a1008d8f198dd1580b6ea13",
+      "path": "networks\\unsolved\\final_wind_hydro_signed_v1\\MEM_2050_SLOW_FINAL_WIND_HYDRO_SIGNED_V1_8760h_UNSOLVED.nc",
+      "sha256": "cf3485c1f943c753b7ff582b792bcacdb261651cde0e5cb36d9d470078e7794f",
+      "QA": {
+        "status": "PASS",
+        "converted_corridors": 20,
+        "retained_corridors": 0,
+        "legacy_links_removed": 40,
+        "signed_links_added": 20,
+        "non_target_model_objects": "EXACT_MATCH",
+        "interval_snapshots_checked": 175200,
+        "maximum_absolute_directional_MW_difference": 0.0,
+        "CORS_bus_and_attachments_preserved": true,
+        "gross_counterflow_degree_removed": true,
+        "optimization_model_constructed": false,
+        "production_optimization_executed": false,
+        "production_solver_invocations": 0
+      }
+    }
+  ],
+  "tests": {
+    "command": "pytest tests/test_final_network_signed.py tests/test_stage_b_2040_topology.py -o addopts= -q",
+    "passed": 35,
+    "new_N_tests": 29,
+    "legacy_topology_tests": 6,
+    "optimizer_invocations": 0,
+    "optimization_models_constructed": 0
+  },
+  "proof": "0<=f_AB<=F_AB;0<=f_BA<=F_BA projects exactly to -F_BA<=net=f_AB-f_BA<=F_AB; reverse lifting is max(net,0),max(-net,0).",
+  "canonical_flow": "NET_FLOW_A_TO_B_MW",
+  "canonical_orientation": "LEXICOGRAPHIC_ENDPOINTS",
+  "eligible_constraints_removed": 0,
+  "accepted_directional_MW_changed": false,
+  "CORS_retained": true,
+  "optimization_model_constructed": false,
+  "production_optimization_executed": false,
+  "production_solver_invocations": 0
+}

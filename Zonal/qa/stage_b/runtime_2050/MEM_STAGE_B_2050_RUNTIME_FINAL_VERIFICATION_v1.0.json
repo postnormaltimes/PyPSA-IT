@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "runtime_manifest_sha256": "e7f224d4d33fe8b7262e3974db1cb85d250279febccbc689a13d16acf472a993",
+  "runtime_member_hashes": {
+    "load_hourly.parquet": "df290399357679b7fb62a51fb15525372bdffcb17052ddd18378fcf3b2b02014",
+    "generator_availability_hourly.parquet": "d95892eca5838c485ba82af8b7c443c64df270f8163550f6242489285941db5d",
+    "hydro_inflow_hourly.parquet": "e98e3f6671d12e8f6498631354b47222b5507a1701ed6a9558487126123ab277",
+    "hydro_runtime_parameters.csv": "8ac14bce4ef45167cbaeb84d3b3c2fe65c8077349126728bb6aee35232af5eaa",
+    "external_prices_hourly.parquet": "ea452568013e6e1e5c8e98468b0b2eb2474b067051e1ac72bf776098e84c99f1"
+  },
+  "member_row_counts": {
+    "load_hourly.parquet": 183960,
+    "hydro_inflow_hourly.parquet": 630720,
+    "generator_availability_hourly.parquet": 2785680,
+    "hydro_runtime_parameters.csv": 60,
+    "external_prices_hourly.parquet": 210240
+  },
+  "deterministic_rebuild": true,
+  "qa_checks": 79,
+  "reconciliation_rows": 384,
+  "b10_2050": {
+    "status": "PASS",
+    "receipt_sha256": "d57af4925972ef125e5a7b0de0d2de51f9c361a4a7f59bdf3608695618ff0604",
+    "manifest_sha256": "ac3f242338a289da740801a6b16f924e3fecf45ed17fe4f55487d356b8852fa5",
+    "manifest_members": 3,
+    "adapter_sha256": "ea452568013e6e1e5c8e98468b0b2eb2474b067051e1ac72bf776098e84c99f1",
+    "source": "ETX-7B9H",
+    "rows": 210240
+  },
+  "accepted_2040_non_regression": {
+    "status": "PASS",
+    "state_sha256": "e25414d9f366d0d9ce8fd509c244d7f946f45c96e8c57ad42b29b0559940f7d8",
+    "manifest_sha256": "5baae9bc065221463a422c2835a09dbfb4bc7b1e8b97902f34502d4d7ea9a63b",
+    "members": {
+      "load_hourly.parquet": "b8e8d1c3b1b961737c281a6eceac2436676484785760681def9d0af7773cde25",
+      "generator_availability_hourly.parquet": "00592a83cefa254784e14ac3ecc550302d2e5b3f3f0be89c1d05471475dd816c",
+      "hydro_inflow_hourly.parquet": "1666c14d3910b9a5e3a694a04d2493c312c43e0346a2cfab4fc98f7fd6774c57",
+      "hydro_runtime_parameters.csv": "3ed06811f88073889920815a5a21ae11cdfb52e1c229902f797b3d9db4602d2f",
+      "external_prices_hourly.parquet": "9a1811793adbf0e0e91de062b99d7a2d83e72c4d2e294b8f591ad2f19949993a"
+    }
+  },
+  "production_optimization_executed": false
+}

@@ -1,0 +1,10 @@
+relative_path,change_type,purpose
+config/stage_a_perimeter_closure_final_mt_tn_2050.yaml,NEW,"B9H frozen parent, sizing, formulation, execution and governance contract"
+src/mem_model/stage_a/perimeter_closure_final_mt_tn.py,NEW,"Preparation, single solve, diagnostics, receipt and delivery packaging"
+tests/test_stage_a_perimeter_closure_final_mt_tn.py,NEW,"Focused parent immutability, capacity, structure, LP and lock tests"
+docs/runbooks/ETX7B9H_RUNBOOK.md,NEW,Single-run and no-successor operator runbook
+docs/MEM_ETX7B9H_IMPLEMENTATION_SCOPE.md,NEW,Human-readable implementation delta
+docs/MEM_ETX7B9H_2050_FINAL_MT_TN_CLOSURE_HANDOFF.md,NEW,Completed result handoff
+config/stage_a_production_price_sources.yaml,MODIFIED,B9H pending-review candidate; B9G immutable parent
+config/approval_gates.yaml,MODIFIED,B9H completed; no B9I/B10/Stage-B authorization
+docs/MEM_STAGE_A_CURRENT_STATE.md,MODIFIED,Current state advanced to B9H technical pass pending review

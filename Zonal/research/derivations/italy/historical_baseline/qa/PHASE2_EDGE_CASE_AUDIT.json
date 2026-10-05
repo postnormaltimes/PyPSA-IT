@@ -1,0 +1,632 @@
+{
+  "capacity_duplicate_reconciliation": {
+    "raw_source_sum_MW": 60331.82927,
+    "exact_duplicate_normalized_sum_MW": 60330.37427,
+    "independent_terna_published_control_MW_rounded_0_1": 60330.4,
+    "exact_duplicate_group_count": 19,
+    "exact_duplicate_groups": [
+      {
+        "visible_key": "2024 | emilia romagna | bologna | cogenerative | celle combustibili con cogenerazione",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.32,
+        "raw_group_sum_MW": 0.64,
+        "normalized_group_sum_MW": 0.32,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | emilia romagna | modena | cogenerative | celle combustibili con cogenerazione",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.001,
+        "raw_group_sum_MW": 0.002,
+        "normalized_group_sum_MW": 0.001,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | emilia romagna | modena | non cogenerative | celle combustibili",
+        "row_count": 2,
+        "efficient_power_MW_each": 1,
+        "raw_group_sum_MW": 2,
+        "normalized_group_sum_MW": 1,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | friuli venezia giulia | udine | non cogenerative | celle combustibili",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.002,
+        "raw_group_sum_MW": 0.004,
+        "normalized_group_sum_MW": 0.002,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | lombardia | brescia | cogenerative | celle combustibili con cogenerazione",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.006,
+        "raw_group_sum_MW": 0.012,
+        "normalized_group_sum_MW": 0.006,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | lombardia | mantova | cogenerative | celle combustibili con cogenerazione",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.001,
+        "raw_group_sum_MW": 0.002,
+        "normalized_group_sum_MW": 0.001,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | lombardia | milano | non cogenerative | celle combustibili",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.004,
+        "raw_group_sum_MW": 0.008,
+        "normalized_group_sum_MW": 0.004,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | lombardia | milano | cogenerative | celle combustibili con cogenerazione",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.016,
+        "raw_group_sum_MW": 0.032,
+        "normalized_group_sum_MW": 0.016,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | lombardia | varese | cogenerative | celle combustibili con cogenerazione",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.007,
+        "raw_group_sum_MW": 0.014,
+        "normalized_group_sum_MW": 0.007,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | marche | ancona | non cogenerative | celle combustibili",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.009,
+        "raw_group_sum_MW": 0.018,
+        "normalized_group_sum_MW": 0.009,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | marche | macerata | cogenerative | celle combustibili con cogenerazione",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.001,
+        "raw_group_sum_MW": 0.002,
+        "normalized_group_sum_MW": 0.001,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | piemonte | cuneo | cogenerative | celle combustibili con cogenerazione",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.004,
+        "raw_group_sum_MW": 0.008,
+        "normalized_group_sum_MW": 0.004,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | piemonte | torino | cogenerative | celle combustibili con cogenerazione",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.004,
+        "raw_group_sum_MW": 0.008,
+        "normalized_group_sum_MW": 0.004,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | puglia | taranto | non cogenerative | celle combustibili",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.002,
+        "raw_group_sum_MW": 0.004,
+        "normalized_group_sum_MW": 0.002,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | puglia | taranto | cogenerative | celle combustibili con cogenerazione",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.002,
+        "raw_group_sum_MW": 0.004,
+        "normalized_group_sum_MW": 0.002,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | trentino alto adige | trento | cogenerative | celle combustibili con cogenerazione",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.034,
+        "raw_group_sum_MW": 0.068,
+        "normalized_group_sum_MW": 0.034,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | trentino alto adige | trento | non cogenerative | celle combustibili",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.038,
+        "raw_group_sum_MW": 0.076,
+        "normalized_group_sum_MW": 0.038,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | veneto | padova | cogenerative | celle combustibili con cogenerazione",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.002,
+        "raw_group_sum_MW": 0.004,
+        "normalized_group_sum_MW": 0.002,
+        "source_rows_identical": true
+      },
+      {
+        "visible_key": "2024 | veneto | treviso | cogenerative | celle combustibili con cogenerazione",
+        "row_count": 2,
+        "efficient_power_MW_each": 0.002,
+        "raw_group_sum_MW": 0.004,
+        "normalized_group_sum_MW": 0.002,
+        "source_rows_identical": true
+      }
+    ]
+  },
+  "fuel_cell_production_exception_reconstruction": {
+    "exception_group_count": 8,
+    "structural_rule_pass_count": 8,
+    "structural_rule_fail_count": 0,
+    "inferred_total_netta_GWh": 1.1487043,
+    "groups": [
+      {
+        "year": 2019,
+        "visible_key": "2019 | piemonte | torino | cogenerative | celle combustibili con cogenerazione",
+        "region": "Piemonte",
+        "province": "Torino",
+        "category": "Cogenerative",
+        "subcategory": "Celle combustibili con cogenerazione",
+        "values_GWh_sorted": [
+          0,
+          0,
+          0.213954,
+          0.216426
+        ],
+        "zero_count": 2,
+        "positive_count": 2,
+        "structural_rule_pass": true,
+        "inferred_group_netta_GWh": 0.213954,
+        "inferred_group_lorda_GWh": 0.216426,
+        "method": "TWO_ZERO_INACTIVE_PAIR_PLUS_SORTED_POSITIVE_ACTIVE_PAIR"
+      },
+      {
+        "year": 2019,
+        "visible_key": "2019 | trentino alto adige | trento | cogenerative | celle combustibili con cogenerazione",
+        "region": "Trentino-Alto Adige",
+        "province": "Trento",
+        "category": "Cogenerative",
+        "subcategory": "Celle combustibili con cogenerazione",
+        "values_GWh_sorted": [
+          0,
+          0,
+          0.1812861,
+          0.181716
+        ],
+        "zero_count": 2,
+        "positive_count": 2,
+        "structural_rule_pass": true,
+        "inferred_group_netta_GWh": 0.1812861,
+        "inferred_group_lorda_GWh": 0.181716,
+        "method": "TWO_ZERO_INACTIVE_PAIR_PLUS_SORTED_POSITIVE_ACTIVE_PAIR"
+      },
+      {
+        "year": 2020,
+        "visible_key": "2020 | piemonte | torino | cogenerative | celle combustibili con cogenerazione",
+        "region": "Piemonte",
+        "province": "Torino",
+        "category": "Cogenerative",
+        "subcategory": "Celle combustibili con cogenerazione",
+        "values_GWh_sorted": [
+          0,
+          0,
+          0.123584,
+          0.125124
+        ],
+        "zero_count": 2,
+        "positive_count": 2,
+        "structural_rule_pass": true,
+        "inferred_group_netta_GWh": 0.123584,
+        "inferred_group_lorda_GWh": 0.125124,
+        "method": "TWO_ZERO_INACTIVE_PAIR_PLUS_SORTED_POSITIVE_ACTIVE_PAIR"
+      },
+      {
+        "year": 2020,
+        "visible_key": "2020 | trentino alto adige | trento | cogenerative | celle combustibili con cogenerazione",
+        "region": "Trentino-Alto Adige",
+        "province": "Trento",
+        "category": "Cogenerative",
+        "subcategory": "Celle combustibili con cogenerazione",
+        "values_GWh_sorted": [
+          0,
+          0,
+          0.2381172,
+          0.239478
+        ],
+        "zero_count": 2,
+        "positive_count": 2,
+        "structural_rule_pass": true,
+        "inferred_group_netta_GWh": 0.2381172,
+        "inferred_group_lorda_GWh": 0.239478,
+        "method": "TWO_ZERO_INACTIVE_PAIR_PLUS_SORTED_POSITIVE_ACTIVE_PAIR"
+      },
+      {
+        "year": 2021,
+        "visible_key": "2021 | piemonte | torino | cogenerative | celle combustibili con cogenerazione",
+        "region": "Piemonte",
+        "province": "Torino",
+        "category": "Cogenerative",
+        "subcategory": "Celle combustibili con cogenerazione",
+        "values_GWh_sorted": [
+          0,
+          0,
+          0.009516,
+          0.012684
+        ],
+        "zero_count": 2,
+        "positive_count": 2,
+        "structural_rule_pass": true,
+        "inferred_group_netta_GWh": 0.009516,
+        "inferred_group_lorda_GWh": 0.012684,
+        "method": "TWO_ZERO_INACTIVE_PAIR_PLUS_SORTED_POSITIVE_ACTIVE_PAIR"
+      },
+      {
+        "year": 2021,
+        "visible_key": "2021 | trentino alto adige | trento | cogenerative | celle combustibili con cogenerazione",
+        "region": "Trentino-Alto Adige",
+        "province": "Trento",
+        "category": "Cogenerative",
+        "subcategory": "Celle combustibili con cogenerazione",
+        "values_GWh_sorted": [
+          0,
+          0,
+          0.231253,
+          0.232747
+        ],
+        "zero_count": 2,
+        "positive_count": 2,
+        "structural_rule_pass": true,
+        "inferred_group_netta_GWh": 0.231253,
+        "inferred_group_lorda_GWh": 0.232747,
+        "method": "TWO_ZERO_INACTIVE_PAIR_PLUS_SORTED_POSITIVE_ACTIVE_PAIR"
+      },
+      {
+        "year": 2022,
+        "visible_key": "2022 | piemonte | torino | cogenerative | celle combustibili con cogenerazione",
+        "region": "Piemonte",
+        "province": "Torino",
+        "category": "Cogenerative",
+        "subcategory": "Celle combustibili con cogenerazione",
+        "values_GWh_sorted": [
+          0,
+          0,
+          0.002846,
+          0.003792
+        ],
+        "zero_count": 2,
+        "positive_count": 2,
+        "structural_rule_pass": true,
+        "inferred_group_netta_GWh": 0.002846,
+        "inferred_group_lorda_GWh": 0.003792,
+        "method": "TWO_ZERO_INACTIVE_PAIR_PLUS_SORTED_POSITIVE_ACTIVE_PAIR"
+      },
+      {
+        "year": 2022,
+        "visible_key": "2022 | trentino alto adige | trento | cogenerative | celle combustibili con cogenerazione",
+        "region": "Trentino-Alto Adige",
+        "province": "Trento",
+        "category": "Cogenerative",
+        "subcategory": "Celle combustibili con cogenerazione",
+        "values_GWh_sorted": [
+          0,
+          0,
+          0.148148,
+          0.1493203
+        ],
+        "zero_count": 2,
+        "positive_count": 2,
+        "structural_rule_pass": true,
+        "inferred_group_netta_GWh": 0.148148,
+        "inferred_group_lorda_GWh": 0.1493203,
+        "method": "TWO_ZERO_INACTIVE_PAIR_PLUS_SORTED_POSITIVE_ACTIVE_PAIR"
+      }
+    ]
+  },
+  "renewable_capacity_blank_summary": [
+    {
+      "year": 2019,
+      "source": "Geotermoelettrico",
+      "source_rows": 121,
+      "numeric_rows": 3,
+      "blank_rows": 118,
+      "numeric_sum_MW": 767.19,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    },
+    {
+      "year": 2019,
+      "source": "Idrico",
+      "source_rows": 121,
+      "numeric_rows": 100,
+      "blank_rows": 21,
+      "numeric_sum_MW": 18566.07789,
+      "blank_rows_with_positive_generation": 13,
+      "blank_positive_generation_GWh": 16442.261057
+    },
+    {
+      "year": 2019,
+      "source": "Eolico",
+      "source_rows": 93,
+      "numeric_rows": 93,
+      "blank_rows": 0,
+      "numeric_sum_MW": 10679.46,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    },
+    {
+      "year": 2019,
+      "source": "Fotovoltaico",
+      "source_rows": 121,
+      "numeric_rows": 107,
+      "blank_rows": 14,
+      "numeric_sum_MW": 20865.275,
+      "blank_rows_with_positive_generation": 14,
+      "blank_positive_generation_GWh": 4814.01251
+    },
+    {
+      "year": 2019,
+      "source": "Bioenergie",
+      "source_rows": 107,
+      "numeric_rows": 107,
+      "blank_rows": 0,
+      "numeric_sum_MW": 3849.95665,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    },
+    {
+      "year": 2020,
+      "source": "Bioenergie",
+      "source_rows": 107,
+      "numeric_rows": 107,
+      "blank_rows": 0,
+      "numeric_sum_MW": 3841.27865,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    },
+    {
+      "year": 2020,
+      "source": "Geotermoelettrico",
+      "source_rows": 122,
+      "numeric_rows": 3,
+      "blank_rows": 119,
+      "numeric_sum_MW": 771.79,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    },
+    {
+      "year": 2020,
+      "source": "Fotovoltaico",
+      "source_rows": 122,
+      "numeric_rows": 107,
+      "blank_rows": 15,
+      "numeric_sum_MW": 21650.035,
+      "blank_rows_with_positive_generation": 15,
+      "blank_positive_generation_GWh": 5617.0965
+    },
+    {
+      "year": 2020,
+      "source": "Eolico",
+      "source_rows": 94,
+      "numeric_rows": 94,
+      "blank_rows": 0,
+      "numeric_sum_MW": 10870.622,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    },
+    {
+      "year": 2020,
+      "source": "Idrico",
+      "source_rows": 122,
+      "numeric_rows": 101,
+      "blank_rows": 21,
+      "numeric_sum_MW": 18719.98504,
+      "blank_rows_with_positive_generation": 14,
+      "blank_positive_generation_GWh": 17608.855877
+    },
+    {
+      "year": 2021,
+      "source": "Bioenergie",
+      "source_rows": 107,
+      "numeric_rows": 107,
+      "blank_rows": 0,
+      "numeric_sum_MW": 3837.82265,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    },
+    {
+      "year": 2021,
+      "source": "Eolico",
+      "source_rows": 94,
+      "numeric_rows": 94,
+      "blank_rows": 0,
+      "numeric_sum_MW": 11253.733,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    },
+    {
+      "year": 2021,
+      "source": "Geotermoelettrico",
+      "source_rows": 122,
+      "numeric_rows": 106,
+      "blank_rows": 16,
+      "numeric_sum_MW": 771.79,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    },
+    {
+      "year": 2021,
+      "source": "Fotovoltaico",
+      "source_rows": 122,
+      "numeric_rows": 107,
+      "blank_rows": 15,
+      "numeric_sum_MW": 22594.259,
+      "blank_rows_with_positive_generation": 15,
+      "blank_positive_generation_GWh": 5868.99509
+    },
+    {
+      "year": 2021,
+      "source": "Idrico",
+      "source_rows": 122,
+      "numeric_rows": 107,
+      "blank_rows": 15,
+      "numeric_sum_MW": 18809.27991,
+      "blank_rows_with_positive_generation": 14,
+      "blank_positive_generation_GWh": 15119.572963
+    },
+    {
+      "year": 2022,
+      "source": "Eolico",
+      "source_rows": 107,
+      "numeric_rows": 94,
+      "blank_rows": 13,
+      "numeric_sum_MW": 11820.187,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    },
+    {
+      "year": 2022,
+      "source": "Idrico",
+      "source_rows": 121,
+      "numeric_rows": 101,
+      "blank_rows": 20,
+      "numeric_sum_MW": 18932.78945,
+      "blank_rows_with_positive_generation": 14,
+      "blank_positive_generation_GWh": 8543.7
+    },
+    {
+      "year": 2022,
+      "source": "Fotovoltaico",
+      "source_rows": 121,
+      "numeric_rows": 107,
+      "blank_rows": 14,
+      "numeric_sum_MW": 25063.919,
+      "blank_rows_with_positive_generation": 14,
+      "blank_positive_generation_GWh": 5775.1
+    },
+    {
+      "year": 2022,
+      "source": "Bioenergie",
+      "source_rows": 107,
+      "numeric_rows": 107,
+      "blank_rows": 0,
+      "numeric_sum_MW": 3787.6803,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    },
+    {
+      "year": 2022,
+      "source": "Geotermoelettrico",
+      "source_rows": 121,
+      "numeric_rows": 3,
+      "blank_rows": 118,
+      "numeric_sum_MW": 771.79,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    },
+    {
+      "year": 2023,
+      "source": "Idrico",
+      "source_rows": 122,
+      "numeric_rows": 101,
+      "blank_rows": 21,
+      "numeric_sum_MW": 18942.42638,
+      "blank_rows_with_positive_generation": 15,
+      "blank_positive_generation_GWh": 12909.09723
+    },
+    {
+      "year": 2023,
+      "source": "Eolico",
+      "source_rows": 107,
+      "numeric_rows": 69,
+      "blank_rows": 38,
+      "numeric_sum_MW": 12306.975,
+      "blank_rows_with_positive_generation": 11,
+      "blank_positive_generation_GWh": 0.023795
+    },
+    {
+      "year": 2023,
+      "source": "Bioenergie",
+      "source_rows": 107,
+      "numeric_rows": 106,
+      "blank_rows": 1,
+      "numeric_sum_MW": 3815.6683,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    },
+    {
+      "year": 2023,
+      "source": "Geotermoelettrico",
+      "source_rows": 122,
+      "numeric_rows": 3,
+      "blank_rows": 119,
+      "numeric_sum_MW": 771.79,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    },
+    {
+      "year": 2023,
+      "source": "Fotovoltaico",
+      "source_rows": 122,
+      "numeric_rows": 107,
+      "blank_rows": 15,
+      "numeric_sum_MW": 30319.417,
+      "blank_rows_with_positive_generation": 15,
+      "blank_positive_generation_GWh": 6820.25944
+    },
+    {
+      "year": 2024,
+      "source": "Idrico",
+      "source_rows": 107,
+      "numeric_rows": 107,
+      "blank_rows": 0,
+      "numeric_sum_MW": 19324.42439,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    },
+    {
+      "year": 2024,
+      "source": "Eolico",
+      "source_rows": 107,
+      "numeric_rows": 68,
+      "blank_rows": 39,
+      "numeric_sum_MW": 12959.811,
+      "blank_rows_with_positive_generation": 9,
+      "blank_positive_generation_GWh": 0.019871
+    },
+    {
+      "year": 2024,
+      "source": "Bioenergie",
+      "source_rows": 107,
+      "numeric_rows": 107,
+      "blank_rows": 0,
+      "numeric_sum_MW": 3800.0923,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    },
+    {
+      "year": 2024,
+      "source": "Fotovoltaico",
+      "source_rows": 107,
+      "numeric_rows": 107,
+      "blank_rows": 0,
+      "numeric_sum_MW": 37002.14,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    },
+    {
+      "year": 2024,
+      "source": "Geotermoelettrico",
+      "source_rows": 107,
+      "numeric_rows": 107,
+      "blank_rows": 0,
+      "numeric_sum_MW": 771.79,
+      "blank_rows_with_positive_generation": 0,
+      "blank_positive_generation_GWh": 0
+    }
+  ]
+}

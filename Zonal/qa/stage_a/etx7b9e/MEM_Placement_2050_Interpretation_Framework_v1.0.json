@@ -1,0 +1,14 @@
+{
+  "schema_version": "MEM_PLACEMENT_2050_INTERPRETATION_FRAMEWORK_V1_0",
+  "status": "EVIDENCE_ONLY_PENDING_METHOD_REVIEW",
+  "A_PLACEMENT_HYPOTHESIS_SUPPORTED": "METHOD_REVIEW_ONLY",
+  "B_PLACEMENT_HELPS_BUT_DOES_NOT_RESOLVE": "METHOD_REVIEW_ONLY",
+  "C_BROADER_ADEQUACY_OR_MODEL_LIMITATION": "METHOD_REVIEW_ONLY",
+  "D_PLACEMENT_PROXY_TOO_INTERVENTIONIST": "METHOD_REVIEW_ONLY",
+  "numerical_auto_pass_thresholds": null,
+  "automatic_classification": false,
+  "automatic_successor_experiment": false,
+  "production_price_acceptance": "PENDING_METHOD_REVIEW",
+  "B10_authorized": false,
+  "Stage_B_authorized": false
+}

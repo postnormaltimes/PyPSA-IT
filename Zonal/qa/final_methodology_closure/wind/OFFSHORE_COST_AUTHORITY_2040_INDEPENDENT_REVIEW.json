@@ -1,0 +1,257 @@
+{
+  "schema_version": "MEM_OFFSHORE_COST_AUTHORITY_2040_INDEPENDENT_REVIEW_V1",
+  "review_date": "2026-10-01",
+  "state": "DIRECT_PUBLISHED_PINNED_2040_COST_AUTHORITY_SOURCE_REVIEW_PASS",
+  "scope": "Independent bounded review of lead-recovered official published 2040 output, exact tag reference, compiler and configuration. No upstream cost compilation or manual interpolation executed.",
+  "controlling_delta": "User explicitly accepts direct or native-compiled 2040 technology-data v0.14.0 authority; 2050 proxy is not default and diagnostic stress is not blocking where direct horizon authority exists.",
+  "pin": {
+    "repository": "PyPSA/technology-data",
+    "tag": "refs/tags/v0.14.0",
+    "resolved_object_type": "commit",
+    "resolved_commit": "efb1c45dee0b26e402fec66ce209c89474bc2d1f",
+    "tag_ref_original_url": "https://api.github.com/repos/PyPSA/technology-data/git/refs/tags/v0.14.0",
+    "matching_local_PyPSA_Eur_cost_dataset_version": "v0.14.0",
+    "evidence": "Recovered original GitHub tag_ref.json maps refs/tags/v0.14.0 directly to commit efb1c45dee0b26e402fec66ce209c89474bc2d1f. Local PyPSA-Eur accepted dataset index independently reviewed previously pins v0.14.0.",
+    "acquisition_scope": "Source files recovered by the lead from the official tag; independently read and byte-hashed here. This review does not claim compiler re-execution from all original workbooks."
+  },
+  "sources": [
+    {
+      "path": "runtime_sources/costs/technology_data_v0.14.0/costs_2040.csv",
+      "sha256": "d1bd7ac0e1e0a59c21ea955375e4d19d31383a1095d3c9014c6de2c11bbb5b2c",
+      "bytes": 277631,
+      "git_blob_sha1": "61c88a65a8aa06b6674646aaa87377b002f4f5c1",
+      "source_url": "https://raw.githubusercontent.com/PyPSA/technology-data/efb1c45dee0b26e402fec66ce209c89474bc2d1f/outputs/costs_2040.csv"
+    },
+    {
+      "path": "runtime_sources/costs/technology_data_v0.14.0/config.yaml",
+      "sha256": "c7a14f597cdeb6aabddc7773e1fec83bbd7c8a8d853503aa11a305ad4cc92280",
+      "bytes": 2148,
+      "git_blob_sha1": "84bbd09c98a7a121dbdd58aa80fc121596c228b5",
+      "source_url": "https://raw.githubusercontent.com/PyPSA/technology-data/efb1c45dee0b26e402fec66ce209c89474bc2d1f/config.yaml"
+    },
+    {
+      "path": "runtime_sources/costs/technology_data_v0.14.0/compile_cost_assumptions.py",
+      "sha256": "8697e3dc0d4295819c0e2a5a06491ba42a87e771e77e8e04635e80ff33524fd2",
+      "bytes": 165104,
+      "git_blob_sha1": "01ba8b2e249b16ee6cfb040c019a8a57ea6d67ea",
+      "source_url": "https://raw.githubusercontent.com/PyPSA/technology-data/efb1c45dee0b26e402fec66ce209c89474bc2d1f/scripts/compile_cost_assumptions.py"
+    },
+    {
+      "path": "runtime_sources/costs/technology_data_v0.14.0/tag_ref.json",
+      "sha256": "957bb0731aaccfd5266b97593457004256392e72d8ecab46b1a0850734923452",
+      "bytes": 353,
+      "git_blob_sha1": "c5f508a5f5600ec2d1e03b01dcc6669326412945",
+      "source_url": "https://api.github.com/repos/PyPSA/technology-data/git/refs/tags/v0.14.0"
+    }
+  ],
+  "native_year_support": {
+    "config_years": [
+      2020,
+      2025,
+      2030,
+      2035,
+      2040,
+      2045,
+      2050
+    ],
+    "direct_2040_published_output_exists": true,
+    "config_expectation": "",
+    "central_native_expectation": true,
+    "config_offwind_no_gridcosts": true,
+    "compiler_DEA_interpolation": {
+      "function": "get_data_DEA",
+      "source_path": "runtime_sources/costs/technology_data_v0.14.0/compile_cost_assumptions.py",
+      "lines": [
+        996,
+        1001,
+        1002,
+        1003,
+        1004,
+        1008
+      ],
+      "semantics": "For each source parameter row, upstream np.interp evaluates all configured target years from the available DEA year columns; remaining missing values are forward filled. Empty expectation retains the available central source-year columns instead of replacing them by a 2020/2050 uncertainty-endpoint path."
+    },
+    "compiler_manual_source_interpolation": {
+      "function": "add_manual_input",
+      "lines": [
+        2774,
+        2775,
+        2776,
+        2777,
+        2778,
+        2779,
+        2780,
+        2781,
+        2782,
+        2783,
+        2784
+      ],
+      "semantics": "Upstream native compiler evaluates configured years using np.interp over each manual source parameter's year/value rows. This is upstream technology-data compilation semantics, not a MEM hand interpolation of 2050."
+    },
+    "compiler_output_selection": {
+      "lines": [
+        4154,
+        4155,
+        4156,
+        4157
+      ],
+      "semantics": "Compiler loops over configured years, selects that year's parameter column, and writes the corresponding year-named published CSV."
+    },
+    "MEM_2050_proxy_used_for_2040": false,
+    "MEM_hand_interpolation_performed": false,
+    "acceptance": "Published outputs/costs_2040.csv from the accepted pinned tag is a native horizon authority; reproducing the upstream compiler is unnecessary when the published output exists."
+  },
+  "cost_structure": {
+    "offwind_generation_grid_connection_already_removed": true,
+    "subtraction_source": "get_data_DEA lines 861-864; config offwind_no_gridcosts=true",
+    "generation_description": "Published offwind investment explicitly states grid connection costs subtracted.",
+    "onshore_cost_positive_and_common_within_zone": true,
+    "onshore_ranking_remains_same_CF_priority": true,
+    "offshore_generation_station_submarine_and_underground_terms_required": true,
+    "offshore_accepted_carrier": "offwind-ac",
+    "local_native_discount_rate": 0.07,
+    "discount_rate_authority": "Unchanged local PyPSA-Eur technology discount-rate fill, not social_discountrate.",
+    "annualization_formula": "(r/(1-(1+r)^(-lifetime_years))+FOM_percent/100)*investment_normalized; nyears=1",
+    "annualized_once": true,
+    "no_second_inflation_adjustment_in_MEM": true,
+    "no_second_annualization_of_processed_costs": true,
+    "wind_parameters": [
+      {
+        "technology": "onwind",
+        "published_investment": 1305.8347,
+        "published_unit": "EUR/kW",
+        "investment_normalized_EUR_per_MW_or_MW_km": 1305834.7000000002,
+        "lifetime_years": 30,
+        "FOM_percent": 1.1858,
+        "discount_rate_local_native_fill": 0.07,
+        "annualized_full_year_cost": 120717.10992561084,
+        "original_currency_year_annotations": [
+          2015
+        ],
+        "source": "Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx",
+        "description": "20 Onshore turbines:  Nominal investment ",
+        "investment_2050_original": 1286.4669,
+        "FOM_2050_original": 1.1775
+      },
+      {
+        "technology": "offwind",
+        "published_investment": 1964.4169,
+        "published_unit": "EUR/kW_e, 2020",
+        "investment_normalized_EUR_per_MW_or_MW_km": 1964416.9,
+        "lifetime_years": 30,
+        "FOM_percent": 2.1762,
+        "discount_rate_local_native_fill": 0.07,
+        "annualized_full_year_cost": 201054.93354524614,
+        "original_currency_year_annotations": [
+          2020,
+          2015
+        ],
+        "source": "Danish Energy Agency, inputs/technology_data_for_el_and_dh.xlsx",
+        "description": "21 Offshore turbines:  Nominal investment [MEUR/MW_e, 2020] grid connection costs subtracted from investment costs",
+        "investment_2050_original": 1916.0913,
+        "FOM_2050_original": 2.1655
+      },
+      {
+        "technology": "offwind-ac-station",
+        "published_investment": 780,
+        "published_unit": "EUR/kWel",
+        "investment_normalized_EUR_per_MW_or_MW_km": 780000,
+        "lifetime_years": 40,
+        "FOM_percent": 1.5,
+        "discount_rate_local_native_fill": 0.07,
+        "annualized_full_year_cost": 70207.12832141604,
+        "original_currency_year_annotations": [
+          2025
+        ],
+        "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.8 el substations. Including onshore and offshore substation.",
+        "description": null,
+        "investment_2050_original": 710,
+        "FOM_2050_original": 1.5
+      },
+      {
+        "technology": "offwind-ac-connection-submarine",
+        "published_investment": 4130,
+        "published_unit": "EUR/MW/km",
+        "investment_normalized_EUR_per_MW_or_MW_km": 4130,
+        "lifetime_years": 40,
+        "FOM_percent": 2.5,
+        "discount_rate_local_native_fill": 0.07,
+        "annualized_full_year_cost": 413.0377435480106,
+        "original_currency_year_annotations": [
+          2025
+        ],
+        "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.7 el trans AC&DC cables.",
+        "description": null,
+        "investment_2050_original": 3750,
+        "FOM_2050_original": 2.5
+      },
+      {
+        "technology": "offwind-ac-connection-underground",
+        "published_investment": 4130,
+        "published_unit": "EUR/MW/km",
+        "investment_normalized_EUR_per_MW_or_MW_km": 4130,
+        "lifetime_years": 40,
+        "FOM_percent": 2.5,
+        "discount_rate_local_native_fill": 0.07,
+        "annualized_full_year_cost": 413.0377435480106,
+        "original_currency_year_annotations": [
+          2025
+        ],
+        "source": "Danish Energy Agency, Technology Data for Energy Transport (July 2025), https://ens.dk/en/analyses-and-statistics/technology-data-transport-energy, Excel datasheet: 1.7 el trans AC&DC cables.",
+        "description": null,
+        "investment_2050_original": 3750,
+        "FOM_2050_original": 2.5
+      }
+    ],
+    "native_2040_AC_length_factor": 1.25,
+    "native_2040_AC_landfall_km": 20,
+    "native_2040_AC_annual_site_intercept_EUR_per_MW_year": 281588.00545536244,
+    "native_2040_AC_annual_distance_slope_EUR_per_MW_km_year": 516.2971794350133,
+    "unit_validation": "Published generation/station investments are EUR/kW variants and normalize by 1000 to EUR/MW. Cable investments are EUR/MW/km. FOM is percent/year, lifetime is years; native siting uses full-year annualized cost / (8760 * accepted cell CF).",
+    "price_basis": {
+      "configured_published_output_eur_year": 2025,
+      "compiler_inflation_adjustment_call_lines": [
+        4250,
+        4251,
+        4252,
+        4253,
+        4254,
+        4255
+      ],
+      "compiler_semantics": "Before saving each year's output, compiler requests adjust_for_inflation for every technology using config eur_year=2025. Published currency_year and unit/description annotations still preserve original source years.",
+      "original_annotations": {
+        "onwind": 2015,
+        "offwind_generation": 2020,
+        "offshore_station_and_cables": 2025,
+        "legacy_common_offwind_VOM": 2015
+      },
+      "original_annotation_is_not_an_instruction_to_reinflate_published_values": true,
+      "clarification_of_prior_annotation_only_review": "New compiler/config evidence distinguishes upstream requested 2025-EUR output normalization from retained source currency-year annotations. No accepted 2050 numerical data changes follow from this clarification.",
+      "inflation_helper_reexecuted": false
+    }
+  },
+  "unchanged_2050": {
+    "path": "source://pypsa-eur/data/costs/archive/v0.14.0/costs_2050.csv",
+    "sha256": "8fde1021aed881bedd6f7f89cbc3614e662d74bb8758cfe9ad0feae5410abae8",
+    "matches_original_accepted_sha256": true,
+    "role": "Existing accepted direct native 2050 authority remains byte-identical; new 2040 authority supplies separate horizon coefficients.",
+    "proxy_for_2040_authorized_by_this_review": false
+  },
+  "diagnostic_governance": {
+    "stress_results_remain_visible": true,
+    "direct_2040_and_2050_horizon_authority_resolves_prior_cost_reuse_gap": true,
+    "common_generation_stress_is_diagnostic_when_direct_horizon_authority_exists": true,
+    "old_failed_stress_rows_not_relabelled_PASS": true,
+    "original_four_vs_eight_discretization_failures_not_relabelled_PASS": true
+  },
+  "limitations": "This bounded source review establishes published pin/year/parameter semantics, not the lead's updated 21 offshore allocation/profile outputs. Those affected outputs require their separate cached-transform verification.",
+  "boundaries": {
+    "cost_source_files_edited": false,
+    "cost_producer_edited": false,
+    "weather_reconverted": false,
+    "parent_networks_edited": false,
+    "production_model_constructed": false,
+    "production_optimization_executed": false,
+    "production_solver_invocations": 0
+  }
+}

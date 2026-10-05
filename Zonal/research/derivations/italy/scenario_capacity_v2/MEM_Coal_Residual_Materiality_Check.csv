@@ -1,0 +1,4 @@
+bound,allocation_method,unscaled_anchor_MW,scaling_factor_to_55GW,max_scaled_zone_technology_difference_MW,max_difference_cell,max_national_technology_share_difference_pp,max_technology,max_national_zone_share_difference_pp,max_zone,materiality_threshold_MW,materiality_threshold_share_pp,status
+BASELINE,158.78-MW NORD steam control residual,54208.864269999,1.014594213339,0,NOT_APPLICABLE,0,NOT_APPLICABLE,0,NOT_APPLICABLE,200,0.4,CONTROLLING_BASELINE
+BOUND_A_RELOCATE_TO_SARD,Relocate entire coal residual to SARD steam band,54208.864269999,1.014594213339,161.097269194,NORD|STEAM_OTHER_SURVIVING,0,,0.292904126,SARD,200,0.4,ACCEPTED_NON_MATERIAL_PROJECT_ALLOCATION
+BOUND_B_RELOCATE_TO_CSUD,Relocate entire coal residual to CSUD steam band,54208.864269999,1.014594213339,161.097269194,NORD|STEAM_OTHER_SURVIVING,0,,0.292904126,CSUD,200,0.4,ACCEPTED_NON_MATERIAL_PROJECT_ALLOCATION

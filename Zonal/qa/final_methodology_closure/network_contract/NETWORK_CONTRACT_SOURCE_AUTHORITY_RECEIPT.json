@@ -1,0 +1,91 @@
+{
+  "state": "NETWORK_CONTRACT_AUTHORITY_RECOVERED_PREPARATORY_EVIDENCE_ONLY",
+  "checks": {
+    "project_rows": 38,
+    "summary_rows": 40,
+    "excluded_project_ids": [
+      "546-P",
+      "563-P",
+      "732-P"
+    ],
+    "Slow_sum_directional_delta_MW": -15200.0,
+    "361_N_2036_to_2038_included": true,
+    "Tyrrhenian_East_and_West_included_in_Slow": true,
+    "2050_no_additional_Hypergrid_capacity": true,
+    "workbook": {
+      "directional_values_checked": 240,
+      "project_effect_rows_checked": 49,
+      "scenario_ids": [
+        "IT2040_SLOW",
+        "IT2040_BASE",
+        "IT2040_HIGH",
+        "IT2050_SLOW",
+        "IT2050_BASE",
+        "IT2050_HIGH"
+      ],
+      "cached_values_and_native_formula_links": "PASS"
+    },
+    "current_static_directions_checked": 240,
+    "current_static_drift_rows": 0
+  },
+  "sources": [
+    {
+      "path": "source://project-evidence/MEM_v2.8_NETWORK_DELAY_REGISTER.csv",
+      "sha256": "bd03901170d348a1d88885d9d092f1a2fb81a3861216c59737ff845a280112c2"
+    },
+    {
+      "path": "source://project-evidence/MEM_v2.8_SCENARIO_RULES.csv",
+      "sha256": "d1b1f6f159d34c56d127566ce5030a070e74543ef0dfb5de28db74bdba3b2305"
+    },
+    {
+      "path": "source://project-evidence/PyPSA_IT_2040_2050_SCENARIOS.xlsx",
+      "sha256": "2d34a54b25f60828d96dbb87af0df66f1ebe6e5585e1034158d9fdf8a9741ee7"
+    },
+    {
+      "path": "source://mem-model/pre_pypsa_inputs/MEM_Interzonal_Static_Contract.csv",
+      "sha256": "be590426cdeb00add24f4caef2b73cc527f503fa5c1c55be241448c6a3abb5bd"
+    },
+    {
+      "path": "source://mem-model/pre_pypsa_inputs/MEM_External_Interface_Static_Contract.csv",
+      "sha256": "d5e19a4036c7f462bec07ac96109b885b1ffc0437dfc922fa47f3e21926770d2"
+    },
+    {
+      "path": "source://project-evidence/MEM_v2.8_WORKBOOK_CHANGELOG.md",
+      "sha256": "7ab031538ee74cf4c7223eedb735a1011b7a4b4c75a93a3623773287109b4dac"
+    },
+    {
+      "path": "source://project-evidence/MEM_v2.8_QA_REPORT.md",
+      "sha256": "e264ff5d98e9a66b9bd1cf8f1d8e2d72aa8cf53c0a5c56fa4432466a4e410221"
+    },
+    {
+      "path": "source://project-evidence/03_PRIMARY_SOURCES/Terna_PdS_2025_Benefici_robustezza_rete.pdf",
+      "sha256": "8f5601552c9d5d4fac242a0413c55d41dd836033d9775771290b2221574f272c"
+    },
+    {
+      "path": "source://project-evidence/03_PRIMARY_SOURCES/Terna_PdS_2025_Esigenze_sviluppo_nuovi_progetti.pdf",
+      "sha256": "ee185e39f2b139e64d08124b5b406413d8790422d1b8b2d10ac62ba4302bc450"
+    },
+    {
+      "path": "source://project-evidence/03_PRIMARY_SOURCES/Documento_Descrizione_Scenari_2024.pdf",
+      "sha256": "1caa778f86ae6c70cbd5b636c8353f3f60b7edf20095d88a4a3568d5bbd23446"
+    }
+  ],
+  "official_source_locations": {
+    "S03": "Table2 printed p16/PDF p18; Figure3 printed p17/PDF p19",
+    "S05": "Hypergrid printed p32-33/PDF p34-35; foreign conditionality printed p52/PDF p54",
+    "DDS2024": "Figure11 printed p34: directional exchange floor"
+  },
+  "source_caveat_CALA_to_SICI": {
+    "official_Figure3_headline_MW": 4100,
+    "official_displayed_base_MW": 1550,
+    "Bolano_increment_MW": 500,
+    "Ionian_increment_MW": 2100,
+    "accepted_register_workbook_master_MW": 4150,
+    "treatment": "Retain explicit frozen 4150 MW arithmetic reconciliation; no new capacity choice"
+  },
+  "physical_project_rating_is_not_directional_TTC_increment": true,
+  "network_exports": 0,
+  "optimization_model_constructed": false,
+  "production_optimization_executed": false,
+  "production_solver_invocations": 0
+}

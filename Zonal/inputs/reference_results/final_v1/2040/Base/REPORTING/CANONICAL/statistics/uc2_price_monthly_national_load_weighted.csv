@@ -1,0 +1,13 @@
+month,load_weighted_mean_EUR_per_MWh,rigid_load_weighted_mean_EUR_per_MWh,rigid_load_plus_P2X_MWh,rigid_load_MWh,weighting_definition
+1,98.48240539818204,99.33987072635954,38632547.44878808,37206143.500868276,"UC rigid end-use load plus UC P2X withdrawal, objective duration weights"
+2,78.19811805812844,80.27482286918595,35243027.43252945,33160240.566556156,"UC rigid end-use load plus UC P2X withdrawal, objective duration weights"
+3,76.00859549286021,78.27047939611019,36224888.13199115,33979488.0141252,"UC rigid end-use load plus UC P2X withdrawal, objective duration weights"
+4,75.30024763932794,77.41456169728316,33810830.35195952,30840618.182774156,"UC rigid end-use load plus UC P2X withdrawal, objective duration weights"
+5,76.71157764692722,78.05250284090398,36052276.87459099,32362942.680477783,"UC rigid end-use load plus UC P2X withdrawal, objective duration weights"
+6,79.95214268374052,81.70655489484172,38203608.786673315,35750473.48415792,"UC rigid end-use load plus UC P2X withdrawal, objective duration weights"
+7,94.4481881480773,95.51755628010123,42550087.7185394,40589033.97978969,"UC rigid end-use load plus UC P2X withdrawal, objective duration weights"
+8,84.52003382156371,86.37269777318998,36524162.55324282,34330833.48377594,"UC rigid end-use load plus UC P2X withdrawal, objective duration weights"
+9,90.26777107880974,91.49204362386588,36033610.32948135,34210236.80128371,"UC rigid end-use load plus UC P2X withdrawal, objective duration weights"
+10,93.6589781386566,94.74538549179003,35049141.78134165,33361559.59430872,"UC rigid end-use load plus UC P2X withdrawal, objective duration weights"
+11,91.22837386753716,92.36105259253127,35412626.29588456,33000026.95405409,"UC rigid end-use load plus UC P2X withdrawal, objective duration weights"
+12,84.01406909317524,85.8762957301738,35263192.2949782,32708402.75782825,"UC rigid end-use load plus UC P2X withdrawal, objective duration weights"

@@ -1,0 +1,60 @@
+{
+  "2050_source_read_or_resolved": false,
+  "chronology_contiguous_hourly": true,
+  "chronology_timezone": "UTC_NORMALIZED_FROM_ACCEPTED_SOURCE_TIMESTAMPS",
+  "chronology_unique_hours": 8760,
+  "corsica_has_no_price_series": true,
+  "duplicate_required_market_timestamp_keys": 0,
+  "finite_prices": true,
+  "hashes": {
+    "market_prices_sha256": "595D6719DD6BB8EC16F665D67C5344C7B3E1279B0445CEF6AFFBD71D97A514A4",
+    "receipt_sha256": "C69ACBF941261BD37426EDCEDB1C14482977C2059427FEA1968008492E05F8C0",
+    "result_manifest_sha256": "88C259493E5D5B8E4B4B2B3C535BCDB623924474FB23DD860D2B8673FE08DA2D"
+  },
+  "hourly_observations_per_market": 8760,
+  "market_to_zone_mapping": {
+    "AT": "NORD",
+    "CH": "NORD",
+    "FR": "NORD",
+    "GR": "SUD",
+    "ME": "CSUD",
+    "MT": "SICI",
+    "SI": "NORD",
+    "TN": "SICI"
+  },
+  "market_to_zone_mapping_exact": true,
+  "observed_source_markets": [
+    "AT",
+    "CH",
+    "FR",
+    "GR",
+    "HR",
+    "IT",
+    "ME",
+    "MT",
+    "SI",
+    "TN"
+  ],
+  "required_external_markets": [
+    "AT",
+    "CH",
+    "FR",
+    "GR",
+    "ME",
+    "MT",
+    "SI",
+    "TN"
+  ],
+  "required_market_coverage_exact": true,
+  "scenario_inheritance": [
+    "2040_Slow",
+    "2040_Base",
+    "2040_High"
+  ],
+  "scenario_inheritance_exact": true,
+  "source_gate": "ETX7B8D_2040_R10_PERIMETER_CLOSURE_COMPLETE",
+  "source_market_price_path": "stage_a_results/2040_perimeter_closure_r10/MEM_ETX7B8D_2040_R10_PERIMETER_CLOSURE_Market_Prices.parquet",
+  "source_phase": "ETX-7B8D",
+  "source_read_only": true,
+  "status": "PASS"
+}

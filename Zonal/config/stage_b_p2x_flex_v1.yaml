@@ -1,0 +1,19 @@
+version: P2X_FLEX_V1
+status: READY_FOR_MANUAL_EXECUTION
+baseline_status: PRE_P2X_FLEX_DIAGNOSTIC_BASELINE
+chronology: C2019_PREFERRED_NEWER_2019_UTC_8760
+zonal_allocation: FROZEN_2025_SEVEN_ZONE_SHARES_FOR_RIGID_AND_P2X
+rigid_shape: ACCEPTED_2019_ITALIAN_NATIONAL_LOAD_SHAPE
+formulation: NEGATIVE_SIGN_GENERATOR_WITH_PER_ZONE_OPERATIONAL_LIMIT_EQUALITY
+source_2040: DDS-2024_DE-IT|439_TWh_TOTAL|27.5_TWh_ELECTROLYSIS|7.4_GW_ELECTROLYZER
+source_2050: FROZEN_MEM_SCENARIO_RIGID_P2X_SPLIT
+capacity_2050_status: DERIVED_2040_UTILISATION_CARRY_FORWARD
+base_and_slow:
+  2040: {total_TWh: 439.0, rigid_TWh: 411.5, p2x_TWh: 27.5, p2x_power_MW: 7400.0}
+  2050: {total_TWh: 583.1, rigid_TWh: 501.6, p2x_TWh: 81.5}
+high_multiplier: 1.10
+solver:
+  name: gurobi
+  required_gurobipy_version: 13.0.3
+  options: {Threads: 1, Seed: 0}
+  include_objective_constant: false

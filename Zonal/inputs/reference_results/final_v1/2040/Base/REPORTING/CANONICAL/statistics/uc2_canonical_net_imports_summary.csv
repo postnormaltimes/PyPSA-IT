@@ -1,0 +1,8 @@
+zone,import_energy_MWh,export_energy_MWh,net_import_energy_MWh,external_net_import_energy_MWh,limitation
+CALA,3829351.3334888136,3934924.329991941,-105572.99650312726,0.0,Zone import/export volumes net simultaneous interfaces before temporal integration
+CNOR,18884315.18517584,234501.69622059108,18649813.488955244,0.0,Zone import/export volumes net simultaneous interfaces before temporal integration
+CSUD,13316867.281362247,3371861.1221774044,9945006.159184843,559884.7249984671,Zone import/export volumes net simultaneous interfaces before temporal integration
+NORD,100916213.91336262,185447.1863918439,100730766.72697078,64472839.07454367,Zone import/export volumes net simultaneous interfaces before temporal integration
+SARD,592309.3792865302,17131289.234773226,-16538979.855486693,0.0,Zone import/export volumes net simultaneous interfaces before temporal integration
+SICI,3587742.6414286774,15921317.381926658,-12333574.74049798,91359.6911531135,Zone import/export volumes net simultaneous interfaces before temporal integration
+SUD,2844053.0747718997,37346928.92121817,-34502875.846446276,720499.4454815465,Zone import/export volumes net simultaneous interfaces before temporal integration

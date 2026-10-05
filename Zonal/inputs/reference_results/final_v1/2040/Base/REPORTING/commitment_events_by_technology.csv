@@ -1,0 +1,4 @@
+carrier,actual_starts,actual_shutdowns,raw_starts,raw_shutdowns
+bioenergy_steam_other_surviving,259,259,259.0,259.0
+methane_ccgt,1213,1291,1213.0,1487.0
+methane_gt_ocgt,0,16,0.0,140160.0

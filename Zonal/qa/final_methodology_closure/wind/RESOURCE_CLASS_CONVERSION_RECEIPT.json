@@ -1,0 +1,59 @@
+{
+  "status": "RESOURCE_CONVERSION_PASS_SITING_NOT_YET_ACCEPTED",
+  "resource_class_records": 182,
+  "resource_classes": [
+    1,
+    4,
+    8
+  ],
+  "profile_weather_year": 2019,
+  "snapshots": 8760,
+  "binning": "LOCAL_PYPSA_EUR_EQUAL_WIDTH_CF_WITH_EPSILON_0P001",
+  "physical_potential_reconciles_to_accepted_matrices": true,
+  "production_optimization_executed": false,
+  "production_solver_invocations": 0,
+  "new_weather_downloads": 0,
+  "artifacts": [
+    {
+      "path": "runtime_inputs\\final_methodology_closure\\wind\\WIND_ONSHORE_RESOURCE_CLASSES_2019.nc",
+      "sha256": "e5544ea65f550a5621c69d22ece69d25e8ed737426cfec57eee95f06273aa51b"
+    },
+    {
+      "path": "runtime_inputs\\final_methodology_closure\\wind\\WIND_ONSHORE_RESOURCE_CLASS_GEOMETRY.geojson",
+      "sha256": "a3cc1ff795dfd95ee535772a6b107e5d2c4c428cb2b43014da4953d46623334c"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\WIND_ONSHORE_RESOURCE_CLASSES.csv",
+      "sha256": "437dc94e32b194b82e23ed2164fa7db631e236e44dfd2392b90bb6b3d6f04cab"
+    },
+    {
+      "path": "runtime_inputs\\final_methodology_closure\\wind\\WIND_OFFSHORE_RESOURCE_CLASSES_2019.nc",
+      "sha256": "e2522f91e428949544243d3676b94eceec81c583a58eead8a0a6cb88c47d02ca"
+    },
+    {
+      "path": "runtime_inputs\\final_methodology_closure\\wind\\WIND_OFFSHORE_RESOURCE_CLASS_GEOMETRY.geojson",
+      "sha256": "8c90d91869cf749e32a211a973908cf89b3fd5900992cc0c741df4fa735f392e"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\wind\\WIND_OFFSHORE_RESOURCE_CLASSES.csv",
+      "sha256": "8bccf47ce3b273c88ef99fecb2472399fbf82b43df54645f855e4fe5978a8c28"
+    }
+  ],
+  "native_distance_reference_exact": true,
+  "distance_reference_repair": [
+    {
+      "technology": "WIND_ONSHORE",
+      "max_abs_distance_change_km": 13.844975208182646,
+      "hourly_profiles_unchanged": true,
+      "physical_potential_unchanged": true
+    },
+    {
+      "technology": "WIND_OFFSHORE",
+      "max_abs_distance_change_km": 18.387049713814946,
+      "hourly_profiles_unchanged": true,
+      "physical_potential_unchanged": true
+    }
+  ],
+  "distance_source_logic": "source://pypsa-eur/scripts/build_shapes.py",
+  "distance_source_logic_sha256": "830fdbbac7a4a93f67344bac8eeccd8bf6f163df4a613698e53ac4de9d584b27"
+}

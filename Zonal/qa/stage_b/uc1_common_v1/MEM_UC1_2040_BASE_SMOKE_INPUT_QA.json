@@ -1,0 +1,21 @@
+{
+  "continuous_input_sha256": "106ef8eedda16a5a2a1a1f064c5de089b5ece893fa405357b4bd46ab3b965545",
+  "first_snapshot": "2019-01-01 00:00:00",
+  "generator_weighting": "accepted_parent_first_168",
+  "last_snapshot": "2019-01-07 23:00:00",
+  "p2x_national_MWh": 527397.2602739725,
+  "p2x_rule": "SMOKE_HORIZON_PRORATED_P2X_ENERGY_ONLY",
+  "p2x_targets_MWh": {
+    "P2X_ANNUAL_CALA": 18409.149651072577,
+    "P2X_ANNUAL_CNOR": 50086.154906521806,
+    "P2X_ANNUAL_CSUD": 71148.8756784699,
+    "P2X_ANNUAL_NORD": 287414.92202980985,
+    "P2X_ANNUAL_SARD": 13267.855604376666,
+    "P2X_ANNUAL_SICI": 36984.14749719986,
+    "P2X_ANNUAL_SUD": 50086.154906521806
+  },
+  "snapshots": 168,
+  "solver_invocations": 0,
+  "status": "PASS",
+  "uc_input_sha256": "c7fc9910599923d94d8ec169d53a48c8acb158939cd7edeed44169f83339089c"
+}

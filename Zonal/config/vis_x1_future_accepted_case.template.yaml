@@ -1,0 +1,30 @@
+# Fill only from a newly accepted solved P2X/UC run receipt and its manifest.
+# This file is a contract template; it does not run or select a model result.
+schema_version: MEM_VIS_X1_FUTURE_CASE_V1
+result_status: CURRENT_ACCEPTED_RESULT
+year: null
+scenario: null
+model_version: null
+solved_network: null
+solved_network_sha256: null
+accepted_run_receipt: null
+accepted_run_manifest: null
+parent_unsolved_network: null
+parent_unsolved_sha256: null
+parent_model_version: P2X_FLEX_V1
+P2X_status: SOLVED_AND_ACCEPTED
+UC_status: null
+canonical_statistics_directory: null
+canonical_reporting_receipt: null
+market_mapping_source: config/stage_b_2040_runtime_contract.yaml  # replace for 2050 or other stage
+carrier_mapping_source: config/stage_b_reporting.yaml
+hydro_mapping_source: pre_pypsa_inputs/MEM_Hydro_Static_Component_Mapping.csv
+geographic_coordinate_source: null  # must be authoritative, EPSG:4326; never fill from schematic coordinates
+requirements:
+  - receipt and manifest bind solved-network hash, parent hash, exact year/scenario, model version and acceptance
+  - P2X Generator sign=-1 and annual equalities reconcile to dispatch and hourly cap
+  - P2X withdrawal enters demand only and never primary generation
+  - virtual/residual/shedding asset IDs are classified from accepted config or manifest
+  - BESS/PHS/hydro Link-terminal and Store-energy treatment reconciles to canonical results
+  - source-specific prices, exchanges, scarcity, cost and emissions metrics are present before plotting
+  - compare only solved cases of the same accepted model generation and accounting scope

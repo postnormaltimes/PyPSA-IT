@@ -1,0 +1,15 @@
+{
+  "passed": 45,
+  "failed": 0,
+  "observed_result": "45 passed in 9.12s",
+  "scope": "combined affected W horizon-cost/native-cell and H read-only shape/water tests",
+  "test_files": [
+    "test_final_hydro_audit.py",
+    "test_final_wind_horizon_cost.py",
+    "test_final_wind_cells.py",
+    "test_final_wind_cell_verification.py",
+    "test_final_methodology_closure.py"
+  ],
+  "optimization_model_constructed": false,
+  "solver_invocations": 0
+}

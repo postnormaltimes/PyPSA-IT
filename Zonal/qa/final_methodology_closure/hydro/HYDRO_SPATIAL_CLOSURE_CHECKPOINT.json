@@ -1,0 +1,137 @@
+{
+  "state": "HYDRO_SPATIAL_MAPPING_AUTHORITY_REQUIRED",
+  "phase": "H",
+  "status": "BLOCKED",
+  "wind_phase": "WIND_RESOURCE_SITING_PASS",
+  "parents": [
+    {
+      "year": 2040,
+      "scenario": "Slow",
+      "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2040_SLOW_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+      "sha256": "8326cdcae22f87b8d4b41c012134a687dae1be64f7421ed4378201e26d9ded0e"
+    },
+    {
+      "year": 2040,
+      "scenario": "Base",
+      "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2040_BASE_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+      "sha256": "33af192ec8ff6a15df30d9255a3fbfe9a3ad02cc61c8ac8cfed136b1270bc25f"
+    },
+    {
+      "year": 2040,
+      "scenario": "High",
+      "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2040_HIGH_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+      "sha256": "d6777f67ac578e73d6425199c8ba796d9272c1b1f67b3918c17d2df068a3d539"
+    },
+    {
+      "year": 2050,
+      "scenario": "Slow",
+      "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2050_SLOW_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+      "sha256": "d40ebe9ab0c71fa0acc0289aa19e4d6c449e4b29a5e5b505224457fb7a20e532"
+    },
+    {
+      "year": 2050,
+      "scenario": "Base",
+      "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2050_BASE_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+      "sha256": "de9946237582a0d33a037be33b76a8ff3773518c31e4038d66dc4962bc864540"
+    },
+    {
+      "year": 2050,
+      "scenario": "High",
+      "path": "networks\\unsolved\\final_wind_native_v1\\MEM_2050_HIGH_FINAL_WIND_NATIVE_V1_8760h_UNSOLVED.nc",
+      "sha256": "f1b400d13d9e1d20b5fd0affee3d2cab4336aaefa51d52c4f450249ceebc61dd"
+    }
+  ],
+  "source_evidence": [
+    {
+      "path": "qa\\final_methodology_closure\\hydro\\HYDRO_CURRENT_LINEAGE_AUDIT_RECEIPT.json",
+      "sha256": "58436e0cc5bbfc4ad713c27d31af594633677f17f18019cfdca3b5d714fa1c09"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\hydro\\HYDRO_SPATIAL_SOURCE_RECOVERY.json",
+      "sha256": "aab2979343f145bb9d15a0f275d9938d656ec4768e56ca6faf5e084a08fda211"
+    },
+    {
+      "path": "qa\\final_methodology_closure\\hydro\\HYDRO_NATIVE_WATER_VALUE_API_RECEIPT.json",
+      "sha256": "a6a5c776c6e0a904b69879c7c5c29ed09a5f281714165b2da93738a34e493a96"
+    }
+  ],
+  "completed_checks": {
+    "six_read_only_parent_control_packages_PASS": 6,
+    "current_state_and_ROR_records": 162,
+    "source_runtime_network_inflow_comparisons_PASS": 144,
+    "IT2_IT4_inheritance_confirmed": true,
+    "native_water_state_API_verified": true,
+    "frozen_capacity_and_annual_water_controls_unchanged": true
+  },
+  "unresolved_items": [
+    {
+      "affected_groups": "All seven zones x natural hydro classes",
+      "missing": "Reachable catchment polygons and upstream/routing attributes, or an explicit accepted source-location-to-runoff-cell temporal adapter",
+      "smallest_recoverable_next_step": "Restore an already accepted routing source if its location can be identified. If none exists, obtain a decision/source for the catchment transformation before weather conversion; existing 2019 weather can be reused.",
+      "not_assumed": "Plant coordinates alone are not treated as the upstream water catchment."
+    },
+    {
+      "affected_groups": "All zones x BASIN_PONDAGE and RESERVOIR",
+      "missing": "Accepted plant/source members distinguishing basin/pondage from conventional reservoir",
+      "smallest_recoverable_next_step": "Recover an accepted per-plant class bridge, or explicitly decide any shared HDAM source-pool temporal proxy while keeping frozen classes/MW and annual authority.",
+      "not_assumed": "Shared HDAM pool reuse is a new temporal proxy, not silently inherited from the accepted zonal MW allocation."
+    },
+    {
+      "affected_groups": "NORD x MIXED_PHS",
+      "missing": "Natural-inflow source members or an accepted temporal source-pool rule for 13 residual HPHS locations",
+      "smallest_recoverable_next_step": "Recover per-plant natural-inflow membership or explicitly decide how the accepted aggregate residual split maps to natural-inflow geography.",
+      "not_assumed": "The energy/pump proportional split is not silently extended into a plant/catchment inflow split."
+    }
+  ],
+  "source_row_caveat": [
+    {
+      "plant_id": "H1708",
+      "plant_name": "Canterno",
+      "installed_source_MW": 11,
+      "inherited_region": "Lazio",
+      "inherited_zone": "CSUD",
+      "latitude": 43.475754,
+      "longitude": 12.628657,
+      "coordinate_zone": "CNOR",
+      "resolution": "UNRESOLVED_SOURCE_ROW_CONFLICT; no coordinate or zone overwrite"
+    },
+    {
+      "plant_id": "HNEW19",
+      "plant_name": "Contributo asta Marche-3 (2)",
+      "installed_source_MW": 0,
+      "inherited_region": "Lazio",
+      "inherited_zone": "CSUD",
+      "latitude": 42.854826363641,
+      "longitude": 13.5748958587646,
+      "coordinate_zone": "CNOR",
+      "resolution": "ZERO_SOURCE_MW; exclude from active source membership; preserve as provenance caveat only; no material methodology decision"
+    }
+  ],
+  "cyclic_rule": "CYCLIC_ANNUAL_SOC_RETAINED_AS_NEUTRAL_NO_NET_WATER_CONDITION",
+  "tests": {
+    "passed": 45,
+    "failed": 0,
+    "observed_result": "45 passed in 9.12s",
+    "scope": "combined affected W horizon-cost/native-cell and H read-only shape/water tests",
+    "test_files": [
+      "test_final_hydro_audit.py",
+      "test_final_wind_horizon_cost.py",
+      "test_final_wind_cells.py",
+      "test_final_wind_cell_verification.py",
+      "test_final_methodology_closure.py"
+    ],
+    "optimization_model_constructed": false,
+    "solver_invocations": 0
+  },
+  "hydro_successor_networks_created": 0,
+  "hydro_weather_conversions": 0,
+  "next_phase": "H",
+  "N_C_F": "NOT_STARTED_REQUIRES_H_PASS",
+  "handoff": "docs\\final_methodology_closure\\MEM_FINAL_METHODOLOGY_PHASE_H_SPATIAL_AUTHORITY_HANDOFF.md",
+  "manifest": "qa\\final_methodology_closure\\hydro\\HYDRO_SPATIAL_CHECKPOINT_MANIFEST.csv",
+  "optimization_model_constructed": false,
+  "production_optimization_executed": false,
+  "production_solver_invocations": 0,
+  "production_results_modified": 0,
+  "production_state": "PRODUCTION_NOT_EXECUTED"
+}

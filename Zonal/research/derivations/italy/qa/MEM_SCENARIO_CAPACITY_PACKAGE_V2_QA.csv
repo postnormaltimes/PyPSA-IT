@@ -1,0 +1,152 @@
+check_id,check,expected,actual,tolerance,severity,status
+P4A-BASE-HIGH-KEYS,Base/High capacity keys unchanged,448,448,0,HARD,PASS
+P4A-BASE-HIGH-VALUES,Base/High capacity values unchanged,0,0,0.000001,HARD,PASS
+P4A-TOTAL-2040-Slow,2040 Slow thermal/programmable total,68213.325410972,68213.32541097602,0.0001,HARD,PASS
+P4A-HYDRO-2040-Slow,2040 Slow hydro unchanged,23294,23294.000000002,0.0001,HARD,PASS
+P4A-TOTAL-2040-Base,2040 Base thermal/programmable total,55000,55000.000000004016,0.0001,HARD,PASS
+P4A-HYDRO-2040-Base,2040 Base hydro unchanged,23294,23294.000000002,0.0001,HARD,PASS
+P4A-TOTAL-2040-High,2040 High thermal/programmable total,55000,55000.000000004016,0.0001,HARD,PASS
+P4A-HYDRO-2040-High,2040 High hydro unchanged,23294,23294.000000002,0.0001,HARD,PASS
+P4A-TOTAL-2050-Slow,2050 Slow thermal/programmable total,51613.384747838994,51613.384747842,0.0001,HARD,PASS
+P4A-HYDRO-2050-Slow,2050 Slow hydro unchanged,23294,23294.000000002,0.0001,HARD,PASS
+P4A-TOTAL-2050-Base,2050 Base thermal/programmable total,30000,30000.000000002998,0.0001,HARD,PASS
+P4A-HYDRO-2050-Base,2050 Base hydro unchanged,23294,23294.000000002,0.0001,HARD,PASS
+P4A-TOTAL-2050-High,2050 High thermal/programmable total,30000,30000.000000002998,0.0001,HARD,PASS
+P4A-HYDRO-2050-High,2050 High hydro unchanged,23294,23294.000000002,0.0001,HARD,PASS
+P4A-FIXED-2050-BIOENERGY,2050 BIOENERGY Slow increment zero,0,0,1e-9,HARD,PASS
+P4A-FIXED-2050-BIOENERGY_CCS,2050 BIOENERGY_CCS Slow increment zero,0,0,1e-9,HARD,PASS
+P4A-FIXED-2040-GEOTHERMAL,2040 GEOTHERMAL Slow increment zero,0,0,1e-9,HARD,PASS
+P4A-FIXED-2050-GEOTHERMAL,2050 GEOTHERMAL Slow increment zero,0,0,1e-9,HARD,PASS
+P4A-FIXED-2050-NUCLEAR,2050 NUCLEAR Slow increment zero,0,0,1e-9,HARD,PASS
+P4A-2040-INCREMENT,2040 Slow increment unchanged,13213.325410972,13213.325410972007,0.0001,HARD,PASS
+P4A-2050-INCREMENT,2050 Slow increment unchanged,21613.384747838998,21613.384747838994,0.0001,HARD,PASS
+P4A-2040-NON-METHANE-COMBUSTION,No non-methane combustion carrier in 2040,0,0,0,HARD,PASS
+P4A-2040-FORBIDDEN-FUEL,No coal/oil/hydrogen/unspecified 2040 fuel,0,0,0,HARD,PASS
+P4A-2050-COAL-OIL,No coal or oil in 2050 architecture,0,0,0,HARD,PASS
+P4A-H2-NO-ADD-Base-BASELINE_METHANE_ONLY_PENDING_APPROVAL,Base BASELINE_METHANE_ONLY_PENDING_APPROVAL: fuel decomposition equals source category,3386.494790689,3386.494790689,0.000001,HARD,PASS
+P4A-H2-NO-ADD-Base-SENSITIVITY_25_PERCENT_HYDROGEN,Base SENSITIVITY_25_PERCENT_HYDROGEN: fuel decomposition equals source category,3386.494790689,3386.494790689,0.000001,HARD,PASS
+P4A-H2-NO-ADD-Base-SENSITIVITY_50_PERCENT_HYDROGEN,Base SENSITIVITY_50_PERCENT_HYDROGEN: fuel decomposition equals source category,3386.494790689,3386.494790689,0.000001,HARD,PASS
+P4A-H2-NO-ADD-High-BASELINE_METHANE_ONLY_PENDING_APPROVAL,High BASELINE_METHANE_ONLY_PENDING_APPROVAL: fuel decomposition equals source category,3386.494790689,3386.494790689,0.000001,HARD,PASS
+P4A-H2-NO-ADD-High-SENSITIVITY_25_PERCENT_HYDROGEN,High SENSITIVITY_25_PERCENT_HYDROGEN: fuel decomposition equals source category,3386.494790689,3386.494790689,0.000001,HARD,PASS
+P4A-H2-NO-ADD-High-SENSITIVITY_50_PERCENT_HYDROGEN,High SENSITIVITY_50_PERCENT_HYDROGEN: fuel decomposition equals source category,3386.494790689,3386.494790689,0.000001,HARD,PASS
+P4A-H2-NO-ADD-Slow-BASELINE_METHANE_ONLY_PENDING_APPROVAL,Slow BASELINE_METHANE_ONLY_PENDING_APPROVAL: fuel decomposition equals source category,10827.168228472701,10827.168228472701,0.000001,HARD,PASS
+P4A-H2-NO-ADD-Slow-SENSITIVITY_25_PERCENT_HYDROGEN,Slow SENSITIVITY_25_PERCENT_HYDROGEN: fuel decomposition equals source category,10827.168228472701,10827.168228472701,0.000001,HARD,PASS
+P4A-H2-NO-ADD-Slow-SENSITIVITY_50_PERCENT_HYDROGEN,Slow SENSITIVITY_50_PERCENT_HYDROGEN: fuel decomposition equals source category,10827.168228472701,10827.168228472701,0.000001,HARD,PASS
+P4A-OIL-MATERIALITY,Oil residual bounding tests non-material,true,true,0,HARD,PASS
+P4A-COAL-MATERIALITY,Coal residual bounding tests non-material,true,true,0,HARD,PASS
+P4A-GENERATOR-ID-UNIQUE,Static generator IDs unique,408,408,0,HARD,PASS
+P4A-NO-EXTENDABLE,All generator candidates non-extendable,0,0,0,HARD,PASS
+P4A-GEN-FORBIDDEN-FUEL,No coal/oil in generator candidates,0,0,0,HARD,PASS
+P4A-TAX-CCGT-2050-ANCHOR,CCGT is non-additive 2050 anchor,false|true,false|true,0,HARD,PASS
+P4A-TAX-GT-2050-ANCHOR,GT_OCGT is non-additive 2050 anchor,false|true,false|true,0,HARD,PASS
+P4A-TAX-BIO2040-NONADDITIVE,Bioenergy 2040 cross-classification is non-additive,false|true,false|true,0,HARD,PASS
+P4A-SHARE-CCGT,CCGT zonal geography sums to one,1,0.999999999999,1e-9,HARD,PASS
+P4A-SHARE-GT_OCGT,GT_OCGT zonal geography sums to one,1,1,1e-9,HARD,PASS
+P4A-SHARE-INTERNAL_COMBUSTION,INTERNAL_COMBUSTION zonal geography sums to one,1,1,1e-9,HARD,PASS
+P4A-SHARE-STEAM_OTHER_SURVIVING,STEAM_OTHER_SURVIVING zonal geography sums to one,1,1.000000000001,1e-9,HARD,PASS
+P4A-SHARE-OTHER_SURVIVING_THERMAL,OTHER_SURVIVING_THERMAL zonal geography sums to one,1,0.9999999999989999,1e-9,HARD,PASS
+P4A-SHARE-GEOTHERMAL,GEOTHERMAL zonal geography sums to one,1,1,1e-9,HARD,PASS
+P4A-SHARE-CCGT_CCS,CCGT_CCS zonal geography sums to one,1,0.999999999999,1e-9,HARD,PASS
+P4A-SHARE-GAS_CCS,GAS_CCS zonal geography sums to one,1,0.999999999999,1e-9,HARD,PASS
+P4A-SHARE-GAS_OTHER_FOSSIL,GAS_OTHER_FOSSIL zonal geography sums to one,1,1,1e-9,HARD,PASS
+P4A-SHARE-BIOENERGY,BIOENERGY zonal geography sums to one,1,1.000000000001,1e-9,HARD,PASS
+P4A-SHARE-BIOENERGY_CCS,BIOENERGY_CCS zonal geography sums to one,1,1.000000000001,1e-9,HARD,PASS
+P4A-SHARE-NUCLEAR,NUCLEAR zonal geography sums to one,1,1,1e-9,HARD,PASS
+P4A-ZONES-2040-Slow-SOLAR_PV_ROOFTOP,2040 Slow SOLAR_PV_ROOFTOP: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Slow-SOLAR_PV_UTILITY,2040 Slow SOLAR_PV_UTILITY: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Slow-WIND_ONSHORE,2040 Slow WIND_ONSHORE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Slow-WIND_OFFSHORE,2040 Slow WIND_OFFSHORE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Slow-HYDRO_RUN_OF_RIVER,2040 Slow HYDRO_RUN_OF_RIVER: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Slow-HYDRO_BASIN,2040 Slow HYDRO_BASIN: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Slow-HYDRO_RESERVOIR,2040 Slow HYDRO_RESERVOIR: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Slow-PUMPED_HYDRO_PURE,2040 Slow PUMPED_HYDRO_PURE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Slow-PUMPED_HYDRO_MIXED,2040 Slow PUMPED_HYDRO_MIXED: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Slow-BESS,2040 Slow BESS: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Slow-CCGT,2040 Slow CCGT: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Slow-GT_OCGT,2040 Slow GT_OCGT: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Slow-INTERNAL_COMBUSTION,2040 Slow INTERNAL_COMBUSTION: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Slow-STEAM_OTHER_SURVIVING,2040 Slow STEAM_OTHER_SURVIVING: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Slow-OTHER_SURVIVING_THERMAL,2040 Slow OTHER_SURVIVING_THERMAL: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Slow-GEOTHERMAL,2040 Slow GEOTHERMAL: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Base-SOLAR_PV_ROOFTOP,2040 Base SOLAR_PV_ROOFTOP: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Base-SOLAR_PV_UTILITY,2040 Base SOLAR_PV_UTILITY: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Base-WIND_ONSHORE,2040 Base WIND_ONSHORE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Base-WIND_OFFSHORE,2040 Base WIND_OFFSHORE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Base-HYDRO_RUN_OF_RIVER,2040 Base HYDRO_RUN_OF_RIVER: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Base-HYDRO_BASIN,2040 Base HYDRO_BASIN: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Base-HYDRO_RESERVOIR,2040 Base HYDRO_RESERVOIR: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Base-PUMPED_HYDRO_PURE,2040 Base PUMPED_HYDRO_PURE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Base-PUMPED_HYDRO_MIXED,2040 Base PUMPED_HYDRO_MIXED: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Base-BESS,2040 Base BESS: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Base-CCGT,2040 Base CCGT: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Base-GT_OCGT,2040 Base GT_OCGT: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Base-INTERNAL_COMBUSTION,2040 Base INTERNAL_COMBUSTION: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Base-STEAM_OTHER_SURVIVING,2040 Base STEAM_OTHER_SURVIVING: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Base-OTHER_SURVIVING_THERMAL,2040 Base OTHER_SURVIVING_THERMAL: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-Base-GEOTHERMAL,2040 Base GEOTHERMAL: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-High-SOLAR_PV_ROOFTOP,2040 High SOLAR_PV_ROOFTOP: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-High-SOLAR_PV_UTILITY,2040 High SOLAR_PV_UTILITY: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-High-WIND_ONSHORE,2040 High WIND_ONSHORE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-High-WIND_OFFSHORE,2040 High WIND_OFFSHORE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-High-HYDRO_RUN_OF_RIVER,2040 High HYDRO_RUN_OF_RIVER: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-High-HYDRO_BASIN,2040 High HYDRO_BASIN: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-High-HYDRO_RESERVOIR,2040 High HYDRO_RESERVOIR: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-High-PUMPED_HYDRO_PURE,2040 High PUMPED_HYDRO_PURE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-High-PUMPED_HYDRO_MIXED,2040 High PUMPED_HYDRO_MIXED: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-High-BESS,2040 High BESS: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-High-CCGT,2040 High CCGT: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-High-GT_OCGT,2040 High GT_OCGT: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-High-INTERNAL_COMBUSTION,2040 High INTERNAL_COMBUSTION: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-High-STEAM_OTHER_SURVIVING,2040 High STEAM_OTHER_SURVIVING: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-High-OTHER_SURVIVING_THERMAL,2040 High OTHER_SURVIVING_THERMAL: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2040-High-GEOTHERMAL,2040 High GEOTHERMAL: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Slow-SOLAR_PV_ROOFTOP,2050 Slow SOLAR_PV_ROOFTOP: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Slow-SOLAR_PV_UTILITY,2050 Slow SOLAR_PV_UTILITY: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Slow-WIND_ONSHORE,2050 Slow WIND_ONSHORE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Slow-WIND_OFFSHORE,2050 Slow WIND_OFFSHORE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Slow-HYDRO_RUN_OF_RIVER,2050 Slow HYDRO_RUN_OF_RIVER: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Slow-HYDRO_BASIN,2050 Slow HYDRO_BASIN: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Slow-HYDRO_RESERVOIR,2050 Slow HYDRO_RESERVOIR: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Slow-PUMPED_HYDRO_PURE,2050 Slow PUMPED_HYDRO_PURE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Slow-PUMPED_HYDRO_MIXED,2050 Slow PUMPED_HYDRO_MIXED: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Slow-BESS,2050 Slow BESS: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Slow-BIOENERGY,2050 Slow BIOENERGY: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Slow-BIOENERGY_CCS,2050 Slow BIOENERGY_CCS: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Slow-GAS_CCS,2050 Slow GAS_CCS: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Slow-GAS_OTHER_FOSSIL,2050 Slow GAS_OTHER_FOSSIL: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Slow-GEOTHERMAL,2050 Slow GEOTHERMAL: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Slow-NUCLEAR,2050 Slow NUCLEAR: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Base-SOLAR_PV_ROOFTOP,2050 Base SOLAR_PV_ROOFTOP: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Base-SOLAR_PV_UTILITY,2050 Base SOLAR_PV_UTILITY: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Base-WIND_ONSHORE,2050 Base WIND_ONSHORE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Base-WIND_OFFSHORE,2050 Base WIND_OFFSHORE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Base-HYDRO_RUN_OF_RIVER,2050 Base HYDRO_RUN_OF_RIVER: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Base-HYDRO_BASIN,2050 Base HYDRO_BASIN: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Base-HYDRO_RESERVOIR,2050 Base HYDRO_RESERVOIR: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Base-PUMPED_HYDRO_PURE,2050 Base PUMPED_HYDRO_PURE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Base-PUMPED_HYDRO_MIXED,2050 Base PUMPED_HYDRO_MIXED: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Base-BESS,2050 Base BESS: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Base-BIOENERGY,2050 Base BIOENERGY: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Base-BIOENERGY_CCS,2050 Base BIOENERGY_CCS: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Base-GAS_CCS,2050 Base GAS_CCS: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Base-GAS_OTHER_FOSSIL,2050 Base GAS_OTHER_FOSSIL: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Base-GEOTHERMAL,2050 Base GEOTHERMAL: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-Base-NUCLEAR,2050 Base NUCLEAR: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-High-SOLAR_PV_ROOFTOP,2050 High SOLAR_PV_ROOFTOP: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-High-SOLAR_PV_UTILITY,2050 High SOLAR_PV_UTILITY: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-High-WIND_ONSHORE,2050 High WIND_ONSHORE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-High-WIND_OFFSHORE,2050 High WIND_OFFSHORE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-High-HYDRO_RUN_OF_RIVER,2050 High HYDRO_RUN_OF_RIVER: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-High-HYDRO_BASIN,2050 High HYDRO_BASIN: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-High-HYDRO_RESERVOIR,2050 High HYDRO_RESERVOIR: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-High-PUMPED_HYDRO_PURE,2050 High PUMPED_HYDRO_PURE: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-High-PUMPED_HYDRO_MIXED,2050 High PUMPED_HYDRO_MIXED: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-High-BESS,2050 High BESS: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-High-BIOENERGY,2050 High BIOENERGY: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-High-BIOENERGY_CCS,2050 High BIOENERGY_CCS: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-High-GAS_CCS,2050 High GAS_CCS: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-High-GAS_OTHER_FOSSIL,2050 High GAS_OTHER_FOSSIL: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-High-GEOTHERMAL,2050 High GEOTHERMAL: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-ZONES-2050-High-NUCLEAR,2050 High NUCLEAR: seven zones finite and nonnegative,0,0,0,HARD,PASS
+P4A-WORKBOOK-SHEETS,Workbook contains all 13 required sheets,13,13,0,HARD,PASS
+P4A-WORKBOOK-FORMULA-ERRORS,Workbook formula-error scan,0,0,0,HARD,PASS

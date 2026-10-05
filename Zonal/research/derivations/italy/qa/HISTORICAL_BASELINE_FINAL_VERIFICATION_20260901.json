@@ -1,0 +1,585 @@
+{
+  "generated_at_utc": "2026-09-01T12:48:54.292Z",
+  "overall_verification_status": "PASS",
+  "historical_baseline_gate": "HISTORICAL BASELINE INCOMPLETE",
+  "canonical_workbook_ready": "NO",
+  "checks": [
+    {
+      "check": "Controlling v2.9 workbook SHA-256 unchanged",
+      "observed": "4a59c80bdf4da33d825ff94ea5617c03c325ca6fbc26233e7ed633ed6f910640",
+      "expected": "4a59c80bdf4da33d825ff94ea5617c03c325ca6fbc26233e7ed633ed6f910640",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Raw bytes: raw/terna/historical_2024/Terna_Bioenergy_Capacity_2024_RAW.xlsx",
+      "observed": 9385,
+      "expected": 9385,
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Raw SHA-256: raw/terna/historical_2024/Terna_Bioenergy_Capacity_2024_RAW.xlsx",
+      "observed": "b6d8700e000e9f0766949a022c8e2a27eff41cb6cc14d3bc8005016e1820ea41",
+      "expected": "b6d8700e000e9f0766949a022c8e2a27eff41cb6cc14d3bc8005016e1820ea41",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Raw bytes: raw/terna/historical_2024/Terna_Geothermal_Capacity_2024_RAW.xlsx",
+      "observed": 8451,
+      "expected": 8451,
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Raw SHA-256: raw/terna/historical_2024/Terna_Geothermal_Capacity_2024_RAW.xlsx",
+      "observed": "e4c22a28edf6cc6679bebed858a539d74284b4b9b20822b3d8ae1432613ea3a1",
+      "expected": "e4c22a28edf6cc6679bebed858a539d74284b4b9b20822b3d8ae1432613ea3a1",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Raw bytes: raw/terna/historical_2024/Terna_Hydro_Capacity_2024_RAW.xlsx",
+      "observed": 9457,
+      "expected": 9457,
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Raw SHA-256: raw/terna/historical_2024/Terna_Hydro_Capacity_2024_RAW.xlsx",
+      "observed": "0ecc2fa25a0a831f603789791dd0b19597b131af53dd7df9b9cb3dd2b73f4277",
+      "expected": "0ecc2fa25a0a831f603789791dd0b19597b131af53dd7df9b9cb3dd2b73f4277",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Raw bytes: raw/terna/historical_2024/Terna_Hydro_Production_By_Type_2024_RAW.xlsx",
+      "observed": 17150,
+      "expected": 17150,
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Raw SHA-256: raw/terna/historical_2024/Terna_Hydro_Production_By_Type_2024_RAW.xlsx",
+      "observed": "e5d0c67eba558f692fb66c9ba806356fdd3f4b2dfe7bb270ff5a463506640e9f",
+      "expected": "e5d0c67eba558f692fb66c9ba806356fdd3f4b2dfe7bb270ff5a463506640e9f",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Raw bytes: raw/terna/historical_2024/Terna_Bioenergy_Production_2024_RAW.xlsx",
+      "observed": 9656,
+      "expected": 9656,
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Raw SHA-256: raw/terna/historical_2024/Terna_Bioenergy_Production_2024_RAW.xlsx",
+      "observed": "94b6caceca9ca19e60f7471a8584019d9db75efb0bb11ac90fb52f954ab95b0a",
+      "expected": "94b6caceca9ca19e60f7471a8584019d9db75efb0bb11ac90fb52f954ab95b0a",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Raw bytes: raw/terna/historical_2024/Terna_Geothermal_Production_2024_RAW.xlsx",
+      "observed": 8369,
+      "expected": 8369,
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Raw SHA-256: raw/terna/historical_2024/Terna_Geothermal_Production_2024_RAW.xlsx",
+      "observed": "addcfd865eff34850bad31e09e603db41c2524936ba402baa07875e039a51d91",
+      "expected": "addcfd865eff34850bad31e09e603db41c2524936ba402baa07875e039a51d91",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Raw bytes: raw/terna/historical_2024/Terna_Thermoelectric_Heat_2024_RAW.xlsx",
+      "observed": 17887,
+      "expected": 17887,
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Raw SHA-256: raw/terna/historical_2024/Terna_Thermoelectric_Heat_2024_RAW.xlsx",
+      "observed": "06a18e50214e6e5bd882819a1dde6ba1a0ee0457e0c6728727c12640a4e4a72c",
+      "expected": "06a18e50214e6e5bd882819a1dde6ba1a0ee0457e0c6728727c12640a4e4a72c",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/normalized/Terna_Bioenergy_Capacity_2024_NET.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/normalized/Terna_Bioenergy_Production_2024_NET.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/analysis/Terna_Bioenergy_2024_Zone_Summary.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/normalized/Terna_Geothermal_Capacity_2024_NET.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/normalized/Terna_Geothermal_Production_2024_NET.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/analysis/Terna_Geothermal_2024_Zone_Summary.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/normalized/Terna_Hydro_Capacity_2024_NET.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/normalized/Terna_Hydro_Production_2024_NET.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/analysis/Terna_Hydro_2024_Zone_Summary.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/analysis/Terna_Hydro_2024_Zone_Type_Production.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/normalized/Terna_Thermoelectric_Heat_2024_Canonical.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/analysis/Terna_CHP_Heat_and_Electricity_2024_Zone_Technology.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/analysis/MEM_Hydro_Pumping_Perimeter_Reconciliation.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/analysis/MEM_Thermal_Perimeter_Reconciliation_2024_2040.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/normalized/MEM_HISTORICAL_TECHNOLOGY_TAXONOMY.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/analysis/MEM_HISTORICAL_BASELINE_COMPLETION_STATUS.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/normalized/MEM_Historical_Capacity_By_Zone_Technology.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/normalized/MEM_Historical_Generation_By_Zone_Technology.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/manifests/MEM_HISTORICAL_BASELINE_SOURCE_MANIFEST.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: historical_baseline/manifests/MEM_HISTORICAL_BASELINE_DERIVATION_MANIFEST.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: SOURCE_MANIFEST_HISTORICAL_BASELINE_UPDATED_20260901.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: DERIVATION_MANIFEST_HISTORICAL_BASELINE_UPDATED_20260901.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: DATA_STATUS_HISTORICAL_BASELINE_UPDATED_20260901.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: docs/MEM_v2.9_EMPIRICAL_GAP_AND_ACQUISITION_REGISTER_HISTORICAL_BASELINE_UPDATED_20260901.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Non-empty CSV: docs/MEM_v2.9_HISTORICAL_BASELINE_DECISION_REGISTER_20260901.csv",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Historical capacity rows",
+      "observed": 674,
+      "expected": 674,
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Historical generation rows",
+      "observed": 805,
+      "expected": 805,
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Historical capacity years",
+      "observed": "2019|2020|2021|2022|2023|2024",
+      "expected": "2019|2020|2021|2022|2023|2024",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Historical generation years",
+      "observed": "2019|2020|2021|2022|2023|2024",
+      "expected": "2019|2020|2021|2022|2023|2024",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Historical capacity zones",
+      "observed": "CALA|CNOR|CSUD|NORD|SARD|SICI|SUD",
+      "expected": "CALA|CNOR|CSUD|NORD|SARD|SICI|SUD",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Historical generation zones",
+      "observed": "CALA|CNOR|CSUD|NORD|SARD|SICI|SUD",
+      "expected": "CALA|CNOR|CSUD|NORD|SARD|SICI|SUD",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "CNORD emitted in historical tables",
+      "observed": 0,
+      "expected": 0,
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "2024 bioenergy NET MW",
+      "observed": 3800.0923,
+      "expected": 3800.0923,
+      "tolerance": 1e-9,
+      "status": "PASS"
+    },
+    {
+      "check": "2024 bioenergy NET GWh",
+      "observed": 15699.033862,
+      "expected": 15699.033862,
+      "tolerance": 1e-9,
+      "status": "PASS"
+    },
+    {
+      "check": "2024 bioenergy observed CF",
+      "observed": 0.471600954,
+      "expected": 0.471600954,
+      "tolerance": 1e-9,
+      "status": "PASS"
+    },
+    {
+      "check": "2024 geothermal NET MW",
+      "observed": 771.79,
+      "expected": 771.79,
+      "tolerance": 1e-9,
+      "status": "PASS"
+    },
+    {
+      "check": "2024 geothermal NET GWh",
+      "observed": 5275.5733,
+      "expected": 5275.5733,
+      "tolerance": 1e-9,
+      "status": "PASS"
+    },
+    {
+      "check": "2024 geothermal observed CF",
+      "observed": 0.780308627,
+      "expected": 0.780308627,
+      "tolerance": 1e-9,
+      "status": "PASS"
+    },
+    {
+      "check": "2024 hydro NET MW",
+      "observed": 19324.42439,
+      "expected": 19324.42439,
+      "tolerance": 1e-9,
+      "status": "PASS"
+    },
+    {
+      "check": "2024 renewable-source hydro NET GWh",
+      "observed": 52391.704319,
+      "expected": 52391.704319,
+      "tolerance": 1e-9,
+      "status": "PASS"
+    },
+    {
+      "check": "2024 hydro observed CF",
+      "observed": 0.309493729,
+      "expected": 0.309493729,
+      "tolerance": 1e-9,
+      "status": "PASS"
+    },
+    {
+      "check": "2024 detailed hydric NET GWh",
+      "observed": 53975.50990199998,
+      "expected": 53975.509902,
+      "tolerance": 1e-8,
+      "status": "PASS"
+    },
+    {
+      "check": "Hydro type set",
+      "observed": "HYDRO_BASIN|HYDRO_RESERVOIR_INCL_PUMPING|HYDRO_RUN_OF_RIVER",
+      "expected": "HYDRO_BASIN|HYDRO_RESERVOIR_INCL_PUMPING|HYDRO_RUN_OF_RIVER",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "2024 pumping-discharge perimeter proxy GWh",
+      "observed": 1583.805583,
+      "expected": 1583.805583,
+      "tolerance": 1e-9,
+      "status": "PASS"
+    },
+    {
+      "check": "Pumped discharge MW remains blank",
+      "observed": "",
+      "expected": "",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Pumped energy MWh remains blank",
+      "observed": "",
+      "expected": "",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "2024 thermoelectric technology NET MW",
+      "observed": 60331.82927,
+      "expected": 60331.82927,
+      "tolerance": 1e-8,
+      "status": "PASS"
+    },
+    {
+      "check": "Bioenergy additive adjustment MW",
+      "observed": 0,
+      "expected": 0,
+      "tolerance": 1e-12,
+      "status": "PASS"
+    },
+    {
+      "check": "Geothermal additive adjustment MW",
+      "observed": 771.79,
+      "expected": 771.79,
+      "tolerance": 1e-9,
+      "status": "PASS"
+    },
+    {
+      "check": "2024 DDS-comparable NET MW",
+      "observed": 61103.61927,
+      "expected": 61103.61927,
+      "tolerance": 1e-8,
+      "status": "PASS"
+    },
+    {
+      "check": "Required technology taxonomy codes missing",
+      "observed": "",
+      "expected": "",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Required fuel/source taxonomy codes missing",
+      "observed": "",
+      "expected": "",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Historical completion status",
+      "observed": "HISTORICAL BASELINE INCOMPLETE",
+      "expected": "HISTORICAL BASELINE INCOMPLETE",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Canonical workbook readiness",
+      "observed": "NO",
+      "expected": "NO",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Completion matrix rows",
+      "observed": 28,
+      "expected": 28,
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Retained 2019-2022 fuel-cell production exceptions",
+      "observed": 8,
+      "expected": 8,
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Required historical documentation missing",
+      "observed": "",
+      "expected": "",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "Method note contains controlling incomplete gate",
+      "observed": "YES",
+      "expected": "YES",
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "No premature v2.9.1 workbook",
+      "observed": 0,
+      "expected": 0,
+      "tolerance": 0,
+      "status": "PASS"
+    }
+  ],
+  "missing_docs": [],
+  "premature_v2_9_1_workbooks": [],
+  "raw_evidence": {
+    "raw/terna/historical_2024/Terna_Bioenergy_Capacity_2024_RAW.xlsx": {
+      "bytes": 9385,
+      "sha256": "b6d8700e000e9f0766949a022c8e2a27eff41cb6cc14d3bc8005016e1820ea41"
+    },
+    "raw/terna/historical_2024/Terna_Geothermal_Capacity_2024_RAW.xlsx": {
+      "bytes": 8451,
+      "sha256": "e4c22a28edf6cc6679bebed858a539d74284b4b9b20822b3d8ae1432613ea3a1"
+    },
+    "raw/terna/historical_2024/Terna_Hydro_Capacity_2024_RAW.xlsx": {
+      "bytes": 9457,
+      "sha256": "0ecc2fa25a0a831f603789791dd0b19597b131af53dd7df9b9cb3dd2b73f4277"
+    },
+    "raw/terna/historical_2024/Terna_Hydro_Production_By_Type_2024_RAW.xlsx": {
+      "bytes": 17150,
+      "sha256": "e5d0c67eba558f692fb66c9ba806356fdd3f4b2dfe7bb270ff5a463506640e9f"
+    },
+    "raw/terna/historical_2024/Terna_Bioenergy_Production_2024_RAW.xlsx": {
+      "bytes": 9656,
+      "sha256": "94b6caceca9ca19e60f7471a8584019d9db75efb0bb11ac90fb52f954ab95b0a"
+    },
+    "raw/terna/historical_2024/Terna_Geothermal_Production_2024_RAW.xlsx": {
+      "bytes": 8369,
+      "sha256": "addcfd865eff34850bad31e09e603db41c2524936ba402baa07875e039a51d91"
+    },
+    "raw/terna/historical_2024/Terna_Thermoelectric_Heat_2024_RAW.xlsx": {
+      "bytes": 17887,
+      "sha256": "06a18e50214e6e5bd882819a1dde6ba1a0ee0457e0c6728727c12640a4e4a72c"
+    }
+  },
+  "output_hashes": {
+    "historical_baseline/normalized/Terna_Bioenergy_Capacity_2024_NET.csv": "a29000906a7917f2eb70206df359d5dbcf83de2787c835dceb9d44656ddf0b4d",
+    "historical_baseline/normalized/Terna_Bioenergy_Production_2024_NET.csv": "369ab02b24546e9ca3016fc4b4227ef5e93502a4ff64fa70d27f35d304670aba",
+    "historical_baseline/analysis/Terna_Bioenergy_2024_Zone_Summary.csv": "bc202e2fecec38dba2076649bb7d84967dbbc42bd4b444ee570b755bbb691893",
+    "historical_baseline/normalized/Terna_Geothermal_Capacity_2024_NET.csv": "11cd04f2aacd9c5246003628fd89170bbe454853f783465374f5ba3feae4884f",
+    "historical_baseline/normalized/Terna_Geothermal_Production_2024_NET.csv": "be0c5440a0e32e403b99d38a303f55e4e85063009e45485657056095476dca7b",
+    "historical_baseline/analysis/Terna_Geothermal_2024_Zone_Summary.csv": "4a64b8058860e68d3d80727be6bd4e4839ac2980840c3ebd5b6bc7b1536ff9c2",
+    "historical_baseline/normalized/Terna_Hydro_Capacity_2024_NET.csv": "31d4a6a2664ddf8cef44f593d217f63dc13a97b65d83866b49c8980386f35d12",
+    "historical_baseline/normalized/Terna_Hydro_Production_2024_NET.csv": "8dd57ee7b1946684b29d43bb4eafe8580d845525690142d1f92ebef96f918bb2",
+    "historical_baseline/analysis/Terna_Hydro_2024_Zone_Summary.csv": "5a2f8773835f44d7f318861a02ad108ab85b0cbe242bee7edb8e1f695ec27056",
+    "historical_baseline/analysis/Terna_Hydro_2024_Zone_Type_Production.csv": "0890f4593966abbbc398b51021cdd0e207d20b17c53b9662afe6445b1f503753",
+    "historical_baseline/normalized/Terna_Thermoelectric_Heat_2024_Canonical.csv": "49f03c628ff4fd9b9b2674ff1e293cd473bb1bfd4ba2392fdb7764253b8f3570",
+    "historical_baseline/analysis/Terna_CHP_Heat_and_Electricity_2024_Zone_Technology.csv": "9a6a4e84b9541b923e9ab6228d1fe636a8c80ab601c90cd83544c8a1d7be75f3",
+    "historical_baseline/analysis/MEM_Hydro_Pumping_Perimeter_Reconciliation.csv": "a0390da88a9f167a7e7d85cc0e91420b2d906025a8c2dd00861e5fd716e7543e",
+    "historical_baseline/analysis/MEM_Thermal_Perimeter_Reconciliation_2024_2040.csv": "3fbb3ae9d64d12c064377e13ca397b7b027a89729e426751f7f38d52e9a87c03",
+    "historical_baseline/normalized/MEM_HISTORICAL_TECHNOLOGY_TAXONOMY.csv": "483cb50caef5b6c8412f66f22195bee72df22e6381b1c167ca75e509ba895f2a",
+    "historical_baseline/analysis/MEM_HISTORICAL_BASELINE_COMPLETION_STATUS.csv": "82a87f6842679bb416567622c0318b2b9ec7f843699812e509bd62f56160a2af",
+    "historical_baseline/normalized/MEM_Historical_Capacity_By_Zone_Technology.csv": "3c3704a6c173a3ed2db8e8017bc66ca6a40dcf15b3c3af602ce3f3fcebbd5968",
+    "historical_baseline/normalized/MEM_Historical_Generation_By_Zone_Technology.csv": "d28852c6eba104630e30a6a6cbc7ef23051995f186c1533056b480dfe0b4d609",
+    "historical_baseline/manifests/MEM_HISTORICAL_BASELINE_SOURCE_MANIFEST.csv": "d9de691784a45a015f8156cbcc8683d166e0fec792385edf46b50ef4ad34f282",
+    "historical_baseline/manifests/MEM_HISTORICAL_BASELINE_DERIVATION_MANIFEST.csv": "23f7e082033ee9b39b171fcbb8af8320558e4ea68e33cd430711faac85a49bc3",
+    "SOURCE_MANIFEST_HISTORICAL_BASELINE_UPDATED_20260901.csv": "4349a8b576f04f76e98baba4b08beecdb29c7d33339605c16b6744e2b3d3c5f3",
+    "DERIVATION_MANIFEST_HISTORICAL_BASELINE_UPDATED_20260901.csv": "68b01b4ffabfd7bbd326c90922f1d8e2d22ecd713cbcccf30fcbccd9e6b88316",
+    "DATA_STATUS_HISTORICAL_BASELINE_UPDATED_20260901.csv": "8d125949fe89a86da498710bfd836abc92cf8a793c482cf14a1c6dc917f5f715",
+    "docs/MEM_v2.9_EMPIRICAL_GAP_AND_ACQUISITION_REGISTER_HISTORICAL_BASELINE_UPDATED_20260901.csv": "c471534839df847cf31606b2743057a5c76c30192b0d439c4b272dd798563f8b",
+    "docs/MEM_v2.9_HISTORICAL_BASELINE_DECISION_REGISTER_20260901.csv": "b75a61e692204e2aaec04eea354b990f1c4aeedcf0f03cfe7b8bbc0602f91e96"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "archetype_counts": {
+    "CCGT": 19,
+    "NUCLEAR_MODULAR": 27,
+    "OCGT": 13
+  },
+  "availability_compatibility": "PASS",
+  "capacity_conservation_MW": 0.0,
+  "derivative": "networks\\unsolved\\uc1_common_v1\\MEM_2050_HIGH_UC1_COMMON_V1_8760h_UNSOLVED.nc",
+  "derivative_sha256": "8be3c7f0cbac9ce99ab9f94794bf1249a929ba1ce6c272f8c40778746d5a6611",
+  "eligible_parents": 29,
+  "full_year_solved": false,
+  "p2x_equalities": 7,
+  "parent": "networks\\unsolved\\p2x_flex_v1\\MEM_2050_HIGH_P2X_FLEX_V1_8760h_UNSOLVED.nc",
+  "parent_sha256": "bd55fe836461c7ad2e408b0dd79c4c15f4ea34f431ee8f069959302c9f709473",
+  "scenario": "High",
+  "snapshots": 8760,
+  "status": "PASS",
+  "synthetic_units": 59,
+  "year": 2050
+}

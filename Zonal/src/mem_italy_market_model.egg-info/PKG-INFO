@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: mem-italy-market-model
+Version: 0.1.0
+Summary: Independent seven-zone fixed-capacity MEM market model
+Requires-Python: ==3.11.*
+Requires-Dist: pypsa==1.2.3
+Requires-Dist: atlite==0.6.1
+Requires-Dist: linopy==0.7.0
+Requires-Dist: pandas==2.3.3
+Requires-Dist: openpyxl==3.1.5
+Requires-Dist: numpy==2.4.6
+Requires-Dist: xarray==2025.6.1
+Requires-Dist: pyarrow>=18
+Requires-Dist: PyYAML>=6
+Requires-Dist: highspy>=1.12
+Requires-Dist: gurobipy==13.0.3
+Provides-Extra: test
+Requires-Dist: pytest>=8; extra == "test"
