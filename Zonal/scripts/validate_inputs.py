@@ -43,7 +43,7 @@ def validate(repo):
     from mem_model.reporting import canonical_results,uc2_postprocess,marginal_regime
     # Import-only core checks do not use presentation toolkit or solver objects.
     source_inspection={'core_generate_has_render_control':'render_figures' in canonical_results.generate_canonical_results.__code__.co_varnames,
-                       'core_report_has_presentation_control':'presentation' in runner.report.__code__.co_varnames}
+                       'core_report_has_presentation_control':'presentation' in uc2_postprocess.extend_uc2_report.__code__.co_varnames}
     if not all(source_inspection.values()):raise RuntimeError('CORE_REPORTING_PORTABILITY_CONTROL_MISSING')
     visual_loaded=[k for k in sys.modules if k.startswith('mem_model.visualization.')]
     return {'status':'PASS','repository':str(repo),'cases':cases,'artifact_hash_checks':hashes,
