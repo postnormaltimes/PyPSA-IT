@@ -1,0 +1,12 @@
+test,reason,status,applicability
+test_twelve_hash_pinned_inputs_and_eighteen_isolated_jobs[2040-Slow],Former empty-result assertion superseded; same test now checks exact inherited result root and hashes.,UPDATED_AND_INCLUDED,SUPERSEDED_PREPARATION_ASSERTION
+test_twelve_hash_pinned_inputs_and_eighteen_isolated_jobs[2040-Base],Former empty-result assertion superseded; same test now checks exact inherited result root and hashes.,UPDATED_AND_INCLUDED,SUPERSEDED_PREPARATION_ASSERTION
+test_twelve_hash_pinned_inputs_and_eighteen_isolated_jobs[2040-High],Former empty-result assertion superseded; same test now checks exact inherited result root and hashes.,UPDATED_AND_INCLUDED,SUPERSEDED_PREPARATION_ASSERTION
+test_twelve_hash_pinned_inputs_and_eighteen_isolated_jobs[2050-Slow],Former empty-result assertion superseded; same test now checks exact inherited result root and hashes.,UPDATED_AND_INCLUDED,SUPERSEDED_PREPARATION_ASSERTION
+test_twelve_hash_pinned_inputs_and_eighteen_isolated_jobs[2050-Base],Former empty-result assertion superseded; same test now checks exact inherited result root and hashes.,UPDATED_AND_INCLUDED,SUPERSEDED_PREPARATION_ASSERTION
+test_twelve_hash_pinned_inputs_and_eighteen_isolated_jobs[2050-High],Former empty-result assertion superseded; same test now checks exact inherited result root and hashes.,UPDATED_AND_INCLUDED,SUPERSEDED_PREPARATION_ASSERTION
+test_2050_static_preflight_without_production_outputs[Slow],Former no-output assertion replaced by read-only post-production preflight; all cases enabled.,SUCCESSOR_INCLUDED,COVERED_BY_SUCCESSOR_TEST
+test_2050_static_preflight_without_production_outputs[Base],Former no-output assertion replaced by read-only post-production preflight; all cases enabled.,SUCCESSOR_INCLUDED,COVERED_BY_SUCCESSOR_TEST
+test_2050_static_preflight_without_production_outputs[High],Former no-output assertion replaced by read-only post-production preflight; all cases enabled.,SUCCESSOR_INCLUDED,COVERED_BY_SUCCESSOR_TEST
+test_eighteen_distinct_jobs_and_no_v1_v2_destinations,Former absent-result-root assertion replaced by explicit v3 versus v1/v2 path isolation.,UPDATED_AND_INCLUDED,SUPERSEDED_PREPARATION_ASSERTION
+test_reporting_guard_blocks_pypsa_and_linopy_without_solving,Deliberately invokes optimization entry points / constructor to test rejection; forbidden during this release task. Global prohibition guards every included test and preflight.,DESELECTED,COVERED_BY_SUCCESSOR_TEST

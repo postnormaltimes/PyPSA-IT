@@ -1,0 +1,42 @@
+schema_version: MEM_FINAL_METHODOLOGY_EXECUTION_V3
+variant: final_v3
+result_root: results/final_methodology_v3
+network_receipt: qa/final_pre_rerun/final_successor/FINAL_PRE_RERUN_SUCCESSOR_GATE.json
+network_lineage: qa/final_pre_rerun/final_successor/FINAL_SUCCESSOR_NETWORK_LINEAGE_AND_HASHES.csv
+final_verification: qa/final_pre_rerun/final_successor/FINAL_PRE_RERUN_SUCCESSOR_GATE.json
+invariants: qa/final_pre_rerun/final_successor/FINAL_SUCCESSOR_INVARIANTS.json
+vre_qa: qa/final_pre_rerun/final_successor/FINAL_VRE_CALIBRATION_QA.csv
+water_mapping: qa/final_methodology_closure/hydro/WATER_VALUE_STATE_MAPPING.csv
+manual_authorization:
+  2040_Slow: true
+  2040_Base: true
+  2040_High: true
+  2050_Slow: true
+  2050_Base: true
+  2050_High: true
+authorization_required: EXPLICIT_SINGLE_JOB_MANUAL_ACTION
+execution_path_integrated: true
+accepted_preparation_controls:
+  qa/final_pre_rerun/final_successor/FINAL_SUCCESSOR_NETWORK_LINEAGE_AND_HASHES.csv: 32414741df09a974fe285e11b5048d1e6160c46c96a1ec75bab31f33aae32667
+  qa/final_pre_rerun/final_successor/FINAL_SUCCESSOR_INVARIANTS.json: 48e97e07cc55f931e3f39a75b5e3f5a4aa4f835789936bc7ddd124a4261c5740
+  qa/final_pre_rerun/final_successor/FINAL_VRE_CALIBRATION_QA.csv: dce8f35b63345fc86bb2a9325e190696bdbd2773ce87334aabb5576f18c384b9
+solver_inherited_from: config/final_methodology_execution_v2.yaml
+solver:
+  name: gurobi
+  required_version: 13.0.3
+  options: {Threads: 1, Seed: 0}
+  include_objective_constant: false
+  adaptive_tuning: false
+  MIPGap_override: null
+no_automatic_execution: true
+review_sequence:
+  first: 2050_Base
+  second_after_first_review: 2040_Base
+  remaining_four: AFTER_BOTH_BASE_COMPARISONS_ACCEPTED
+  production_family_promotion: AFTER_BOTH_BASE_COMPARISONS_ACCEPTED
+water_values:
+  source: FIXED_COMMITMENT_PRICE_LP
+  assign_all_duals: true
+  raw_coverage_required: true
+  units: EUR/MWh_water
+  divide_by_objective_weight: false

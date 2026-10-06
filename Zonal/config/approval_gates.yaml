@@ -8,7 +8,7 @@ project_plan:
 
 execution_mode:
   status: MANUAL_POWERSHELL_GATE_EXECUTION_READY
-  promotion_rule: The operator may run only the exact deterministic PowerShell command in the current gate runbook. Research and assumptions remain locked; The model operator reviews each machine-readable receipt before the successor gate may run. No speculative parallel phases or gate bypasses.
+  promotion_rule: The operator may run only the exact deterministic PowerShell command in the current gate runbook. Research and assumptions remain locked; Project validation checks each technical receipt before the successor gate may run. No speculative parallel phases or gate bypasses.
 
 chronology:
   status: METHOD_SELECTED
@@ -21,7 +21,7 @@ external_prices:
   status: 2040_R10_AND_2050_B9H_PRODUCTION_SOURCES_ACCEPTED
   approved_id: E1_EXISTING_MEM_PYPSA_EUR_BOUNDARY_WORKFLOW
   data_status: B8_AND_B9B_BOUNDED_BASELINES_IMMUTABLE; S2_MAX_CLOSURE_DIAGNOSTIC_IMMUTABLE; B8D_2040_ACCEPTED_AND_HASH_FROZEN; B10_2040_COMPLETE; STAGE_B_2040_RUNTIME_1_PASS; B9C_2050_R10_IMMUTABLE_DIAGNOSTIC; B9D_2050_R5_IMMUTABLE_DIAGNOSTIC; B9E_COMPLETED; B9F_IMMUTABLE_DIAGNOSTIC_PREDECESSOR; B9H_IMMUTABLE_ACCEPTED_2050_PRICE_SOURCE; B9G_STANDALONE_PACKAGE_NON_BLOCKING_PROVENANCE_GAP; B10_2050_PASS_IMMUTABLE; STAGE_B_2050_PREPARATION_PASS
-  promotion_rule: The fixed ten-market Stage-A model supplies Stage B only through explicitly accepted horizon-specific production sources. The 2040 B8D and 2050 B9H sources and their B10 handoffs are accepted and locked. The absent standalone B9G completed package is a non-blocking historical provenance gap, not a B10 runtime dependency. All three 2050 Stage-B networks are prepared unsolved; production optimization remains locked pending execution authorization for that legacy model family. CORS has no Stage-A price.
+  promotion_rule: The fixed ten-market Stage-A model supplies Stage B only through explicitly accepted horizon-specific production sources. The 2040 B8D and 2050 B9H sources and their B10 transfers are accepted and locked. The absent standalone B9G completed package is a non-blocking historical provenance gap, not a B10 runtime dependency. All three 2050 Stage-B networks are prepared unsolved; production optimization remains locked pending validation of historical inputs. CORS has no Stage-A price.
 
 stage_a_static_inputs:
   status: ETX7B1_STATIC_ADAPTER_COMPLETE
@@ -80,10 +80,10 @@ stage_a_manual_gates:
   b9f_authorized: false
   b9g_authorized: false
   b10_2040_authorized: false
-  b10_2040_status: ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE
+  b10_2040_status: ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE
   b10_2040_authorized_command: null
   b10_2050_authorized: false
-  b10_2050_status: ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE
+  b10_2050_status: ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE
   b10_2050_authorized_command: null
   stage_b_2040_authorized: false
   stage_b_2040_authorized_scenarios: []
@@ -99,7 +99,7 @@ stage_a_manual_gates:
   stage_b_2050_scenarios: {Slow: PRE_P2X_FLEX_DIAGNOSTIC_BASELINE, Base: PRE_P2X_FLEX_DIAGNOSTIC_BASELINE, High: PRE_P2X_FLEX_DIAGNOSTIC_BASELINE}
   b10_authorized: false
   stage_b_authorized: false
-  promotion_rule: B9H and both B10 handoffs remain immutable. Existing 2040 and 2050 solved Stage-B results are retained as PRE_P2X_FLEX_DIAGNOSTIC_BASELINE and cannot be overwritten. Only the separate P2X_FLEX_V1 gate may authorize corrected manual production execution. Generic B10 and Stage-A solver gates remain locked.
+  promotion_rule: B9H and both B10 transfers remain immutable. Existing 2040 and 2050 solved Stage-B results are retained as PRE_P2X_FLEX_DIAGNOSTIC_BASELINE and cannot be overwritten. Only the separate P2X_FLEX_V1 gate may authorize corrected manual production execution. Generic B10 and Stage-A solver gates remain locked.
 
 stage_b_2040_production:
   status: STAGE_B_2040_THREE_SCENARIO_PRODUCTION_COMPLETE
@@ -120,7 +120,7 @@ stage_b_2040_production:
   accepted_high_receipt: results/MEM_2040_HIGH_CANONICAL/MEM_STAGE_B_2040_HIGH_ACCEPTANCE_v1.0.json
   accepted_high_receipt_sha256: A44B54F62F2D163ED89CE5D27CB01B3257BA65BD727C4C82826E8419E44FEE08
   authorized_commands: {}
-  required_b10_gate: ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE
+  required_b10_gate: ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE
   required_runtime_gate: STAGE_B_2040_RUNTIME_1_PASS
   required_runtime_manifest: runtime_inputs/accepted/MEM_STAGE_B_2040_ACCEPTED_RUNTIME_MANIFEST_v1.0.csv
   required_runtime_manifest_sha256: 5BAAE9BC065221463A422C2835A09DBFB4BC7B1E8B97902F34502D4D7EA9A63B
@@ -151,7 +151,7 @@ stage_b_2050_production:
   scenario_authorization: {Slow: false, Base: false, High: false}
   scenario_preparation: {Slow: PRE_P2X_FLEX_DIAGNOSTIC_BASELINE, Base: PRE_P2X_FLEX_DIAGNOSTIC_BASELINE, High: PRE_P2X_FLEX_DIAGNOSTIC_BASELINE}
   required_source: ETX-7B9H
-  required_b10_gate: ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE
+  required_b10_gate: ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE
   required_b10_manifest_sha256: AC3F242338A289DA740801A6B16F924E3FECF45ED17FE4F55487D356B8852FA5
   required_runtime_manifest: runtime_inputs/accepted_2050/MEM_STAGE_B_2050_ACCEPTED_RUNTIME_MANIFEST_v1.0.csv
   required_runtime_manifest_sha256: E7F224D4D33FE8B7262E3974DB1CB85D250279FEBCCBC689A13D16ACF472A993
@@ -321,7 +321,7 @@ perimeter_closure_method:
   v1_status: SUPERSEDED_UNACCEPTED_DRAFT
 
 production_price_sources:
-  status: BOTH_B10_HANDOFFS_COMPLETE_2050_STAGE_B_MANUAL_PRODUCTION_AUTHORIZED
+  status: BOTH_B10_TRANSFERS_COMPLETE_2050_STAGE_B_MANUAL_PRODUCTION_AUTHORIZED
   authority: config/stage_a_production_price_sources.yaml
   2040: ETX7B8D_R10_ACCEPTED_LOCKED
   2050: ETX7B9H_ACCEPTED_IMMUTABLE_PRICE_SOURCE
@@ -332,6 +332,6 @@ production_price_sources:
   stage_b_2040_unauthorized_scenarios: [Base]
   stage_b_2040_base_status: ACCEPTED_CANONICAL_PRODUCTION_RUN_IMMUTABLE
   b10_2050_authorized: false
-  b10_2050_status: ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE
+  b10_2050_status: ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE
   stage_b_2050_preparation_status: STAGE_B_2050_PREPARATION_PASS
   stage_b_2050_authorized: true

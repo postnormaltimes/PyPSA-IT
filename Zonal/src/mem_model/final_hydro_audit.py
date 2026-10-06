@@ -216,7 +216,7 @@ def checkpoint_spatial_authority_gap(test_result):
     parents = state["phases"]["W"]["successor_parents"]
     receipt_path = QA/"HYDRO_SPATIAL_CLOSURE_CHECKPOINT.json"
     manifest = QA/"HYDRO_SPATIAL_CHECKPOINT_MANIFEST.csv"
-    handoff = ROOT/"docs/final_methodology_closure/MEM_FINAL_METHODOLOGY_PHASE_H_SPATIAL_AUTHORITY_HANDOFF.md"
+    transfer = ROOT/"docs/final_methodology_closure/MEM_FINAL_METHODOLOGY_PHASE_H_SPATIAL_AUTHORITY_TRANSFER.md"
     inputs = [QA/"HYDRO_CURRENT_LINEAGE_AUDIT_RECEIPT.json",
               QA/"HYDRO_SPATIAL_SOURCE_RECOVERY.json",QA/"HYDRO_NATIVE_WATER_VALUE_API_RECEIPT.json"]
     receipt = {"state":"HYDRO_SPATIAL_MAPPING_AUTHORITY_REQUIRED","phase":"H","status":"BLOCKED",
@@ -232,12 +232,12 @@ def checkpoint_spatial_authority_gap(test_result):
         "cyclic_rule":census["cyclic_rule"],"tests":test_result,
         "hydro_successor_networks_created":0,"hydro_weather_conversions":0,
         "next_phase":"H","N_C_F":"NOT_STARTED_REQUIRES_H_PASS",
-        "handoff":str(handoff.relative_to(ROOT)),"manifest":str(manifest.relative_to(ROOT)),
+        "transfer":str(transfer.relative_to(ROOT)),"manifest":str(manifest.relative_to(ROOT)),
         "optimization_model_constructed":False,"production_optimization_executed":False,
         "production_solver_invocations":0,"production_results_modified":0,"production_state":"PRODUCTION_NOT_EXECUTED"}
     dump_json(receipt_path,receipt)
     artifacts = [*inputs,QA/"HYDRO_CURRENT_LINEAGE_AND_STATE_CENSUS.csv",
-        QA/"HYDRO_CURRENT_CROSS_ZONE_SHAPE_EQUALITY.csv",tests_path,receipt_path,handoff,
+        QA/"HYDRO_CURRENT_CROSS_ZONE_SHAPE_EQUALITY.csv",tests_path,receipt_path,transfer,
         ROOT/"src/mem_model/final_hydro_audit.py",ROOT/"tests/test_final_hydro_audit.py"]
     pd.DataFrame([{"path":str(p.relative_to(ROOT)),"bytes":p.stat().st_size,
         "sha256":sha256_file(p)} for p in artifacts]).to_csv(manifest,index=False)
@@ -245,7 +245,7 @@ def checkpoint_spatial_authority_gap(test_result):
         decisions=["W_PASS_REUSED_WITHOUT_RECONSTRUCTION","CURRENT_HYDRO_CAPACITY_AND_ANNUAL_WATER_CONTROLS_PRESERVED",
             census["cyclic_rule"],"FIXED_COMMITMENT_LP_NATIVE_STORE_DUAL_AUTHORITY_NO_EXOGENOUS_WATER_COST",
             "NO_UNAPPROVED_PLANT_CATCHMENT_OR_CLASS_TEMPORAL_PROXY"],tests=test_result,unresolved=residuals)
-    state["phases"]["H"].update({"phase_result":receipt["state"],"current_handoff":str(handoff.relative_to(ROOT)),
+    state["phases"]["H"].update({"phase_result":receipt["state"],"current_transfer":str(transfer.relative_to(ROOT)),
         "manifest":str(manifest.relative_to(ROOT)),"receipt":str(receipt_path.relative_to(ROOT))})
     dump_json(STATE,state)
     return receipt

@@ -364,7 +364,7 @@ def verify_final() -> dict[str, object]:
         and gate["authorized_commands"] == {}
         and manual["stage_b_2040_authorized"] is False
         and manual["stage_b_2040_authorized_scenarios"] == []
-        and manual["b10_2040_status"] == "ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE"
+        and manual["b10_2040_status"] == "ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE"
         and gates["stage_b_2050_production"]["execution_enabled"] is False
         and manual["stage_b_2050_authorized"] is False
     ):

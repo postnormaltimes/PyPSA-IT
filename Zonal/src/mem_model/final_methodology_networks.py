@@ -24,32 +24,69 @@ EXPECTED_COUNTS = {(2040,"Slow"):130,(2040,"Base"):108,(2040,"High"):108,
                    (2050,"Slow"):86,(2050,"Base"):59,(2050,"High"):59}
 
 
-def settings():
-    value=load_yaml(CONFIG)
-    if value['schema_version']!='MEM_FINAL_METHODOLOGY_EXECUTION_V1' or value['variant']!='final_v1' or value['no_automatic_execution'] is not True:
+def settings(variant='final_v1'):
+    if variant not in ('final_v1','final_v2','final_v3','final_v4'):
+        raise ValueError('FINAL_UNKNOWN_VARIANT')
+    path=CONFIG if variant=='final_v1' else ROOT/f'config/final_methodology_execution_{variant[-2:]}.yaml'
+    value=load_yaml(path)
+    if value['schema_version']!=f'MEM_FINAL_METHODOLOGY_EXECUTION_{variant[-2:].upper()}' or value['variant']!=variant or value['no_automatic_execution'] is not True:
         raise RuntimeError('FINAL_EXECUTION_CONFIG_FAIL')
     expected={'name':'gurobi','required_version':'13.0.3','options':{'Threads':1,'Seed':0},
               'include_objective_constant':False,'adaptive_tuning':False,'MIPGap_override':None}
-    if value['solver']!=expected or set(value['manual_authorization'])!={f'{y}_{s}' for y,s in SCENARIOS}:
+    if value['solver']!=expected:
         raise RuntimeError('FINAL_SOLVER_OR_AUTHORIZATION_CONFIG_FAIL')
+    if variant=='final_v4':
+        if (value.get('all_scenarios_manually_executable') is not True or
+            'manual_authorization' in value or 'review_sequence' in value):
+            raise RuntimeError('FINAL_V4_MANUAL_EXECUTION_CONFIG_FAIL')
+    elif set(value['manual_authorization'])!={f'{y}_{s}' for y,s in SCENARIOS}:
+        raise RuntimeError('FINAL_SOLVER_OR_AUTHORIZATION_CONFIG_FAIL')
+    if variant=='final_v2' and (value['result_root']!='results/final_methodology_v2' or value.get('execution_path_integrated') is not True):
+        raise RuntimeError('FINAL_V2_EXECUTION_CONFIG_FAIL')
+    if variant=='final_v3' and (value['result_root']!='results/final_methodology_v3' or value.get('execution_path_integrated') is not True):
+        raise RuntimeError('FINAL_V3_EXECUTION_CONFIG_FAIL')
+    if variant=='final_v4' and (value['result_root']!='results/final_methodology_v4' or
+        value.get('execution_path_integrated') is not True or value.get('inherited_execution_variant_2040')!='final_v3'):
+        raise RuntimeError('FINAL_V4_EXECUTION_CONFIG_FAIL')
     return value
 
 
-def package(year,scenario):
+def package(year,scenario,variant='final_v1'):
     if (year,scenario) not in SCENARIOS:
         raise ValueError('FINAL_UNKNOWN_SCENARIO')
+    if variant=='final_v4':
+        from .final_capacity_revision import package as capacity_package
+        return capacity_package(year,scenario)
+    if variant=='final_v3':
+        table=verify_v3_frozen_contract(require_closed=False)
+        case=table.loc[table.year.eq(year)&table.scenario.eq(scenario)].set_index('network_type')
+        return {'year':year,'scenario':scenario,'path':case.at['UC_INPUT','path'],
+            'sha256':case.at['UC_INPUT','sha256'],
+            'reference_path':case.at['CONTINUOUS_REFERENCE','path'],
+            'reference_sha256':case.at['CONTINUOUS_REFERENCE','sha256'],
+            'UC_units':EXPECTED_COUNTS[(year,scenario)]}
+    if variant=='final_v2':
+        table=verify_v2_frozen_contract()
+        case=table.loc[table.year.eq(year)&table.scenario.eq(scenario)].set_index('network_type')
+        return {'year':year,'scenario':scenario,'path':case.at['UC_INPUT','final_v2_path'],
+            'sha256':case.at['UC_INPUT','final_v2_sha256'],
+            'reference_path':case.at['CONTINUOUS_REFERENCE','final_v2_path'],
+            'reference_sha256':case.at['CONTINUOUS_REFERENCE','final_v2_sha256'],
+            'UC_units':EXPECTED_COUNTS[(year,scenario)]}
+    if variant!='final_v1':
+        raise ValueError('FINAL_UNKNOWN_VARIANT')
     receipt=json.loads(RECEIPT.read_text())
     if receipt['status']!='PASS' or len(receipt['packages'])!=6:
         raise RuntimeError('FINAL_PACKAGE_RECEIPT_FAIL')
     return next(p for p in receipt['packages'] if (p['year'],p['scenario'])==(year,scenario))
 
 
-def water_mapping(year,scenario):
-    table=pd.read_csv(ROOT/settings()['water_mapping'])
+def water_mapping(year,scenario,variant='final_v1'):
+    table=pd.read_csv(ROOT/(settings() if variant=='final_v1' else settings(variant))['water_mapping'])
     return table.loc[table.year.eq(year)&table.scenario.eq(scenario),['store_id','state_id','zone','hydro_class']].copy()
 
 
-def manual_gate(year,scenario):
+def manual_gate(year,scenario,variant='final_v1'):
     if (year,scenario) not in SCENARIOS:
         raise ValueError('FINAL_UNKNOWN_SCENARIO')
     state=json.loads(STATE.read_text())
@@ -57,9 +94,92 @@ def manual_gate(year,scenario):
         raise RuntimeError('FINAL_EXECUTION_LOCKED: closure not PASS')
     if state.get('semantic_parity',{}).get('status')!='PASS':
         raise RuntimeError('FINAL_EXECUTION_LOCKED: native semantic parity not PASS')
-    if settings()['manual_authorization'][f'{year}_{scenario}'] is not True:
+    cfg=settings() if variant=='final_v1' else settings(variant)
+    if variant=='final_v2':
+        verify_v2_frozen_contract()
+    if variant=='final_v3':
+        verify_v3_frozen_contract()
+    if variant=='final_v4':
+        from .final_capacity_revision import verify_frozen
+        verify_frozen()
+    if variant!='final_v4' and cfg['manual_authorization'][f'{year}_{scenario}'] is not True:
         raise RuntimeError('FINAL_EXECUTION_LOCKED: requires explicit case manual authorization')
-    return f'FINAL_V1_MANUAL_EXECUTION_{year}_{scenario.upper()}'
+    return f'{variant.upper()}_MANUAL_EXECUTION_{year}_{scenario.upper()}'
+
+
+def verify_v2_frozen_contract():
+    """Consume accepted V2C controls, never rebuild or rewrite their evidence.
+
+    V2C's original manifest includes the then-locked execution configuration.
+    That historical manifest is retained; only its immutable model controls are
+    pinned here, independently of the explicitly amended execution flags.
+    """
+    cfg=settings('final_v2')
+    paths={cfg['network_receipt'],cfg['network_lineage'],cfg['final_verification']}
+    controls=cfg.get('accepted_v2c_controls',{})
+    if set(controls)!=paths:
+        raise RuntimeError('FINAL_V2_FROZEN_CONTROL_SET_FAIL')
+    for name,digest in controls.items():
+        path=ROOT/name
+        if not path.is_file() or sha256_file(path)!=digest:
+            raise RuntimeError('FINAL_V2_FROZEN_CONTROL_HASH_FAIL: '+name)
+    receipt=json.loads((ROOT/cfg['network_receipt']).read_text())
+    verification=json.loads((ROOT/cfg['final_verification']).read_text())
+    if (receipt.get('status')!='PASS' or verification.get('status')!='PASS' or
+        verification.get('networks_export_reload_verified')!=18 or
+        verification.get('unexpected_changed_model_fields')!=0 or
+        verification.get('optimizer_invocations')!=0 or
+        verification.get('optimization_model_constructed') is not False):
+        raise RuntimeError('FINAL_V2_ACCEPTED_PREPARATION_FAIL')
+    key=ROOT/receipt['canonical_key_path']
+    if not key.is_file() or sha256_file(key)!=receipt['canonical_key_sha256']:
+        raise RuntimeError('FINAL_V2_CANONICAL_KEY_HASH_FAIL')
+    table=pd.read_csv(ROOT/cfg['network_lineage'])
+    expected={(y,s,t) for y,s in SCENARIOS for t in ('UC_INPUT','CONTINUOUS_REFERENCE')}
+    if (len(table)!=12 or table.duplicated(['year','scenario','network_type']).any() or
+        set(table[['year','scenario','network_type']].itertuples(index=False,name=None))!=expected or
+        not table.status.eq('PASS').all() or not table.final_v2_path.is_unique):
+        raise RuntimeError('FINAL_V2_LINEAGE_CASE_SET_FAIL')
+    accepted={(r['year'],r['scenario'],r['network_type']):r for r in receipt['networks']
+              if r['network_type'] in ('UC_INPUT','CONTINUOUS_REFERENCE')}
+    for row in table.to_dict('records'):
+        authority=accepted[(row['year'],row['scenario'],row['network_type'])]
+        if any(row[k]!=authority[k] for k in ('final_v2_path','final_v2_sha256','canonical_p2x_key_sha256')):
+            raise RuntimeError('FINAL_V2_LINEAGE_RECEIPT_MISMATCH')
+        suffix='_CONTINUOUS_REFERENCE' if row['network_type']=='CONTINUOUS_REFERENCE' else ''
+        expected_path=ROOT/'networks/unsolved/final_methodology_v2'/f"MEM_{row['year']}_{row['scenario'].upper()}_FINAL_METHODOLOGY_V2{suffix}_8760h_UNSOLVED.nc"
+        if (ROOT/row['final_v2_path']).resolve()!=expected_path.resolve():
+            raise RuntimeError('FINAL_V2_INPUT_PATH_ISOLATION_FAIL')
+    return table
+
+
+def verify_v3_frozen_contract(*,require_closed=True):
+    """Consume static small-delta controls; never replay construction or execute."""
+    cfg=settings('final_v3')
+    if set(cfg['accepted_preparation_controls'])!={cfg['network_lineage'],cfg['invariants'],cfg['vre_qa']}:
+        raise RuntimeError('FINAL_V3_FROZEN_CONTROL_SET_FAIL')
+    for name,digest in cfg['accepted_preparation_controls'].items():
+        if not (ROOT/name).is_file() or sha256_file(ROOT/name)!=digest:
+            raise RuntimeError('FINAL_V3_FROZEN_CONTROL_HASH_FAIL: '+name)
+    gate=json.loads((ROOT/cfg['final_verification']).read_text())
+    permitted=('FINAL_V3_STATIC_QA_PASS',) if require_closed else ('FINAL_V3_STATIC_QA_PASS','STATIC_NETWORK_PREPARATION_PASS_PENDING_FOCUSED_TESTS')
+    if (gate.get('status') not in permitted or
+        gate.get('unexpected_changed_model_fields')!=0 or
+        gate.get('optimizer_invocations')!=0 or
+        gate.get('optimization_model_constructed') is not False):
+        raise RuntimeError('FINAL_V3_STATIC_GATE_NOT_PASS')
+    table=pd.read_csv(ROOT/cfg['network_lineage'])
+    expected={(y,s,t) for y,s in SCENARIOS for t in ('UC_INPUT','CONTINUOUS_REFERENCE')}
+    if (len(table)!=12 or table.duplicated(['year','scenario','network_type']).any() or
+        set(table[['year','scenario','network_type']].itertuples(index=False,name=None))!=expected or
+        not table.status.eq('PASS').all() or not table.path.is_unique):
+        raise RuntimeError('FINAL_V3_LINEAGE_CASE_SET_FAIL')
+    for row in table.to_dict('records'):
+        suffix='_CONTINUOUS_REFERENCE' if row['network_type']=='CONTINUOUS_REFERENCE' else ''
+        expected_path=ROOT/'networks/unsolved/final_methodology_v3'/f"MEM_{row['year']}_{row['scenario'].upper()}_FINAL_METHODOLOGY_V3{suffix}_8760h_UNSOLVED.nc"
+        if (ROOT/row['path']).resolve()!=expected_path.resolve():
+            raise RuntimeError('FINAL_V3_INPUT_PATH_ISOLATION_FAIL')
+    return table
 
 
 def _equal(parent,output,*,reference_names=()):
@@ -85,7 +205,7 @@ def _equal(parent,output,*,reference_names=()):
             raise RuntimeError('FINAL_INHERITED_METADATA_DRIFT: '+k)
 
 
-def structural_check(network,year,scenario,*,continuous=False):
+def structural_check(network,year,scenario,*,continuous=False,expected_units=None):
     times=pd.date_range('2019-01-01',periods=8760,freq='h',name='snapshot')
     if not network.snapshots.equals(times) or not set(ZONES).issubset(network.buses.index):
         raise RuntimeError('FINAL_CHRONOLOGY_OR_ZONE_FAIL')
@@ -108,7 +228,7 @@ def structural_check(network,year,scenario,*,continuous=False):
             if not np.isfinite(network.get_switchable_as_dense(component,field).to_numpy()).all():
                 raise RuntimeError(f'FINAL_DYNAMIC_FINITE_FAIL: {component}/{field}')
     names=generators.index[generators.committable]
-    if len(names)!=(0 if continuous else EXPECTED_COUNTS[(year,scenario)]):
+    if len(names)!=(0 if continuous else (EXPECTED_COUNTS[(year,scenario)] if expected_units is None else expected_units)):
         raise RuntimeError('FINAL_UC_COUNT_FAIL')
     if len(names):
         maximum=network.get_switchable_as_dense('Generator','p_max_pu')[names]
@@ -336,23 +456,42 @@ def verify_frozen_contract():
     return table.set_index('path').sha256.to_dict()
 
 
-def preflight(year,scenario,*,persist=True):
-    frozen=verify_frozen_contract()
-    item=package(year,scenario)
+def preflight(year,scenario,*,persist=True,variant='final_v1'):
+    frozen=verify_frozen_contract() if variant=='final_v1' else None
+    item=package(year,scenario) if variant=='final_v1' else package(year,scenario,variant)
     with no_models_or_solves():
         for field,hash_field in (('path','sha256'),('reference_path','reference_sha256')):
             source=ROOT/item[field]
-            if not source.is_file() or frozen.get(item[field])!=item[hash_field] or sha256_file(source)!=item[hash_field]:
+            if not source.is_file() or (frozen is not None and frozen.get(item[field])!=item[hash_field]) or sha256_file(source)!=item[hash_field]:
                 raise RuntimeError('FINAL_INPUT_HASH_FAIL')
         network=pypsa.Network(ROOT/item['path'])
-        structural_check(network,year,scenario)
+        structural_check(network,year,scenario,expected_units=item['UC_units'] if variant=='final_v4' else None)
+        if variant in ('final_v2','final_v3','final_v4'):
+            reference=pypsa.Network(ROOT/item['reference_path'])
+            structural_check(reference,year,scenario,continuous=True)
+            pd.testing.assert_index_equal(network.snapshots,reference.snapshots)
+        if variant=='final_v4' and year==2050:
+            from .final_capacity_revision import capacity_qa, exact_diff, QA as v4_qa
+            plan=pd.read_csv(v4_qa/'FINAL_V4_CHILD_CROSSWALK.csv')
+            plan=plan.loc[plan.scenario.eq(scenario)]
+            lineage=pd.read_csv(ROOT/settings(variant)['network_lineage'])
+            for kind,derived in (('UC_INPUT',network),('CONTINUOUS_REFERENCE',reference)):
+                row=lineage.loc[lineage.year.eq(year)&lineage.scenario.eq(scenario)&lineage.network_type.eq(kind)].iloc[0]
+                if sha256_file(ROOT/row.parent_path)!=row.parent_sha256:
+                    raise RuntimeError('FINAL_V4_PARENT_HASH_FAIL')
+                original=pypsa.Network(ROOT/row.parent_path)
+                exact_diff(original,derived,plan,scenario,kind)
+                capacity_qa(original,derived,plan,scenario,continuous=kind=='CONTINUOUS_REFERENCE')
+    cfg=settings() if variant=='final_v1' else settings(variant)
     result={'status':'PASS','prepared_for_manual_execution':True,'year':year,'scenario':scenario,
-        'variant':'final_v1','uc_input_path':item['path'],'uc_input_sha256':item['sha256'],
+        'variant':variant,'uc_input_path':item['path'],'uc_input_sha256':item['sha256'],
         'parent_path':item['reference_path'],'parent_sha256':item['reference_sha256'],
         'snapshots':8760,'synthetic_units':item['UC_units'],'optimization_model_constructed':False,
-        'production_solver_invocations':0,'manual_authorized':settings()['manual_authorization'][f'{year}_{scenario}']}
+        'production_solver_invocations':0,'manual_authorized':variant=='final_v4' or cfg['manual_authorization'][f'{year}_{scenario}']}
+    if variant in ('final_v2','final_v3','final_v4'):
+        result['execution_gate']=manual_gate(year,scenario,variant)
     if persist:
-        dump_json(ROOT/settings()['result_root']/str(year)/scenario/'QA/PREFLIGHT.json',result)
+        dump_json(ROOT/cfg['result_root']/str(year)/scenario/'QA/PREFLIGHT.json',result)
     return result
 
 
@@ -389,13 +528,13 @@ def close_final(tests):
         raise RuntimeError('FINAL_CLOSURE_GATE_FAIL')
     if state.get('semantic_parity',{}).get('status')!='PASS':
         raise RuntimeError('FINAL_NATIVE_SEMANTIC_PARITY_NOT_PASS')
-    handoff=ROOT/'docs/final_methodology_closure/MEM_FINAL_CANONICAL_NETWORKS_HANDOFF.md'
-    if not handoff.is_file():
-        raise RuntimeError('FINAL_HANDOFF_MISSING')
+    transfer=ROOT/'docs/final_methodology_closure/MEM_FINAL_CANONICAL_NETWORKS_TRANSFER.md'
+    if not transfer.is_file():
+        raise RuntimeError('FINAL_TRANSFER_MISSING')
     protected=protected_artifact_verification(state)
     artifacts=[CONFIG,Path(__file__),ROOT/'src/mem_model/stage_b_uc2.py',
         ROOT/'src/mem_model/reporting/uc2_postprocess.py',ROOT/'tests/test_final_methodology_networks.py',
-        handoff,RECEIPT,QA/'EXACT_PRESERVATION_MATRIX.csv',QA/'FINAL_NETWORK_LINEAGE_AND_HASHES.csv',
+        transfer,RECEIPT,QA/'EXACT_PRESERVATION_MATRIX.csv',QA/'FINAL_NETWORK_LINEAGE_AND_HASHES.csv',
         QA/'APPROVED_MODEL_OBJECT_CHANGE_INVENTORY.csv',
         QA/'FINAL_MANUAL_JOB_REGISTRY.csv',
         ROOT/'docs/final_methodology_closure/MEM_FINAL_CANONICAL_NETWORKS_POWERSHELL_RUNBOOK.md',
@@ -433,10 +572,10 @@ def close_final(tests):
     state=record_phase('F','PASS',parents=state['phases']['N']['successor_parents'],
         artifacts=[*artifacts,manifest,final],decisions=['FINAL_SIX_UNSOLVED_FAMILY_WITH_SAME_SYSTEM_CONTINUOUS_COUNTERFACTUALS',
         'EXISTING_UC2_PATH_FINAL_V1_VARIANT_NO_SOLVER_OR_MODEL_CALL','FUTURE_NATIVE_WATER_DUAL_COMPLETENESS_GATE',
-        'FINAL_METHOD_REVIEW_REQUIRED_BEFORE_MANUAL_EXECUTION'],tests=tests,unresolved=[])
+        'FINAL_SOL_REVIEW_REQUIRED_BEFORE_MANUAL_EXECUTION'],tests=tests,unresolved=[])
     state['phases']['F'].update({'phase_result':'FINAL_CANONICAL_NETWORKS_PREPARED',
         'successor_parents':[{k:p[k] for k in ('year','scenario','path','sha256')} for p in receipt['packages']],
         'manifest':str(manifest.relative_to(ROOT)),'receipt':str(final.relative_to(ROOT)),
-        'current_handoff':str(handoff.relative_to(ROOT))})
+        'current_transfer':str(transfer.relative_to(ROOT))})
     state['optimization_model_constructed']=False; dump_json(STATE,state)
     return verification

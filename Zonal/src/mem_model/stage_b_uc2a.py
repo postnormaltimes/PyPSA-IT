@@ -548,8 +548,8 @@ def write_manifest() -> None:
     path = qa_dir / "MEM_UC2A_ARTIFACT_MANIFEST.csv"
     files = [CONFIG_PATH, ROOT / "src/mem_model/uc_heterogeneity.py", ROOT / "src/mem_model/stage_b_uc2a.py",
              ROOT / "src/mem_model/stage_b_uc1.py", ROOT / "src/mem_model/stage_b_uc2.py",
-             ROOT / "tests/test_stage_b_uc2a.py", ROOT / "docs/MEM_UC_V2A_PREPARATION_HANDOFF.md",
-             ROOT / "docs/MEM_INTERIM_PYPSA_IMPLEMENTATION_HANDOFF.md"]
+             ROOT / "tests/test_stage_b_uc2a.py", ROOT / "docs/MEM_UC_V2A_PREPARATION_TRANSFER.md",
+             ROOT / "docs/MEM_INTERIM_PYPSA_IMPLEMENTATION_TRANSFER.md"]
     files += [p for p in sorted(qa_dir.iterdir()) if p.is_file() and p != path]
     files += sorted((qa_dir / "superseded/EMPIRICAL_HR_V1").glob("*"))
     files += [output_path(year, scenario) for year, scenario in uc1.SCENARIOS]
@@ -623,7 +623,7 @@ def finalize() -> dict:
         receipt_path = qa_dir / "MEM_UC2A_PREPARATION_RECEIPT.json"
         receipt = _json(receipt_path)
         receipt.update({"focused_non_solving_tests": tests, "final_read_only_verification": result,
-                        "analytical_promotion": "PENDING_METHOD_REVIEW_AND_MANUAL_V2A_BENCHMARK",
+                        "analytical_promotion": "PENDING_SOL_REVIEW_AND_MANUAL_V2A_BENCHMARK",
                         "new_v1_solve_prepared": False})
         dump_json(receipt_path, receipt)
         final = {"status": SUCCESS, "calibration_revision": CALIBRATION,
@@ -644,7 +644,7 @@ def finalize() -> dict:
                  "before_after_zone_technology_records": len(comparison),
                  "receipt_path": str(receipt_path.relative_to(ROOT)),
                  "manifest_path": str((qa_dir / "MEM_UC2A_ARTIFACT_MANIFEST.csv").relative_to(ROOT)),
-                 "handoff_path": "docs/MEM_UC_V2A_PREPARATION_HANDOFF.md"}
+                 "transfer_path": "docs/MEM_UC_V2A_PREPARATION_TRANSFER.md"}
         dump_json(qa_dir / "MEM_UC2A_FINAL_VERIFICATION.json", final)
         write_manifest()
         return final

@@ -22,11 +22,11 @@ validation:
   high_price_threshold_EUR_per_MWh: 500.0
 governance:
   2040_base_manual_sequence_enabled: true
-  2040_base_method_review_accepted: false
+  2040_base_sol_review_accepted: false
   2040_slow_high_manual_enabled: true
   2050_base_nuclear_smoke_accepted: false
   2050_base_manual_enabled: true
-  2050_base_method_review_accepted: false
+  2050_base_sol_review_accepted: false
   2050_slow_high_manual_enabled: true
   no_automatic_next_job: true
 

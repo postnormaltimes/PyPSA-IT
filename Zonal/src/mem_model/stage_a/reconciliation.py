@@ -28,7 +28,7 @@ from mem_model.stage_a.network import MARKETS, _safe_id, load_execution_config, 
 ROOT = Path(__file__).resolve().parents[3]
 WORKSPACE = ROOT.parent
 OUTPUT_DIR = ROOT / "qa/stage_a/reconciliation"
-HANDOFF_PATH = ROOT / "docs/MEM_STAGE_A_2050_RERUN_PREPARATION_HANDOFF_v1.0.md"
+TRANSFER_PATH = ROOT / "docs/MEM_STAGE_A_2050_RERUN_PREPARATION_TRANSFER_v1.0.md"
 
 RECONCILIATION_PATH = OUTPUT_DIR / "MEM_STAGE_A_RESEARCH_TO_RUNTIME_RECONCILIATION_v1.0.csv"
 FINDINGS_PATH = OUTPUT_DIR / "MEM_STAGE_A_RECONCILIATION_FINDINGS_v1.0.md"
@@ -1041,16 +1041,16 @@ Only a user-approved methodological decision could now change the outcome:
 1. omitted-system support representation or placement;
 2. reduced-perimeter topology abstraction;
 3. adequacy-backstop representation;
-4. treatment of VOLL/load-shedding duals in the Stage-B price handoff.
+4. treatment of VOLL/load-shedding duals in the Stage-B price transfer.
 
 No VOLL, price cap, proxy cost, perimeter, topology, capacity, demand, chronology or frozen research input was changed by this audit.
 """
     FINDINGS_PATH.write_text(text, encoding="utf-8")
 
 
-def _write_handoff(frame: pd.DataFrame, tail: pd.DataFrame) -> None:
+def _write_transfer(frame: pd.DataFrame, tail: pd.DataFrame) -> None:
     counts = frame["classification"].value_counts().to_dict()
-    text = f"""# MEM Stage-A 2050 rerun preparation record v1.0
+    text = f"""# MEM Stage-A 2050 rerun preparation transfer v1.0
 
 ## Outcome
 
@@ -1072,7 +1072,7 @@ The 2050 exported-price problem is driven primarily by scarcity tails and litera
 
 ## Next decision
 
-Before any further solve, select whether to revisit omitted-system representation, reduced-perimeter topology abstraction, adequacy backstop design, or the treatment of scarcity duals in the Stage-B price handoff. That is a methodology decision; it is not an automatic coding correction.
+Before any further solve, select whether to revisit omitted-system representation, reduced-perimeter topology abstraction, adequacy backstop design, or the treatment of scarcity duals in the Stage-B price transfer. That is a methodology decision; it is not an automatic coding correction.
 
 ## Artifacts
 
@@ -1082,7 +1082,7 @@ Before any further solve, select whether to revisit omitted-system representatio
 - `{_rel(IMPACT_PATH)}`
 - `{_rel(VERIFICATION_PATH)}`
 """
-    HANDOFF_PATH.write_text(text, encoding="utf-8")
+    TRANSFER_PATH.write_text(text, encoding="utf-8")
 
 
 def run_reconciliation(*, write: bool = True) -> dict[str, Any]:
@@ -1139,8 +1139,8 @@ def run_reconciliation(*, write: bool = True) -> dict[str, Any]:
         tail.to_csv(TAIL_PATH, index=False, lineterminator="\n")
         IMPACT_PATH.write_text(json.dumps(impact, indent=2) + "\n", encoding="utf-8")
         _write_findings(frame, tail, verification)
-        _write_handoff(frame, tail)
-        for path in (RECONCILIATION_PATH, FINDINGS_PATH, TAIL_PATH, IMPACT_PATH, HANDOFF_PATH):
+        _write_transfer(frame, tail)
+        for path in (RECONCILIATION_PATH, FINDINGS_PATH, TAIL_PATH, IMPACT_PATH, TRANSFER_PATH):
             verification["output_hashes"][_rel(path)] = sha256_file(path)
         VERIFICATION_PATH.write_text(json.dumps(verification, indent=2) + "\n", encoding="utf-8")
     return {"status": status, "reconciliation": frame, "tail": tail, "impact": impact, "verification": verification}

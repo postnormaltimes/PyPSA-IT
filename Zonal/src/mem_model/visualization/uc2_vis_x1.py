@@ -16,8 +16,8 @@ import pandas as pd
 import yaml
 
 from mem_model.reporting import canonical_results as canonical
-from mem_model.visualization.vis_x1 import CONFIG, ROOT, ZONE_ORDER, _sha, _toolkit, _physical_source, _physical_generator_ids, _handoff_root
-from mem_model.visualization.vis_x1_geographic import _zone_points, _external_points, nuts2_path
+from mem_model.visualization.vis_x1 import CONFIG, ROOT, ZONE_ORDER, _sha, _toolkit, _physical_source, _physical_generator_ids
+from mem_model.visualization.vis_x1_geographic import _zone_points, _external_points, PARENT_NUTS2
 from mem_model.visualization.vis_x1_reference_42bus import _reference_tables, _base_map, _legend, _flow_overlay, BASE_EXTENT, OVERLAY_EXTENT
 
 STATUS = "CURRENT_ACCEPTED_RESULT"
@@ -205,10 +205,10 @@ def render_uc2_vis(uc_network, price_frame, year, scenario, report_dir, diagnost
     cfg = yaml.safe_load(CONFIG.read_text(encoding="utf-8"))
     congestion, dispatch, flows, io, maps, prices, storage, summaries = _toolkit(cfg)
     from visualization_toolkit.styles import PlotStyle, style_context
-    handoff = _handoff_root(cfg)
-    seal = json.loads((handoff / "HANDOFF_MANIFEST.json").read_text(encoding="utf-8"))
+    transfer = ROOT / Path(cfg["external_reference"])
+    seal = json.loads((transfer / "TRANSFER_MANIFEST.json").read_text(encoding="utf-8"))
     palette_source = "adapters/pypsa_it_adapter.py"
-    if _sha(handoff / palette_source) != seal["adapter_file_hashes"][palette_source]:
+    if _sha(transfer / palette_source) != seal["adapter_file_hashes"][palette_source]:
         raise ValueError("Sealed parent zone palette adapter hash mismatch")
     from adapters.pypsa_it_adapter import RECOVERED_R2B_ZONE_COLORS
     aliases = cfg["display_market_aliases"]
@@ -415,13 +415,13 @@ def _render_reference_maps(network, price, year, scenario, diagnostics, snapshot
     from matplotlib.colors import Normalize
     from matplotlib.cm import ScalarMappable
     aliases = cfg["display_market_aliases"]
-    handoff = _handoff_root(cfg)
-    buses, lines, links, raw_buses, raw_branches, lineage = _reference_tables(handoff,aliases,qa)
+    transfer = ROOT / Path(cfg["external_reference"])
+    buses, lines, links, raw_buses, raw_branches, lineage = _reference_tables(transfer,aliases,qa)
     source = io.ResultSource(tables={"buses":buses,"lines":lines,"links":links,"transformers":pd.DataFrame(columns=["bus0","bus1"])})
-    geography = gpd.read_file(nuts2_path(cfg))
+    geography = gpd.read_file(PARENT_NUTS2)
     natural_earth = maps.bundled_geography_path()
     colors = {aliases[z]:color for z,color in palette.items()}
-    zones = _zone_points(handoff,aliases,qa)
+    zones = _zone_points(transfer,aliases,qa)
     external = _external_points(natural_earth,qa)
     anchors = pd.concat([zones.rename(columns={"zone":"market"})[["market","display_x","display_y"]],external[["market","display_x","display_y"]]]).set_index("market")
     bus_path, branch_path, anchor_path = data("reference_42bus",raw_buses),data("reference_179_branches",raw_branches),data("visualization_only_zone_anchors",anchors)

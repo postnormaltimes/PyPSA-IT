@@ -355,7 +355,7 @@ def validate_topology_package(
         external = record["to_market"] if record["from_market"] == "IT" else record["from_market"]
         observed_mapping.setdefault(external, set()).add(record["stage_b_receiving_zone"])
     expected_mapping = {"FR": {"NORD"}, "CH": {"NORD"}, "AT": {"NORD"}, "SI": {"NORD"}, "ME": {"CSUD"}, "GR": {"SUD"}, "MT": {"SICI"}, "TN": {"SICI"}}
-    _add(checks, "B5-QA-23", "Italy-facing identities remain compatible with the later Stage-A-to-Stage-B price handoff", observed_mapping, expected_mapping, observed_mapping == expected_mapping)
+    _add(checks, "B5-QA-23", "Italy-facing identities remain compatible with the later Stage-A-to-Stage-B price transfer", observed_mapping, expected_mapping, observed_mapping == expected_mapping)
     upstream_not_overwrite = observed_capacity[(2040, "MT", "IT")] == 200.0 and observed_capacity[(2040, "IT", "MT")] == 200.0 and observed_capacity[(2040, "TN", "IT")] == 600.0 and observed_capacity[(2040, "IT", "TN")] == 600.0
     _add(checks, "B5-QA-24", "Upstream TYNDP MT/TN controls do not overwrite frozen MEM Italy interfaces", upstream_not_overwrite, True, upstream_not_overwrite)
 
@@ -458,7 +458,7 @@ def validate_topology_package(
             "focused": _pytest_receipt("pytest_etx7b5_focused.xml"),
             "full_repository": _pytest_receipt("pytest_full_repository.xml"),
         },
-        "next_gate": "PRE_B6_BOUNDED_EXECUTION_HARNESS_PREPARATION",
+        "next_gate": "PRE_B6_RUNTIME_PREPARATION",
         "decisions_needed": "NONE" if passed else "REVIEW_FAILED_QA_ONLY",
     }
 

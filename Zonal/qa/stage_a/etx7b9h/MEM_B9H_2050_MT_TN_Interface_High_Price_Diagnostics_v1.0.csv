@@ -1,9 +1,0 @@
-market,snapshot,price_EUR_per_MWh,price_above_500,local_shedding_MW,local_shedding_positive,physical_link_id,endpoint_a,endpoint_b,incoming_direction,incoming_flow_MW,incoming_limit_MW,incoming_saturated,outgoing_flow_MW,outgoing_limit_MW,outgoing_saturated
-MT,2019-07-02 17:00:00,15000.0,True,0.0,False,IT_MT,IT,MT,IT->MT,-200.0,200.0,False,200.0,200.0,True
-MT,2019-07-02 18:00:00,15000.0,True,0.0,False,IT_MT,IT,MT,IT->MT,-200.0,200.0,False,200.0,200.0,True
-MT,2019-07-02 19:00:00,15000.0,True,0.0,False,IT_MT,IT,MT,IT->MT,-200.0,200.0,False,200.0,200.0,True
-MT,2019-07-02 20:00:00,15000.0,True,0.0,False,IT_MT,IT,MT,IT->MT,-200.0,200.0,False,200.0,200.0,True
-MT,2019-07-02 21:00:00,15000.0,True,0.0,False,IT_MT,IT,MT,IT->MT,-200.0,200.0,False,200.0,200.0,True
-MT,2019-07-02 22:00:00,15000.0,True,0.0,False,IT_MT,IT,MT,IT->MT,-196.75692056291933,200.0,False,196.75692056291933,200.0,False
-MT,2019-07-02 23:00:00,15000.0,True,0.0,False,IT_MT,IT,MT,IT->MT,-188.17280060241177,200.0,False,188.17280060241177,200.0,False
-MT,2019-07-03 00:00:00,15000.0,True,0.0,False,IT_MT,IT,MT,IT->MT,-199.74333152945462,200.0,False,199.74333152945462,200.0,False

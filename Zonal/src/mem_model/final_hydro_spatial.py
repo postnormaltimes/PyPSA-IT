@@ -385,16 +385,16 @@ def close_phase_h(test_result):
     structural=json.loads((QA/"HYDRO_SUCCESSOR_STRUCTURAL_QA.json").read_text())
     if structural["state"]!="HYDRO_SPATIAL_AND_WATER_VALUE_PASS" or len(structural["packages"])!=6:
         raise RuntimeError("HYDRO_CLOSURE_STRUCTURAL_FAIL")
-    handoff=ROOT/"docs/final_methodology_closure/MEM_FINAL_METHODOLOGY_PHASE_H_ZONAL_RUNOFF_HANDOFF.md"
-    if not handoff.exists():
-        raise RuntimeError("HYDRO_HANDOFF_MISSING")
+    transfer=ROOT/"docs/final_methodology_closure/MEM_FINAL_METHODOLOGY_PHASE_H_ZONAL_RUNOFF_TRANSFER.md"
+    if not transfer.exists():
+        raise RuntimeError("HYDRO_TRANSFER_MISSING")
     verification=QA/"HYDRO_FINAL_VERIFICATION.json"
     successors=[{k:p[k] for k in ("year","scenario","path","sha256")} for p in structural["packages"]]
     dump_json(verification,{**structural,"tests":test_result,"successor_parents":successors,
         "superseded_block":"H_PRE_ZONAL_RESOLUTION_CHECKPOINT.json",
         "uncapped_ROR_conflict_receipt":"ZONAL_HYDRO_CANDIDATE_WATER_QA_RECEIPT.json",
         "ROR_resolution":"ROR_TURBINE_SATURATION_AUTHORITY_REVIEW.json"})
-    artifacts=[CONFIG,AUTHORITY,handoff,Path(__file__),ROOT/"src/mem_model/reporting/water_values.py",
+    artifacts=[CONFIG,AUTHORITY,transfer,Path(__file__),ROOT/"src/mem_model/reporting/water_values.py",
         ROOT/"tests/test_final_hydro_spatial.py",ROOT/"tests/test_water_values.py",verification]
     artifacts+=list(OUTPUT.glob("*"))
     artifacts+=[QA/n for n in ("ZONAL_RUNOFF_CONVERSION_RECEIPT.json","ZONAL_RUNOFF_TEMPORAL_QA.csv",
@@ -416,7 +416,7 @@ def close_phase_h(test_result):
         tests=test_result,unresolved=[])
     state["phases"]["H"].update({"phase_result":"HYDRO_SPATIAL_AND_WATER_VALUE_PASS",
         "successor_parents":successors,"manifest":str(manifest.relative_to(ROOT)),
-        "receipt":str(verification.relative_to(ROOT)),"current_handoff":str(handoff.relative_to(ROOT))})
+        "receipt":str(verification.relative_to(ROOT)),"current_transfer":str(transfer.relative_to(ROOT))})
     state["optimization_model_constructed"]=False
     dump_json(STATE,state)
     return {"state":state["phases"]["H"]["phase_result"],"next_phase":state["next_phase"],"successors":successors}

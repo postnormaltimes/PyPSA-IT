@@ -1,0 +1,3 @@
+# Preserve exact lightweight control/manifest bytes across Git checkouts.
+# Text diffs remain available; no automatic end-of-line rewrite or LFS filter.
+* -text

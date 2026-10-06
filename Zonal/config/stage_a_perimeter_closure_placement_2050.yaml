@@ -127,7 +127,7 @@ solver:
 governance:
   diagnostic_only: true
   technical_pass_label: TECHNICAL_PLACEMENT_DIAGNOSTIC_PASS
-  production_price_acceptance: PENDING_METHOD_REVIEW
+  production_price_acceptance: PENDING_SOL_REVIEW
   automatic_production_promotion: false
   automatic_successor_experiment: false
   B10_authorized: false

@@ -7,11 +7,6 @@ root_input: CANONICAL/marginal_regime/validated_roots
 data_output: CANONICAL/marginal_regime/data
 figure_output: VIS_X1/marginal_regime
 comparison_output: COMPARISONS_VIS_X1/marginal_regime
-core_comparison_output: COMPARISONS_CORE/marginal_regime
-# Optional historical receipt path mapping. Destinations may be project-relative.
-# Preserved QA/receipt bodies keep their original provenance and hashes.
-# MEM_REPORTING_PATH_MAP can supply the same mapping as a JSON object at runtime.
-historical_root_map: {}
 missing_validated_roots: WAITING_FOR_VALIDATED_MARGINAL_ROOTS
 metric: represented_time_share
 heatmaps_routine: false

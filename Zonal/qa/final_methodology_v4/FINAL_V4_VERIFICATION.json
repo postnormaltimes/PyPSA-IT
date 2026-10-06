@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "static_preflights": 6,
+  "export_reloads": 6,
+  "inherited_2040_inputs": 6,
+  "BESS_changed_fields": 0,
+  "unexpected_changed_fields": 0,
+  "diff_classification_counts": {
+    "EXPECTED_MECHANICAL_DOWNSTREAM_CHANGE": 1132,
+    "EXPECTED_2050_VRE_CAPACITY_REVISION": 168,
+    "EXPECTED_PROGRAMMABLE_RECONCILIATION": 84,
+    "EXPECTED_2050_NUCLEAR_CAPACITY_REVISION": 12
+  },
+  "solver_contract_unchanged": true,
+  "original_record_sha256": "7711ddf4773f0e04108aeff381ec47572b21a7ae97d407572491bd9cc8322970",
+  "publication_role": "TECHNICAL_VALIDATION_EXTRACT"
+}

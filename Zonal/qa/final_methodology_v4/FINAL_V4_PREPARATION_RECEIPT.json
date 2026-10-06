@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "packages": [
+    {
+      "status": "PASS",
+      "scenario": "Slow",
+      "UC_units": 91,
+      "nuclear_units": 34,
+      "GAS_CCS_units": 37,
+      "programmable_MW": 51613.38474784199,
+      "GAS_CCS_MW": 18623.177578030296,
+      "BESS_changed_fields": 0,
+      "unexpected_changed_fields": 0,
+      "VRE_profiles_unchanged": true,
+      "no_new_2050_geography": true,
+      "optimization_model_constructed": false,
+      "optimizer_invocations": 0
+    },
+    {
+      "status": "PASS",
+      "scenario": "Base",
+      "UC_units": 63,
+      "nuclear_units": 34,
+      "GAS_CCS_units": 16,
+      "programmable_MW": 30000.000000003,
+      "GAS_CCS_MW": 4450.466267975,
+      "BESS_changed_fields": 0,
+      "unexpected_changed_fields": 0,
+      "VRE_profiles_unchanged": true,
+      "no_new_2050_geography": true,
+      "optimization_model_constructed": false,
+      "optimizer_invocations": 0
+    },
+    {
+      "status": "PASS",
+      "scenario": "High",
+      "UC_units": 63,
+      "nuclear_units": 34,
+      "GAS_CCS_units": 16,
+      "programmable_MW": 30000.000000003,
+      "GAS_CCS_MW": 4450.466267975,
+      "BESS_changed_fields": 0,
+      "unexpected_changed_fields": 0,
+      "VRE_profiles_unchanged": true,
+      "no_new_2050_geography": true,
+      "optimization_model_constructed": false,
+      "optimizer_invocations": 0
+    }
+  ],
+  "unexpected_changed_fields": 0,
+  "BESS_changed_fields": 0,
+  "production_solver_invocations": 0,
+  "original_record_sha256": "1324375de5712d4fbd843ea89b9dcfb72b2d205cd6fe45f32718b40e34b73699",
+  "publication_role": "TECHNICAL_VALIDATION_EXTRACT"
+}

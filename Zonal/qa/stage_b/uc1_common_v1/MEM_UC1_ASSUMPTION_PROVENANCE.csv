@@ -1,5 +1,0 @@
-uc_archetype,target_block_MW,p_min_pu,ramp_limit_up,ramp_limit_down,ramp_limit_start_up,ramp_limit_shut_down,min_up_time,min_down_time,source_startup_cost_per_MW,normalized_startup_EUR2025_per_MW,startup_cost_provenance
-BIOMASS_STEAM,200,0.35,1,1,0.35,0.35,4,6,102.4,122.225616904545,SOURCE_VALUE_102P4_EUR2020_PER_MW_START|NORMALIZED_WITH_ISTAT_NIC_ALL_ITEMS_2021_2025|TARGET_BASIS_EUR2025
-CCGT,550,0.45,1,1,0.5,0.5,4,2,60,60,PYPSA_EUR_BASELINE_ASSUMPTION
-OCGT,350,0.2,1,1,0.8,0.8,0,0,24,24,PYPSA_EUR_BASELINE_ASSUMPTION
-NUCLEAR_MODULAR,300,0.5,0.25,0.25,0.5,0.5,8,24,250,250,PYPSA_EUR_BASELINE_ASSUMPTION

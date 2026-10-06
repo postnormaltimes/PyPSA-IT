@@ -1038,7 +1038,7 @@ def run_s2(args: argparse.Namespace) -> dict[str, Any]:
             "formal_B9_authorized": False,
             "stage_B_authorized": False,
         },
-        next_gate="METHOD_REVIEW_REQUIRED_ETX_7B9_REMAINS_LOCKED",
+        next_gate="SOL_REVIEW_REQUIRED_ETX_7B9_REMAINS_LOCKED",
         command=command_string(module=CANONICAL_MODULE),
         runtime_seconds=time.perf_counter() - started,
         solve=metrics,

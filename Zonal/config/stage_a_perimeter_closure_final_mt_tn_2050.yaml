@@ -88,7 +88,7 @@ governance:
   diagnostic_only_until_explicit_review: true
   B9G_status: IMMUTABLE_TECHNICALLY_VALID_PARENT
   B9H_status: SINGLE_FINAL_DIAGNOSTIC_AUTHORIZED
-  production_price_acceptance: PENDING_EXECUTION_AND_METHOD_REVIEW
+  production_price_acceptance: PENDING_EXECUTION_AND_SOL_REVIEW
   automatic_production_promotion: false
   automatic_successor_experiment: false
   B9I_authorized: false

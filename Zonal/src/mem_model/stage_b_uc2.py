@@ -32,12 +32,21 @@ RUN_FOLDERS = {"POST_P2X_CONTINUOUS_REFERENCE": "CONTINUOUS_REFERENCE",
 VERIFY_NAMES = {"POST_P2X_CONTINUOUS_REFERENCE": "VERIFY_REFERENCE.json",
                 "UC_MILP": "VERIFY_UC.json", "FIXED_COMMITMENT_PRICE_LP": "VERIFY_PRICE.json"}
 ACTIVE_VARIANT = ContextVar("mem_uc2_variant", default=None)
+FINAL_VARIANTS = ("final_v1", "final_v2", "final_v3", "final_v4")
+
+
+def _final_api(name, *args, **kwargs):
+    """Route final successors through the same preparation/execution API."""
+    from . import final_methodology_networks as final
+    if ACTIVE_VARIANT.get() in FINAL_VARIANTS and ACTIVE_VARIANT.get() != "final_v1":
+        kwargs["variant"] = ACTIVE_VARIANT.get()
+    return getattr(final, name)(*args, **kwargs)
 
 
 @contextmanager
 def execution_variant(variant):
     """Explicit, task-local namespace selection; no execution or global unlock."""
-    if variant not in (None,"final_v1"):
+    if variant not in (None, *FINAL_VARIANTS):
         raise ValueError("UC2_UNKNOWN_VARIANT")
     token=ACTIVE_VARIANT.set(variant)
     try:
@@ -55,9 +64,8 @@ def config() -> dict:
         raise RuntimeError("UC2_CONFIG_FAIL: solver or schema differs from accepted UC-1")
     if value["governance"]["no_automatic_next_job"] is not True:
         raise RuntimeError("UC2_CONFIG_FAIL: automatic execution prohibited")
-    if ACTIVE_VARIANT.get()=="final_v1":
-        from .final_methodology_networks import settings
-        final=settings()
+    if ACTIVE_VARIANT.get() in FINAL_VARIANTS:
+        final=_final_api("settings")
         if {k:final["solver"][k] for k in value["solver"]} != value["solver"]:
             raise RuntimeError("UC2_FINAL_SOLVER_DRIFT")
         value["result_root"]=final["result_root"]
@@ -71,6 +79,8 @@ def _validate_case(year: int, scenario: str) -> None:
 
 def case_root(year: int, scenario: str) -> Path:
     _validate_case(year, scenario)
+    if ACTIVE_VARIANT.get() == "final_v4" and year == 2040:
+        return ROOT / "results/final_methodology_v3" / str(year) / scenario
     return ROOT / config()["result_root"] / str(year) / scenario
 
 
@@ -78,7 +88,9 @@ def job_id(year: int, scenario: str, kind: str) -> str:
     _validate_case(year, scenario)
     if kind not in RUN_TYPES:
         raise ValueError(f"UC2_UNKNOWN_RUN_TYPE: {kind}")
-    prefix="FINAL_V1_UC2" if ACTIVE_VARIANT.get()=="final_v1" else "UC2"
+    prefix=f"{ACTIVE_VARIANT.get().upper()}_UC2" if ACTIVE_VARIANT.get() in FINAL_VARIANTS else "UC2"
+    if ACTIVE_VARIANT.get() == "final_v4" and year == 2040:
+        prefix = "FINAL_V3_UC2"
     return f"{prefix}_{year}_{scenario.upper()}_8760H_{kind}"
 
 
@@ -86,9 +98,8 @@ def job_paths(year: int, scenario: str, kind: str) -> dict[str, Path]:
     name = job_id(year, scenario, kind)
     directory = case_root(year, scenario) / RUN_FOLDERS[kind]
     source = uc1.parent_path(year, scenario) if kind == "POST_P2X_CONTINUOUS_REFERENCE" else uc1.derivative_path(year, scenario)
-    if ACTIVE_VARIANT.get()=="final_v1":
-        from .final_methodology_networks import package
-        item=package(year,scenario)
+    if ACTIVE_VARIANT.get() in FINAL_VARIANTS:
+        item=_final_api("package",year,scenario)
         source=ROOT/item["reference_path" if kind==RUN_TYPES[0] else "path"]
     return {"input": source, "directory": directory, "solved": directory / f"{name}_SOLVED.nc",
             "receipt": directory / f"{name}_SOLVE_RECEIPT.json",
@@ -125,9 +136,8 @@ def _package(year: int, scenario: str) -> dict:
 
 
 def _expected_hash(year: int, scenario: str, kind: str) -> str:
-    if ACTIVE_VARIANT.get()=="final_v1":
-        from .final_methodology_networks import package
-        item=package(year,scenario)
+    if ACTIVE_VARIANT.get() in FINAL_VARIANTS:
+        item=_final_api("package",year,scenario)
         return item["reference_sha256" if kind==RUN_TYPES[0] else "sha256"]
     item = _package(year, scenario)
     return item["parent_sha256"] if kind == "POST_P2X_CONTINUOUS_REFERENCE" else item["derivative_sha256"]
@@ -181,9 +191,8 @@ def _balance(network: pypsa.Network) -> dict:
 def preflight(year: int, scenario: str, *, persist: bool = True) -> dict:
     """Deep, non-solving structural gate for exactly one accepted UC input pair."""
     _validate_case(year, scenario)
-    if ACTIVE_VARIANT.get()=="final_v1":
-        from .final_methodology_networks import preflight as final_preflight
-        return final_preflight(year,scenario,persist=persist)
+    if ACTIVE_VARIANT.get() in FINAL_VARIANTS:
+        return _final_api("preflight",year,scenario,persist=persist)
     item = _package(year, scenario)
     parent_hash = _check_input_hash(year, scenario, "POST_P2X_CONTINUOUS_REFERENCE")
     uc_hash = _check_input_hash(year, scenario, "UC_MILP")
@@ -233,13 +242,12 @@ def preflight(year: int, scenario: str, *, persist: bool = True) -> dict:
 
 
 def _governance_gate(year: int, scenario: str) -> str:
-    if ACTIVE_VARIANT.get()=="final_v1":
-        from .final_methodology_networks import manual_gate
-        return manual_gate(year,scenario)
+    if ACTIVE_VARIANT.get() in FINAL_VARIANTS:
+        return _final_api("manual_gate",year,scenario)
     gates = config()["governance"]
 
     # Execution authorization is deliberately independent from analytical review.
-    # Review flags remain false until analytical review is actually completed.
+    # Review flags remain false until project validation is actually completed.
 
     if (year, scenario) == (2040, "Base"):
         if gates["2040_base_manual_sequence_enabled"]:
@@ -345,10 +353,9 @@ def _manual_solve(year: int, scenario: str, kind: str, *, benchmark_variant: str
         raise RuntimeError("UC2_SOLVE_FAIL: Gurobi MIP gap unavailable")
     paths["directory"].mkdir(parents=True, exist_ok=True)
     water_coverage=None
-    if ACTIVE_VARIANT.get()=="final_v1" and kind=="FIXED_COMMITMENT_PRICE_LP":
-        from .final_methodology_networks import water_mapping
+    if ACTIVE_VARIANT.get() in FINAL_VARIANTS and kind=="FIXED_COMMITMENT_PRICE_LP":
         from .reporting.water_values import capture_store_energy_balance_coverage
-        coverage=capture_store_energy_balance_coverage(network,water_mapping(year,scenario))
+        coverage=capture_store_energy_balance_coverage(network,_final_api("water_mapping",year,scenario))
         coverage_path=paths["directory"]/"RAW_STORE_ENERGY_BALANCE_DUAL_COVERAGE.parquet"
         coverage.to_parquet(coverage_path,index=False)
         water_coverage={"path":str(coverage_path.relative_to(ROOT)),"sha256":sha256_file(coverage_path)}
@@ -365,8 +372,8 @@ def _manual_solve(year: int, scenario: str, kind: str, *, benchmark_variant: str
                "integer_variables": integers, "binary_variables": binaries,
                "fixed_commitment_milp_sha256": fixed_milp_sha,
                "manual_job_only": True, "automatic_successor_launched": False}
-    if ACTIVE_VARIANT.get()=="final_v1":
-        receipt.update({"final_methodology_variant":"final_v1","assign_all_duals":kind!="UC_MILP",
+    if ACTIVE_VARIANT.get() in FINAL_VARIANTS:
+        receipt.update({"final_methodology_variant":ACTIVE_VARIANT.get(),"assign_all_duals":kind!="UC_MILP",
                         "water_dual_raw_coverage":water_coverage})
     if benchmark_variant is not None:
         telemetry = {}
@@ -522,13 +529,12 @@ def verify_price(year: int, scenario: str) -> dict:
               "actual_transition_trajectories_equal": True,
               "price_label": "FIXED_COMMITMENT_MARGINAL_PRICE", "price_zone_hours": int(prices.loc[:, zones].size),
               "integer_variables": 0, "binary_variables": 0}
-    if ACTIVE_VARIANT.get()=="final_v1":
-        from .final_methodology_networks import water_mapping
+    if ACTIVE_VARIANT.get() in FINAL_VARIANTS:
         from .reporting.water_values import extract_water_values
         coverage=receipt.get("water_dual_raw_coverage")
         if not coverage or sha256_file(ROOT/coverage["path"])!=coverage["sha256"]:
             raise RuntimeError("UC2_FINAL_WATER_RAW_COVERAGE_FAIL")
-        water,water_receipt=extract_water_values(price,water_mapping(year,scenario),
+        water,water_receipt=extract_water_values(price,_final_api("water_mapping",year,scenario),
             {**receipt,"fixed_commitment_trajectories_verified":True,"objective_reconciliation_verified":True},
             verified_milp_sha256=milp_receipt["solved_sha256"],raw_coverage=pd.read_parquet(ROOT/coverage["path"]))
         destination=case_root(year,scenario)/"QA"
@@ -672,7 +678,7 @@ def _report_verified(year: int, scenario: str) -> dict:
                "fixed_commitment_price_label": "FIXED_COMMITMENT_MARGINAL_PRICE",
                "canonical_reporting": canonical}
     _write_json(output / "MEM_UC2_REPORTING_RECEIPT.json", receipt)
-    if ACTIVE_VARIANT.get()=="final_v1":
+    if ACTIVE_VARIANT.get() in FINAL_VARIANTS:
         from .final_network_signed import net_flow_frame
         from .reporting.ror_water import ror_water_accounting
         net_flow_frame(milp).to_parquet(output/"NET_FLOW_A_TO_B_MW.parquet")
@@ -706,13 +712,13 @@ def registry() -> pd.DataFrame:
     for year, scenario in SCENARIOS:
         if year == 2040 and scenario == "Base":
             gate_name, enable_flag, review_flag = ("MANUAL_2040_BASE", "2040_base_manual_sequence_enabled",
-                                                   "2040_base_method_review_accepted")
+                                                   "2040_base_sol_review_accepted")
         elif year == 2040:
             gate_name, enable_flag, review_flag = ("MANUAL_2040_SLOW_HIGH", "2040_slow_high_manual_enabled",
                                                    None)
         elif scenario == "Base":
             gate_name, enable_flag, review_flag = ("MANUAL_2050_BASE", "2050_base_manual_enabled",
-                                                   "2050_base_method_review_accepted")
+                                                   "2050_base_sol_review_accepted")
         else:
             gate_name, enable_flag, review_flag = ("MANUAL_2050_SLOW_HIGH", "2050_slow_high_manual_enabled",
                                                    None)
@@ -775,13 +781,13 @@ def prepare() -> dict:
     _write_json(receipt_path, receipt)
     manifest_items = [CONFIG_PATH, ROOT / "src" / "mem_model" / "stage_b_uc2.py", registry_path,
                       receipt_path, ROOT / "docs" / "MEM_UC2_ALL_SCENARIOS_MANUAL_RUNBOOK.md",
-                      ROOT / "docs" / "MEM_UC2_ALL_SCENARIOS_MANUAL_EXECUTION_HANDOFF.md",
+                      ROOT / "docs" / "MEM_UC2_ALL_SCENARIOS_MANUAL_EXECUTION_TRANSFER.md",
                       ROOT / "tests" / "test_stage_b_uc2_preparation.py"]
     manifest_items += [ROOT / item["parent"] for item in build["structural_packages"]]
     manifest_items += [ROOT / item["derivative"] for item in build["structural_packages"]]
     pd.DataFrame({"artifact": [str(path.relative_to(ROOT)) for path in manifest_items],
                   "sha256": [sha256_file(path) for path in manifest_items],
-                  "role": (["UC2_CONFIG", "UC2_CLI", "JOB_REGISTRY", "PREPARATION_RECEIPT", "RUNBOOK", "HANDOFF", "NON_SOLVING_TESTS"] +
+                  "role": (["UC2_CONFIG", "UC2_CLI", "JOB_REGISTRY", "PREPARATION_RECEIPT", "RUNBOOK", "TRANSFER", "NON_SOLVING_TESTS"] +
                            ["P2X_CONTINUOUS_PARENT_UNSOLVED"] * 6 + ["UC1_UC_PARENT_UNSOLVED"] * 6)}).to_csv(
         qa_dir / "MEM_UC2_PREPARATION_ARTIFACT_MANIFEST.csv", index=False, lineterminator="\n")
     return receipt
@@ -842,13 +848,13 @@ def reconcile_preparation() -> dict:
     build = _structural_receipt()
     manifest_items = [CONFIG_PATH, ROOT / "src" / "mem_model" / "stage_b_uc2.py", registry_path,
                       receipt_path, ROOT / "docs" / "MEM_UC2_ALL_SCENARIOS_MANUAL_RUNBOOK.md",
-                      ROOT / "docs" / "MEM_UC2_ALL_SCENARIOS_MANUAL_EXECUTION_HANDOFF.md",
+                      ROOT / "docs" / "MEM_UC2_ALL_SCENARIOS_MANUAL_EXECUTION_TRANSFER.md",
                       ROOT / "tests" / "test_stage_b_uc2_preparation.py"]
     manifest_items += [ROOT / item["parent"] for item in build["structural_packages"]]
     manifest_items += [ROOT / item["derivative"] for item in build["structural_packages"]]
     pd.DataFrame({"artifact": [str(path.relative_to(ROOT)) for path in manifest_items],
                   "sha256": [sha256_file(path) for path in manifest_items],
-                  "role": (["UC2_CONFIG", "UC2_CLI", "JOB_REGISTRY", "PREPARATION_RECEIPT", "RUNBOOK", "HANDOFF", "NON_SOLVING_TESTS"] +
+                  "role": (["UC2_CONFIG", "UC2_CLI", "JOB_REGISTRY", "PREPARATION_RECEIPT", "RUNBOOK", "TRANSFER", "NON_SOLVING_TESTS"] +
                            ["P2X_CONTINUOUS_PARENT_UNSOLVED"] * 6 + ["UC1_UC_PARENT_UNSOLVED"] * 6)}).to_csv(
         qa_dir / "MEM_UC2_PREPARATION_ARTIFACT_MANIFEST.csv", index=False, lineterminator="\n")
     return receipt
@@ -861,7 +867,7 @@ def main(argv: list[str] | None = None) -> None:
                                            "verify-price", "report", "final-qa"])
     parser.add_argument("--year", type=int)
     parser.add_argument("--scenario", choices=["Slow", "Base", "High"])
-    parser.add_argument("--variant",choices=["final_v1"],help="Prepared final family; requires explicit case manual authorization")
+    parser.add_argument("--variant",choices=FINAL_VARIANTS,help="Prepared final family; one explicitly selected manual job only")
     parser.add_argument("--benchmark-variant", choices=["v2A"],
                         help="Separate future manual 2040 Slow UC-v2A benchmark namespace")
     args = parser.parse_args(argv)
@@ -876,7 +882,9 @@ def main(argv: list[str] | None = None) -> None:
             arguments=arguments[:flag]+arguments[flag+2:]
         else:
             arguments=[a for a in arguments if not a.startswith("--variant=")]
-        with execution_variant(args.variant):
+        # 2040 is an inherited execution state, not a cosmetically relabelled run.
+        routed_variant = "final_v3" if args.variant == "final_v4" and args.year == 2040 else args.variant
+        with execution_variant(routed_variant):
             return main(arguments)
     if args.benchmark_variant is not None and (args.action != "run-uc" or (args.year, args.scenario) != (2040, "Slow")):
         parser.error("--benchmark-variant is restricted to run-uc --year 2040 --scenario Slow")

@@ -617,7 +617,7 @@ def add_b9g_virtual_supply(
         "residual_capacity_source": "IMMUTABLE_B9F_LOCAL_SHEDDING",
         "residual_energy_share": RESIDUAL_ENERGY_SHARE,
         "technical_status": "PREPARED_NOT_EXECUTED",
-        "production_price_acceptance": "PENDING_EXECUTION_AND_METHOD_REVIEW",
+        "production_price_acceptance": "PENDING_EXECUTION_AND_SOL_REVIEW",
     }
     return network
 
@@ -798,7 +798,7 @@ def prepare_b9g(*, write_artifacts: bool = True) -> dict[str, Any]:
         "B9G": "PREPARED_NOT_EXECUTED",
         "B10_2050": "LOCKED",
         "Stage_B_2050": "LOCKED",
-        "production_price_acceptance": "PENDING_EXECUTION_AND_METHOD_REVIEW",
+        "production_price_acceptance": "PENDING_EXECUTION_AND_SOL_REVIEW",
     }
     paths = _preparation_paths(config)
     artifacts: list[Path] = []
@@ -825,7 +825,7 @@ def prepare_b9g(*, write_artifacts: bool = True) -> dict[str, Any]:
             ROOT / "src/mem_model/stage_a/perimeter_closure_residual_me_mt_tn.py",
             ROOT / "tests/test_stage_a_perimeter_closure_residual_me_mt_tn.py",
             ROOT / "docs/runbooks/ETX7B9G_RUNBOOK.md",
-            ROOT / "docs/MEM_ETX7B9G_2050_RESIDUAL_CLOSURE_PREPARATION_HANDOFF.md",
+            ROOT / "docs/MEM_ETX7B9G_2050_RESIDUAL_CLOSURE_PREPARATION_TRANSFER.md",
             ROOT / "docs/MEM_STAGE_A_CURRENT_STATE.md",
             *artifacts,
         ]
@@ -1214,7 +1214,7 @@ def write_post_solve_diagnostics(
     )
     acceptance = {
         "schema_version": "MEM_B9G_2050_PRACTICAL_ACCEPTANCE_V1_0",
-        "status": "PENDING_METHOD_REVIEW",
+        "status": "PENDING_SOL_REVIEW",
         "criterion_is_sizing_authority": False,
         "annual_mean_reasonableness_EUR_per_MWh": acceptance_limit,
         "markets": {
@@ -1232,7 +1232,7 @@ def write_post_solve_diagnostics(
         "newly_shedding_exported_markets_vs_B9F": newly_shedding_markets,
         "no_new_shedding_exported_market": not newly_shedding_markets,
         "automatic_follow_on_sensitivity": False,
-        "production_price_acceptance": "PENDING_METHOD_REVIEW",
+        "production_price_acceptance": "PENDING_SOL_REVIEW",
     }
     qa = ROOT / config["phase"]["qa_directory"]
     outputs = {
@@ -1327,7 +1327,7 @@ def run_b9g(args: argparse.Namespace) -> dict[str, Any]:
     diagnostics, diagnostic_qa = write_post_solve_diagnostics(network, prepared)
     _append_log(
         log,
-        "ETX-7B9G technical diagnostic complete; production-source acceptance remains pending analytical review.",
+        "ETX-7B9G technical diagnostic complete; production-source acceptance remains subject to historical result validation.",
     )
     result_artifacts.extend(prepared["artifacts"])
     result_artifacts.extend(diagnostics)
@@ -1376,13 +1376,13 @@ def run_b9g(args: argparse.Namespace) -> dict[str, Any]:
             "post_solve": metrics,
             "comparisons": diagnostic_qa,
             "technical_diagnostic_status": "TECHNICAL_B9G_DIAGNOSTIC_PASS",
-            "economic_methodological_acceptance": "PENDING_METHOD_REVIEW",
+            "economic_methodological_acceptance": "PENDING_SOL_REVIEW",
             "production_price_source": False,
             "automatic_successor_experiment": False,
             "B10_2050_authorized": False,
             "Stage_B_2050_authorized": False,
         },
-        next_gate="METHOD_REVIEW_REQUIRED_NO_AUTOMATIC_PRODUCTION_PROMOTION",
+        next_gate="SOL_REVIEW_REQUIRED_NO_AUTOMATIC_PRODUCTION_PROMOTION",
         command=command_string(module=CANONICAL_MODULE),
         runtime_seconds=time.perf_counter() - started,
         solve=metrics,
@@ -1477,7 +1477,7 @@ def main() -> None:
                 "status": receipt["status"],
                 "gate": receipt["gate"],
                 "receipt": load_b9g_config()["phase"]["receipt"],
-                "production_price_acceptance": "PENDING_METHOD_REVIEW",
+                "production_price_acceptance": "PENDING_SOL_REVIEW",
                 "B10_2050": "LOCKED",
                 "Stage_B_2050": "LOCKED",
             },

@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "tests_passed": 182,
+  "tests_deselected": 1,
+  "static_preflights": 6,
+  "unique_manual_jobs": 18,
+  "all_scenarios_manually_executable": true,
+  "automatic_scenario_execution": false,
+  "solver_contract": {
+    "name": "gurobi",
+    "required_version": "13.0.3",
+    "options": {
+      "Threads": 1,
+      "Seed": 0
+    },
+    "include_objective_constant": false,
+    "adaptive_tuning": false,
+    "MIPGap_override": null
+  },
+  "protected_preservation": {
+    "protected_files": 1868,
+    "unchanged": 1859,
+    "authorized_maintained_edits": 9,
+    "unexpected_hash_changes": 0,
+    "reviewed_zip_unchanged": true
+  },
+  "imports_runtime_discovery": "PASS",
+  "optimization_model_constructed": false,
+  "production_solver_invocations": 0,
+  "production_results_created": 0,
+  "model_content_changed": false,
+  "solved_result_content_changed": false
+}

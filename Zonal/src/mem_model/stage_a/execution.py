@@ -76,21 +76,21 @@ PHASES = {
     },
     "b10": {
         "phase": "ETX-7B10",
-        "gate": "ETX7B10_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE",
+        "gate": "ETX7B10_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE",
         "qa": "etx7b10",
         "receipt": "MEM_ETX7B10_Run_Receipt_v1.0.json",
-        "next_gate": "STAGE_B_EXECUTION",
+        "next_gate": "STAGE_B_CONTINUATION",
     },
     "b10-2040": {
         "phase": "ETX-7B10-2040",
-        "gate": "ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE",
+        "gate": "ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE",
         "qa": "etx7b10_2040",
         "receipt": "MEM_ETX7B10_2040_Run_Receipt_v1.0.json",
         "next_gate": "STAGE_B_2040_INPUT_CONTRACT_CHECK",
     },
     "b10-2050": {
         "phase": "ETX-7B10-2050",
-        "gate": "ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE",
+        "gate": "ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE",
         "qa": "etx7b10_2050",
         "receipt": "MEM_ETX7B10_2050_Run_Receipt_v1.0.json",
         "next_gate": "STAGE_B_2050_INPUT_CONTRACT_CHECK",
@@ -776,7 +776,7 @@ def _build_price_boundary(
     return pd.concat(rows, ignore_index=True), source_manifests
 
 
-def _price_handoff_qa(
+def _price_transfer_qa(
     boundary: pd.DataFrame,
     source_manifests: dict[int, dict[str, str]],
 ) -> dict[str, Any]:
@@ -799,7 +799,7 @@ def _price_handoff_qa(
         qa[key]
         for key in ("all_series_have_8760", "finite_prices", "mapping_exact", "corsica_absent")
     ):
-        raise RuntimeError(f"B10_PRICE_HANDOFF_QA_FAILED: {qa}")
+        raise RuntimeError(f"B10_PRICE_TRANSFER_QA_FAILED: {qa}")
     return qa
 
 
@@ -809,8 +809,8 @@ def run_b10(args: argparse.Namespace, config: dict[str, Any]) -> dict[str, Any]:
     accepted_sources = _load_accepted_production_price_sources()
     input_receipts = _input_receipts(config)
     boundary, source_manifests = _build_price_boundary(accepted_sources, (2040, 2050))
-    qa = _price_handoff_qa(boundary, source_manifests)
-    result_dir = ROOT / "stage_a_results" / "price_handoff"
+    qa = _price_transfer_qa(boundary, source_manifests)
+    result_dir = ROOT / "stage_a_results" / "price_transfer"
     result_dir.mkdir(parents=True, exist_ok=True)
     output = result_dir / "MEM_ETX7B10_Stage_A_to_Stage_B_Prices_v1.0.parquet"
     boundary.to_parquet(output, index=False)
@@ -826,7 +826,7 @@ def run_b10(args: argparse.Namespace, config: dict[str, Any]) -> dict[str, Any]:
     }
     log = _log_path("b10")
     _log(log, "B10 deterministic extraction completed; dispatch rerun = false.")
-    manifest = result_dir / "MEM_ETX7B10_Price_Handoff_Manifest_v1.0.csv"
+    manifest = result_dir / "MEM_ETX7B10_Price_Transfer_Manifest_v1.0.csv"
     write_manifest(manifest, [output, stage_b_output, log])
     outputs = {
         "price_boundary": relative_path(output),
@@ -859,10 +859,10 @@ def run_b10_2040(args: argparse.Namespace, config: dict[str, Any]) -> dict[str, 
     accepted_sources = _load_accepted_production_price_sources((2040,))
     accepted = accepted_sources[2040]
     boundary, source_manifests = _build_price_boundary(accepted_sources, (2040,))
-    qa = _price_handoff_qa(boundary, source_manifests)
+    qa = _price_transfer_qa(boundary, source_manifests)
     if set(boundary["horizon"].astype(int)) != {2040}:
         raise RuntimeError("B10_2040_HORIZON_LEAKAGE")
-    result_dir = ROOT / "stage_a_results" / "price_handoff" / "2040"
+    result_dir = ROOT / "stage_a_results" / "price_transfer" / "2040"
     result_dir.mkdir(parents=True, exist_ok=True)
     output = result_dir / "MEM_ETX7B10_2040_Stage_A_to_Stage_B_Prices_v1.0.parquet"
     boundary.to_parquet(output, index=False)
@@ -888,7 +888,7 @@ def run_b10_2040(args: argparse.Namespace, config: dict[str, Any]) -> dict[str, 
     )
     log = _log_path("b10-2040")
     _log(log, "B10-2040 deterministic extraction completed; dispatch rerun = false; 2050 untouched.")
-    manifest = result_dir / "MEM_ETX7B10_2040_Price_Handoff_Manifest_v1.0.csv"
+    manifest = result_dir / "MEM_ETX7B10_2040_Price_Transfer_Manifest_v1.0.csv"
     write_manifest(manifest, [output, stage_b_output, log])
     outputs = {
         "price_boundary": relative_path(output),
@@ -927,13 +927,13 @@ def run_b10_2050(args: argparse.Namespace, config: dict[str, Any]) -> dict[str, 
     accepted_sources = _load_accepted_production_price_sources((2050,))
     accepted = accepted_sources[2050]
     boundary, source_manifests = _build_price_boundary(accepted_sources, (2050,))
-    qa = _price_handoff_qa(boundary, source_manifests)
+    qa = _price_transfer_qa(boundary, source_manifests)
     if set(boundary["horizon"].astype(int)) != {2050}:
         raise RuntimeError("B10_2050_HORIZON_LEAKAGE")
     stage_b_prices = _build_stage_b_price_adapter(boundary, expected_horizons={2050})
     if set(stage_b_prices["year"].astype(int)) != {2050}:
         raise RuntimeError("B10_2050_RUNTIME_ADAPTER_HORIZON_LEAKAGE")
-    result_dir = ROOT / "stage_a_results" / "price_handoff" / "2050"
+    result_dir = ROOT / "stage_a_results" / "price_transfer" / "2050"
     result_dir.mkdir(parents=True, exist_ok=True)
     output = result_dir / "MEM_ETX7B10_2050_Stage_A_to_Stage_B_Prices_v1.0.parquet"
     stage_b_output = result_dir / "external_prices_hourly.parquet"
@@ -956,7 +956,7 @@ def run_b10_2050(args: argparse.Namespace, config: dict[str, Any]) -> dict[str, 
     )
     log = _log_path("b10-2050")
     _log(log, "B10-2050 deterministic extraction completed; dispatch rerun = false; 2040 untouched.")
-    manifest = result_dir / "MEM_ETX7B10_2050_Price_Handoff_Manifest_v1.0.csv"
+    manifest = result_dir / "MEM_ETX7B10_2050_Price_Transfer_Manifest_v1.0.csv"
     write_manifest(manifest, [output, stage_b_output, log])
     outputs = {
         "price_boundary": relative_path(output),

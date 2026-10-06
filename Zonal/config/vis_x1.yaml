@@ -1,11 +1,6 @@
 schema_version: MEM_VIS_X1_ADAPTER_V1
 status: FIRST_CASE_DIAGNOSTIC_INTEGRATION
-# Optional presentation dependencies: project-relative or absolute paths.
-# Runtime overrides: MEM_VIS_X1_HANDOFF and MEM_VIS_X1_NUTS2.
-external_handoff: optional/vis_x1
-nuts2_geography: data/optional_visualization/NUTS_RG_01M_2021_4326_LEVL_2.geojson
-# This case block is the preserved historical first-case diagnostic adapter.
-# Current final_v1 reporting supplies its verified case, networks and prices.
+external_reference: optional/vis_x1
 case:
   year: 2040
   scenario: Base

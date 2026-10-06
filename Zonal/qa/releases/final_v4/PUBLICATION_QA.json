@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "tests_passed": 181,
+  "tests_skipped_optional_historical_reports": 2,
+  "tests_excluded": 7,
+  "static_preflights": 6,
+  "unique_manual_jobs": 18,
+  "unsolved_network_model_identity": 18,
+  "archive_members_verified": 22,
+  "Nodal_unchanged": true,
+  "validation_method": "NON_SOLVING_SUITE_PLUS_AFFECTED_PORTABILITY_RETEST",
+  "optimization_model_constructed": false,
+  "production_solver_invocations": 0,
+  "accepted_source_unchanged": true,
+  "original_results_unchanged": true
+}

@@ -1,0 +1,4 @@
+source_id,title,issuer,locator,role,redistribution,url
+TERNA_SNAM_DDS_2024,Documento di Descrizione degli Scenari 2024,Terna/Snam,Figure 30; accepted source extraction,2040 P2X zonal capacity authority,RAW_DOCUMENT_NOT_INCLUDED,https://www.terna.it/it/sistema-elettrico/programmazione-territoriale-efficiente/scenari
+TERNA_PROSPETTIVE_2050,Prospettive di Sviluppo del Sistema Energetico 2050,Terna,Accepted final_v4 capacity decision and preparation controls,2050 VRE/nuclear national capacity authority,RAW_DOCUMENT_NOT_INCLUDED,https://www.terna.it/it/sistema-elettrico/programmazione-territoriale-efficiente/scenari
+MEM_FINAL_V4_REVIEW,final_v4 2050 Base project review,Project owner,docs/releases/VALIDATION.md,Analytical acceptance / canonical lock,PROJECT_DECISION_RECORD,

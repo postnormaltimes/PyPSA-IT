@@ -1,16 +1,15 @@
-# Scenario controls and status
+# Scenario definitions
 
-The current final_v1 family is defined by config/final_methodology_execution_v1.yaml, accepted final closure controls, frozen static/runtime inputs and calibrated thermal-unit parameters. The original static package remains authoritative for capacities, carriers, storage controls, annual demand and directional interfaces. Final transformations do not permit capacity expansion.
+The six cases are 2040 and 2050, each with Slow, Base and High. Installed
+capacities, demand and directional network limits are exogenous. Slow retains
+the documented two-year project delay; High and Base share their specified
+network controls. No generic network derating substitutes for project timing.
 
-| Model family | Inputs | Results |
-| --- | --- | --- |
-| final_v1 2040 Slow/Base/High | Canonical prepared UC/reference pairs | Technical QA passed; analytical review recorded separately |
-| final_v1 2050 Slow/Base/High | Canonical prepared pairs | Prepared final pairs; explicit manual execution authorized; analytical acceptance remains separate |
-| Prior UC2 | Calibrated predecessor | Historical solved evidence |
-| Original dispatch / pre-P2X | Earlier diagnostic families | Methodological evidence only |
+For revised 2050 VRE, Slow uses 0.80 × Base and High uses 1.10 × Base. Nuclear
+is 10 GW in all three cases. Demand is 583.1 TWh for Slow/Base and 641.41 TWh
+for High. Existing BESS, P2X, hydro and other resource rules are unchanged.
+The [capacity configuration](releases/FINAL_V4.md) gives numerical controls.
 
-Authorization, input integrity and result acceptance are separate controls. The production command explicitly selects final_v1. External-price datasets are frozen at the Stage-A/Stage-B boundary; no current scenario requires rerunning the reduced external model.
-
-Research assumptions are closed for execution. Missing implementation fields must be recovered and reconciled with accepted derivations rather than replaced by unsupported assumptions. Material changes to capacities, annual demand, fuels/carbon, hydro/PHS, network contracts or price formation require documented methodological review.
-
-Immutable receipt and contract identifiers retain their original technical names for traceability. Their descriptive text records the state at creation; only current configuration authorizes execution. Historical 2050 results are not interchangeable with final_v1 outputs.
+All six scenarios are manually executable, without case-specific permission
+tokens. No command, completed scenario or reporting action automatically
+launches another scenario. Existing results remain protected from overwrite.

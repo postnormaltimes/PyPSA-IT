@@ -1,0 +1,45 @@
+{
+  "toolkit_file_hashes": {
+    "visualization_toolkit/__init__.py": "3dbf1bef7857d5430da3bc1be4e1048fbe88be36e732e01638585ce386d0c8b1",
+    "visualization_toolkit/congestion.py": "3d6eb4960981d81340dde09ad024008d8bce54e0dc4f5057d56747cbae5d7bcb",
+    "visualization_toolkit/data/README.md": "e64268156283e074e783973560bccf8bef9bb90864a58f13bd6b981371645451",
+    "visualization_toolkit/data/__init__.py": "42191e8debe8a90a085361633a1f7539f301704edaa70c66bc4109f0c92e496e",
+    "visualization_toolkit/data/naturalearth_lowres.geojson": "c83795a6615b793401ac04d642792d9a2fb11d3a8392fd9908b81805d7e9a114",
+    "visualization_toolkit/dispatch.py": "3016386f4e2a4d7270291db239cece02cd146a2c84674aa041734a3adb231d16",
+    "visualization_toolkit/flows.py": "d167c2f11e160f7c1f9e05184b5c80ba7697d1226a39eb407086d98e7949ddf9",
+    "visualization_toolkit/io.py": "961fd024b9c3e69361d48b04b2dec618a9cccbd120ed75d723d8007077b6dbc6",
+    "visualization_toolkit/network_maps.py": "40a139837c3e413605724925d506c0b809e700718daec20f41c3c7e905915d97",
+    "visualization_toolkit/prices.py": "9d97c76a982dcfdfc5ded435406f9c5f17835c4f1c7b47d01ba0f85827289098",
+    "visualization_toolkit/scenario_comparison.py": "d653404b101a0a15b442713e8608aac5dba40f5240afcb7ff60dcc0745654e92",
+    "visualization_toolkit/storage.py": "400db9c9a65ad56b8580811b8f90bf34a0e5d0ae73e9aed0cd237d8179c2568d",
+    "visualization_toolkit/styles.py": "3c7564a9aa895220444b54c08146b5599ddd8fcc77a49ee20b1c8aa5a3b3f575",
+    "visualization_toolkit/summaries.py": "2a08ed5a94b7032629d91df41b0b2beec9d518f0c7de5815ae377d8651a13d38"
+  },
+  "adapter_file_hashes": {
+    "adapters/__init__.py": "27a7aaf4e007ace3daeaa619e7de59f9d183ead59274101ed2f49d51965d4a9f",
+    "adapters/mem_adapter_template.py": "bf3df2f64cd09cf5684964ced9b85ff81e1e3d5acd22b3ff675023f5c8237875",
+    "adapters/pypsa_it_adapter.py": "a6f9d6495038c4644008e3e61c5d02939ef7b4b72dd609c975d61015c4035661"
+  },
+  "files_sha256": {
+    "gallery/01b_plotted_branch_qa.csv": "492c03de270eaee4ab0a7ec8918170c91cb0d7c5e0a7f6a9a425d9c3f2a73af0",
+    "visualization_toolkit/data/README.md": "e64268156283e074e783973560bccf8bef9bb90864a58f13bd6b981371645451",
+    "visualization_toolkit/congestion.py": "3d6eb4960981d81340dde09ad024008d8bce54e0dc4f5057d56747cbae5d7bcb",
+    "adapters/mem_adapter_template.py": "bf3df2f64cd09cf5684964ced9b85ff81e1e3d5acd22b3ff675023f5c8237875",
+    "visualization_toolkit/io.py": "961fd024b9c3e69361d48b04b2dec618a9cccbd120ed75d723d8007077b6dbc6",
+    "visualization_toolkit/prices.py": "9d97c76a982dcfdfc5ded435406f9c5f17835c4f1c7b47d01ba0f85827289098",
+    "visualization_toolkit/scenario_comparison.py": "d653404b101a0a15b442713e8608aac5dba40f5240afcb7ff60dcc0745654e92",
+    "visualization_toolkit/styles.py": "3c7564a9aa895220444b54c08146b5599ddd8fcc77a49ee20b1c8aa5a3b3f575",
+    "visualization_toolkit/data/__init__.py": "42191e8debe8a90a085361633a1f7539f301704edaa70c66bc4109f0c92e496e",
+    "visualization_toolkit/summaries.py": "2a08ed5a94b7032629d91df41b0b2beec9d518f0c7de5815ae377d8651a13d38",
+    "adapters/pypsa_it_adapter.py": "a6f9d6495038c4644008e3e61c5d02939ef7b4b72dd609c975d61015c4035661",
+    "adapters/__init__.py": "27a7aaf4e007ace3daeaa619e7de59f9d183ead59274101ed2f49d51965d4a9f",
+    "visualization_toolkit/storage.py": "400db9c9a65ad56b8580811b8f90bf34a0e5d0ae73e9aed0cd237d8179c2568d",
+    "visualization_toolkit/dispatch.py": "3016386f4e2a4d7270291db239cece02cd146a2c84674aa041734a3adb231d16",
+    "visualization_toolkit/data/naturalearth_lowres.geojson": "c83795a6615b793401ac04d642792d9a2fb11d3a8392fd9908b81805d7e9a114",
+    "provenance/recovered_original/candidate_35_50_geo_repaired_bus_table.csv": "bc4e0099b14d1d35ad7cbc331ed116f8e2f991ae9acd01646216a7e7f5e6fec5",
+    "visualization_toolkit/flows.py": "d167c2f11e160f7c1f9e05184b5c80ba7697d1226a39eb407086d98e7949ddf9",
+    "visualization_toolkit/network_maps.py": "40a139837c3e413605724925d506c0b809e700718daec20f41c3c7e905915d97",
+    "visualization_toolkit/__init__.py": "3dbf1bef7857d5430da3bc1be4e1048fbe88be36e732e01638585ce386d0c8b1",
+    "gallery/01b_map_qa.json": "768aa9b80266c22da96ba4e1df3b43a44e12b1149e4581d1162c4d15117118bc"
+  }
+}

@@ -83,7 +83,7 @@ def assert_gate(name: str) -> str:
     if gate.get("status") != "APPROVED" or not approved_id:
         raise RuntimeError(
             f"{name} gate is not approved. Review decision_packets and set status=APPROVED "
-            "with an approved_id only after explicit user approval."
+            "with an approved_id recorded in the model configuration."
         )
     return str(approved_id)
 

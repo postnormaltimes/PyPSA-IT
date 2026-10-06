@@ -1,6 +1,0 @@
-{
-  "framework": "COMMON_FIXED_CAPACITY_SITE_LCOE",
-  "common_onshore_cost_means_CF_DESCENDING": true,
-  "reported_capacity_heuristic_QA_only": true,
-  "source_cost_EUR_per_MW_year": 118819.88845458832
-}

@@ -202,7 +202,7 @@ def generate_closeout(*, require_full_suite: bool = True) -> dict[str, Any]:
         **dependencies,
         "linopy_gurobi_visible": "gurobi" in linopy.solvers.available_solvers,
         "gurobi_licence_file_visible": True,
-        "isolated_environment_solver_result": "BLOCKED_BY_NAMED_USER_MISMATCH",
+        "isolated_environment_solver_result": "BLOCKED_BY_EXECUTION_IDENTITY_LICENSE_MISMATCH",
         "interpretation": "Execution-identity boundary; not evidence that the normal-user licence is invalid.",
         "normal_user_preflight": {
             "phase": "ETX-7B6",

@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import os
-
 import argparse
 import importlib.metadata
 import platform
@@ -15,7 +13,7 @@ import xarray as xr
 from .common import DECISIONS, QA, ROOT, STATIC, dump_json, ensure_output_dirs, sha256_file
 
 
-PYPSA_EUR = Path(os.environ.get("MEM_RESEARCH_UPSTREAM_ROOT", str(ROOT / "data/research/upstream/pypsa-eur")))
+PYPSA_EUR = ROOT / "optional/pypsa-eur"
 OPSD = PYPSA_EUR / "data" / "opsd_electricity_demand" / "archive" / "2026-02-02" / "electricity_demand_opsd_raw.csv"
 ENTSOE = PYPSA_EUR / "data" / "entsoe_electricity_demand" / "archive" / "2026-02-02" / "electricity_demand_entsoe_raw.csv"
 RUNOFF = PYPSA_EUR / "data" / "country_runoff" / "archive" / "2025-08-13" / "era5-runoff-per-country.csv"

@@ -233,12 +233,12 @@ def checkpoint_native_wind_blocked():
     authority["robustness_results"] = {"cases":126,"PASS":final["robustness_PASS"],
         "failed":final["robustness_failed_cases"],"final_verification":str((QA / "FINAL_WIND_VERIFICATION.json").relative_to(ROOT))}
     dump_json(authority_path,authority)
-    handoff = ROOT / "docs/final_methodology_closure/MEM_FINAL_METHODOLOGY_PHASE_W_NATIVE_CELL_HANDOFF.md"
+    transfer = ROOT / "docs/final_methodology_closure/MEM_FINAL_METHODOLOGY_PHASE_W_NATIVE_CELL_TRANSFER.md"
     manifest = QA / "NATIVE_CELL_WIND_OUTPUT_MANIFEST.csv"
     closeout = QA / "NATIVE_CELL_CLOSEOUT_RECEIPT.json"
     paths = list(QA.glob("*.csv"))+list(QA.glob("*.json"))
     paths += list(RESOURCE.glob("*.nc"))+list(RESOURCE.glob("*.geojson"))+list(RESOURCE.glob("*.parquet"))
-    paths += [SPEC,handoff,ROOT / "docs/final_methodology_closure/PHASE_W_NATIVE_CELL_RESOLUTION.md",
+    paths += [SPEC,transfer,ROOT / "docs/final_methodology_closure/PHASE_W_NATIVE_CELL_RESOLUTION.md",
         ROOT / "config/final_methodology_closure.yaml"]
     paths += [ROOT / f"src/mem_model/{name}.py" for name in (
         "final_methodology_closure","final_wind_cells","final_wind_cell_verification",
@@ -257,7 +257,7 @@ def checkpoint_native_wind_blocked():
         if path.suffix in {".py",".yaml"}:
             return "CURRENT_PHASE_W_IMPLEMENTATION_CONFIG_OR_TEST"
         if (path.name.startswith(("NATIVE_CELL","FINAL_WIND","ONSHORE_SITING","OFFSHORE_SITE","OFFSHORE_COST_RANKING","LOCAL_PINNED","INDEPENDENT_NATIVE_CELL","RESOURCE_CLASS_TO_NATIVE")) or
-                "SELECTED_NATIVE_CELL_PROFILES" in path.name or path == handoff):
+                "SELECTED_NATIVE_CELL_PROFILES" in path.name or path == transfer):
             return "CURRENT_NATIVE_CELL_EVIDENCE_NOT_PROMOTED_NETWORK"
         return "RETAINED_CLASS_SOURCE_DIAGNOSTIC_NOT_FINAL_SITING_AUTHORITY"
     records = [{"path":str(path.relative_to(ROOT)),"bytes":path.stat().st_size,"sha256":sha256_file(path),
@@ -268,7 +268,7 @@ def checkpoint_native_wind_blocked():
         "independent_cases_PASS":independent["independent_verification"]["frozen_cases_checked"],
         "focused_tests":tests, "manifest":str(manifest.relative_to(ROOT)),"manifest_sha256":sha256_file(manifest),
         "manifest_members":len(records),"parent_hash_changes":0,"W_successors_created":0,
-        "handoff":str(handoff.relative_to(ROOT)),"handoff_sha256":sha256_file(handoff),
+        "transfer":str(transfer.relative_to(ROOT)),"transfer_sha256":sha256_file(transfer),
         "optimization_model_constructed":False,"production_optimization_executed":False,
         "production_solver_invocations":0,"production_results_modified":0,"production_state":"PRODUCTION_NOT_EXECUTED"})
     paths += [manifest,closeout]
@@ -287,7 +287,7 @@ def checkpoint_native_wind_blocked():
             "independent_review":"qa/final_methodology_closure/wind/INDEPENDENT_NATIVE_CELL_REVIEW.json",
             "prior_accepted_focused_tests_reused":21},unresolved=unresolved)
     state["phases"]["W"].update({"phase_result":"WIND_RESOURCE_SITING_BLOCKED",
-        "current_handoff":str(handoff.relative_to(ROOT)),"current_gate":"2040_OFFSHORE_COST_AUTHORITY_REQUIRED",
+        "current_transfer":str(transfer.relative_to(ROOT)),"current_gate":"2040_OFFSHORE_COST_AUTHORITY_REQUIRED",
         "superseded_block":"qa/final_methodology_closure/wind/W_CLASS_DIAGNOSTIC_CHECKPOINT.json",
         "resource_class_discretization_final_authority":False})
     dump_json(STATE,state)

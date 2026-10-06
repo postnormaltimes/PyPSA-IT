@@ -371,7 +371,7 @@ def add_placement_virtual_supply(
         "placement_capacity_source": "IMMUTABLE_B9C_R10_RESIDUAL_SHEDDING",
         "placement_residual_energy_share": RESIDUAL_ENERGY_SHARE,
         "technical_status": "PREPARED_NOT_EXECUTED",
-        "production_price_acceptance": "PENDING_METHOD_REVIEW",
+        "production_price_acceptance": "PENDING_SOL_REVIEW",
     }
     return network
 
@@ -524,7 +524,7 @@ def prepare_placement(*, write_artifacts: bool = True) -> dict[str, Any]:
         "immutable_B9D_R5_verified": True,
         "production_optimization_executed": False,
         "technical_diagnostic_status": "PREPARED_NOT_EXECUTED",
-        "production_price_acceptance": "PENDING_METHOD_REVIEW",
+        "production_price_acceptance": "PENDING_SOL_REVIEW",
         "B10_authorized": False,
         "Stage_B_authorized": False,
     }
@@ -584,7 +584,7 @@ def prepare_placement(*, write_artifacts: bool = True) -> dict[str, Any]:
                 "capacities_MW": payload["capacities_MW"],
                 "capacity_control": capacity_control,
                 "production_optimization_executed": False,
-                "production_price_acceptance": "PENDING_METHOD_REVIEW",
+                "production_price_acceptance": "PENDING_SOL_REVIEW",
                 "B10_authorized": False,
                 "Stage_B_authorized": False,
             },
@@ -1089,7 +1089,7 @@ def _placement_delivery_diagnostics(
         "simultaneous_evidence_rule": "HEADROOM_AND_ALL_INTERFACE_STATES_MEASURED_AT_SAME_PLACEMENT_RESIDUAL_SCARCITY_TIMESTAMP",
         "residual_graph_interpretation": "DIRECTIONAL_NETWORK_HEADROOM_EVIDENCE_ONLY_NOT_PHYSICAL_TRANSFER_PROOF",
         "automatic_A_to_D_classification": False,
-        "production_price_acceptance": "PENDING_METHOD_REVIEW",
+        "production_price_acceptance": "PENDING_SOL_REVIEW",
     }
     return headroom, interface, summary
 
@@ -1150,7 +1150,7 @@ def _scarcity_geography(
         "comparisons": comparisons,
         "complete_market_ranks_provided": True,
         "major_scarcity_location_threshold": None,
-        "major_location_shift_determination": "PENDING_METHOD_REVIEW",
+        "major_location_shift_determination": "PENDING_SOL_REVIEW",
         "automatic_interpretation": False,
     }
     return pd.DataFrame.from_records(rows), summary
@@ -1260,15 +1260,15 @@ def write_post_solve_diagnostics(
     )
     interpretation = {
         "schema_version": "MEM_PLACEMENT_2050_INTERPRETATION_FRAMEWORK_V1_0",
-        "status": "EVIDENCE_ONLY_PENDING_METHOD_REVIEW",
-        "A_PLACEMENT_HYPOTHESIS_SUPPORTED": "METHOD_REVIEW_ONLY",
-        "B_PLACEMENT_HELPS_BUT_DOES_NOT_RESOLVE": "METHOD_REVIEW_ONLY",
-        "C_BROADER_ADEQUACY_OR_MODEL_LIMITATION": "METHOD_REVIEW_ONLY",
-        "D_PLACEMENT_PROXY_TOO_INTERVENTIONIST": "METHOD_REVIEW_ONLY",
+        "status": "EVIDENCE_ONLY_PENDING_SOL_REVIEW",
+        "A_PLACEMENT_HYPOTHESIS_SUPPORTED": "SOL_REVIEW_ONLY",
+        "B_PLACEMENT_HELPS_BUT_DOES_NOT_RESOLVE": "SOL_REVIEW_ONLY",
+        "C_BROADER_ADEQUACY_OR_MODEL_LIMITATION": "SOL_REVIEW_ONLY",
+        "D_PLACEMENT_PROXY_TOO_INTERVENTIONIST": "SOL_REVIEW_ONLY",
         "numerical_auto_pass_thresholds": None,
         "automatic_classification": False,
         "automatic_successor_experiment": False,
-        "production_price_acceptance": "PENDING_METHOD_REVIEW",
+        "production_price_acceptance": "PENDING_SOL_REVIEW",
         "B10_authorized": False,
         "Stage_B_authorized": False,
     }
@@ -1326,7 +1326,7 @@ def write_post_solve_diagnostics(
         "near_constant_rows": len(near_constant),
         "automatic_interpretation": False,
         "technical_diagnostic_status": "PASS",
-        "production_price_acceptance": "PENDING_METHOD_REVIEW",
+        "production_price_acceptance": "PENDING_SOL_REVIEW",
     }
 
 
@@ -1391,7 +1391,7 @@ def run_b9e(args: argparse.Namespace) -> dict[str, Any]:
     diagnostics, diagnostic_qa = write_post_solve_diagnostics(network, prepared)
     _append_log(
         log,
-        "ETX-7B9E technical placement diagnostic PASS; production-price acceptance remains pending analytical review.",
+        "ETX-7B9E technical placement diagnostic PASS; production-price acceptance remains subject to historical result validation.",
     )
     result_artifacts.extend(prepared["artifacts"])
     result_artifacts.extend(diagnostics)
@@ -1471,14 +1471,14 @@ def run_b9e(args: argparse.Namespace) -> dict[str, Any]:
             "post_solve": metrics,
             "comparisons": diagnostic_qa,
             "technical_diagnostic_status": "TECHNICAL_PLACEMENT_DIAGNOSTIC_PASS",
-            "economic_methodological_acceptance": "PENDING_METHOD_REVIEW",
+            "economic_methodological_acceptance": "PENDING_SOL_REVIEW",
             "production_price_source": False,
             "automatic_capacity_iteration": False,
             "automatic_successor_experiment": False,
             "B10_authorized": False,
             "Stage_B_authorized": False,
         },
-        next_gate="METHOD_REVIEW_REQUIRED_NO_AUTOMATIC_PRODUCTION_PROMOTION",
+        next_gate="SOL_REVIEW_REQUIRED_NO_AUTOMATIC_PRODUCTION_PROMOTION",
         command=command_string(module=CANONICAL_MODULE),
         runtime_seconds=time.perf_counter() - started,
         solve=metrics,
@@ -1578,7 +1578,7 @@ def main() -> None:
                 "gate": receipt["gate"],
                 "receipt": load_placement_config()["phase"]["receipt"],
                 "technical_diagnostic_status": "TECHNICAL_PLACEMENT_DIAGNOSTIC_PASS",
-                "production_price_acceptance": "PENDING_METHOD_REVIEW",
+                "production_price_acceptance": "PENDING_SOL_REVIEW",
                 "B10_authorized": False,
                 "Stage_B_authorized": False,
             },

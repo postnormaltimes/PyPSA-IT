@@ -1,0 +1,8 @@
+test,reason,status,applicability
+tests/test_final_v4_capacity_revision.py::test_runtime_inheritance_has_shared_horizon_members_and_exact_hashes,Checks source-reconstruction runtime members already embedded in prepared networks; distributed members have separate hash tests.,EXCLUDED,SOURCE_OR_HISTORICAL_WORKFLOW
+tests/test_final_v4_capacity_revision.py::test_protected_v3_artifacts_and_canonical_result_inheritance,Requires the private historical result store; original-result preservation is verified separately.,EXCLUDED,SOURCE_OR_HISTORICAL_WORKFLOW
+tests/test_uc2_reporting_integration.py::test_reporting_guard_blocks_pypsa_and_linopy_without_solving,Deliberately calls optimisation entry points; publication validation prohibits these calls.,EXCLUDED,SOURCE_OR_HISTORICAL_WORKFLOW
+tests/test_uc2_vis_x1.py::test_stage_b_map_binds_only_canonical_MEM_nodes_interfaces_and_prices[Slow],Requires historical solved diagnostic reports not distributed with prepared inputs.,EXCLUDED,SOURCE_OR_HISTORICAL_WORKFLOW
+tests/test_uc2_vis_x1.py::test_stage_b_map_binds_only_canonical_MEM_nodes_interfaces_and_prices[Base],Requires historical solved diagnostic reports not distributed with prepared inputs.,EXCLUDED,SOURCE_OR_HISTORICAL_WORKFLOW
+tests/test_uc2_vis_x1.py::test_stage_b_map_binds_only_canonical_MEM_nodes_interfaces_and_prices[High],Requires historical solved diagnostic reports not distributed with prepared inputs.,EXCLUDED,SOURCE_OR_HISTORICAL_WORKFLOW
+tests/test_uc2_vis_x1.py::test_stage_b_map_rejects_noncanonical_edge_and_duplicate_price,Requires the same historical solved diagnostic reports; fixture-only flow/price tests remain included.,EXCLUDED,SOURCE_OR_HISTORICAL_WORKFLOW

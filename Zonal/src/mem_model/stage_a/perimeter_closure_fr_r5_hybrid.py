@@ -350,7 +350,7 @@ def add_hybrid_virtual_supply(
         "method": "PERIMETER_CLOSURE_METHOD_V2_0",
         "changed_parameter_vs_B9E": "FR_p_nom_only",
         "technical_status": "PREPARED_NOT_EXECUTED",
-        "production_price_acceptance": "PENDING_METHOD_REVIEW",
+        "production_price_acceptance": "PENDING_SOL_REVIEW",
     }
     return network
 
@@ -430,7 +430,7 @@ def prepare_hybrid(*, write_artifacts: bool = True) -> dict[str, Any]:
         "short_unsolved_LP_fixture": {"snapshots": 6, **short_lp},
         "immutable_B8D_B9B_B9C_B9D_B9E_verified": True,
         "production_optimization_executed": False,
-        "production_price_acceptance": "PENDING_METHOD_REVIEW",
+        "production_price_acceptance": "PENDING_SOL_REVIEW",
         "B10_2050_authorized": False,
         "Stage_B_2050_authorized": False,
     }
@@ -448,7 +448,7 @@ def prepare_hybrid(*, write_artifacts: bool = True) -> dict[str, Any]:
             CONFIG_PATH,
             ROOT / "src/mem_model/stage_a/perimeter_closure_fr_r5_hybrid.py",
             ROOT / "docs/runbooks/ETX7B9F_RUNBOOK.md",
-            ROOT / "docs/MEM_ETX7B9F_2050_FR_R5_HYBRID_PREPARATION_HANDOFF.md",
+            ROOT / "docs/MEM_ETX7B9F_2050_FR_R5_HYBRID_PREPARATION_TRANSFER.md",
             *artifacts,
         ]
         manifest = write_manifest(paths["manifest"], members)
@@ -477,7 +477,7 @@ def prepare_hybrid(*, write_artifacts: bool = True) -> dict[str, Any]:
                 "capacities_MW": payload["capacities_MW"],
                 "capacity_control": capacity_control,
                 "production_optimization_executed": False,
-                "production_price_acceptance": "PENDING_METHOD_REVIEW",
+                "production_price_acceptance": "PENDING_SOL_REVIEW",
                 "B10_2050_authorized": False,
                 "Stage_B_2050_authorized": False,
             },
@@ -822,12 +822,12 @@ def write_post_solve_diagnostics(
     )
     interpretation = {
         "schema_version": "MEM_FR_R5_HYBRID_2050_INTERPRETATION_CONTROL_V1_0",
-        "status": "EVIDENCE_ONLY_PENDING_METHOD_REVIEW",
+        "status": "EVIDENCE_ONLY_PENDING_SOL_REVIEW",
         "question": "Whether restoring only France to the existing R5 quantity preserves B9E placement improvements and removes the main remaining external-price distortion",
         "practical_100_to_200_EUR_per_MWh_band_is_diagnostic_only": True,
         "automatic_economic_acceptance": False,
         "automatic_successor_experiment": False,
-        "production_price_acceptance": "PENDING_METHOD_REVIEW",
+        "production_price_acceptance": "PENDING_SOL_REVIEW",
         "B10_2050_authorized": False,
         "Stage_B_2050_authorized": False,
     }
@@ -874,7 +874,7 @@ def write_post_solve_diagnostics(
         "France_utilization_rows": len(utilization),
         "IT_diagnostic_rows": len(it),
         "automatic_economic_acceptance": False,
-        "production_price_acceptance": "PENDING_METHOD_REVIEW",
+        "production_price_acceptance": "PENDING_SOL_REVIEW",
     }
 
 
@@ -900,7 +900,7 @@ def run_b9f(args: argparse.Namespace) -> dict[str, Any]:
     started = time.perf_counter()
     qa_dir = ROOT / config["phase"]["qa_directory"]
     log = qa_dir / "logs/MEM_ETX7B9F_raw.log"
-    _append_log(log, "ETX-7B9F started; economic acceptance remains pending analytical review.")
+    _append_log(log, "ETX-7B9F started; economic acceptance remains subject to historical result validation.")
     preflight = gurobi_preflight(execution_config)
     network = prepared["network"]
     linopy = create_and_validate_linopy_model(network)
@@ -990,13 +990,13 @@ def run_b9f(args: argparse.Namespace) -> dict[str, Any]:
             "post_solve": metrics,
             "comparisons": diagnostic_qa,
             "technical_diagnostic_status": "TECHNICAL_FR_R5_HYBRID_DIAGNOSTIC_PASS",
-            "economic_methodological_acceptance": "PENDING_METHOD_REVIEW",
+            "economic_methodological_acceptance": "PENDING_SOL_REVIEW",
             "production_price_source": False,
             "automatic_successor_experiment": False,
             "B10_2050_authorized": False,
             "Stage_B_2050_authorized": False,
         },
-        next_gate="METHOD_REVIEW_REQUIRED_NO_AUTOMATIC_PRODUCTION_PROMOTION",
+        next_gate="SOL_REVIEW_REQUIRED_NO_AUTOMATIC_PRODUCTION_PROMOTION",
         command=command_string(module=CANONICAL_MODULE),
         runtime_seconds=time.perf_counter() - started,
         solve=metrics,
@@ -1081,7 +1081,7 @@ def main() -> None:
                 "status": receipt["status"],
                 "gate": receipt["gate"],
                 "receipt": load_hybrid_config()["phase"]["receipt"],
-                "production_price_acceptance": "PENDING_METHOD_REVIEW",
+                "production_price_acceptance": "PENDING_SOL_REVIEW",
                 "B10_2050_authorized": False,
                 "Stage_B_2050_authorized": False,
             },

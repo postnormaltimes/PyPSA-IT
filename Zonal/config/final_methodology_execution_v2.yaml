@@ -1,0 +1,35 @@
+schema_version: MEM_FINAL_METHODOLOGY_EXECUTION_V2
+variant: final_v2
+result_root: results/final_methodology_v2
+network_receipt: qa/stage_b/p2x_flex_v2/MEM_STAGE_B_P2X_FLEX_V2_PREPARATION_RECEIPT.json
+network_lineage: qa/stage_b/p2x_flex_v2/FINAL_V2_NETWORK_LINEAGE_AND_HASHES.csv
+final_verification: qa/stage_b/p2x_flex_v2/MEM_STAGE_B_P2X_FLEX_V2_FINAL_VERIFICATION.json
+water_mapping: qa/final_methodology_closure/hydro/WATER_VALUE_STATE_MAPPING.csv
+manual_authorization:
+  2040_Slow: true
+  2040_Base: true
+  2040_High: true
+  2050_Slow: true
+  2050_Base: true
+  2050_High: true
+authorization_required: EXPLICIT_SINGLE_JOB_MANUAL_ACTION
+execution_path_integrated: true
+accepted_v2c_controls:
+  qa/stage_b/p2x_flex_v2/MEM_STAGE_B_P2X_FLEX_V2_PREPARATION_RECEIPT.json: 283b2d3410898886d77340e0640a91f3f88f28ae3f4019e8f605524e64e7ea45
+  qa/stage_b/p2x_flex_v2/MEM_STAGE_B_P2X_FLEX_V2_FINAL_VERIFICATION.json: 912cc8c82b40a73512d39e1e6ae884f109a2c8761d0c56897c5797bd3f9f371f
+  qa/stage_b/p2x_flex_v2/FINAL_V2_NETWORK_LINEAGE_AND_HASHES.csv: d8e6be16e3879acfcd356fc4f765fe3075c9649453420fea8ba1fa1b0390034f
+solver_inherited_from: config/stage_b_uc2_execution.yaml
+solver:
+  name: gurobi
+  required_version: 13.0.3
+  options: {Threads: 1, Seed: 0}
+  include_objective_constant: false
+  adaptive_tuning: false
+  MIPGap_override: null
+no_automatic_execution: true
+water_values:
+  source: FIXED_COMMITMENT_PRICE_LP
+  assign_all_duals: true
+  raw_coverage_required: true
+  units: EUR/MWh_water
+  divide_by_objective_weight: false

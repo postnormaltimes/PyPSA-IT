@@ -322,7 +322,7 @@ def refresh_manifest():
     files += [p for p in qa.glob("MEM_STAGE_B_ZONAL_VRE_*") if p.suffix in {".csv", ".json"} and p.name not in {MANIFEST_NAME, FINAL_NAME}]
     files += [CONFIG_PATH, Path(__file__), ROOT / "src/mem_model/zonal_vre_spatial.py",
               ROOT / "tests/test_stage_b_zonal_vre.py", ROOT / "tests/test_zonal_vre_spatial.py",
-              ROOT / "docs/MEM_STAGE_B_ZONAL_VRE_V1_PREPARATION_HANDOFF.md"]
+              ROOT / "docs/MEM_STAGE_B_ZONAL_VRE_V1_PREPARATION_TRANSFER.md"]
     required = required_artifacts(receipt)
     missing = [str(p) for p in required if not p.is_file()]
     if missing:
@@ -364,7 +364,7 @@ def required_artifacts(receipt):
     files += [qa / f"MEM_STAGE_B_ZONAL_VRE_{p['year']}_{p['scenario'].upper()}_STRUCTURAL_QA.json" for p in packages]
     files += [CONFIG_PATH, Path(__file__), ROOT / "src/mem_model/zonal_vre_spatial.py",
               ROOT / "tests/test_stage_b_zonal_vre.py", ROOT / "tests/test_zonal_vre_spatial.py",
-              ROOT / "docs/MEM_STAGE_B_ZONAL_VRE_V1_PREPARATION_HANDOFF.md"]
+              ROOT / "docs/MEM_STAGE_B_ZONAL_VRE_V1_PREPARATION_TRANSFER.md"]
     return files
 
 

@@ -1,4 +1,4 @@
-"""Non-solving Terna/MEM network-contract reconciliation for closure Phase C.
+"""Non-solving Terna/MEM network-contract reconciliation.
 
 Capacity authority comes from the frozen delay register and workbook, never
 from a network. No source contract, network, STATE, or result is modified here.
@@ -254,7 +254,7 @@ def _ledger(register: pd.DataFrame) -> pd.DataFrame:
         if project == "301-P":
             representation = "CNOR-CORS-SARD two distinct hub legs, 400 MW/direction; no direct CNOR-SARD"
         elif summary or internal or included:
-            representation = "Accepted directional limits; Phase N signed net bounds; no increment added again"
+            representation = "Accepted directional limits; signed net bounds; no increment added again"
         else:
             representation = "No added Link/capacity; accepted foreign floor unchanged"
         nominal, nominal_note = rating.get(project, (np.nan,
@@ -398,7 +398,7 @@ def audit_signed_network(network, year: int, scenario: str, expected: pd.DataFra
 
 
 def reconcile_successors(parents: list[dict], *, test_results: dict | None = None):
-    """Phase-C QA only, called by the lead after N PASS; never alters inputs."""
+    """Verify the frozen network contract without altering inputs."""
     import json
     import pypsa
 

@@ -79,7 +79,7 @@ horizon_rule:
     baseline_component_changes: false
   promotion:
     automatic: false
-    explicit_method_review_required: true
+    explicit_Sol_review_required: true
 
 inheritance_to_2050:
   inherit_method_rule: true

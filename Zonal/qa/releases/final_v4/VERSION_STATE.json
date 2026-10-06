@@ -1,0 +1,70 @@
+{
+  "schema_version": "MEM_FINAL_V4_CANONICAL_RELEASE_V1",
+  "canonical_methodology": "final_v4",
+  "status": "LOCKED",
+  "analytical_review": "PASS_WITH_DOCUMENTED_LIMITATIONS",
+  "release_scope": "COMPLETE_SIX_SCENARIO_PROJECT_STATE",
+  "cases": [
+    {
+      "year": 2040,
+      "scenario": "Slow",
+      "configuration_version": "final_v3",
+      "input_status": "INHERITED_UNCHANGED",
+      "result_status": "NO_RESULT_PROMOTION",
+      "all_scenarios_manually_executable": true,
+      "automatic_scenario_execution": false
+    },
+    {
+      "year": 2040,
+      "scenario": "Base",
+      "configuration_version": "final_v3",
+      "input_status": "INHERITED_UNCHANGED",
+      "result_status": "INHERITED_ACCEPTED_FINAL_V3",
+      "all_scenarios_manually_executable": true,
+      "automatic_scenario_execution": false
+    },
+    {
+      "year": 2040,
+      "scenario": "High",
+      "configuration_version": "final_v3",
+      "input_status": "INHERITED_UNCHANGED",
+      "result_status": "NO_RESULT_PROMOTION",
+      "all_scenarios_manually_executable": true,
+      "automatic_scenario_execution": false
+    },
+    {
+      "year": 2050,
+      "scenario": "Slow",
+      "configuration_version": "final_v4",
+      "input_status": "CANONICAL_FINAL_V4",
+      "result_status": "NO_RESULT_PROMOTION",
+      "all_scenarios_manually_executable": true,
+      "automatic_scenario_execution": false
+    },
+    {
+      "year": 2050,
+      "scenario": "Base",
+      "configuration_version": "final_v4",
+      "input_status": "CANONICAL_FINAL_V4",
+      "result_status": "TECHNICALLY_AND_ANALYTICALLY_ACCEPTED",
+      "all_scenarios_manually_executable": true,
+      "automatic_scenario_execution": false
+    },
+    {
+      "year": 2050,
+      "scenario": "High",
+      "configuration_version": "final_v4",
+      "input_status": "CANONICAL_FINAL_V4",
+      "result_status": "NO_RESULT_PROMOTION",
+      "all_scenarios_manually_executable": true,
+      "automatic_scenario_execution": false
+    }
+  ],
+  "future_substantive_change_requires_successor_or_governance": true,
+  "reviewed_package_sha256": "69c85650c53d24e366afc0789b8ce1b5b3824ce2dde2c670e216e8fe05d2df1a",
+  "reviewed_pairable_groups": 69,
+  "material_model_defects": "NONE",
+  "production_rerun_required": false,
+  "final_v3_2050_Base": "PRESERVED_PNIEC_CAPACITY_BENCHMARK",
+  "production_solver_invocations_during_release": 0
+}

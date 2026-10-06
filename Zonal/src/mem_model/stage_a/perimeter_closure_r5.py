@@ -288,7 +288,7 @@ def add_r5_virtual_supply(
         "method": "PERIMETER_CLOSURE_METHOD_V2_0",
         "mechanical_baseline_residual_energy_share": RESIDUAL_ENERGY_SHARE,
         "technical_status": "PREPARED_NOT_EXECUTED",
-        "production_price_acceptance": "PENDING_METHOD_REVIEW",
+        "production_price_acceptance": "PENDING_SOL_REVIEW",
     }
     return network
 
@@ -349,7 +349,7 @@ def prepare_r5(*, write_artifacts: bool = True) -> dict[str, Any]:
         "immutable_B9C_R10_verified": True,
         "production_optimization_executed": False,
         "technical_diagnostic_status": "PREPARED_NOT_EXECUTED",
-        "production_price_acceptance": "PENDING_METHOD_REVIEW",
+        "production_price_acceptance": "PENDING_SOL_REVIEW",
         "B10_authorized": False,
         "Stage_B_authorized": False,
         "additional_sensitivities_created": False,
@@ -391,7 +391,7 @@ def prepare_r5(*, write_artifacts: bool = True) -> dict[str, Any]:
                 "capacities_MW": payload["capacities_MW"],
                 "total_capacity_MW": payload["total_capacity_MW"],
                 "production_optimization_executed": False,
-                "production_price_acceptance": "PENDING_METHOD_REVIEW",
+                "production_price_acceptance": "PENDING_SOL_REVIEW",
                 "B10_authorized": False,
                 "Stage_B_authorized": False,
             },
@@ -821,7 +821,7 @@ def _placement_delivery_diagnostics(
                 "A_insufficient_proxy_quantity_indicator": "hours_all_proxy_capacity_near_saturated",
                 "B_placement_delivery_indicator": "hours_headroom_without_any_directional_residual_path",
                 "C_broader_internal_adequacy_indicator": "hours_any_proxy_simultaneous_headroom_and_path_with_residual_scarcity",
-                "D_acceptable_residual_scarcity": "METHOD_REVIEW_ONLY_NO_AUTOMATIC_THRESHOLD",
+                "D_acceptable_residual_scarcity": "SOL_REVIEW_ONLY_NO_AUTOMATIC_THRESHOLD",
             },
         }
 
@@ -857,7 +857,7 @@ def _placement_delivery_diagnostics(
         "simultaneous_evidence_rule": "HEADROOM_AND_INTERFACE_STATE_ARE_MEASURED_AT_THE_SAME_R5_RESIDUAL_SCARCITY_TIMESTAMP",
         "annual_unused_capacity_used_as_delivery_evidence": False,
         "automatic_classification": False,
-        "production_price_acceptance": "PENDING_METHOD_REVIEW",
+        "production_price_acceptance": "PENDING_SOL_REVIEW",
     }
     return headroom, interface, summary
 
@@ -944,7 +944,7 @@ def write_post_solve_diagnostics(
         "placement_interface_rows": len(interface),
         "automatic_economic_acceptance": False,
         "technical_diagnostic_status": "PASS",
-        "production_price_acceptance": "PENDING_METHOD_REVIEW",
+        "production_price_acceptance": "PENDING_SOL_REVIEW",
     }
 
 
@@ -1004,7 +1004,7 @@ def run_b9d(args: argparse.Namespace) -> dict[str, Any]:
     diagnostics, diagnostic_qa = write_post_solve_diagnostics(network, prepared)
     _append_log(
         log,
-        "ETX-7B9D technical diagnostic PASS; production-price acceptance remains pending analytical review.",
+        "ETX-7B9D technical diagnostic PASS; production-price acceptance remains subject to historical result validation.",
     )
     result_artifacts.extend(prepared["artifacts"])
     result_artifacts.extend(diagnostics)
@@ -1057,13 +1057,13 @@ def run_b9d(args: argparse.Namespace) -> dict[str, Any]:
             "post_solve": metrics,
             "comparisons": diagnostic_qa,
             "technical_diagnostic_status": "TECHNICAL_DIAGNOSTIC_PASS",
-            "economic_methodological_acceptance": "PENDING_METHOD_REVIEW",
+            "economic_methodological_acceptance": "PENDING_SOL_REVIEW",
             "production_price_source": False,
             "automatic_capacity_iteration": False,
             "B10_authorized": False,
             "Stage_B_authorized": False,
         },
-        next_gate="METHOD_REVIEW_REQUIRED_NO_AUTOMATIC_PRODUCTION_PROMOTION",
+        next_gate="SOL_REVIEW_REQUIRED_NO_AUTOMATIC_PRODUCTION_PROMOTION",
         command=command_string(module=CANONICAL_MODULE),
         runtime_seconds=time.perf_counter() - started,
         solve=metrics,
@@ -1145,7 +1145,7 @@ def main() -> None:
                 "gate": receipt["gate"],
                 "receipt": load_r5_config()["phase"]["receipt"],
                 "technical_diagnostic_status": "TECHNICAL_DIAGNOSTIC_PASS",
-                "production_price_acceptance": "PENDING_METHOD_REVIEW",
+                "production_price_acceptance": "PENDING_SOL_REVIEW",
                 "B10_authorized": False,
             },
             indent=2,

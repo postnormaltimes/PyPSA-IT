@@ -1,9 +1,0 @@
-artifact,status,role,blocking_issue
-Terna_Thermoelectric_Capacity_2024_Canonical.csv,ACQUIRED_VALIDATED_WITH_SOURCE_QA_EXCEPTION,Canonical 2024 NET MW control,None for zonal technology baseline; 19 repeated source groups documented
-MEM_Province_Region_MarketZone_Crosswalk.csv,ACQUIRED_VALIDATED,2024 province-region-zone mapping,None for 2024 baseline
-Terna_Thermoelectric_Production_2024_Canonical.csv,ACQUIRED_VALIDATED_WITH_DOCUMENTED_BASIS_INFERENCE,Gross/net production pair table and CF input,No pair exceptions; equal pairs remain explicitly ambiguous/equal
-GEM_GOGPT_Aug2026_complete_release,REQUIRES_USER_DOWNLOAD,"Plant/unit identity, gross MW, fuel, status and coordinates",Official form requires user identity/contact/use/license submission
-Terna_GEM_Thermal_Reconciliation.csv,REQUIRES_GEM_DATA,Hybrid unit/residual reconciliation,GEM August-2026 workbook absent
-MEM_Current_Thermal_Stack_2026.csv,REQUIRES_GEM_DATA,Proposed current physical stack,Cannot defensibly translate 2025-H1 2026 gross-MW changes into Terna-net capacity
-MEM_Thermal_Fleet_Evolution_2026_2040_2050.csv,REQUIRES_GEM_AND_FUTURE_FLEET_EVIDENCE,Plant/band actions and candidate future configurations,Physical unit/status bridge not closed
-v2.9.1 workbook successor,NOT_CREATED_BY_DESIGN,Targeted workbook empirical integration,Empirical physical stack is not genuinely closed until GEM reconciliation

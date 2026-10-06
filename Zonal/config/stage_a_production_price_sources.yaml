@@ -1,5 +1,5 @@
 schema: STAGE_A_PRODUCTION_PRICE_SOURCES_V1_0
-status: BOTH_HORIZON_SOURCES_ACCEPTED_BOTH_B10_HANDOFFS_COMPLETE
+status: BOTH_HORIZON_SOURCES_ACCEPTED_BOTH_B10_TRANSFERS_COMPLETE
 method: PERIMETER_CLOSURE_METHOD_V2_0
 selection_rule: EXACTLY_ONE_EXPLICITLY_ACCEPTED_CLOSURE_SOURCE_PER_HORIZON
 silent_fallback_allowed: false
@@ -109,6 +109,6 @@ horizon_governance:
     accepted_source: ETX-7B9H
     production_source_resolved: true
     b10_authorized: false
-    b10_status: ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE
+    b10_status: ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE
     b10_authorized_command: null
     stage_b_status: PREPARATION_PASS_PRODUCTION_LOCKED

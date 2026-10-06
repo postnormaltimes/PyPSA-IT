@@ -217,9 +217,9 @@ def run_audit(tests):
             checks.append(audit_network(pypsa.Network(path),p['year'],p['scenario']))
     table.to_csv(QA/'NATIVE_SEMANTIC_PARITY_MATRIX.csv',index=False)
     dump_json(QA/'NATIVE_SEMANTIC_SOURCE_RECEIPT.json',source)
-    handoff=QA/'MEM_FINAL_METHODOLOGY_NATIVE_SEMANTIC_PARITY_HANDOFF.md'
-    if not handoff.is_file():
-        raise RuntimeError('PARITY_HANDOFF_MISSING')
+    transfer=QA/'MEM_FINAL_METHODOLOGY_NATIVE_SEMANTIC_PARITY_TRANSFER.md'
+    if not transfer.is_file():
+        raise RuntimeError('PARITY_TRANSFER_MISSING')
     receipt={'state':'NATIVE_PYPSA_SEMANTIC_PARITY_AUDIT_PASS','status':'PASS',
         'matrix_rows':len(table),'classification_counts':table.classification.value_counts().to_dict(),
         'model_critical_UNRESOLVED':0,'packages':checks,'tests':tests,
@@ -227,7 +227,7 @@ def run_audit(tests):
         'W_H_artifacts_unchanged':True,'optimization_model_constructed':False,
         'production_optimization_executed':False,'production_solver_invocations':0}
     verification=QA/'NATIVE_SEMANTIC_PARITY_VERIFICATION.json'; dump_json(verification,receipt)
-    paths=[QA/'NATIVE_SEMANTIC_PARITY_MATRIX.csv',QA/'NATIVE_SEMANTIC_SOURCE_RECEIPT.json',verification,handoff,
+    paths=[QA/'NATIVE_SEMANTIC_PARITY_MATRIX.csv',QA/'NATIVE_SEMANTIC_SOURCE_RECEIPT.json',verification,transfer,
         Path(__file__),ROOT/'tests/test_final_semantic_parity.py']
     state['semantic_parity']={'status':'PASS','phase_result':receipt['state'],
         'artifacts':[{'path':str(p.relative_to(ROOT)),'sha256':sha256_file(p)} for p in paths],

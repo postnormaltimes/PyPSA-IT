@@ -6,7 +6,7 @@ The repository is organized around two complementary model families rather than 
 
 | Model family | Status | Spatial representation | Main focus |
 | --- | --- | --- | --- |
-| **[Zonal](Zonal/README.md)** | Implemented | Italy's seven electricity bidding zones plus external-market interfaces | Market dispatch, unit commitment, prices, trade, storage, hydro and system operation |
+| **[Zonal](Zonal/README.md)** | Implemented; final_v4 | Italy's seven electricity bidding zones plus external-market interfaces | Market dispatch, unit commitment, prices, trade, storage, hydro and system operation |
 | **[Nodal](Nodal/README.md)** | Planned | Network-connected buses and passive transmission topology | Internal grid constraints, nodal feasibility, congestion and more detailed locational analysis |
 
 ## Current Zonal model
@@ -19,12 +19,9 @@ The Zonal model is intended for questions such as how different 2040/2050 system
 
 ## Reproducibility and data
 
-Source code, configuration, small canonical inputs, research registers and documentation are versioned in Git. Larger prepared networks and deterministic rebuild inputs are distributed through the versioned **`zonal-production-data-v1`** GitHub Release and are checked against hashes during bootstrap.
+Source code, configuration, small canonical inputs, source registers and documentation are versioned in Git. Current prepared networks and deterministic support inputs are distributed through the versioned **`zonal-production-data-v2`** GitHub Release and checked against hashes during bootstrap. The original **`zonal-production-data-v1`** release remains available for the earlier configuration.
 
-Two executable paths are supported:
-
-- **Path A** restores the prepared final network pairs and is the shortest route to running the model.
-- **Path B** adds the accepted lower-level inputs required to reconstruct the prepared networks deterministically and verify semantic parity.
+The prepared-input route restores the current final network pairs. Source reconstruction is a separate workflow requiring the original source-specific datasets and their terms of use; it is not required to run the prepared Zonal model.
 
 The Python environment is pinned, and optimization uses Gurobi with a valid licence configured locally by the user. Licence files and credentials are not distributed with the repository.
 
@@ -33,3 +30,5 @@ The Python environment is pinned, and optimization uses Gurobi with a valid lice
 For the working model, begin with the **[Zonal overview](Zonal/README.md)**. New users should then follow the **[reproducibility guide](Zonal/docs/REPRODUCIBILITY_GUIDE.md)** and **[execution runbook](Zonal/docs/RUNBOOK_2040_2050.md)**.
 
 More detailed documentation covers the **[methodology](Zonal/docs/METHODOLOGY.md)**, **[runtime architecture](Zonal/docs/MODEL_ARCHITECTURE.md)**, **[data provenance](Zonal/docs/DATA_PROVENANCE.md)** and **[scenario controls](Zonal/docs/SCENARIO_GOVERNANCE.md)**.
+
+The repository's software is [MIT-licensed](LICENSE). External data and documents retain their original terms; see [third-party notices](THIRD_PARTY_NOTICES.md).

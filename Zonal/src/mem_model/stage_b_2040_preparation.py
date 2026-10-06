@@ -249,7 +249,7 @@ def assess_runtime_readiness() -> dict[str, Any]:
         receipt = json.loads(b10_receipt_path.read_text(encoding="utf-8"))
         b10_receipt_pass = (
             receipt.get("status") == "PASS"
-            and receipt.get("gate") == "ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE"
+            and receipt.get("gate") == "ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE"
         )
     manifest_verified = False
     manifest_error = ""
@@ -327,7 +327,7 @@ def prepare(*, write_artifacts: bool = False) -> dict[str, Any]:
     manual = approvals["stage_a_manual_gates"]
     production_gate = approvals["stage_b_2040_production"]
     successor_governance = (
-        manual["b10_2040_status"] == "ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE"
+        manual["b10_2040_status"] == "ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE"
         and manual["stage_b_2040_authorized"] is True
         and manual["stage_b_2040_authorized_scenarios"] == ["Slow", "High"]
         and manual["stage_b_2050_authorized"] is False
@@ -339,7 +339,7 @@ def prepare(*, write_artifacts: bool = False) -> dict[str, Any]:
         and production_gate["solver"]["name"] == "gurobi"
     )
     closure_governance = (
-        manual["b10_2040_status"] == "ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE"
+        manual["b10_2040_status"] == "ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE"
         and manual["stage_b_2040_authorized"] is False
         and manual["stage_b_2040_authorized_scenarios"] == []
         and manual["stage_b_2050_authorized"] is False

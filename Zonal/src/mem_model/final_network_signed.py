@@ -343,7 +343,7 @@ def promote_phase_n(parents: list[dict], *, test_results: dict) -> dict:
     artifacts = [audit_path, QA / "NATIVE_SIGNED_LINK_API_RECEIPT.json", receipt_path,
         ROOT / "src/mem_model/final_network_signed.py", ROOT / "tests/test_final_network_signed.py",
         ROOT / "src/mem_model/reporting/topology.py", ROOT / "src/mem_model/reporting/canonical_results.py",
-        ROOT / "docs/final_methodology_closure/PHASE_N_SIGNED_INTERFACE_HANDOFF.md"]
+        ROOT / "docs/final_methodology_closure/PHASE_N_SIGNED_INTERFACE_TRANSFER.md"]
     pd.DataFrame([{"path": str(path.relative_to(ROOT)), "sha256": sha256_file(path)} for path in artifacts]
         + [{"path": row["path"], "sha256": row["sha256"]} for row in packages]).to_csv(QA / "NETWORK_V2B_OUTPUT_MANIFEST.csv", index=False)
     return receipt

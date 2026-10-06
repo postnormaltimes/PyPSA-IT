@@ -1,6 +1,6 @@
 """Chronological presentation from accepted UC2 tables; no model or canonical writes.
 
-Method/provenance: docs/MEM_UC2_VIS_REPORTING_R1_HANDOFF_20260930.md.
+Method/provenance: docs/MEM_UC2_VIS_REPORTING_R1_TRANSFER_20260930.md.
 The sealed VIS-X1 renderer owns the stacks/style. Binning is a display adapter.
 """
 from __future__ import annotations
@@ -528,7 +528,7 @@ def refine_daily_case(year=2040, scenario="Base"):
         "checks": checks, "qa_checks": len(checks), "solver_invocations": guard["solver_invocations"], "network_open_or_extraction_calls": 0,
         "parent_receipt_sha256": sha256_file(parent_path), "eight_hour_receipt_sha256": sha256_file(diagnostic_path) if diagnostic else None,
         "prior_eight_hour_diagnostic_present": diagnostic is not None,
-        "reference_provenance": "outputs/visualization_reference_inspection/SOURCE_REFERENCES_20261001.csv; existing R1 presentation references reused",
+        "reference_provenance": "outputs/visualization_reference_inspection/SOURCE_REFERENCES_20261001.csv; existing R1 transfer presentation references reused",
         "preserved_source_hashes": preserved, "code_sha256": sha256_file(Path(__file__)),
         "artifact_hashes": {p.name: sha256_file(p) for p in artifacts},
     }

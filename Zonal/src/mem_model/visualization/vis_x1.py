@@ -1,14 +1,13 @@
 """Read-only VIS-X1 bridge for accepted MEM saved results.
 
 This module has no model-building or optimization entrypoint. The sealed toolkit
-is imported from its external handoff; MEM owns only lineage and semantics.
+is imported from its external transfer; MEM owns only lineage and semantics.
 """
 
 from __future__ import annotations
 
 import hashlib
 import json
-import os
 import sys
 from pathlib import Path
 
@@ -39,27 +38,14 @@ def _relative(path: Path) -> str:
     return path.relative_to(ROOT).as_posix()
 
 
-def _external_path(cfg: dict, key: str, environment: str) -> Path:
-    value = os.environ.get(environment) or cfg.get(key)
-    if not value:
-        raise RuntimeError(f"VIS_X1_OPTIONAL_DEPENDENCY_NOT_CONFIGURED: {key}; set {environment} or config/vis_x1.yaml")
-    path = Path(value)
-    return path if path.is_absolute() else ROOT / path
-
-
-def _handoff_root(cfg: dict) -> Path:
-    return _external_path(cfg, "external_handoff", "MEM_VIS_X1_HANDOFF")
-
-
 def _toolkit(cfg: dict):
-    handoff = _handoff_root(cfg)
-    cfg["external_handoff"] = str(handoff)
-    manifest = json.loads((handoff / "HANDOFF_MANIFEST.json").read_text(encoding="utf-8"))
+    transfer = ROOT / Path(cfg["external_reference"])
+    manifest = json.loads((transfer / "TRANSFER_MANIFEST.json").read_text(encoding="utf-8"))
     for name, expected in manifest["toolkit_file_hashes"].items():
-        if _sha(handoff / name) != expected:
+        if _sha(transfer / name) != expected:
             raise ValueError(f"Sealed VIS-X1 toolkit hash mismatch: {name}")
-    if str(handoff) not in sys.path:
-        sys.path.insert(0, str(handoff))
+    if str(transfer) not in sys.path:
+        sys.path.insert(0, str(transfer))
     from visualization_toolkit import congestion, dispatch, flows, io, network_maps, prices, storage, summaries
     return congestion, dispatch, flows, io, network_maps, prices, storage, summaries
 
@@ -607,7 +593,7 @@ def build_first_case() -> Path:
     checks.to_csv(folder / "diagnostics/qa_reconciliation.csv", index=False)
     pd.DataFrame(figures).to_csv(folder / "FIGURE_INDEX.csv", index=False)
     metadata = {"schema_version": "MEM_VIS_X1_FIRST_CASE_V1", "result_status": FIGURE_STATUS,
-                "warning": WARNING, "case": case, "sealed_handoff": cfg["external_handoff"],
+                "warning": WARNING, "case": case, "sealed_transfer": cfg["external_reference"],
                 "authority_register": _relative(register), "selected_snapshot": str(snapshot),
                 "figure_count": len(figures), "qa_checks": len(qa), "qa_status": "PASS",
                 "native_coordinate_status": "ALL_64_BUS_COORDINATES_ZERO",

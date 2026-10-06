@@ -1,9 +1,0 @@
-{
-  "schema_version": "MEM_PLACEMENT_2050_NEAR_CONSTANT_CAPACITY_CONTROL_V1_0",
-  "classification": "NEAR_CONSTANT_TOTAL_CAPACITY_PLACEMENT_TEST",
-  "placement_total_virtual_capacity_MW": 52212.17741474419,
-  "R5_total_virtual_capacity_MW": 51912.004881670524,
-  "absolute_difference_MW": 300.1725330736663,
-  "percentage_difference": 0.5782333657848253,
-  "exact_total_rescaling_applied": false
-}

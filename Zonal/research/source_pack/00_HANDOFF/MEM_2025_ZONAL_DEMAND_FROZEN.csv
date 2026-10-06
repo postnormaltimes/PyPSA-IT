@@ -1,8 +1,0 @@
-﻿source_zone_label,model_zone_id,demand_2025_twh,share_of_national_2025,share_percent,provenance,use_rule
-CALA,CALA,11.1,0.03490566037735849,3.490566037735849,Authoritative user-provided accepted 2025 zonal demand values,Freeze share unchanged for 2040/2050 Slow/Base/High zonal allocation
-CNORD,CNOR,30.2,0.09496855345911949,9.49685534591195,Authoritative user-provided accepted 2025 zonal demand values,Freeze share unchanged for 2040/2050 Slow/Base/High zonal allocation
-CSUD,CSUD,42.9,0.1349056603773585,13.49056603773585,Authoritative user-provided accepted 2025 zonal demand values,Freeze share unchanged for 2040/2050 Slow/Base/High zonal allocation
-NORD,NORD,173.3,0.5449685534591195,54.49685534591195,Authoritative user-provided accepted 2025 zonal demand values,Freeze share unchanged for 2040/2050 Slow/Base/High zonal allocation
-SARD,SARD,8.0,0.025157232704402517,2.515723270440252,Authoritative user-provided accepted 2025 zonal demand values,Freeze share unchanged for 2040/2050 Slow/Base/High zonal allocation
-SICI,SICI,22.3,0.07012578616352201,7.012578616352201,Authoritative user-provided accepted 2025 zonal demand values,Freeze share unchanged for 2040/2050 Slow/Base/High zonal allocation
-SUD,SUD,30.2,0.09496855345911949,9.49685534591195,Authoritative user-provided accepted 2025 zonal demand values,Freeze share unchanged for 2040/2050 Slow/Base/High zonal allocation

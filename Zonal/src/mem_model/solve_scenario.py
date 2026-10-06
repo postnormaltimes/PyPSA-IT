@@ -148,7 +148,7 @@ def authorize_production_request(
         raise SystemExit("STAGE_B_PRODUCTION_SOLVE_REFUSED: the 2040 Slow/High gate is not ready.")
     if gate.get("execution_enabled") is not True:
         raise SystemExit("STAGE_B_PRODUCTION_SOLVE_REFUSED: the 2040 Slow/High gate is disabled.")
-    if gate.get("required_b10_gate") != "ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE":
+    if gate.get("required_b10_gate") != "ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE":
         raise SystemExit("STAGE_B_PRODUCTION_SOLVE_REFUSED: B10-2040 completion authority is inconsistent.")
     if gate.get("required_runtime_gate") != "STAGE_B_2040_RUNTIME_1_PASS":
         raise SystemExit("STAGE_B_PRODUCTION_SOLVE_REFUSED: Runtime-1 authority is inconsistent.")
@@ -167,7 +167,7 @@ def authorize_production_request(
     ):
         raise SystemExit("STAGE_B_PRODUCTION_SOLVE_REFUSED: canonical Gurobi configuration is inconsistent.")
     manual = gates.get("stage_a_manual_gates", {})
-    if manual.get("b10_2040_status") != "ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE":
+    if manual.get("b10_2040_status") != "ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE":
         raise SystemExit("STAGE_B_PRODUCTION_SOLVE_REFUSED: B10-2040 is not recorded complete.")
     if manual.get("stage_b_2050_authorized") is not False:
         raise SystemExit("STAGE_B_PRODUCTION_SOLVE_REFUSED: Stage-B 2050 must remain locked.")
@@ -243,12 +243,12 @@ def authorize_2050_production_request(
     gates = load_yaml(gates_path or (CONFIG / "approval_gates.yaml"))
     gate = gates.get("stage_b_2050_production", {})
     if not isinstance(gate, dict) or gate.get("execution_enabled") is not True:
-        raise SystemExit("STAGE_B_2050_PRODUCTION_SOLVE_REFUSED: pending execution authorization for that legacy model family")
+        raise SystemExit("STAGE_B_2050_PRODUCTION_SOLVE_REFUSED: pending validation of historical inputs")
     if gate.get("status") != "2050_SLOW_BASE_HIGH_AUTHORIZED_AFTER_SOL_USER_REVIEW":
         raise SystemExit("STAGE_B_2050_PRODUCTION_SOLVE_REFUSED: approval status invalid")
     if gate.get("scenario_authorization", {}).get(scenario) is not True:
         raise SystemExit("STAGE_B_2050_PRODUCTION_SOLVE_REFUSED: scenario not authorized")
-    if gate.get("required_source") != "ETX-7B9H" or gate.get("required_b10_gate") != "ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE":
+    if gate.get("required_source") != "ETX-7B9H" or gate.get("required_b10_gate") != "ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE":
         raise SystemExit("STAGE_B_2050_PRODUCTION_SOLVE_REFUSED: source identity invalid")
     if runtime_dir.resolve() != ACCEPTED_RUNTIME_2050.resolve():
         raise SystemExit("STAGE_B_2050_PRODUCTION_SOLVE_REFUSED: runtime path invalid")

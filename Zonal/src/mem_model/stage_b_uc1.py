@@ -984,7 +984,7 @@ def verify_final() -> dict:
     include("SMOKE_RUN_RECEIPT", receipt_path)
     include("FIXED_COMMITMENT_RECONCILIATION", run_dir / "MEM_UC1_168H_FIXED_COMMITMENT_RECONCILIATION.json")
     include("CANONICAL_COMMITMENT_TRANSITIONS", run_dir / "MEM_UC1_168H_CANONICAL_COMMITMENT_TRANSITIONS.csv")
-    include("FINAL_HANDOFF", ROOT / "docs" / "MEM_UC1_COMMON_ARCHITECTURE_2040_BASE_SMOKE_HANDOFF.md")
+    include("FINAL_TRANSFER", ROOT / "docs" / "MEM_UC1_COMMON_ARCHITECTURE_2040_BASE_SMOKE_TRANSFER.md")
     manifest_path = qa_dir / "MEM_UC1_FINAL_ARTIFACT_MANIFEST.csv"
     pd.DataFrame(final_members).to_csv(manifest_path, index=False, lineterminator="\n")
     verification = {"status": receipt["status"], "full_year_optimization_authorized": False,

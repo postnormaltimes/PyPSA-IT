@@ -1,0 +1,25 @@
+{
+  "python": "3.11.15",
+  "system": "Windows",
+  "packages": {
+    "pypsa": "1.2.3",
+    "linopy": "0.7.0",
+    "gurobipy": "13.0.3",
+    "pandas": "2.3.3",
+    "numpy": "2.4.6",
+    "xarray": "2025.6.1",
+    "atlite": "0.6.1",
+    "pytest": "9.1.1"
+  },
+  "solver_contract": {
+    "name": "gurobi",
+    "required_version": "13.0.3",
+    "options": {
+      "Threads": 1,
+      "Seed": 0
+    },
+    "include_objective_constant": false,
+    "adaptive_tuning": false,
+    "MIPGap_override": null
+  }
+}

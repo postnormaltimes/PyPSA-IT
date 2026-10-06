@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 import yaml
 
-from .vis_x1 import CONFIG, _sha, _toolkit, _handoff_root
+from .vis_x1 import CONFIG, ROOT, _sha, _toolkit
 
 
 def _comparison_style(metadata, PlotStyle):
@@ -23,8 +23,8 @@ def _comparison_style(metadata, PlotStyle):
     report_cfg = reporting_config()
     cfg = yaml.safe_load(CONFIG.read_text(encoding="utf-8"))
     _toolkit(cfg)
-    seal = _handoff_root(cfg)
-    manifest = json.loads((seal/'HANDOFF_MANIFEST.json').read_text(encoding='utf-8'))
+    seal = ROOT / Path(cfg['external_reference'])
+    manifest = json.loads((seal/'TRANSFER_MANIFEST.json').read_text(encoding='utf-8'))
     palette_source = 'adapters/pypsa_it_adapter.py'
     if _sha(seal/palette_source) != manifest['adapter_file_hashes'][palette_source]:
         raise ValueError('Accepted zone palette source changed')
@@ -404,12 +404,12 @@ def _finalize_selected_comparisons(comparison_dir, output, case_reports):
     return receipt
 
 
-def _validate_sources(year: int, case_reports: dict[str, Path], receipt_name="MEM_UC2_VIS_REPORTING_R1_RECEIPT.json") -> tuple[pd.DataFrame, dict]:
+def _validate_sources(year: int, case_reports: dict[str, Path]) -> tuple[pd.DataFrame, dict]:
     if len(case_reports) < 2:
         raise ValueError("UC2 comparisons require at least two completed scenarios")
     metadata, hashes = [], {}
     for scenario, report in case_reports.items():
-        path = Path(report) / receipt_name
+        path = Path(report) / "MEM_UC2_VIS_REPORTING_R1_RECEIPT.json"
         receipt = json.loads(path.read_text(encoding="utf-8"))
         if not (
             receipt.get("status") == "PASS"
@@ -427,7 +427,7 @@ def _validate_sources(year: int, case_reports: dict[str, Path], receipt_name="ME
     return pd.DataFrame(metadata), hashes
 
 
-def build_uc2_comparisons(year: int, case_reports: dict[str, Path], output: Path, *, receipt_name="MEM_UC2_VIS_REPORTING_R1_RECEIPT.json") -> dict:
+def build_uc2_comparisons(year: int, case_reports: dict[str, Path], output: Path) -> dict:
     """Compare any verified scenario list within one year and UC2 generation.
 
     ``case_reports`` maps metadata scenario names to their REPORTING directories.
@@ -435,7 +435,7 @@ def build_uc2_comparisons(year: int, case_reports: dict[str, Path], output: Path
     Negative signed interface energy is retained as signed data; gross flows
     are never promoted to a physical comparison metric.
     """
-    metadata, receipt_hashes = _validate_sources(year, case_reports, receipt_name)
+    metadata, receipt_hashes = _validate_sources(year, case_reports)
     cfg = yaml.safe_load(CONFIG.read_text(encoding="utf-8"))
     _toolkit(cfg)  # Validate the sealed external toolkit before importing it.
     from visualization_toolkit import scenario_comparison as comparison

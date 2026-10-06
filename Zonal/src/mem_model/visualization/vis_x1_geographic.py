@@ -25,19 +25,12 @@ if __package__ in (None, ""):
 
 from mem_model.visualization.vis_x1 import (  # noqa: E402
     CONFIG, FIGURE_STATUS, OUTPUT, ROOT, WARNING, ZONE_ORDER,
-    _relative, _save_figure, _sha, _toolkit, _external_path, _handoff_root,
+    _relative, _save_figure, _sha, _toolkit,
 )
 
 
 PARENT_BUS_TABLE = "provenance/recovered_original/candidate_35_50_geo_repaired_bus_table.csv"
-PARENT_NUTS2 = None  # Optional explicit override; never a developer-machine default.
-
-
-def nuts2_path(cfg=None):
-    if PARENT_NUTS2 is not None:
-        return Path(PARENT_NUTS2)
-    cfg = cfg or yaml.safe_load(CONFIG.read_text(encoding="utf-8"))
-    return _external_path(cfg, "nuts2_geography", "MEM_VIS_X1_NUTS2")
+PARENT_NUTS2 = ROOT / "optional/geography/NUTS_RG_01M_2021_4326_LEVL_2.geojson"
 EXTERNAL_COUNTRIES = {
     "FR": "France", "CH": "Switzerland", "AT": "Austria",
     "SI": "Slovenia", "ME": "Montenegro", "GR": "Greece",
@@ -64,8 +57,8 @@ def _medoid(group: pd.DataFrame) -> pd.Series:
     return ordered.iloc[int(np.argmin(km.sum(axis=1)))]
 
 
-def _zone_points(handoff: Path, aliases: dict[str, str], qa: list[dict]) -> pd.DataFrame:
-    path = handoff / PARENT_BUS_TABLE
+def _zone_points(transfer: Path, aliases: dict[str, str], qa: list[dict]) -> pd.DataFrame:
+    path = transfer / PARENT_BUS_TABLE
     buses = pd.read_csv(path)
     _check(len(buses) == 42 and buses.bus_id.is_unique, "sealed_42_bus_source", qa)
     _check(set(buses.gme_zone) == set(ZONE_ORDER), "seven_parent_zones", qa)
@@ -100,17 +93,16 @@ def _external_points(geography: Path, qa: list[dict]) -> pd.DataFrame:
     import geopandas as gpd
 
     geo = gpd.read_file(geography)
-    parent_nuts2 = nuts2_path()
     _check(str(geo.crs) == "EPSG:4326", "packaged_geography_crs", qa)
     rows = []
     for code, country in EXTERNAL_COUNTRIES.items():
         if code == "MT":
-            _check(parent_nuts2.is_file(), "parent_malta_geometry_present", qa)
-            nuts = gpd.read_file(parent_nuts2)
+            _check(PARENT_NUTS2.is_file(), "parent_malta_geometry_present", qa)
+            nuts = gpd.read_file(PARENT_NUTS2)
             feature = nuts.loc[nuts.NUTS_ID.eq("MT00")]
             _check(len(feature) == 1 and feature.iloc[0].CNTR_CODE == "MT", "parent_malta_nuts2_identity", qa)
             geom = feature.geometry.iloc[0]
-            source, source_hash, method = str(parent_nuts2), _sha(parent_nuts2), "NUTS2_MT00_representative_point"
+            source, source_hash, method = str(PARENT_NUTS2), _sha(PARENT_NUTS2), "NUTS2_MT00_representative_point"
         else:
             feature = geo.loc[geo.name.eq(country)]
             _check(len(feature) == 1, f"packaged_country_{code}", qa)
@@ -287,8 +279,8 @@ def build_geographic_maps() -> Path:
                       folder / "data/system_stress.csv",
                       network_path]
     original_hashes = {str(p): _sha(p) for p in original_files}
-    handoff = _handoff_root(cfg)
-    zones = _zone_points(handoff, cfg["display_market_aliases"], qa)
+    transfer = ROOT / Path(cfg["external_reference"])
+    zones = _zone_points(transfer, cfg["display_market_aliases"], qa)
     geo_path = network_maps.bundled_geography_path()
     _check(geo_path.is_file(), "packaged_geography_resolves", qa)
     external = _external_points(geo_path, qa)

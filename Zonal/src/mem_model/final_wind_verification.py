@@ -147,9 +147,9 @@ def checkpoint_wind_blocked():
         "new_weather_downloads": 0, "stage_a_reruns": 0, "historical_reruns": 0}
     receipt_path = QA / "WIND_RESOURCE_SITING_GATE_RECEIPT.json"
     dump_json(receipt_path, receipt)
-    handoff = ROOT / "docs/final_methodology_closure/MEM_FINAL_METHODOLOGY_PHASE_W_HANDOFF.md"
+    transfer = ROOT / "docs/final_methodology_closure/MEM_FINAL_METHODOLOGY_PHASE_W_TRANSFER.md"
     paths = list(QA.glob("*.csv")) + list(QA.glob("*.json")) + list(RESOURCE.glob("*.nc")) + list(RESOURCE.glob("*.geojson"))
-    paths += [SPEC, handoff, ROOT / "config/final_methodology_closure.yaml"]
+    paths += [SPEC, transfer, ROOT / "config/final_methodology_closure.yaml"]
     paths += [ROOT / f"src/mem_model/{name}.py" for name in (
         "final_methodology_closure", "final_wind_resource", "final_wind_diagnostics", "final_wind_verification")]
     paths += [ROOT / f"tests/{name}.py" for name in (

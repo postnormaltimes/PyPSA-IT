@@ -463,7 +463,7 @@ def build_network(runtime_dir: Path, year: int, scenario: str) -> tuple[pypsa.Ne
         "external_auxiliary_objective_baseline_EUR": objective_baseline,
         "external_net_trade_cost_rule": "subtract auxiliary fixed-load baseline from raw external objective terms",
         "full_year_solve_authorized": False,
-        "production_authorization": "PENDING_METHOD_REVIEW",
+        "production_authorization": "PENDING_SOL_REVIEW",
     }
     metadata = {
         "year": year,

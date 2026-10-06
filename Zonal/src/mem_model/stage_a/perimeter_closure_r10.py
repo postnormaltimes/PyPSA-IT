@@ -490,7 +490,7 @@ def add_r10_virtual_supply(
         "auxiliary_experiment": f"R10_PERIMETER_CLOSURE_{year}",
         "method": "PERIMETER_CLOSURE_METHOD_V2_0",
         "mechanical_baseline_residual_energy_share": 0.10,
-        "production_methodology_status": "PENDING_METHOD_REVIEW",
+        "production_methodology_status": "PENDING_SOL_REVIEW",
     }
     return network
 
@@ -748,7 +748,7 @@ def write_preparation_closeout(
         ROOT / "docs/runbooks/ETX7B8D_RUNBOOK.md",
         ROOT / "docs/runbooks/ETX7B9C_RUNBOOK.md",
         ROOT / "docs/runbooks/ETX7B10_RUNBOOK.md",
-        ROOT / "docs/runbooks/STAGE_B_INPUT_HANDOFF_RUNBOOK.md",
+        ROOT / "docs/runbooks/STAGE_B_INPUT_TRANSFER_RUNBOOK.md",
         sensitivity,
         s2_audit,
     ]
@@ -1261,7 +1261,7 @@ def write_post_solve_comparisons(
             market_name: float(closure_shed[market_name]) for market_name in MARKETS
         },
         "automatic_method_acceptance": False,
-        "production_price_source_status": "PENDING_METHOD_REVIEW",
+        "production_price_source_status": "PENDING_SOL_REVIEW",
         "B10_authorized": False,
         "Stage_B_authorized": False,
     }
@@ -1347,7 +1347,7 @@ def run_horizon(year: int, args: argparse.Namespace) -> dict[str, Any]:
     )
     _append_log(
         log,
-        f"{horizon['phase']} solver/structural PASS; economic and production acceptance remain pending analytical review.",
+        f"{horizon['phase']} solver/structural PASS; economic and production acceptance remain subject to historical result validation.",
     )
     result_artifacts.extend(prepared["artifacts"])
     result_artifacts.extend(comparisons)
@@ -1396,12 +1396,12 @@ def run_horizon(year: int, args: argparse.Namespace) -> dict[str, Any]:
             "comparisons": comparison_qa,
             "immutable_history_after_run": after["status"] == "PASS",
             "solver_structural_status": "PASS",
-            "economic_methodological_acceptance": "PENDING_METHOD_REVIEW",
+            "economic_methodological_acceptance": "PENDING_SOL_REVIEW",
             "production_price_source": False,
             "B10_authorized": False,
             "Stage_B_authorized": False,
         },
-        next_gate="METHOD_REVIEW_REQUIRED_NO_AUTOMATIC_PRODUCTION_PROMOTION",
+        next_gate="SOL_REVIEW_REQUIRED_NO_AUTOMATIC_PRODUCTION_PROMOTION",
         command=command_string(module=CANONICAL_MODULE),
         runtime_seconds=time.perf_counter() - started,
         solve=metrics,
@@ -1467,7 +1467,7 @@ def main() -> None:
                 "status": receipt["status"],
                 "gate": receipt["gate"],
                 "receipt": load_r10_config()["horizons"][year]["receipt"],
-                "economic_methodological_acceptance": "PENDING_METHOD_REVIEW",
+                "economic_methodological_acceptance": "PENDING_SOL_REVIEW",
                 "B10_authorized": False,
             },
             indent=2,

@@ -128,7 +128,7 @@ solver:
 governance:
   diagnostic_only: true
   technical_pass_label: TECHNICAL_FR_R5_HYBRID_DIAGNOSTIC_PASS
-  production_price_acceptance: PENDING_METHOD_REVIEW
+  production_price_acceptance: PENDING_SOL_REVIEW
   automatic_production_promotion: false
   B10_2050_authorized: false
   Stage_B_2050_authorized: false

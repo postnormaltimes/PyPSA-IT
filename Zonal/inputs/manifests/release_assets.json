@@ -1,0 +1,18 @@
+{
+  "release": "zonal-production-data-v2",
+  "model_family": "Zonal",
+  "configuration": "final_v4",
+  "data_manifest_sha256": "4346915650e56ce113ddcf68797b5f098c4dfeda7b40c1f1dbf4f95b4ccfec84",
+  "assets": [
+    {
+      "filename": "zonal_final_v4_inputs.zip",
+      "scope": "PATH_A",
+      "size_bytes": 79607677,
+      "sha256": "c777057142b1d62179056efd41a34154b6c20608cdef6bf8a035ec34a3e10309"
+    }
+  ],
+  "previous_release": "zonal-production-data-v1",
+  "previous_release_retained": true,
+  "raw_source_documents_included": false,
+  "solved_networks_included": false
+}

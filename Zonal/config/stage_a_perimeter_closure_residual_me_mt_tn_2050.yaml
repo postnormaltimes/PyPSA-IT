@@ -140,9 +140,9 @@ solver:
 governance:
   diagnostic_only_until_explicit_review: true
   B9F_status: IMMUTABLE_DIAGNOSTIC_PREDECESSOR
-  B9G_status: FINAL_RESIDUAL_CLOSURE_PRODUCTION_CANDIDATE_PENDING_EXECUTION_AND_METHOD_REVIEW
+  B9G_status: FINAL_RESIDUAL_CLOSURE_PRODUCTION_CANDIDATE_PENDING_EXECUTION_AND_SOL_REVIEW
   technical_status: PREPARED_NOT_EXECUTED
-  production_price_acceptance: PENDING_EXECUTION_AND_METHOD_REVIEW
+  production_price_acceptance: PENDING_EXECUTION_AND_SOL_REVIEW
   automatic_production_promotion: false
   automatic_successor_experiment: false
   fallback_allowed: false

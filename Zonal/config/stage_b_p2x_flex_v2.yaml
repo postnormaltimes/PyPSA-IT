@@ -1,0 +1,21 @@
+version: P2X_FLEX_V2
+phase: P2X-SPATIAL-V2C
+status: MATERIALIZATION_ONLY_EXECUTION_INTEGRATION_NOT_AUTHORIZED
+parent_version: P2X_FLEX_V1
+canonical_key: pre_pypsa_inputs/MEM_P2X_Zonal_Spatial_Key_V2.csv
+source_transcription: research/derivations/italy/p2x_spatial_v2/terna_zonal_electrolyser_authority.csv
+share_denominator: 74
+share_numerators: {NORD: 10, CNOR: 3, CSUD: 6, SUD: 32, CALA: 7, SICI: 13, SARD: 3}
+rigid_geography: BYTE_IDENTICAL_FROZEN_2025_DEMAND_GEOGRAPHY
+p2x_energy_and_power_use_same_share: true
+formulation: NEGATIVE_SIGN_GENERATOR_WITH_PER_ZONE_OPERATIONAL_LIMIT_EQUALITY
+spatial_authority_2040: DIRECT_TERNA_DDS_2024_ZONAL_ELECTROLYSER_CAPACITY
+national_authority_2050: DIRECT_TERNA_2050_NATIONAL_P2X
+spatial_authority_2050: EXTRAPOLATED_FROM_LATEST_EXPLICIT_TERNA_2040_ELECTROLYSER_DISTRIBUTION
+scope_2050: ELECTROLYSER_DERIVED_SPATIAL_PROXY_FOR_BROADER_P2X
+annual_zonal_energy_authority: ACCEPTED_MEM_SAME_SHARE_FOR_MW_AND_MWH_CLOSURE_ASSUMPTION
+national_totals_authority: config/stage_b_p2x_flex_v1.yaml
+power_2050_authority: DERIVED_2040_UTILISATION_CARRY_FORWARD
+model_construction_authorized: false
+optimization_authorized: false
+execution_integration_authorized: false

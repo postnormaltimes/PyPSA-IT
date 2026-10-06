@@ -14,7 +14,7 @@ def close_network_phase(phase):
         manifest=directory/'NETWORK_V2B_OUTPUT_MANIFEST.csv'
         predecessor='H'
         result='NETWORK_V2B_PASS'
-        handoff=ROOT/'docs/final_methodology_closure/PHASE_N_SIGNED_INTERFACE_HANDOFF.md'
+        transfer=ROOT/'docs/final_methodology_closure/PHASE_N_SIGNED_INTERFACE_TRANSFER.md'
         decisions=['NATIVE_SIGNED_LOSSLESS_ZERO_COST_INTERVAL_PROJECTION',
                    'ASYMMETRIC_MW_AND_CORS_TOPOLOGY_EXACT','COMMON_NET_FLOW_A_TO_B_MW']
     elif phase=='C':
@@ -23,7 +23,7 @@ def close_network_phase(phase):
         manifest=directory/'NETWORK_CONTRACT_OUTPUT_MANIFEST.csv'
         predecessor='N'
         result='NETWORK_CONTRACT_RECONCILIATION_PASS'
-        handoff=None
+        transfer=None
         decisions=['FROZEN_REGISTER_NATIVE_WORKBOOK_FORMULAS_AND_TERNA_EVIDENCE',
             'PROJECT_PLUS_TWO_YEAR_SLOW_DELAY','EMBEDDED_PROJECT_CONTRIBUTIONS_NOT_ADDED_TWICE',
             'TYRRHENIAN_HYPERGRID_FOREIGN_CORS_CONTRACT_RECONCILED_NO_MW_CORRECTION']
@@ -45,8 +45,8 @@ def close_network_phase(phase):
     state['phases'][phase].update({'phase_result':result,
         'successor_parents':[{k:p[k] for k in ('year','scenario','path','sha256')} for p in successors],
         'receipt':str(receipt_path.relative_to(ROOT)),'manifest':str(manifest.relative_to(ROOT))})
-    if handoff:
-        state['phases'][phase]['current_handoff']=str(handoff.relative_to(ROOT))
+    if transfer:
+        state['phases'][phase]['current_transfer']=str(transfer.relative_to(ROOT))
     state['optimization_model_constructed']=False
     dump_json(STATE,state)
     return {'state':result,'next_phase':state['next_phase']}

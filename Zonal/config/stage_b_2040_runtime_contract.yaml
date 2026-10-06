@@ -42,7 +42,7 @@ authorities:
   hydro_annual_scaling: stage_a_inputs/operating_base_v1_0/MEM_ETX7B4_Hydro_Annual_Scaling_and_State_v1.0.csv
   hydro_inflow_mapping: stage_a_inputs/operating_base_v1_0/MEM_ETX7B4_Hydro_Runtime_Inflow_Mapping_v1.0.csv
   hydro_temporal: stage_a_inputs/temporal_2019_v1_0/MEM_ETX7B3_Hydro_Temporal_Hourly_v1.0.parquet
-  external_prices: stage_a_results/price_handoff/2040/external_prices_hourly.parquet
+  external_prices: stage_a_results/price_transfer/2040/external_prices_hourly.parquet
   internal_topology: pre_pypsa_inputs/MEM_Interzonal_Static_Contract.csv
   external_interfaces: pre_pypsa_inputs/MEM_External_Interface_Static_Contract.csv
 accepted_rules:

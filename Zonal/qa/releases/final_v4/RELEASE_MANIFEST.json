@@ -1,0 +1,76 @@
+{
+  "schema_version": "MEM_FINAL_V4_LIGHTWEIGHT_RELEASE_MANIFEST_V1",
+  "state": "LOCKED",
+  "artifact_store": "PROJECT_RELATIVE_PATHS_IN_REGISTRIES",
+  "reviewed_zip_sha256": "69c85650c53d24e366afc0789b8ce1b5b3824ce2dde2c670e216e8fe05d2df1a",
+  "files": [
+    {
+      "path": "CANONICAL_RESULT_REGISTRY.csv",
+      "sha256": "b10acc35164e662b387dc0f0280333d4a7098ed29e27858626fb2ca96e87af90",
+      "size_bytes": 5286
+    },
+    {
+      "path": "ENVIRONMENT_AND_SOLVER.json",
+      "sha256": "3f2d9de90ced6bf00a3ad7fc5dd79b58a1b7d7871b41cbdfd00c624e4982f563",
+      "size_bytes": 525
+    },
+    {
+      "path": "EXCLUDED_TEST_APPLICABILITY.csv",
+      "sha256": "cd65371b98d05c3c58db7a3910b606d595dcd3d1b80536f5337db9868303ff58",
+      "size_bytes": 2473
+    },
+    {
+      "path": "INPUT_HASH_REGISTRY.csv",
+      "sha256": "344c3180adf2bf973a30a8d39dc4bea06d5773c5aed6b49ca47d62c65ccd437f",
+      "size_bytes": 6581
+    },
+    {
+      "path": "PUBLICATION_EXCLUDED_TESTS.csv",
+      "sha256": "a1f825c3e910c2efd9b10bb9113725361c3084884b149c1ab35012709542ff90",
+      "size_bytes": 1701
+    },
+    {
+      "path": "PUBLICATION_NETWORK_IDENTITY.csv",
+      "sha256": "681978c5ec40ff076c9e6714fe2a59aa1dcf1df299ff4f66a68477f9d486bead",
+      "size_bytes": 5467
+    },
+    {
+      "path": "PUBLICATION_QA.json",
+      "sha256": "a1da7a0dcb1cdbbebf0ea28eddef4df6ae6cfb12e411f114a3298697d03be435",
+      "size_bytes": 524
+    },
+    {
+      "path": "PUBLICATION_TEST_RESULTS.csv",
+      "sha256": "1bfffd4072af2f88c6f33840da10616aec9ba5467d02865a925acb69c493560e",
+      "size_bytes": 19488
+    },
+    {
+      "path": "RELEASE_QA_SUMMARY.json",
+      "sha256": "b822b231f7ccac05ca6cc604d3ea1657da4ec4be8859c8a151000b15e91791b1",
+      "size_bytes": 912
+    },
+    {
+      "path": "SOURCE_REGISTER.csv",
+      "sha256": "23ad068d4216bb8f5d183dcc1405a8c20ada2a05eb38142b561574c2e1f9193b",
+      "size_bytes": 783
+    },
+    {
+      "path": "VERSION_STATE.json",
+      "sha256": "ef37c31216a76f4b0bf261358ec3fc1d62a568e161c2a35361cd68ed88b6c5ef",
+      "size_bytes": 2454
+    }
+  ],
+  "large_binaries_duplicated": 0,
+  "software_license": "MIT",
+  "remote_repository": "postnormaltimes/PyPSA-IT",
+  "public_or_private_visibility": "PUBLIC",
+  "software_license_decision": "RESOLVED",
+  "third_party_data_relicensed_by_MIT": false,
+  "data_release": "zonal-production-data-v2",
+  "accepted_source_commits": [
+    "042ee35be0390967570cb5e1626c9759714e80ae",
+    "7217a379d1ad4f3a8007eda3c203f2d62a18c5aa"
+  ],
+  "source_history_imported": false,
+  "original_record_sha256": "c68a919cecaae2561da3aab113ed01fff9a3c470f6478ca947926ac3d0fbeec9"
+}

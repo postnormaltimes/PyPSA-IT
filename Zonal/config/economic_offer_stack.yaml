@@ -1,0 +1,41 @@
+version: MEM_ECONOMIC_STACK_INPUT_CONTRACT_V2
+status: REVIEW_REFERENCE_ONLY_SUBJECT_TO_FINAL_V2
+routine_activation: false
+quantity_basis: CLEARED_ELECTRICAL_MW_ONLY
+input_bundle_schema: MEM_FIXED_LP_ECONOMIC_EVIDENCE_BUNDLE_V1
+required_layers: [resources, prices, roots, regimes]
+population: ALL_RELEVANT_FIXED_LP_RESOURCES
+population_proof: INDEPENDENT_FIXED_LP_ASSET_ENUMERATION
+root_evidence_role: ANNOTATION_ONLY_NEVER_STACK_POPULATION
+lineage_identity: [model_year, scenario, source_fixed_lp_id, source_fixed_lp_hash, source_result_branch]
+legacy_root_only_inputs: REJECT
+historical_root_subset_prototype: INCOMPLETE_ROOT_SUBSET_PROTOTYPE_NOT_A_VALID_ECONOMIC_STACK
+selection:
+  preferred_regimes: [Storage, Thermal]
+  scope: LOCAL
+  representative: NEAREST_ELIGIBLE_REGIME_MEDIAN_PRICE_THEN_TIMESTAMP_ZONE
+methodology_sensitive:
+  unused_capacity_valuation: UNRESOLVED_DO_NOT_EXTRAPOLATE
+  complete_equilibrium_resource_cache: REQUIRED_FOR_FULL_STACK
+  total_cleared_market_demand: UNRESOLVED_UNLESS_SAME_LP_CACHE_PROVIDED
+  coupled_value_decomposition: UNRESOLVED_WITHOUT_CACHED_AFFINE_COMPONENTS
+  scarcity_contribution_interpretation: CONSTRAINT_CONTEXT_NOT_SUBMITTED_BID
+resource_contract:
+  row_key: [model_year, scenario, snapshot, zone, asset_id, component, side]
+  includes: ALL_RELEVANT_ELECTRICAL_SUPPLY_AND_WITHDRAWALS_INCLUDING_ZERO_DISPATCH
+  physical_quantity_basis: DIRECTIONAL_ELECTRICAL_MW_AT_MARKET_BUS_FROM_SAME_FIXED_LP
+  economic_value_basis: ACCEPTED_UPSTREAM_KKT_DECOMPOSITION_ONLY
+  marginal_cost_basis: EXPLICIT_NATIVE_OR_ELECTRICAL_BASIS_REQUIRED
+  direct_cost_contribution: ELECTRICAL_EUR_PER_MWH_AT_MARKET_BUS
+  opportunity_value: ACCEPTED_ELECTRICAL_OPPORTUNITY_CONTRIBUTION_EUR_PER_MWH
+  constraint_value: ACCEPTED_ELECTRICAL_CONSTRAINT_CONTRIBUTION_EUR_PER_MWH
+  unresolved_values: PRESERVE_NULLS_NEVER_IMPUTE
+  unresolved_active_supply_value: BLOCK_RENDER_NO_PARTIAL_STACK
+  available_MW: OPERATING_POWER_AVAILABILITY_NOT_AN_OFFER_QUANTITY
+  upstream_persistence_interface: mem_model.reporting.economic_offer_stack.persist_evidence_bundle
+  consumer_interface: mem_model.reporting.economic_offer_stack.load_cached_evidence
+  source_ids: DECLARED_PER_LAYER_AND_ROW_NEVER_INFERRED_FROM_PATHS
+render:
+  width_inches: 12
+  height_inches: 7
+  dpi: 240

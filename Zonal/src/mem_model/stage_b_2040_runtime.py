@@ -770,7 +770,7 @@ def _write_manifest(bundle_dir: Path, row_counts: dict[str, int]) -> pd.DataFram
         "generator_availability_hourly.parquet": "B3_VRE|B4_BLK005|B4_HYDRO",
         "hydro_inflow_hourly.parquet": "B3_HYDRO_TEMPORAL|B4_HYDRO_ANNUAL_SCALING",
         "hydro_runtime_parameters.csv": "HYDRO_STATIC|PHS_METHOD_C|B4_HYDRO_RUNTIME_MAPPING",
-        "external_prices_hourly.parquet": f"ETX7B10_{year}_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE",
+        "external_prices_hourly.parquet": f"ETX7B10_{year}_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE",
     }
     for name in RUNTIME_MEMBERS:
         path = bundle_dir / name
@@ -898,7 +898,7 @@ def _reconciliation(bundle_dir: Path) -> pd.DataFrame:
     add("EXTERNAL_INTERFACE", "ALL", "ITALY", "PRICE_TAKING_INTERFACES", "directional_contract_rows", "rows", "MEM_External_Interface_Static_Contract.csv", "8_MARKETS_X_2_DIRECTIONS", 16, "builder_static_contract", "8_MARKETS_X_2_DIRECTIONS", len(price_contract), "EXACT_MATCH", 0.0)
     cors = external.loc[external["external_market"].astype(str).eq("CORS")]
     add("EXTERNAL_INTERFACE", "ALL", "CORS", "CORS_ZERO_INJECTION_HUB", "directional_contract_rows", "rows", "MEM_External_Interface_Static_Contract.csv", "CORS", 4, "builder_static_contract", "CORS", len(cors), "EXACT_MATCH", 0.0)
-    add("EXTERNAL_PRICES", "ALL", "ITALY", f"B10_{year}", "sha256_identity", "sha256", f"stage_a_results/price_handoff/{year}/external_prices_hourly.parquet", "FILE", sha256_file(_authority_path("external_prices")), "external_prices_hourly.parquet", "FILE", sha256_file(bundle_dir / "external_prices_hourly.parquet"), "EXACT_MATCH", 0.0)
+    add("EXTERNAL_PRICES", "ALL", "ITALY", f"B10_{year}", "sha256_identity", "sha256", f"stage_a_results/price_transfer/{year}/external_prices_hourly.parquet", "FILE", sha256_file(_authority_path("external_prices")), "external_prices_hourly.parquet", "FILE", sha256_file(bundle_dir / "external_prices_hourly.parquet"), "EXACT_MATCH", 0.0)
     return pd.DataFrame(records)
 
 

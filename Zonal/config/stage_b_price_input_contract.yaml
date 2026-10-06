@@ -1,5 +1,5 @@
 schema: STAGE_B_EXTERNAL_PRICE_INPUT_CONTRACT_V1_0
-status: BOTH_HORIZON_B10_HANDOFFS_COMPLETE_2050_STAGE_B_PREPARED
+status: BOTH_HORIZON_B10_TRANSFERS_COMPLETE_2050_STAGE_B_PREPARED
 architecture: PRICE_TAKING_SEVEN_ZONE_ITALY
 italian_zones: [CALA, CNOR, CSUD, NORD, SARD, SICI, SUD]
 external_price_markets: [FR, CH, AT, SI, ME, GR, MT, TN]
@@ -23,13 +23,13 @@ scenario_inheritance:
 stage_a_fleet_transfer: false
 stage_b_interface_capacity_authority: pre_pypsa_inputs/MEM_External_Interface_Static_Contract.csv
 future_b10_outputs:
-  boundary_package: stage_a_results/price_handoff/MEM_ETX7B10_Stage_A_to_Stage_B_Prices_v1.0.parquet
-  runtime_adapter: stage_a_results/price_handoff/external_prices_hourly.parquet
+  boundary_package: stage_a_results/price_transfer/MEM_ETX7B10_Stage_A_to_Stage_B_Prices_v1.0.parquet
+  runtime_adapter: stage_a_results/price_transfer/external_prices_hourly.parquet
   runtime_adapter_columns: [snapshot, year, scenario, external_market, price_EUR_per_MWh]
-  2040_boundary_package: stage_a_results/price_handoff/2040/MEM_ETX7B10_2040_Stage_A_to_Stage_B_Prices_v1.0.parquet
-  2040_runtime_adapter: stage_a_results/price_handoff/2040/external_prices_hourly.parquet
-  2050_boundary_package: stage_a_results/price_handoff/2050/MEM_ETX7B10_2050_Stage_A_to_Stage_B_Prices_v1.0.parquet
-  2050_runtime_adapter: stage_a_results/price_handoff/2050/external_prices_hourly.parquet
+  2040_boundary_package: stage_a_results/price_transfer/2040/MEM_ETX7B10_2040_Stage_A_to_Stage_B_Prices_v1.0.parquet
+  2040_runtime_adapter: stage_a_results/price_transfer/2040/external_prices_hourly.parquet
+  2050_boundary_package: stage_a_results/price_transfer/2050/MEM_ETX7B10_2050_Stage_A_to_Stage_B_Prices_v1.0.parquet
+  2050_runtime_adapter: stage_a_results/price_transfer/2050/external_prices_hourly.parquet
 governance:
   b10_authorized: false
   stage_b_authorized: false
@@ -40,7 +40,7 @@ horizon_governance:
   2040:
     production_price_source: ETX-7B8D
     b10_authorized: false
-    b10_status: ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE
+    b10_status: ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE
     b10_command: null
     stage_b_authorized: true
     authorized_scenarios: [Slow, High]
@@ -57,7 +57,7 @@ horizon_governance:
   2050:
     production_price_source: ETX-7B9H_ACCEPTED_IMMUTABLE
     b10_authorized: false
-    b10_status: ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE
+    b10_status: ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE
     b10_command: null
     stage_b_authorized: false
     stage_b_status: PREPARATION_PASS_PRODUCTION_LOCKED

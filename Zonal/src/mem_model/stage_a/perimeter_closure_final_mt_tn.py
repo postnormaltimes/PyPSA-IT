@@ -616,7 +616,7 @@ def add_b9h_increments(
         "method": "PERIMETER_CLOSURE_METHOD_V2_0",
         "increment_source": "IMMUTABLE_B9G_LOCAL_RESIDUAL_SHEDDING",
         "technical_status": "PREPARED_FOR_SINGLE_EXECUTION",
-        "production_price_acceptance": "PENDING_METHOD_REVIEW",
+        "production_price_acceptance": "PENDING_SOL_REVIEW",
         "automatic_successor_experiment": False,
     }
     return network
@@ -1197,11 +1197,11 @@ def _post_paths(config: dict[str, Any]) -> dict[str, Path]:
         "interface": qa
         / "MEM_B9H_2050_MT_TN_Interface_High_Price_Diagnostics_v1.0.csv",
         "acceptance": qa / "MEM_B9H_2050_Practical_Acceptance_v1.0.json",
-        "handoff": ROOT / "docs/MEM_ETX7B9H_2050_FINAL_MT_TN_CLOSURE_HANDOFF.md",
+        "transfer": ROOT / "docs/MEM_ETX7B9H_2050_FINAL_MT_TN_CLOSURE_TRANSFER.md",
     }
 
 
-def _write_handoff(
+def _write_transfer(
     path: Path,
     prepared: dict[str, Any],
     market: pd.DataFrame,
@@ -1212,11 +1212,11 @@ def _write_handoff(
     system_row = system.loc[system["case"].eq("B9H")].iloc[0]
     detail_indexed = detail.set_index("market")
     lines = [
-        "# MEM ETX-7B9H — 2050 final MT/TN closure report",
+        "# MEM ETX-7B9H — 2050 final MT/TN closure transfer",
         "",
         "## Status",
         "",
-        "ETX-7B9H completed one Gurobi production diagnostic and remains pending analytical review.",
+        "ETX-7B9H completed one Gurobi production diagnostic and remains subject to historical result validation.",
         "No B9I or automatic follow-on capacity change is authorized.",
         "",
         "## Frozen parent",
@@ -1255,7 +1255,7 @@ def _write_handoff(
             "",
             "## Governance",
             "",
-            "- B9H: EXECUTED_TECHNICAL_PASS — PENDING_METHOD_REVIEW",
+            "- B9H: EXECUTED_TECHNICAL_PASS — PENDING_SOL_REVIEW",
             "- B10-2050: LOCKED",
             "- Stage-B-2050: LOCKED",
             "",
@@ -1302,7 +1302,7 @@ def write_post_solve_diagnostics(
     indexed = market.set_index("market")
     acceptance = {
         "schema_version": "MEM_B9H_2050_PRACTICAL_ACCEPTANCE_V1_0",
-        "status": "PENDING_METHOD_REVIEW",
+        "status": "PENDING_SOL_REVIEW",
         "criterion_is_sizing_authority": False,
         "indicative_annual_mean_range_EUR_per_MWh": [lower, upper],
         "markets": {
@@ -1335,7 +1335,7 @@ def write_post_solve_diagnostics(
             for market_name in EXPORTED_MARKETS
             if market_name not in TARGET_MARKETS
         },
-        "economic_methodological_acceptance": "PENDING_METHOD_REVIEW",
+        "economic_methodological_acceptance": "PENDING_SOL_REVIEW",
         "automatic_capacity_change_after_result": False,
         "B9I_authorized": False,
         "B10_2050": "LOCKED",
@@ -1356,7 +1356,7 @@ def write_post_solve_diagnostics(
         paths["interface"], index=False, encoding="utf-8", lineterminator="\n"
     )
     _write_json(paths["acceptance"], acceptance)
-    _write_handoff(paths["handoff"], prepared, market, system, detail)
+    _write_transfer(paths["transfer"], prepared, market, system, detail)
     artifacts = list(paths.values())
     qa = {
         "market_comparison_rows": len(market),
@@ -1483,7 +1483,7 @@ def _write_result_manifest_and_receipt(
             "post_solve": metrics,
             "comparisons": diagnostic_qa,
             "technical_diagnostic_status": "TECHNICAL_B9H_DIAGNOSTIC_PASS",
-            "economic_methodological_acceptance": "PENDING_METHOD_REVIEW",
+            "economic_methodological_acceptance": "PENDING_SOL_REVIEW",
             "production_price_source": False,
             "automatic_capacity_change_after_result": False,
             "automatic_successor_experiment": False,
@@ -1491,7 +1491,7 @@ def _write_result_manifest_and_receipt(
             "B10_2050_authorized": False,
             "Stage_B_2050_authorized": False,
         },
-        next_gate="METHOD_REVIEW_REQUIRED_NO_AUTOMATIC_SUCCESSOR",
+        next_gate="SOL_REVIEW_REQUIRED_NO_AUTOMATIC_SUCCESSOR",
         command=config["phase"]["command"],
         runtime_seconds=runtime_seconds,
         solve=metrics,
@@ -1520,7 +1520,7 @@ def run_b9h(args: argparse.Namespace) -> dict[str, Any]:
         raise RuntimeError("B9H_SINGLE_SOLVE_LOG_ALREADY_EXISTS")
     _append_log(
         log,
-        "ETX-7B9H single final diagnostic started; acceptance remains pending analytical review.",
+        "ETX-7B9H single final diagnostic started; acceptance remains subject to historical result validation.",
     )
     preflight = gurobi_preflight(execution_config)
     network = prepared["network"]
@@ -1824,9 +1824,9 @@ def _implementation_inventory() -> pd.DataFrame:
             "Human-readable implementation delta",
         ),
         (
-            "docs/MEM_ETX7B9H_2050_FINAL_MT_TN_CLOSURE_HANDOFF.md",
+            "docs/MEM_ETX7B9H_2050_FINAL_MT_TN_CLOSURE_TRANSFER.md",
             "NEW",
-            "Completed result report",
+            "Completed result transfer",
         ),
         (
             "config/stage_a_production_price_sources.yaml",
@@ -1878,7 +1878,7 @@ def package_b9h() -> dict[str, Any]:
             ROOT / "config/stage_a_production_price_sources.yaml",
             ROOT / "config/approval_gates.yaml",
             ROOT / "docs/MEM_STAGE_A_CURRENT_STATE.md",
-            ROOT / "docs/MEM_ETX7B9H_2050_FINAL_MT_TN_CLOSURE_HANDOFF.md",
+            ROOT / "docs/MEM_ETX7B9H_2050_FINAL_MT_TN_CLOSURE_TRANSFER.md",
         ]
     )
     payload_paths = list(dict.fromkeys(payload_paths))
@@ -2059,7 +2059,7 @@ def main() -> None:
                 "gate": receipt["gate"],
                 "objective": receipt["objective"],
                 "receipt": load_b9h_config()["phase"]["receipt"],
-                "B9H": "EXECUTED_TECHNICAL_PASS_PENDING_METHOD_REVIEW",
+                "B9H": "EXECUTED_TECHNICAL_PASS_PENDING_SOL_REVIEW",
                 "B9I": "NOT_AUTHORIZED",
                 "B10_2050": "LOCKED",
                 "Stage_B_2050": "LOCKED",
