@@ -10,6 +10,6 @@ is 10 GW in all three cases. Demand is 583.1 TWh for Slow/Base and 641.41 TWh
 for High. Existing BESS, P2X, hydro and other resource rules are unchanged.
 The [capacity configuration](releases/FINAL_V4.md) gives numerical controls.
 
-All six scenarios are manually executable, without case-specific permission
-tokens. No command, completed scenario or reporting action automatically
-launches another scenario. Existing results remain protected from overwrite.
+Each scenario is executed explicitly. No command, completed scenario or
+reporting action automatically launches another scenario. Existing results
+remain protected from overwrite.

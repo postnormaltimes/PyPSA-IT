@@ -20,10 +20,3 @@ closed, full-system optimisation.
 Physical generation, shedding, commitment and storage operation are taken from
 the verified UC MILP, not from the pricing LP. Zonal prices and native Store
 water values are taken from the verified fixed-commitment LP.
-
-The validation evidence package has SHA-256
-`69c85650c53d24e366afc0789b8ce1b5b3824ce2dde2c670e216e8fe05d2df1a`.
-It contains 69 pairable metric groups. Its original description counted 68
-and referenced an optional availability index that was not included; neither
-documentation discrepancy changes the underlying evidence. The original
-package and execution records are preserved separately, without modification.
