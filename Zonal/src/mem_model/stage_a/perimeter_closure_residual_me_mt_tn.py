@@ -825,7 +825,7 @@ def prepare_b9g(*, write_artifacts: bool = True) -> dict[str, Any]:
             ROOT / "src/mem_model/stage_a/perimeter_closure_residual_me_mt_tn.py",
             ROOT / "tests/test_stage_a_perimeter_closure_residual_me_mt_tn.py",
             ROOT / "docs/runbooks/ETX7B9G_RUNBOOK.md",
-            ROOT / "docs/MEM_ETX7B9G_2050_RESIDUAL_CLOSURE_PREPARATION_TRANSFER.md",
+            ROOT / "docs/MEM_ETX7B9G_2050_RESIDUAL_CLOSURE_PREPARATION_HANDOFF.md",
             ROOT / "docs/MEM_STAGE_A_CURRENT_STATE.md",
             *artifacts,
         ]
@@ -1327,7 +1327,7 @@ def run_b9g(args: argparse.Namespace) -> dict[str, Any]:
     diagnostics, diagnostic_qa = write_post_solve_diagnostics(network, prepared)
     _append_log(
         log,
-        "ETX-7B9G technical diagnostic complete; production-source acceptance remains subject to historical result validation.",
+        "ETX-7B9G technical diagnostic complete; production-source acceptance remains pending Sol review.",
     )
     result_artifacts.extend(prepared["artifacts"])
     result_artifacts.extend(diagnostics)

@@ -1,5 +1,9 @@
 {
   "status": "PASS",
+  "state": "FINAL_V4_STATIC_PREPARATION_PASS",
+  "release_scope": "COMPLETE_SIX_SCENARIO_PROJECT_STATE",
+  "networks_export_reload": 6,
+  "inherited_2040_networks": 6,
   "packages": [
     {
       "status": "PASS",
@@ -47,9 +51,92 @@
       "optimizer_invocations": 0
     }
   ],
-  "unexpected_changed_fields": 0,
+  "protected_final_v3_files": 619,
+  "protected_final_v3_unchanged": true,
+  "inherited_results": [
+    {
+      "year": 2040,
+      "scenario": "Base",
+      "kind": "POST_P2X_CONTINUOUS_REFERENCE",
+      "path": "results\\final_methodology_v3\\2040\\Base\\CONTINUOUS_REFERENCE\\FINAL_V3_UC2_2040_BASE_8760H_POST_P2X_CONTINUOUS_REFERENCE_SOLVED.nc",
+      "sha256": "77e0a653fec8a836e4ba15e04fe0177709358dc80210d79be97663faa0a3093c",
+      "receipt_path": "results\\final_methodology_v3\\2040\\Base\\CONTINUOUS_REFERENCE\\FINAL_V3_UC2_2040_BASE_8760H_POST_P2X_CONTINUOUS_REFERENCE_SOLVE_RECEIPT.json",
+      "inherited_from": "final_v3",
+      "role": "CANONICAL_2040_BASE_RESULT_USER_ACCEPTED"
+    },
+    {
+      "year": 2040,
+      "scenario": "Base",
+      "kind": "FIXED_COMMITMENT_PRICE_LP",
+      "path": "results\\final_methodology_v3\\2040\\Base\\FIXED_COMMITMENT_PRICE_LP\\FINAL_V3_UC2_2040_BASE_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVED.nc",
+      "sha256": "ad7aeb2ba69d683bd8f44a827c26100b477107b8d5474b1774b17075dfa8040b",
+      "receipt_path": "results\\final_methodology_v3\\2040\\Base\\FIXED_COMMITMENT_PRICE_LP\\FINAL_V3_UC2_2040_BASE_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVE_RECEIPT.json",
+      "inherited_from": "final_v3",
+      "role": "CANONICAL_2040_BASE_RESULT_USER_ACCEPTED"
+    },
+    {
+      "year": 2040,
+      "scenario": "Base",
+      "kind": "UC_MILP",
+      "path": "results\\final_methodology_v3\\2040\\Base\\UC_MILP\\FINAL_V3_UC2_2040_BASE_8760H_UC_MILP_SOLVED.nc",
+      "sha256": "b6bb78072587f70164bce3b5923f50b60ee3ff6685903f98a31e2029b4c1a2f7",
+      "receipt_path": "results\\final_methodology_v3\\2040\\Base\\UC_MILP\\FINAL_V3_UC2_2040_BASE_8760H_UC_MILP_SOLVE_RECEIPT.json",
+      "inherited_from": "final_v3",
+      "role": "CANONICAL_2040_BASE_RESULT_USER_ACCEPTED"
+    },
+    {
+      "year": 2050,
+      "scenario": "Base",
+      "kind": "POST_P2X_CONTINUOUS_REFERENCE",
+      "path": "results\\final_methodology_v3\\2050\\Base\\CONTINUOUS_REFERENCE\\FINAL_V3_UC2_2050_BASE_8760H_POST_P2X_CONTINUOUS_REFERENCE_SOLVED.nc",
+      "sha256": "281eff9e6ab29dca40327d91f609b47977031f30b34b3199c2da1028ba190cc2",
+      "receipt_path": "results\\final_methodology_v3\\2050\\Base\\CONTINUOUS_REFERENCE\\FINAL_V3_UC2_2050_BASE_8760H_POST_P2X_CONTINUOUS_REFERENCE_SOLVE_RECEIPT.json",
+      "inherited_from": "final_v3",
+      "role": "PNIEC_CAPACITY_BENCHMARK"
+    },
+    {
+      "year": 2050,
+      "scenario": "Base",
+      "kind": "FIXED_COMMITMENT_PRICE_LP",
+      "path": "results\\final_methodology_v3\\2050\\Base\\FIXED_COMMITMENT_PRICE_LP\\FINAL_V3_UC2_2050_BASE_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVED.nc",
+      "sha256": "8548f1375dc104879aafa17dd98648179404d5a52103af71294c151e20f65818",
+      "receipt_path": "results\\final_methodology_v3\\2050\\Base\\FIXED_COMMITMENT_PRICE_LP\\FINAL_V3_UC2_2050_BASE_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVE_RECEIPT.json",
+      "inherited_from": "final_v3",
+      "role": "PNIEC_CAPACITY_BENCHMARK"
+    },
+    {
+      "year": 2050,
+      "scenario": "Base",
+      "kind": "UC_MILP",
+      "path": "results\\final_methodology_v3\\2050\\Base\\UC_MILP\\FINAL_V3_UC2_2050_BASE_8760H_UC_MILP_SOLVED.nc",
+      "sha256": "488ecd3a95ff5ea72bb9b4ab13c142cdd3eca77afd5338d88e68e9ee25b5102d",
+      "receipt_path": "results\\final_methodology_v3\\2050\\Base\\UC_MILP\\FINAL_V3_UC2_2050_BASE_8760H_UC_MILP_SOLVE_RECEIPT.json",
+      "inherited_from": "final_v3",
+      "role": "PNIEC_CAPACITY_BENCHMARK"
+    }
+  ],
+  "capacity_authority": {
+    "authority": "USER_ACCEPTED_TERNA_PROSPETTIVE_2050_CAPACITY_DECISION",
+    "source": "../03_PRIMARY_SOURCES/Terna_Prospettive_Sviluppo_Sistema_Energetico_2050.pdf",
+    "base_MW": {
+      "solar": 180000.0,
+      "wind_onshore": 46000.0,
+      "wind_offshore": 20000.0,
+      "nuclear": 10000.0
+    },
+    "vre_scenario_factors": {
+      "Slow": 0.8,
+      "Base": 1.0,
+      "High": 1.1
+    },
+    "nuclear_scenario_factor": 1.0,
+    "gas_ccs_reduction_MW": 2000.0,
+    "BESS_CHANGE": "NONE",
+    "geography": "FROZEN_FINAL_V3_ZONAL_KEYS",
+    "profiles": "FROZEN_FINAL_V3_NO_RESITING_OR_RECALIBRATION"
+  },
   "BESS_changed_fields": 0,
-  "production_solver_invocations": 0,
-  "original_record_sha256": "1324375de5712d4fbd843ea89b9dcfb72b2d205cd6fe45f32718b40e34b73699",
-  "publication_role": "TECHNICAL_VALIDATION_EXTRACT"
+  "unexpected_changed_fields": 0,
+  "optimization_model_constructed": false,
+  "production_solver_invocations": 0
 }

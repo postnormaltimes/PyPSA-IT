@@ -25,7 +25,7 @@ from shapely.wkt import loads as load_wkt
 
 from .common import ROOT, ZONES, dump_json, sha256_file
 
-SOURCE_ROOT = ROOT / "optional/pypsa-eur"
+SOURCE_ROOT = ROOT.parents[2] / "PyPSA/pypsa-eur"
 RESOURCE_NAME = "italy_dispatch_2013_1w_europe_local_64"
 AUTHORITY_FILE = (ROOT.parent / "outputs/01a0595d-8cf1-7202-8ca1-1d3ab732e98e"
                   / "thermal_stack_phase/normalized/MEM_Province_Region_MarketZone_Crosswalk.csv")

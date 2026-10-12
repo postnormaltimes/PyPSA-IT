@@ -1,18 +1,26 @@
 {
-  "release": "zonal-production-data-v2",
+  "release": "zonal-production-data-v3",
   "model_family": "Zonal",
-  "configuration": "final_v4",
-  "data_manifest_sha256": "4346915650e56ce113ddcf68797b5f098c4dfeda7b40c1f1dbf4f95b4ccfec84",
+  "final_baselines": {
+    "2040": "final_v3",
+    "2050": "final_v6"
+  },
+  "data_manifest_sha256": "3b34ea6d03ce579ad462f6f368c50ddc97a1cd83f2f772448169b16d58673502",
+  "member_prefix": "path_a",
   "assets": [
     {
-      "filename": "zonal_final_v4_inputs.zip",
-      "scope": "PATH_A",
-      "size_bytes": 79607677,
-      "sha256": "c777057142b1d62179056efd41a34154b6c20608cdef6bf8a035ec34a3e10309"
+      "filename": "zonal_final_inputs_v3.zip",
+      "size_bytes": 76820727,
+      "sha256": "2f00df177d4c061bef1465135ae33fe6bbd7e935027afba36b258df5ff168c8a",
+      "scope": "PREPARED_INPUTS"
     }
   ],
-  "previous_release": "zonal-production-data-v1",
-  "previous_release_retained": true,
+  "previous_releases_retained": [
+    "zonal-production-data-v1",
+    "zonal-production-data-v2"
+  ],
   "raw_source_documents_included": false,
-  "solved_networks_included": false
+  "licence_or_credentials_included": false,
+  "solved_networks_included": false,
+  "optimizer_invocations_during_publication": 0
 }

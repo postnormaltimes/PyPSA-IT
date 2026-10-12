@@ -1,0 +1,283 @@
+{
+  "schema": "PYPSA_IT_PUBLIC_RESULTS_AUTHORITY_V1",
+  "solved_network_identities": {
+    "data/research_results/reports/v1/2040/Base/UC_MILP/FINAL_V1_UC2_2040_BASE_8760H_UC_MILP_SOLVED.nc": {
+      "sha256": "828bf1eb7353d5e9652e2ccc5d5dbd0451067ef16ea144fb504008f86d40e103",
+      "bytes": 17678015,
+      "year": 2040,
+      "scenario": "Base",
+      "authority": "CANONICAL_PHYSICAL",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v1/2040/Base/FIXED_COMMITMENT_PRICE_LP/FINAL_V1_UC2_2040_BASE_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVED.nc": {
+      "sha256": "cd313232c713bb864c78d98a7c06b748bac34d54d8ccca79fc889ba203016574",
+      "bytes": 20724785,
+      "year": 2040,
+      "scenario": "Base",
+      "authority": "CANONICAL_PRICES_DUALS_ONLY",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v1/2040/High/UC_MILP/FINAL_V1_UC2_2040_HIGH_8760H_UC_MILP_SOLVED.nc": {
+      "sha256": "83c99b451e855ff3d03364dfd6a9440b04fd8680ece540d36bc462d50d1cab46",
+      "bytes": 17748766,
+      "year": 2040,
+      "scenario": "High",
+      "authority": "CANONICAL_PHYSICAL",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v1/2040/High/FIXED_COMMITMENT_PRICE_LP/FINAL_V1_UC2_2040_HIGH_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVED.nc": {
+      "sha256": "029d736168060f51035b8c510e9f68920ff632d8faf2d513e8bffd832fbd429e",
+      "bytes": 20875655,
+      "year": 2040,
+      "scenario": "High",
+      "authority": "CANONICAL_PRICES_DUALS_ONLY",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v1/2040/Slow/UC_MILP/FINAL_V1_UC2_2040_SLOW_8760H_UC_MILP_SOLVED.nc": {
+      "sha256": "4bd8904bee6d94f8c0666e9d5c9a4c7f9b43377026ad4a313fafd8d5f1313a6d",
+      "bytes": 17687449,
+      "year": 2040,
+      "scenario": "Slow",
+      "authority": "CANONICAL_PHYSICAL",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v1/2040/Slow/FIXED_COMMITMENT_PRICE_LP/FINAL_V1_UC2_2040_SLOW_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVED.nc": {
+      "sha256": "2398681635c83cbce1d9ee5bd6cb67351680757a2734250fd02f0bf8c172e7d5",
+      "bytes": 20919678,
+      "year": 2040,
+      "scenario": "Slow",
+      "authority": "CANONICAL_PRICES_DUALS_ONLY",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v3/2040/Base/UC_MILP/FINAL_V3_UC2_2040_BASE_8760H_UC_MILP_SOLVED.nc": {
+      "sha256": "b6bb78072587f70164bce3b5923f50b60ee3ff6685903f98a31e2029b4c1a2f7",
+      "bytes": 17555236,
+      "year": 2040,
+      "scenario": "Base",
+      "authority": "CANONICAL_PHYSICAL",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v3/2040/Base/FIXED_COMMITMENT_PRICE_LP/FINAL_V3_UC2_2040_BASE_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVED.nc": {
+      "sha256": "ad7aeb2ba69d683bd8f44a827c26100b477107b8d5474b1774b17075dfa8040b",
+      "bytes": 20967390,
+      "year": 2040,
+      "scenario": "Base",
+      "authority": "CANONICAL_PRICES_DUALS_ONLY",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v3/2040/High/UC_MILP/FINAL_V3_UC2_2040_HIGH_8760H_UC_MILP_SOLVED.nc": {
+      "sha256": "f4a74cf74220fc0175c3c29b4632d320380d58cd8c5b304d1142c293982202f9",
+      "bytes": 17758372,
+      "year": 2040,
+      "scenario": "High",
+      "authority": "CANONICAL_PHYSICAL",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v3/2040/High/FIXED_COMMITMENT_PRICE_LP/FINAL_V3_UC2_2040_HIGH_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVED.nc": {
+      "sha256": "9d4fd80d2d8fb0895b90be2fb4d447b364631d76e8b9884cc5c44d33701df529",
+      "bytes": 21040639,
+      "year": 2040,
+      "scenario": "High",
+      "authority": "CANONICAL_PRICES_DUALS_ONLY",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v3/2040/Slow/UC_MILP/FINAL_V3_UC2_2040_SLOW_8760H_UC_MILP_SOLVED.nc": {
+      "sha256": "72d2237fadd018828a4631bee56abada0cd2d8479cb798368a22a2635b70cba2",
+      "bytes": 17554045,
+      "year": 2040,
+      "scenario": "Slow",
+      "authority": "CANONICAL_PHYSICAL",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v3/2040/Slow/FIXED_COMMITMENT_PRICE_LP/FINAL_V3_UC2_2040_SLOW_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVED.nc": {
+      "sha256": "b26a7c97f45b7c36c6d9f30fb8405b886bcaabd84c2b5b017df01cb98a611c35",
+      "bytes": 20888954,
+      "year": 2040,
+      "scenario": "Slow",
+      "authority": "CANONICAL_PRICES_DUALS_ONLY",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v4/2050/Base/UC_MILP/FINAL_V4_UC2_2050_BASE_8760H_UC_MILP_SOLVED.nc": {
+      "sha256": "7d1a2e8712bdde11ddd2bbe7f93df5c27092e102797b402ecac08319c5a593b2",
+      "bytes": 16481854,
+      "year": 2050,
+      "scenario": "Base",
+      "authority": "CANONICAL_PHYSICAL",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v4/2050/Base/FIXED_COMMITMENT_PRICE_LP/FINAL_V4_UC2_2050_BASE_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVED.nc": {
+      "sha256": "18f72913adaa637a0a0ccb5391b7b825289944b54f5392c4ff453cfb3fd46687",
+      "bytes": 19414056,
+      "year": 2050,
+      "scenario": "Base",
+      "authority": "CANONICAL_PRICES_DUALS_ONLY",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v4/2050/High/UC_MILP/FINAL_V4_UC2_2050_HIGH_8760H_UC_MILP_SOLVED.nc": {
+      "sha256": "9d6b9fde98213fe1720b12fe606237cec25d69028e8c42a0fbc5a728de0b78d7",
+      "bytes": 16702774,
+      "year": 2050,
+      "scenario": "High",
+      "authority": "CANONICAL_PHYSICAL",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v4/2050/High/FIXED_COMMITMENT_PRICE_LP/FINAL_V4_UC2_2050_HIGH_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVED.nc": {
+      "sha256": "e5ffdc878a029677e1a7438a7ce990d88cc96aa24177fc695019cec44cbedb8b",
+      "bytes": 19553388,
+      "year": 2050,
+      "scenario": "High",
+      "authority": "CANONICAL_PRICES_DUALS_ONLY",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v4/2050/Slow/UC_MILP/FINAL_V4_UC2_2050_SLOW_8760H_UC_MILP_SOLVED.nc": {
+      "sha256": "096daec9231ca440c036a8bf1b29c8391aa147b2226cc0e80a273a3dfff8e790",
+      "bytes": 16586452,
+      "year": 2050,
+      "scenario": "Slow",
+      "authority": "CANONICAL_PHYSICAL",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v4/2050/Slow/FIXED_COMMITMENT_PRICE_LP/FINAL_V4_UC2_2050_SLOW_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVED.nc": {
+      "sha256": "c7606f98600d2f3ac4dd5facecb8f7417f3a41a933c46391afc0eb725711d0bc",
+      "bytes": 19714717,
+      "year": 2050,
+      "scenario": "Slow",
+      "authority": "CANONICAL_PRICES_DUALS_ONLY",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v5/2050/Base/UC_MILP/FINAL_V5_UC2_2050_BASE_8760H_UC_MILP_SOLVED.nc": {
+      "sha256": "1d697c70f700378fa5f34f49984523d4289ed4ca8c23926a342c14b55b1de4bb",
+      "bytes": 16626232,
+      "year": 2050,
+      "scenario": "Base",
+      "authority": "CANONICAL_PHYSICAL",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v5/2050/Base/FIXED_COMMITMENT_PRICE_LP/FINAL_V5_UC2_2050_BASE_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVED.nc": {
+      "sha256": "19329d8acb4e41e59d8ab8aebf4184dd0e4d17e52258aeb7ff45735a0564a8c1",
+      "bytes": 19783802,
+      "year": 2050,
+      "scenario": "Base",
+      "authority": "CANONICAL_PRICES_DUALS_ONLY",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v5/2050/High/UC_MILP/FINAL_V5_UC2_2050_HIGH_8760H_UC_MILP_SOLVED.nc": {
+      "sha256": "8d26d6e306c3aa243b27ebf495383d22eb2a562aff7bae9b5c8c64541199cc06",
+      "bytes": 16670872,
+      "year": 2050,
+      "scenario": "High",
+      "authority": "CANONICAL_PHYSICAL",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v5/2050/High/FIXED_COMMITMENT_PRICE_LP/FINAL_V5_UC2_2050_HIGH_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVED.nc": {
+      "sha256": "d12997a8b3453ee3b6eae1d2a9bb9a20b4287ff4bc6a32bab44810a754d002f7",
+      "bytes": 19955193,
+      "year": 2050,
+      "scenario": "High",
+      "authority": "CANONICAL_PRICES_DUALS_ONLY",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v5/2050/Slow/UC_MILP/FINAL_V5_UC2_2050_SLOW_8760H_UC_MILP_SOLVED.nc": {
+      "sha256": "0cb2773693414891bc437fb8037de100c9ddf772651e8c146b52d5247107078b",
+      "bytes": 16587211,
+      "year": 2050,
+      "scenario": "Slow",
+      "authority": "CANONICAL_PHYSICAL",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v5/2050/Slow/FIXED_COMMITMENT_PRICE_LP/FINAL_V5_UC2_2050_SLOW_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVED.nc": {
+      "sha256": "c230b0b27ee4d42201cdbcf97f3ff1295de39b544f6c3feee7ff9fa19aee0a21",
+      "bytes": 19715246,
+      "year": 2050,
+      "scenario": "Slow",
+      "authority": "CANONICAL_PRICES_DUALS_ONLY",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v6/2050/Base/UC_MILP/FINAL_V6_UC2_2050_BASE_8760H_UC_MILP_SOLVED.nc": {
+      "sha256": "a7c035517f1663c8bd96fc5e5e45c82950175c951b65bf2bc13f106326a00aed",
+      "bytes": 16615348,
+      "year": 2050,
+      "scenario": "Base",
+      "authority": "CANONICAL_PHYSICAL",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v6/2050/Base/FIXED_COMMITMENT_PRICE_LP/FINAL_V6_UC2_2050_BASE_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVED.nc": {
+      "sha256": "72ec3e791b0bc435071b30dd9fb2b4d527289153ad4498783de7de163a669ec9",
+      "bytes": 19846937,
+      "year": 2050,
+      "scenario": "Base",
+      "authority": "CANONICAL_PRICES_DUALS_ONLY",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v6/2050/High/UC_MILP/FINAL_V6_UC2_2050_HIGH_8760H_UC_MILP_SOLVED.nc": {
+      "sha256": "caf2469d84044c32769b342d320b283436a2aa2a2257615ffd2bb370f4f4cdcc",
+      "bytes": 16658634,
+      "year": 2050,
+      "scenario": "High",
+      "authority": "CANONICAL_PHYSICAL",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v6/2050/High/FIXED_COMMITMENT_PRICE_LP/FINAL_V6_UC2_2050_HIGH_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVED.nc": {
+      "sha256": "81f1c36fbc8dc46e2a5ef188aaad40c921a2a9d9e68865870fa5b424d95811a8",
+      "bytes": 19914726,
+      "year": 2050,
+      "scenario": "High",
+      "authority": "CANONICAL_PRICES_DUALS_ONLY",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v6/2050/Slow/UC_MILP/FINAL_V6_UC2_2050_SLOW_8760H_UC_MILP_SOLVED.nc": {
+      "sha256": "19e7fe938c93f15a05239508557890abaf8bae68b3a1d73e7f6155862c6f1d54",
+      "bytes": 16585605,
+      "year": 2050,
+      "scenario": "Slow",
+      "authority": "CANONICAL_PHYSICAL",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    },
+    "data/research_results/reports/v6/2050/Slow/FIXED_COMMITMENT_PRICE_LP/FINAL_V6_UC2_2050_SLOW_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVED.nc": {
+      "sha256": "4faa747ba5947cc3e000ecb9661ab5f7554f706ff9cd5ccd25537fe7def80135",
+      "bytes": 19609342,
+      "year": 2050,
+      "scenario": "Slow",
+      "authority": "CANONICAL_PRICES_DUALS_ONLY",
+      "verification": "MATCHING_SAVED_SOLVE_AND_VERIFICATION_RECEIPTS",
+      "distributed": false
+    }
+  },
+  "final_baselines": {
+    "2040": "final_v3",
+    "2050": "final_v6"
+  },
+  "physical_source": "UC_MILP",
+  "price_source": "FIXED_COMMITMENT_PRICE_LP",
+  "source_result_acceptance": "SAVED_FINAL_QA_PASS",
+  "solved_binaries_required_for_selected_figures": false
+}

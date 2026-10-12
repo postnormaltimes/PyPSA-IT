@@ -85,6 +85,25 @@ def test_unmapped_valid_technology_fails_closed():
         resolve_root_set([r],"LOCAL")
 
 
+@pytest.mark.parametrize('carrier,technology,family', [
+    ('methane_ccs', 'Gas + CCS', 'CCGT'),
+    ('nuclear', 'Nuclear', 'Other thermal'),
+    ('hydrogen_gt_ocgt', 'Hydrogen - OCGT', 'Other thermal'),
+    ('bioenergy_ccs', 'Bioenergy + CCS', 'Other thermal'),
+])
+def test_2050_generator_families_preserve_explicit_physical_mapping(carrier, technology, family):
+    from mem_model.reporting.marginal_setter_attribution import _tech
+    from mem_model.reporting.marginal_setter_lexicographic import CROSSWALK
+    assert _tech(carrier) == technology
+    candidate = dict(root('CCGT'), carrier=carrier, technology=technology)
+    result = resolve_root_set([candidate], 'LOCAL')
+    assert result['final_setter_category'] == family
+    assert CROSSWALK[family] == 'Thermal'
+    assert candidate['carrier'] == carrier and candidate['technology'] == technology
+    with pytest.raises(ResolverError, match='UNMAPPED_SETTER_TECHNOLOGY'):
+        resolve_root_set([dict(candidate, component='Link')], 'LOCAL')
+
+
 def test_voll_flagged_separately_not_thermal():
     r=root("CCGT");r.update(technology="Load shedding / VOLL",carrier="load_shedding")
     with pytest.raises(ResolverError,match="LOAD_SHEDDING_SETTER_REVIEW"):

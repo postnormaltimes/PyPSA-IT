@@ -51,7 +51,7 @@ def _style():
     from visualization_toolkit.styles import PlotStyle, style_context
     from visualization_toolkit.prices import price_day_hour_table
     rc = reporting_config(); c = rc['technology_colors']
-    parent = ROOT/'outputs/visualization/UC2/2040/Base/dispatch_presentation/PRESENTATION_DAILY_RECEIPT.json'
+    parent = ROOT/'_local/outputs/visualization/UC2/2040/Base/dispatch_presentation/PRESENTATION_DAILY_RECEIPT.json'
     accepted = json.loads(parent.read_text())['semantic_colors']
     colors = {
         'Solar':c['Solar PV - utility'],'Wind':c['Onshore wind'],'Hydro':c['Hydro - reservoir'],

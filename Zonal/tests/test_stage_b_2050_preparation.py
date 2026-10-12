@@ -91,5 +91,5 @@ def test_pre_p2x_2050_production_gate_is_diagnostic_and_locked() -> None:
     assert gate["execution_enabled"] is False
     assert gate["scenario_authorization"] == {"Slow": False, "Base": False, "High": False}
     assert gate["required_source"] == "ETX-7B9H"
-    assert gates["stage_a_manual_gates"]["b10_2050_status"] == "ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE"
+    assert gates["stage_a_manual_gates"]["b10_2050_status"] == "ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE"
     assert gates["stage_a_manual_gates"]["stage_b_2050_authorized"] is False

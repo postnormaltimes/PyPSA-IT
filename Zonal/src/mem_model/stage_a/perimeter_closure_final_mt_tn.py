@@ -1197,11 +1197,11 @@ def _post_paths(config: dict[str, Any]) -> dict[str, Path]:
         "interface": qa
         / "MEM_B9H_2050_MT_TN_Interface_High_Price_Diagnostics_v1.0.csv",
         "acceptance": qa / "MEM_B9H_2050_Practical_Acceptance_v1.0.json",
-        "transfer": ROOT / "docs/MEM_ETX7B9H_2050_FINAL_MT_TN_CLOSURE_TRANSFER.md",
+        "handoff": ROOT / "docs/MEM_ETX7B9H_2050_FINAL_MT_TN_CLOSURE_HANDOFF.md",
     }
 
 
-def _write_transfer(
+def _write_handoff(
     path: Path,
     prepared: dict[str, Any],
     market: pd.DataFrame,
@@ -1212,11 +1212,11 @@ def _write_transfer(
     system_row = system.loc[system["case"].eq("B9H")].iloc[0]
     detail_indexed = detail.set_index("market")
     lines = [
-        "# MEM ETX-7B9H — 2050 final MT/TN closure transfer",
+        "# MEM ETX-7B9H — 2050 final MT/TN closure handoff",
         "",
         "## Status",
         "",
-        "ETX-7B9H completed one Gurobi production diagnostic and remains subject to historical result validation.",
+        "ETX-7B9H completed one Gurobi production diagnostic and remains pending Sol review.",
         "No B9I or automatic follow-on capacity change is authorized.",
         "",
         "## Frozen parent",
@@ -1356,7 +1356,7 @@ def write_post_solve_diagnostics(
         paths["interface"], index=False, encoding="utf-8", lineterminator="\n"
     )
     _write_json(paths["acceptance"], acceptance)
-    _write_transfer(paths["transfer"], prepared, market, system, detail)
+    _write_handoff(paths["handoff"], prepared, market, system, detail)
     artifacts = list(paths.values())
     qa = {
         "market_comparison_rows": len(market),
@@ -1520,7 +1520,7 @@ def run_b9h(args: argparse.Namespace) -> dict[str, Any]:
         raise RuntimeError("B9H_SINGLE_SOLVE_LOG_ALREADY_EXISTS")
     _append_log(
         log,
-        "ETX-7B9H single final diagnostic started; acceptance remains subject to historical result validation.",
+        "ETX-7B9H single final diagnostic started; acceptance remains pending Sol review.",
     )
     preflight = gurobi_preflight(execution_config)
     network = prepared["network"]
@@ -1824,9 +1824,9 @@ def _implementation_inventory() -> pd.DataFrame:
             "Human-readable implementation delta",
         ),
         (
-            "docs/MEM_ETX7B9H_2050_FINAL_MT_TN_CLOSURE_TRANSFER.md",
+            "docs/MEM_ETX7B9H_2050_FINAL_MT_TN_CLOSURE_HANDOFF.md",
             "NEW",
-            "Completed result transfer",
+            "Completed result handoff",
         ),
         (
             "config/stage_a_production_price_sources.yaml",
@@ -1878,7 +1878,7 @@ def package_b9h() -> dict[str, Any]:
             ROOT / "config/stage_a_production_price_sources.yaml",
             ROOT / "config/approval_gates.yaml",
             ROOT / "docs/MEM_STAGE_A_CURRENT_STATE.md",
-            ROOT / "docs/MEM_ETX7B9H_2050_FINAL_MT_TN_CLOSURE_TRANSFER.md",
+            ROOT / "docs/MEM_ETX7B9H_2050_FINAL_MT_TN_CLOSURE_HANDOFF.md",
         ]
     )
     payload_paths = list(dict.fromkeys(payload_paths))

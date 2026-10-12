@@ -85,9 +85,9 @@ def test_plotting_dependency_resolves_independently_of_working_directory(tmp_pat
 
 @pytest.mark.parametrize("year,scenario", uc2.SCENARIOS)
 def test_all_six_publication_static_preflights_without_results(year, scenario):
-    with no_models_or_solves(), uc2.execution_variant("final_v4"):
+    with no_models_or_solves(), uc2.execution_variant("final_v3" if year == 2040 else "final_v6"):
         check = uc2.preflight(year, scenario, persist=False)
     assert check["status"] == "PASS"
     assert check["optimization_model_constructed"] is False
     assert check["manual_authorized"] is True
-    assert not (ROOT / "results").exists()
+    assert check["production_solver_invocations"] == 0

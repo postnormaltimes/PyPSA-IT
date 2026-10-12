@@ -1,8 +1,18 @@
 {
   "status": "PASS",
+  "focused_tests": {
+    "tests": 60,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
   "static_preflights": 6,
   "export_reloads": 6,
   "inherited_2040_inputs": 6,
+  "six_case_registry": true,
+  "manual_jobs": 18,
+  "protected_final_v3_files": 619,
+  "protected_final_v3_unchanged": true,
   "BESS_changed_fields": 0,
   "unexpected_changed_fields": 0,
   "diff_classification_counts": {
@@ -12,6 +22,27 @@
     "EXPECTED_2050_NUCLEAR_CAPACITY_REVISION": 12
   },
   "solver_contract_unchanged": true,
-  "original_record_sha256": "7711ddf4773f0e04108aeff381ec47572b21a7ae97d407572491bd9cc8322970",
-  "publication_role": "TECHNICAL_VALIDATION_EXTRACT"
+  "production_results_created": 0,
+  "optimization_model_constructed": false,
+  "production_optimization_executed": false,
+  "production_solver_invocations": 0,
+  "initial_test_attempt": {
+    "receipt": "qa/final_methodology_v4/FOCUSED_NON_SOLVING_TESTS.xml",
+    "issues": [
+      "unchanged CSV float spelling corrected without network regeneration",
+      "system test-temp directory permission; rerun in new workspace test-temp directory"
+    ]
+  },
+  "test_executions": 75,
+  "test_receipts": [
+    {
+      "path": "qa\\final_methodology_v4\\FOCUSED_NON_SOLVING_TESTS_FINAL.xml",
+      "sha256": "b78b57b025b86afd9b1c2ae3bb9e3223db9c2c961a95ba2a507a414312b35954"
+    },
+    {
+      "path": "qa\\final_methodology_v4\\FOCUSED_DIFF_REGRESSION_TESTS.xml",
+      "sha256": "981f185cbf041e3ad597489018d6efc3733d75fc4b65b210fcdfaaa099a3498b"
+    }
+  ],
+  "zonal_annual_demand_checks": 21
 }

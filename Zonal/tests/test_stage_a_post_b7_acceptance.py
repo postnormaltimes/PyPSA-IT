@@ -70,7 +70,7 @@ def test_b8_b9_history_is_complete_and_2050_production_remains_locked() -> None:
     assert manual["b9g_authorized"] is False
     assert manual["b10_authorized"] is False
     assert manual["stage_b_authorized"] is False
-    assert manual["b10_2050_status"] == "ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE"
+    assert manual["b10_2050_status"] == "ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE"
     assert manual["stage_b_2050_preparation_status"] == "STAGE_B_2050_PREPARATION_PASS"
     assert manual["stage_b_2050_authorized"] is False
     assert auxiliary["status"] == "PASS_IMMUTABLE"

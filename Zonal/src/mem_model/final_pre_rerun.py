@@ -206,7 +206,7 @@ def exact_diff(parent, child, initialization=None):
 
 def source_manifest():
     sources = [(DOWNLOADS / name, "SUPPLIED_IMMUTABLE_EVIDENCE") for name in (
-        "Explore-data-2026-10-05 20_11_49.csv", "MEM_WIND_MONTHLY_TERNA_DATASET_TRANSFER.md",
+        "Explore-data-2026-10-05 20_11_49.csv", "MEM_WIND_MONTHLY_TERNA_DATASET_HANDOFF.md",
         "MEM_2040_BASE_FINAL_V1_WIND_Q2Q_PREVIEW.md", "MEM_2040_BASE_FINAL_V1_WIND_Q2Q_QUARTERLY_PREVIEW.csv",
         "MEM_2040_BASE_FINAL_V1_WIND_Q2Q_MONTHLY_COMPARISON.csv", "Export-DownloadCenterFile-20261005-182115.xlsx")]
     sources += [(ROOT.parent / "03_PRIMARY_SOURCES" / name, "LOCAL_OFFICIAL_PRIMARY_SOURCE") for name in (
@@ -214,15 +214,15 @@ def source_manifest():
         "Terna_PdS_2025_Esigenze_sviluppo_nuovi_progetti.pdf", "Terna_PdS_2025_Benefici_robustezza_rete.pdf", "PNIEC_2024.pdf")]
     sources += [(ROOT / name, "ACCEPTED_PROJECT_AUTHORITY") for name in (
         "docs/final_methodology_closure/PHASE_W_NATIVE_CELL_RESOLUTION.md",
-        "docs/final_methodology_closure/MEM_FINAL_METHODOLOGY_PHASE_W_NATIVE_CELL_TRANSFER.md",
-        "docs/final_methodology_closure/MEM_FINAL_METHODOLOGY_PHASE_W_HORIZON_COST_TRANSFER.md",
-        "docs/MEM_STAGE_B_ZONAL_VRE_V1_PREPARATION_TRANSFER.md",
+        "docs/final_methodology_closure/MEM_FINAL_METHODOLOGY_PHASE_W_NATIVE_CELL_HANDOFF.md",
+        "docs/final_methodology_closure/MEM_FINAL_METHODOLOGY_PHASE_W_HORIZON_COST_HANDOFF.md",
+        "docs/MEM_STAGE_B_ZONAL_VRE_V1_PREPARATION_HANDOFF.md",
         "qa/final_methodology_closure/network_v2b/NATIVE_SIGNED_LINK_API_RECEIPT.json",
         "qa/final_methodology_closure/network_contract/NETWORK_CONTRACT_SOURCE_AUTHORITY_RECEIPT.json",
         "qa/stage_b/p2x_flex_v2/FINAL_V2_NETWORK_LINEAGE_AND_HASHES.csv",
         "results/UC1_2040_BASE_168H/UC1_2040_BASE_168H_UC_MILP_SOLVED.nc",
         "results/final_methodology_v1/2040/Base/UC_MILP/FINAL_V1_UC2_2040_BASE_8760H_UC_MILP_SOLVED.nc")]
-    sources += [(ROOT / "inputs/provenance/WIND_CALIBRATION_DECISION.json", "WIND_CALIBRATION_DECISION")]
+    sources += [(ROOT / "data/research_archive/final_pre_rerun_scope.txt", "HISTORICAL_REFINEMENT_SCOPE")]
     return [{"path": relative(p), "sha256": sha256_file(p), "size_bytes": p.stat().st_size, "role": role} for p, role in sources]
 
 
@@ -794,7 +794,7 @@ def close_static(test_report):
             artifact_manifest=relative(QA/"FINAL_PRE_RERUN_ARTIFACT_MANIFEST.csv"),
             artifact_manifest_sha256=sha256_file(QA/"FINAL_PRE_RERUN_ARTIFACT_MANIFEST.csv"),
             manifest_exclusions="manifest itself and enclosing gate (avoids circular hashes)",
-            transfer=relative(QA/"FINAL_PRE_RERUN_SUCCESSOR_TRANSFER.md"))
+            handoff=relative(QA/"FINAL_PRE_RERUN_SUCCESSOR_HANDOFF.md"))
         dump_json(gate_path,gate)
         return gate
 

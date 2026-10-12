@@ -74,7 +74,7 @@ def main():
         ROOT/'config/final_methodology_execution_v2.yaml',Path(__file__).resolve(),
         ROOT/'src/mem_model/stage_b_uc2.py',ROOT/'src/mem_model/final_methodology_networks.py',
         ROOT/'src/mem_model/reporting/uc2_postprocess.py',ROOT/'tests/test_final_v2_execution.py',
-        ROOT/'tests/test_final_v1_reporting_variant.py',ROOT/'docs/MEM_FINAL_V2_MANUAL_EXECUTION_TRANSFER.md']
+        ROOT/'tests/test_final_v1_reporting_variant.py',ROOT/'docs/MEM_FINAL_V2_MANUAL_EXECUTION_HANDOFF.md']
     pd.DataFrame([{'path':str(p.relative_to(ROOT)),'sha256':sha256_file(p)} for p in files]).to_csv(
         qa/'FINAL_V2_EXECUTION_ARTIFACT_MANIFEST.csv',index=False)
     print(json.dumps({k:v for k,v in receipt.items() if k not in ('protected_hashes','static_preflights')},indent=2))

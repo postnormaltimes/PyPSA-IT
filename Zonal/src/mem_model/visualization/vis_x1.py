@@ -1,7 +1,7 @@
 """Read-only VIS-X1 bridge for accepted MEM saved results.
 
 This module has no model-building or optimization entrypoint. The sealed toolkit
-is imported from its external transfer; MEM owns only lineage and semantics.
+is imported from its repository-relative reference bundle; MEM owns only lineage and semantics.
 """
 
 from __future__ import annotations
@@ -20,7 +20,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[3]
 CONFIG = ROOT / "config/vis_x1.yaml"
-OUTPUT = ROOT / "outputs/visualization"
+OUTPUT = ROOT / "_local/outputs/visualization"
 ZONE_ORDER = ("NORD", "CNOR", "CSUD", "SUD", "CALA", "SICI", "SARD")
 FIGURE_STATUS = "PRE_P2X_DIAGNOSTIC_BASELINE"
 WARNING = "PRE-P2X FLEX DIAGNOSTIC BASELINE | NOT CURRENT CORRECTED PRODUCTION RESULT"
@@ -39,13 +39,13 @@ def _relative(path: Path) -> str:
 
 
 def _toolkit(cfg: dict):
-    transfer = ROOT / Path(cfg["external_reference"])
-    manifest = json.loads((transfer / "TRANSFER_MANIFEST.json").read_text(encoding="utf-8"))
+    handoff = (ROOT / Path(cfg["external_reference"]))
+    manifest = json.loads((handoff / "TRANSFER_MANIFEST.json").read_text(encoding="utf-8"))
     for name, expected in manifest["toolkit_file_hashes"].items():
-        if _sha(transfer / name) != expected:
+        if _sha(handoff / name) != expected:
             raise ValueError(f"Sealed VIS-X1 toolkit hash mismatch: {name}")
-    if str(transfer) not in sys.path:
-        sys.path.insert(0, str(transfer))
+    if str(handoff) not in sys.path:
+        sys.path.insert(0, str(handoff))
     from visualization_toolkit import congestion, dispatch, flows, io, network_maps, prices, storage, summaries
     return congestion, dispatch, flows, io, network_maps, prices, storage, summaries
 
@@ -593,7 +593,7 @@ def build_first_case() -> Path:
     checks.to_csv(folder / "diagnostics/qa_reconciliation.csv", index=False)
     pd.DataFrame(figures).to_csv(folder / "FIGURE_INDEX.csv", index=False)
     metadata = {"schema_version": "MEM_VIS_X1_FIRST_CASE_V1", "result_status": FIGURE_STATUS,
-                "warning": WARNING, "case": case, "sealed_transfer": cfg["external_reference"],
+                "warning": WARNING, "case": case, "sealed_handoff": cfg["external_reference"],
                 "authority_register": _relative(register), "selected_snapshot": str(snapshot),
                 "figure_count": len(figures), "qa_checks": len(qa), "qa_status": "PASS",
                 "native_coordinate_status": "ALL_64_BUS_COORDINATES_ZERO",

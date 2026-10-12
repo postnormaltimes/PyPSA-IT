@@ -1,0 +1,111 @@
+{
+  "status": "PASS",
+  "variant": "final_v6",
+  "canonical": false,
+  "candidate_status": "NON_CANONICAL_EXTERNAL_SCARCITY_NORMALIZATION_TEST",
+  "checks": [
+    {
+      "year": 2050,
+      "scenario": "High",
+      "network_type": "UC_INPUT",
+      "snapshots": 8760,
+      "generators": 219,
+      "UC_units": 73,
+      "changed_external_cost_cells": 51,
+      "unexpected_changed_model_fields": 0,
+      "Italian_VOLL_unchanged": true,
+      "all_capacities_profiles_and_constraints_unchanged": true,
+      "status": "PASS"
+    },
+    {
+      "year": 2050,
+      "scenario": "High",
+      "network_type": "CONTINUOUS_REFERENCE",
+      "snapshots": 8760,
+      "generators": 219,
+      "UC_units": 0,
+      "changed_external_cost_cells": 51,
+      "unexpected_changed_model_fields": 0,
+      "Italian_VOLL_unchanged": true,
+      "all_capacities_profiles_and_constraints_unchanged": true,
+      "status": "PASS"
+    },
+    {
+      "year": 2050,
+      "scenario": "Base",
+      "network_type": "UC_INPUT",
+      "snapshots": 8760,
+      "generators": 219,
+      "UC_units": 73,
+      "changed_external_cost_cells": 51,
+      "unexpected_changed_model_fields": 0,
+      "Italian_VOLL_unchanged": true,
+      "all_capacities_profiles_and_constraints_unchanged": true,
+      "status": "PASS"
+    },
+    {
+      "year": 2050,
+      "scenario": "Base",
+      "network_type": "CONTINUOUS_REFERENCE",
+      "snapshots": 8760,
+      "generators": 219,
+      "UC_units": 0,
+      "changed_external_cost_cells": 51,
+      "unexpected_changed_model_fields": 0,
+      "Italian_VOLL_unchanged": true,
+      "all_capacities_profiles_and_constraints_unchanged": true,
+      "status": "PASS"
+    },
+    {
+      "year": 2050,
+      "scenario": "Slow",
+      "network_type": "UC_INPUT",
+      "snapshots": 8760,
+      "generators": 227,
+      "UC_units": 91,
+      "changed_external_cost_cells": 51,
+      "unexpected_changed_model_fields": 0,
+      "Italian_VOLL_unchanged": true,
+      "all_capacities_profiles_and_constraints_unchanged": true,
+      "status": "PASS"
+    },
+    {
+      "year": 2050,
+      "scenario": "Slow",
+      "network_type": "CONTINUOUS_REFERENCE",
+      "snapshots": 8760,
+      "generators": 227,
+      "UC_units": 0,
+      "changed_external_cost_cells": 51,
+      "unexpected_changed_model_fields": 0,
+      "Italian_VOLL_unchanged": true,
+      "all_capacities_profiles_and_constraints_unchanged": true,
+      "status": "PASS"
+    }
+  ],
+  "networks_export_reload": 6,
+  "replaced_unique_input_observations": 153,
+  "replaced_network_cost_cells": 306,
+  "protected_files_unchanged": 5669,
+  "unexpected_changed_model_fields": 0,
+  "optimization_model_constructed": false,
+  "production_solver_invocations": 0,
+  "controls": {
+    "config/final_methodology_execution_v6.yaml": "e518f8604b223f3f8282aaaee23f43ede51ed6006ac07714cdc2ff79d22e5d05",
+    "config/final_methodology_execution_v5.yaml": "f0ad16a83f5e1672bd1367910113e156d533995622ff0039dfa45dfdd2745186",
+    "qa/final_methodology_v5/PREPARATION_RECEIPT.json": "3d0e006135b4ccd1e3b8e08f5b258244bf3bf41eb8f88f91e046239955b7dd5e",
+    "qa/final_methodology_v5/NETWORK_LINEAGE_AND_HASHES.csv": "b45a63c649b68dac639aa5b187dfcd93c58b8beb5f4f234eddd95c15b048a50c",
+    "qa/final_methodology_v5/INCREMENTAL_UNIT_CROSSWALK.csv": "dd2bda34cc2456c835eb72a16da77e939775051bb420e6fc45fee10b22290f5b",
+    "runtime_inputs/p2x_flex_v2/2050/external_prices_hourly.parquet": "ea452568013e6e1e5c8e98468b0b2eb2474b067051e1ac72bf776098e84c99f1"
+  },
+  "artifacts": {
+    "qa/final_methodology_v6/EXTERNAL_PRICE_INPUT_CHANGE_AUDIT.csv": "b894b16f788f940d2c56ea64bad9949a4e4b06558f8ad8d652d1ebeaf065b292",
+    "qa/final_methodology_v6/EXTERNAL_PRICE_COUNTS.csv": "5fe88d91bdf97bc8be1aa056547f2dc36db7585efcad6722009c76f565f834cd",
+    "qa/final_methodology_v6/NETWORK_LINEAGE_AND_HASHES.csv": "bea0184eddec03e0c1ec442e6b42f8c0618b52a86f3afe7baf07ff2da294d3f2",
+    "qa/final_methodology_v6/INPUT_DELTA.csv": "5432979f38ced1d94eb37ef699a1534664ba001e1ba20ca7ee507bffe32feb39",
+    "qa/final_methodology_v6/PROTECTED_PARENT_HASHES.csv": "7cec43f3551a78e894c8ec5d62a5c63900097abdeb463a41fb0682c5b13ca5a8",
+    "runtime_inputs/final_methodology_v6/RUNTIME_MANIFEST.csv": "350e2b2ab508972b991f6d95bdb9cad70301173a2599f90b717b9653dcd79827",
+    "runtime_inputs/final_methodology_v6/2050/external_prices_hourly.parquet": "cc28b6fcde01c4eb15d9b3600fc52bd691f31c7010cd46a68631929bdcf5da02"
+  },
+  "transformation_code_sha256": "f83340ddca02fde7b172a6d2019203bbebc862543d84a1b270da61906d839a76"
+}

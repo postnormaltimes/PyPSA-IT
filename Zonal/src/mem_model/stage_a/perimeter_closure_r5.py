@@ -1004,7 +1004,7 @@ def run_b9d(args: argparse.Namespace) -> dict[str, Any]:
     diagnostics, diagnostic_qa = write_post_solve_diagnostics(network, prepared)
     _append_log(
         log,
-        "ETX-7B9D technical diagnostic PASS; production-price acceptance remains subject to historical result validation.",
+        "ETX-7B9D technical diagnostic PASS; production-price acceptance remains pending Sol review.",
     )
     result_artifacts.extend(prepared["artifacts"])
     result_artifacts.extend(diagnostics)

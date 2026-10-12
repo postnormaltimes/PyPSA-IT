@@ -1,0 +1,18 @@
+schema_version: MEM_FINAL_METHODOLOGY_EXECUTION_V6_CANDIDATE
+variant: final_v6
+model_version: FINAL_METHODOLOGY_V6
+candidate_status: NON_CANONICAL_EXTERNAL_SCARCITY_NORMALIZATION_TEST
+years: [2050]
+scenarios: [Slow, Base, High]
+parent_variant: final_v5
+result_root: results/final_methodology_v6
+network_root: networks/unsolved/final_methodology_v6
+qa_root: qa/final_methodology_v6
+runtime_root: runtime_inputs/final_methodology_v6
+no_automatic_execution: true
+all_scenarios_manually_executable: true
+canonical_promotion: NEVER_AUTOMATIC
+external_sentinel_EUR_per_MWh: 15000.0
+external_replacement_EUR_per_MWh: 400.0
+external_sentinel_absolute_tolerance: 0.000001
+incremental_unit_crosswalk: qa/final_methodology_v5/INCREMENTAL_UNIT_CROSSWALK.csv

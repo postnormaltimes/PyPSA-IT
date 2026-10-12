@@ -1,6 +1,6 @@
 """Chronological presentation from accepted UC2 tables; no model or canonical writes.
 
-Method/provenance: docs/MEM_UC2_VIS_REPORTING_R1_TRANSFER_20260930.md.
+Method/provenance: docs/MEM_UC2_VIS_REPORTING_R1_HANDOFF_20260930.md.
 The sealed VIS-X1 renderer owns the stacks/style. Binning is a display adapter.
 """
 from __future__ import annotations
@@ -99,7 +99,8 @@ def presentation_stack_order(values):
     return order
 
 
-def _plot_interval_presentation(display, boundaries, colors, *, year, scenario, font_family="Aptos", daily=False):
+def _plot_interval_presentation(display, boundaries, colors, *, year, scenario, font_family="Aptos", daily=False,
+                                presentation_order=None, negative_order=None, result_label="CURRENT_ACCEPTED_RESULT"):
     """Use VIS-X1 continuous signed polygons; all lines use the same block grid."""
     import matplotlib
     matplotlib.use("Agg")
@@ -108,7 +109,10 @@ def _plot_interval_presentation(display, boundaries, colors, *, year, scenario, 
     from mem_model.visualization.vis_x1 import CONFIG, _toolkit
     _, dispatch, *_ = _toolkit(yaml.safe_load(CONFIG.read_text(encoding="utf-8")))
     from visualization_toolkit.styles import PlotStyle, style_context
-    order = list(DAILY_POSITIVE_ORDER + DAILY_NEGATIVE_ORDER) if daily else presentation_stack_order(display)
+    order = (list(presentation_order) if presentation_order is not None else
+             list(DAILY_POSITIVE_ORDER + DAILY_NEGATIVE_ORDER) if daily else presentation_stack_order(display))
+    negative_order = (tuple(negative_order) if negative_order is not None else
+                      DAILY_NEGATIVE_ORDER if daily else NEGATIVE_PRESENTATION_ORDER)
     active = [c for c in order if display[c].abs().max() > 1e-9]
     style = PlotStyle(carrier_style=colors, carrier_order=order, font_family=font_family)
     with style_context(style), matplotlib.rc_context({"hatch.linewidth": .35}):
@@ -142,7 +146,6 @@ def _plot_interval_presentation(display, boundaries, colors, *, year, scenario, 
         load = pd.concat([display["Rigid load"], pd.Series([display["Rigid load"].iloc[-1]], index=[end])]) / 1000
         load_line, = ax.plot(load.index, load, color="#333333" if daily else "#222222",
                             linewidth=.65 if daily else .8, drawstyle="steps-post", label="Rigid load")
-        negative_order = DAILY_NEGATIVE_ORDER if daily else NEGATIVE_PRESENTATION_ORDER
         positive = display[[c for c in active if c not in negative_order]].sum(axis=1) / 1000
         negative = display[[c for c in active if c in negative_order]].sum(axis=1) / 1000
         ax.set(xlim=(display.index[0], end), ylim=(min(-1, negative.min()*1.10), max(positive.max(), load.max())*1.06),
@@ -161,7 +164,7 @@ def _plot_interval_presentation(display, boundaries, colors, *, year, scenario, 
         subtitle = "Saved 2019 weather chronology | 365 daily duration-weighted means from 8,760 raw snapshots" if daily else "Saved 2019 weather chronology | 1,095 fixed 8-hour blocks | 3/day: 00:00–08:00, 08:00–16:00, 16:00–24:00"
         fig.text(.065, .918, subtitle, fontsize=10, color="#697386")
         fig.text(.065, .10, "Presentation aggregation only; annual energy, extrema and statistics use raw snapshots." if daily else "Charging, P2X withdrawal and net exports below zero; load and supply use the same eight-hour means.", fontsize=9)
-        fig.text(.065, .058, "CURRENT_ACCEPTED_RESULT | Verified UC MILP | No smoothing; annual statistics and extrema remain from raw snapshots.", fontsize=9, color="#697386")
+        fig.text(.065, .058, f"{result_label} | Verified UC MILP | No smoothing; annual statistics and extrema remain from raw snapshots.", fontsize=9, color="#697386")
         if daily:
             ax.grid(False, axis="x")
             ax.grid(True, axis="y", color="#E6E8EB", linewidth=.6)
@@ -181,7 +184,7 @@ def refine_existing_presentation(year=2040, scenario="Base"):
     import matplotlib
     from mem_model.common import ROOT, sha256_file
     from mem_model.reporting.uc2_postprocess import no_solver_calls
-    out = ROOT / "outputs/visualization/UC2" / str(year) / scenario / "dispatch_presentation"
+    out = ROOT / "_local/outputs/visualization/UC2" / str(year) / scenario / "dispatch_presentation"
     parent_path = out / "PRESENTATION_RECEIPT.json"
     parent = json.loads(parent_path.read_text(encoding="utf-8"))
     if (parent["status"], parent["result_status"], parent["physical_source"], parent["year"], parent["scenario"]) != ("PASS", "CURRENT_ACCEPTED_RESULT", "UC_MILP", year, scenario):
@@ -396,7 +399,7 @@ def refine_daily_case(year=2040, scenario="Base"):
     import yaml
     from mem_model.common import ROOT, sha256_file
     from mem_model.reporting.uc2_postprocess import no_solver_calls
-    out = ROOT / "outputs/visualization/UC2" / str(year) / scenario / "dispatch_presentation"
+    out = ROOT / "_local/outputs/visualization/UC2" / str(year) / scenario / "dispatch_presentation"
     parent_path = out / "PRESENTATION_RECEIPT.json"
     diagnostic_path = out / "PRESENTATION_8H_RECEIPT.json"
     parent = json.loads(parent_path.read_text(encoding="utf-8"))
@@ -528,7 +531,7 @@ def refine_daily_case(year=2040, scenario="Base"):
         "checks": checks, "qa_checks": len(checks), "solver_invocations": guard["solver_invocations"], "network_open_or_extraction_calls": 0,
         "parent_receipt_sha256": sha256_file(parent_path), "eight_hour_receipt_sha256": sha256_file(diagnostic_path) if diagnostic else None,
         "prior_eight_hour_diagnostic_present": diagnostic is not None,
-        "reference_provenance": "outputs/visualization_reference_inspection/SOURCE_REFERENCES_20261001.csv; existing R1 transfer presentation references reused",
+        "reference_provenance": "_local/outputs/visualization_reference_inspection/SOURCE_REFERENCES_20261001.csv; existing presentation source references retained",
         "preserved_source_hashes": preserved, "code_sha256": sha256_file(Path(__file__)),
         "artifact_hashes": {p.name: sha256_file(p) for p in artifacts},
     }
@@ -654,7 +657,7 @@ def _render_initial_case_legacy(year, scenario, n_bins=1000):
         if residual.abs().max() > .001:
             raise ValueError("Raw hourly electrical balance does not reconcile")
 
-        out = ROOT / "outputs/visualization/UC2" / str(year) / scenario / "dispatch_presentation"
+        out = ROOT / "_local/outputs/visualization/UC2" / str(year) / scenario / "dispatch_presentation"
         out.mkdir(parents=True, exist_ok=True)
         raw_export = raw.assign(interval_hours=durations, generator_weight_hours=generators, objective_weight_hours=objective)
         raw_export.to_csv(out / "annual_dispatch_raw_MW.csv", lineterminator="\n")

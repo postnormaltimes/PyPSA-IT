@@ -1,4 +1,4 @@
-"""Fail-closed, single-job manual UC-2 execution and non-solving verification.
+﻿"""Fail-closed, single-job manual UC-2 execution and non-solving verification.
 
 Importing this module never builds a model or contacts a solver. Only explicit
 ``run-reference``, ``run-uc`` and ``run-price`` actions can optimize, and each
@@ -32,7 +32,7 @@ RUN_FOLDERS = {"POST_P2X_CONTINUOUS_REFERENCE": "CONTINUOUS_REFERENCE",
 VERIFY_NAMES = {"POST_P2X_CONTINUOUS_REFERENCE": "VERIFY_REFERENCE.json",
                 "UC_MILP": "VERIFY_UC.json", "FIXED_COMMITMENT_PRICE_LP": "VERIFY_PRICE.json"}
 ACTIVE_VARIANT = ContextVar("mem_uc2_variant", default=None)
-FINAL_VARIANTS = ("final_v1", "final_v2", "final_v3", "final_v4")
+FINAL_VARIANTS = ("final_v1", "final_v2", "final_v3", "final_v4", "final_v5", "final_v5_proportional_control", "final_v6")
 
 
 def _final_api(name, *args, **kwargs):
@@ -73,6 +73,8 @@ def config() -> dict:
 
 
 def _validate_case(year: int, scenario: str) -> None:
+    if ACTIVE_VARIANT.get() in ("final_v5", "final_v5_proportional_control", "final_v6") and year != 2050:
+        raise ValueError("UC2_CANDIDATE_IS_2050_ONLY")
     if (year, scenario) not in SCENARIOS:
         raise ValueError(f"UC2_UNKNOWN_SCENARIO: {year} {scenario}")
 
@@ -89,6 +91,8 @@ def job_id(year: int, scenario: str, kind: str) -> str:
     if kind not in RUN_TYPES:
         raise ValueError(f"UC2_UNKNOWN_RUN_TYPE: {kind}")
     prefix=f"{ACTIVE_VARIANT.get().upper()}_UC2" if ACTIVE_VARIANT.get() in FINAL_VARIANTS else "UC2"
+    if ACTIVE_VARIANT.get() == "final_v5_proportional_control":
+        prefix = "FINAL_V5_CONTROL_UC2"
     if ACTIVE_VARIANT.get() == "final_v4" and year == 2040:
         prefix = "FINAL_V3_UC2"
     return f"{prefix}_{year}_{scenario.upper()}_8760H_{kind}"
@@ -188,6 +192,21 @@ def _balance(network: pypsa.Network) -> dict:
             "load_shedding_MWh": shed}
 
 
+def _operational_verification(network: pypsa.Network) -> dict:
+    """Check saved operational variables independently of reporting tables."""
+    if ACTIVE_VARIANT.get() not in FINAL_VARIANTS:
+        return {}
+    from .reporting.operational_checks import verify_operational_residuals
+    limits = config()["validation"]
+    result = verify_operational_residuals(network,
+        power_tolerance=float(limits["dispatch_balance_tolerance_MWh"]),
+        energy_tolerance=float(limits["dispatch_balance_tolerance_MWh"]),
+        commitment_tolerance=float(limits["commitment_tolerance"]),
+        objective_absolute_tolerance=float(limits["objective_absolute_tolerance_EUR"]),
+        objective_relative_tolerance=float(limits["objective_relative_tolerance"]))
+    return {"operational_residuals": result}
+
+
 def preflight(year: int, scenario: str, *, persist: bool = True) -> dict:
     """Deep, non-solving structural gate for exactly one accepted UC input pair."""
     _validate_case(year, scenario)
@@ -247,7 +266,7 @@ def _governance_gate(year: int, scenario: str) -> str:
     gates = config()["governance"]
 
     # Execution authorization is deliberately independent from analytical review.
-    # Review flags remain false until project validation is actually completed.
+    # Review flags remain false until Sol/user review is actually completed.
 
     if (year, scenario) == (2040, "Base"):
         if gates["2040_base_manual_sequence_enabled"]:
@@ -300,6 +319,10 @@ def _manual_solve(year: int, scenario: str, kind: str, *, benchmark_variant: str
         paths = benchmark_job(year, scenario, benchmark_variant)
     if paths["solved"].exists() or paths["receipt"].exists():
         raise RuntimeError(f"UC2_OVERWRITE_REFUSED: {paths['solved']}")
+    if ACTIVE_VARIANT.get() in FINAL_VARIANTS and kind == "FIXED_COMMITMENT_PRICE_LP":
+        from .reporting.price_evidence import CAPTURE_FILES
+        if any((paths["directory"] / name).exists() for name in CAPTURE_FILES):
+            raise RuntimeError("UC2_OVERWRITE_REFUSED: existing pricing evidence")
     preflight(year, scenario)
     gate = _governance_gate(year, scenario)
     if kind == "UC_MILP":
@@ -353,17 +376,33 @@ def _manual_solve(year: int, scenario: str, kind: str, *, benchmark_variant: str
         raise RuntimeError("UC2_SOLVE_FAIL: Gurobi MIP gap unavailable")
     paths["directory"].mkdir(parents=True, exist_ok=True)
     water_coverage=None
+    price_evidence=None
     if ACTIVE_VARIANT.get() in FINAL_VARIANTS and kind=="FIXED_COMMITMENT_PRICE_LP":
         from .reporting.water_values import capture_store_energy_balance_coverage
         coverage=capture_store_energy_balance_coverage(network,_final_api("water_mapping",year,scenario))
         coverage_path=paths["directory"]/"RAW_STORE_ENERGY_BALANCE_DUAL_COVERAGE.parquet"
         coverage.to_parquet(coverage_path,index=False)
         water_coverage={"path":str(coverage_path.relative_to(ROOT)),"sha256":sha256_file(coverage_path)}
+        from .reporting.price_evidence import capture_price_evidence
+        from .final_network_signed import corridor_table
+        price_evidence = capture_price_evidence(network, paths["directory"],
+            {"year": year, "scenario": scenario, "kind": kind,
+             "job_id": job_id(year, scenario, kind), "result_branch": ACTIVE_VARIANT.get(),
+             "input_sha256": expected_input_sha, "fixed_commitment_milp_sha256": fixed_milp_sha},
+            extended=True, supporting_inputs={
+                "hydro_mapping": _final_api("water_mapping", year, scenario).to_dict(orient="records"),
+                "signed_interface_registry": corridor_table(network).to_dict(orient="records")})
+        for field in ("path", "table_path"):
+            price_evidence[field] = str(Path(price_evidence[field]).relative_to(ROOT))
     network.export_to_netcdf(paths["solved"])
+    solved_sha = sha256_file(paths["solved"])
+    if price_evidence is not None:
+        from .reporting.price_evidence import bind_price_evidence
+        price_evidence = bind_price_evidence(paths["directory"], price_evidence, solved_sha)
     receipt = {"status": "PASS", "year": year, "scenario": scenario, "kind": kind,
                "job_id": paths["job_id"] if benchmark_variant is not None else job_id(year, scenario, kind), "input_path": str(paths["input"].relative_to(ROOT)),
                "input_sha256": expected_input_sha, "solved_path": str(paths["solved"].relative_to(ROOT)),
-               "solved_sha256": sha256_file(paths["solved"]), "solver": "gurobi", "solver_version": solver["required_version"],
+               "solved_sha256": solved_sha, "solver": "gurobi", "solver_version": solver["required_version"],
                "solver_options": solver["options"], "include_objective_constant": False,
                "solver_status": str(status), "termination_condition": str(termination),
                "objective_EUR": float(network.objective), "mip_gap": gap,
@@ -374,7 +413,8 @@ def _manual_solve(year: int, scenario: str, kind: str, *, benchmark_variant: str
                "manual_job_only": True, "automatic_successor_launched": False}
     if ACTIVE_VARIANT.get() in FINAL_VARIANTS:
         receipt.update({"final_methodology_variant":ACTIVE_VARIANT.get(),"assign_all_duals":kind!="UC_MILP",
-                        "water_dual_raw_coverage":water_coverage})
+                        "water_dual_raw_coverage":water_coverage,
+                        "price_constraint_evidence":price_evidence})
     if benchmark_variant is not None:
         telemetry = {}
         for attribute in ("NumConstrs", "NumVars", "NumNZs", "NumBinVars", "NumIntVars",
@@ -420,7 +460,8 @@ def verify_reference(year: int, scenario: str) -> dict:
     balance = _balance(network)
     result = {"status": "PASS", "year": year, "scenario": scenario,
               "job_id": receipt["job_id"], "solved_sha256": receipt["solved_sha256"],
-              "objective_EUR": receipt["objective_EUR"], "p2x_by_zone_MWh": p2x, **balance}
+              "objective_EUR": receipt["objective_EUR"], "p2x_by_zone_MWh": p2x, **balance,
+              **_operational_verification(network)}
     _write_json(job_paths(year, scenario, "POST_P2X_CONTINUOUS_REFERENCE")["verification"], result)
     return result
 
@@ -454,7 +495,7 @@ def verify_uc(year: int, scenario: str) -> dict:
               "year": year, "scenario": scenario, "job_id": receipt["job_id"],
               "solved_sha256": receipt["solved_sha256"], "objective_EUR": receipt["objective_EUR"],
               "mip_gap": receipt["mip_gap"], "synthetic_units": len(names), "p2x_by_zone_MWh": p2x,
-              **balance}
+              **balance, **_operational_verification(network)}
     _write_json(job_paths(year, scenario, "UC_MILP")["verification"], result)
     return result
 
@@ -489,6 +530,87 @@ def _transition_arrays(network: pypsa.Network, names: pd.Index) -> tuple[pd.Data
     return previous, status, actual_start, actual_shutdown
 
 
+def _fixed_commitment_objective_bounds(milp_receipt: dict, price_receipt: dict, limits: dict) -> dict:
+    """Allow only an improvement inside the saved minimization MIP-gap interval.
+
+    This arithmetic does not establish formulation or feasibility parity. Those
+    checks remain mandatory before accepting gap-bounded continuous redispatch.
+    Gurobi MIPGap is abs(ObjBound - ObjVal) / abs(ObjVal), not a percentage.
+    """
+    incumbent = float(milp_receipt["objective_EUR"])
+    price = float(price_receipt["objective_EUR"])
+    if not math.isfinite(incumbent) or not math.isfinite(price):
+        raise RuntimeError("UC2_FIXED_COMMITMENT_RECONCILIATION_FAIL: nonfinite objective")
+    numerical = max(float(limits["objective_absolute_tolerance_EUR"]),
+                    float(limits["objective_relative_tolerance"]) * max(abs(incumbent), 1.0))
+    improvement = incumbent - price
+    result = {"classification": "NUMERICAL_OBJECTIVE_PARITY",
+              "redispatch_improvement_EUR": improvement, "numerical_tolerance_EUR": numerical}
+    if abs(improvement) <= numerical:
+        return result
+    gap = milp_receipt.get("mip_gap")
+    if (gap is None or not math.isfinite(float(gap)) or not 0 <= float(gap) < 1e100 or incumbent == 0 or
+            milp_receipt.get("solver") != "gurobi" or milp_receipt.get("status") != "PASS" or
+            milp_receipt.get("solver_status") != "ok" or
+            milp_receipt.get("termination_condition") != "optimal" or
+            milp_receipt.get("binary_variables", 0) <= 0 or
+            milp_receipt.get("include_objective_constant") is not False or
+            price_receipt.get("include_objective_constant") is not False):
+        raise RuntimeError("UC2_FIXED_COMMITMENT_RECONCILIATION_FAIL: uncertified objective interval")
+    allowance = float(gap) * abs(incumbent)
+    if not math.isfinite(allowance) or not -numerical <= improvement <= allowance + numerical:
+        raise RuntimeError("UC2_FIXED_COMMITMENT_RECONCILIATION_FAIL: objective outside certified one-sided interval")
+    return {**result, "classification": "GAP_BOUNDED_FIXED_COMMITMENT_REDISPATCH",
+            "saved_milp_gap_fraction": float(gap), "certified_gap_allowance_EUR": allowance,
+            "inferred_milp_lower_bound_EUR": incumbent - allowance,
+            "lower_bound_source": "SAVED_UNROUNDED_GUROBI_MIP_GAP",
+            "pricing_upper_bound_EUR": incumbent}
+
+
+def _validate_redispatch_model_parity(milp: pypsa.Network, price: pypsa.Network) -> dict:
+    """Restrict gap acceptance to the unchanged, fixed-capacity Zonal LP scope."""
+    from .reporting.operational_checks import input_scope
+    input_scope(milp)
+    input_scope(price)
+    try:
+        pd.testing.assert_index_equal(milp.snapshots, price.snapshots, exact=True)
+        pd.testing.assert_frame_equal(milp.snapshot_weightings, price.snapshot_weightings, check_exact=True)
+        left = {c.name: c for c in milp.components if c.name != "SubNetwork"}
+        right = {c.name: c for c in price.components if c.name != "SubNetwork"}
+        if left.keys() != right.keys():
+            raise AssertionError("Component populations differ")
+        for name, component in left.items():
+            other = right[name]
+            outputs = set(component.defaults.index[component.defaults.status.eq("Output")])
+            # assign_all_duals creates additional native mu_* outputs that
+            # need not appear in the component attribute defaults. Never
+            # exclude an attribute explicitly declared as a native input.
+            declared_inputs = set(component.defaults.index[component.defaults.status.str.startswith("Input")])
+            outputs.update(attr for attr in set(component.dynamic) | set(other.dynamic)
+                           if attr.startswith("mu_") and attr not in declared_inputs)
+            pd.testing.assert_frame_equal(component.static.drop(columns=outputs, errors="ignore"),
+                other.static.drop(columns=outputs, errors="ignore"), check_exact=True)
+            inputs = set(component.dynamic) - outputs
+            if inputs != set(other.dynamic) - outputs:
+                raise AssertionError("Dynamic input attributes differ")
+            for attr in inputs:
+                pd.testing.assert_frame_equal(component.dynamic[attr], other.dynamic[attr], check_exact=True)
+    except AssertionError as exc:
+        raise RuntimeError("UC2_FIXED_COMMITMENT_RECONCILIATION_FAIL: model inputs differ") from exc
+    # Native linearized UC adds dispatch restrictions for equal event costs.
+    # Do not extend objective tolerance to that different formulation without
+    # separate equivalence evidence. Ordinary numerical parity is unchanged.
+    units = milp.generators.loc[milp.generators.committable]
+    if units.start_up_cost.eq(units.shut_down_cost).any():
+        raise RuntimeError("UC2_FIXED_COMMITMENT_RECONCILIATION_FAIL: LP-only UC restrictions require separate proof")
+    for component, attr in (("Generator", "marginal_cost_quadratic"), ("Link", "marginal_cost_quadratic"),
+                            ("Store", "marginal_cost_quadratic"), ("Store", "marginal_cost_storage")):
+        if milp.get_switchable_as_dense(component, attr).ne(0).any().any():
+            raise RuntimeError("UC2_FIXED_COMMITMENT_RECONCILIATION_FAIL: unsupported objective term")
+    return {"model_inputs_equal": True, "snapshot_weights_equal": True,
+            "fixed_capacity_linear_scope": True, "LP_only_UC_restrictions": 0}
+
+
 def verify_price(year: int, scenario: str) -> dict:
     _verified_previous(year, scenario, "UC_MILP")
     milp, milp_receipt = _load_solved(year, scenario, "UC_MILP")
@@ -513,8 +635,18 @@ def verify_price(year: int, scenario: str) -> dict:
     difference = abs(float(receipt["objective_EUR"]) - float(milp_receipt["objective_EUR"]))
     relative = difference / max(abs(float(milp_receipt["objective_EUR"])), 1.0)
     thresholds = config()["validation"]
-    if difference > float(thresholds["objective_absolute_tolerance_EUR"]) and relative > float(thresholds["objective_relative_tolerance"]):
-        raise RuntimeError("UC2_FIXED_COMMITMENT_RECONCILIATION_FAIL: objective")
+    objective_reconciliation = _fixed_commitment_objective_bounds(milp_receipt, receipt, thresholds)
+    if objective_reconciliation["classification"] == "GAP_BOUNDED_FIXED_COMMITMENT_REDISPATCH":
+        objective_reconciliation["formulation_parity"] = _validate_redispatch_model_parity(milp, price)
+        for network, source in ((milp, milp_receipt), (price, receipt)):
+            tolerance = max(float(thresholds["objective_absolute_tolerance_EUR"]),
+                float(thresholds["objective_relative_tolerance"]) * max(abs(float(source["objective_EUR"])), 1.0))
+            if not math.isfinite(float(network.objective)) or abs(float(network.objective) - float(source["objective_EUR"])) > tolerance:
+                raise RuntimeError("UC2_FIXED_COMMITMENT_RECONCILIATION_FAIL: receipt/network objective mismatch")
+        original_feasibility = _operational_verification(milp)
+        if not original_feasibility:
+            raise RuntimeError("UC2_FIXED_COMMITMENT_RECONCILIATION_FAIL: missing native feasibility verification")
+        objective_reconciliation["UC_feasibility_and_objective_reconstruction"] = "PASS"
     zones = list(config()["zones"])
     prices = price.buses_t.marginal_price
     if not set(zones).issubset(prices.columns) or prices.loc[:, zones].shape != (8760, 7) or not np.isfinite(prices.loc[:, zones].to_numpy()).all():
@@ -525,11 +657,19 @@ def verify_price(year: int, scenario: str) -> dict:
               "milp_objective_EUR": milp_receipt["objective_EUR"],
               "fixed_commitment_lp_objective_EUR": receipt["objective_EUR"],
               "absolute_objective_difference_EUR": difference, "relative_objective_difference": relative,
+              "objective_reconciliation": objective_reconciliation,
               "max_raw_commitment_difference": differences,
               "actual_transition_trajectories_equal": True,
               "price_label": "FIXED_COMMITMENT_MARGINAL_PRICE", "price_zone_hours": int(prices.loc[:, zones].size),
-              "integer_variables": 0, "binary_variables": 0}
+              "integer_variables": 0, "binary_variables": 0,
+              **_operational_verification(price)}
     if ACTIVE_VARIANT.get() in FINAL_VARIANTS:
+        from .reporting.price_evidence import verify_price_evidence
+        evidence = receipt.get("price_constraint_evidence")
+        result["price_constraint_evidence"] = (verify_price_evidence(
+            job_paths(year, scenario, "FIXED_COMMITMENT_PRICE_LP")["directory"], evidence, receipt)
+            if evidence else {"status": "NOT_CAPTURED_IN_HISTORICAL_SOLVE",
+                              "constraint_classification_requires_separate_evidence": True})
         from .reporting.water_values import extract_water_values
         coverage=receipt.get("water_dual_raw_coverage")
         if not coverage or sha256_file(ROOT/coverage["path"])!=coverage["sha256"]:
@@ -553,11 +693,26 @@ def report(year: int, scenario: str) -> dict:
     with no_solver_calls():
         accepted = cached_report(year, scenario)
         result = accepted if accepted is not None else _report_verified(year, scenario)
+        output = case_root(year, scenario) / 'REPORTING'
+        from .reporting.dispatch_figures import produce_dispatch_figures
+        dispatch = produce_dispatch_figures(output, year, scenario)
+        from .reporting.marginal_root_pipeline import generate
+        roots = generate(year, scenario, output)
         regime = produce(year, scenario)
+        from .reporting.uc2_postprocess import update_uc2_comparisons
+        comparisons = update_uc2_comparisons(year)
+        regime_comparison = compare(year)
+        from .reporting.output_registry import build_output_register
+        outputs = build_output_register(output, year, scenario, regime=regime,
+            comparisons={**comparisons, 'marginal_regime_comparison': regime_comparison})
         if accepted is None and regime['status'] == 'PASS_CANONICAL_MARGINAL_REGIME':
             install_report_cache(year, scenario, result)
-        return {**result, 'marginal_regime': regime,
-                'marginal_regime_comparison': compare(year)}
+        from .reporting.inspection import build_inspection
+        inspection = build_inspection(output)
+        return {**result, 'marginal_root_pipeline': roots, 'marginal_regime': regime,
+                'dispatch_presentation': dispatch, 'comparisons': comparisons,
+                'marginal_regime_comparison': regime_comparison,
+                'output_registry': outputs, 'inspection': inspection}
 
 
 def _report_verified(year: int, scenario: str) -> dict:
@@ -565,12 +720,11 @@ def _report_verified(year: int, scenario: str) -> dict:
     uc_gate = _verified_previous(year, scenario, "UC_MILP")
     price_gate = _verified_previous(year, scenario, "FIXED_COMMITMENT_PRICE_LP")
     output = case_root(year, scenario) / "REPORTING"
-    from .reporting.uc2_postprocess import extend_uc2_report, update_uc2_comparisons
+    from .reporting.uc2_postprocess import extend_uc2_report
     if output.exists() and any(output.iterdir()):
         extension = extend_uc2_report(year, scenario, output)
-        comparison = update_uc2_comparisons(year)
         return {**_read_json(output / "MEM_UC2_REPORTING_RECEIPT.json"),
-                "vis_reporting_r1": extension, "comparisons": comparison}
+                "vis_reporting_r1": extension}
     milp, milp_receipt = _load_solved(year, scenario, "UC_MILP")
     reference, reference_receipt = _load_solved(year, scenario, "POST_P2X_CONTINUOUS_REFERENCE")
     price, _ = _load_solved(year, scenario, "FIXED_COMMITMENT_PRICE_LP")
@@ -676,7 +830,7 @@ def _report_verified(year: int, scenario: str) -> dict:
                "reporting_solver_invocations": 0, "reference_verification": reference_gate["solved_sha256"],
                "uc_verification": uc_gate["solved_sha256"], "price_verification": price_gate["solved_sha256"],
                "fixed_commitment_price_label": "FIXED_COMMITMENT_MARGINAL_PRICE",
-               "canonical_reporting": canonical}
+               "canonical_reporting": canonical, "output_register_required": True}
     _write_json(output / "MEM_UC2_REPORTING_RECEIPT.json", receipt)
     if ACTIVE_VARIANT.get() in FINAL_VARIANTS:
         from .final_network_signed import net_flow_frame
@@ -688,9 +842,11 @@ def _report_verified(year: int, scenario: str) -> dict:
         hourly,annual=ror_water_accounting(milp,source,year,scenario)
         hourly.to_parquet(output/"ROR_WATER_BYPASS_AND_ELECTRICAL_GENERATION.parquet",index=False)
         annual.to_csv(output/"ROR_WATER_BYPASS_AND_ELECTRICAL_GENERATION_ANNUAL.csv",index=False)
+    if ACTIVE_VARIANT.get() in ("final_v5", "final_v5_proportional_control", "final_v6"):
+        from .reporting.adequacy_comparison import capture_additional_ocgt
+        capture_additional_ocgt(milp, scenario, ACTIVE_VARIANT.get(), output, uc_gate['solved_sha256'])
     extension = extend_uc2_report(year, scenario, output, uc_network=milp)
-    comparison = update_uc2_comparisons(year)
-    return {**receipt, "vis_reporting_r1": extension, "comparisons": comparison}
+    return {**receipt, "vis_reporting_r1": extension}
 
 
 def final_qa(year: int, scenario: str) -> dict:
@@ -699,10 +855,28 @@ def final_qa(year: int, scenario: str) -> dict:
     reporting = _read_json(case_root(year, scenario) / "REPORTING" / "MEM_UC2_REPORTING_RECEIPT.json")
     if reporting.get("status") != "PASS" or reporting.get("year") != year or reporting.get("scenario") != scenario:
         raise RuntimeError("UC2_FINAL_QA_FAIL: reporting receipt")
+    if reporting.get('output_register_required') and not all(
+            (case_root(year, scenario)/'REPORTING'/name).is_file()
+            for name in ('OUTPUT_REGISTER.csv', 'OUTPUT_REGISTER.json')):
+        raise RuntimeError('UC2_FINAL_QA_FAIL: declared output register is missing')
+    from .reporting.inspection import validate_inspection
+    output = case_root(year, scenario) / 'REPORTING'
+    inspection = validate_inspection(output)
+    from .reporting.output_registry import validate_output_register
+    outputs = validate_output_register(output)
     result = {"status": "PASS", "year": year, "scenario": scenario,
               "three_jobs_verified": True, "reporting_complete": True,
-              "manual_review_still_required": True, "automatic_next_scenario": False}
+              "manual_review_still_required": True, "automatic_next_scenario": False,
+              "inspection": inspection, "output_registry": outputs,
+              "core_reporting_status": outputs['core_reporting_status'],
+              "accepted_visualizations_status": outputs['accepted_visualizations_status'],
+              "comparison_status": outputs['comparison_status'],
+              "evidence_gated_outputs_status": outputs['evidence_gated_outputs_status'],
+              "cross_scenario_comparisons_status": outputs['cross_scenario_comparisons_status']}
     _write_json(case_root(year, scenario) / "QA" / "FINAL_SCENARIO_QA.json", result)
+    if ACTIVE_VARIANT.get() in ("final_v5", "final_v5_proportional_control"):
+        from .reporting.adequacy_comparison import refresh
+        refresh(ACTIVE_VARIANT.get())
     return result
 
 
@@ -781,13 +955,13 @@ def prepare() -> dict:
     _write_json(receipt_path, receipt)
     manifest_items = [CONFIG_PATH, ROOT / "src" / "mem_model" / "stage_b_uc2.py", registry_path,
                       receipt_path, ROOT / "docs" / "MEM_UC2_ALL_SCENARIOS_MANUAL_RUNBOOK.md",
-                      ROOT / "docs" / "MEM_UC2_ALL_SCENARIOS_MANUAL_EXECUTION_TRANSFER.md",
+                      ROOT / "docs" / "MEM_UC2_ALL_SCENARIOS_MANUAL_EXECUTION_HANDOFF.md",
                       ROOT / "tests" / "test_stage_b_uc2_preparation.py"]
     manifest_items += [ROOT / item["parent"] for item in build["structural_packages"]]
     manifest_items += [ROOT / item["derivative"] for item in build["structural_packages"]]
     pd.DataFrame({"artifact": [str(path.relative_to(ROOT)) for path in manifest_items],
                   "sha256": [sha256_file(path) for path in manifest_items],
-                  "role": (["UC2_CONFIG", "UC2_CLI", "JOB_REGISTRY", "PREPARATION_RECEIPT", "RUNBOOK", "TRANSFER", "NON_SOLVING_TESTS"] +
+                  "role": (["UC2_CONFIG", "UC2_CLI", "JOB_REGISTRY", "PREPARATION_RECEIPT", "RUNBOOK", "HANDOFF", "NON_SOLVING_TESTS"] +
                            ["P2X_CONTINUOUS_PARENT_UNSOLVED"] * 6 + ["UC1_UC_PARENT_UNSOLVED"] * 6)}).to_csv(
         qa_dir / "MEM_UC2_PREPARATION_ARTIFACT_MANIFEST.csv", index=False, lineterminator="\n")
     return receipt
@@ -848,13 +1022,13 @@ def reconcile_preparation() -> dict:
     build = _structural_receipt()
     manifest_items = [CONFIG_PATH, ROOT / "src" / "mem_model" / "stage_b_uc2.py", registry_path,
                       receipt_path, ROOT / "docs" / "MEM_UC2_ALL_SCENARIOS_MANUAL_RUNBOOK.md",
-                      ROOT / "docs" / "MEM_UC2_ALL_SCENARIOS_MANUAL_EXECUTION_TRANSFER.md",
+                      ROOT / "docs" / "MEM_UC2_ALL_SCENARIOS_MANUAL_EXECUTION_HANDOFF.md",
                       ROOT / "tests" / "test_stage_b_uc2_preparation.py"]
     manifest_items += [ROOT / item["parent"] for item in build["structural_packages"]]
     manifest_items += [ROOT / item["derivative"] for item in build["structural_packages"]]
     pd.DataFrame({"artifact": [str(path.relative_to(ROOT)) for path in manifest_items],
                   "sha256": [sha256_file(path) for path in manifest_items],
-                  "role": (["UC2_CONFIG", "UC2_CLI", "JOB_REGISTRY", "PREPARATION_RECEIPT", "RUNBOOK", "TRANSFER", "NON_SOLVING_TESTS"] +
+                  "role": (["UC2_CONFIG", "UC2_CLI", "JOB_REGISTRY", "PREPARATION_RECEIPT", "RUNBOOK", "HANDOFF", "NON_SOLVING_TESTS"] +
                            ["P2X_CONTINUOUS_PARENT_UNSOLVED"] * 6 + ["UC1_UC_PARENT_UNSOLVED"] * 6)}).to_csv(
         qa_dir / "MEM_UC2_PREPARATION_ARTIFACT_MANIFEST.csv", index=False, lineterminator="\n")
     return receipt

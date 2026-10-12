@@ -47,10 +47,10 @@ def _check(ok: bool, name: str, qa: list[dict], detail: str = "") -> None:
         raise ValueError(f"42-bus map QA failed: {name}: {detail}")
 
 
-def _reference_tables(transfer: Path, aliases: dict[str, str], qa: list[dict]):
-    bus_path, branch_path, count_path = (transfer / PARENT_BUS_TABLE,
-                                         transfer / BRANCH_TABLE, transfer / BRANCH_COUNTS)
-    seal = json.loads((transfer / "TRANSFER_MANIFEST.json").read_text(encoding="utf-8"))
+def _reference_tables(handoff: Path, aliases: dict[str, str], qa: list[dict]):
+    bus_path, branch_path, count_path = (handoff / PARENT_BUS_TABLE,
+                                         handoff / BRANCH_TABLE, handoff / BRANCH_COUNTS)
+    seal = json.loads((handoff / "TRANSFER_MANIFEST.json").read_text(encoding="utf-8"))
     expected = seal["files_sha256"]
     for relative, path in ((PARENT_BUS_TABLE, bus_path), (BRANCH_TABLE, branch_path),
                            (BRANCH_COUNTS, count_path)):
@@ -250,14 +250,14 @@ def build_reference_overlays() -> Path:
                       secondary / "MEM_MARKET_NETWORK_UTILIZATION.png"]
     original_hashes = {str(p): _sha(p) for p in original_paths}
 
-    transfer = ROOT / Path(cfg["external_reference"])
-    transfer_seal = json.loads((transfer / "TRANSFER_MANIFEST.json").read_text(encoding="utf-8"))
+    handoff = (ROOT / Path(cfg["external_reference"]))
+    handoff_seal = json.loads((handoff / "TRANSFER_MANIFEST.json").read_text(encoding="utf-8"))
     adapter_rel = "adapters/pypsa_it_adapter.py"
-    _check(_sha(transfer / adapter_rel).lower() ==
-           transfer_seal["adapter_file_hashes"][adapter_rel].lower(),
+    _check(_sha(handoff / adapter_rel).lower() ==
+           handoff_seal["adapter_file_hashes"][adapter_rel].lower(),
            "sealed_parent_palette_adapter_hash", qa)
     buses, lines, links, buses_raw, branches_raw, source_lineage = _reference_tables(
-        transfer, cfg["display_market_aliases"], qa)
+        handoff, cfg["display_market_aliases"], qa)
     geo_path = network_maps.bundled_geography_path()
     _check(geo_path.is_file() and PARENT_NUTS2.is_file(), "reference_geography_sources_resolve", qa)
     import geopandas as gpd

@@ -1,0 +1,26 @@
+{
+  "release": "zonal-final-results-v1",
+  "model_family": "Zonal",
+  "final_baselines": {
+    "2040": "final_v3",
+    "2050": "final_v6"
+  },
+  "data_manifest_sha256": "f7788e0fb02cd2352b1c3a526c1c6cdb8683e14007a3720ec188f81489cd7f75",
+  "member_prefix": "payload",
+  "assets": [
+    {
+      "filename": "zonal_final_results_v1.zip",
+      "size_bytes": 212691448,
+      "sha256": "26191aeeafb04dcbb7104b01c8161948259b6f4cc5048a5bca0597df95b045a0",
+      "scope": "NUMERICAL_RESULTS"
+    }
+  ],
+  "previous_releases_retained": [
+    "zonal-production-data-v1",
+    "zonal-production-data-v2"
+  ],
+  "raw_source_documents_included": false,
+  "licence_or_credentials_included": false,
+  "solved_networks_included": false,
+  "optimizer_invocations_during_publication": 0
+}

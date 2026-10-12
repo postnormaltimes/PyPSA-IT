@@ -104,9 +104,15 @@ def _eligibility(network, ids: list[str]) -> list[str]:
     return sorted(set(reasons))
 
 
-def audit_interfaces(network) -> pd.DataFrame:
-    """Audit all transport pairs; ineligible pairs are retained, not repaired."""
-    subset = network.links.loc[network.links.carrier.astype(str).isin(INTERFACE_CARRIERS)]
+def audit_interfaces(network, *, excluded_link_ids=None) -> pd.DataFrame:
+    """Audit transport pairs without modifying the supplied network.
+
+    Optional exclusions omit Links already represented by signed metadata.
+    Default pair detection and eligibility checks remain unchanged.
+    """
+    excluded = frozenset(excluded_link_ids or ())
+    subset = network.links.loc[network.links.carrier.astype(str).isin(INTERFACE_CARRIERS)
+                               & ~network.links.index.isin(excluded)]
     groups = {}
     for name, row in subset.iterrows():
         a, b = sorted((str(row.bus0), str(row.bus1)))
@@ -237,10 +243,7 @@ def corridor_table(network) -> pd.DataFrame:
         rows.append(dict(item, representation="SIGNED", capacity_a_to_b_MW=float(upper.max()),
             capacity_b_to_a_MW=float(lower.max()), directional_link_count=1))
         covered.add(name)
-    legacy = network.copy()
-    if covered:
-        legacy.remove("Link", list(covered))
-    for row in audit_interfaces(legacy).itertuples(index=False):
+    for row in audit_interfaces(network, excluded_link_ids=covered).itertuples(index=False):
         if not row.forward_link or not row.reverse_link or row.directional_link_count != 2:
             raise RuntimeError("NETWORK_V2B_REPORTING_AMBIGUOUS_CORRIDOR")
         rows.append({key: getattr(row, key) for key in ("carrier", "bus_a", "bus_b", "forward_link", "reverse_link", "signed_link",
@@ -343,7 +346,7 @@ def promote_phase_n(parents: list[dict], *, test_results: dict) -> dict:
     artifacts = [audit_path, QA / "NATIVE_SIGNED_LINK_API_RECEIPT.json", receipt_path,
         ROOT / "src/mem_model/final_network_signed.py", ROOT / "tests/test_final_network_signed.py",
         ROOT / "src/mem_model/reporting/topology.py", ROOT / "src/mem_model/reporting/canonical_results.py",
-        ROOT / "docs/final_methodology_closure/PHASE_N_SIGNED_INTERFACE_TRANSFER.md"]
+        ROOT / "docs/final_methodology_closure/PHASE_N_SIGNED_INTERFACE_HANDOFF.md"]
     pd.DataFrame([{"path": str(path.relative_to(ROOT)), "sha256": sha256_file(path)} for path in artifacts]
         + [{"path": row["path"], "sha256": row["sha256"]} for row in packages]).to_csv(QA / "NETWORK_V2B_OUTPUT_MANIFEST.csv", index=False)
     return receipt

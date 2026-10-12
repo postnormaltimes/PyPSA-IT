@@ -748,7 +748,7 @@ def write_preparation_closeout(
         ROOT / "docs/runbooks/ETX7B8D_RUNBOOK.md",
         ROOT / "docs/runbooks/ETX7B9C_RUNBOOK.md",
         ROOT / "docs/runbooks/ETX7B10_RUNBOOK.md",
-        ROOT / "docs/runbooks/STAGE_B_INPUT_TRANSFER_RUNBOOK.md",
+        ROOT / "docs/runbooks/STAGE_B_INPUT_HANDOFF_RUNBOOK.md",
         sensitivity,
         s2_audit,
     ]
@@ -1347,7 +1347,7 @@ def run_horizon(year: int, args: argparse.Namespace) -> dict[str, Any]:
     )
     _append_log(
         log,
-        f"{horizon['phase']} solver/structural PASS; economic and production acceptance remain subject to historical result validation.",
+        f"{horizon['phase']} solver/structural PASS; economic and production acceptance remain pending Sol review.",
     )
     result_artifacts.extend(prepared["artifacts"])
     result_artifacts.extend(comparisons)

@@ -16,6 +16,93 @@ import yaml
 from .vis_x1 import CONFIG, ROOT, _sha, _toolkit
 
 
+# Selected catalog: FINAL_VISUALIZATION_INVENTORY.csv, presentation_set ==
+# COMPARISON PRESENTATION (2026-10-02, including the approved regime addition).
+# The 33 legacy renderer families remain distinct from these 18 selected views.
+SELECTED_COMPARISON_VIEWS = (
+    ('monthly_zonal_price', 'Prices', 'monthly_zonal_prices', 'FIXED_COMMITMENT_PRICE_LP_DUALS'),
+    ('price_duration', 'Prices', 'price_duration', 'FIXED_COMMITMENT_PRICE_LP_DUALS'),
+    ('interface_net_energy_MWh', 'Exchanges', 'net_interface_summary', 'UC_MILP'),
+    ('primary_generation', 'Generation', 'comparison_metrics', 'UC_MILP'),
+    ('net_imports', 'Exchanges', 'comparison_metrics', 'UC_MILP'),
+    ('annual_load_weighted_zonal_prices', 'Prices', 'comparison_metrics', 'FIXED_COMMITMENT_PRICE_LP_DUALS'),
+    ('storage_activity', 'Storage', 'comparison_metrics', 'UC_MILP'),
+    ('p2x_electrical_consumption', 'P2X', 'comparison_metrics', 'UC_MILP'),
+    ('vre_curtailment', 'Generation', 'comparison_metrics', 'UC_MILP'),
+    ('actual_starts', 'Commitment', 'comparison_metrics', 'UC_MILP'),
+    ('all_italy_mean_spatial_spread', 'Prices', 'comparison_metrics', 'FIXED_COMMITMENT_PRICE_LP_DUALS'),
+    ('average_committed_capacity', 'Commitment', None, 'UC_MILP'),
+    ('italian_zonal_spread_duration', 'Prices', 'all_italy_spatial_spread', 'FIXED_COMMITMENT_PRICE_LP_DUALS'),
+    ('distinct_simultaneous_prices', 'Prices', 'distinct_simultaneous_prices', 'FIXED_COMMITMENT_PRICE_LP_DUALS'),
+    ('monthly_national_load_weighted_price', 'Prices', 'monthly_national_load_weighted_price', 'FIXED_COMMITMENT_PRICE_LP_DUALS'),
+    ('interface_positive_limit_hours', 'Exchanges', 'net_interface_summary', 'UC_MILP'),
+    ('interface_negative_limit_hours', 'Exchanges', 'net_interface_summary', 'UC_MILP'),
+    ('marginal_regime_national_comparison', 'Marginal regime', None, 'FIXED_COMMITMENT_PRICE_LP_DUALS'),
+)
+
+
+def selected_comparison_view_records(year: int, case_reports: dict[str, Path], output: Path, *,
+                                     expected_scenarios: list[str] | None = None,
+                                     model_version: str | None = None) -> list[dict]:
+    """Local register inputs for the accepted views; source readiness is not rendering QA.
+
+    Ordinary within-year comparisons support verified subsets of at least two.
+    The approved marginal-regime producer requires the complete scenario set.
+    Cross-year comparisons are outside this selected catalog.
+    """
+    scenarios = list(case_reports)
+    expected = list(expected_scenarios or scenarios)
+    missing = [scenario for scenario in expected if scenario not in case_reports]
+    records = []
+    for view, group, table, authority in SELECTED_COMPARISON_VIEWS:
+        if table is not None:
+            required = [Path(output) / 'data' / f'{table}.csv']
+            if view == 'italian_zonal_spread_duration' and str(model_version).startswith('FINAL_METHODOLOGY_'):
+                required += [Path(report) / 'VIS_X1/data/fixed_commitment_lp_price_duration.parquet'
+                             for report in case_reports.values()]
+        elif view == 'average_committed_capacity':
+            required = [Path(report) / 'hourly_online_units_and_committed_MW.csv'
+                        for report in case_reports.values()]
+        else:
+            required = [Path(output) / 'marginal_regime' /
+                        f'LEXICOGRAPHIC_REGIME_NATIONAL_SHARES_{year}.csv']
+        if len(scenarios) < 2:
+            status = 'WAITING_FOR_COMPARABLE_REPORTS'
+        elif view == 'marginal_regime_national_comparison' and (missing or len(scenarios) < 3):
+            status = 'WAITING_FOR_COMPLETE_SCENARIO_SET'
+        elif not all(path.is_file() for path in required):
+            status = 'WAITING_FOR_SOURCE_TABLES'
+        else:
+            status = 'SOURCE_TABLES_AVAILABLE'
+        records.append(dict(view_id=view, group=group, family=view, year=year,
+                            model_version=model_version,
+                            scenarios=scenarios, expected_scenarios=expected,
+                            missing_scenarios=missing, source_authority=authority,
+                            source_files=[str(path) for path in required if path.is_file()],
+                            missing_source_files=[str(path) for path in required if not path.is_file()],
+                            status=status, rendering_status='NOT_ASSESSED'))
+    return records
+
+
+def _final_case_duration_source(report: Path, receipt: dict, index: pd.DatetimeIndex):
+    """Read stored UC generator weights from the case-bound VIS price-duration table.
+
+    uc2_vis_x1 passes canonical._weights(UC network, 'generator') to the price
+    duration exporter. Only its timestamps and weights are used here, not prices.
+    """
+    path = report / 'VIS_X1/data/fixed_commitment_lp_price_duration.parquet'
+    digest = _verified_source_digest(report, receipt, path)
+    frame = pd.read_parquet(path, columns=['market', 'snapshot', 'weight'])
+    if frame.market.nunique() != 7:
+        raise ValueError('Seven stored UC duration-weight series required')
+    for _, values in frame.groupby('market'):
+        timestamps = pd.DatetimeIndex(pd.to_datetime(values.snapshot, errors='raise')).sort_values()
+        if (not timestamps.equals(index) or
+                not pd.to_numeric(values.weight, errors='raise').eq(1).all()):
+            raise ValueError('Rank hours require stored equal-duration UC weights and aligned chronology')
+    return path, digest
+
+
 def _comparison_style(metadata, PlotStyle):
     """Reuse accepted technology/zone colours and stable scenario colours."""
     from ..reporting.canonical_results import reporting_config
@@ -46,9 +133,32 @@ def _comparison_style(metadata, PlotStyle):
     return style
 
 
+def _base_comparison_artifacts(output, *, include_receipts=False):
+    """Only the original producer owns data/figures and its root metadata.
+
+    Presentation and marginal-regime producers own their own manifests; their
+    later legitimate refreshes must not invalidate the base comparison cache.
+    """
+    output = Path(output)
+    files = [path for folder in ('data', 'figures') for path in (output / folder).rglob('*')
+             if path.is_file()]
+    names = ['MEM_UC2_COMPARISON_FIGURE_METADATA.json']
+    if include_receipts:
+        names += ['MEM_UC2_COMPARISON_MANIFEST.csv', 'MEM_UC2_COMPARISON_RECEIPT.json']
+    files += [output / name for name in names if (output / name).is_file()]
+    return sorted(files)
+
+
+def _refined_presentation_artifact_hashes(entries, metadata_path):
+    """Bind only this producer's declared renders and metadata."""
+    paths = [Path(name) for entry in entries for name in entry['files']]
+    paths.append(Path(metadata_path))
+    return {path.name: _sha(path) for path in paths}
+
+
 def refine_cached_comparison_presentation(comparison_dir: Path, output: Path, *,
                                          finalize_selection=False, case_reports=None) -> dict:
-    """Three presentation deltas from frozen CSVs; original comparisons stay intact.
+    """Render the established selected views from verified comparison tables.
 
     Correct only generation/import category colours; consolidate seven annual
     price bars using the existing grouped-horizontal-bar comparison geometry.
@@ -60,6 +170,7 @@ def refine_cached_comparison_presentation(comparison_dir: Path, output: Path, *,
     comparison_dir, output = Path(comparison_dir), Path(output)
     parent_path = comparison_dir/'MEM_UC2_COMPARISON_RECEIPT.json'
     parent = json.loads(parent_path.read_text(encoding='utf-8'))
+    result_status = parent.get('result_status', 'CURRENT_ACCEPTED_RESULT')
     if not (parent['status'] == 'PASS' and parent['reporting_solver_invocations'] == 0
             and parent['model_generation'] == 'UC2' and parent['physical_source'] == 'UC_MILP'
             and parent['price_source'] == 'FIXED_COMMITMENT_PRICE_LP'):
@@ -72,7 +183,7 @@ def refine_cached_comparison_presentation(comparison_dir: Path, output: Path, *,
     paths = [comparison_dir/f'data/{name}.csv' for name in names]
     if any(_sha(path) != registered[path.relative_to(comparison_dir).as_posix()] for path in paths):
         raise ValueError('Cached comparison input changed')
-    original_hashes = {str(p):_sha(p) for p in comparison_dir.rglob('*') if p.is_file()}
+    original_hashes = {str(p):_sha(p) for p in _base_comparison_artifacts(comparison_dir, include_receipts=True)}
     cfg = yaml.safe_load(CONFIG.read_text(encoding='utf-8')); _toolkit(cfg)
     from visualization_toolkit import scenario_comparison as comparison
     from visualization_toolkit.styles import PlotStyle, style_context
@@ -82,11 +193,13 @@ def refine_cached_comparison_presentation(comparison_dir: Path, output: Path, *,
         order = metadata.scenario_id.tolist()
         if order != parent['scenarios'] or not metadata.year.eq(parent['year']).all():
             raise ValueError('Comparison year/scenario lineage mismatch')
+        if 'result_status' in metadata and _comparison_result_status(metadata) != result_status:
+            raise ValueError('Cached comparison result status differs from source metadata')
         year = int(metadata.year.iloc[0]); style = _comparison_style(metadata, PlotStyle)
         prepared = comparison.prepare_scenario_metrics(metrics, metadata)
         entries = []
         def save(fig, name, question, checked_values):
-            fig.text(.01, .01, f'CURRENT_ACCEPTED_RESULT | UC2 {year} | physical: UC MILP; prices: fixed-commitment LP duals', fontsize=8,color='#555555')
+            fig.text(.01, .01, f'{result_status} | UC2 {year} | physical: UC MILP; prices: fixed-commitment LP duals', fontsize=8,color='#555555')
             fig.subplots_adjust(bottom=max(fig.subplotpars.bottom,.14))
             files = []
             for extension in ('png','svg'):
@@ -95,7 +208,7 @@ def refine_cached_comparison_presentation(comparison_dir: Path, output: Path, *,
                     fig.savefig(path,dpi=240,bbox_inches='tight',facecolor='white',metadata={'Date':None} if extension=='svg' else None)
                 files.append(str(path));
             plt.close(fig)
-            entries.append(dict(figure=name,year=year,scenarios=order,status='CURRENT_ACCEPTED_RESULT',
+            entries.append(dict(figure=name,year=year,scenarios=order,status=result_status,
                 role='COMPARISON_PRESENTATION',question=question,files=files,
                 underlying_data=[str(path) for path in paths],physical_source='UC_MILP',
                 price_source='FIXED_COMMITMENT_LP_DUALS',checked_values=checked_values))
@@ -132,18 +245,18 @@ def refine_cached_comparison_presentation(comparison_dir: Path, output: Path, *,
     if any(_sha(Path(p)) != digest for p,digest in original_hashes.items()):
         raise ValueError('Original comparison artifacts changed')
     (output/'FIGURE_METADATA.json').write_text(json.dumps(entries,indent=2),encoding='utf-8')
-    receipt=dict(status='PASS',year=year,scenarios=order,solver_invocations=guard['solver_invocations'],
+    receipt=dict(status='PASS',result_status=result_status,year=year,scenarios=order,solver_invocations=guard['solver_invocations'],
         network_open_or_extraction_calls=0,original_comparison_artifacts_unchanged=True,
         source_receipt_sha256=_sha(parent_path),input_hashes={str(p):_sha(p) for p in paths},
         figure_count=len(entries),plotted_values_checked=sum(entry['checked_values'] for entry in entries),
         semantic_colour_source='Accepted MEM technology_colors + sealed recovered GME zone palette',
-        artifact_hashes={p.name:_sha(p) for p in output.iterdir() if p.is_file() and p.name!='PRESENTATION_RECEIPT.json'})
+        artifact_hashes=_refined_presentation_artifact_hashes(entries, output/'FIGURE_METADATA.json'))
     (output/'PRESENTATION_RECEIPT.json').write_text(json.dumps(receipt,indent=2),encoding='utf-8')
     return receipt
 
 
 def _finalize_selected_comparisons(comparison_dir, output, case_reports):
-    """Apply the user's G1–G7 decisions; never rerender the settled six views."""
+    """Render the accepted comparison catalog without repeating the base views."""
     from ..common import ROOT
     from ..reporting.canonical_results import reporting_config
     from ..reporting.uc2_postprocess import no_solver_calls
@@ -158,7 +271,7 @@ def _finalize_selected_comparisons(comparison_dir, output, case_reports):
     if _sha(manifest) != parent['manifest_sha256']:
         raise ValueError('Cached comparison manifest changed')
     registered = pd.read_csv(manifest).set_index('artifact').sha256
-    original_hashes = {str(p): _sha(p) for p in comparison_dir.rglob('*') if p.is_file()}
+    original_hashes = {str(p): _sha(p) for p in _base_comparison_artifacts(comparison_dir, include_receipts=True)}
     source_hashes = {}
 
     def read_cached(name):
@@ -175,9 +288,15 @@ def _finalize_selected_comparisons(comparison_dir, output, case_reports):
     from visualization_toolkit.styles import PlotStyle, style_context
 
     year, order = parent['year'], parent['scenarios']
-    metadata, receipts = _validate_sources(year, case_reports or {})
+    metadata, receipts = _validate_sources(year, case_reports or {},
+                                         expected_model_version=parent.get('model_version'))
     if metadata.scenario_id.tolist() != order:
         raise ValueError('Selected scenarios differ from accepted comparison order')
+    if receipts != parent['source_receipt_sha256']:
+        raise ValueError('Selected case receipts differ from cached comparison lineage')
+    result_status = _comparison_result_status(metadata)
+    if result_status != parent.get('result_status', 'CURRENT_ACCEPTED_RESULT'):
+        raise ValueError('Selected result status differs from cached comparison lineage')
     output.mkdir(parents=True, exist_ok=True)
     entries, qa = [], []
     report_cfg = reporting_config()
@@ -190,7 +309,7 @@ def _finalize_selected_comparisons(comparison_dir, output, case_reports):
         style.carrier_style[key] = {'color': report_cfg['technology_colors'][colour_key]}
 
     def save(fig, name, question, sources, limitation=''):
-        fig.text(.01, .01, f'CURRENT_ACCEPTED_RESULT | UC2 {year} | physical: UC MILP; prices: fixed-commitment LP duals',
+        fig.text(.01, .01, f'{result_status} | UC2 {year} | physical: UC MILP; prices: fixed-commitment LP duals',
                  fontsize=8, color='#555555')
         fig.subplots_adjust(bottom=max(fig.subplotpars.bottom, .14))
         files = []
@@ -201,7 +320,7 @@ def _finalize_selected_comparisons(comparison_dir, output, case_reports):
                             metadata={'Date': None} if extension == 'svg' else None)
             files.append(str(path))
         plt.close(fig)
-        entries.append(dict(figure=name, year=year, scenarios=order, status='CURRENT_ACCEPTED_RESULT',
+        entries.append(dict(figure=name, year=year, scenarios=order, status=result_status,
                             role='COMPARISON_PRESENTATION', question=question, files=files,
                             underlying_data=[str(p) for p in sources], limitation=limitation,
                             physical_source='UC_MILP', price_source='FIXED_COMMITMENT_LP_DUALS'))
@@ -275,7 +394,12 @@ def _finalize_selected_comparisons(comparison_dir, output, case_reports):
                                  average_committed_capacity_GW=float(power.mean() / 1000),
                                  method='mean(hourly UC committed_MW) / 1000', source=str(path)))
             # Reuse verified physical durations solely to establish the ranked-hour axis.
-            raw_dir = ROOT / f'outputs/visualization/UC2/{year}/{scenario}/dispatch_presentation'
+            if str(metadata.set_index('scenario_id').loc[scenario, 'model_version']).startswith('FINAL_METHODOLOGY_'):
+                duration_path, duration_digest = _final_case_duration_source(report, receipt, index)
+                source_hashes[str(duration_path)] = duration_digest
+                duration_sources.append(duration_path)
+                continue
+            raw_dir = ROOT / f'_local/outputs/visualization/UC2/{year}/{scenario}/dispatch_presentation'
             raw_path = raw_dir / 'annual_dispatch_raw_MW.csv'
             raw_receipt_path = raw_dir / 'PRESENTATION_RECEIPT.json'
             raw_receipt = json.loads(raw_receipt_path.read_text())
@@ -298,7 +422,8 @@ def _finalize_selected_comparisons(comparison_dir, output, case_reports):
             ax.set(title=f'Average committed capacity | {year}', ylabel='GW', xlabel='Scenario')
             np.testing.assert_allclose([p.get_height() for p in ax.patches], average.average_committed_capacity_GW, atol=1e-12, rtol=0)
             fig.tight_layout()
-        qa.append(dict(check='average_committed_capacity_hourly_mean', status='PASS', observations=3 * 8760))
+        qa.append(dict(check='average_committed_capacity_hourly_mean', status='PASS',
+                       observations=sum(row['raw_observations'] for row in averages)))
         save(fig, 'average_committed_capacity', 'Average UC committed electrical capacity',
              [average_path] + [Path(row['source']) for row in averages], 'Arithmetic mean of accepted hourly UC committed_MW / 1000; not installed capacity or generation.')
 
@@ -343,7 +468,7 @@ def _finalize_selected_comparisons(comparison_dir, output, case_reports):
             ax.set(title=f'Distinct simultaneous Italian zonal prices | {year}', xlabel='Number of distinct zonal prices', ylabel='Hours')
             ax.tick_params(axis='x', rotation=0); ax.legend(title='Scenario', frameon=False); fig.tight_layout()
         np.testing.assert_allclose([p.get_height() for p in ax.patches], pivot.to_numpy().T.ravel(), atol=0, rtol=0)
-        qa.append(dict(check='distinct_price_counts_preserved', status='PASS', observations=21))
+        qa.append(dict(check='distinct_price_counts_preserved', status='PASS', observations=pivot.size))
         save(fig, 'distinct_simultaneous_prices', 'How often Italy has one or multiple simultaneous prices',
              [comparison_dir / 'data/distinct_simultaneous_prices.csv'], 'Exact numeric price equality; not tolerant near-coupling.')
 
@@ -359,7 +484,7 @@ def _finalize_selected_comparisons(comparison_dir, output, case_reports):
             ax.set(title=f'Monthly national load-weighted electricity price | {year}', xlabel='Month', ylabel='EUR/MWh',
                    xticks=range(1, 13), xticklabels=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'])
             ax.legend(title='Scenario', frameon=False); fig.tight_layout()
-        qa.append(dict(check='monthly_prices_unchanged', status='PASS', observations=36))
+        qa.append(dict(check='monthly_prices_unchanged', status='PASS', observations=len(monthly)))
         save(fig, 'monthly_national_load_weighted_price', 'National load-weighted seasonal price profile',
              [comparison_dir / 'data/monthly_national_load_weighted_price.csv'],
              'Existing accepted national weighting (rigid load plus P2X) unchanged; no reaggregation.')
@@ -378,7 +503,7 @@ def _finalize_selected_comparisons(comparison_dir, output, case_reports):
                 ax.set(title=f'{title} | {year}', xlabel='Hours', ylabel='Canonical interface / direction')
                 ax.legend(title='Scenario', frameon=False, loc='upper left', bbox_to_anchor=(1.01, 1)); fig.tight_layout()
             np.testing.assert_array_equal([p.get_width() for p in ax.patches], pivot.to_numpy().T.ravel())
-            qa.append(dict(check=metric + '_all_20_interfaces_preserved', status='PASS', observations=60))
+            qa.append(dict(check=metric + '_all_20_interfaces_preserved', status='PASS', observations=pivot.size))
             save(fig, 'interface_' + metric, title, [comparison_dir / 'data/net_interface_summary.csv'],
                  'Direction follows the canonical registry; signed net UC interface limits, not gross counterflow or physical AC-line loading.')
 
@@ -391,7 +516,7 @@ def _finalize_selected_comparisons(comparison_dir, output, case_reports):
     metadata_path.write_text(json.dumps(entries, indent=2), encoding='utf-8')
     qa_path = output / 'COMPARISON_SELECTION_QA.csv'
     pd.DataFrame(qa).to_csv(qa_path, index=False)
-    receipt = dict(status='PASS', year=year, scenarios=order, figure_count=len(entries),
+    receipt = dict(status='PASS', result_status=result_status, year=year, scenarios=order, figure_count=len(entries),
         checks_passed=len(qa), solver_invocations=guard['solver_invocations'], network_open_or_extraction_calls=0,
         original_comparison_artifacts_unchanged=True, source_receipt_sha256=_sha(parent_path),
         case_receipt_sha256=receipts, source_hashes=source_hashes, exact_carrier_display_mapping=labels,
@@ -404,7 +529,53 @@ def _finalize_selected_comparisons(comparison_dir, output, case_reports):
     return receipt
 
 
-def _validate_sources(year: int, case_reports: dict[str, Path]) -> tuple[pd.DataFrame, dict]:
+def _verified_source_digest(report: Path, receipt: dict, path: Path) -> str:
+    """Bind a consumed table to its original or extension receipt, without networks."""
+    relative = path.relative_to(report).as_posix()
+    registered = {}
+    for field in ("original_artifact_hashes", "artifact_hashes"):
+        for name, digest in receipt.get(field, {}).items():
+            name = name.replace("\\", "/")
+            if name in registered and registered[name] != digest:
+                raise ValueError(f"Conflicting comparison source hashes: {name}")
+            registered[name] = digest
+    if relative not in registered:
+        raise ValueError(f"Unregistered comparison source: {relative}")
+    digest = _sha(path)
+    if digest != registered[relative]:
+        raise ValueError(f"Comparison source changed: {relative}")
+    return digest
+
+
+def _comparison_result_status(metadata: pd.DataFrame) -> str:
+    statuses = set(metadata.result_status)
+    allowed = {"CURRENT_ACCEPTED_RESULT", "VERIFIED_RESULT_PENDING_ANALYTICAL_REVIEW"}
+    if not statuses.issubset(allowed):
+        raise ValueError(f"Unsupported comparison result status: {sorted(map(str, statuses))}")
+    return ("VERIFIED_RESULT_PENDING_ANALYTICAL_REVIEW"
+            if "VERIFIED_RESULT_PENDING_ANALYTICAL_REVIEW" in statuses
+            else "CURRENT_ACCEPTED_RESULT")
+
+
+def _validate_comparison_coverage(tables: dict, scenarios: list[str]) -> None:
+    """Sparse categories may be zero; an absent case or metric is unknown."""
+    metrics = tables['comparison_metrics']
+    expected = set(scenarios)
+    for metric, values in metrics.groupby('metric'):
+        if set(values.scenario_id) != expected:
+            raise ValueError(f"Missing whole comparison metric case: {metric}")
+    if not np.isfinite(pd.to_numeric(metrics.value, errors='raise')).all():
+        raise ValueError('Nonfinite comparison metric values')
+    for name, values in tables.items():
+        if name in ('comparison_metrics', 'scenario_metadata', 'source_provenance'):
+            continue
+        column = 'scenario_id' if 'scenario_id' in values else 'scenario'
+        if set(values[column]) != expected:
+            raise ValueError(f"Missing whole comparison table case: {name}")
+
+
+def _validate_sources(year: int, case_reports: dict[str, Path], *,
+                      expected_model_version: str | None = None) -> tuple[pd.DataFrame, dict]:
     if len(case_reports) < 2:
         raise ValueError("UC2 comparisons require at least two completed scenarios")
     metadata, hashes = [], {}
@@ -421,13 +592,50 @@ def _validate_sources(year: int, case_reports: dict[str, Path]) -> tuple[pd.Data
             and receipt.get("reporting_solver_invocations") == 0
         ):
             raise ValueError(f"Incomparable or unverified UC2 report: {scenario}")
+        report = Path(report)
+        authority_path = report / "uc2_VIS_RESULT_AUTHORITY_REGISTER.csv"
+        version = None
+        if authority_path.exists() or expected_model_version is not None:
+            _verified_source_digest(report, receipt, authority_path)
+            authority = pd.read_csv(authority_path)
+            versions = set(authority.parent_model_version)
+            if len(versions) != 1:
+                raise ValueError(f"Incompatible comparison model versions: {scenario}")
+            version = next(iter(versions))
+            if expected_model_version is not None and version != expected_model_version:
+                raise ValueError(f"Unexpected comparison model version: {scenario}: {version}")
+            for role, kind in (("CANONICAL_PHYSICAL", "UC_MILP"),
+                               ("CANONICAL_PRICES_DUALS_ONLY", "FIXED_COMMITMENT_PRICE_LP")):
+                selected = authority.loc[authority.current_role.eq(role)]
+                if (len(selected) != 1 or not selected.year.eq(year).all()
+                        or not selected.scenario.eq(scenario).all()
+                        or not selected.solved_or_unsolved.eq("SOLVED").all()
+                        or not selected.UC_status.eq("VERIFIED_UC2").all()
+                        or not selected.visualization_allowed.eq(True).all()
+                        or not selected.result_id.str.endswith("_" + kind).all()):
+                    raise ValueError(f"Incompatible comparison source authority: {scenario}: {role}")
+                protected = {name.replace('\\', '/'): digest
+                             for name, digest in receipt.get('protected_source_hashes', {}).items()}
+                if protected or expected_model_version is not None:
+                    row = selected.iloc[0]
+                    if (not {'network_path', 'network_sha256'}.issubset(selected.columns)
+                            or protected.get(str(row.network_path).replace('\\', '/')) != row.network_sha256):
+                        raise ValueError(f"Unbound comparison network authority: {scenario}: {role}")
         metadata.append(dict(scenario_id=scenario, display_name=scenario,
-                             year=year, model_generation="UC2"))
+                             year=year, model_generation="UC2", model_version=version,
+                             result_status=receipt.get("result_status", None if str(version).startswith(
+                                 'FINAL_METHODOLOGY_') else "CURRENT_ACCEPTED_RESULT")))
         hashes[scenario] = _sha(path)
-    return pd.DataFrame(metadata), hashes
+    metadata = pd.DataFrame(metadata)
+    if len(set(metadata.model_version)) != 1:
+        raise ValueError("Incompatible comparison model versions across scenarios")
+    _comparison_result_status(metadata)
+    return metadata, hashes
 
 
-def build_uc2_comparisons(year: int, case_reports: dict[str, Path], output: Path) -> dict:
+def build_uc2_comparisons(year: int, case_reports: dict[str, Path], output: Path, *,
+                          expected_model_version: str | None = None,
+                          expected_scenarios: list[str] | None = None) -> dict:
     """Compare any verified scenario list within one year and UC2 generation.
 
     ``case_reports`` maps metadata scenario names to their REPORTING directories.
@@ -435,7 +643,14 @@ def build_uc2_comparisons(year: int, case_reports: dict[str, Path], output: Path
     Negative signed interface energy is retained as signed data; gross flows
     are never promoted to a physical comparison metric.
     """
-    metadata, receipt_hashes = _validate_sources(year, case_reports)
+    metadata, receipt_hashes = _validate_sources(year, case_reports,
+                                               expected_model_version=expected_model_version)
+    result_status = _comparison_result_status(metadata)
+    missing_scenarios = [s for s in (expected_scenarios or case_reports) if s not in case_reports]
+    if expected_scenarios is not None and set(case_reports).difference(expected_scenarios):
+        raise ValueError("Unexpected scenarios in comparison collection")
+    source_receipts = {scenario: json.loads((Path(report) / "MEM_UC2_VIS_REPORTING_R1_RECEIPT.json").read_text(encoding="utf-8"))
+                       for scenario, report in case_reports.items()}
     cfg = yaml.safe_load(CONFIG.read_text(encoding="utf-8"))
     _toolkit(cfg)  # Validate the sealed external toolkit before importing it.
     from visualization_toolkit import scenario_comparison as comparison
@@ -454,8 +669,9 @@ def build_uc2_comparisons(year: int, case_reports: dict[str, Path], output: Path
 
     def read(scenario, directory, name):
         path = directory / name
+        digest = _verified_source_digest(Path(case_reports[scenario]), source_receipts[scenario], path)
         table = pd.read_parquet(path) if path.suffix == ".parquet" else pd.read_csv(path)
-        source_rows.append(dict(scenario=scenario, source=str(path.resolve()), sha256=_sha(path)))
+        source_rows.append(dict(scenario=scenario, source=str(path.resolve()), sha256=digest))
         return table
 
     def add(scenario, metric, value, unit, **dimensions):
@@ -534,8 +750,9 @@ def build_uc2_comparisons(year: int, case_reports: dict[str, Path], output: Path
         # The current UC2 report contains one national total per snapshot.
         add(scenario, "committed_capacity_hours", online.committed_MW.sum() / 1e6, "million MW h")
         economic_path = report / "economic_comparison.json"
+        economic_digest = _verified_source_digest(report, source_receipts[scenario], economic_path)
         economics = json.loads(economic_path.read_text(encoding="utf-8"))
-        source_rows.append(dict(scenario=scenario, source=str(economic_path.resolve()), sha256=_sha(economic_path)))
+        source_rows.append(dict(scenario=scenario, source=str(economic_path.resolve()), sha256=economic_digest))
         add(scenario, "uc_uplift", economics["uc_uplift_EUR"] / 1e6, "million EUR")
         add(scenario, "canonical_uc_system_objective", economics["uc_milp_objective_EUR"] / 1e9, "billion EUR")
 
@@ -551,13 +768,14 @@ def build_uc2_comparisons(year: int, case_reports: dict[str, Path], output: Path
         "net_interface_summary": pd.concat(interface_frames, ignore_index=True),
         "source_provenance": pd.DataFrame(source_rows),
     }
+    _validate_comparison_coverage(tables, order)
     for name, table in tables.items():
         table.to_csv(data_dir / f"{name}.csv", index=False, float_format="%.12g")
     prepared = comparison.prepare_scenario_metrics(tables["comparison_metrics"], metadata)
     files, figure_metadata = [], []
 
     def save(fig, name, data, limitation=""):
-        fig.text(.01, .01, f"CURRENT_ACCEPTED_RESULT | UC2 {year} | physical: UC MILP; prices: fixed-commitment LP duals",
+        fig.text(.01, .01, f"{result_status} | UC2 {year} | physical: UC MILP; prices: fixed-commitment LP duals",
                  fontsize=8, color="#555555")
         fig.subplots_adjust(bottom=max(fig.subplotpars.bottom, .14))
         paths = []
@@ -569,7 +787,7 @@ def build_uc2_comparisons(year: int, case_reports: dict[str, Path], output: Path
         plt.close(fig)
         files.extend(paths)
         figure_metadata.append(dict(figure_id=name, files=paths, underlying_data=[f"data/{d}.csv" for d in data],
-                                    status="CURRENT_ACCEPTED_RESULT", year=year, scenarios=order,
+                                    status=result_status, year=year, scenarios=order,
                                     physical_source="UC_MILP", price_source="FIXED_COMMITMENT_PRICE_LP",
                                     limitation=limitation))
 
@@ -652,12 +870,17 @@ def build_uc2_comparisons(year: int, case_reports: dict[str, Path], output: Path
 
     (output / "MEM_UC2_COMPARISON_FIGURE_METADATA.json").write_text(json.dumps(figure_metadata, indent=2), encoding="utf-8")
     manifest = []
-    for path in sorted(output.rglob("*")):
-        if path.is_file() and path.name not in {"MEM_UC2_COMPARISON_MANIFEST.csv", "MEM_UC2_COMPARISON_RECEIPT.json"}:
-            manifest.append(dict(artifact=path.relative_to(output).as_posix(), sha256=_sha(path)))
+    for path in _base_comparison_artifacts(output):
+        manifest.append(dict(artifact=path.relative_to(output).as_posix(), sha256=_sha(path)))
     manifest_path = output / "MEM_UC2_COMPARISON_MANIFEST.csv"
     pd.DataFrame(manifest).to_csv(manifest_path, index=False)
     receipt = dict(status="PASS", model_generation="UC2", year=year, scenarios=order,
+                   result_status=result_status, model_version=metadata.model_version.iloc[0],
+                   collection_status="PARTIAL" if missing_scenarios else "COMPLETE",
+                   expected_scenarios=list(expected_scenarios or order), missing_scenarios=missing_scenarios,
+                   selected_view_records=selected_comparison_view_records(
+                       year, case_reports, output, expected_scenarios=expected_scenarios,
+                       model_version=metadata.model_version.iloc[0]),
                    reporting_solver_invocations=0, physical_source="UC_MILP", price_source="FIXED_COMMITMENT_PRICE_LP",
                    source_receipt_sha256=receipt_hashes, figure_count=len(figure_metadata),
                    table_count=len(tables), manifest_sha256=_sha(manifest_path))

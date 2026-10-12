@@ -1,0 +1,10 @@
+schema_version: MEM_FINAL_METHODOLOGY_EXECUTION_V5_CANDIDATE
+extends: config/final_methodology_execution_v5.yaml
+variant: final_v5_proportional_control
+model_version: FINAL_METHODOLOGY_V5_PROPORTIONAL_CONTROL
+result_root: results/final_methodology_v5_control
+network_root: networks/unsolved/final_methodology_v5_proportional_control
+qa_root: qa/final_methodology_v5_proportional_control
+runtime_root: runtime_inputs/final_methodology_v5_proportional_control
+allocation: PROPORTIONAL_EXISTING_OCGT
+zone_shares: null
