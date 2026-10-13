@@ -35,7 +35,7 @@ def authorize_request(year: int, scenario: str, *, execute_full_year: bool) -> d
     if not (
         gate.get("status") == "READY_FOR_MANUAL_EXECUTION"
         and gate.get("execution_enabled") is True
-        and gate.get("automated_production_solver_execution") == "PROHIBITED"
+        and gate.get("codex_production_solver_execution") == "PROHIBITED"
         and gate.get("scenario_authorization", {}).get(year, {}).get(scenario) is True
         and gate.get("solver") == settings["solver"]
         and gate.get("output_version") == VERSION

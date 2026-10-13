@@ -35,7 +35,7 @@ def test_2040_B8D_source_resolves_independently_and_hashes_match() -> None:
 
 
 def test_2040_adapter_has_three_scenarios_eight_markets_and_no_2050() -> None:
-    adapter = pd.read_parquet(ROOT / "stage_a_results/price_transfer/2040/external_prices_hourly.parquet")
+    adapter = pd.read_parquet(ROOT / "stage_a_results/price_handoff/2040/external_prices_hourly.parquet")
     assert len(adapter) == 3 * 8760 * 8
     assert set(adapter["year"].astype(int)) == {2040}
     assert set(adapter["scenario"]) == {"Slow", "Base", "High"}
@@ -89,7 +89,7 @@ def test_2040_preparation_QA_and_horizon_governance() -> None:
     assert qa["runtime_readiness"]["stage_b_2040_ready_to_run"] is False
     governance = qa["governance"]
     assert governance["b10_2040_authorized"] is False
-    assert governance["b10_2040_status"] == "ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE"
+    assert governance["b10_2040_status"] == "ETX7B10_2040_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE"
     assert governance["b10_2050_authorized"] == yaml.safe_load((ROOT / "config/approval_gates.yaml").read_text(encoding="utf-8"))["stage_a_manual_gates"]["b10_2050_authorized"]
     assert governance["stage_b_2040_authorized"] is False
     assert governance["stage_b_2040_authorized_scenarios"] == []

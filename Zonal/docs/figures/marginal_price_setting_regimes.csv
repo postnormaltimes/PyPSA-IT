@@ -1,0 +1,289 @@
+year,scenario,variant,metric,value,unit,zone,category,source_authority
+2040,Slow,final_v3,zonal_regime_time_share,2.4086757990867578,% of represented zone time,NORD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,74.74885844748859,% of represented zone time,NORD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,15.148401826484017,% of represented zone time,NORD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,1.141552511415525,% of represented zone time,NORD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,5.730593607305936,% of represented zone time,NORD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,0.821917808219178,% of represented zone time,NORD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,3.093607305936073,% of represented zone time,CNORD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,72.28310502283105,% of represented zone time,CNORD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,15.079908675799086,% of represented zone time,CNORD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,1.4497716894977168,% of represented zone time,CNORD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,5.171232876712329,% of represented zone time,CNORD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,2.922374429223744,% of represented zone time,CNORD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,3.687214611872146,% of represented zone time,CSUD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,76.24429223744292,% of represented zone time,CSUD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,11.929223744292237,% of represented zone time,CSUD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,2.2488584474885847,% of represented zone time,CSUD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,3.858447488584475,% of represented zone time,CSUD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,2.031963470319635,% of represented zone time,CSUD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,4.006849315068493,% of represented zone time,SUD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,71.96347031963471,% of represented zone time,SUD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,12.420091324200913,% of represented zone time,SUD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,6.541095890410959,% of represented zone time,SUD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,3.550228310502283,% of represented zone time,SUD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,1.5182648401826484,% of represented zone time,SUD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,4.006849315068493,% of represented zone time,CALA,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,71.51826484018264,% of represented zone time,CALA,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,13.230593607305934,% of represented zone time,CALA,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,5.2853881278538815,% of represented zone time,CALA,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,3.287671232876712,% of represented zone time,CALA,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,2.671232876712329,% of represented zone time,CALA,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,9.212328767123287,% of represented zone time,SICI,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,69.80593607305936,% of represented zone time,SICI,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,8.515981735159817,% of represented zone time,SICI,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,6.027397260273973,% of represented zone time,SICI,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,4.714611872146119,% of represented zone time,SICI,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,1.7237442922374429,% of represented zone time,SICI,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,32.55707762557078,% of represented zone time,SARD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,57.65981735159818,% of represented zone time,SARD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,5.251141552511415,% of represented zone time,SARD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,1.6894977168949772,% of represented zone time,SARD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,1.3127853881278537,% of represented zone time,SARD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,zonal_regime_time_share,1.5296803652968036,% of represented zone time,SARD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,national_regime_time_share,8.424657534246576,% of Italian represented zone-hours,NATIONAL,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,national_regime_time_share,70.60339204174821,% of Italian represented zone-hours,NATIONAL,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,national_regime_time_share,11.653620352250488,% of Italian represented zone-hours,NATIONAL,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,national_regime_time_share,3.4833659491193734,% of Italian represented zone-hours,NATIONAL,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,national_regime_time_share,3.9465101108936724,% of Italian represented zone-hours,NATIONAL,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Slow,final_v3,national_regime_time_share,1.888454011741683,% of Italian represented zone-hours,NATIONAL,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,4.006849315068493,% of represented zone time,NORD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,76.9406392694064,% of represented zone time,NORD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,11.015981735159817,% of represented zone time,NORD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,0.365296803652968,% of represented zone time,NORD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,7.260273972602739,% of represented zone time,NORD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,0.410958904109589,% of represented zone time,NORD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,6.598173515981736,% of represented zone time,CNORD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,73.77853881278538,% of represented zone time,CNORD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,11.255707762557078,% of represented zone time,CNORD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,1.0616438356164384,% of represented zone time,CNORD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,5.582191780821918,% of represented zone time,CNORD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,1.7237442922374429,% of represented zone time,CNORD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,12.408675799086758,% of represented zone time,CSUD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,75.04566210045662,% of represented zone time,CSUD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,6.5867579908675795,% of represented zone time,CSUD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,2.031963470319635,% of represented zone time,CSUD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,2.5114155251141552,% of represented zone time,CSUD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,1.4155251141552512,% of represented zone time,CSUD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,12.625570776255707,% of represented zone time,SUD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,72.14611872146118,% of represented zone time,SUD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,7.191780821917808,% of represented zone time,SUD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,3.767123287671233,% of represented zone time,SUD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,2.7054794520547945,% of represented zone time,SUD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,1.5639269406392695,% of represented zone time,SUD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,12.614155251141554,% of represented zone time,CALA,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,71.80365296803653,% of represented zone time,CALA,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,7.431506849315069,% of represented zone time,CALA,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,2.8424657534246576,% of represented zone time,CALA,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,2.6255707762557075,% of represented zone time,CALA,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,2.682648401826484,% of represented zone time,CALA,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,14.908675799086756,% of represented zone time,SICI,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,70.21689497716895,% of represented zone time,SICI,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,6.187214611872146,% of represented zone time,SICI,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,3.2420091324200913,% of represented zone time,SICI,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,3.264840182648402,% of represented zone time,SICI,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,2.180365296803653,% of represented zone time,SICI,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,34.77168949771689,% of represented zone time,SARD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,58.82420091324201,% of represented zone time,SARD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,3.65296803652968,% of represented zone time,SARD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,0.730593607305936,% of represented zone time,SARD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,1.1643835616438356,% of represented zone time,SARD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,zonal_regime_time_share,0.8561643835616438,% of represented zone time,SARD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,national_regime_time_share,13.990541422048272,% of Italian represented zone-hours,NATIONAL,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,national_regime_time_share,71.25081539465101,% of Italian represented zone-hours,NATIONAL,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,national_regime_time_share,7.617416829745596,% of Italian represented zone-hours,NATIONAL,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,national_regime_time_share,2.0058708414872797,% of Italian represented zone-hours,NATIONAL,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,national_regime_time_share,3.587736464448793,% of Italian represented zone-hours,NATIONAL,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,Base,final_v3,national_regime_time_share,1.5476190476190477,% of Italian represented zone-hours,NATIONAL,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,3.961187214611872,% of represented zone time,NORD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,73.17351598173516,% of represented zone time,NORD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,14.383561643835616,% of represented zone time,NORD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,0.730593607305936,% of represented zone time,NORD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,7.066210045662101,% of represented zone time,NORD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,0.684931506849315,% of represented zone time,NORD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,6.700913242009133,% of represented zone time,CNORD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,70.12557077625571,% of represented zone time,CNORD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,14.166666666666666,% of represented zone time,CNORD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,1.2328767123287672,% of represented zone time,CNORD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,5.947488584474886,% of represented zone time,CNORD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,1.82648401826484,% of represented zone time,CNORD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,12.979452054794521,% of represented zone time,CSUD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,72.08904109589042,% of represented zone time,CSUD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,8.881278538812785,% of represented zone time,CSUD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,2.328767123287671,% of represented zone time,CSUD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,2.3972602739726026,% of represented zone time,CSUD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,1.3242009132420092,% of represented zone time,CSUD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,13.219178082191782,% of represented zone time,SUD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,68.76712328767123,% of represented zone time,SUD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,9.58904109589041,% of represented zone time,SUD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,4.280821917808219,% of represented zone time,SUD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,2.545662100456621,% of represented zone time,SUD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,1.5981735159817352,% of represented zone time,SUD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,13.196347031963471,% of represented zone time,CALA,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,68.69863013698631,% of represented zone time,CALA,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,9.623287671232877,% of represented zone time,CALA,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,3.3675799086757987,% of represented zone time,CALA,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,2.5114155251141552,% of represented zone time,CALA,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,2.6027397260273974,% of represented zone time,CALA,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,16.141552511415526,% of represented zone time,SICI,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,67.3972602739726,% of represented zone time,SICI,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,7.922374429223744,% of represented zone time,SICI,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,3.744292237442922,% of represented zone time,SICI,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,2.8310502283105023,% of represented zone time,SICI,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,1.9634703196347032,% of represented zone time,SICI,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,37.86529680365297,% of represented zone time,SARD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,53.538812785388124,% of represented zone time,SARD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,6.735159817351597,% of represented zone time,SARD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,0.6050228310502284,% of represented zone time,SARD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,0.7990867579908676,% of represented zone time,SARD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,zonal_regime_time_share,0.45662100456621,% of represented zone time,SARD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,national_regime_time_share,14.86627527723418,% of Italian represented zone-hours,NATIONAL,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,national_regime_time_share,67.68427919112851,% of Italian represented zone-hours,NATIONAL,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,national_regime_time_share,10.185909980430528,% of Italian represented zone-hours,NATIONAL,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,national_regime_time_share,2.327136333985649,% of Italian represented zone-hours,NATIONAL,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,national_regime_time_share,3.442596216568819,% of Italian represented zone-hours,NATIONAL,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2040,High,final_v3,national_regime_time_share,1.4938030006523157,% of Italian represented zone-hours,NATIONAL,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,4.10958904109589,% of represented zone time,NORD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,66.35844748858447,% of represented zone time,NORD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,21.689497716894977,% of represented zone time,NORD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,3.036529680365297,% of represented zone time,NORD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,1.7579908675799085,% of represented zone time,NORD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,3.047945205479452,% of represented zone time,NORD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,4.6118721461187215,% of represented zone time,CNORD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,62.65981735159817,% of represented zone time,CNORD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,20.593607305936075,% of represented zone time,CNORD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,3.5045662100456623,% of represented zone time,CNORD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,1.6666666666666667,% of represented zone time,CNORD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,6.963470319634703,% of represented zone time,CNORD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,5.045662100456621,% of represented zone time,CSUD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,67.30593607305936,% of represented zone time,CSUD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,17.796803652968038,% of represented zone time,CSUD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,5.251141552511415,% of represented zone time,CSUD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,0.3538812785388128,% of represented zone time,CSUD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,4.2465753424657535,% of represented zone time,CSUD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,4.200913242009133,% of represented zone time,SUD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,64.47488584474887,% of represented zone time,SUD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,12.625570776255707,% of represented zone time,SUD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,14.509132420091325,% of represented zone time,SUD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,0.2054794520547945,% of represented zone time,SUD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,3.9840182648401825,% of represented zone time,SUD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,3.6301369863013697,% of represented zone time,CALA,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,65.60502283105023,% of represented zone time,CALA,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,12.180365296803652,% of represented zone time,CALA,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,11.084474885844749,% of represented zone time,CALA,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,0.15981735159817353,% of represented zone time,CALA,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,7.340182648401826,% of represented zone time,CALA,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,8.949771689497716,% of represented zone time,SICI,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,66.26712328767124,% of represented zone time,SICI,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,9.623287671232877,% of represented zone time,SICI,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,10.422374429223744,% of represented zone time,SICI,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,0.1141552511415525,% of represented zone time,SICI,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,4.623287671232877,% of represented zone time,SICI,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,57.636986301369866,% of represented zone time,SARD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,33.938356164383556,% of represented zone time,SARD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,7.4771689497716896,% of represented zone time,SARD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,0.5593607305936072,% of represented zone time,SARD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,0.10273972602739725,% of represented zone time,SARD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,zonal_regime_time_share,0.28538812785388123,% of represented zone time,SARD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,national_regime_time_share,12.597847358121331,% of Italian represented zone-hours,NATIONAL,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,national_regime_time_share,60.94422700587084,% of Italian represented zone-hours,NATIONAL,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,national_regime_time_share,14.569471624266145,% of Italian represented zone-hours,NATIONAL,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,national_regime_time_share,6.9096542726679715,% of Italian represented zone-hours,NATIONAL,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,national_regime_time_share,0.6229615133724723,% of Italian represented zone-hours,NATIONAL,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Slow,final_v6,national_regime_time_share,4.355838225701239,% of Italian represented zone-hours,NATIONAL,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,8.276255707762557,% of represented zone time,NORD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,48.44748858447488,% of represented zone time,NORD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,37.02054794520548,% of represented zone time,NORD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,0.4452054794520548,% of represented zone time,NORD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,5.47945205479452,% of represented zone time,NORD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,0.3310502283105023,% of represented zone time,NORD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,9.80593607305936,% of represented zone time,CNORD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,40.92465753424658,% of represented zone time,CNORD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,44.098173515981735,% of represented zone time,CNORD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,0.7534246575342466,% of represented zone time,CNORD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,3.5616438356164384,% of represented zone time,CNORD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,0.8561643835616438,% of represented zone time,CNORD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,14.794520547945206,% of represented zone time,CSUD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,49.86301369863014,% of represented zone time,CSUD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,28.27625570776256,% of represented zone time,CSUD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,4.931506849315069,% of represented zone time,CSUD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,0.2054794520547945,% of represented zone time,CSUD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,1.9292237442922375,% of represented zone time,CSUD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,13.938356164383562,% of represented zone time,SUD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,49.98858447488585,% of represented zone time,SUD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,23.162100456621005,% of represented zone time,SUD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,10.376712328767123,% of represented zone time,SUD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,0.136986301369863,% of represented zone time,SUD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,2.3972602739726026,% of represented zone time,SUD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,13.515981735159817,% of represented zone time,CALA,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,49.71461187214612,% of represented zone time,CALA,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,24.49771689497717,% of represented zone time,CALA,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,7.168949771689498,% of represented zone time,CALA,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,0.136986301369863,% of represented zone time,CALA,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,4.965753424657534,% of represented zone time,CALA,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,17.945205479452056,% of represented zone time,SICI,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,50.353881278538815,% of represented zone time,SICI,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,19.988584474885844,% of represented zone time,SICI,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,7.968036529680365,% of represented zone time,SICI,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,0.12557077625570776,% of represented zone time,SICI,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,3.6187214611872145,% of represented zone time,SICI,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,58.72146118721461,% of represented zone time,SARD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,27.71689497716895,% of represented zone time,SARD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,12.511415525114156,% of represented zone time,SARD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,0.684931506849315,% of represented zone time,SARD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,0.05707762557077625,% of represented zone time,SARD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,zonal_regime_time_share,0.3082191780821918,% of represented zone time,SARD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,national_regime_time_share,19.571102413568166,% of Italian represented zone-hours,NATIONAL,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,national_regime_time_share,45.287018917155905,% of Italian represented zone-hours,NATIONAL,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,national_regime_time_share,27.07925636007828,% of Italian represented zone-hours,NATIONAL,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,national_regime_time_share,4.61839530332681,% of Italian represented zone-hours,NATIONAL,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,national_regime_time_share,1.386170906718852,% of Italian represented zone-hours,NATIONAL,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,Base,final_v6,national_regime_time_share,2.0580560991519894,% of Italian represented zone-hours,NATIONAL,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,7.8881278538812785,% of represented zone time,NORD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,51.79223744292237,% of represented zone time,NORD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,29.771689497716896,% of represented zone time,NORD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,1.4383561643835616,% of represented zone time,NORD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,6.529680365296804,% of represented zone time,NORD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,2.5799086757990866,% of represented zone time,NORD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,9.531963470319635,% of represented zone time,CNORD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,43.44748858447488,% of represented zone time,CNORD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,38.3675799086758,% of represented zone time,CNORD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,2.682648401826484,% of represented zone time,CNORD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,4.06392694063927,% of represented zone time,CNORD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,1.906392694063927,% of represented zone time,CNORD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,14.452054794520548,% of represented zone time,CSUD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,35.513698630136986,% of represented zone time,CSUD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,49.589041095890416,% of represented zone time,CSUD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,0.05707762557077625,% of represented zone time,CSUD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,0.31963470319634707,% of represented zone time,CSUD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,0.0684931506849315,% of represented zone time,CSUD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,13.173515981735159,% of represented zone time,SUD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,38.6986301369863,% of represented zone time,SUD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,47.671232876712324,% of represented zone time,SUD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,0.05707762557077625,% of represented zone time,SUD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,0.2397260273972603,% of represented zone time,SUD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,0.15981735159817353,% of represented zone time,SUD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,12.773972602739725,% of represented zone time,CALA,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,38.2648401826484,% of represented zone time,CALA,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,48.481735159817354,% of represented zone time,CALA,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,0.05707762557077625,% of represented zone time,CALA,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,0.2397260273972603,% of represented zone time,CALA,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,0.182648401826484,% of represented zone time,CALA,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,18.002283105022833,% of represented zone time,SICI,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,37.294520547945204,% of represented zone time,SICI,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,44.22374429223744,% of represented zone time,SICI,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,0.045662100456621,% of represented zone time,SICI,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,0.28538812785388123,% of represented zone time,SICI,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,0.14840182648401826,% of represented zone time,SICI,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,61.050228310502284,% of represented zone time,SARD,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,20.867579908675797,% of represented zone time,SARD,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,17.910958904109588,% of represented zone time,SARD,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,0.0228310502283105,% of represented zone time,SARD,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,0.14840182648401826,% of represented zone time,SARD,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,zonal_regime_time_share,0.0,% of represented zone time,SARD,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,national_regime_time_share,19.553163731245924,% of Italian represented zone-hours,NATIONAL,VRE,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,national_regime_time_share,37.98271363339856,% of Italian represented zone-hours,NATIONAL,Storage,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,national_regime_time_share,39.430854533594264,% of Italian represented zone-hours,NATIONAL,Thermal,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,national_regime_time_share,0.6229615133724723,% of Italian represented zone-hours,NATIONAL,Flexible demand,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,national_regime_time_share,1.6894977168949772,% of Italian represented zone-hours,NATIONAL,External market,FIXED_COMMITMENT_PRICE_LP_DUALS
+2050,High,final_v6,national_regime_time_share,0.720808871493803,% of Italian represented zone-hours,NATIONAL,Market coupling / mixed,FIXED_COMMITMENT_PRICE_LP_DUALS

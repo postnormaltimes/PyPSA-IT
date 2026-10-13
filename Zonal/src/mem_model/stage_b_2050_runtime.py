@@ -31,7 +31,7 @@ B10_RECEIPT = ROOT / "qa/stage_a/etx7b10_2050/MEM_ETX7B10_2050_Run_Receipt_v1.0.
 QA_DIR = ROOT / "qa/stage_b/runtime_2050"
 NETWORK_DIR = ROOT / "networks/unsolved/accepted_2050"
 PREP_DIR = ROOT / "qa/stage_b/pre_2050"
-STAGING_DIR = ROOT / "scratch/stage_b_2050_runtime_rebuilds"
+STAGING_DIR = ROOT / "_local/scratch/stage_b_2050_runtime_rebuilds"
 
 
 def verify_b9h_immutable() -> dict[str, Any]:
@@ -75,7 +75,7 @@ def verify_b10_2050() -> dict[str, Any]:
     receipt = json.loads(B10_RECEIPT.read_text(encoding="utf-8"))
     if not (
         receipt.get("status") == "PASS"
-        and receipt.get("gate") == "ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_TRANSFER_COMPLETE"
+        and receipt.get("gate") == "ETX7B10_2050_STAGE_A_TO_STAGE_B_PRICE_HANDOFF_COMPLETE"
         and receipt.get("qa", {}).get("accepted_source_phase") == "ETX-7B9H"
         and receipt.get("qa", {}).get("dispatch_rerun") is False
         and receipt.get("qa", {}).get("rows") == 70080
@@ -95,7 +95,7 @@ def verify_b10_2050() -> dict[str, Any]:
         if not member.is_file() or sha256_file(member).lower() != str(row.sha256).lower():
             raise RuntimeError(f"B10_2050_MEMBER_HASH_MISMATCH: {row.relative_path}")
     adapter = ROOT / outputs["stage_b_runtime_prices"]
-    if adapter != ROOT / "stage_a_results/price_transfer/2050/external_prices_hourly.parquet":
+    if adapter != ROOT / "stage_a_results/price_handoff/2050/external_prices_hourly.parquet":
         raise RuntimeError("B10_2050_ADAPTER_POINTER_INVALID")
     prices = pd.read_parquet(adapter)
     if (

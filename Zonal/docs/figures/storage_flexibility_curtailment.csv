@@ -1,0 +1,55 @@
+year,scenario,variant,metric,value,unit,category,source_authority,status
+2040,Slow,final_v3,gross_storage_activity,31.78065148097,TWh,BESS charge,UC_MILP,
+2040,Slow,final_v3,gross_storage_activity,28.60258633288,TWh,BESS discharge,UC_MILP,
+2040,Slow,final_v3,gross_storage_activity,5.160604845191,TWh,PHS charge,UC_MILP,
+2040,Slow,final_v3,gross_storage_activity,12.459001481217,TWh,PHS discharge,UC_MILP,
+2040,Slow,final_v3,accepted_equivalent_full_cycles,,cycles/year,BESS,UC_MILP,UNAVAILABLE_IN_CANONICAL_SOURCE
+2040,Slow,final_v3,accepted_equivalent_full_cycles,,cycles/year,PHS,UC_MILP,UNAVAILABLE_IN_CANONICAL_SOURCE
+2040,Slow,final_v3,flexible_demand_and_curtailment,27.5,TWh,P2X electrical use,UC_MILP,
+2040,Slow,final_v3,flexible_demand_and_curtailment,5.897858626814831,TWh,VRE curtailment,UC_MILP,
+2040,Slow,final_v3,VRE_curtailment_share,2.4883117324282034,% of available VRE,VRE curtailment,UC_MILP,
+2040,Base,final_v3,gross_storage_activity,44.28133915777,TWh,BESS charge,UC_MILP,
+2040,Base,final_v3,gross_storage_activity,39.85320524198001,TWh,BESS discharge,UC_MILP,
+2040,Base,final_v3,gross_storage_activity,7.423657711037999,TWh,PHS charge,UC_MILP,
+2040,Base,final_v3,gross_storage_activity,14.064344523385,TWh,PHS discharge,UC_MILP,
+2040,Base,final_v3,accepted_equivalent_full_cycles,,cycles/year,BESS,UC_MILP,UNAVAILABLE_IN_CANONICAL_SOURCE
+2040,Base,final_v3,accepted_equivalent_full_cycles,,cycles/year,PHS,UC_MILP,UNAVAILABLE_IN_CANONICAL_SOURCE
+2040,Base,final_v3,flexible_demand_and_curtailment,27.5,TWh,P2X electrical use,UC_MILP,
+2040,Base,final_v3,flexible_demand_and_curtailment,12.390044915270742,TWh,VRE curtailment,UC_MILP,
+2040,Base,final_v3,VRE_curtailment_share,4.2422492581152,% of available VRE,VRE curtailment,UC_MILP,
+2040,High,final_v3,gross_storage_activity,48.40538535335,TWh,BESS charge,UC_MILP,
+2040,High,final_v3,gross_storage_activity,43.56484681798,TWh,BESS discharge,UC_MILP,
+2040,High,final_v3,gross_storage_activity,7.491238698433,TWh,PHS charge,UC_MILP,
+2040,High,final_v3,gross_storage_activity,14.093772790754,TWh,PHS discharge,UC_MILP,
+2040,High,final_v3,accepted_equivalent_full_cycles,,cycles/year,BESS,UC_MILP,UNAVAILABLE_IN_CANONICAL_SOURCE
+2040,High,final_v3,accepted_equivalent_full_cycles,,cycles/year,PHS,UC_MILP,UNAVAILABLE_IN_CANONICAL_SOURCE
+2040,High,final_v3,flexible_demand_and_curtailment,30.250000000020002,TWh,P2X electrical use,UC_MILP,
+2040,High,final_v3,flexible_demand_and_curtailment,14.898592139794607,TWh,VRE curtailment,UC_MILP,
+2040,High,final_v3,VRE_curtailment_share,4.665867216247397,% of available VRE,VRE curtailment,UC_MILP,
+2050,Slow,final_v6,gross_storage_activity,53.406039046349996,TWh,BESS charge,UC_MILP,
+2050,Slow,final_v6,gross_storage_activity,48.06543514167,TWh,BESS discharge,UC_MILP,
+2050,Slow,final_v6,gross_storage_activity,8.635017437998,TWh,PHS charge,UC_MILP,
+2050,Slow,final_v6,gross_storage_activity,14.984057645384999,TWh,PHS discharge,UC_MILP,
+2050,Slow,final_v6,accepted_equivalent_full_cycles,,cycles/year,BESS,UC_MILP,UNAVAILABLE_IN_CANONICAL_SOURCE
+2050,Slow,final_v6,accepted_equivalent_full_cycles,,cycles/year,PHS,UC_MILP,UNAVAILABLE_IN_CANONICAL_SOURCE
+2050,Slow,final_v6,flexible_demand_and_curtailment,81.49999999996999,TWh,P2X electrical use,UC_MILP,
+2050,Slow,final_v6,flexible_demand_and_curtailment,9.591780433820984,TWh,VRE curtailment,UC_MILP,
+2050,Slow,final_v6,VRE_curtailment_share,2.847531857724988,% of available VRE,VRE curtailment,UC_MILP,
+2050,Base,final_v6,gross_storage_activity,72.18496908995,TWh,BESS charge,UC_MILP,
+2050,Base,final_v6,gross_storage_activity,64.96647218106,TWh,BESS discharge,UC_MILP,
+2050,Base,final_v6,gross_storage_activity,11.693611753724998,TWh,PHS charge,UC_MILP,
+2050,Base,final_v6,gross_storage_activity,17.154604962123,TWh,PHS discharge,UC_MILP,
+2050,Base,final_v6,accepted_equivalent_full_cycles,,cycles/year,BESS,UC_MILP,UNAVAILABLE_IN_CANONICAL_SOURCE
+2050,Base,final_v6,accepted_equivalent_full_cycles,,cycles/year,PHS,UC_MILP,UNAVAILABLE_IN_CANONICAL_SOURCE
+2050,Base,final_v6,flexible_demand_and_curtailment,81.49999999996999,TWh,P2X electrical use,UC_MILP,
+2050,Base,final_v6,flexible_demand_and_curtailment,19.529467735565753,TWh,VRE curtailment,UC_MILP,
+2050,Base,final_v6,VRE_curtailment_share,4.700055434737272,% of available VRE,VRE curtailment,UC_MILP,
+2050,High,final_v6,gross_storage_activity,78.20610112156001,TWh,BESS charge,UC_MILP,
+2050,High,final_v6,gross_storage_activity,70.38549100952001,TWh,BESS discharge,UC_MILP,
+2050,High,final_v6,gross_storage_activity,11.552952670314,TWh,PHS charge,UC_MILP,
+2050,High,final_v6,gross_storage_activity,17.043163706022,TWh,PHS discharge,UC_MILP,
+2050,High,final_v6,accepted_equivalent_full_cycles,,cycles/year,BESS,UC_MILP,UNAVAILABLE_IN_CANONICAL_SOURCE
+2050,High,final_v6,accepted_equivalent_full_cycles,,cycles/year,PHS,UC_MILP,UNAVAILABLE_IN_CANONICAL_SOURCE
+2050,High,final_v6,flexible_demand_and_curtailment,89.65000000005,TWh,P2X electrical use,UC_MILP,
+2050,High,final_v6,flexible_demand_and_curtailment,22.79843645520966,TWh,VRE curtailment,UC_MILP,
+2050,High,final_v6,VRE_curtailment_share,5.015141349861526,% of available VRE,VRE curtailment,UC_MILP,

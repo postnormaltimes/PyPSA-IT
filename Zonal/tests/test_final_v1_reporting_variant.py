@@ -35,6 +35,12 @@ def prohibit_model_and_solver_calls():
 
 @pytest.fixture
 def report_cases(tmp_path, monkeypatch):
+    from mem_model.reporting import inspection
+    from mem_model.reporting import dispatch_figures, output_registry
+    # This fixture checks routing/lineage, not rendered-report coverage.
+    monkeypatch.setattr(inspection, 'build_inspection', lambda *_: {'status': 'COMPLETE'})
+    monkeypatch.setattr(dispatch_figures, 'produce_dispatch_figures', lambda *_: {'status': 'WAITING_FOR_CASE_BOUND_DISPATCH_SOURCES'})
+    monkeypatch.setattr(output_registry, 'build_output_register', lambda *a, **k: {'status': 'CORE_REPORTING_PASS'})
     if os.name == "nt":
         tmp_path = Path("\\\\?\\" + str(tmp_path))
     monkeypatch.setattr(uc2, "ROOT", tmp_path)

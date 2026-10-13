@@ -119,7 +119,7 @@ def test_hydro_hourly_rows_are_complete_and_nonnegative() -> None:
 
 
 def test_external_price_file_is_b10_byte_identical() -> None:
-    source = ROOT / "stage_a_results" / "price_transfer" / "2040" / "external_prices_hourly.parquet"
+    source = ROOT / "stage_a_results" / "price_handoff" / "2040" / "external_prices_hourly.parquet"
     accepted = ACCEPTED_RUNTIME / "external_prices_hourly.parquet"
     assert sha256_file(accepted) == sha256_file(source)
 

@@ -1,36 +1,35 @@
-# Italian seven-zone electricity model
+# Italian seven-zone electricity-market model
 
-The Zonal model represents NORD, CNOR, CSUD, SUD, CALA, SICI and SARD with
-8,760 hourly snapshots. Slow, Base and High cases are defined for 2040 and
-2050. Capacities and annual demand are fixed scenario inputs; the model does
-not optimise investment.
+The model represents NORD, CNOR, CSUD, SUD, CALA, SICI and SARD for 8,760 hourly UTC snapshots using the saved 2019 chronology. Six completed, verified cases are the final research baselines:
 
-The current configuration is **final_v4**. The 2040 configuration is unchanged
-from final_v3, and the original solved 2040 Base result remains the reference
-result with its original execution provenance. The 2050 configuration adopts
-Terna's later solar, wind and nuclear capacity assumptions. Its Base case has
-been solved and validated; Slow and High inputs are defined and manually
-executable. The earlier 2050 Base configuration is retained as the PNIEC-capacity
-benchmark.
+| Horizon | Scenarios | Final version |
+|---|---|---|
+| 2040 | Slow, Base, High | `final_v3` |
+| 2050 | Slow, Base, High | `final_v6` |
 
-Physical dispatch comes from a full-year unit-commitment MILP. Prices and water
-values come from a separate fixed-commitment LP. A continuous reference LP
-provides a comparison without unit commitment. Runs are explicit, single-case
-commands: completing or reporting one case never launches another.
+Capacities, annual demand and directional interface limits are scenario inputs. There is no capacity or network expansion. A continuous reference LP is followed by physical thermal unit commitment and a fixed-commitment pricing LP. Physical generation, storage, P2X demand and adequacy statistics use the UC result. Prices use verified pricing-LP balance duals.
 
-## Documentation
+## Accepted numerical results
 
-- [Methodology](docs/METHODOLOGY.md) and [model architecture](docs/MODEL_ARCHITECTURE.md)
-- [Scenario definitions](docs/SCENARIO_GOVERNANCE.md)
-- [Capacity revision](docs/releases/FINAL_V4.md) and [validation and limitations](docs/releases/VALIDATION.md)
-- [Reproduction and manual execution](docs/releases/REPRODUCIBILITY.md)
-- [Source provenance](docs/releases/SOURCES.md)
+| Year | Scenario | Version | Purchasing price (EUR/MWh) | Rigid load (TWh) | P2X (TWh) | Physical ENS (MWh) |
+|---|---|---|---:|---:|---:|---:|
+| 2040 | Slow | final_v3 | 92.639185 | 411.500000 | 27.500000 | 0 |
+| 2040 | Base | final_v3 | 83.896313 | 411.500000 | 27.500000 | 0 |
+| 2040 | High | final_v3 | 85.690691 | 452.650000 | 30.250000 | 0 |
+| 2050 | Slow | final_v6 | 74.093807 | 501.600000 | 81.500000 | 0 |
+| 2050 | Base | final_v6 | 58.414647 | 501.600000 | 81.500000 | 0 |
+| 2050 | High | final_v6 | 69.322920 | 551.760000 | 89.650000 | 0 |
 
-Prepared inputs are distributed separately in the
-[zonal-production-data-v2 release](https://github.com/postnormaltimes/PyPSA-IT/releases/tag/zonal-production-data-v2).
-The original `zonal-production-data-v1` release remains available for the
-earlier configuration. Solved network binaries and private local evidence are
-not stored in Git.
+Purchasing prices weight each zonal price by rigid plus P2X electricity demand and represented duration. They differ from the time mean of the hourly modeled national index. Rounded values above come from the release's `FINAL_CASE_SUMMARY.csv`; the full-precision file is authoritative.
 
-Software is [MIT-licensed](../LICENSE). Third-party source terms are described
-in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
+## Start here
+
+Enter `Zonal/` before running model commands. Read the [three-route reproducibility guide](docs/REPRODUCIBILITY_GUIDE.md), [data dictionary guide](docs/DATA_DICTIONARY.md), [results](docs/RESULTS.md), [figures](docs/FIGURES.md) and [single-case runbook](docs/RUNBOOK_2040_2050.md).
+
+The `zonal-production-data-v3` release contains prepared inputs; `zonal-final-results-v1` contains full hourly numerical data and compact verification evidence. Downloads are verified by repository-owned manifests. No solver is needed to read results. Figure reproduction does not open solved networks or invoke optimization. Independent simulation requires the pinned environment and a valid local Gurobi licence.
+
+## Interpretation and limitations
+
+This is a modeled, zonally aggregated market, not observed GME prices or an AC power-flow reconstruction. The single weather realization and deterministic dispatch do not establish probabilistic adequacy, even where physical shedding is zero. Within-zone transmission constraints are absent. Commercial-interface saturation is not observed physical line overload. External markets use accepted synthetic boundary representations.
+
+In 2050 `final_v6`, only exceptional synthetic external supply marginal costs of EUR 15,000/MWh are replaced by EUR 400/MWh. Italian load-shedding VOLL remains EUR 15,000/MWh; EUR 400 is not an Italian wholesale price cap. Read the [methodology](docs/METHODOLOGY.md), [scenario governance](docs/SCENARIO_GOVERNANCE.md), [sources](docs/DATA_PROVENANCE.md), [architecture](docs/MODEL_ARCHITECTURE.md) and [version history](docs/FINAL_VERSION_EVOLUTION.md).

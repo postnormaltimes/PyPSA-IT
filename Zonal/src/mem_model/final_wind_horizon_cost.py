@@ -101,7 +101,7 @@ def patch_2040_offshore():
     old_qa = pd.read_csv(QA / "FINAL_WIND_PROFILE_QA.csv")
     final_qa = old_qa.copy()
     # Read only already-converted native cells; never call the weather converter.
-    cache = ROOT / ".pytest_tmp/final_native_cell_conversion/WIND_OFFSHORE_PROFILES.npz"
+    cache = ROOT / "_local/test_work/final_native_cell_conversion/WIND_OFFSHORE_PROFILES.npz"
     cache_receipt = json.loads(cache.with_suffix(".json").read_text())
     if sha256_file(cache) != cache_receipt["sha256"]:
         raise RuntimeError("HORIZON_COST_NATIVE_CELL_CACHE_HASH_FAIL")
@@ -220,9 +220,9 @@ def close_phase_w():
         "optimization_model_constructed":False,"production_optimization_executed":False,"production_solver_invocations":0,"production_results_modified":0}
     final_path = QA / "HORIZON_SPECIFIC_FINAL_WIND_VERIFICATION.json"
     dump_json(final_path,final)
-    transfer = ROOT / "docs/final_methodology_closure/MEM_FINAL_METHODOLOGY_PHASE_W_HORIZON_COST_TRANSFER.md"
+    handoff = ROOT / "docs/final_methodology_closure/MEM_FINAL_METHODOLOGY_PHASE_W_HORIZON_COST_HANDOFF.md"
     paths = [SOURCE / name for name in ("costs_2040.csv","config.yaml","compile_cost_assumptions.py","tag_ref.json")]
-    paths += [SPEC,transfer,ROOT / "docs/final_methodology_closure/PHASE_W_HORIZON_COST_RESOLUTION.md",
+    paths += [SPEC,handoff,ROOT / "docs/final_methodology_closure/PHASE_W_HORIZON_COST_RESOLUTION.md",
         ROOT / "src/mem_model/final_wind_horizon_cost.py",ROOT / "src/mem_model/final_wind_cells.py",
         ROOT / "tests/test_final_wind_horizon_cost.py",final_path,
         QA / "HORIZON_SPECIFIC_WIND_SITING_RECEIPT.json",QA / "WIND_SUCCESSOR_STRUCTURAL_QA.json",
@@ -243,7 +243,7 @@ def close_phase_w():
             "RESOURCE_CLASSES_AND_COST_STRESS_RETAINED_AS_DIAGNOSTICS_NOT_GATES","WIND_ONLY_SCOPE_EXACT_AFTER_EXPORT_RELOAD"],
         tests=final["affected_non_solving_tests"],unresolved=[])
     state["phases"]["W"].update({"phase_result":"WIND_RESOURCE_SITING_PASS","successor_parents":successors,
-        "current_transfer":str(transfer.relative_to(ROOT)),"manifest":str(manifest.relative_to(ROOT))})
+        "current_handoff":str(handoff.relative_to(ROOT)),"manifest":str(manifest.relative_to(ROOT))})
     state["wind_horizon_cost_resolution"] = {"path":"docs/final_methodology_closure/PHASE_W_HORIZON_COST_RESOLUTION.md",
         "accepted_by":"EXPLICIT_USER_PROJECT_DECISION","source_2040_sha256":COST_2040_SHA}
     dump_json(STATE,state)

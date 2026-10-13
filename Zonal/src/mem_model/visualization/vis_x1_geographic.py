@@ -30,7 +30,12 @@ from mem_model.visualization.vis_x1 import (  # noqa: E402
 
 
 PARENT_BUS_TABLE = "provenance/recovered_original/candidate_35_50_geo_repaired_bus_table.csv"
-PARENT_NUTS2 = ROOT / "optional/geography/NUTS_RG_01M_2021_4326_LEVL_2.geojson"
+PARENT_NUTS2 = Path(
+    ROOT.parents[2] / "PyPSA/pypsa-eur/"
+    /
+    "data/eu_nuts2021/archive/2021-01-01/ref-nuts-2021-01m.geojson/"
+    "NUTS_RG_01M_2021_4326_LEVL_2.geojson"
+)
 EXTERNAL_COUNTRIES = {
     "FR": "France", "CH": "Switzerland", "AT": "Austria",
     "SI": "Slovenia", "ME": "Montenegro", "GR": "Greece",
@@ -57,8 +62,8 @@ def _medoid(group: pd.DataFrame) -> pd.Series:
     return ordered.iloc[int(np.argmin(km.sum(axis=1)))]
 
 
-def _zone_points(transfer: Path, aliases: dict[str, str], qa: list[dict]) -> pd.DataFrame:
-    path = transfer / PARENT_BUS_TABLE
+def _zone_points(handoff: Path, aliases: dict[str, str], qa: list[dict]) -> pd.DataFrame:
+    path = handoff / PARENT_BUS_TABLE
     buses = pd.read_csv(path)
     _check(len(buses) == 42 and buses.bus_id.is_unique, "sealed_42_bus_source", qa)
     _check(set(buses.gme_zone) == set(ZONE_ORDER), "seven_parent_zones", qa)
@@ -279,8 +284,8 @@ def build_geographic_maps() -> Path:
                       folder / "data/system_stress.csv",
                       network_path]
     original_hashes = {str(p): _sha(p) for p in original_files}
-    transfer = ROOT / Path(cfg["external_reference"])
-    zones = _zone_points(transfer, cfg["display_market_aliases"], qa)
+    handoff = (ROOT / Path(cfg["external_reference"]))
+    zones = _zone_points(handoff, cfg["display_market_aliases"], qa)
     geo_path = network_maps.bundled_geography_path()
     _check(geo_path.is_file(), "packaged_geography_resolves", qa)
     external = _external_points(geo_path, qa)

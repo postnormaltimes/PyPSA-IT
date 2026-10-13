@@ -25,7 +25,7 @@ def test_all_completed_2040_scenarios_refused_before_network_construction(
 
 @pytest.mark.parametrize("scenario", SCENARIOS)
 def test_2050_remains_separately_locked(scenario: str) -> None:
-    with pytest.raises(SystemExit, match="STAGE_B_2050_PRODUCTION_SOLVE_REFUSED: pending validation of historical inputs"):
+    with pytest.raises(SystemExit, match="STAGE_B_2050_PRODUCTION_SOLVE_REFUSED: pending Sol/user review"):
         solve_scenario.main(["--year", "2050", "--scenario", scenario, "--execute-full-year"])
 
 

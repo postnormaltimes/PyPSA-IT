@@ -25,6 +25,12 @@ EXPECTED_COUNTS = {(2040,"Slow"):130,(2040,"Base"):108,(2040,"High"):108,
 
 
 def settings(variant='final_v1'):
+    if variant == 'final_v6':
+        from .final_external_price_candidate import settings as external_settings
+        return external_settings()
+    if variant in ('final_v5','final_v5_proportional_control'):
+        from .final_adequacy_candidate import settings as candidate_settings
+        return candidate_settings(variant)
     if variant not in ('final_v1','final_v2','final_v3','final_v4'):
         raise ValueError('FINAL_UNKNOWN_VARIANT')
     path=CONFIG if variant=='final_v1' else ROOT/f'config/final_methodology_execution_{variant[-2:]}.yaml'
@@ -52,6 +58,12 @@ def settings(variant='final_v1'):
 
 
 def package(year,scenario,variant='final_v1'):
+    if variant == 'final_v6':
+        from .final_external_price_candidate import package as external_package
+        return external_package(year, scenario)
+    if variant in ('final_v5','final_v5_proportional_control'):
+        from .final_adequacy_candidate import package as candidate_package
+        return candidate_package(year,scenario,variant)
     if (year,scenario) not in SCENARIOS:
         raise ValueError('FINAL_UNKNOWN_SCENARIO')
     if variant=='final_v4':
@@ -87,6 +99,13 @@ def water_mapping(year,scenario,variant='final_v1'):
 
 
 def manual_gate(year,scenario,variant='final_v1'):
+    if variant == 'final_v6':
+        package(year, scenario, variant)
+        return f'{variant.upper()}_MANUAL_EXECUTION_{year}_{scenario.upper()}'
+    if variant in ('final_v5','final_v5_proportional_control'):
+        from .final_adequacy_candidate import package as candidate_package
+        candidate_package(year,scenario,variant)
+        return f'{variant.upper()}_MANUAL_EXECUTION_{year}_{scenario.upper()}'
     if (year,scenario) not in SCENARIOS:
         raise ValueError('FINAL_UNKNOWN_SCENARIO')
     state=json.loads(STATE.read_text())
@@ -457,6 +476,12 @@ def verify_frozen_contract():
 
 
 def preflight(year,scenario,*,persist=True,variant='final_v1'):
+    if variant == 'final_v6':
+        from .final_external_price_candidate import preflight as external_preflight
+        return external_preflight(year, scenario, persist=persist)
+    if variant in ('final_v5','final_v5_proportional_control'):
+        from .final_adequacy_candidate import preflight as candidate_preflight
+        return candidate_preflight(year,scenario,variant,persist=persist)
     frozen=verify_frozen_contract() if variant=='final_v1' else None
     item=package(year,scenario) if variant=='final_v1' else package(year,scenario,variant)
     with no_models_or_solves():
@@ -528,13 +553,13 @@ def close_final(tests):
         raise RuntimeError('FINAL_CLOSURE_GATE_FAIL')
     if state.get('semantic_parity',{}).get('status')!='PASS':
         raise RuntimeError('FINAL_NATIVE_SEMANTIC_PARITY_NOT_PASS')
-    transfer=ROOT/'docs/final_methodology_closure/MEM_FINAL_CANONICAL_NETWORKS_TRANSFER.md'
-    if not transfer.is_file():
-        raise RuntimeError('FINAL_TRANSFER_MISSING')
+    handoff=ROOT/'docs/final_methodology_closure/MEM_FINAL_CANONICAL_NETWORKS_TRANSFER.md'
+    if not handoff.is_file():
+        raise RuntimeError('FINAL_HANDOFF_MISSING')
     protected=protected_artifact_verification(state)
     artifacts=[CONFIG,Path(__file__),ROOT/'src/mem_model/stage_b_uc2.py',
         ROOT/'src/mem_model/reporting/uc2_postprocess.py',ROOT/'tests/test_final_methodology_networks.py',
-        transfer,RECEIPT,QA/'EXACT_PRESERVATION_MATRIX.csv',QA/'FINAL_NETWORK_LINEAGE_AND_HASHES.csv',
+        handoff,RECEIPT,QA/'EXACT_PRESERVATION_MATRIX.csv',QA/'FINAL_NETWORK_LINEAGE_AND_HASHES.csv',
         QA/'APPROVED_MODEL_OBJECT_CHANGE_INVENTORY.csv',
         QA/'FINAL_MANUAL_JOB_REGISTRY.csv',
         ROOT/'docs/final_methodology_closure/MEM_FINAL_CANONICAL_NETWORKS_POWERSHELL_RUNBOOK.md',
@@ -576,6 +601,6 @@ def close_final(tests):
     state['phases']['F'].update({'phase_result':'FINAL_CANONICAL_NETWORKS_PREPARED',
         'successor_parents':[{k:p[k] for k in ('year','scenario','path','sha256')} for p in receipt['packages']],
         'manifest':str(manifest.relative_to(ROOT)),'receipt':str(final.relative_to(ROOT)),
-        'current_transfer':str(transfer.relative_to(ROOT))})
+        'current_handoff':str(handoff.relative_to(ROOT))})
     state['optimization_model_constructed']=False; dump_json(STATE,state)
     return verification

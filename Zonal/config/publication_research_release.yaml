@@ -1,0 +1,189 @@
+schema: MEM_FINAL_PUBLICATION_V1
+owner: results/publication/research_release
+status: ACCEPTED_NUMERICAL_BASELINES_PUBLICATION_APPROVAL_PENDING
+scenarios:
+- Slow
+- Base
+- High
+weather_year: 2019
+baselines:
+  2040:
+    variant: final_v3
+    result_root: data/research_results/reports/v3
+  2050:
+    variant: final_v6
+    result_root: data/research_results/reports/v6
+historical_versions:
+  2040:
+  - variant: final_v1
+    result_root: data/research_results/reports/v1
+    status: EXECUTED_HISTORICAL
+  - variant: final_v2
+    status: PREPARED_NOT_EXECUTED
+    note: P2X spatial-relocation methodology milestone; no numerical results exist.
+  - variant: final_v3
+    result_root: data/research_results/reports/v3
+    status: PUBLICATION_BASELINE
+  2050:
+  - variant: final_v4
+    result_root: data/research_results/reports/v4
+    status: EXECUTED_HISTORICAL
+  - variant: final_v5
+    result_root: data/research_results/reports/v5
+    status: EXECUTED_HISTORICAL
+  - variant: final_v6
+    result_root: data/research_results/reports/v6
+    status: PUBLICATION_BASELINE
+evidence_overrides:
+  2040_Base:
+    regime_report: data/research_results/evidence/2040_Base/REPORTING
+    reason: Accepted same-fixed-LP supplemental root recovery; original reporting
+      and inspection remain unchanged.
+render:
+  dpi: 240
+  font_preference:
+  - Aptos
+  - DejaVu Sans
+  formats:
+  - png
+  - svg
+presentation:
+  monthly_layout: scenario_panels
+  network_layout: geographic
+  editorial_selection: USER_APPROVED_20261011_D1_D2_D3
+atlas:
+  enabled: false
+  zones:
+  - NORD
+  - CNORD
+  - CSUD
+  - SUD
+  - CALA
+  - SICI
+  - SARD
+  views:
+  - monthly
+  - duration
+  - comparison_heatmap
+  heatmaps: COMMON_FULL_RANGE_PER_ZONE_AND_HORIZON_WITH_ORIGINAL_VIEWS_PRESERVED
+  geography: MEM_STAGE_B_GEOGRAPHIC_CONTEXT_AND_DETAILED_ATLAS
+  geographic_views:
+  - price
+  - flow
+  - utilization
+authority:
+  physical: VERIFIED_UC_MILP
+  prices: VERIFIED_FIXED_COMMITMENT_LP_BALANCE_DUALS
+  price_weight: UC rigid electrical load plus UC P2X withdrawal, weighted by physical
+    represented duration
+  physical_duration: Exported UC generator snapshot weights; never LP objective weights
+  marginal_regime: LEXICOGRAPHIC_REGIME_V1 with complete validated same-LP KKT roots
+  price_scarcity_hours: Unique Italian timestamps with any Italian zone at 15000 EUR/MWh
+  peak_week: Highest rolling 168-hour cumulative positive (UC rigid load minus dispatched
+    Wind/Solar), chosen from High within each horizon
+figures:
+- id: '1'
+  name: evolution_2040
+  purpose: Available v1-to-v3 national price evolution; v2 is an unexecuted methodology
+    milestone
+  years:
+  - 2040
+  producer: mem_model.visualization.publication_figures.render
+  qa: Same definition of national demand-weighted LP price; changed demand weights
+    retained; no isolated causal claim
+- id: '2'
+  name: evolution_2050
+  purpose: Price, physical UC unserved energy and Italian scarcity-price hours across
+    v4/v5/v6
+  years:
+  - 2050
+  producer: mem_model.visualization.publication_figures.render
+  qa: Separate UC adequacy from LP price scarcity; external 400 EUR/MWh is not an
+    Italian price cap
+- id: '3'
+  name: annual_zonal_prices
+  purpose: Scenario and zone differences in annual demand-weighted LP prices
+  years:
+  - 2040
+  - 2050
+  producer: mem_model.visualization.publication_figures.render
+  qa: Seven zones; rigid plus P2X weighting; common color scale across horizons
+- id: '4'
+  name: monthly_prices
+  purpose: National seasonal load-weighted price patterns
+  years:
+  - 2040
+  - 2050
+  producer: mem_model.visualization.publication_figures.render
+  qa: Canonical quantity/duration-weighted monthly means; P25/P75 from hourly national
+    gross-load-weighted index; P5/P50/P95 in data
+- id: '5'
+  name: price_duration
+  purpose: Complete national hourly price distributions and high-price tails
+  years:
+  - 2040
+  - 2050
+  producer: mem_model.visualization.publication_figures.render
+  qa: 8760 hourly observations per case; monotone ranking; extrema retained; no clipping
+- id: 6A
+  name: capacity_generation_mix
+  purpose: Installed physical generation capacity versus annual primary generation
+    and separate supply contributions
+  years:
+  - 2040
+  - 2050
+  producer: mem_model.visualization.publication_figures.render
+  qa: GW versus TWh; storage discharge, imports and shedding are not primary generation
+- id: 6B
+  name: annual_dispatch_chronological_daily
+  purpose: Full-year energy-conserving daily physical dispatch and withdrawals
+  years:
+  - 2040
+  - 2050
+  producer: mem_model.visualization.publication_dispatch.render_daily
+  upstream_producer: mem_model.reporting.dispatch_figures.produce_dispatch_figures
+  qa: 8760 raw hours to 365 daily intervals; raw directional split; energy and balance
+    preserved
+- id: 6C
+  name: peak_residual_demand_week
+  purpose: Hourly physical balancing and flexibility during a shared High-selected
+    peak residual-demand week
+  years:
+  - 2040
+  - 2050
+  producer: mem_model.visualization.publication_dispatch.render_peak_week
+  qa: Exactly 168 consecutive hours; High selects each horizon window; identical timestamps
+    within horizon
+- id: '7'
+  name: storage_flexibility_curtailment
+  purpose: Gross storage activity, P2X demand and curtailed VRE energy
+  years:
+  - 2040
+  - 2050
+  producer: mem_model.visualization.publication_figures.render
+  qa: Charge and discharge separate; no storage net-supply claim; unavailable utilization
+    stays unavailable
+- id: '8'
+  name: exchanges_congestion
+  purpose: Canonical international net exchanges and directional interzonal saturation
+    on the MEM graph
+  years:
+  - 2040
+  - 2050
+  producer: mem_model.visualization.publication_figures.render
+  qa: Canonical net interfaces only; seven Italian nodes plus accepted external/CORS
+    nodes; no reference AC loading
+- id: '9'
+  name: marginal_price_setting_regimes
+  purpose: Reconciled represented-time shares of the validated model-implied marginal
+    regime
+  years:
+  - 2040
+  - 2050
+  producer: mem_model.visualization.publication_figures.render
+  upstream_producer: mem_model.reporting.marginal_regime.produce_marginal_regime
+  qa: 61320 zone-hours per case; same fixed-LP source; categories and complete root
+    evidence preserved
+results_authority:
+  path: inputs/manifests/results_authority.json
+  sha256: 5d0cb55558bd8dc91038f52152f4a10e298c00eb802493cf1db61f540d57b120

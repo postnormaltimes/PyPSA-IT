@@ -1,0 +1,21 @@
+schema_version: MEM_FINAL_METHODOLOGY_EXECUTION_V5_CANDIDATE
+variant: final_v5
+model_version: FINAL_METHODOLOGY_V5
+candidate_status: NON_CANONICAL_ADEQUACY_REINFORCEMENT_TEST
+years: [2050]
+scenarios: [Slow, Base, High]
+parent_variant: final_v4
+result_root: results/final_methodology_v5
+network_root: networks/unsolved/final_methodology_v5
+qa_root: qa/final_methodology_v5
+runtime_root: runtime_inputs/final_methodology_v5
+no_automatic_execution: true
+all_scenarios_manually_executable: true
+target_programmable_derated_MW: 30000.0
+capacity_tolerance_MW: 0.000001
+allocation: NORTHERN_FOCUSED
+zone_shares: {CNOR: 0.60, NORD: 0.40}
+fuel_shares: {methane_gt_ocgt: 0.50, hydrogen_gt_ocgt: 0.50}
+ocgt_cohort_target_MW: 350.0
+slow: INHERIT_UNCHANGED_INPUTS
+canonical_promotion: NEVER_AUTOMATIC

@@ -39,7 +39,7 @@ def recover_cells():
     grid_points = cutout.grid.representative_point().to_crs(3035)
     resources = {}
     tables = []
-    scratch = ROOT / ".pytest_tmp/final_native_cell_conversion"
+    scratch = ROOT / "_local/test_work/final_native_cell_conversion"
     scratch.mkdir(parents=True, exist_ok=True)
     for key, technology in (("onwind", "WIND_ONSHORE"), ("offwind-ac", "WIND_OFFSHORE")):
         print(f"Recover native eligible hourly cells: {technology}", flush=True)

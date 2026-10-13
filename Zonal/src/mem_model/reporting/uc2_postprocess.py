@@ -51,6 +51,17 @@ def _protected_sources(year, scenario):
     for kind in uc2.RUN_TYPES:
         item = uc2.job_paths(year, scenario, kind)
         paths.update(item[key] for key in ("solved", "input", "receipt", "verification"))
+        if kind == 'FIXED_COMMITMENT_PRICE_LP':
+            receipt = uc2._read_json(item['receipt'])
+            evidence = receipt.get('price_constraint_evidence')
+            if evidence:
+                from .price_evidence import verify_price_evidence
+                verify_price_evidence(item['directory'], evidence, receipt)
+                manifest_path = item['directory'] / Path(evidence['path']).name
+                manifest = uc2._read_json(manifest_path)
+                paths.update((manifest_path, item['directory'] / Path(evidence['table_path']).name))
+                paths.update(item['directory'] / row['path']
+                             for row in manifest.get('additional_tables', {}).values())
     return {str(path): sha256_file(path) for path in sorted(paths)}
 
 
@@ -59,6 +70,17 @@ def _code_hashes():
              "src/mem_model/reporting/uc2_diagnostics.py", "src/mem_model/visualization/uc2_vis_x1.py",
              "config/vis_x1.yaml", "config/stage_b_reporting.yaml"]
     return {name: sha256_file(ROOT / name) for name in names}
+
+
+def _final_model_version(year):
+    """Configuration lineage is distinct from the CLI invocation namespace."""
+    from .. import stage_b_uc2 as uc2
+    variant = uc2.ACTIVE_VARIANT.get()
+    if variant in ('final_v5', 'final_v5_proportional_control'):
+        return uc2._final_api('settings')['model_version']
+    if variant == 'final_v4' and year == 2040:
+        return 'FINAL_METHODOLOGY_V3'
+    return 'FINAL_METHODOLOGY_' + variant[-2:].upper() if variant in uc2.FINAL_VARIANTS else None
 
 
 def extend_uc2_report(year: int, scenario: str, report_dir: Path, uc_network=None) -> dict:
@@ -150,7 +172,7 @@ def extend_uc2_report(year: int, scenario: str, report_dir: Path, uc_network=Non
             item = uc2.job_paths(year, scenario, kind)
             authority.append({"result_id": solve["job_id"], "year": year, "scenario": scenario,
                               "network_path": str(item["solved"]), "network_sha256": solve["solved_sha256"],
-                              "solved_or_unsolved": "SOLVED", "parent_model_version": f"FINAL_METHODOLOGY_{uc2.ACTIVE_VARIANT.get()[-2:].upper()}" if uc2.ACTIVE_VARIANT.get() in uc2.FINAL_VARIANTS else "P2X_FLEX_V1 / UC1_COMMON_V1",
+                              "solved_or_unsolved": "SOLVED", "parent_model_version": _final_model_version(year) or "P2X_FLEX_V1 / UC1_COMMON_V1",
                               "P2X_status": "CORRECTED_SOLVED", "UC_status": "VERIFIED_UC2" if kind != "POST_P2X_CONTINUOUS_REFERENCE" else "CONTINUOUS_REFERENCE",
                               "receipt": str(item["receipt"]), "manifest": str(item["verification"]),
                               "current_role": {"UC_MILP": "CANONICAL_PHYSICAL", "FIXED_COMMITMENT_PRICE_LP": "CANONICAL_PRICES_DUALS_ONLY",
@@ -204,11 +226,26 @@ def extend_uc2_report(year: int, scenario: str, report_dir: Path, uc_network=Non
 
 def update_uc2_comparisons(year: int) -> dict:
     from .. import stage_b_uc2 as uc2
-    from ..visualization.uc2_comparison import build_uc2_comparisons
+    from ..visualization.uc2_comparison import build_uc2_comparisons, refine_cached_comparison_presentation
+    expected = [scenario for case_year, scenario in uc2.SCENARIOS if case_year == year]
+    version = _final_model_version(year)
     cases = {scenario: uc2.case_root(year, scenario) / "REPORTING"
-             for case_year, scenario in uc2.SCENARIOS if case_year == year and
+             for scenario in expected if
              (uc2.case_root(year, scenario) / "REPORTING" / "MEM_UC2_VIS_REPORTING_R1_RECEIPT.json").is_file()}
     if len(cases) < 2:
-        return {"status": "WAITING_FOR_COMPARABLE_REPORTS", "cases": len(cases)}
+        from ..visualization.uc2_comparison import selected_comparison_view_records
+        output = uc2.case_root(year, expected[0]).parent / "COMPARISONS_VIS_X1"
+        return {"status": "WAITING_FOR_COMPARABLE_REPORTS", "cases": len(cases),
+                "missing_scenarios": [s for s in expected if s not in cases],
+                "selected_views": selected_comparison_view_records(year, cases, output,
+                    expected_scenarios=expected, model_version=version)}
     with no_solver_calls():
-        return build_uc2_comparisons(year, cases, ROOT / uc2.config()["result_root"] / str(year) / "COMPARISONS_VIS_X1")
+        output = uc2.case_root(year, expected[0]).parent / "COMPARISONS_VIS_X1"
+        base = build_uc2_comparisons(year, cases, output,
+            expected_model_version=version, expected_scenarios=expected)
+        presentation = output / "presentation"
+        refined = refine_cached_comparison_presentation(output, presentation)
+        selected = refine_cached_comparison_presentation(output, presentation,
+            finalize_selection=True, case_reports=cases)
+        return {**base, "comparison_dir": str(output), "presentation_dir": str(presentation),
+                "presentation_status": refined["status"], "selected_presentation_status": selected["status"]}

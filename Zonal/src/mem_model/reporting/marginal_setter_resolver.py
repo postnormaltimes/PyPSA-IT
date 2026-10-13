@@ -29,11 +29,17 @@ FAMILY_CROSSWALK = {
     ("Hydro", "water_energy", "Link"): "Reservoir / pondage hydro",
     ("Hydro RoR", "hydro_run_of_river", "Generator"): "VRE",
     ("CCGT", "methane_ccgt", "Generator"): "CCGT",
+    # The accepted 2050 methane-CCS fleet uses CCGT prime movers. Capture
+    # changes the fuel/emissions contract, not its conversion family.
+    ("Gas + CCS", "methane_ccs", "Generator"): "CCGT",
     ("Bioenergy", "bioenergy", "Generator"): "Other thermal",
     ("Bioenergy", "bioenergy_internal_combustion", "Generator"): "Other thermal",
     ("Bioenergy", "bioenergy_steam_other_surviving", "Generator"): "Other thermal",
     ("Bioenergy", "bioenergy_other_surviving_thermal", "Generator"): "Other thermal",
     ("Geothermal", "geothermal", "Generator"): "Other thermal",
+    ("Nuclear", "nuclear", "Generator"): "Other thermal",
+    ("Hydrogen - OCGT", "hydrogen_gt_ocgt", "Generator"): "Other thermal",
+    ("Bioenergy + CCS", "bioenergy_ccs", "Generator"): "Other thermal",
     ("Gas IC", "methane_internal_combustion", "Generator"): "Other thermal",
     ("Gas - OCGT", "methane_gt_ocgt", "Generator"): "Other thermal",
     ("Gas - steam thermal", "methane_steam_other_surviving", "Generator"): "Other thermal",

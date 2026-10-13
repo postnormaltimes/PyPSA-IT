@@ -82,8 +82,8 @@ def assert_gate(name: str) -> str:
     approved_id = gate.get("approved_id")
     if gate.get("status") != "APPROVED" or not approved_id:
         raise RuntimeError(
-            f"{name} gate is not approved. Review decision_packets and set status=APPROVED "
-            "with an approved_id recorded in the model configuration."
+            f"{name} configuration is not approved. See decision_packets "
+            "and config/approval_gates.yaml for its recorded decision."
         )
     return str(approved_id)
 

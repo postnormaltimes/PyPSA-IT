@@ -76,6 +76,7 @@
 /config/stage_a_operating_base.yaml
 /config/stage_a_temporal_2019.yaml
 /config/stage_b_uc2a_heterogeneous.yaml
+!/config/stage_b_uc2a_heterogeneous.yaml
 
 # Optional raw geography/source checkouts are supplied separately
 /optional/geography/
@@ -83,3 +84,16 @@
 
 # One legacy research helper has machine-specific paths; retained locally
 /scripts/audit_tyndp_third_country_inputs.py
+
+# Published result downloads remain outside Git; selected overview figures are tracked.
+/data/research_results/
+!/docs/figures/
+!/docs/figures/*.png
+!/docs/figures/*.svg
+!/qa/final_methodology_v5/
+!/qa/final_methodology_v5/*.json
+!/qa/final_methodology_v5/*.csv
+!/qa/final_methodology_v6/
+!/qa/final_methodology_v6/*.json
+!/qa/final_methodology_v6/*.csv
+!/qa/final_pre_rerun/final_successor/FINAL_PRE_RERUN_SUCCESSOR_GATE.json

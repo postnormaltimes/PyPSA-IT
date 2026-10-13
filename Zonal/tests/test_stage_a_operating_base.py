@@ -121,3 +121,4 @@ def test_full_b4_validation_passes_without_network_or_solver() -> None:
     assert result["verification"]["scope"]["topology"] == "NOT_BUILT"
     assert result["verification"]["scope"]["pypsa_network"] == "NOT_INSTANTIATED"
     assert result["verification"]["scope"]["optimization"] == "NOT_RUN"
+

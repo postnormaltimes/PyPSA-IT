@@ -1,5 +1,6 @@
 version: MEM_ECONOMIC_STACK_INPUT_CONTRACT_V2
-status: REVIEW_REFERENCE_ONLY_SUBJECT_TO_FINAL_V2
+status: EVIDENCE_GATED_REVIEW_REFERENCE_ONLY
+# Input-contract V2 is unrelated to the historical final_v2 model branch.
 routine_activation: false
 quantity_basis: CLEARED_ELECTRICAL_MW_ONLY
 input_bundle_schema: MEM_FIXED_LP_ECONOMIC_EVIDENCE_BUNDLE_V1
@@ -8,6 +9,8 @@ population: ALL_RELEVANT_FIXED_LP_RESOURCES
 population_proof: INDEPENDENT_FIXED_LP_ASSET_ENUMERATION
 root_evidence_role: ANNOTATION_ONLY_NEVER_STACK_POPULATION
 lineage_identity: [model_year, scenario, source_fixed_lp_id, source_fixed_lp_hash, source_result_branch]
+readiness_interface: mem_model.reporting.economic_offer_stack.economic_stack_readiness
+source_evidence: [fixed_lp_solve_receipt, fixed_lp_verification, native_price_evidence, validated_root_qa, validated_root_candidates, frozen_root_methodology, marginal_regime_receipt, marginal_regime_data, population_enumeration, decomposition_validation]
 legacy_root_only_inputs: REJECT
 historical_root_subset_prototype: INCOMPLETE_ROOT_SUBSET_PROTOTYPE_NOT_A_VALID_ECONOMIC_STACK
 selection:
@@ -30,11 +33,18 @@ resource_contract:
   opportunity_value: ACCEPTED_ELECTRICAL_OPPORTUNITY_CONTRIBUTION_EUR_PER_MWH
   constraint_value: ACCEPTED_ELECTRICAL_CONSTRAINT_CONTRIBUTION_EUR_PER_MWH
   unresolved_values: PRESERVE_NULLS_NEVER_IMPUTE
+  evidence_status: [SUPPORTED, UNRESOLVED, NOT_APPLICABLE]
+  unresolved_reason: REQUIRED_FOR_UNRESOLVED_OR_NOT_APPLICABLE_ECONOMICS
+  fixed_load_economic_value: NOT_APPLICABLE_NO_OPTIMIZED_WILLINGNESS_TO_PAY
+  decomposition_identity: DIRECT_PLUS_OPPORTUNITY_PLUS_CONSTRAINT_EQUALS_EFFECTIVE_EQUALS_SAME_LP_BUS_PRICE_WHEN_SUPPORTED
   unresolved_active_supply_value: BLOCK_RENDER_NO_PARTIAL_STACK
   available_MW: OPERATING_POWER_AVAILABILITY_NOT_AN_OFFER_QUANTITY
   upstream_persistence_interface: mem_model.reporting.economic_offer_stack.persist_evidence_bundle
   consumer_interface: mem_model.reporting.economic_offer_stack.load_cached_evidence
   source_ids: DECLARED_PER_LAYER_AND_ROW_NEVER_INFERRED_FROM_PATHS
+renderer_limitations:
+  supporting_roots: RETAINED_IN_TABLES_NOT_CURRENTLY_MARKED_IN_FIGURE
+  interfaces_and_VOLL: EXPLICIT_STYLES_REQUIRED_BEFORE_RENDERING_SUCH_SUPPLY
 render:
   width_inches: 12
   height_inches: 7

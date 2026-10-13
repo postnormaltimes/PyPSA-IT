@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import pypsa
 import pytest
+from copy import deepcopy
 
 from mem_model import final_network_signed as signed
 from mem_model.stage_b_zonal_vre import no_models_or_solves
@@ -184,3 +185,86 @@ def test_phase_promotion_requires_h_pass_without_loading_production_files(monkey
     monkeypatch.setattr(signed, "read_json", lambda path: {"phases": {"H": {"status": "IN_PROGRESS"}}, "next_phase": "H"})
     with pytest.raises(RuntimeError, match="H_PREDECESSOR_NOT_PASS"):
         signed.promote_phase_n([], test_results={})
+
+
+@pytest.mark.parametrize("representation", ["LEGACY", "SIGNED", "MIXED"])
+def test_live_solver_metadata_is_read_only_and_preserves_corridors(network, monkeypatch, representation):
+    network.add("Link", "I", bus0="CNOR", bus1="NORD", carrier="internal_transfer", p_nom=6100)
+    network.add("Link", "J", bus0="NORD", bus1="CNOR", carrier="internal_transfer", p_nom=5300)
+    network.links_t.p_max_pu["A"] = [1., .75, .5, .25]
+    network.links_t.p_max_pu["B"] = [.2, .4, .6, .8]
+    network.links_t.p_max_pu["I"] = [1., .5, .75, 1.]
+    if representation == "MIXED":
+        network.links.at["A", "efficiency"] = .99
+    audit = signed.audit_interfaces(network)
+    current = network if representation == "LEGACY" else signed.convert_interfaces(network)[0]
+    current.links_t.p0 = pd.DataFrame(0., index=current.snapshots, columns=current.links.index)
+    current.links_t.p1 = pd.DataFrame(999., index=current.snapshots, columns=current.links.index)
+    net = np.array([-30., -10., 10., 30.])
+    for row in audit.itertuples(index=False):
+        if row.signed_link in current.links.index:
+            current.links_t.p0[row.signed_link] = net
+        else:
+            current.links_t.p0[row.forward_link] = np.maximum(net, 0.)
+            current.links_t.p0[row.reverse_link] = np.maximum(-net, 0.)
+    expected_corridors = signed.corridor_table(current)
+    expected_flows = signed.net_flow_frame(current)
+    expected_limits = signed.directional_capacity_table(current)
+    # Reproduce the previous exclusion operation before attaching the model.
+    legacy = current.copy()
+    covered = {item["signed_link"] for item in current.meta.get("network_v2b_corridors", [])}
+    if covered:
+        legacy.remove("Link", list(covered))
+    pd.testing.assert_frame_equal(signed.audit_interfaces(current, excluded_link_ids=covered),
+                                  signed.audit_interfaces(legacy))
+    assert len(expected_corridors) == 4
+    assert expected_corridors.representation.tolist() == (
+        ["LEGACY"] * 4 if representation == "LEGACY" else
+        ["SIGNED"] * 4 if representation == "SIGNED" else ["LEGACY", "SIGNED", "SIGNED", "SIGNED"])
+    for row in audit.itertuples(index=False):
+        observed = expected_corridors.loc[expected_corridors.signed_link.eq(row.signed_link)].iloc[0]
+        assert (observed.bus_a, observed.bus_b, observed.carrier) == (row.bus_a, row.bus_b, row.carrier)
+        assert observed.capacity_a_to_b_MW == row.capacity_a_to_b_MW
+        assert observed.capacity_b_to_a_MW == row.capacity_b_to_a_MW
+    cnor_cors = expected_limits.loc[expected_limits.from_bus.eq("CNOR") & expected_limits.to_bus.eq("CORS")].iloc[0]
+    cors_cnor = expected_limits.loc[expected_limits.from_bus.eq("CORS") & expected_limits.to_bus.eq("CNOR")].iloc[0]
+    assert (cnor_cors.capacity_MW, cnor_cors.minimum_capacity_MW) == (400., 100.)
+    assert (cors_cnor.capacity_MW, cors_cnor.minimum_capacity_MW) == (240., 60.)
+    for _, group in expected_flows.groupby("interface_id"):
+        np.testing.assert_array_equal(group[signed.FLOW_METRIC], net)
+    before = {c.name: (c.static.copy(deep=True), {k: v.copy(deep=True) for k, v in c.dynamic.items()})
+              for c in current.components}
+    metadata = deepcopy(current.meta)
+    snapshots, weights = current.snapshots.copy(), current.snapshot_weightings.copy(deep=True)
+    backend = object()
+    class AttachedModel:
+        @property
+        def solver_model(self):
+            return backend
+    attached = AttachedModel()
+    current._model = attached
+    def forbidden(*args, **kwargs):
+        raise ValueError("Copying a solved network with an attached solver model is not supported")
+    monkeypatch.setattr(current, "copy", forbidden)
+    monkeypatch.setattr(current, "remove", lambda *_: pytest.fail("Metadata extraction cannot remove components"))
+    pd.testing.assert_frame_equal(signed.corridor_table(current), expected_corridors)
+    pd.testing.assert_frame_equal(signed.net_flow_frame(current), expected_flows)
+    pd.testing.assert_frame_equal(signed.directional_capacity_table(current), expected_limits)
+    assert current.model is attached and attached.solver_model is backend
+    assert current.meta == metadata and current.snapshots.equals(snapshots)
+    pd.testing.assert_frame_equal(current.snapshot_weightings, weights)
+    for c in current.components:
+        static, dynamic = before[c.name]
+        pd.testing.assert_frame_equal(c.static, static)
+        assert set(c.dynamic) == set(dynamic)
+        for key, value in c.dynamic.items():
+            pd.testing.assert_frame_equal(value, dynamic[key])
+
+
+def test_audit_optional_exclusion_retains_default_behavior(network):
+    expected = signed.audit_interfaces(network)
+    pd.testing.assert_frame_equal(signed.audit_interfaces(network, excluded_link_ids=set()), expected)
+    pd.testing.assert_frame_equal(signed.audit_interfaces(network, excluded_link_ids={"not_a_link"}), expected)
+    filtered = signed.audit_interfaces(network, excluded_link_ids={"A", "B"})
+    pd.testing.assert_frame_equal(filtered, expected.loc[expected.bus_a.ne("CNOR")].reset_index(drop=True))
+    assert {"A", "B"}.issubset(network.links.index)

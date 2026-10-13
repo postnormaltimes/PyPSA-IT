@@ -1,0 +1,354 @@
+{
+  "schema": "MEM_FINAL_PUBLICATION_V1",
+  "figure_id": "1",
+  "name": "evolution_2040",
+  "status": "PUBLICATION_COPY_AWAITING_EDITORIAL_REVIEW",
+  "publication_baselines": {
+    "2040": {
+      "variant": "final_v3",
+      "result_root": "data/research_results/reports/v3"
+    },
+    "2050": {
+      "variant": "final_v6",
+      "result_root": "data/research_results/reports/v6"
+    }
+  },
+  "cases": [
+    {
+      "year": 2040,
+      "scenario": "Slow",
+      "variant": "final_v3",
+      "uc_sha256": "72d2237fadd018828a4631bee56abada0cd2d8479cb798368a22a2635b70cba2",
+      "lp_sha256": "b26a7c97f45b7c36c6d9f30fb8405b886bcaabd84c2b5b017df01cb98a611c35",
+      "original_result_status": "VERIFIED_RESULT_PENDING_ANALYTICAL_REVIEW",
+      "qa": "data/research_results/reports/v3/2040/Slow/QA/FINAL_SCENARIO_QA.json",
+      "price_weight": "UC rigid electrical load + UC P2X electrical withdrawal, snapshot-weighted"
+    },
+    {
+      "year": 2040,
+      "scenario": "Base",
+      "variant": "final_v3",
+      "uc_sha256": "b6bb78072587f70164bce3b5923f50b60ee3ff6685903f98a31e2029b4c1a2f7",
+      "lp_sha256": "ad7aeb2ba69d683bd8f44a827c26100b477107b8d5474b1774b17075dfa8040b",
+      "original_result_status": "VERIFIED_RESULT_PENDING_ANALYTICAL_REVIEW",
+      "qa": "data/research_results/reports/v3/2040/Base/QA/FINAL_SCENARIO_QA.json",
+      "price_weight": "UC rigid electrical load + UC P2X electrical withdrawal, snapshot-weighted"
+    },
+    {
+      "year": 2040,
+      "scenario": "High",
+      "variant": "final_v3",
+      "uc_sha256": "f4a74cf74220fc0175c3c29b4632d320380d58cd8c5b304d1142c293982202f9",
+      "lp_sha256": "9d4fd80d2d8fb0895b90be2fb4d447b364631d76e8b9884cc5c44d33701df529",
+      "original_result_status": "VERIFIED_RESULT_PENDING_ANALYTICAL_REVIEW",
+      "qa": "data/research_results/reports/v3/2040/High/QA/FINAL_SCENARIO_QA.json",
+      "price_weight": "UC rigid electrical load + UC P2X electrical withdrawal, snapshot-weighted"
+    }
+  ],
+  "caption": "2040 annual national fixed-commitment LP prices use gross end-use electricity (UC rigid load plus P2X) as weights. v1 → v3 jointly includes P2X relocation plus wind availability/productivity and curtailment correction. Version differences are joint effects, not causal attribution. Missing historical sources remain gaps. The zero-origin price axis and table show absolute/percentage price changes, physical wind availability and VRE curtailment. Gross demand weights and wind dispatch/curtailment remain in the supporting CSV; v2 was prepared but not executed and has no numerical values.",
+  "analytical_purpose": "Available v1-to-v3 national price evolution; v2 is an unexecuted methodology milestone",
+  "required_qa": "Same definition of national demand-weighted LP price; changed demand weights retained; no isolated causal claim",
+  "producer": "mem_model.visualization.publication_figures.render",
+  "qa": {
+    "status": "PASS_NUMERICAL_SOURCE_BINDING",
+    "figure_id": "1",
+    "plotted_data_rows": 60,
+    "physical_authority": "UC_MILP",
+    "price_authority": "FIXED_COMMITMENT_PRICE_LP_DUALS",
+    "canonical_price_weight": "UC rigid end-use load + UC P2X electrical withdrawal",
+    "font_resolved": "DejaVu Sans",
+    "scenario_order": [
+      "Slow",
+      "Base",
+      "High"
+    ],
+    "display_zone_order": [
+      "NORD",
+      "CNORD",
+      "CSUD",
+      "SUD",
+      "CALA",
+      "SICI",
+      "SARD"
+    ],
+    "solver_invocations": 0,
+    "network_opens": 0,
+    "historical_gaps": [
+      {
+        "year": 2040,
+        "scenario": "Slow",
+        "variant": "final_v2",
+        "reason": "Historical solved report unavailable"
+      },
+      {
+        "year": 2040,
+        "scenario": "Base",
+        "variant": "final_v2",
+        "reason": "Historical solved report unavailable"
+      },
+      {
+        "year": 2040,
+        "scenario": "High",
+        "variant": "final_v2",
+        "reason": "Historical solved report unavailable"
+      }
+    ],
+    "checks": [
+      {
+        "check": "annual_gross_end_use_weighting",
+        "status": "PASS",
+        "detail": "Weighted twelve saved monthly numerators/denominators",
+        "year": 2040,
+        "scenario": "Slow",
+        "annual_EUR_per_MWh": 93.40329664600934,
+        "denominator_MWh": 439000000.0000004
+      },
+      {
+        "check": "evolution_supporting_saved_indicators",
+        "status": "PASS",
+        "detail": "Saved monthly gross demand denominator and saved VRE curtailed MWh converted to TWh",
+        "variant": "final_v1",
+        "scenario": "Slow",
+        "annual_gross_end_use_demand_TWh": 439.0000000000004,
+        "VRE_curtailed_energy_TWh": 6.560565514532966
+      },
+      {
+        "check": "annual_gross_end_use_weighting",
+        "status": "PASS",
+        "detail": "Weighted twelve saved monthly numerators/denominators",
+        "year": 2040,
+        "scenario": "Base",
+        "annual_EUR_per_MWh": 85.45421873903338,
+        "denominator_MWh": 439000000.0000005
+      },
+      {
+        "check": "evolution_supporting_saved_indicators",
+        "status": "PASS",
+        "detail": "Saved monthly gross demand denominator and saved VRE curtailed MWh converted to TWh",
+        "variant": "final_v1",
+        "scenario": "Base",
+        "annual_gross_end_use_demand_TWh": 439.00000000000045,
+        "VRE_curtailed_energy_TWh": 14.379612061108299
+      },
+      {
+        "check": "annual_gross_end_use_weighting",
+        "status": "PASS",
+        "detail": "Weighted twelve saved monthly numerators/denominators",
+        "year": 2040,
+        "scenario": "High",
+        "annual_EUR_per_MWh": 87.05364543323147,
+        "denominator_MWh": 482900000.00000036
+      },
+      {
+        "check": "evolution_supporting_saved_indicators",
+        "status": "PASS",
+        "detail": "Saved monthly gross demand denominator and saved VRE curtailed MWh converted to TWh",
+        "variant": "final_v1",
+        "scenario": "High",
+        "annual_gross_end_use_demand_TWh": 482.9000000000004,
+        "VRE_curtailed_energy_TWh": 17.416354437953352
+      },
+      {
+        "check": "annual_gross_end_use_weighting",
+        "status": "PASS",
+        "detail": "Weighted twelve saved monthly numerators/denominators",
+        "year": 2040,
+        "scenario": "Slow",
+        "annual_EUR_per_MWh": 92.63918481530209,
+        "denominator_MWh": 438999999.9999998
+      },
+      {
+        "check": "evolution_supporting_saved_indicators",
+        "status": "PASS",
+        "detail": "Saved monthly gross demand denominator and saved VRE curtailed MWh converted to TWh",
+        "variant": "final_v3",
+        "scenario": "Slow",
+        "annual_gross_end_use_demand_TWh": 438.99999999999983,
+        "VRE_curtailed_energy_TWh": 5.897858626814831
+      },
+      {
+        "check": "annual_gross_end_use_weighting",
+        "status": "PASS",
+        "detail": "Weighted twelve saved monthly numerators/denominators",
+        "year": 2040,
+        "scenario": "Base",
+        "annual_EUR_per_MWh": 83.8963129225783,
+        "denominator_MWh": 438999999.9999999
+      },
+      {
+        "check": "evolution_supporting_saved_indicators",
+        "status": "PASS",
+        "detail": "Saved monthly gross demand denominator and saved VRE curtailed MWh converted to TWh",
+        "variant": "final_v3",
+        "scenario": "Base",
+        "annual_gross_end_use_demand_TWh": 438.9999999999999,
+        "VRE_curtailed_energy_TWh": 12.390044915270742
+      },
+      {
+        "check": "annual_gross_end_use_weighting",
+        "status": "PASS",
+        "detail": "Weighted twelve saved monthly numerators/denominators",
+        "year": 2040,
+        "scenario": "High",
+        "annual_EUR_per_MWh": 85.69069058546584,
+        "denominator_MWh": 482900000.0
+      },
+      {
+        "check": "evolution_supporting_saved_indicators",
+        "status": "PASS",
+        "detail": "Saved monthly gross demand denominator and saved VRE curtailed MWh converted to TWh",
+        "variant": "final_v3",
+        "scenario": "High",
+        "annual_gross_end_use_demand_TWh": 482.9,
+        "VRE_curtailed_energy_TWh": 14.898592139794607
+      }
+    ],
+    "source_hashes": {
+      "data\\research_results\\reports\\v1\\2040\\Slow\\REPORTING\\CANONICAL\\statistics\\uc2_price_monthly_national_load_weighted.csv": "aee461fa026732ecc6d0fa9b69d04cbb9e8717a6295c0600021a51da79c203c0",
+      "data\\research_results\\reports\\v1\\2040\\Slow\\REPORTING\\vre_curtailment.csv": "4fbe4fa7421796f250506825c2bc0b8a22847b439abde7c73e95e983d7f44fcf",
+      "data\\research_results\\reports\\v1\\2040\\Base\\REPORTING\\CANONICAL\\statistics\\uc2_price_monthly_national_load_weighted.csv": "d4292b457183865f5dde351b032b7837a1bc98a56905812a9bbf0c85d8fb1510",
+      "data\\research_results\\reports\\v1\\2040\\Base\\REPORTING\\vre_curtailment.csv": "849abf4c72b337d9fdde52b2bc123ec9dcdb1a5ba3a257bbd3fe141fcdc1e41c",
+      "data\\research_results\\reports\\v1\\2040\\High\\REPORTING\\CANONICAL\\statistics\\uc2_price_monthly_national_load_weighted.csv": "0e02a725cfffd89d9d017d0670effec857983cff252e6194cbb0af6447b009be",
+      "data\\research_results\\reports\\v1\\2040\\High\\REPORTING\\vre_curtailment.csv": "2ead4303f898faee4356e1182631f045874eae4dfa09ed944e712f88bd3927e4",
+      "data\\research_results\\reports\\v3\\2040\\Slow\\REPORTING\\CANONICAL\\statistics\\uc2_price_monthly_national_load_weighted.csv": "384d347c99b72fa452e5e016444483ec39c4a33c3b5c0982674af31fd30d7113",
+      "data\\research_results\\reports\\v3\\2040\\Slow\\REPORTING\\vre_curtailment.csv": "1cc0fc7ab1b8f282e8c867b5fe1d802adedfd57de3a9490e3d546c77fd834af3",
+      "data\\research_results\\reports\\v3\\2040\\Base\\REPORTING\\CANONICAL\\statistics\\uc2_price_monthly_national_load_weighted.csv": "ab2185b7ab987b2d61053d7895991d9c212ad55cabafd8ca9c18c5ab09b5cdf7",
+      "data\\research_results\\reports\\v3\\2040\\Base\\REPORTING\\vre_curtailment.csv": "8307977281252fec9349c83a59aed7943ccbade6a82bcd5f19d3ce1c92316386",
+      "data\\research_results\\reports\\v3\\2040\\High\\REPORTING\\CANONICAL\\statistics\\uc2_price_monthly_national_load_weighted.csv": "a946ee30f52c335e850c2eceadb3536b8de168909636ca855661b581eb3d926d",
+      "data\\research_results\\reports\\v3\\2040\\High\\REPORTING\\vre_curtailment.csv": "6fa380f55e3cce2952743f252a284e4297b4fe38c6d487f84998b174c14c3eda"
+    },
+    "rendered_visual_QA": "CALLER_REQUIRED_ON_SAVED_PNG_AND_SVG"
+  },
+  "source_hashes": {
+    "data/research_results/reports/v1/2040/Base/FIXED_COMMITMENT_PRICE_LP/FINAL_V1_UC2_2040_BASE_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVE_RECEIPT.json": "60caacdc966acf446b57581d749cb7b8b085905f89619a1bfc0b6c5447aa6f21",
+    "data/research_results/reports/v1/2040/Base/QA/FINAL_SCENARIO_QA.json": "e2f0d1ef3f04c0b81d79c0573e4a977f14a5595cc705a8d83fbad789fc836993",
+    "data/research_results/reports/v1/2040/Base/QA/VERIFY_PRICE.json": "c5acb9e48898e1e820e991426631c514b846555c3eaeeef542168b8a2cfd17ce",
+    "data/research_results/reports/v1/2040/Base/QA/VERIFY_UC.json": "92fc714a4fc066057d0f932cd8caaffc4fa02ff0e61f47c83bc7d261a30b723e",
+    "data/research_results/reports/v1/2040/Base/REPORTING/CANONICAL/statistics/uc2_price_monthly_national_load_weighted.csv": "d4292b457183865f5dde351b032b7837a1bc98a56905812a9bbf0c85d8fb1510",
+    "data/research_results/reports/v1/2040/Base/REPORTING/MEM_UC2_VIS_REPORTING_R1_RECEIPT.json": "cbf617a8749c749de9954ea5d55695c0662b3c7084eb991f988a8e408c699102",
+    "data/research_results/reports/v1/2040/Base/REPORTING/uc2_VIS_RESULT_AUTHORITY_REGISTER.csv": "90e1d6c715a0f6f4a1824f30e382baf1dcd2b6ee234ef666d4e498364e2af9fa",
+    "data/research_results/reports/v1/2040/Base/REPORTING/vre_curtailment.csv": "849abf4c72b337d9fdde52b2bc123ec9dcdb1a5ba3a257bbd3fe141fcdc1e41c",
+    "data/research_results/reports/v1/2040/Base/UC_MILP/FINAL_V1_UC2_2040_BASE_8760H_UC_MILP_SOLVE_RECEIPT.json": "c0b1399748a1324f1b9f0fe53f59a6c0cc3089ccfe7962c77f63bf03f1751bf5",
+    "data/research_results/reports/v1/2040/High/FIXED_COMMITMENT_PRICE_LP/FINAL_V1_UC2_2040_HIGH_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVE_RECEIPT.json": "0d5c718fbc639b433599b64bf4b6096c18f6543aad625238fdabbd63f3cc7b84",
+    "data/research_results/reports/v1/2040/High/QA/FINAL_SCENARIO_QA.json": "165c92493c9124a93252e8015106c255f1e73cdf224ca10dc66a408f4b24439f",
+    "data/research_results/reports/v1/2040/High/QA/VERIFY_PRICE.json": "d1280b175ff909925f571da07aa5e0d4455a9a94b518e5b1df8de878c0fde754",
+    "data/research_results/reports/v1/2040/High/QA/VERIFY_UC.json": "5d14024c8e25df70bd761fba6b79aec8655f464f12c2cd0e37756342489d2788",
+    "data/research_results/reports/v1/2040/High/REPORTING/CANONICAL/statistics/uc2_price_monthly_national_load_weighted.csv": "0e02a725cfffd89d9d017d0670effec857983cff252e6194cbb0af6447b009be",
+    "data/research_results/reports/v1/2040/High/REPORTING/MEM_UC2_VIS_REPORTING_R1_RECEIPT.json": "2fa17efc6e61c5483343fad25fb0d8fd84380d4db0136bdb1e0c301aa8bd20c2",
+    "data/research_results/reports/v1/2040/High/REPORTING/uc2_VIS_RESULT_AUTHORITY_REGISTER.csv": "13b6ffed7be74386a414f64808ded81da2fd93daebde943986809c0615c66de2",
+    "data/research_results/reports/v1/2040/High/REPORTING/vre_curtailment.csv": "2ead4303f898faee4356e1182631f045874eae4dfa09ed944e712f88bd3927e4",
+    "data/research_results/reports/v1/2040/High/UC_MILP/FINAL_V1_UC2_2040_HIGH_8760H_UC_MILP_SOLVE_RECEIPT.json": "f4ef03c76b1c746e3555039715f627e7ad30efe4e4d2c376e68e14401abd5a75",
+    "data/research_results/reports/v1/2040/Slow/FIXED_COMMITMENT_PRICE_LP/FINAL_V1_UC2_2040_SLOW_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVE_RECEIPT.json": "289d0d0cc14836dbf1c6445d396704f4ebaba2ff4d663c6932d1661b9808f10b",
+    "data/research_results/reports/v1/2040/Slow/QA/FINAL_SCENARIO_QA.json": "88ea966007b65dc970296931ab70be2ccd55dc31e50c898cb9180460a859b19b",
+    "data/research_results/reports/v1/2040/Slow/QA/VERIFY_PRICE.json": "4224f62ec22cbbbcfef29194fab66a2db73c04e73c98e29056613d32f314f7bb",
+    "data/research_results/reports/v1/2040/Slow/QA/VERIFY_UC.json": "1e9aaedd82429103aad013df345d054a89dfe275545e4ce0b61226490d968366",
+    "data/research_results/reports/v1/2040/Slow/REPORTING/CANONICAL/statistics/uc2_price_monthly_national_load_weighted.csv": "aee461fa026732ecc6d0fa9b69d04cbb9e8717a6295c0600021a51da79c203c0",
+    "data/research_results/reports/v1/2040/Slow/REPORTING/MEM_UC2_VIS_REPORTING_R1_RECEIPT.json": "2504e0fed991df4ff51e190dd0b377b4fcc95c74490f8f1538aa51446e3854fe",
+    "data/research_results/reports/v1/2040/Slow/REPORTING/uc2_VIS_RESULT_AUTHORITY_REGISTER.csv": "75d272dc476a536c80268c558817175690795f851d3c52df60cf71ad069998c6",
+    "data/research_results/reports/v1/2040/Slow/REPORTING/vre_curtailment.csv": "4fbe4fa7421796f250506825c2bc0b8a22847b439abde7c73e95e983d7f44fcf",
+    "data/research_results/reports/v1/2040/Slow/UC_MILP/FINAL_V1_UC2_2040_SLOW_8760H_UC_MILP_SOLVE_RECEIPT.json": "9b168d600e266f5757363dfeaad3762c85346699432cfe56710f779c5040bded",
+    "data/research_results/reports/v3/2040/Base/FIXED_COMMITMENT_PRICE_LP/FINAL_V3_UC2_2040_BASE_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVE_RECEIPT.json": "25b8b6d71b21e612b4392adee777006a0873718233b1c59d21b3c414bf6ddef9",
+    "data/research_results/reports/v3/2040/Base/QA/FINAL_SCENARIO_QA.json": "e2f0d1ef3f04c0b81d79c0573e4a977f14a5595cc705a8d83fbad789fc836993",
+    "data/research_results/reports/v3/2040/Base/QA/VERIFY_PRICE.json": "170c874b63a3983281165169106c91a412991e5110568fda6243dfcf67308dad",
+    "data/research_results/reports/v3/2040/Base/QA/VERIFY_UC.json": "abb1bd3f7ece2486551f7305323f55d2cae1f82893141a3c0ab4aef460bea1c0",
+    "data/research_results/reports/v3/2040/Base/REPORTING/CANONICAL/statistics/uc2_price_monthly_national_load_weighted.csv": "ab2185b7ab987b2d61053d7895991d9c212ad55cabafd8ca9c18c5ab09b5cdf7",
+    "data/research_results/reports/v3/2040/Base/REPORTING/MEM_UC2_VIS_REPORTING_R1_RECEIPT.json": "72593842a94ab63e58b789b1382e42e2b07d377b44476435c9fb93676d3eb981",
+    "data/research_results/reports/v3/2040/Base/REPORTING/uc2_VIS_RESULT_AUTHORITY_REGISTER.csv": "90173469e592828d16dea4afdae141ddea3396819f78c64428ae3d288dae3b12",
+    "data/research_results/reports/v3/2040/Base/REPORTING/vre_curtailment.csv": "8307977281252fec9349c83a59aed7943ccbade6a82bcd5f19d3ce1c92316386",
+    "data/research_results/reports/v3/2040/Base/UC_MILP/FINAL_V3_UC2_2040_BASE_8760H_UC_MILP_SOLVE_RECEIPT.json": "d34e407485d54a1672c6a5a0d2673a04acd82f98dcaf21de8651d36e4d1ce16f",
+    "data/research_results/reports/v3/2040/High/FIXED_COMMITMENT_PRICE_LP/FINAL_V3_UC2_2040_HIGH_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVE_RECEIPT.json": "2794082b477b2dd652e0e4db92e2ed448f3db928b3edd89ef43ab0a13a37afe7",
+    "data/research_results/reports/v3/2040/High/QA/FINAL_SCENARIO_QA.json": "541302ab08aace3fa0a48f64e14bfea20473807805ab6a6b8f3c51e65de40db0",
+    "data/research_results/reports/v3/2040/High/QA/VERIFY_PRICE.json": "dfd632b94d8534c46a0fdd894ec963728efff88b40452929ebe16976fc5eeffd",
+    "data/research_results/reports/v3/2040/High/QA/VERIFY_UC.json": "4dc240f20416cf22d52f0f7314dd800fa96f8b3e1f4d72d6678f7f6139926b58",
+    "data/research_results/reports/v3/2040/High/REPORTING/CANONICAL/statistics/uc2_price_monthly_national_load_weighted.csv": "a946ee30f52c335e850c2eceadb3536b8de168909636ca855661b581eb3d926d",
+    "data/research_results/reports/v3/2040/High/REPORTING/MEM_UC2_VIS_REPORTING_R1_RECEIPT.json": "9fa6fba2418b377924a40737c38b6804943ec1b930c0ccdbcc2077edc95dc08b",
+    "data/research_results/reports/v3/2040/High/REPORTING/uc2_VIS_RESULT_AUTHORITY_REGISTER.csv": "35c56d7164a03ad860b15c80363579eac0bcc670415caa514f2ba6e026c02dad",
+    "data/research_results/reports/v3/2040/High/REPORTING/vre_curtailment.csv": "6fa380f55e3cce2952743f252a284e4297b4fe38c6d487f84998b174c14c3eda",
+    "data/research_results/reports/v3/2040/High/UC_MILP/FINAL_V3_UC2_2040_HIGH_8760H_UC_MILP_SOLVE_RECEIPT.json": "eed3ae702c234ed31426ba0b50b371845a5172f49986d28861978c61464c1a3c",
+    "data/research_results/reports/v3/2040/Slow/FIXED_COMMITMENT_PRICE_LP/FINAL_V3_UC2_2040_SLOW_8760H_FIXED_COMMITMENT_PRICE_LP_SOLVE_RECEIPT.json": "e4c7b34c3b515300296c10e03c6b18da42e3adced100564cdc37a8de56a9b57b",
+    "data/research_results/reports/v3/2040/Slow/QA/FINAL_SCENARIO_QA.json": "6fb9b0b97ee33cbd16314f57ee30f426e57528eaa0e6df4d46c66124944fccc1",
+    "data/research_results/reports/v3/2040/Slow/QA/VERIFY_PRICE.json": "817183cf571c2c5cb39d552073dc97e11070cce337f52bff06c1395a01a805f4",
+    "data/research_results/reports/v3/2040/Slow/QA/VERIFY_UC.json": "6f547dd583930301e08cb04e9e940902b903dafbf000482f91e8ba80eb459208",
+    "data/research_results/reports/v3/2040/Slow/REPORTING/CANONICAL/statistics/uc2_price_monthly_national_load_weighted.csv": "384d347c99b72fa452e5e016444483ec39c4a33c3b5c0982674af31fd30d7113",
+    "data/research_results/reports/v3/2040/Slow/REPORTING/MEM_UC2_VIS_REPORTING_R1_RECEIPT.json": "1a2159e0fcffc23f3f659ba54f620613f0f604d879c69d019222d80a51cb87b2",
+    "data/research_results/reports/v3/2040/Slow/REPORTING/uc2_VIS_RESULT_AUTHORITY_REGISTER.csv": "2d12578491f0aefe1053895642cc15616c4eb649f6a441a363fc5304cf66d028",
+    "data/research_results/reports/v3/2040/Slow/REPORTING/vre_curtailment.csv": "1cc0fc7ab1b8f282e8c867b5fe1d802adedfd57de3a9490e3d546c77fd834af3",
+    "data/research_results/reports/v3/2040/Slow/UC_MILP/FINAL_V3_UC2_2040_SLOW_8760H_UC_MILP_SOLVE_RECEIPT.json": "dfb64c10619724b690571bc24ee2bd437f2e81ead3272447b0d82442f112c6c7"
+  },
+  "code_hashes": {
+    "src/mem_model/reporting/publication.py": "3adafac0f7b11b435a9f1fad89e77bf22330a64fcce9f8e766a7256d9460bd70",
+    "src/mem_model/visualization/publication_figures.py": "960221574d0f6b23497690689cd8e66eeac3eda7dd3ab2a56c70ffc32ee5fa83",
+    "src/mem_model/visualization/publication_price_atlas.py": "b27560cb568ab15a84fa179a08187b905676c3340d0b85f568d0e980355a6c7f",
+    "src/mem_model/visualization/publication_geography.py": "ce78d62c67df65351f17ad57048bcf38e2419b2ff0c98c2ff49357687a0f62f4",
+    "src/mem_model/visualization/vis_x1_reference_42bus.py": "8ffe2095caad63b80cab0fed3598dabee5bd2e203374c8067553751ebe673c00",
+    "src/mem_model/visualization/publication_dispatch.py": "24f97782ebb45f2aa2e147740af1d11f9154f70233c2403b7defa2f1aaa35be3",
+    "src/mem_model/reporting/canonical_results.py": "df5cd4fa229e2e6bdc36f9a06273fa7a312309714557b5fda3198b8b063a7ab5",
+    "src/mem_model/reporting/marginal_setter_lexicographic.py": "825660e64a77e6e5b889745e17f8c100c8abb266b9e06d8ab388feac7ecd4c37",
+    "src/mem_model/reporting/dispatch_figures.py": "b6a2ef7dddbca81941d0c9c51dd0a1c8f6fb5792e0333617c8c4b2c3c03b54ef",
+    "src/mem_model/visualization/dispatch_presentation.py": "7e62a45d86b27b78a0c18d3e43adeb6018f4565e8eed4aca89ff573f66f15f7f",
+    "src/mem_model/visualization/uc2_vis_x1.py": "97e91952e0bc1114b316601a0b64311aae780b5855ae87624b9b1c7d0ed6c2d6",
+    "src/mem_model/visualization/uc2_comparison.py": "32746f2c89519855d8cf73a04426d7b0fb564a19991163c42c52dc136a00cd00",
+    "src/mem_model/visualization/vis_x1.py": "2bc9ddbea677b06fec49cadb2657af12bd779e2ef39530c18752afa02c97c401",
+    "src/mem_model/stage_b_uc2.py": "361c7c4b51a4a72a2f5673b39f0f13fe2339cd2af70adee43a59c3e79bdccee0",
+    "src/mem_model/reporting/uc2_postprocess.py": "da4a930159b686a7eea0657fb72d5c1d54286ff70c9caf8198d8e834170cbdf6",
+    "src/mem_model/reporting/uc2_diagnostics.py": "1159a816244d8e175ceac437daf627eb48180b7e021cfdb8ee1399e7ef2c9e82",
+    "src/mem_model/visualization/marginal_setter_lexicographic.py": "bbb784571f3cc9ceb253f742761e7086d0bc95fc93368393e2aa37de30d0ebe3",
+    "config/stage_b_reporting.yaml": "78f260af3e36d91b640111a7dcfbd96eb1dc24c96828aa49e9407dc01ebac622",
+    "config/vis_x1.yaml": "09321c02d4823fb6305ff7a362621fc5e82d20f5c45ef5edbe6643042fe14dcb",
+    "config/marginal_regime.yaml": "789a920f2c20b6f62e8cf3c8d296b8984cc7df58cdcb5e5a5fac1a1dba1793c1",
+    "pyproject.toml": "74f1a4d0ab9bb83bc6441da7344a84763ab2ad580413394e73ba5fdb8ebff172",
+    "config/publication_research_release.yaml": "e2cc77bf66b7e943c9aaae7693f4a9f941c263d37b8a5a4f4286dd68dde3de1e",
+    "optional/vis_x1/TRANSFER_MANIFEST.json": "3595002fdbbfb2057afba9beb10c93d5ca97c394a77df79965704eda01d6cb33",
+    "optional/vis_x1/visualization_toolkit/__init__.py": "3dbf1bef7857d5430da3bc1be4e1048fbe88be36e732e01638585ce386d0c8b1",
+    "optional/vis_x1/visualization_toolkit/congestion.py": "3d6eb4960981d81340dde09ad024008d8bce54e0dc4f5057d56747cbae5d7bcb",
+    "optional/vis_x1/visualization_toolkit/data/README.md": "e64268156283e074e783973560bccf8bef9bb90864a58f13bd6b981371645451",
+    "optional/vis_x1/visualization_toolkit/data/__init__.py": "42191e8debe8a90a085361633a1f7539f301704edaa70c66bc4109f0c92e496e",
+    "optional/vis_x1/visualization_toolkit/data/naturalearth_lowres.geojson": "c83795a6615b793401ac04d642792d9a2fb11d3a8392fd9908b81805d7e9a114",
+    "optional/vis_x1/visualization_toolkit/dispatch.py": "3016386f4e2a4d7270291db239cece02cd146a2c84674aa041734a3adb231d16",
+    "optional/vis_x1/visualization_toolkit/flows.py": "d167c2f11e160f7c1f9e05184b5c80ba7697d1226a39eb407086d98e7949ddf9",
+    "optional/vis_x1/visualization_toolkit/io.py": "961fd024b9c3e69361d48b04b2dec618a9cccbd120ed75d723d8007077b6dbc6",
+    "optional/vis_x1/visualization_toolkit/network_maps.py": "40a139837c3e413605724925d506c0b809e700718daec20f41c3c7e905915d97",
+    "optional/vis_x1/visualization_toolkit/prices.py": "9d97c76a982dcfdfc5ded435406f9c5f17835c4f1c7b47d01ba0f85827289098",
+    "optional/vis_x1/visualization_toolkit/scenario_comparison.py": "d653404b101a0a15b442713e8608aac5dba40f5240afcb7ff60dcc0745654e92",
+    "optional/vis_x1/visualization_toolkit/storage.py": "400db9c9a65ad56b8580811b8f90bf34a0e5d0ae73e9aed0cd237d8179c2568d",
+    "optional/vis_x1/visualization_toolkit/styles.py": "3c7564a9aa895220444b54c08146b5599ddd8fcc77a49ee20b1c8aa5a3b3f575",
+    "optional/vis_x1/visualization_toolkit/summaries.py": "2a08ed5a94b7032629d91df41b0b2beec9d518f0c7de5815ae377d8651a13d38",
+    "optional/vis_x1/adapters/__init__.py": "27a7aaf4e007ace3daeaa619e7de59f9d183ead59274101ed2f49d51965d4a9f",
+    "optional/vis_x1/adapters/mem_adapter_template.py": "bf3df2f64cd09cf5684964ced9b85ff81e1e3d5acd22b3ff675023f5c8237875",
+    "optional/vis_x1/adapters/pypsa_it_adapter.py": "a6f9d6495038c4644008e3e61c5d02939ef7b4b72dd609c975d61015c4035661"
+  },
+  "render_environment": {
+    "matplotlib": "3.11.1",
+    "pandas": "2.3.3",
+    "numpy": "2.4.6",
+    "pyarrow": "25.0.1",
+    "PyYAML": "6.0.3",
+    "font": "DejaVu Sans",
+    "font_sha256": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22",
+    "font_bundled": false
+  },
+  "source_fingerprint": "01ede74042dc6e8cc440970bcafdf6e9e95398694a990d79f4e0a9678a59ba31",
+  "artifact_hashes": {
+    "evolution_2040.png": "8bd4ebc4801560f203e20224fdce784c0ee13b33971e8c9f675624a160ecf0d8",
+    "evolution_2040.svg": "2e493c35e8fd75d23a38f0c0519d23a6dbde55ede5b2293ac748a64aa01ba340",
+    "evolution_2040.csv": "9e9dbf218162670245fb47d492c2eb3f110a021a3b8f79a836807bc0be2a3b03"
+  },
+  "solver_invocations": 0,
+  "network_opens": 0,
+  "physical_source": "UC_MILP",
+  "price_source": "FIXED_COMMITMENT_LP_DUALS",
+  "original_qa_and_statuses_preserved": true,
+  "same_dataframe_png_svg_csv": true,
+  "publication_source": {
+    "authority": "EXISTING_FINAL_PRINCIPAL_PUBLICATION_FIGURE",
+    "original_artifact_hashes": {
+      ".png": "8bd4ebc4801560f203e20224fdce784c0ee13b33971e8c9f675624a160ecf0d8",
+      ".svg": "2e493c35e8fd75d23a38f0c0519d23a6dbde55ede5b2293ac748a64aa01ba340",
+      ".csv": "9e9dbf218162670245fb47d492c2eb3f110a021a3b8f79a836807bc0be2a3b03",
+      ".json": "0567f461da7dcbeeaffa127295b7516afd97f02f0d9513c51633d107aaf524cd"
+    },
+    "reproduction_data_parity": "PASS",
+    "original_images_preserved": true,
+    "editorial_acceptance": "AWAITING_FINAL_PUBLICATION_APPROVAL"
+  }
+}

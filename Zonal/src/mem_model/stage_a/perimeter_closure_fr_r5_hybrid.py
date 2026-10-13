@@ -448,7 +448,7 @@ def prepare_hybrid(*, write_artifacts: bool = True) -> dict[str, Any]:
             CONFIG_PATH,
             ROOT / "src/mem_model/stage_a/perimeter_closure_fr_r5_hybrid.py",
             ROOT / "docs/runbooks/ETX7B9F_RUNBOOK.md",
-            ROOT / "docs/MEM_ETX7B9F_2050_FR_R5_HYBRID_PREPARATION_TRANSFER.md",
+            ROOT / "docs/MEM_ETX7B9F_2050_FR_R5_HYBRID_PREPARATION_HANDOFF.md",
             *artifacts,
         ]
         manifest = write_manifest(paths["manifest"], members)
@@ -900,7 +900,7 @@ def run_b9f(args: argparse.Namespace) -> dict[str, Any]:
     started = time.perf_counter()
     qa_dir = ROOT / config["phase"]["qa_directory"]
     log = qa_dir / "logs/MEM_ETX7B9F_raw.log"
-    _append_log(log, "ETX-7B9F started; economic acceptance remains subject to historical result validation.")
+    _append_log(log, "ETX-7B9F started; economic acceptance remains pending Sol review.")
     preflight = gurobi_preflight(execution_config)
     network = prepared["network"]
     linopy = create_and_validate_linopy_model(network)

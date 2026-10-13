@@ -24,8 +24,8 @@ water_values:
   units: EUR/MWh_water
   divide_by_objective_weight: false
 capacity_revision:
-  authority: TERNA_PROSPETTIVE_2050_CAPACITY_SOURCE
-  source: https://www.terna.it/it/sistema-elettrico/programmazione-territoriale-efficiente/scenari
+  authority: USER_ACCEPTED_TERNA_PROSPETTIVE_2050_CAPACITY_DECISION
+  source: ../03_PRIMARY_SOURCES/Terna_Prospettive_Sviluppo_Sistema_Energetico_2050.pdf
   base_MW: {solar: 180000.0, wind_onshore: 46000.0, wind_offshore: 20000.0, nuclear: 10000.0}
   vre_scenario_factors: {Slow: 0.8, Base: 1.0, High: 1.1}
   nuclear_scenario_factor: 1.0
@@ -34,7 +34,7 @@ capacity_revision:
   geography: FROZEN_FINAL_V3_ZONAL_KEYS
   profiles: FROZEN_FINAL_V3_NO_RESITING_OR_RECALIBRATION
 accepted_preparation_controls:
-  qa/final_methodology_v4/FINAL_V4_PREPARATION_RECEIPT.json: f2647858ed9d2f171472f016258fc825bebfc8340e55f88ee1d8fa2714fa3d5e
-  qa/final_methodology_v4/FINAL_V4_NETWORK_LINEAGE_AND_HASHES.csv: d5d8b6a29650578ecea604fabf6e4d2b7d26f016214d7c072f2c966d833fed2f
+  qa/final_methodology_v4/FINAL_V4_PREPARATION_RECEIPT.json: d6a6c7b6e5104ab394f2691146f7661b0f1c1b645974688eae9302dc28c43d0d
+  qa/final_methodology_v4/FINAL_V4_NETWORK_LINEAGE_AND_HASHES.csv: 3f132a752e4dffb4cee553139b40f2bf14b990e0d237adb40e2fdd5aa3505e6d
   qa/final_methodology_v4/FINAL_V4_CHILD_CROSSWALK.csv: cd8cd6f039edd044cf10ed25728551f5c57394d4a2dc9258073129e1d2b8e9fa
   runtime_inputs/final_methodology_v4/2050/generators_static.csv: 00f33953a8eee7349be3aac009889132e60abacf7dc097d1502294388c136f39

@@ -1,34 +1,15 @@
-# Methodology
+# Modelling methodology
 
-The seven-zone model uses fixed capacities and 8,760 hourly snapshots for each
-2040/2050 scenario. It represents operational constraints rather than endogenous
-generation or network investment.
+Italy is represented by seven bidding-zone buses with fixed generation and storage capacities, exogenous annual demand, accepted 2019 hourly profiles and directional commercial electricity interfaces. There is no endogenous expansion or intra-zonal physical transmission model.
 
-Renewable availability uses 2019 weather. Wind resource preprocessing allocates
-fixed zonal MW among eligible native cells using site economics and physical
-potential, then aggregates to the existing zonal generators. The documented
-annual and onshore seasonal transformations are retained in final_v4. Solar
-keeps the accepted rooftop/utility profiles. Siting costs do not enter dispatch
-marginal costs.
+Thermal operation uses the accepted synthetic-unit construction, efficiency heterogeneity, operating-cost/fuel/carbon controls, technical availability and unit-commitment parameters. P2X electrical consumption is modeled explicitly. Renewable generation, conventional hydro, pure/mixed PHS and batteries retain their accepted energy, power and efficiency controls. Mixed PHS has one shared water state for natural inflow and pumping; charging/discharging energy is not duplicated.
 
-Thermal generation uses heterogeneous synthetic units with fixed parent MW and
-native PyPSA commitment, ramp, minimum-duration and startup-cost semantics.
-Capacity-weighted heat rate and marginal-cost reconciliation are maintained.
+The continuous reference LP is followed by the physical UC MILP. A fixed-commitment LP recovers prices conditional on the verified commitment result. Canonical physical quantities use UC operation; pricing-LP primal operation is not substituted for it. Dual prices and water values retain the accepted objective-weight convention and verification contract.
 
-Natural hydro uses independent zonal runoff shapes with fixed annual water
-budgets. RoR generation is limited by turbine MW; excess inflow is bypass.
-Reservoir and mixed pumped-hydro operation use water Stores with explicit
-forced inflow, turbine, pump and spill flows. Pure pumped hydro receives no
-natural inflow. Annual cyclic water states impose no net annual water change.
-No arbitrary exogenous water-value marginal cost is added.
+Primary generation excludes imports, BESS/PHS discharge and diagnostic shedding. Electrical balances retain storage charging, P2X and signed exchanges separately. National hourly prices are a modeled GME-style demand-weighted index using rigid plus P2X electricity consumption; annual/monthly purchasing prices additionally use physical represented duration and electricity volume. The time mean of the hourly index is a different statistic.
 
-Internal interfaces use signed Links where directional equivalence is exact,
-including asymmetric limits. Distinct physical corridors and the Corsican
-topology are retained. External markets use fixed boundary prices. Rigid
-demand retains its electricity-demand geography; flexible P2X has separate
-zonal MW and annual-energy equalities.
+External-market support and prices are synthetic accepted boundary abstractions. In 2050 final_v6 only the exceptional EUR 15,000/MWh external-generator input is normalized to EUR 400/MWh. Italian load-shedding VOLL stays EUR 15,000/MWh. This is not an Italian price cap or a re-estimation of historical market prices.
 
-The UC MILP is the physical authority. A fixed-commitment LP supplies prices
-and native Store energy-balance duals, without using MILP duals as prices.
-See [scenario definitions](SCENARIO_GOVERNANCE.md) and
-[validation limitations](releases/VALIDATION.md).
+Marginal price-setting regimes use the accepted lexicographic method with validated same-LP roots. Missing validated roots return WAITING; there is no automatic discovery, solve or substitution by the abandoned economic offer-stack approach. Publication reuses validated categorical evidence and preserves its source identities.
+
+See [version evolution](FINAL_VERSION_EVOLUTION.md), [data provenance](DATA_PROVENANCE.md), [scenario governance](SCENARIO_GOVERNANCE.md) and [limitations](LIMITATIONS.md). Research/source registers remain available; raw upstream datasets retain their own access and reuse conditions.

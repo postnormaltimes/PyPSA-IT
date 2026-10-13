@@ -1,0 +1,202 @@
+year,scenario,variant,metric,value,unit,category,source_authority
+2040,Slow,final_v3,installed_capacity,33.36,GW,Solar PV - rooftop,UC_MILP
+2040,Slow,final_v3,installed_capacity,63.36,GW,Solar PV - utility,UC_MILP
+2040,Slow,final_v3,installed_capacity,27.28,GW,Onshore wind,UC_MILP
+2040,Slow,final_v3,installed_capacity,12.16,GW,Offshore wind,UC_MILP
+2040,Slow,final_v3,installed_capacity,6.239,GW,Hydro - run of river,UC_MILP
+2040,Slow,final_v3,installed_capacity,5.0199,GW,Hydro - basin/pondage,UC_MILP
+2040,Slow,final_v3,installed_capacity,4.7828,GW,Hydro - reservoir,UC_MILP
+2040,Slow,final_v3,installed_capacity,7.2523,GW,PHS,UC_MILP
+2040,Slow,final_v3,installed_capacity,21.8133333333,GW,BESS,UC_MILP
+2040,Slow,final_v3,installed_capacity,52.669053741,GW,Gas - CCGT,UC_MILP
+2040,Slow,final_v3,installed_capacity,4.17222006121,GW,Gas - OCGT,UC_MILP
+2040,Slow,final_v3,installed_capacity,4.36128841205,GW,Gas - internal combustion,UC_MILP
+2040,Slow,final_v3,installed_capacity,2.3395782972,GW,Gas - steam thermal,UC_MILP
+2040,Slow,final_v3,installed_capacity,0.249796382617,GW,Gas - other thermal,UC_MILP
+2040,Slow,final_v3,installed_capacity,2.26757696022,GW,Bioenergy - internal combustion,UC_MILP
+2040,Slow,final_v3,installed_capacity,1.26040530983,GW,Bioenergy - steam thermal,UC_MILP
+2040,Slow,final_v3,installed_capacity,0.110352578986,GW,Bioenergy - other thermal,UC_MILP
+2040,Slow,final_v3,installed_capacity,0.783053667913,GW,Geothermal,UC_MILP
+2040,Slow,final_v3,primary_generation,44.9565205078,TWh,Solar PV - rooftop,UC_MILP
+2040,Slow,final_v3,primary_generation,88.5757880766,TWh,Solar PV - utility,UC_MILP
+2040,Slow,final_v3,primary_generation,62.205965324,TWh,Onshore wind,UC_MILP
+2040,Slow,final_v3,primary_generation,35.3863654884,TWh,Offshore wind,UC_MILP
+2040,Slow,final_v3,primary_generation,16.6977189084,TWh,Hydro - run of river,UC_MILP
+2040,Slow,final_v3,primary_generation,13.6097775128,TWh,Hydro - basin/pondage,UC_MILP
+2040,Slow,final_v3,primary_generation,12.9669602758,TWh,Hydro - reservoir,UC_MILP
+2040,Slow,final_v3,primary_generation,64.4347655121,TWh,Gas - CCGT,UC_MILP
+2040,Slow,final_v3,primary_generation,0.00084988202325,TWh,Gas - internal combustion,UC_MILP
+2040,Slow,final_v3,primary_generation,12.0431038862,TWh,Bioenergy - internal combustion,UC_MILP
+2040,Slow,final_v3,primary_generation,6.83310599815,TWh,Bioenergy - steam thermal,UC_MILP
+2040,Slow,final_v3,primary_generation,0.575638264782,TWh,Bioenergy - other thermal,UC_MILP
+2040,Slow,final_v3,primary_generation,5.9666476797,TWh,Geothermal,UC_MILP
+2040,Slow,final_v3,nonprimary_supply,28.60258633288,TWh,BESS discharge,UC_MILP
+2040,Slow,final_v3,nonprimary_supply,12.459001481217,TWh,PHS discharge,UC_MILP
+2040,Slow,final_v3,nonprimary_supply,70.62646119548,TWh,Net imports,UC_MILP
+2040,Base,final_v3,installed_capacity,41.7,GW,Solar PV - rooftop,UC_MILP
+2040,Base,final_v3,installed_capacity,79.2,GW,Solar PV - utility,UC_MILP
+2040,Base,final_v3,installed_capacity,34.1,GW,Onshore wind,UC_MILP
+2040,Base,final_v3,installed_capacity,15.2,GW,Offshore wind,UC_MILP
+2040,Base,final_v3,installed_capacity,6.239,GW,Hydro - run of river,UC_MILP
+2040,Base,final_v3,installed_capacity,5.0199,GW,Hydro - basin/pondage,UC_MILP
+2040,Base,final_v3,installed_capacity,4.7828,GW,Hydro - reservoir,UC_MILP
+2040,Base,final_v3,installed_capacity,7.2523,GW,PHS,UC_MILP
+2040,Base,final_v3,installed_capacity,27.2666666667,GW,BESS,UC_MILP
+2040,Base,final_v3,installed_capacity,42.3482686073,GW,Gas - CCGT,UC_MILP
+2040,Base,final_v3,installed_capacity,3.35465103872,GW,Gas - OCGT,UC_MILP
+2040,Base,final_v3,installed_capacity,3.06232649176,GW,Gas - internal combustion,UC_MILP
+2040,Base,final_v3,installed_capacity,1.63414209408,GW,Gas - steam thermal,UC_MILP
+2040,Base,final_v3,installed_capacity,0.179223251246,GW,Gas - other thermal,UC_MILP
+2040,Base,final_v3,installed_capacity,2.26757696022,GW,Bioenergy - internal combustion,UC_MILP
+2040,Base,final_v3,installed_capacity,1.26040530983,GW,Bioenergy - steam thermal,UC_MILP
+2040,Base,final_v3,installed_capacity,0.110352578986,GW,Bioenergy - other thermal,UC_MILP
+2040,Base,final_v3,installed_capacity,0.783053667913,GW,Geothermal,UC_MILP
+2040,Base,final_v3,primary_generation,54.9792621149,TWh,Solar PV - rooftop,UC_MILP
+2040,Base,final_v3,primary_generation,108.550134675,TWh,Solar PV - utility,UC_MILP
+2040,Base,final_v3,primary_generation,73.734008314,TWh,Onshore wind,UC_MILP
+2040,Base,final_v3,primary_generation,42.4096552206,TWh,Offshore wind,UC_MILP
+2040,Base,final_v3,primary_generation,16.5382525788,TWh,Hydro - run of river,UC_MILP
+2040,Base,final_v3,primary_generation,13.6097775128,TWh,Hydro - basin/pondage,UC_MILP
+2040,Base,final_v3,primary_generation,12.9669602758,TWh,Hydro - reservoir,UC_MILP
+2040,Base,final_v3,primary_generation,33.6683541374,TWh,Gas - CCGT,UC_MILP
+2040,Base,final_v3,primary_generation,0.00121183932532,TWh,Gas - internal combustion,UC_MILP
+2040,Base,final_v3,primary_generation,11.1665603285,TWh,Bioenergy - internal combustion,UC_MILP
+2040,Base,final_v3,primary_generation,6.48515697165,TWh,Bioenergy - steam thermal,UC_MILP
+2040,Base,final_v3,primary_generation,0.538554227334,TWh,Bioenergy - other thermal,UC_MILP
+2040,Base,final_v3,primary_generation,5.73484724193,TWh,Geothermal,UC_MILP
+2040,Base,final_v3,nonprimary_supply,39.85320524198001,TWh,BESS discharge,UC_MILP
+2040,Base,final_v3,nonprimary_supply,14.064344523385,TWh,PHS discharge,UC_MILP
+2040,Base,final_v3,nonprimary_supply,56.404711665295,TWh,Net imports,UC_MILP
+2040,High,final_v3,installed_capacity,45.87,GW,Solar PV - rooftop,UC_MILP
+2040,High,final_v3,installed_capacity,87.12,GW,Solar PV - utility,UC_MILP
+2040,High,final_v3,installed_capacity,37.51,GW,Onshore wind,UC_MILP
+2040,High,final_v3,installed_capacity,16.72,GW,Offshore wind,UC_MILP
+2040,High,final_v3,installed_capacity,6.239,GW,Hydro - run of river,UC_MILP
+2040,High,final_v3,installed_capacity,5.0199,GW,Hydro - basin/pondage,UC_MILP
+2040,High,final_v3,installed_capacity,4.7828,GW,Hydro - reservoir,UC_MILP
+2040,High,final_v3,installed_capacity,7.2523,GW,PHS,UC_MILP
+2040,High,final_v3,installed_capacity,29.9933333333,GW,BESS,UC_MILP
+2040,High,final_v3,installed_capacity,42.3482686073,GW,Gas - CCGT,UC_MILP
+2040,High,final_v3,installed_capacity,3.35465103872,GW,Gas - OCGT,UC_MILP
+2040,High,final_v3,installed_capacity,3.06232649176,GW,Gas - internal combustion,UC_MILP
+2040,High,final_v3,installed_capacity,1.63414209408,GW,Gas - steam thermal,UC_MILP
+2040,High,final_v3,installed_capacity,0.179223251246,GW,Gas - other thermal,UC_MILP
+2040,High,final_v3,installed_capacity,2.26757696022,GW,Bioenergy - internal combustion,UC_MILP
+2040,High,final_v3,installed_capacity,1.26040530983,GW,Bioenergy - steam thermal,UC_MILP
+2040,High,final_v3,installed_capacity,0.110352578986,GW,Bioenergy - other thermal,UC_MILP
+2040,High,final_v3,installed_capacity,0.783053667913,GW,Geothermal,UC_MILP
+2040,High,final_v3,primary_generation,60.2272435327,TWh,Solar PV - rooftop,UC_MILP
+2040,High,final_v3,primary_generation,119.281905495,TWh,Solar PV - utility,UC_MILP
+2040,High,final_v3,primary_generation,79.291727853,TWh,Onshore wind,UC_MILP
+2040,High,final_v3,primary_generation,45.6107781273,TWh,Offshore wind,UC_MILP
+2040,High,final_v3,primary_generation,16.5149465939,TWh,Hydro - run of river,UC_MILP
+2040,High,final_v3,primary_generation,13.6097775128,TWh,Hydro - basin/pondage,UC_MILP
+2040,High,final_v3,primary_generation,12.9669602758,TWh,Hydro - reservoir,UC_MILP
+2040,High,final_v3,primary_generation,41.9896877323,TWh,Gas - CCGT,UC_MILP
+2040,High,final_v3,primary_generation,0.01202290486,TWh,Gas - internal combustion,UC_MILP
+2040,High,final_v3,primary_generation,11.3537702644,TWh,Bioenergy - internal combustion,UC_MILP
+2040,High,final_v3,primary_generation,6.52898498751,TWh,Bioenergy - steam thermal,UC_MILP
+2040,High,final_v3,primary_generation,0.535764585779,TWh,Bioenergy - other thermal,UC_MILP
+2040,High,final_v3,primary_generation,5.73698348964,TWh,Geothermal,UC_MILP
+2040,High,final_v3,nonprimary_supply,43.56484681798,TWh,BESS discharge,UC_MILP
+2040,High,final_v3,nonprimary_supply,14.093772790754,TWh,PHS discharge,UC_MILP
+2040,High,final_v3,nonprimary_supply,67.47745108785901,TWh,Net imports,UC_MILP
+2050,Slow,final_v6,installed_capacity,49.6674937965,GW,Solar PV - rooftop,UC_MILP
+2050,Slow,final_v6,installed_capacity,94.3325062035,GW,Solar PV - utility,UC_MILP
+2050,Slow,final_v6,installed_capacity,36.8,GW,Onshore wind,UC_MILP
+2050,Slow,final_v6,installed_capacity,16.0,GW,Offshore wind,UC_MILP
+2050,Slow,final_v6,installed_capacity,6.239,GW,Hydro - run of river,UC_MILP
+2050,Slow,final_v6,installed_capacity,5.0199,GW,Hydro - basin/pondage,UC_MILP
+2050,Slow,final_v6,installed_capacity,4.7828,GW,Hydro - reservoir,UC_MILP
+2050,Slow,final_v6,installed_capacity,7.2523,GW,PHS,UC_MILP
+2050,Slow,final_v6,installed_capacity,34.9224489796,GW,BESS,UC_MILP
+2050,Slow,final_v6,installed_capacity,10.0,GW,Nuclear,UC_MILP
+2050,Slow,final_v6,installed_capacity,5.41358411424,GW,Gas - OCGT,UC_MILP
+2050,Slow,final_v6,installed_capacity,18.623177578,GW,Gas + CCS,UC_MILP
+2050,Slow,final_v6,installed_capacity,5.41358411424,GW,Hydrogen - OCGT,UC_MILP
+2050,Slow,final_v6,installed_capacity,7.27393004688,GW,Bioenergy,UC_MILP
+2050,Slow,final_v6,installed_capacity,4.11731889446,GW,Bioenergy + CCS,UC_MILP
+2050,Slow,final_v6,installed_capacity,0.77179,GW,Geothermal,UC_MILP
+2050,Slow,final_v6,primary_generation,66.8999630302,TWh,Solar PV - rooftop,UC_MILP
+2050,Slow,final_v6,primary_generation,131.869738215,TWh,Solar PV - utility,UC_MILP
+2050,Slow,final_v6,primary_generation,82.5900806364,TWh,Onshore wind,UC_MILP
+2050,Slow,final_v6,primary_generation,45.8938502403,TWh,Offshore wind,UC_MILP
+2050,Slow,final_v6,primary_generation,16.5288725488,TWh,Hydro - run of river,UC_MILP
+2050,Slow,final_v6,primary_generation,13.5969475225,TWh,Hydro - basin/pondage,UC_MILP
+2050,Slow,final_v6,primary_generation,12.957700018,TWh,Hydro - reservoir,UC_MILP
+2050,Slow,final_v6,primary_generation,77.9520539299,TWh,Nuclear,UC_MILP
+2050,Slow,final_v6,primary_generation,0.0674327148335,TWh,Gas - OCGT,UC_MILP
+2050,Slow,final_v6,primary_generation,32.8272471211,TWh,Gas + CCS,UC_MILP
+2050,Slow,final_v6,primary_generation,1.44864902502,TWh,Hydrogen - OCGT,UC_MILP
+2050,Slow,final_v6,primary_generation,43.0462621363,TWh,Bioenergy,UC_MILP
+2050,Slow,final_v6,primary_generation,23.4484622818,TWh,Bioenergy + CCS,UC_MILP
+2050,Slow,final_v6,primary_generation,5.79649878813,TWh,Geothermal,UC_MILP
+2050,Slow,final_v6,nonprimary_supply,48.06543514167,TWh,BESS discharge,UC_MILP
+2050,Slow,final_v6,nonprimary_supply,14.984057645384999,TWh,PHS discharge,UC_MILP
+2050,Slow,final_v6,nonprimary_supply,27.167805488529993,TWh,Net imports,UC_MILP
+2050,Base,final_v6,installed_capacity,62.0843672457,GW,Solar PV - rooftop,UC_MILP
+2050,Base,final_v6,installed_capacity,117.915632754,GW,Solar PV - utility,UC_MILP
+2050,Base,final_v6,installed_capacity,46.0,GW,Onshore wind,UC_MILP
+2050,Base,final_v6,installed_capacity,20.0,GW,Offshore wind,UC_MILP
+2050,Base,final_v6,installed_capacity,6.239,GW,Hydro - run of river,UC_MILP
+2050,Base,final_v6,installed_capacity,5.0199,GW,Hydro - basin/pondage,UC_MILP
+2050,Base,final_v6,installed_capacity,4.7828,GW,Hydro - reservoir,UC_MILP
+2050,Base,final_v6,installed_capacity,7.2523,GW,PHS,UC_MILP
+2050,Base,final_v6,installed_capacity,43.6530612245,GW,BESS,UC_MILP
+2050,Base,final_v6,installed_capacity,10.0,GW,Nuclear,UC_MILP
+2050,Base,final_v6,installed_capacity,4.92296261783,GW,Gas - OCGT,UC_MILP
+2050,Base,final_v6,installed_capacity,4.45046626798,GW,Gas + CCS,UC_MILP
+2050,Base,final_v6,installed_capacity,4.92296261783,GW,Hydrogen - OCGT,UC_MILP
+2050,Base,final_v6,installed_capacity,7.27393004688,GW,Bioenergy,UC_MILP
+2050,Base,final_v6,installed_capacity,4.11731889446,GW,Bioenergy + CCS,UC_MILP
+2050,Base,final_v6,installed_capacity,0.77179,GW,Geothermal,UC_MILP
+2050,Base,final_v6,primary_generation,81.3310439419,TWh,Solar PV - rooftop,UC_MILP
+2050,Base,final_v6,primary_generation,162.02495638,TWh,Solar PV - utility,UC_MILP
+2050,Base,final_v6,primary_generation,98.0859216698,TWh,Onshore wind,UC_MILP
+2050,Base,final_v6,primary_generation,54.5442995389,TWh,Offshore wind,UC_MILP
+2050,Base,final_v6,primary_generation,16.214321918,TWh,Hydro - run of river,UC_MILP
+2050,Base,final_v6,primary_generation,13.603847396,TWh,Hydro - basin/pondage,UC_MILP
+2050,Base,final_v6,primary_generation,12.9625532781,TWh,Hydro - reservoir,UC_MILP
+2050,Base,final_v6,primary_generation,68.4771784068,TWh,Nuclear,UC_MILP
+2050,Base,final_v6,primary_generation,0.350982207437,TWh,Gas - OCGT,UC_MILP
+2050,Base,final_v6,primary_generation,6.42100533819,TWh,Gas + CCS,UC_MILP
+2050,Base,final_v6,primary_generation,5.73042314386,TWh,Hydrogen - OCGT,UC_MILP
+2050,Base,final_v6,primary_generation,34.5500723129,TWh,Bioenergy,UC_MILP
+2050,Base,final_v6,primary_generation,14.2508243708,TWh,Bioenergy + CCS,UC_MILP
+2050,Base,final_v6,primary_generation,5.46840460836,TWh,Geothermal,UC_MILP
+2050,Base,final_v6,nonprimary_supply,64.96647218106,TWh,BESS discharge,UC_MILP
+2050,Base,final_v6,nonprimary_supply,17.154604962123,TWh,PHS discharge,UC_MILP
+2050,Base,final_v6,nonprimary_supply,10.841669189210005,TWh,Net imports,UC_MILP
+2050,High,final_v6,installed_capacity,68.2928039702,GW,Solar PV - rooftop,UC_MILP
+2050,High,final_v6,installed_capacity,129.70719603,GW,Solar PV - utility,UC_MILP
+2050,High,final_v6,installed_capacity,50.6,GW,Onshore wind,UC_MILP
+2050,High,final_v6,installed_capacity,22.0,GW,Offshore wind,UC_MILP
+2050,High,final_v6,installed_capacity,6.239,GW,Hydro - run of river,UC_MILP
+2050,High,final_v6,installed_capacity,5.0199,GW,Hydro - basin/pondage,UC_MILP
+2050,High,final_v6,installed_capacity,4.7828,GW,Hydro - reservoir,UC_MILP
+2050,High,final_v6,installed_capacity,7.2523,GW,PHS,UC_MILP
+2050,High,final_v6,installed_capacity,48.0183673469,GW,BESS,UC_MILP
+2050,High,final_v6,installed_capacity,10.0,GW,Nuclear,UC_MILP
+2050,High,final_v6,installed_capacity,4.92296261783,GW,Gas - OCGT,UC_MILP
+2050,High,final_v6,installed_capacity,4.45046626798,GW,Gas + CCS,UC_MILP
+2050,High,final_v6,installed_capacity,4.92296261783,GW,Hydrogen - OCGT,UC_MILP
+2050,High,final_v6,installed_capacity,7.27393004688,GW,Bioenergy,UC_MILP
+2050,High,final_v6,installed_capacity,4.11731889446,GW,Bioenergy + CCS,UC_MILP
+2050,High,final_v6,installed_capacity,0.77179,GW,Geothermal,UC_MILP
+2050,High,final_v6,primary_generation,89.4325944352,TWh,Solar PV - rooftop,UC_MILP
+2050,High,final_v6,primary_generation,177.920204306,TWh,Solar PV - utility,UC_MILP
+2050,High,final_v6,primary_generation,105.666885536,TWh,Onshore wind,UC_MILP
+2050,High,final_v6,primary_generation,58.7739807605,TWh,Offshore wind,UC_MILP
+2050,High,final_v6,primary_generation,16.1721748557,TWh,Hydro - run of river,UC_MILP
+2050,High,final_v6,primary_generation,13.5946896521,TWh,Hydro - basin/pondage,UC_MILP
+2050,High,final_v6,primary_generation,12.9556286699,TWh,Hydro - reservoir,UC_MILP
+2050,High,final_v6,primary_generation,69.4947317748,TWh,Nuclear,UC_MILP
+2050,High,final_v6,primary_generation,0.638945926197,TWh,Gas - OCGT,UC_MILP
+2050,High,final_v6,primary_generation,8.30529027473,TWh,Gas + CCS,UC_MILP
+2050,High,final_v6,primary_generation,8.13994750788,TWh,Hydrogen - OCGT,UC_MILP
+2050,High,final_v6,primary_generation,35.6170673514,TWh,Bioenergy,UC_MILP
+2050,High,final_v6,primary_generation,16.752433931,TWh,Bioenergy + CCS,UC_MILP
+2050,High,final_v6,primary_generation,5.48957818087,TWh,Geothermal,UC_MILP
+2050,High,final_v6,nonprimary_supply,70.38549100952001,TWh,BESS discharge,UC_MILP
+2050,High,final_v6,nonprimary_supply,17.043163706022,TWh,PHS discharge,UC_MILP
+2050,High,final_v6,nonprimary_supply,24.786245913510015,TWh,Net imports,UC_MILP

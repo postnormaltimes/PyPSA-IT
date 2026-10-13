@@ -41,6 +41,11 @@ def test_lp_reader_uses_only_price_duals_and_preserves_file(tmp_path):
 
 def test_existing_report_routes_only_to_extension(monkeypatch, tmp_path):
     from mem_model.reporting import uc2_postprocess as post
+    from mem_model.reporting import inspection
+    from mem_model.reporting import dispatch_figures, output_registry
+    monkeypatch.setattr(inspection, 'build_inspection', lambda *_: {'status': 'COMPLETE'})
+    monkeypatch.setattr(dispatch_figures, 'produce_dispatch_figures', lambda *_: {'status': 'WAITING_FOR_CASE_BOUND_DISPATCH_SOURCES'})
+    monkeypatch.setattr(output_registry, 'build_output_register', lambda *a, **k: {'status': 'CORE_REPORTING_PASS'})
     output = tmp_path / "REPORTING"
     output.mkdir()
     receipt = {"status": "PASS", "year": 2040, "scenario": "Base"}

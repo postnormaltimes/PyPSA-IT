@@ -175,7 +175,7 @@ def test_eight_hour_delta_preserves_audit_canonical_network_and_never_opens_mode
     from mem_model import common
     from mem_model.visualization import dispatch_presentation as module
     monkeypatch.setattr(common, "ROOT", tmp_path)
-    out = tmp_path / "outputs/visualization/UC2/2040/Base/dispatch_presentation"
+    out = tmp_path / "_local/outputs/visualization/UC2/2040/Base/dispatch_presentation"
     out.mkdir(parents=True)
     index = pd.date_range("2019-01-01", periods=8760, freq="h", name="snapshot")
     raw = pd.DataFrame({"Geothermal": 10., "Rigid load": 8., "BESS charging": -2.}, index=index)
@@ -349,7 +349,7 @@ def test_daily_cached_artifacts_no_models_no_solves_and_no_other_scenario_mutati
     from mem_model import common
     from mem_model.visualization import dispatch_presentation as module
     monkeypatch.setattr(common, 'ROOT', tmp_path)
-    out = tmp_path/'outputs/visualization/UC2/2040'/scenario/'dispatch_presentation'
+    out = tmp_path/'_local/outputs/visualization/UC2/2040'/scenario/'dispatch_presentation'
     out.mkdir(parents=True)
     index = pd.date_range('2019-01-01', periods=8760, freq='h', name='snapshot')
     raw = daily_raw_fixture(index)
