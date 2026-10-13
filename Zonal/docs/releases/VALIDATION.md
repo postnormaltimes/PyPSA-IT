@@ -1,5 +1,7 @@
 # 2050 Base validation and limitations
 
+> **Historical validation — 2050 `final_v4` Base.** These observations are retained for the original capacity-revision comparison; they do not describe the later `final_v5`/`final_v6` adequacy and price outcomes. Consult the [current six-case results](../RESULTS.md) and [version evolution](../FINAL_VERSION_EVOLUTION.md).
+
 The continuous reference, unit-commitment MILP and fixed-commitment price LP
 completed, and their verification and reporting checks passed. No material
 implementation defect was found in the capacity revision. Batteries and zonal

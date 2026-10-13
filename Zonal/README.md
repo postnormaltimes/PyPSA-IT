@@ -24,7 +24,7 @@ Purchasing prices weight each zonal price by rigid plus P2X electricity demand a
 
 ## Start here
 
-Enter `Zonal/` before running model commands. Read the [three-route reproducibility guide](docs/REPRODUCIBILITY_GUIDE.md), [data dictionary guide](docs/DATA_DICTIONARY.md), [results](docs/RESULTS.md), [figures](docs/FIGURES.md) and [single-case runbook](docs/RUNBOOK_2040_2050.md).
+Enter `Zonal/` before running model commands. Start with the [current three-route reproducibility guide](docs/REPRODUCIBILITY_GUIDE.md), [data dictionary](docs/DATA_DICTIONARY.md), [results](docs/RESULTS.md), [figures](docs/FIGURES.md), [single-case runbook](docs/RUNBOOK_2040_2050.md) and [model changelog](CHANGELOG.md). The [versioned source release](https://github.com/postnormaltimes/PyPSA-IT/releases/tag/zonal-model-v1.0.0) identifies the original publication commit; documentation-only changes to `main` do not modify that tag. Older instructions under `docs/releases/` are historical records, not the current final_v3/final_v6 execution route.
 
 The `zonal-production-data-v3` release contains prepared inputs; `zonal-final-results-v1` contains full hourly numerical data and compact verification evidence. Downloads are verified by repository-owned manifests. No solver is needed to read results. Figure reproduction does not open solved networks or invoke optimization. Independent simulation requires the pinned environment and a valid local Gurobi licence.
 
