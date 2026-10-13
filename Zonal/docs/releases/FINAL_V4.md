@@ -1,5 +1,7 @@
 # final_v4 capacity configuration
 
+> **Historical 2050 `final_v4` research record.** The statements below describe the capacity revision and execution status at that stage, not the current `final_v6` baseline. See the [complete model-version evolution](../FINAL_VERSION_EVOLUTION.md), [published results](../RESULTS.md) and [current reproduction guide](../REPRODUCIBILITY_GUIDE.md).
+
 The revision adopts the later Terna 2050 system-analysis capacities rather than
 the earlier PNIEC-derived totals. It is a change of scenario source, not a
 repair of the earlier model.

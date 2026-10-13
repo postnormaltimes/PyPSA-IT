@@ -1,5 +1,7 @@
 # Reproduction and manual execution
 
+> **Historical instructions — final_v4 / `zonal-production-data-v2` (October 2026).** This document preserves the earlier publication's execution procedure and acceptance state; it is **not** the current six-case runbook. For 2040 `final_v3` and 2050 `final_v6`, use the [current reproducibility guide](../REPRODUCIBILITY_GUIDE.md) and [current results](../RESULTS.md). To follow the commands below, check out the historical source commit associated with [data release v2](https://github.com/postnormaltimes/PyPSA-IT/releases/tag/zonal-production-data-v2), not current `main`; its manifests and prepared inputs belong to that earlier state.
+
 Work from `Zonal/` using Python 3.11 and the versions in `uv.lock`.
 
 ```powershell
