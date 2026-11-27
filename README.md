@@ -1,44 +1,40 @@
 # PyPSA-IT
 
-**PyPSA-based research model of Italy's electricity system and wholesale market, with published 2040 and 2050 zonal scenarios.**
+How might Italian wholesale electricity prices change by 2040 and 2050? PyPSA-IT simulates a full year of electricity production, storage, trade and prices, hour by hour, across Italy’s seven bidding zones.
 
-The completed **Zonal** model represents Italy's seven electricity bidding zones with fixed generation and storage capacities, 8,760 hourly snapshots based on a 2019 weather chronology, thermal unit commitment, hydro and pumped storage, batteries, flexible power-to-X demand and cross-border/interzonal exchanges. Physical dispatch comes from a unit-commitment MILP; electricity prices come from a subsequent fixed-commitment LP.
+## Project video
 
-| Model | Status | What it represents |
-|---|---|---|
-| [Zonal](Zonal/README.md) | **Completed:** six verified 2040/2050 cases | Seven aggregated Italian bidding zones and directional exchange interfaces |
-| [Nodal](Nodal/README.md) | **Planned:** no executable model yet | Future, finer-resolution physical transmission-network analysis |
+https://github.com/user-attachments/assets/53c0ae03-93a7-4487-a80a-d4dee1370a70
 
-## Published zonal results
+[Download the video (MP4, 2 min 38 s)](Zonal/docs/media/italy-electricity-market-2040-2050.mp4?raw=true) | [Explore the figures and their data](Zonal/docs/FIGURES.md)
 
-Each horizon has **Slow, Base and High** scenarios. The accepted model variants are **2040 `final_v3`** and **2050 `final_v6`**, with full-year reporting and saved numerical QA for all six cases.
+## What changes between 2040 and 2050?
 
-**Modeled national electricity-purchasing price (EUR/MWh)**
+In the **2040 Base** case, Italy still relies on gas alongside a much larger renewable fleet. Wind and solar supply 74% of domestic generation, and gas plants produce about 34 TWh over the year. By **2050**, gas generation falls to about 7 TWh in Base, while nuclear and bioenergy together supply 117 TWh. The annual national price falls even though winter electricity remains expensive. In the 2050 Base simulation, the national price averages €130/MWh in January and €25/MWh in June.
 
-| Horizon | Slow | Base | High |
-|---|---:|---:|---:|
-| 2040 | 92.64 | 83.90 | 85.69 |
-| 2050 | 74.09 | 58.41 | 69.32 |
+**Annual national wholesale price, weighted by electricity consumption (€/MWh)**
 
-These values weight modeled hourly zonal prices by **rigid electricity demand plus P2X withdrawal and represented duration**. They are simulated scenario outcomes, not observed GME prices or probabilistic forecasts. See [results and definitions](Zonal/docs/RESULTS.md) for full precision and the distinct national hourly price-index definition.
+| Scenario | What changes | 2040 | 2050 |
+|---|---|---:|---:|
+| Base | Demand, generation, storage and grid capacity follow the project’s reference assumptions, drawn from Italian government and system-operator plans. | 83.90 | 58.41 |
+| Infrastruttura Lenta | Demand follows Base, while wind, solar, batteries and grid upgrades develop more slowly. | 92.64 | 74.09 |
+| Elettrificazione+ | Electricity demand grows faster than in Base, alongside greater renewable and battery capacity. | 85.69 | 69.32 |
 
-![Annual modeled zonal price comparison across the six scenarios](Zonal/docs/figures/annual_zonal_prices.png)
+National and local prices can move in opposite directions. In **Elettrificazione+**, the national average falls from €85.69 to €69.32/MWh between 2040 and 2050, while the average in the North rises from €91.50 to €96.08/MWh. The [annual zonal prices](Zonal/docs/figures/annual_zonal_prices.png) show how the seven markets compare.
 
-*Published zonal-price comparison. [View the full figure set, underlying tables and provenance.](Zonal/docs/FIGURES.md)*
+These are scenario results. The annual price weights each zone and hour by electricity consumed, including electricity used for electrolysis. The model uses one historical weather year (2019) for both horizons. [Results and price definitions](Zonal/docs/RESULTS.md)
 
-## Download and reproduce
+## Explore or reproduce the results
 
-| Resource | What it provides |
+| To… | Start here |
 |---|---|
-| [Source release — `zonal-model-v1.0.0`](https://github.com/postnormaltimes/PyPSA-IT/releases/tag/zonal-model-v1.0.0) | Versioned execution/reporting source, Python 3.11 lock, documentation and selected figures |
-| [Numerical results — `zonal-final-results-v1`](https://github.com/postnormaltimes/PyPSA-IT/releases/tag/zonal-final-results-v1) | Hourly zonal prices, modeled national price indices, physical UC generation/dispatch and supplementary CSV/Parquet data for all six cases |
-| [Prepared inputs — `zonal-production-data-v3`](https://github.com/postnormaltimes/PyPSA-IT/releases/tag/zonal-production-data-v3) | Verified unsolved networks and supporting inputs for independent scenario execution |
-| [Reproducibility guide](Zonal/docs/REPRODUCIBILITY_GUIDE.md) | Three routes: **(A)** inspect results without solver software, **(B)** regenerate figures without optimization, **(C)** independently run one case with the pinned environment and a valid Gurobi licence |
+| Inspect hourly prices, dispatch, storage and exchanges | [Download the six-case numerical results](https://github.com/postnormaltimes/PyPSA-IT/releases/tag/zonal-final-results-v1) |
+| Recreate the published charts | [Figure index with images, data tables and sources](Zonal/docs/FIGURES.md) |
+| Run a scenario | [Prepared inputs](https://github.com/postnormaltimes/PyPSA-IT/releases/tag/zonal-production-data-v3) and [step-by-step instructions](Zonal/docs/REPRODUCIBILITY_GUIDE.md) |
+| Find the exact software version | [Versioned source release](https://github.com/postnormaltimes/PyPSA-IT/releases/tag/zonal-model-v1.0.0) and [model version history](Zonal/docs/FINAL_VERSION_EVOLUTION.md) |
 
-Explore the [model methodology](Zonal/docs/METHODOLOGY.md), [scenario/version evolution](Zonal/docs/FINAL_VERSION_EVOLUTION.md), [source provenance](Zonal/docs/DATA_PROVENANCE.md), [limitations](Zonal/docs/LIMITATIONS.md) and [changelog](Zonal/CHANGELOG.md). Historical releases remain available; their original documents are not the current execution instructions.
+The [zonal model](Zonal/README.md) represents electricity exchanges between bidding zones. The scenarios specify how much generation, storage and grid capacity is available. The model then determines which plants operate and calculates hourly prices with those plant commitments fixed. A [nodal extension](Nodal/README.md) is planned to study the physical transmission network within each zone. [Methodology](Zonal/docs/METHODOLOGY.md) and [model limits](Zonal/docs/LIMITATIONS.md)
 
-## Scope and reuse
+Emiliano Barin, Roberto Conoscenti, Maddalena Schena and Christian Bianchi developed the zonal study for the Master in Energy Management at POLIMI Graduate School of Management, supervised by Luca Pedicone. It received the **Best Project Work Award**.
 
-The Zonal model is **not** an AC power-flow representation of the Italian grid: within-zone physical transmission constraints are omitted, external markets use modeled boundary conditions, and one weather year is insufficient to establish probabilistic adequacy. Nodal is a planned complementary model family, **not** a completed simulation.
-
-The repository software is [MIT-licensed](LICENSE). Published numerical outputs and figures do not carry a separate blanket data licence here; original source terms and attribution requirements must be assessed independently. See [third-party notices](THIRD_PARTY_NOTICES.md).
+The [MIT licence](LICENSE) covers the repository software. For datasets and figures, see the [source and reuse terms](THIRD_PARTY_NOTICES.md).

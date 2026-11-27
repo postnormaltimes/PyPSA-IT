@@ -1,20 +1,20 @@
 # Research figures
 
-The public research overview contains **eleven selected figure types** covering the six accepted 2040/2050 cases and their documented version history. The original PNG/SVG files are provided alongside plotted-data CSVs and portable provenance records; the [figure register](figures/FIGURE_REGISTER.csv) gives file sizes and checksums.
+The eleven figures below cover all six scenarios and the earlier model versions used for comparison. Each row links to the figure, the values plotted and a record of how it was produced. The [figure register](figures/FIGURE_REGISTER.csv) lists file sizes and checksums. For a guided introduction to the main findings, [watch the project video](../../README.md#project-video).
 
 | Figure | Image | Plotted data | Provenance |
 |---|---|---|---|
-| 2040 model-version evolution | [PNG](figures/evolution_2040.png) · [SVG](figures/evolution_2040.svg) | [CSV](figures/evolution_2040.csv) | [JSON](figures/evolution_2040.json) |
-| 2050 model-version evolution | [PNG](figures/evolution_2050.png) · [SVG](figures/evolution_2050.svg) | [CSV](figures/evolution_2050.csv) | [JSON](figures/evolution_2050.json) |
-| Annual zonal modeled prices | [PNG](figures/annual_zonal_prices.png) · [SVG](figures/annual_zonal_prices.svg) | [CSV](figures/annual_zonal_prices.csv) | [JSON](figures/annual_zonal_prices.json) |
-| Monthly modeled prices | [PNG](figures/monthly_prices.png) · [SVG](figures/monthly_prices.svg) | [CSV](figures/monthly_prices.csv) | [JSON](figures/monthly_prices.json) |
-| National price-duration distributions | [PNG](figures/price_duration.png) · [SVG](figures/price_duration.svg) | [CSV](figures/price_duration.csv) | [JSON](figures/price_duration.json) |
-| Installed capacity and annual generation | [PNG](figures/capacity_generation_mix.png) · [SVG](figures/capacity_generation_mix.svg) | [CSV](figures/capacity_generation_mix.csv) | [JSON](figures/capacity_generation_mix.json) |
-| Full-year daily physical dispatch | [PNG](figures/annual_dispatch_chronological_daily.png) · [SVG](figures/annual_dispatch_chronological_daily.svg) | [CSV](figures/annual_dispatch_chronological_daily.csv) | [JSON](figures/annual_dispatch_chronological_daily.json) |
-| Hourly peak residual-demand week | [PNG](figures/peak_residual_demand_week.png) · [SVG](figures/peak_residual_demand_week.svg) | [CSV](figures/peak_residual_demand_week.csv) | [JSON](figures/peak_residual_demand_week.json) |
-| Storage, P2X and curtailment | [PNG](figures/storage_flexibility_curtailment.png) · [SVG](figures/storage_flexibility_curtailment.svg) | [CSV](figures/storage_flexibility_curtailment.csv) | [JSON](figures/storage_flexibility_curtailment.json) |
-| Net exchanges and interface congestion | [PNG](figures/exchanges_congestion.png) · [SVG](figures/exchanges_congestion.svg) | [CSV](figures/exchanges_congestion.csv) | [JSON](figures/exchanges_congestion.json) |
-| Marginal price-setting regimes | [PNG](figures/marginal_price_setting_regimes.png) · [SVG](figures/marginal_price_setting_regimes.svg) | [CSV](figures/marginal_price_setting_regimes.csv) | [JSON](figures/marginal_price_setting_regimes.json) |
+| 2040 model-version evolution | [PNG](figures/evolution_2040.png) / [SVG](figures/evolution_2040.svg) | [CSV](figures/evolution_2040.csv) | [JSON](figures/evolution_2040.json) |
+| 2050 model-version evolution | [PNG](figures/evolution_2050.png) / [SVG](figures/evolution_2050.svg) | [CSV](figures/evolution_2050.csv) | [JSON](figures/evolution_2050.json) |
+| Annual zonal modeled prices | [PNG](figures/annual_zonal_prices.png) / [SVG](figures/annual_zonal_prices.svg) | [CSV](figures/annual_zonal_prices.csv) | [JSON](figures/annual_zonal_prices.json) |
+| Monthly modeled prices | [PNG](figures/monthly_prices.png) / [SVG](figures/monthly_prices.svg) | [CSV](figures/monthly_prices.csv) | [JSON](figures/monthly_prices.json) |
+| National price-duration distributions | [PNG](figures/price_duration.png) / [SVG](figures/price_duration.svg) | [CSV](figures/price_duration.csv) | [JSON](figures/price_duration.json) |
+| Installed capacity and annual generation | [PNG](figures/capacity_generation_mix.png) / [SVG](figures/capacity_generation_mix.svg) | [CSV](figures/capacity_generation_mix.csv) | [JSON](figures/capacity_generation_mix.json) |
+| Full-year daily physical dispatch | [PNG](figures/annual_dispatch_chronological_daily.png) / [SVG](figures/annual_dispatch_chronological_daily.svg) | [CSV](figures/annual_dispatch_chronological_daily.csv) | [JSON](figures/annual_dispatch_chronological_daily.json) |
+| Hourly peak residual-demand week | [PNG](figures/peak_residual_demand_week.png) / [SVG](figures/peak_residual_demand_week.svg) | [CSV](figures/peak_residual_demand_week.csv) | [JSON](figures/peak_residual_demand_week.json) |
+| Storage, P2X and curtailment | [PNG](figures/storage_flexibility_curtailment.png) / [SVG](figures/storage_flexibility_curtailment.svg) | [CSV](figures/storage_flexibility_curtailment.csv) | [JSON](figures/storage_flexibility_curtailment.json) |
+| Net exchanges and interface congestion | [PNG](figures/exchanges_congestion.png) / [SVG](figures/exchanges_congestion.svg) | [CSV](figures/exchanges_congestion.csv) | [JSON](figures/exchanges_congestion.json) |
+| Marginal price-setting regimes | [PNG](figures/marginal_price_setting_regimes.png) / [SVG](figures/marginal_price_setting_regimes.svg) | [CSV](figures/marginal_price_setting_regimes.csv) | [JSON](figures/marginal_price_setting_regimes.json) |
 
 The supplied images were published with the [versioned source release](https://github.com/postnormaltimes/PyPSA-IT/releases/tag/zonal-model-v1.0.0). Some preserved figure JSONs and research configurations still contain preparation-time labels such as `AWAITING_FINAL_PUBLICATION_APPROVAL` or `VERIFIED_RESULT_PENDING_ANALYTICAL_REVIEW`: those are **frozen evidence/status snapshots**, not an assertion that the current public GitHub release remains unpublished or that the accepted six-case numerical QA failed. Their hashes and source identities have not been rewritten.
 
