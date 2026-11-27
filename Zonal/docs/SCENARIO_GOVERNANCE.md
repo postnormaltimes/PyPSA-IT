@@ -1,9 +1,19 @@
-# Scenario governance
+# Scenarios and model versions
 
-The final release selects exactly six cases: 2040 final_v3 Slow/Base/High and 2050 final_v6 Slow/Base/High. `config/publication.yaml` records the live result definitions; `config/publication_research_release.yaml` points the same figure definitions at public result tables. The latter is a data-routing profile, not a changed model methodology.
+The study compares three scenarios in 2040 and 2050. Each specifies demand, generation and storage capacity, and directional limits on trade. The model calculates how the available system operates over the year. Capacity investment is outside its scope.
 
-Capacities, demand, fuel/carbon assumptions, wind/hydro controls, P2X construction and interface limits remain accepted inputs. Model operation is fixed-capacity, with no endogenous expansion. All selected cases remain explicit, manually executable, with authorization separate from analytical review. Configuration schema identities and historical preparation statuses are retained for compatibility.
+| Name in the presentation | ID in the data and run commands | Assumptions |
+|---|---|---|
+| Base | `Base` | Reference demand, capacity and grid assumptions drawn from Italian government and system-operator plans. |
+| Infrastruttura Lenta | `Slow` | The same demand as Base, with slower deployment of wind, solar, batteries and grid upgrades. |
+| Elettrificazione+ | `High` | Faster electrification raises electricity demand, with more renewables and battery capacity than in Base. |
 
-The final execution router retains reference LP → physical UC MILP → fixed-commitment price LP and same-case verification gates. Gurobi settings remain version 13.0.3, Threads=1, Seed=0. The public input derivatives change only portable metadata and dependent integrity hashes, never numerical arrays. Original/public hashes are recorded together.
+## Which version to use
 
-The publication preserves chronology/version distinctions: 2040 v2 was never executed; 2050 v5 reinforcement precedes v6 external-cost normalization. Physical shedding comes from UC, price scarcity from LP prices. Six saved final QA records are PASS. Completed figure production and numerical QA do not substitute for final editorial publication approval.
+The six published runs use **`final_v3` for 2040** and **`final_v6` for 2050**. The 2040 `final_v2` inputs were prepared but never simulated. In 2050, `final_v5` added peaking capacity and `final_v6` retained it while revising an exceptional external supply cost. The [version history](FINAL_VERSION_EVOLUTION.md) identifies the changes and which earlier results are available.
+
+## How cases are reproduced
+
+Each case runs a continuous reference model, a thermal unit-commitment model for dispatch, and a pricing model with the plant commitments fixed. Verification uses outputs from the same case at each step. The published runs use Gurobi 13.0.3 with one thread and seed 0. [Single-case instructions](RUNBOOK_2040_2050.md)
+
+`config/publication.yaml` defines the figures using local model results. `config/publication_research_release.yaml` generates the same figures from the public result tables. The prepared inputs retain the original numerical arrays. The input manifests identify both the original files and the portable copies distributed with the release. [Data provenance](DATA_PROVENANCE.md)
